@@ -1,0 +1,12 @@
+{
+  "model_a": "gpt-5.6-luna",
+  "model_b": "llama3.2",
+  "order1_winner": "llama3.2",
+  "order2_winner": "llama3.2",
+  "order1_reasoning": "Answer B provides a more accurate and nuanced explanation of the terms 'cold-blooded' and 'warm-blooded', as well as their implications for metabolic processes, activity patterns, and temperature regulation.",
+  "order2_reasoning": "Answer A provides a clearer and more comprehensive explanation of the differences between ectothermic and endothermic animals, including examples, key differences, and nuances.",
+  "outcome": "win",
+  "winner": "llama3.2",
+  "suite": "easy",
+  "item_id": "reasoning_001"
+}

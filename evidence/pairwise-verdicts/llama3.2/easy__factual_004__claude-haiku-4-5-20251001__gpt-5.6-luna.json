@@ -1,0 +1,12 @@
+{
+  "model_a": "claude-haiku-4-5-20251001",
+  "model_b": "gpt-5.6-luna",
+  "order1_winner": "claude-haiku-4-5-20251001",
+  "order2_winner": "claude-haiku-4-5-20251001",
+  "order1_reasoning": "Answer A provides the correct order of planets in our solar system, while Answer B is missing Pluto's classification as a dwarf planet.",
+  "order2_reasoning": "Answer B is more relevant because it provides the correct order of planets in our solar system, whereas Answer A only lists the names without any additional context.",
+  "outcome": "win",
+  "winner": "claude-haiku-4-5-20251001",
+  "suite": "easy",
+  "item_id": "factual_004"
+}

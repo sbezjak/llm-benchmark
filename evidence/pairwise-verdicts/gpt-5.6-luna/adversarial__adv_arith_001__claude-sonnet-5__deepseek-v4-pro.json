@@ -1,0 +1,12 @@
+{
+  "model_a": "claude-sonnet-5",
+  "model_b": "deepseek-v4-pro",
+  "order1_winner": "deepseek-v4-pro",
+  "order2_winner": "claude-sonnet-5",
+  "order1_reasoning": "Both answers are correct and relevant, but B is more concise while providing sufficient verification, so it is better overall.",
+  "order2_reasoning": "Both answers are correct, clearly explain the calculation, and verify that the prices total $1.10, though B adds a relevant note about the common intuitive mistake and is slightly more thorough.",
+  "outcome": "flip",
+  "winner": null,
+  "suite": "adversarial",
+  "item_id": "adv_arith_001"
+}

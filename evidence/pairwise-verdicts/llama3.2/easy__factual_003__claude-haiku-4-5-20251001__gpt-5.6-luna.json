@@ -1,0 +1,12 @@
+{
+  "model_a": "claude-haiku-4-5-20251001",
+  "model_b": "gpt-5.6-luna",
+  "order1_winner": "claude-haiku-4-5-20251001",
+  "order2_winner": "claude-haiku-4-5-20251001",
+  "order1_reasoning": "Answer A provides additional context and specificity about Lima being the capital city of Peru, making it more informative and relevant.",
+  "order2_reasoning": "Answer B provides additional context about Lima being the capital city of Peru, making it more informative and relevant.",
+  "outcome": "win",
+  "winner": "claude-haiku-4-5-20251001",
+  "suite": "easy",
+  "item_id": "factual_003"
+}

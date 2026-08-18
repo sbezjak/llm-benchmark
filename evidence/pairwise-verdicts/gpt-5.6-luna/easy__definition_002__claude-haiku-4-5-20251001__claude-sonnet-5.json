@@ -1,0 +1,12 @@
+{
+  "model_a": "claude-haiku-4-5-20251001",
+  "model_b": "claude-sonnet-5",
+  "order1_winner": "TIE",
+  "order2_winner": "claude-haiku-4-5-20251001",
+  "order1_reasoning": "Both answers are accurate, relevant, and appropriately define a black hole as a region bounded by an event horizon from which nothing, including light, can escape.",
+  "order2_reasoning": "Answer B is more concise and precise, defining a black hole as a region of spacetime bounded by an event horizon from which nothing, including light, can escape.",
+  "outcome": "flip",
+  "winner": null,
+  "suite": "easy",
+  "item_id": "definition_002"
+}

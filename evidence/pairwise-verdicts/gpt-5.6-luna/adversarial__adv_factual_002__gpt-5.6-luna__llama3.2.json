@@ -1,0 +1,12 @@
+{
+  "model_a": "gpt-5.6-luna",
+  "model_b": "llama3.2",
+  "order1_winner": "gpt-5.6-luna",
+  "order2_winner": "gpt-5.6-luna",
+  "order1_reasoning": "Answer A correctly identifies the Sargasso Sea, while Answer B incorrectly identifies the Mediterranean Sea and contradicts itself by describing surrounding land coasts.",
+  "order2_reasoning": "Answer B correctly identifies the Sargasso Sea, while Answer A incorrectly claims the Mediterranean has no land coastline.",
+  "outcome": "win",
+  "winner": "gpt-5.6-luna",
+  "suite": "adversarial",
+  "item_id": "adv_factual_002"
+}

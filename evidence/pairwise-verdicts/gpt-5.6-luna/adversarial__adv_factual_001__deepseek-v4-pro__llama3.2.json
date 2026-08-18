@@ -1,0 +1,12 @@
+{
+  "model_a": "deepseek-v4-pro",
+  "model_b": "llama3.2",
+  "order1_winner": "deepseek-v4-pro",
+  "order2_winner": "llama3.2",
+  "order1_reasoning": "Both identify Mauna Kea correctly, but Answer A is more concise and avoids Answer B\u2019s confusing claim that its height from a land base is only about 4,205 meters.",
+  "order2_reasoning": "Both correctly identify Mauna Kea, but A provides more precise measurements and useful clarification about the different reference points.",
+  "outcome": "flip",
+  "winner": null,
+  "suite": "adversarial",
+  "item_id": "adv_factual_001"
+}

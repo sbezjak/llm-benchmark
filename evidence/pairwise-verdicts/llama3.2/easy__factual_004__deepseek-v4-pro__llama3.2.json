@@ -1,0 +1,12 @@
+{
+  "model_a": "deepseek-v4-pro",
+  "model_b": "llama3.2",
+  "order1_winner": "llama3.2",
+  "order2_winner": "llama3.2",
+  "order1_reasoning": "Answer B is more correct and relevant because it provides a clear list of planets in order, whereas Answer A presents the information in a more concise but less detailed format.",
+  "order2_reasoning": "Answer A is better because it includes additional context about Pluto's reclassification, making the answer more informative and relevant.",
+  "outcome": "win",
+  "winner": "llama3.2",
+  "suite": "easy",
+  "item_id": "factual_004"
+}

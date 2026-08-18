@@ -1,0 +1,12 @@
+{
+  "model_a": "deepseek-v4-pro",
+  "model_b": "gpt-5.6-luna",
+  "order1_winner": "gpt-5.6-luna",
+  "order2_winner": "gpt-5.6-luna",
+  "order1_reasoning": "Answer B provides a clear explanation of the calculation and its relevance to the question, making it more informative and accurate.",
+  "order2_reasoning": "Answer A provides a clear explanation of the calculation and its relevance to the question, making it more informative than Answer B.",
+  "outcome": "win",
+  "winner": "gpt-5.6-luna",
+  "suite": "adversarial",
+  "item_id": "adv_reason_001"
+}

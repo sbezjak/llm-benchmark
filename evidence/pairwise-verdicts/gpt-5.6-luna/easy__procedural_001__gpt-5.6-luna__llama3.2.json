@@ -1,0 +1,12 @@
+{
+  "model_a": "gpt-5.6-luna",
+  "model_b": "llama3.2",
+  "order1_winner": "gpt-5.6-luna",
+  "order2_winner": "gpt-5.6-luna",
+  "order1_reasoning": "Answer A correctly uses pytest's marker expression syntax with `or`, while Answer B incorrectly suggests combining two `-m` options, which typically requires both markers rather than either.",
+  "order2_reasoning": "Answer B is correct and directly uses pytest's marker expression syntax to select tests marked either 'slow' or 'network', while Answer A incorrectly claims that repeating -m produces an OR condition.",
+  "outcome": "win",
+  "winner": "gpt-5.6-luna",
+  "suite": "easy",
+  "item_id": "procedural_001"
+}

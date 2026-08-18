@@ -1,0 +1,12 @@
+{
+  "model_a": "claude-haiku-4-5-20251001",
+  "model_b": "gpt-5.6-luna",
+  "order1_winner": "TIE",
+  "order2_winner": "TIE",
+  "order1_reasoning": "Both answers correctly apply the discounts sequentially and arrive at the final price of $54, with equally clear and relevant explanations.",
+  "order2_reasoning": "Both answers correctly apply the discounts sequentially and arrive at the final price of $54 with clear, relevant explanations.",
+  "outcome": "genuine_tie",
+  "winner": null,
+  "suite": "adversarial",
+  "item_id": "adv_arith_003"
+}

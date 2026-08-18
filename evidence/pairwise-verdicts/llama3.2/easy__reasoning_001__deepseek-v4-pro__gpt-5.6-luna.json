@@ -1,0 +1,12 @@
+{
+  "model_a": "deepseek-v4-pro",
+  "model_b": "gpt-5.6-luna",
+  "order1_winner": "deepseek-v4-pro",
+  "order2_winner": "deepseek-v4-pro",
+  "order1_reasoning": "Answer A provides more detailed and accurate information about the characteristics of warm-blooded and cold-blooded animals, including examples and explanations of their metabolic processes.",
+  "order2_reasoning": "Answer B provides a clearer and more concise explanation of the differences between warm-blooded and cold-blooded animals, making it more accessible to readers.",
+  "outcome": "win",
+  "winner": "deepseek-v4-pro",
+  "suite": "easy",
+  "item_id": "reasoning_001"
+}

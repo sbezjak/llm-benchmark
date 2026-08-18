@@ -1,0 +1,12 @@
+{
+  "model_a": "claude-haiku-4-5-20251001",
+  "model_b": "llama3.2",
+  "order1_winner": "claude-haiku-4-5-20251001",
+  "order2_winner": "claude-haiku-4-5-20251001",
+  "order1_reasoning": "Answer A is more accurate and focused, while Answer B incorrectly generalizes that ectotherms have slower metabolic rates and adds unnecessary complexity.",
+  "order2_reasoning": "B is clearer and more directly answers the question, accurately contrasting internal versus external heat sources while noting the terminology caveat, whereas A includes a somewhat confusing claim that reptiles can be both ectothermic and endothermic.",
+  "outcome": "win",
+  "winner": "claude-haiku-4-5-20251001",
+  "suite": "easy",
+  "item_id": "reasoning_001"
+}

@@ -1,0 +1,12 @@
+{
+  "model_a": "claude-sonnet-5",
+  "model_b": "llama3.2",
+  "order1_winner": "claude-sonnet-5",
+  "order2_winner": "llama3.2",
+  "order1_reasoning": "Answer A is more concise and directly states the solution without unnecessary words.",
+  "order2_reasoning": "Answer A provides step-by-step reasoning and clearly explains the calculation process, making it more transparent and understandable.",
+  "outcome": "flip",
+  "winner": null,
+  "suite": "adversarial",
+  "item_id": "adv_arith_002"
+}

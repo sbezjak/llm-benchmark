@@ -1,0 +1,12 @@
+{
+  "model_a": "gpt-5.6-luna",
+  "model_b": "llama3.2",
+  "order1_winner": "llama3.2",
+  "order2_winner": "TIE",
+  "order1_reasoning": "Both answers are correct and relevant, but B provides the same complete list with a useful clarification about Pluto\u2019s reclassification.",
+  "order2_reasoning": "Both answers correctly state that there are eight planets and list them accurately; A adds a relevant clarification about Pluto, but B is equally direct and sufficient.",
+  "outcome": "flip",
+  "winner": null,
+  "suite": "easy",
+  "item_id": "factual_004"
+}

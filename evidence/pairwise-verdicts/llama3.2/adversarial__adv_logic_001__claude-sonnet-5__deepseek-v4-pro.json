@@ -1,0 +1,12 @@
+{
+  "model_a": "claude-sonnet-5",
+  "model_b": "deepseek-v4-pro",
+  "order1_winner": "claude-sonnet-5",
+  "order2_winner": "claude-sonnet-5",
+  "order1_reasoning": "Answer A provides the correct order from lightest to heaviest (Kiwi < Mango < Pomelo < Durian), whereas Answer B only states that Durian is the heaviest without providing this crucial ordering information.",
+  "order2_reasoning": "Answer B is better because it uses bold formatting to highlight the correct answer, making it stand out and more visually appealing.",
+  "outcome": "win",
+  "winner": "claude-sonnet-5",
+  "suite": "adversarial",
+  "item_id": "adv_logic_001"
+}

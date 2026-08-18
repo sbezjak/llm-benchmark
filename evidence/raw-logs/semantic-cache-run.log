@@ -1,0 +1,32 @@
+2026-08-16 18:00:16,953 INFO httpx HTTP Request: POST http://localhost:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-16 18:00:16,954 INFO llm_benchmark.providers.ollama_embed ollama_embed model=nomic-embed-text url=http://localhost:11434/api/embed n=4 dim=768
+INPUTS:
+  What is the capital of Slovenia?
+  What is the highest mountain above sea level?
+  What is the chemical symbol for gold?
+  Who wrote the play Romeo and Juliet?
+2026-08-16 18:00:17,154 INFO httpx HTTP Request: POST http://localhost:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-16 18:00:17,157 INFO llm_benchmark.providers.ollama_embed ollama_embed model=nomic-embed-text url=http://localhost:11434/api/embed n=12 dim=768
+INPUTS:
+  Which city is the capital of Slovenia?
+  Slovenia's capital city is what?
+  What's the tallest mountain on Earth measured from sea level?
+  Which mountain has the highest elevation above sea level?
+  What is gold's chemical symbol?
+  On the periodic table, what symbol represents gold?
+  Who is the author of Romeo and Juliet?
+  Romeo and Juliet was written by whom?
+  What is the capital of Slovakia?
+  What is the tallest mountain measured from base to summit?
+  What is the chemical symbol for silver?
+  Who wrote the play Romeo and Ethel the Pirate's Daughter?
+2026-08-16 18:00:17,178 INFO llm_benchmark.semantic_cache_run threshold sweep:
+threshold true_hits false_hits  misses    n
+-------------------------------------------
+     0.75         8          4       0   12
+     0.80         8          3       1   12
+     0.85         7          3       2   12
+     0.90         5          2       5   12
+     0.95         3          2       7   12
+2026-08-16 18:00:17,179 INFO llm_benchmark.semantic_cache_run wrote evidence -> evidence/semantic-cache-false-hits.md
+2026-08-16 18:00:17,184 INFO llm_benchmark.semantic_cache_run wrote receipts -> evidence/semantic-cache-receipts.json

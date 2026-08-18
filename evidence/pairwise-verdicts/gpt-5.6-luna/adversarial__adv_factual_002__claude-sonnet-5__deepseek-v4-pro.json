@@ -1,0 +1,12 @@
+{
+  "model_a": "claude-sonnet-5",
+  "model_b": "deepseek-v4-pro",
+  "order1_winner": "deepseek-v4-pro",
+  "order2_winner": "claude-sonnet-5",
+  "order1_reasoning": "Both answers correctly identify the Sargasso Sea, but B is more concise and directly answers the question without unnecessary additional details.",
+  "order2_reasoning": "Both correctly identify the Sargasso Sea, but B provides accurate, relevant details about its bounding currents and characteristics, making it more informative overall.",
+  "outcome": "flip",
+  "winner": null,
+  "suite": "adversarial",
+  "item_id": "adv_factual_002"
+}

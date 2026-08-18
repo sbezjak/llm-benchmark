@@ -1,0 +1,12 @@
+{
+  "model_a": "claude-haiku-4-5-20251001",
+  "model_b": "llama3.2",
+  "order1_winner": "claude-haiku-4-5-20251001",
+  "order2_winner": "claude-haiku-4-5-20251001",
+  "order1_reasoning": "Answer A correctly derives the full ordering, while Answer B reverses the given Mango\u2013Pomelo relationship despite reaching the correct heaviest fruit.",
+  "order2_reasoning": "Answer B is better because it correctly derives Kiwi < Mango < Pomelo < Durian, whereas Answer A states the incorrect ordering Mango > Pomelo despite reaching the right conclusion.",
+  "outcome": "win",
+  "winner": "claude-haiku-4-5-20251001",
+  "suite": "adversarial",
+  "item_id": "adv_logic_001"
+}

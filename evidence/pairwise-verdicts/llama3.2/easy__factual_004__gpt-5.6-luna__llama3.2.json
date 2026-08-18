@@ -1,0 +1,12 @@
+{
+  "model_a": "gpt-5.6-luna",
+  "model_b": "llama3.2",
+  "order1_winner": "gpt-5.6-luna",
+  "order2_winner": "llama3.2",
+  "order1_reasoning": "Answer A is better because it presents the information in a more concise and visually appealing format, making it easier to read and understand.",
+  "order2_reasoning": "Answer A is more complete as it includes the name of the organization that reclassified Pluto, making it a more accurate and informative response.",
+  "outcome": "flip",
+  "winner": null,
+  "suite": "easy",
+  "item_id": "factual_004"
+}

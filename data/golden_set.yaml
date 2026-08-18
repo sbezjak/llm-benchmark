@@ -1,0 +1,77 @@
+# Golden set — 10 hand-written items.
+#
+# Fields:
+#   id          stable handle, format: <category>_<3-digit number>
+#   question    what we ask the model
+#   expected    the SHORTEST fully-correct reference answer 
+#   difficulty  easy | medium | hard
+#   category    factual | definition | reasoning | procedural
+#
+# Tips for adding items:
+#   - Write questions you can grade yourself.
+#   - Avoid time-dependent answers ("current president").
+#   - Easy = one undisputed fact. Medium = one sentence, multiple valid phrasings.
+#   - Hard = open-ended but clear correct concept.
+#   - Spread items across at least 3 categories.
+#   - Mix in items where the model is likely to be wrong — those generate
+#     the most signal when comparing scorers.
+
+- id: factual_001
+  question: "What is the capital of Slovenia?"
+  expected: "Ljubljana"
+  difficulty: easy
+  category: factual
+
+- id: factual_002
+  question: "What is the chemical symbol for silver?"
+  expected: "Ag"
+  difficulty: easy
+  category: factual
+
+- id: factual_003
+  question: "In what continent is Lima located?"
+  expected: "South America"
+  difficulty: easy
+  category: factual
+
+- id: factual_004
+  question: "How many planets are in our solar system?"
+  expected: "8"
+  difficulty: easy
+  category: factual
+
+- id: definition_001
+  question: "What does the acronym AI stand for?"
+  expected: "Artificial Intelligence"
+  difficulty: medium
+  category: definition
+
+- id: definition_002
+  question: "In one sentence, what is a black hole?"
+  expected: "A region of space where the gravitational pull is so strong that nothing, not even light, can escape from it."
+  difficulty: medium
+  category: definition
+
+- id: procedural_001
+  question: "Which pytest command runs tests marked either 'slow' or 'network'?"
+  expected: "pytest -m 'slow or network'"
+  difficulty: medium
+  category: procedural
+
+- id: reasoning_001
+  question: "What is the difference between cold blooded and warm blooded animals?"
+  expected: "Cold blooded animals rely on external sources for body heat, while warm blooded animals maintain a constant internal body temperature."
+  difficulty: hard
+  category: reasoning
+
+- id: reasoning_002
+  question: "In one sentence, why does ice float on water?"
+  expected: "Ice floats on water because it is less dense than liquid water."
+  difficulty: hard
+  category: reasoning
+
+- id: reasoning_003
+  question: "How does photosynthesis work in plants?"
+  expected: "Photosynthesis in plants converts light energy into chemical energy, using sunlight to transform carbon dioxide and water into glucose and oxygen."
+  difficulty: hard
+  category: reasoning

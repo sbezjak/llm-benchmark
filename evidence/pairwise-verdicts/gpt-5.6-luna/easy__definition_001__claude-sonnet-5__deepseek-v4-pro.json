@@ -1,0 +1,12 @@
+{
+  "model_a": "claude-sonnet-5",
+  "model_b": "deepseek-v4-pro",
+  "order1_winner": "deepseek-v4-pro",
+  "order2_winner": "deepseek-v4-pro",
+  "order1_reasoning": "Both answers correctly state that AI stands for Artificial Intelligence, but B is more concise and directly relevant to the simple question.",
+  "order2_reasoning": "Both answers correctly identify AI as Artificial Intelligence, but Answer A is more concise and directly relevant to the simple question.",
+  "outcome": "win",
+  "winner": "deepseek-v4-pro",
+  "suite": "easy",
+  "item_id": "definition_001"
+}

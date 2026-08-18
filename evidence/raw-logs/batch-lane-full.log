@@ -1,0 +1,2181 @@
+2026-08-17 09:07:17,444 INFO __main__ batch.submit model=claude-haiku-4-5-20251001 misses=20 (of 20 cells)
+2026-08-17 09:07:17,445 INFO llm_benchmark.providers.anthropic_batch anthropic_batch.submit model=claude-haiku-4-5-20251001 url=https://api.anthropic.com/v1/messages/batches n=20
+PROMPTS:
+  [factual_001__rep1] What is the capital of Slovenia?
+  [factual_001__rep2] What is the capital of Slovenia?
+  [factual_002__rep1] What is the chemical symbol for silver?
+  [factual_002__rep2] What is the chemical symbol for silver?
+  [factual_003__rep1] In what continent is Lima located?
+  [factual_003__rep2] In what continent is Lima located?
+  [factual_004__rep1] How many planets are in our solar system?
+  [factual_004__rep2] How many planets are in our solar system?
+  [definition_001__rep1] What does the acronym AI stand for?
+  [definition_001__rep2] What does the acronym AI stand for?
+  [definition_002__rep1] In one sentence, what is a black hole?
+  [definition_002__rep2] In one sentence, what is a black hole?
+  [procedural_001__rep1] Which pytest command runs tests marked either 'slow' or 'network'?
+  [procedural_001__rep2] Which pytest command runs tests marked either 'slow' or 'network'?
+  [reasoning_001__rep1] What is the difference between cold blooded and warm blooded animals?
+  [reasoning_001__rep2] What is the difference between cold blooded and warm blooded animals?
+  [reasoning_002__rep1] In one sentence, why does ice float on water?
+  [reasoning_002__rep2] In one sentence, why does ice float on water?
+  [reasoning_003__rep1] How does photosynthesis work in plants?
+  [reasoning_003__rep2] How does photosynthesis work in plants?
+2026-08-17 09:07:18,018 INFO httpx HTTP Request: POST https://api.anthropic.com/v1/messages/batches "HTTP/1.1 200 OK"
+2026-08-17 09:07:18,021 INFO llm_benchmark.providers.anthropic_batch anthropic_batch.submitted model=claude-haiku-4-5-20251001 batch_id=msgbatch_01UdcJXAjPaJckQYoGqHnpkv status=in_progress
+2026-08-17 09:07:18,268 INFO httpx HTTP Request: GET https://api.anthropic.com/v1/messages/batches/msgbatch_01UdcJXAjPaJckQYoGqHnpkv "HTTP/1.1 200 OK"
+2026-08-17 09:07:18,269 INFO llm_benchmark.providers.anthropic_batch anthropic_batch.poll model=claude-haiku-4-5-20251001 batch_id=msgbatch_01UdcJXAjPaJckQYoGqHnpkv status=in_progress counts={"processing": 20, "succeeded": 0, "errored": 0, "canceled": 0, "expired": 0}
+2026-08-17 09:07:23,594 INFO httpx HTTP Request: GET https://api.anthropic.com/v1/messages/batches/msgbatch_01UdcJXAjPaJckQYoGqHnpkv "HTTP/1.1 200 OK"
+2026-08-17 09:07:23,647 INFO llm_benchmark.providers.anthropic_batch anthropic_batch.poll model=claude-haiku-4-5-20251001 batch_id=msgbatch_01UdcJXAjPaJckQYoGqHnpkv status=in_progress counts={"processing": 20, "succeeded": 0, "errored": 0, "canceled": 0, "expired": 0}
+2026-08-17 09:07:29,814 INFO httpx HTTP Request: GET https://api.anthropic.com/v1/messages/batches/msgbatch_01UdcJXAjPaJckQYoGqHnpkv "HTTP/1.1 200 OK"
+2026-08-17 09:07:29,824 INFO llm_benchmark.providers.anthropic_batch anthropic_batch.poll model=claude-haiku-4-5-20251001 batch_id=msgbatch_01UdcJXAjPaJckQYoGqHnpkv status=in_progress counts={"processing": 20, "succeeded": 0, "errored": 0, "canceled": 0, "expired": 0}
+2026-08-17 09:07:35,182 INFO httpx HTTP Request: GET https://api.anthropic.com/v1/messages/batches/msgbatch_01UdcJXAjPaJckQYoGqHnpkv "HTTP/1.1 200 OK"
+2026-08-17 09:07:35,187 INFO llm_benchmark.providers.anthropic_batch anthropic_batch.poll model=claude-haiku-4-5-20251001 batch_id=msgbatch_01UdcJXAjPaJckQYoGqHnpkv status=in_progress counts={"processing": 20, "succeeded": 0, "errored": 0, "canceled": 0, "expired": 0}
+2026-08-17 09:07:40,549 INFO httpx HTTP Request: GET https://api.anthropic.com/v1/messages/batches/msgbatch_01UdcJXAjPaJckQYoGqHnpkv "HTTP/1.1 200 OK"
+2026-08-17 09:07:40,557 INFO llm_benchmark.providers.anthropic_batch anthropic_batch.poll model=claude-haiku-4-5-20251001 batch_id=msgbatch_01UdcJXAjPaJckQYoGqHnpkv status=in_progress counts={"processing": 20, "succeeded": 0, "errored": 0, "canceled": 0, "expired": 0}
+2026-08-17 09:07:45,864 INFO httpx HTTP Request: GET https://api.anthropic.com/v1/messages/batches/msgbatch_01UdcJXAjPaJckQYoGqHnpkv "HTTP/1.1 200 OK"
+2026-08-17 09:07:45,867 INFO llm_benchmark.providers.anthropic_batch anthropic_batch.poll model=claude-haiku-4-5-20251001 batch_id=msgbatch_01UdcJXAjPaJckQYoGqHnpkv status=in_progress counts={"processing": 20, "succeeded": 0, "errored": 0, "canceled": 0, "expired": 0}
+2026-08-17 09:07:51,202 INFO httpx HTTP Request: GET https://api.anthropic.com/v1/messages/batches/msgbatch_01UdcJXAjPaJckQYoGqHnpkv "HTTP/1.1 200 OK"
+2026-08-17 09:07:51,210 INFO llm_benchmark.providers.anthropic_batch anthropic_batch.poll model=claude-haiku-4-5-20251001 batch_id=msgbatch_01UdcJXAjPaJckQYoGqHnpkv status=in_progress counts={"processing": 20, "succeeded": 0, "errored": 0, "canceled": 0, "expired": 0}
+2026-08-17 09:07:56,936 INFO httpx HTTP Request: GET https://api.anthropic.com/v1/messages/batches/msgbatch_01UdcJXAjPaJckQYoGqHnpkv "HTTP/1.1 200 OK"
+2026-08-17 09:07:57,108 INFO llm_benchmark.providers.anthropic_batch anthropic_batch.poll model=claude-haiku-4-5-20251001 batch_id=msgbatch_01UdcJXAjPaJckQYoGqHnpkv status=in_progress counts={"processing": 20, "succeeded": 0, "errored": 0, "canceled": 0, "expired": 0}
+2026-08-17 09:08:06,420 INFO httpx HTTP Request: GET https://api.anthropic.com/v1/messages/batches/msgbatch_01UdcJXAjPaJckQYoGqHnpkv "HTTP/1.1 200 OK"
+2026-08-17 09:08:06,441 INFO llm_benchmark.providers.anthropic_batch anthropic_batch.poll model=claude-haiku-4-5-20251001 batch_id=msgbatch_01UdcJXAjPaJckQYoGqHnpkv status=ended counts={"processing": 0, "succeeded": 20, "errored": 0, "canceled": 0, "expired": 0}
+2026-08-17 09:08:06,931 INFO httpx HTTP Request: GET https://api.anthropic.com/v1/messages/batches/msgbatch_01UdcJXAjPaJckQYoGqHnpkv/results "HTTP/1.1 200 OK"
+2026-08-17 09:08:07,058 INFO llm_benchmark.providers.anthropic_batch anthropic_batch.result model=claude-haiku-4-5-20251001 custom_id=factual_001__rep1
+USAGE (verbatim from the provider - the source of every token count):
+{"input_tokens": 14, "cache_creation_input_tokens": 0, "cache_read_input_tokens": 0, "cache_creation": {"ephemeral_5m_input_tokens": 0, "ephemeral_1h_input_tokens": 0}, "output_tokens": 10, "service_tier": "batch", "inference_geo": "not_available"}
+RESPONSE:
+The capital of Slovenia is Ljubljana.
+2026-08-17 09:08:07,062 INFO llm_benchmark.providers.anthropic_batch anthropic_batch.result model=claude-haiku-4-5-20251001 custom_id=factual_001__rep2
+USAGE (verbatim from the provider - the source of every token count):
+{"input_tokens": 14, "cache_creation_input_tokens": 0, "cache_read_input_tokens": 0, "cache_creation": {"ephemeral_5m_input_tokens": 0, "ephemeral_1h_input_tokens": 0}, "output_tokens": 10, "service_tier": "batch", "inference_geo": "not_available"}
+RESPONSE:
+The capital of Slovenia is Ljubljana.
+2026-08-17 09:08:07,062 INFO llm_benchmark.providers.anthropic_batch anthropic_batch.result model=claude-haiku-4-5-20251001 custom_id=factual_002__rep1
+USAGE (verbatim from the provider - the source of every token count):
+{"input_tokens": 15, "cache_creation_input_tokens": 0, "cache_read_input_tokens": 0, "cache_creation": {"ephemeral_5m_input_tokens": 0, "ephemeral_1h_input_tokens": 0}, "output_tokens": 13, "service_tier": "batch", "inference_geo": "not_available"}
+RESPONSE:
+The chemical symbol for silver is **Ag**.
+2026-08-17 09:08:07,062 INFO llm_benchmark.providers.anthropic_batch anthropic_batch.result model=claude-haiku-4-5-20251001 custom_id=factual_002__rep2
+USAGE (verbatim from the provider - the source of every token count):
+{"input_tokens": 15, "cache_creation_input_tokens": 0, "cache_read_input_tokens": 0, "cache_creation": {"ephemeral_5m_input_tokens": 0, "ephemeral_1h_input_tokens": 0}, "output_tokens": 13, "service_tier": "batch", "inference_geo": "not_available"}
+RESPONSE:
+The chemical symbol for silver is **Ag**.
+2026-08-17 09:08:07,062 INFO llm_benchmark.providers.anthropic_batch anthropic_batch.result model=claude-haiku-4-5-20251001 custom_id=factual_003__rep1
+USAGE (verbatim from the provider - the source of every token count):
+{"input_tokens": 14, "cache_creation_input_tokens": 0, "cache_read_input_tokens": 0, "cache_creation": {"ephemeral_5m_input_tokens": 0, "ephemeral_1h_input_tokens": 0}, "output_tokens": 18, "service_tier": "batch", "inference_geo": "not_available"}
+RESPONSE:
+Lima is located in South America. It is the capital city of Peru.
+2026-08-17 09:08:07,062 INFO llm_benchmark.providers.anthropic_batch anthropic_batch.result model=claude-haiku-4-5-20251001 custom_id=factual_003__rep2
+USAGE (verbatim from the provider - the source of every token count):
+{"input_tokens": 14, "cache_creation_input_tokens": 0, "cache_read_input_tokens": 0, "cache_creation": {"ephemeral_5m_input_tokens": 0, "ephemeral_1h_input_tokens": 0}, "output_tokens": 20, "service_tier": "batch", "inference_geo": "not_available"}
+RESPONSE:
+Lima is located in South America. It is the capital and largest city of Peru.
+2026-08-17 09:08:07,062 INFO llm_benchmark.providers.anthropic_batch anthropic_batch.result model=claude-haiku-4-5-20251001 custom_id=factual_004__rep1
+USAGE (verbatim from the provider - the source of every token count):
+{"input_tokens": 16, "cache_creation_input_tokens": 0, "cache_read_input_tokens": 0, "cache_creation": {"ephemeral_5m_input_tokens": 0, "ephemeral_1h_input_tokens": 0}, "output_tokens": 76, "service_tier": "batch", "inference_geo": "not_available"}
+RESPONSE:
+There are 8 planets in our solar system:
+
+1. Mercury
+2. Venus
+3. Earth
+4. Mars
+5. Jupiter
+6. Saturn
+7. Uranus
+8. Neptune
+
+Pluto was reclassified as a "dwarf planet" in 2006 by the International Astronomical Union.
+2026-08-17 09:08:07,062 INFO llm_benchmark.providers.anthropic_batch anthropic_batch.result model=claude-haiku-4-5-20251001 custom_id=factual_004__rep2
+USAGE (verbatim from the provider - the source of every token count):
+{"input_tokens": 16, "cache_creation_input_tokens": 0, "cache_read_input_tokens": 0, "cache_creation": {"ephemeral_5m_input_tokens": 0, "ephemeral_1h_input_tokens": 0}, "output_tokens": 76, "service_tier": "batch", "inference_geo": "not_available"}
+RESPONSE:
+There are 8 planets in our solar system:
+
+1. Mercury
+2. Venus
+3. Earth
+4. Mars
+5. Jupiter
+6. Saturn
+7. Uranus
+8. Neptune
+
+Pluto was reclassified as a "dwarf planet" in 2006 by the International Astronomical Union.
+2026-08-17 09:08:07,062 INFO llm_benchmark.providers.anthropic_batch anthropic_batch.result model=claude-haiku-4-5-20251001 custom_id=definition_001__rep1
+USAGE (verbatim from the provider - the source of every token count):
+{"input_tokens": 16, "cache_creation_input_tokens": 0, "cache_read_input_tokens": 0, "cache_creation": {"ephemeral_5m_input_tokens": 0, "ephemeral_1h_input_tokens": 0}, "output_tokens": 44, "service_tier": "batch", "inference_geo": "not_available"}
+RESPONSE:
+AI stands for **Artificial Intelligence**.
+
+It refers to computer systems designed to perform tasks that typically require human intelligence, such as learning from experience, recognizing patterns, understanding language, and making decisions.
+2026-08-17 09:08:07,063 INFO llm_benchmark.providers.anthropic_batch anthropic_batch.result model=claude-haiku-4-5-20251001 custom_id=definition_001__rep2
+USAGE (verbatim from the provider - the source of every token count):
+{"input_tokens": 16, "cache_creation_input_tokens": 0, "cache_read_input_tokens": 0, "cache_creation": {"ephemeral_5m_input_tokens": 0, "ephemeral_1h_input_tokens": 0}, "output_tokens": 41, "service_tier": "batch", "inference_geo": "not_available"}
+RESPONSE:
+AI stands for **Artificial Intelligence**.
+
+It refers to computer systems designed to perform tasks that typically require human intelligence, such as learning, reasoning, problem-solving, and understanding language.
+2026-08-17 09:08:07,063 INFO llm_benchmark.providers.anthropic_batch anthropic_batch.result model=claude-haiku-4-5-20251001 custom_id=definition_002__rep1
+USAGE (verbatim from the provider - the source of every token count):
+{"input_tokens": 17, "cache_creation_input_tokens": 0, "cache_read_input_tokens": 0, "cache_creation": {"ephemeral_5m_input_tokens": 0, "ephemeral_1h_input_tokens": 0}, "output_tokens": 32, "service_tier": "batch", "inference_geo": "not_available"}
+RESPONSE:
+A black hole is a region of spacetime where gravity is so intense that nothing, not even light, can escape from within its event horizon.
+2026-08-17 09:08:07,063 INFO llm_benchmark.providers.anthropic_batch anthropic_batch.result model=claude-haiku-4-5-20251001 custom_id=definition_002__rep2
+USAGE (verbatim from the provider - the source of every token count):
+{"input_tokens": 17, "cache_creation_input_tokens": 0, "cache_read_input_tokens": 0, "cache_creation": {"ephemeral_5m_input_tokens": 0, "ephemeral_1h_input_tokens": 0}, "output_tokens": 31, "service_tier": "batch", "inference_geo": "not_available"}
+RESPONSE:
+A black hole is a region of space where gravity is so strong that nothing, not even light, can escape from within its event horizon.
+2026-08-17 09:08:07,063 INFO llm_benchmark.providers.anthropic_batch anthropic_batch.result model=claude-haiku-4-5-20251001 custom_id=procedural_001__rep1
+USAGE (verbatim from the provider - the source of every token count):
+{"input_tokens": 24, "cache_creation_input_tokens": 0, "cache_read_input_tokens": 0, "cache_creation": {"ephemeral_5m_input_tokens": 0, "ephemeral_1h_input_tokens": 0}, "output_tokens": 287, "service_tier": "batch", "inference_geo": "not_available"}
+RESPONSE:
+# Running Tests with Multiple Markers in pytest
+
+To run tests marked with either 'slow' **or** 'network', use:
+
+```bash
+pytest -m "slow or network"
+```
+
+## Alternative Syntax
+
+You can also use:
+
+```bash
+pytest -m "slow or network" tests/
+```
+
+## Other Marker Combinations
+
+| Command | Behavior |
+|---------|----------|
+| `pytest -m "slow or network"` | Tests with 'slow' OR 'network' |
+| `pytest -m "slow and network"` | Tests with BOTH 'slow' AND 'network' |
+| `pytest -m "slow and not network"` | Tests with 'slow' but NOT 'network' |
+| `pytest -m "not slow"` | Tests without 'slow' marker |
+
+## Example Test File
+
+```python
+import pytest
+
+@pytest.mark.slow
+def test_slow_operation():
+    pass
+
+@pytest.mark.network
+def test_api_call():
+    pass
+
+@pytest.mark.slow
+@pytest.mark.network
+def test_slow_network_operation():
+    pass
+```
+
+Running `pytest -m "slow or network"` would execute all three tests above.
+2026-08-17 09:08:07,063 INFO llm_benchmark.providers.anthropic_batch anthropic_batch.result model=claude-haiku-4-5-20251001 custom_id=procedural_001__rep2
+USAGE (verbatim from the provider - the source of every token count):
+{"input_tokens": 24, "cache_creation_input_tokens": 0, "cache_read_input_tokens": 0, "cache_creation": {"ephemeral_5m_input_tokens": 0, "ephemeral_1h_input_tokens": 0}, "output_tokens": 236, "service_tier": "batch", "inference_geo": "not_available"}
+RESPONSE:
+# Running Tests with Multiple Markers in pytest
+
+To run tests marked with either 'slow' **or** 'network', use:
+
+```bash
+pytest -m "slow or network"
+```
+
+## Examples
+
+```bash
+# Run tests marked 'slow' OR 'network'
+pytest -m "slow or network"
+
+# Run tests marked 'slow' AND 'network'
+pytest -m "slow and network"
+
+# Run tests NOT marked 'slow'
+pytest -m "not slow"
+
+# More complex: (slow or network) and not integration
+pytest -m "(slow or network) and not integration"
+```
+
+## Test Example
+
+```python
+import pytest
+
+@pytest.mark.slow
+def test_slow_operation():
+    pass
+
+@pytest.mark.network
+def test_api_call():
+    pass
+
+@pytest.mark.slow
+@pytest.mark.network
+def test_slow_network():
+    pass
+```
+
+Running `pytest -m "slow or network"` would execute all three tests above.
+2026-08-17 09:08:07,063 INFO llm_benchmark.providers.anthropic_batch anthropic_batch.result model=claude-haiku-4-5-20251001 custom_id=reasoning_001__rep1
+USAGE (verbatim from the provider - the source of every token count):
+{"input_tokens": 21, "cache_creation_input_tokens": 0, "cache_read_input_tokens": 0, "cache_creation": {"ephemeral_5m_input_tokens": 0, "ephemeral_1h_input_tokens": 0}, "output_tokens": 298, "service_tier": "batch", "inference_geo": "not_available"}
+RESPONSE:
+# Cold-Blooded vs Warm-Blooded Animals
+
+## Body Temperature Control
+
+**Warm-blooded (Endothermic):**
+- Generate heat internally through metabolism
+- Maintain a constant body temperature regardless of environment
+- Examples: mammals and birds
+
+**Cold-blooded (Ectothermic):**
+- Rely on external environment to regulate body temperature
+- Body temperature fluctuates with surroundings
+- Examples: reptiles, amphibians, and fish
+
+## Key Practical Differences
+
+| Aspect | Warm-blooded | Cold-blooded |
+|--------|-------------|--------------|
+| **Energy needs** | High (need frequent meals) | Low (eat less often) |
+| **Activity in cold** | Stay active | Become sluggish |
+| **Geographic range** | Can live in cold climates | Limited to warmer regions |
+| **Recovery from injury** | Generally faster | Slower |
+
+## Why It Matters
+
+Cold-blooded animals are efficient in warm environments but must bask in sunlight to warm up or find shade to cool down. Warm-blooded animals can be active anytime and anywhere, but require much more food to fuel their internal heat production.
+
+Neither approach is inherently "better"—each is well-suited to different lifestyles and environments.
+2026-08-17 09:08:07,063 INFO llm_benchmark.providers.anthropic_batch anthropic_batch.result model=claude-haiku-4-5-20251001 custom_id=reasoning_001__rep2
+USAGE (verbatim from the provider - the source of every token count):
+{"input_tokens": 21, "cache_creation_input_tokens": 0, "cache_read_input_tokens": 0, "cache_creation": {"ephemeral_5m_input_tokens": 0, "ephemeral_1h_input_tokens": 0}, "output_tokens": 271, "service_tier": "batch", "inference_geo": "not_available"}
+RESPONSE:
+# Key Differences
+
+## Temperature Regulation
+
+**Cold-blooded (Ectothermic):**
+- Body temperature matches their environment
+- Can't generate much internal heat
+- Examples: reptiles, amphibians, fish, insects
+
+**Warm-blooded (Endothermic):**
+- Maintain a consistent body temperature internally
+- Generate heat through metabolism
+- Examples: mammals, birds
+
+## Practical Implications
+
+| Aspect | Cold-blooded | Warm-blooded |
+|--------|--------------|--------------|
+| **Activity** | Slower in cold weather | Active in any climate |
+| **Energy needs** | Low food requirements | High food requirements |
+| **Habitat** | Thrive in warm climates | Can live anywhere |
+| **Response time** | Sluggish when cold | Consistently quick |
+
+## Simple Analogy
+
+Think of cold-blooded animals as **solar-powered** (relying on external heat) and warm-blooded animals as having **built-in heaters** (generating their own warmth).
+
+Both strategies work well—cold-blooded animals are more energy-efficient, while warm-blooded animals are more independent from their environment.
+2026-08-17 09:08:07,063 INFO llm_benchmark.providers.anthropic_batch anthropic_batch.result model=claude-haiku-4-5-20251001 custom_id=reasoning_002__rep1
+USAGE (verbatim from the provider - the source of every token count):
+{"input_tokens": 18, "cache_creation_input_tokens": 0, "cache_read_input_tokens": 0, "cache_creation": {"ephemeral_5m_input_tokens": 0, "ephemeral_1h_input_tokens": 0}, "output_tokens": 32, "service_tier": "batch", "inference_geo": "not_available"}
+RESPONSE:
+Ice floats because it's less dense than liquid water, a result of hydrogen bonding creating a crystalline structure with more space between molecules.
+2026-08-17 09:08:07,063 INFO llm_benchmark.providers.anthropic_batch anthropic_batch.result model=claude-haiku-4-5-20251001 custom_id=reasoning_002__rep2
+USAGE (verbatim from the provider - the source of every token count):
+{"input_tokens": 18, "cache_creation_input_tokens": 0, "cache_read_input_tokens": 0, "cache_creation": {"ephemeral_5m_input_tokens": 0, "ephemeral_1h_input_tokens": 0}, "output_tokens": 33, "service_tier": "batch", "inference_geo": "not_available"}
+RESPONSE:
+Ice floats because it's less dense than liquid water, a result of hydrogen bonding that creates a crystalline structure with more space between molecules.
+2026-08-17 09:08:07,063 INFO llm_benchmark.providers.anthropic_batch anthropic_batch.result model=claude-haiku-4-5-20251001 custom_id=reasoning_003__rep1
+USAGE (verbatim from the provider - the source of every token count):
+{"input_tokens": 17, "cache_creation_input_tokens": 0, "cache_read_input_tokens": 0, "cache_creation": {"ephemeral_5m_input_tokens": 0, "ephemeral_1h_input_tokens": 0}, "output_tokens": 289, "service_tier": "batch", "inference_geo": "not_available"}
+RESPONSE:
+# How Photosynthesis Works
+
+Photosynthesis is the process plants use to convert light energy into chemical energy. Here's the basic breakdown:
+
+## The Simple Equation
+**Light + Water + Carbon Dioxide → Glucose + Oxygen**
+
+## Two Main Stages
+
+### Light-Dependent Reactions (in thylakoids)
+- Occur in the presence of light
+- Chlorophyll absorbs photons, exciting electrons
+- Water molecules are split, releasing oxygen
+- Energy is captured in molecules called ATP and NADPH
+
+### Light-Independent Reactions/Calvin Cycle (in stroma)
+- Don't directly require light (but depend on light-stage products)
+- Use ATP and NADPH to convert CO₂ into glucose
+- This glucose fuels plant growth and serves as stored energy
+
+## Key Locations
+- **Chloroplasts** contain all the machinery
+- **Thylakoids** (stacked structures) handle light reactions
+- **Stroma** (fluid space) handles the Calvin cycle
+
+## Why It Matters
+- Produces oxygen we breathe
+- Creates glucose that feeds the plant and food chains
+- Represents how plants capture and store solar energy
+
+Plants essentially use the sun's energy to build the molecules they need to grow—pretty remarkable!
+2026-08-17 09:08:07,063 INFO llm_benchmark.providers.anthropic_batch anthropic_batch.result model=claude-haiku-4-5-20251001 custom_id=reasoning_003__rep2
+USAGE (verbatim from the provider - the source of every token count):
+{"input_tokens": 17, "cache_creation_input_tokens": 0, "cache_read_input_tokens": 0, "cache_creation": {"ephemeral_5m_input_tokens": 0, "ephemeral_1h_input_tokens": 0}, "output_tokens": 281, "service_tier": "batch", "inference_geo": "not_available"}
+RESPONSE:
+# Photosynthesis Basics
+
+Photosynthesis is how plants convert light energy into chemical energy (sugar). Here's the simplified process:
+
+## The Main Equation
+**Light + Water + Carbon Dioxide → Glucose + Oxygen**
+
+## Two Key Stages
+
+**Light-dependent reactions** (in thylakoid membranes)
+- Chlorophyll absorbs sunlight
+- Water molecules split, releasing oxygen
+- Energy is captured as ATP and NADPH
+
+**Light-independent reactions** (Calvin cycle, in stroma)
+- Uses the ATP and NADPH from above
+- Converts CO₂ into glucose through a series of chemical reactions
+- No direct sunlight needed for this stage
+
+## Where It Happens
+- **Chloroplasts** are the organelles containing chlorophyll
+- Concentrated in **leaves**, especially the green palisade layer
+
+## Why It Matters
+- Produces glucose (food/energy) for the plant
+- Releases oxygen as a byproduct (essential for life on Earth)
+- Forms the base of most food chains
+
+The process is remarkably efficient at capturing and storing solar energy—something scientists are still trying to replicate artificially.
+
+Would you like me to explain any stage in more detail?
+2026-08-17 09:08:07,063 INFO llm_benchmark.providers.anthropic_batch anthropic_batch.done model=claude-haiku-4-5-20251001 batch_id=msgbatch_01UdcJXAjPaJckQYoGqHnpkv turnaround_s=49.0 ok=20 err=0
+2026-08-17 09:08:09,108 INFO httpx HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2026-08-17 09:08:09,115 INFO llm_benchmark.providers.ollama ollama.measure model=llama3.2 url=http://localhost:11434/api/generate
+SYSTEM TEMPLATE (wraps the prompt server-side; the extra tokens_in over the visible words are these):
+<|start_header_id|>system<|end_header_id|>
+
+Cutting Knowledge Date: December 2023
+
+{{ if .System }}{{ .System }}
+{{- end }}
+{{- if .Tools }}When you receive a tool call response, use the output to format an answer to the orginal user question.
+
+You are a helpful assistant with tool calling capabilities.
+{{- end }}<|eot_id|>
+{{- range $i, $_ := .Messages }}
+{{- $last := eq (len (slice $.Messages $i)) 1 }}
+{{- if eq .Role "user" }}<|start_header_id|>user<|end_header_id|>
+{{- if and $.Tools $last }}
+
+Given the following functions, please respond with a JSON for a function call with its proper arguments that best answers the given prompt.
+
+Respond in the format {"name": function name, "parameters": dictionary of argument name and its value}. Do not use variables.
+
+{{ range $.Tools }}
+{{- . }}
+{{ end }}
+{{ .Content }}<|eot_id|>
+{{- else }}
+
+{{ .Content }}<|eot_id|>
+{{- end }}{{ if $last }}<|start_header_id|>assistant<|end_header_id|>
+
+{{ end }}
+{{- else if eq .Role "assistant" }}<|start_header_id|>assistant<|end_header_id|>
+{{- if .ToolCalls }}
+{{ range .ToolCalls }}
+{"name": "{{ .Function.Name }}", "parameters": {{ .Function.Arguments }}}{{ end }}
+{{- else }}
+
+{{ .Content }}
+{{- end }}{{ if not $last }}<|eot_id|>{{ end }}
+{{- else if eq .Role "tool" }}<|start_header_id|>ipython<|end_header_id|>
+
+{{ .Content }}<|eot_id|>{{ if $last }}<|start_header_id|>assistant<|end_header_id|>
+
+{{ end }}
+{{- end }}
+{{- end }}
+PROMPT:
+You are a strict but fair grader for a question-answering system.
+
+You will be given:
+- A QUESTION
+- An EXPECTED answer (a reference — the model's answer does NOT need to
+  match it word-for-word to be correct)
+- The MODEL'S answer to grade
+
+Grade the model's answer on two dimensions, each 0-10:
+- correctness: does the answer correctly answer the question?
+  10 = fully correct (even if phrased differently from the expected answer)
+   5 = partially correct, or correct but with significant inaccuracies
+   0 = wrong, contradicts the expected answer, or hallucinated
+- relevance: is the answer on-topic and responsive to the question?
+  10 = directly addresses the question
+   5 = partially on-topic, drifts
+   0 = off-topic or refuses to answer
+
+Respond with ONLY a JSON object, no other text:
+{"reasoning": "<one or two sentences explaining your scores>",
+ "correctness": <int>,
+ "relevance": <int>}
+
+QUESTION: What is the capital of Slovenia?
+EXPECTED: Ljubljana
+MODEL'S ANSWER: The capital of Slovenia is Ljubljana.
+2026-08-17 09:08:11,199 INFO httpx HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-08-17 09:08:18,182 INFO llm_benchmark.providers.ollama ollama.measure done model=llama3.2 tokens_in=279 tokens_out=41 latency_ms=9063.9 ttft_ms=2098.1
+RESPONSE:
+{"reasoning": "The model's answer correctly identifies the capital of Slovenia, but does not provide any additional context or information.", "correctness": 10, "relevance": 10}
+2026-08-17 09:08:18,186 INFO llm_benchmark.scorers.judge judge.score verdict=PASS correctness=10/10 relevance=10/10 score=1.000 >= threshold=0.7 | reasoning: The model's answer correctly identifies the capital of Slovenia, but does not provide any additional context or information.
+2026-08-17 09:08:18,201 INFO __main__ batch.wrote model=claude-haiku-4-5-20251001 item=factual_001 rep=1 cost_usd=3.2e-05 score=1.000 -> cache-batch/claude-haiku-4-5-20251001__factual_001__rep1.json
+2026-08-17 09:08:18,548 INFO llm_benchmark.providers.ollama ollama.measure model=llama3.2 url=http://localhost:11434/api/generate
+SYSTEM TEMPLATE (wraps the prompt server-side; the extra tokens_in over the visible words are these):
+<|start_header_id|>system<|end_header_id|>
+
+Cutting Knowledge Date: December 2023
+
+{{ if .System }}{{ .System }}
+{{- end }}
+{{- if .Tools }}When you receive a tool call response, use the output to format an answer to the orginal user question.
+
+You are a helpful assistant with tool calling capabilities.
+{{- end }}<|eot_id|>
+{{- range $i, $_ := .Messages }}
+{{- $last := eq (len (slice $.Messages $i)) 1 }}
+{{- if eq .Role "user" }}<|start_header_id|>user<|end_header_id|>
+{{- if and $.Tools $last }}
+
+Given the following functions, please respond with a JSON for a function call with its proper arguments that best answers the given prompt.
+
+Respond in the format {"name": function name, "parameters": dictionary of argument name and its value}. Do not use variables.
+
+{{ range $.Tools }}
+{{- . }}
+{{ end }}
+{{ .Content }}<|eot_id|>
+{{- else }}
+
+{{ .Content }}<|eot_id|>
+{{- end }}{{ if $last }}<|start_header_id|>assistant<|end_header_id|>
+
+{{ end }}
+{{- else if eq .Role "assistant" }}<|start_header_id|>assistant<|end_header_id|>
+{{- if .ToolCalls }}
+{{ range .ToolCalls }}
+{"name": "{{ .Function.Name }}", "parameters": {{ .Function.Arguments }}}{{ end }}
+{{- else }}
+
+{{ .Content }}
+{{- end }}{{ if not $last }}<|eot_id|>{{ end }}
+{{- else if eq .Role "tool" }}<|start_header_id|>ipython<|end_header_id|>
+
+{{ .Content }}<|eot_id|>{{ if $last }}<|start_header_id|>assistant<|end_header_id|>
+
+{{ end }}
+{{- end }}
+{{- end }}
+PROMPT:
+You are a strict but fair grader for a question-answering system.
+
+You will be given:
+- A QUESTION
+- An EXPECTED answer (a reference — the model's answer does NOT need to
+  match it word-for-word to be correct)
+- The MODEL'S answer to grade
+
+Grade the model's answer on two dimensions, each 0-10:
+- correctness: does the answer correctly answer the question?
+  10 = fully correct (even if phrased differently from the expected answer)
+   5 = partially correct, or correct but with significant inaccuracies
+   0 = wrong, contradicts the expected answer, or hallucinated
+- relevance: is the answer on-topic and responsive to the question?
+  10 = directly addresses the question
+   5 = partially on-topic, drifts
+   0 = off-topic or refuses to answer
+
+Respond with ONLY a JSON object, no other text:
+{"reasoning": "<one or two sentences explaining your scores>",
+ "correctness": <int>,
+ "relevance": <int>}
+
+QUESTION: What is the capital of Slovenia?
+EXPECTED: Ljubljana
+MODEL'S ANSWER: The capital of Slovenia is Ljubljana.
+2026-08-17 09:08:25,727 INFO httpx HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-08-17 09:08:31,375 INFO llm_benchmark.providers.ollama ollama.measure done model=llama3.2 tokens_in=279 tokens_out=41 latency_ms=12811.8 ttft_ms=7342.4
+RESPONSE:
+{"reasoning": "The model's answer correctly identifies the capital of Slovenia, but does not provide any additional context or information.", "correctness": 10, "relevance": 10}
+2026-08-17 09:08:31,382 INFO llm_benchmark.scorers.judge judge.score verdict=PASS correctness=10/10 relevance=10/10 score=1.000 >= threshold=0.7 | reasoning: The model's answer correctly identifies the capital of Slovenia, but does not provide any additional context or information.
+2026-08-17 09:08:31,398 INFO __main__ batch.wrote model=claude-haiku-4-5-20251001 item=factual_001 rep=2 cost_usd=3.2e-05 score=1.000 -> cache-batch/claude-haiku-4-5-20251001__factual_001__rep2.json
+2026-08-17 09:08:31,988 INFO llm_benchmark.providers.ollama ollama.measure model=llama3.2 url=http://localhost:11434/api/generate
+SYSTEM TEMPLATE (wraps the prompt server-side; the extra tokens_in over the visible words are these):
+<|start_header_id|>system<|end_header_id|>
+
+Cutting Knowledge Date: December 2023
+
+{{ if .System }}{{ .System }}
+{{- end }}
+{{- if .Tools }}When you receive a tool call response, use the output to format an answer to the orginal user question.
+
+You are a helpful assistant with tool calling capabilities.
+{{- end }}<|eot_id|>
+{{- range $i, $_ := .Messages }}
+{{- $last := eq (len (slice $.Messages $i)) 1 }}
+{{- if eq .Role "user" }}<|start_header_id|>user<|end_header_id|>
+{{- if and $.Tools $last }}
+
+Given the following functions, please respond with a JSON for a function call with its proper arguments that best answers the given prompt.
+
+Respond in the format {"name": function name, "parameters": dictionary of argument name and its value}. Do not use variables.
+
+{{ range $.Tools }}
+{{- . }}
+{{ end }}
+{{ .Content }}<|eot_id|>
+{{- else }}
+
+{{ .Content }}<|eot_id|>
+{{- end }}{{ if $last }}<|start_header_id|>assistant<|end_header_id|>
+
+{{ end }}
+{{- else if eq .Role "assistant" }}<|start_header_id|>assistant<|end_header_id|>
+{{- if .ToolCalls }}
+{{ range .ToolCalls }}
+{"name": "{{ .Function.Name }}", "parameters": {{ .Function.Arguments }}}{{ end }}
+{{- else }}
+
+{{ .Content }}
+{{- end }}{{ if not $last }}<|eot_id|>{{ end }}
+{{- else if eq .Role "tool" }}<|start_header_id|>ipython<|end_header_id|>
+
+{{ .Content }}<|eot_id|>{{ if $last }}<|start_header_id|>assistant<|end_header_id|>
+
+{{ end }}
+{{- end }}
+{{- end }}
+PROMPT:
+You are a strict but fair grader for a question-answering system.
+
+You will be given:
+- A QUESTION
+- An EXPECTED answer (a reference — the model's answer does NOT need to
+  match it word-for-word to be correct)
+- The MODEL'S answer to grade
+
+Grade the model's answer on two dimensions, each 0-10:
+- correctness: does the answer correctly answer the question?
+  10 = fully correct (even if phrased differently from the expected answer)
+   5 = partially correct, or correct but with significant inaccuracies
+   0 = wrong, contradicts the expected answer, or hallucinated
+- relevance: is the answer on-topic and responsive to the question?
+  10 = directly addresses the question
+   5 = partially on-topic, drifts
+   0 = off-topic or refuses to answer
+
+Respond with ONLY a JSON object, no other text:
+{"reasoning": "<one or two sentences explaining your scores>",
+ "correctness": <int>,
+ "relevance": <int>}
+
+QUESTION: What is the chemical symbol for silver?
+EXPECTED: Ag
+MODEL'S ANSWER: The chemical symbol for silver is **Ag**.
+2026-08-17 09:08:34,419 INFO httpx HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-08-17 09:08:45,703 INFO llm_benchmark.providers.ollama ollama.measure done model=llama3.2 tokens_in=275 tokens_out=43 latency_ms=13710.3 ttft_ms=2439.3
+RESPONSE:
+{"reasoning": "The model's answer correctly identifies the chemical symbol for silver, but it does not provide any additional context or explanation.", "correctness": 10, "relevance": 10}
+2026-08-17 09:08:45,712 INFO llm_benchmark.scorers.judge judge.score verdict=PASS correctness=10/10 relevance=10/10 score=1.000 >= threshold=0.7 | reasoning: The model's answer correctly identifies the chemical symbol for silver, but it does not provide any additional context or explanation.
+2026-08-17 09:08:45,733 INFO __main__ batch.wrote model=claude-haiku-4-5-20251001 item=factual_002 rep=1 cost_usd=4e-05 score=1.000 -> cache-batch/claude-haiku-4-5-20251001__factual_002__rep1.json
+2026-08-17 09:08:46,230 INFO llm_benchmark.providers.ollama ollama.measure model=llama3.2 url=http://localhost:11434/api/generate
+SYSTEM TEMPLATE (wraps the prompt server-side; the extra tokens_in over the visible words are these):
+<|start_header_id|>system<|end_header_id|>
+
+Cutting Knowledge Date: December 2023
+
+{{ if .System }}{{ .System }}
+{{- end }}
+{{- if .Tools }}When you receive a tool call response, use the output to format an answer to the orginal user question.
+
+You are a helpful assistant with tool calling capabilities.
+{{- end }}<|eot_id|>
+{{- range $i, $_ := .Messages }}
+{{- $last := eq (len (slice $.Messages $i)) 1 }}
+{{- if eq .Role "user" }}<|start_header_id|>user<|end_header_id|>
+{{- if and $.Tools $last }}
+
+Given the following functions, please respond with a JSON for a function call with its proper arguments that best answers the given prompt.
+
+Respond in the format {"name": function name, "parameters": dictionary of argument name and its value}. Do not use variables.
+
+{{ range $.Tools }}
+{{- . }}
+{{ end }}
+{{ .Content }}<|eot_id|>
+{{- else }}
+
+{{ .Content }}<|eot_id|>
+{{- end }}{{ if $last }}<|start_header_id|>assistant<|end_header_id|>
+
+{{ end }}
+{{- else if eq .Role "assistant" }}<|start_header_id|>assistant<|end_header_id|>
+{{- if .ToolCalls }}
+{{ range .ToolCalls }}
+{"name": "{{ .Function.Name }}", "parameters": {{ .Function.Arguments }}}{{ end }}
+{{- else }}
+
+{{ .Content }}
+{{- end }}{{ if not $last }}<|eot_id|>{{ end }}
+{{- else if eq .Role "tool" }}<|start_header_id|>ipython<|end_header_id|>
+
+{{ .Content }}<|eot_id|>{{ if $last }}<|start_header_id|>assistant<|end_header_id|>
+
+{{ end }}
+{{- end }}
+{{- end }}
+PROMPT:
+You are a strict but fair grader for a question-answering system.
+
+You will be given:
+- A QUESTION
+- An EXPECTED answer (a reference — the model's answer does NOT need to
+  match it word-for-word to be correct)
+- The MODEL'S answer to grade
+
+Grade the model's answer on two dimensions, each 0-10:
+- correctness: does the answer correctly answer the question?
+  10 = fully correct (even if phrased differently from the expected answer)
+   5 = partially correct, or correct but with significant inaccuracies
+   0 = wrong, contradicts the expected answer, or hallucinated
+- relevance: is the answer on-topic and responsive to the question?
+  10 = directly addresses the question
+   5 = partially on-topic, drifts
+   0 = off-topic or refuses to answer
+
+Respond with ONLY a JSON object, no other text:
+{"reasoning": "<one or two sentences explaining your scores>",
+ "correctness": <int>,
+ "relevance": <int>}
+
+QUESTION: What is the chemical symbol for silver?
+EXPECTED: Ag
+MODEL'S ANSWER: The chemical symbol for silver is **Ag**.
+2026-08-17 09:08:53,441 INFO httpx HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-08-17 09:09:24,978 INFO llm_benchmark.providers.ollama ollama.measure done model=llama3.2 tokens_in=275 tokens_out=43 latency_ms=38741.5 ttft_ms=7231.9
+RESPONSE:
+{"reasoning": "The model's answer correctly identifies the chemical symbol for silver, but it does not provide any additional context or explanation.", "correctness": 10, "relevance": 10}
+2026-08-17 09:09:25,023 INFO llm_benchmark.scorers.judge judge.score verdict=PASS correctness=10/10 relevance=10/10 score=1.000 >= threshold=0.7 | reasoning: The model's answer correctly identifies the chemical symbol for silver, but it does not provide any additional context or explanation.
+2026-08-17 09:09:25,151 INFO __main__ batch.wrote model=claude-haiku-4-5-20251001 item=factual_002 rep=2 cost_usd=4e-05 score=1.000 -> cache-batch/claude-haiku-4-5-20251001__factual_002__rep2.json
+2026-08-17 09:09:27,513 INFO llm_benchmark.providers.ollama ollama.measure model=llama3.2 url=http://localhost:11434/api/generate
+SYSTEM TEMPLATE (wraps the prompt server-side; the extra tokens_in over the visible words are these):
+<|start_header_id|>system<|end_header_id|>
+
+Cutting Knowledge Date: December 2023
+
+{{ if .System }}{{ .System }}
+{{- end }}
+{{- if .Tools }}When you receive a tool call response, use the output to format an answer to the orginal user question.
+
+You are a helpful assistant with tool calling capabilities.
+{{- end }}<|eot_id|>
+{{- range $i, $_ := .Messages }}
+{{- $last := eq (len (slice $.Messages $i)) 1 }}
+{{- if eq .Role "user" }}<|start_header_id|>user<|end_header_id|>
+{{- if and $.Tools $last }}
+
+Given the following functions, please respond with a JSON for a function call with its proper arguments that best answers the given prompt.
+
+Respond in the format {"name": function name, "parameters": dictionary of argument name and its value}. Do not use variables.
+
+{{ range $.Tools }}
+{{- . }}
+{{ end }}
+{{ .Content }}<|eot_id|>
+{{- else }}
+
+{{ .Content }}<|eot_id|>
+{{- end }}{{ if $last }}<|start_header_id|>assistant<|end_header_id|>
+
+{{ end }}
+{{- else if eq .Role "assistant" }}<|start_header_id|>assistant<|end_header_id|>
+{{- if .ToolCalls }}
+{{ range .ToolCalls }}
+{"name": "{{ .Function.Name }}", "parameters": {{ .Function.Arguments }}}{{ end }}
+{{- else }}
+
+{{ .Content }}
+{{- end }}{{ if not $last }}<|eot_id|>{{ end }}
+{{- else if eq .Role "tool" }}<|start_header_id|>ipython<|end_header_id|>
+
+{{ .Content }}<|eot_id|>{{ if $last }}<|start_header_id|>assistant<|end_header_id|>
+
+{{ end }}
+{{- end }}
+{{- end }}
+PROMPT:
+You are a strict but fair grader for a question-answering system.
+
+You will be given:
+- A QUESTION
+- An EXPECTED answer (a reference — the model's answer does NOT need to
+  match it word-for-word to be correct)
+- The MODEL'S answer to grade
+
+Grade the model's answer on two dimensions, each 0-10:
+- correctness: does the answer correctly answer the question?
+  10 = fully correct (even if phrased differently from the expected answer)
+   5 = partially correct, or correct but with significant inaccuracies
+   0 = wrong, contradicts the expected answer, or hallucinated
+- relevance: is the answer on-topic and responsive to the question?
+  10 = directly addresses the question
+   5 = partially on-topic, drifts
+   0 = off-topic or refuses to answer
+
+Respond with ONLY a JSON object, no other text:
+{"reasoning": "<one or two sentences explaining your scores>",
+ "correctness": <int>,
+ "relevance": <int>}
+
+QUESTION: In what continent is Lima located?
+EXPECTED: South America
+MODEL'S ANSWER: Lima is located in South America. It is the capital city of Peru.
+2026-08-17 09:09:38,087 INFO httpx HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-08-17 09:09:43,184 INFO llm_benchmark.providers.ollama ollama.measure done model=llama3.2 tokens_in=280 tokens_out=38 latency_ms=15370.5 ttft_ms=10702.9
+RESPONSE:
+{"reasoning": "The model's answer correctly identifies the continent and provides additional relevant information about Lima's location.", "correctness": 10, "relevance": 10}
+2026-08-17 09:09:43,202 INFO llm_benchmark.scorers.judge judge.score verdict=PASS correctness=10/10 relevance=10/10 score=1.000 >= threshold=0.7 | reasoning: The model's answer correctly identifies the continent and provides additional relevant information about Lima's location.
+2026-08-17 09:09:43,230 INFO __main__ batch.wrote model=claude-haiku-4-5-20251001 item=factual_003 rep=1 cost_usd=5.2e-05 score=1.000 -> cache-batch/claude-haiku-4-5-20251001__factual_003__rep1.json
+2026-08-17 09:09:43,313 INFO llm_benchmark.providers.ollama ollama.measure model=llama3.2 url=http://localhost:11434/api/generate
+SYSTEM TEMPLATE (wraps the prompt server-side; the extra tokens_in over the visible words are these):
+<|start_header_id|>system<|end_header_id|>
+
+Cutting Knowledge Date: December 2023
+
+{{ if .System }}{{ .System }}
+{{- end }}
+{{- if .Tools }}When you receive a tool call response, use the output to format an answer to the orginal user question.
+
+You are a helpful assistant with tool calling capabilities.
+{{- end }}<|eot_id|>
+{{- range $i, $_ := .Messages }}
+{{- $last := eq (len (slice $.Messages $i)) 1 }}
+{{- if eq .Role "user" }}<|start_header_id|>user<|end_header_id|>
+{{- if and $.Tools $last }}
+
+Given the following functions, please respond with a JSON for a function call with its proper arguments that best answers the given prompt.
+
+Respond in the format {"name": function name, "parameters": dictionary of argument name and its value}. Do not use variables.
+
+{{ range $.Tools }}
+{{- . }}
+{{ end }}
+{{ .Content }}<|eot_id|>
+{{- else }}
+
+{{ .Content }}<|eot_id|>
+{{- end }}{{ if $last }}<|start_header_id|>assistant<|end_header_id|>
+
+{{ end }}
+{{- else if eq .Role "assistant" }}<|start_header_id|>assistant<|end_header_id|>
+{{- if .ToolCalls }}
+{{ range .ToolCalls }}
+{"name": "{{ .Function.Name }}", "parameters": {{ .Function.Arguments }}}{{ end }}
+{{- else }}
+
+{{ .Content }}
+{{- end }}{{ if not $last }}<|eot_id|>{{ end }}
+{{- else if eq .Role "tool" }}<|start_header_id|>ipython<|end_header_id|>
+
+{{ .Content }}<|eot_id|>{{ if $last }}<|start_header_id|>assistant<|end_header_id|>
+
+{{ end }}
+{{- end }}
+{{- end }}
+PROMPT:
+You are a strict but fair grader for a question-answering system.
+
+You will be given:
+- A QUESTION
+- An EXPECTED answer (a reference — the model's answer does NOT need to
+  match it word-for-word to be correct)
+- The MODEL'S answer to grade
+
+Grade the model's answer on two dimensions, each 0-10:
+- correctness: does the answer correctly answer the question?
+  10 = fully correct (even if phrased differently from the expected answer)
+   5 = partially correct, or correct but with significant inaccuracies
+   0 = wrong, contradicts the expected answer, or hallucinated
+- relevance: is the answer on-topic and responsive to the question?
+  10 = directly addresses the question
+   5 = partially on-topic, drifts
+   0 = off-topic or refuses to answer
+
+Respond with ONLY a JSON object, no other text:
+{"reasoning": "<one or two sentences explaining your scores>",
+ "correctness": <int>,
+ "relevance": <int>}
+
+QUESTION: In what continent is Lima located?
+EXPECTED: South America
+MODEL'S ANSWER: Lima is located in South America. It is the capital and largest city of Peru.
+2026-08-17 09:09:46,492 INFO httpx HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-08-17 09:09:53,572 INFO llm_benchmark.providers.ollama ollama.measure done model=llama3.2 tokens_in=282 tokens_out=47 latency_ms=10226.3 ttft_ms=3276.8
+RESPONSE:
+{"reasoning": "The model's answer correctly identifies Lima as being in South America, but also provides additional information that is not directly relevant to the question.", "correctness": 10, "relevance": 9}
+2026-08-17 09:09:53,657 INFO llm_benchmark.scorers.judge judge.score verdict=PASS correctness=10/10 relevance=9/10 score=0.950 >= threshold=0.7 | reasoning: The model's answer correctly identifies Lima as being in South America, but also provides additional information that is not directly relevant to the question.
+2026-08-17 09:09:53,818 INFO __main__ batch.wrote model=claude-haiku-4-5-20251001 item=factual_003 rep=2 cost_usd=5.7e-05 score=0.950 -> cache-batch/claude-haiku-4-5-20251001__factual_003__rep2.json
+2026-08-17 09:09:54,465 INFO llm_benchmark.providers.ollama ollama.measure model=llama3.2 url=http://localhost:11434/api/generate
+SYSTEM TEMPLATE (wraps the prompt server-side; the extra tokens_in over the visible words are these):
+<|start_header_id|>system<|end_header_id|>
+
+Cutting Knowledge Date: December 2023
+
+{{ if .System }}{{ .System }}
+{{- end }}
+{{- if .Tools }}When you receive a tool call response, use the output to format an answer to the orginal user question.
+
+You are a helpful assistant with tool calling capabilities.
+{{- end }}<|eot_id|>
+{{- range $i, $_ := .Messages }}
+{{- $last := eq (len (slice $.Messages $i)) 1 }}
+{{- if eq .Role "user" }}<|start_header_id|>user<|end_header_id|>
+{{- if and $.Tools $last }}
+
+Given the following functions, please respond with a JSON for a function call with its proper arguments that best answers the given prompt.
+
+Respond in the format {"name": function name, "parameters": dictionary of argument name and its value}. Do not use variables.
+
+{{ range $.Tools }}
+{{- . }}
+{{ end }}
+{{ .Content }}<|eot_id|>
+{{- else }}
+
+{{ .Content }}<|eot_id|>
+{{- end }}{{ if $last }}<|start_header_id|>assistant<|end_header_id|>
+
+{{ end }}
+{{- else if eq .Role "assistant" }}<|start_header_id|>assistant<|end_header_id|>
+{{- if .ToolCalls }}
+{{ range .ToolCalls }}
+{"name": "{{ .Function.Name }}", "parameters": {{ .Function.Arguments }}}{{ end }}
+{{- else }}
+
+{{ .Content }}
+{{- end }}{{ if not $last }}<|eot_id|>{{ end }}
+{{- else if eq .Role "tool" }}<|start_header_id|>ipython<|end_header_id|>
+
+{{ .Content }}<|eot_id|>{{ if $last }}<|start_header_id|>assistant<|end_header_id|>
+
+{{ end }}
+{{- end }}
+{{- end }}
+PROMPT:
+You are a strict but fair grader for a question-answering system.
+
+You will be given:
+- A QUESTION
+- An EXPECTED answer (a reference — the model's answer does NOT need to
+  match it word-for-word to be correct)
+- The MODEL'S answer to grade
+
+Grade the model's answer on two dimensions, each 0-10:
+- correctness: does the answer correctly answer the question?
+  10 = fully correct (even if phrased differently from the expected answer)
+   5 = partially correct, or correct but with significant inaccuracies
+   0 = wrong, contradicts the expected answer, or hallucinated
+- relevance: is the answer on-topic and responsive to the question?
+  10 = directly addresses the question
+   5 = partially on-topic, drifts
+   0 = off-topic or refuses to answer
+
+Respond with ONLY a JSON object, no other text:
+{"reasoning": "<one or two sentences explaining your scores>",
+ "correctness": <int>,
+ "relevance": <int>}
+
+QUESTION: How many planets are in our solar system?
+EXPECTED: 8
+MODEL'S ANSWER: There are 8 planets in our solar system:
+
+1. Mercury
+2. Venus
+3. Earth
+4. Mars
+5. Jupiter
+6. Saturn
+7. Uranus
+8. Neptune
+
+Pluto was reclassified as a "dwarf planet" in 2006 by the International Astronomical Union.
+2026-08-17 09:10:02,616 INFO httpx HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-08-17 09:10:09,517 INFO llm_benchmark.providers.ollama ollama.measure done model=llama3.2 tokens_in=334 tokens_out=35 latency_ms=15028.6 ttft_ms=8159.1
+RESPONSE:
+{"reasoning": "The model's answer is correct, but includes extraneous information about Pluto.", "correctness": 10, "relevance": 9}
+2026-08-17 09:10:09,540 INFO llm_benchmark.scorers.judge judge.score verdict=PASS correctness=10/10 relevance=9/10 score=0.950 >= threshold=0.7 | reasoning: The model's answer is correct, but includes extraneous information about Pluto.
+2026-08-17 09:10:10,415 INFO __main__ batch.wrote model=claude-haiku-4-5-20251001 item=factual_004 rep=1 cost_usd=0.000198 score=0.950 -> cache-batch/claude-haiku-4-5-20251001__factual_004__rep1.json
+2026-08-17 09:10:11,831 INFO llm_benchmark.providers.ollama ollama.measure model=llama3.2 url=http://localhost:11434/api/generate
+SYSTEM TEMPLATE (wraps the prompt server-side; the extra tokens_in over the visible words are these):
+<|start_header_id|>system<|end_header_id|>
+
+Cutting Knowledge Date: December 2023
+
+{{ if .System }}{{ .System }}
+{{- end }}
+{{- if .Tools }}When you receive a tool call response, use the output to format an answer to the orginal user question.
+
+You are a helpful assistant with tool calling capabilities.
+{{- end }}<|eot_id|>
+{{- range $i, $_ := .Messages }}
+{{- $last := eq (len (slice $.Messages $i)) 1 }}
+{{- if eq .Role "user" }}<|start_header_id|>user<|end_header_id|>
+{{- if and $.Tools $last }}
+
+Given the following functions, please respond with a JSON for a function call with its proper arguments that best answers the given prompt.
+
+Respond in the format {"name": function name, "parameters": dictionary of argument name and its value}. Do not use variables.
+
+{{ range $.Tools }}
+{{- . }}
+{{ end }}
+{{ .Content }}<|eot_id|>
+{{- else }}
+
+{{ .Content }}<|eot_id|>
+{{- end }}{{ if $last }}<|start_header_id|>assistant<|end_header_id|>
+
+{{ end }}
+{{- else if eq .Role "assistant" }}<|start_header_id|>assistant<|end_header_id|>
+{{- if .ToolCalls }}
+{{ range .ToolCalls }}
+{"name": "{{ .Function.Name }}", "parameters": {{ .Function.Arguments }}}{{ end }}
+{{- else }}
+
+{{ .Content }}
+{{- end }}{{ if not $last }}<|eot_id|>{{ end }}
+{{- else if eq .Role "tool" }}<|start_header_id|>ipython<|end_header_id|>
+
+{{ .Content }}<|eot_id|>{{ if $last }}<|start_header_id|>assistant<|end_header_id|>
+
+{{ end }}
+{{- end }}
+{{- end }}
+PROMPT:
+You are a strict but fair grader for a question-answering system.
+
+You will be given:
+- A QUESTION
+- An EXPECTED answer (a reference — the model's answer does NOT need to
+  match it word-for-word to be correct)
+- The MODEL'S answer to grade
+
+Grade the model's answer on two dimensions, each 0-10:
+- correctness: does the answer correctly answer the question?
+  10 = fully correct (even if phrased differently from the expected answer)
+   5 = partially correct, or correct but with significant inaccuracies
+   0 = wrong, contradicts the expected answer, or hallucinated
+- relevance: is the answer on-topic and responsive to the question?
+  10 = directly addresses the question
+   5 = partially on-topic, drifts
+   0 = off-topic or refuses to answer
+
+Respond with ONLY a JSON object, no other text:
+{"reasoning": "<one or two sentences explaining your scores>",
+ "correctness": <int>,
+ "relevance": <int>}
+
+QUESTION: How many planets are in our solar system?
+EXPECTED: 8
+MODEL'S ANSWER: There are 8 planets in our solar system:
+
+1. Mercury
+2. Venus
+3. Earth
+4. Mars
+5. Jupiter
+6. Saturn
+7. Uranus
+8. Neptune
+
+Pluto was reclassified as a "dwarf planet" in 2006 by the International Astronomical Union.
+2026-08-17 09:10:18,467 INFO httpx HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-08-17 09:10:26,888 INFO llm_benchmark.providers.ollama ollama.measure done model=llama3.2 tokens_in=334 tokens_out=35 latency_ms=15049.7 ttft_ms=6656.2
+RESPONSE:
+{"reasoning": "The model's answer is correct, but includes extraneous information about Pluto.", "correctness": 10, "relevance": 9}
+2026-08-17 09:10:26,896 INFO llm_benchmark.scorers.judge judge.score verdict=PASS correctness=10/10 relevance=9/10 score=0.950 >= threshold=0.7 | reasoning: The model's answer is correct, but includes extraneous information about Pluto.
+2026-08-17 09:10:26,914 INFO __main__ batch.wrote model=claude-haiku-4-5-20251001 item=factual_004 rep=2 cost_usd=0.000198 score=0.950 -> cache-batch/claude-haiku-4-5-20251001__factual_004__rep2.json
+2026-08-17 09:10:26,980 INFO llm_benchmark.providers.ollama ollama.measure model=llama3.2 url=http://localhost:11434/api/generate
+SYSTEM TEMPLATE (wraps the prompt server-side; the extra tokens_in over the visible words are these):
+<|start_header_id|>system<|end_header_id|>
+
+Cutting Knowledge Date: December 2023
+
+{{ if .System }}{{ .System }}
+{{- end }}
+{{- if .Tools }}When you receive a tool call response, use the output to format an answer to the orginal user question.
+
+You are a helpful assistant with tool calling capabilities.
+{{- end }}<|eot_id|>
+{{- range $i, $_ := .Messages }}
+{{- $last := eq (len (slice $.Messages $i)) 1 }}
+{{- if eq .Role "user" }}<|start_header_id|>user<|end_header_id|>
+{{- if and $.Tools $last }}
+
+Given the following functions, please respond with a JSON for a function call with its proper arguments that best answers the given prompt.
+
+Respond in the format {"name": function name, "parameters": dictionary of argument name and its value}. Do not use variables.
+
+{{ range $.Tools }}
+{{- . }}
+{{ end }}
+{{ .Content }}<|eot_id|>
+{{- else }}
+
+{{ .Content }}<|eot_id|>
+{{- end }}{{ if $last }}<|start_header_id|>assistant<|end_header_id|>
+
+{{ end }}
+{{- else if eq .Role "assistant" }}<|start_header_id|>assistant<|end_header_id|>
+{{- if .ToolCalls }}
+{{ range .ToolCalls }}
+{"name": "{{ .Function.Name }}", "parameters": {{ .Function.Arguments }}}{{ end }}
+{{- else }}
+
+{{ .Content }}
+{{- end }}{{ if not $last }}<|eot_id|>{{ end }}
+{{- else if eq .Role "tool" }}<|start_header_id|>ipython<|end_header_id|>
+
+{{ .Content }}<|eot_id|>{{ if $last }}<|start_header_id|>assistant<|end_header_id|>
+
+{{ end }}
+{{- end }}
+{{- end }}
+PROMPT:
+You are a strict but fair grader for a question-answering system.
+
+You will be given:
+- A QUESTION
+- An EXPECTED answer (a reference — the model's answer does NOT need to
+  match it word-for-word to be correct)
+- The MODEL'S answer to grade
+
+Grade the model's answer on two dimensions, each 0-10:
+- correctness: does the answer correctly answer the question?
+  10 = fully correct (even if phrased differently from the expected answer)
+   5 = partially correct, or correct but with significant inaccuracies
+   0 = wrong, contradicts the expected answer, or hallucinated
+- relevance: is the answer on-topic and responsive to the question?
+  10 = directly addresses the question
+   5 = partially on-topic, drifts
+   0 = off-topic or refuses to answer
+
+Respond with ONLY a JSON object, no other text:
+{"reasoning": "<one or two sentences explaining your scores>",
+ "correctness": <int>,
+ "relevance": <int>}
+
+QUESTION: What does the acronym AI stand for?
+EXPECTED: Artificial Intelligence
+MODEL'S ANSWER: AI stands for **Artificial Intelligence**.
+
+It refers to computer systems designed to perform tasks that typically require human intelligence, such as learning from experience, recognizing patterns, understanding language, and making decisions.
+2026-08-17 09:10:28,074 INFO httpx HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-08-17 09:10:38,226 INFO llm_benchmark.providers.ollama ollama.measure done model=llama3.2 tokens_in=306 tokens_out=49 latency_ms=11242.0 ttft_ms=1095.1
+RESPONSE:
+{"reasoning": "The model's answer is fully correct in terms of the definition of AI, but it provides additional context that is not necessary for answering the question.", "correctness": 10, "relevance": 10}
+2026-08-17 09:10:38,242 INFO llm_benchmark.scorers.judge judge.score verdict=PASS correctness=10/10 relevance=10/10 score=1.000 >= threshold=0.7 | reasoning: The model's answer is fully correct in terms of the definition of AI, but it provides additional context that is not necessary for answering the question.
+2026-08-17 09:10:38,246 INFO __main__ batch.wrote model=claude-haiku-4-5-20251001 item=definition_001 rep=1 cost_usd=0.000118 score=1.000 -> cache-batch/claude-haiku-4-5-20251001__definition_001__rep1.json
+2026-08-17 09:10:38,342 INFO llm_benchmark.providers.ollama ollama.measure model=llama3.2 url=http://localhost:11434/api/generate
+SYSTEM TEMPLATE (wraps the prompt server-side; the extra tokens_in over the visible words are these):
+<|start_header_id|>system<|end_header_id|>
+
+Cutting Knowledge Date: December 2023
+
+{{ if .System }}{{ .System }}
+{{- end }}
+{{- if .Tools }}When you receive a tool call response, use the output to format an answer to the orginal user question.
+
+You are a helpful assistant with tool calling capabilities.
+{{- end }}<|eot_id|>
+{{- range $i, $_ := .Messages }}
+{{- $last := eq (len (slice $.Messages $i)) 1 }}
+{{- if eq .Role "user" }}<|start_header_id|>user<|end_header_id|>
+{{- if and $.Tools $last }}
+
+Given the following functions, please respond with a JSON for a function call with its proper arguments that best answers the given prompt.
+
+Respond in the format {"name": function name, "parameters": dictionary of argument name and its value}. Do not use variables.
+
+{{ range $.Tools }}
+{{- . }}
+{{ end }}
+{{ .Content }}<|eot_id|>
+{{- else }}
+
+{{ .Content }}<|eot_id|>
+{{- end }}{{ if $last }}<|start_header_id|>assistant<|end_header_id|>
+
+{{ end }}
+{{- else if eq .Role "assistant" }}<|start_header_id|>assistant<|end_header_id|>
+{{- if .ToolCalls }}
+{{ range .ToolCalls }}
+{"name": "{{ .Function.Name }}", "parameters": {{ .Function.Arguments }}}{{ end }}
+{{- else }}
+
+{{ .Content }}
+{{- end }}{{ if not $last }}<|eot_id|>{{ end }}
+{{- else if eq .Role "tool" }}<|start_header_id|>ipython<|end_header_id|>
+
+{{ .Content }}<|eot_id|>{{ if $last }}<|start_header_id|>assistant<|end_header_id|>
+
+{{ end }}
+{{- end }}
+{{- end }}
+PROMPT:
+You are a strict but fair grader for a question-answering system.
+
+You will be given:
+- A QUESTION
+- An EXPECTED answer (a reference — the model's answer does NOT need to
+  match it word-for-word to be correct)
+- The MODEL'S answer to grade
+
+Grade the model's answer on two dimensions, each 0-10:
+- correctness: does the answer correctly answer the question?
+  10 = fully correct (even if phrased differently from the expected answer)
+   5 = partially correct, or correct but with significant inaccuracies
+   0 = wrong, contradicts the expected answer, or hallucinated
+- relevance: is the answer on-topic and responsive to the question?
+  10 = directly addresses the question
+   5 = partially on-topic, drifts
+   0 = off-topic or refuses to answer
+
+Respond with ONLY a JSON object, no other text:
+{"reasoning": "<one or two sentences explaining your scores>",
+ "correctness": <int>,
+ "relevance": <int>}
+
+QUESTION: What does the acronym AI stand for?
+EXPECTED: Artificial Intelligence
+MODEL'S ANSWER: AI stands for **Artificial Intelligence**.
+
+It refers to computer systems designed to perform tasks that typically require human intelligence, such as learning, reasoning, problem-solving, and understanding language.
+2026-08-17 09:10:39,402 INFO httpx HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-08-17 09:10:48,419 INFO llm_benchmark.providers.ollama ollama.measure done model=llama3.2 tokens_in=303 tokens_out=49 latency_ms=10065.7 ttft_ms=1058.5
+RESPONSE:
+{"reasoning": "The model's answer is fully correct in terms of the acronym's meaning, but it provides additional context that is not necessary for answering the question.", "correctness": 10, "relevance": 10}
+2026-08-17 09:10:48,423 INFO llm_benchmark.scorers.judge judge.score verdict=PASS correctness=10/10 relevance=10/10 score=1.000 >= threshold=0.7 | reasoning: The model's answer is fully correct in terms of the acronym's meaning, but it provides additional context that is not necessary for answering the question.
+2026-08-17 09:10:48,431 INFO __main__ batch.wrote model=claude-haiku-4-5-20251001 item=definition_001 rep=2 cost_usd=0.0001105 score=1.000 -> cache-batch/claude-haiku-4-5-20251001__definition_001__rep2.json
+2026-08-17 09:10:48,487 INFO llm_benchmark.providers.ollama ollama.measure model=llama3.2 url=http://localhost:11434/api/generate
+SYSTEM TEMPLATE (wraps the prompt server-side; the extra tokens_in over the visible words are these):
+<|start_header_id|>system<|end_header_id|>
+
+Cutting Knowledge Date: December 2023
+
+{{ if .System }}{{ .System }}
+{{- end }}
+{{- if .Tools }}When you receive a tool call response, use the output to format an answer to the orginal user question.
+
+You are a helpful assistant with tool calling capabilities.
+{{- end }}<|eot_id|>
+{{- range $i, $_ := .Messages }}
+{{- $last := eq (len (slice $.Messages $i)) 1 }}
+{{- if eq .Role "user" }}<|start_header_id|>user<|end_header_id|>
+{{- if and $.Tools $last }}
+
+Given the following functions, please respond with a JSON for a function call with its proper arguments that best answers the given prompt.
+
+Respond in the format {"name": function name, "parameters": dictionary of argument name and its value}. Do not use variables.
+
+{{ range $.Tools }}
+{{- . }}
+{{ end }}
+{{ .Content }}<|eot_id|>
+{{- else }}
+
+{{ .Content }}<|eot_id|>
+{{- end }}{{ if $last }}<|start_header_id|>assistant<|end_header_id|>
+
+{{ end }}
+{{- else if eq .Role "assistant" }}<|start_header_id|>assistant<|end_header_id|>
+{{- if .ToolCalls }}
+{{ range .ToolCalls }}
+{"name": "{{ .Function.Name }}", "parameters": {{ .Function.Arguments }}}{{ end }}
+{{- else }}
+
+{{ .Content }}
+{{- end }}{{ if not $last }}<|eot_id|>{{ end }}
+{{- else if eq .Role "tool" }}<|start_header_id|>ipython<|end_header_id|>
+
+{{ .Content }}<|eot_id|>{{ if $last }}<|start_header_id|>assistant<|end_header_id|>
+
+{{ end }}
+{{- end }}
+{{- end }}
+PROMPT:
+You are a strict but fair grader for a question-answering system.
+
+You will be given:
+- A QUESTION
+- An EXPECTED answer (a reference — the model's answer does NOT need to
+  match it word-for-word to be correct)
+- The MODEL'S answer to grade
+
+Grade the model's answer on two dimensions, each 0-10:
+- correctness: does the answer correctly answer the question?
+  10 = fully correct (even if phrased differently from the expected answer)
+   5 = partially correct, or correct but with significant inaccuracies
+   0 = wrong, contradicts the expected answer, or hallucinated
+- relevance: is the answer on-topic and responsive to the question?
+  10 = directly addresses the question
+   5 = partially on-topic, drifts
+   0 = off-topic or refuses to answer
+
+Respond with ONLY a JSON object, no other text:
+{"reasoning": "<one or two sentences explaining your scores>",
+ "correctness": <int>,
+ "relevance": <int>}
+
+QUESTION: In one sentence, what is a black hole?
+EXPECTED: A region of space where the gravitational pull is so strong that nothing, not even light, can escape from it.
+MODEL'S ANSWER: A black hole is a region of spacetime where gravity is so intense that nothing, not even light, can escape from within its event horizon.
+2026-08-17 09:10:51,501 INFO httpx HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-08-17 09:10:59,320 INFO llm_benchmark.providers.ollama ollama.measure done model=llama3.2 tokens_in=317 tokens_out=41 latency_ms=10827.2 ttft_ms=3022.1
+RESPONSE:
+{"reasoning": "The model's answer demonstrates a clear understanding of the concept of a black hole and accurately describes its characteristics.", "correctness": 9, "relevance": 10}
+2026-08-17 09:10:59,373 INFO llm_benchmark.scorers.judge judge.score verdict=PASS correctness=9/10 relevance=10/10 score=0.950 >= threshold=0.7 | reasoning: The model's answer demonstrates a clear understanding of the concept of a black hole and accurately describes its characteristics.
+2026-08-17 09:10:59,392 INFO __main__ batch.wrote model=claude-haiku-4-5-20251001 item=definition_002 rep=1 cost_usd=8.85e-05 score=0.950 -> cache-batch/claude-haiku-4-5-20251001__definition_002__rep1.json
+2026-08-17 09:10:59,487 INFO llm_benchmark.providers.ollama ollama.measure model=llama3.2 url=http://localhost:11434/api/generate
+SYSTEM TEMPLATE (wraps the prompt server-side; the extra tokens_in over the visible words are these):
+<|start_header_id|>system<|end_header_id|>
+
+Cutting Knowledge Date: December 2023
+
+{{ if .System }}{{ .System }}
+{{- end }}
+{{- if .Tools }}When you receive a tool call response, use the output to format an answer to the orginal user question.
+
+You are a helpful assistant with tool calling capabilities.
+{{- end }}<|eot_id|>
+{{- range $i, $_ := .Messages }}
+{{- $last := eq (len (slice $.Messages $i)) 1 }}
+{{- if eq .Role "user" }}<|start_header_id|>user<|end_header_id|>
+{{- if and $.Tools $last }}
+
+Given the following functions, please respond with a JSON for a function call with its proper arguments that best answers the given prompt.
+
+Respond in the format {"name": function name, "parameters": dictionary of argument name and its value}. Do not use variables.
+
+{{ range $.Tools }}
+{{- . }}
+{{ end }}
+{{ .Content }}<|eot_id|>
+{{- else }}
+
+{{ .Content }}<|eot_id|>
+{{- end }}{{ if $last }}<|start_header_id|>assistant<|end_header_id|>
+
+{{ end }}
+{{- else if eq .Role "assistant" }}<|start_header_id|>assistant<|end_header_id|>
+{{- if .ToolCalls }}
+{{ range .ToolCalls }}
+{"name": "{{ .Function.Name }}", "parameters": {{ .Function.Arguments }}}{{ end }}
+{{- else }}
+
+{{ .Content }}
+{{- end }}{{ if not $last }}<|eot_id|>{{ end }}
+{{- else if eq .Role "tool" }}<|start_header_id|>ipython<|end_header_id|>
+
+{{ .Content }}<|eot_id|>{{ if $last }}<|start_header_id|>assistant<|end_header_id|>
+
+{{ end }}
+{{- end }}
+{{- end }}
+PROMPT:
+You are a strict but fair grader for a question-answering system.
+
+You will be given:
+- A QUESTION
+- An EXPECTED answer (a reference — the model's answer does NOT need to
+  match it word-for-word to be correct)
+- The MODEL'S answer to grade
+
+Grade the model's answer on two dimensions, each 0-10:
+- correctness: does the answer correctly answer the question?
+  10 = fully correct (even if phrased differently from the expected answer)
+   5 = partially correct, or correct but with significant inaccuracies
+   0 = wrong, contradicts the expected answer, or hallucinated
+- relevance: is the answer on-topic and responsive to the question?
+  10 = directly addresses the question
+   5 = partially on-topic, drifts
+   0 = off-topic or refuses to answer
+
+Respond with ONLY a JSON object, no other text:
+{"reasoning": "<one or two sentences explaining your scores>",
+ "correctness": <int>,
+ "relevance": <int>}
+
+QUESTION: In one sentence, what is a black hole?
+EXPECTED: A region of space where the gravitational pull is so strong that nothing, not even light, can escape from it.
+MODEL'S ANSWER: A black hole is a region of space where gravity is so strong that nothing, not even light, can escape from within its event horizon.
+2026-08-17 09:11:02,588 INFO httpx HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-08-17 09:11:07,944 INFO llm_benchmark.providers.ollama ollama.measure done model=llama3.2 tokens_in=316 tokens_out=45 latency_ms=8452.1 ttft_ms=3114.6
+RESPONSE:
+{"reasoning": "The model's answer is fully correct in terms of content, but the phrasing could be improved for clarity and concision.", "correctness": 10, "relevance": 10}
+2026-08-17 09:11:07,948 INFO llm_benchmark.scorers.judge judge.score verdict=PASS correctness=10/10 relevance=10/10 score=1.000 >= threshold=0.7 | reasoning: The model's answer is fully correct in terms of content, but the phrasing could be improved for clarity and concision.
+2026-08-17 09:11:07,955 INFO __main__ batch.wrote model=claude-haiku-4-5-20251001 item=definition_002 rep=2 cost_usd=8.6e-05 score=1.000 -> cache-batch/claude-haiku-4-5-20251001__definition_002__rep2.json
+2026-08-17 09:11:07,982 INFO llm_benchmark.providers.ollama ollama.measure model=llama3.2 url=http://localhost:11434/api/generate
+SYSTEM TEMPLATE (wraps the prompt server-side; the extra tokens_in over the visible words are these):
+<|start_header_id|>system<|end_header_id|>
+
+Cutting Knowledge Date: December 2023
+
+{{ if .System }}{{ .System }}
+{{- end }}
+{{- if .Tools }}When you receive a tool call response, use the output to format an answer to the orginal user question.
+
+You are a helpful assistant with tool calling capabilities.
+{{- end }}<|eot_id|>
+{{- range $i, $_ := .Messages }}
+{{- $last := eq (len (slice $.Messages $i)) 1 }}
+{{- if eq .Role "user" }}<|start_header_id|>user<|end_header_id|>
+{{- if and $.Tools $last }}
+
+Given the following functions, please respond with a JSON for a function call with its proper arguments that best answers the given prompt.
+
+Respond in the format {"name": function name, "parameters": dictionary of argument name and its value}. Do not use variables.
+
+{{ range $.Tools }}
+{{- . }}
+{{ end }}
+{{ .Content }}<|eot_id|>
+{{- else }}
+
+{{ .Content }}<|eot_id|>
+{{- end }}{{ if $last }}<|start_header_id|>assistant<|end_header_id|>
+
+{{ end }}
+{{- else if eq .Role "assistant" }}<|start_header_id|>assistant<|end_header_id|>
+{{- if .ToolCalls }}
+{{ range .ToolCalls }}
+{"name": "{{ .Function.Name }}", "parameters": {{ .Function.Arguments }}}{{ end }}
+{{- else }}
+
+{{ .Content }}
+{{- end }}{{ if not $last }}<|eot_id|>{{ end }}
+{{- else if eq .Role "tool" }}<|start_header_id|>ipython<|end_header_id|>
+
+{{ .Content }}<|eot_id|>{{ if $last }}<|start_header_id|>assistant<|end_header_id|>
+
+{{ end }}
+{{- end }}
+{{- end }}
+PROMPT:
+You are a strict but fair grader for a question-answering system.
+
+You will be given:
+- A QUESTION
+- An EXPECTED answer (a reference — the model's answer does NOT need to
+  match it word-for-word to be correct)
+- The MODEL'S answer to grade
+
+Grade the model's answer on two dimensions, each 0-10:
+- correctness: does the answer correctly answer the question?
+  10 = fully correct (even if phrased differently from the expected answer)
+   5 = partially correct, or correct but with significant inaccuracies
+   0 = wrong, contradicts the expected answer, or hallucinated
+- relevance: is the answer on-topic and responsive to the question?
+  10 = directly addresses the question
+   5 = partially on-topic, drifts
+   0 = off-topic or refuses to answer
+
+Respond with ONLY a JSON object, no other text:
+{"reasoning": "<one or two sentences explaining your scores>",
+ "correctness": <int>,
+ "relevance": <int>}
+
+QUESTION: Which pytest command runs tests marked either 'slow' or 'network'?
+EXPECTED: pytest -m 'slow or network'
+MODEL'S ANSWER: # Running Tests with Multiple Markers in pytest
+
+To run tests marked with either 'slow' **or** 'network', use:
+
+```bash
+pytest -m "slow or network"
+```
+
+## Alternative Syntax
+
+You can also use:
+
+```bash
+pytest -m "slow or network" tests/
+```
+
+## Other Marker Combinations
+
+| Command | Behavior |
+|---------|----------|
+| `pytest -m "slow or network"` | Tests with 'slow' OR 'network' |
+| `pytest -m "slow and network"` | Tests with BOTH 'slow' AND 'network' |
+| `pytest -m "slow and not network"` | Tests with 'slow' but NOT 'network' |
+| `pytest -m "not slow"` | Tests without 'slow' marker |
+
+## Example Test File
+
+```python
+import pytest
+
+@pytest.mark.slow
+def test_slow_operation():
+    pass
+
+@pytest.mark.network
+def test_api_call():
+    pass
+
+@pytest.mark.slow
+@pytest.mark.network
+def test_slow_network_operation():
+    pass
+```
+
+Running `pytest -m "slow or network"` would execute all three tests above.
+2026-08-17 09:11:15,546 INFO httpx HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-08-17 09:11:28,615 INFO llm_benchmark.providers.ollama ollama.measure done model=llama3.2 tokens_in=514 tokens_out=55 latency_ms=20630.0 ttft_ms=7575.4
+RESPONSE:
+{"reasoning": "The model's answer correctly states the pytest command to run tests marked with 'slow' or 'network', but provides additional information that is not directly relevant to answering the question.", "correctness": 10, "relevance": 8}
+2026-08-17 09:11:28,616 INFO llm_benchmark.scorers.judge judge.score verdict=PASS correctness=10/10 relevance=8/10 score=0.900 >= threshold=0.7 | reasoning: The model's answer correctly states the pytest command to run tests marked with 'slow' or 'network', but provides additional information that is not directly relevant to answering the question.
+2026-08-17 09:11:28,628 INFO __main__ batch.wrote model=claude-haiku-4-5-20251001 item=procedural_001 rep=1 cost_usd=0.0007295 score=0.900 -> cache-batch/claude-haiku-4-5-20251001__procedural_001__rep1.json
+2026-08-17 09:11:28,707 INFO llm_benchmark.providers.ollama ollama.measure model=llama3.2 url=http://localhost:11434/api/generate
+SYSTEM TEMPLATE (wraps the prompt server-side; the extra tokens_in over the visible words are these):
+<|start_header_id|>system<|end_header_id|>
+
+Cutting Knowledge Date: December 2023
+
+{{ if .System }}{{ .System }}
+{{- end }}
+{{- if .Tools }}When you receive a tool call response, use the output to format an answer to the orginal user question.
+
+You are a helpful assistant with tool calling capabilities.
+{{- end }}<|eot_id|>
+{{- range $i, $_ := .Messages }}
+{{- $last := eq (len (slice $.Messages $i)) 1 }}
+{{- if eq .Role "user" }}<|start_header_id|>user<|end_header_id|>
+{{- if and $.Tools $last }}
+
+Given the following functions, please respond with a JSON for a function call with its proper arguments that best answers the given prompt.
+
+Respond in the format {"name": function name, "parameters": dictionary of argument name and its value}. Do not use variables.
+
+{{ range $.Tools }}
+{{- . }}
+{{ end }}
+{{ .Content }}<|eot_id|>
+{{- else }}
+
+{{ .Content }}<|eot_id|>
+{{- end }}{{ if $last }}<|start_header_id|>assistant<|end_header_id|>
+
+{{ end }}
+{{- else if eq .Role "assistant" }}<|start_header_id|>assistant<|end_header_id|>
+{{- if .ToolCalls }}
+{{ range .ToolCalls }}
+{"name": "{{ .Function.Name }}", "parameters": {{ .Function.Arguments }}}{{ end }}
+{{- else }}
+
+{{ .Content }}
+{{- end }}{{ if not $last }}<|eot_id|>{{ end }}
+{{- else if eq .Role "tool" }}<|start_header_id|>ipython<|end_header_id|>
+
+{{ .Content }}<|eot_id|>{{ if $last }}<|start_header_id|>assistant<|end_header_id|>
+
+{{ end }}
+{{- end }}
+{{- end }}
+PROMPT:
+You are a strict but fair grader for a question-answering system.
+
+You will be given:
+- A QUESTION
+- An EXPECTED answer (a reference — the model's answer does NOT need to
+  match it word-for-word to be correct)
+- The MODEL'S answer to grade
+
+Grade the model's answer on two dimensions, each 0-10:
+- correctness: does the answer correctly answer the question?
+  10 = fully correct (even if phrased differently from the expected answer)
+   5 = partially correct, or correct but with significant inaccuracies
+   0 = wrong, contradicts the expected answer, or hallucinated
+- relevance: is the answer on-topic and responsive to the question?
+  10 = directly addresses the question
+   5 = partially on-topic, drifts
+   0 = off-topic or refuses to answer
+
+Respond with ONLY a JSON object, no other text:
+{"reasoning": "<one or two sentences explaining your scores>",
+ "correctness": <int>,
+ "relevance": <int>}
+
+QUESTION: Which pytest command runs tests marked either 'slow' or 'network'?
+EXPECTED: pytest -m 'slow or network'
+MODEL'S ANSWER: # Running Tests with Multiple Markers in pytest
+
+To run tests marked with either 'slow' **or** 'network', use:
+
+```bash
+pytest -m "slow or network"
+```
+
+## Examples
+
+```bash
+# Run tests marked 'slow' OR 'network'
+pytest -m "slow or network"
+
+# Run tests marked 'slow' AND 'network'
+pytest -m "slow and network"
+
+# Run tests NOT marked 'slow'
+pytest -m "not slow"
+
+# More complex: (slow or network) and not integration
+pytest -m "(slow or network) and not integration"
+```
+
+## Test Example
+
+```python
+import pytest
+
+@pytest.mark.slow
+def test_slow_operation():
+    pass
+
+@pytest.mark.network
+def test_api_call():
+    pass
+
+@pytest.mark.slow
+@pytest.mark.network
+def test_slow_network():
+    pass
+```
+
+Running `pytest -m "slow or network"` would execute all three tests above.
+2026-08-17 09:11:31,831 INFO httpx HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-08-17 09:11:37,527 INFO llm_benchmark.providers.ollama ollama.measure done model=llama3.2 tokens_in=475 tokens_out=53 latency_ms=8815.1 ttft_ms=3124.9
+RESPONSE:
+{"reasoning": "The model's answer correctly provides the pytest command to run tests marked with either 'slow' or 'network', but could have been more concise and provided additional examples.", "correctness": 9, "relevance": 10}
+2026-08-17 09:11:37,534 INFO llm_benchmark.scorers.judge judge.score verdict=PASS correctness=9/10 relevance=10/10 score=0.950 >= threshold=0.7 | reasoning: The model's answer correctly provides the pytest command to run tests marked with either 'slow' or 'network', but could have been more concise and provided additional examples.
+2026-08-17 09:11:37,578 INFO __main__ batch.wrote model=claude-haiku-4-5-20251001 item=procedural_001 rep=2 cost_usd=0.000602 score=0.950 -> cache-batch/claude-haiku-4-5-20251001__procedural_001__rep2.json
+2026-08-17 09:11:37,686 INFO llm_benchmark.providers.ollama ollama.measure model=llama3.2 url=http://localhost:11434/api/generate
+SYSTEM TEMPLATE (wraps the prompt server-side; the extra tokens_in over the visible words are these):
+<|start_header_id|>system<|end_header_id|>
+
+Cutting Knowledge Date: December 2023
+
+{{ if .System }}{{ .System }}
+{{- end }}
+{{- if .Tools }}When you receive a tool call response, use the output to format an answer to the orginal user question.
+
+You are a helpful assistant with tool calling capabilities.
+{{- end }}<|eot_id|>
+{{- range $i, $_ := .Messages }}
+{{- $last := eq (len (slice $.Messages $i)) 1 }}
+{{- if eq .Role "user" }}<|start_header_id|>user<|end_header_id|>
+{{- if and $.Tools $last }}
+
+Given the following functions, please respond with a JSON for a function call with its proper arguments that best answers the given prompt.
+
+Respond in the format {"name": function name, "parameters": dictionary of argument name and its value}. Do not use variables.
+
+{{ range $.Tools }}
+{{- . }}
+{{ end }}
+{{ .Content }}<|eot_id|>
+{{- else }}
+
+{{ .Content }}<|eot_id|>
+{{- end }}{{ if $last }}<|start_header_id|>assistant<|end_header_id|>
+
+{{ end }}
+{{- else if eq .Role "assistant" }}<|start_header_id|>assistant<|end_header_id|>
+{{- if .ToolCalls }}
+{{ range .ToolCalls }}
+{"name": "{{ .Function.Name }}", "parameters": {{ .Function.Arguments }}}{{ end }}
+{{- else }}
+
+{{ .Content }}
+{{- end }}{{ if not $last }}<|eot_id|>{{ end }}
+{{- else if eq .Role "tool" }}<|start_header_id|>ipython<|end_header_id|>
+
+{{ .Content }}<|eot_id|>{{ if $last }}<|start_header_id|>assistant<|end_header_id|>
+
+{{ end }}
+{{- end }}
+{{- end }}
+PROMPT:
+You are a strict but fair grader for a question-answering system.
+
+You will be given:
+- A QUESTION
+- An EXPECTED answer (a reference — the model's answer does NOT need to
+  match it word-for-word to be correct)
+- The MODEL'S answer to grade
+
+Grade the model's answer on two dimensions, each 0-10:
+- correctness: does the answer correctly answer the question?
+  10 = fully correct (even if phrased differently from the expected answer)
+   5 = partially correct, or correct but with significant inaccuracies
+   0 = wrong, contradicts the expected answer, or hallucinated
+- relevance: is the answer on-topic and responsive to the question?
+  10 = directly addresses the question
+   5 = partially on-topic, drifts
+   0 = off-topic or refuses to answer
+
+Respond with ONLY a JSON object, no other text:
+{"reasoning": "<one or two sentences explaining your scores>",
+ "correctness": <int>,
+ "relevance": <int>}
+
+QUESTION: What is the difference between cold blooded and warm blooded animals?
+EXPECTED: Cold blooded animals rely on external sources for body heat, while warm blooded animals maintain a constant internal body temperature.
+MODEL'S ANSWER: # Cold-Blooded vs Warm-Blooded Animals
+
+## Body Temperature Control
+
+**Warm-blooded (Endothermic):**
+- Generate heat internally through metabolism
+- Maintain a constant body temperature regardless of environment
+- Examples: mammals and birds
+
+**Cold-blooded (Ectothermic):**
+- Rely on external environment to regulate body temperature
+- Body temperature fluctuates with surroundings
+- Examples: reptiles, amphibians, and fish
+
+## Key Practical Differences
+
+| Aspect | Warm-blooded | Cold-blooded |
+|--------|-------------|--------------|
+| **Energy needs** | High (need frequent meals) | Low (eat less often) |
+| **Activity in cold** | Stay active | Become sluggish |
+| **Geographic range** | Can live in cold climates | Limited to warmer regions |
+| **Recovery from injury** | Generally faster | Slower |
+
+## Why It Matters
+
+Cold-blooded animals are efficient in warm environments but must bask in sunlight to warm up or find shade to cool down. Warm-blooded animals can be active anytime and anywhere, but require much more food to fuel their internal heat production.
+
+Neither approach is inherently "better"—each is well-suited to different lifestyles and environments.
+2026-08-17 09:11:45,695 INFO httpx HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-08-17 09:11:57,423 INFO llm_benchmark.providers.ollama ollama.measure done model=llama3.2 tokens_in=545 tokens_out=59 latency_ms=19735.6 ttft_ms=8024.9
+RESPONSE:
+{"reasoning": "The model's answer provides a clear and comprehensive explanation of the difference between cold-blooded and warm-blooded animals, including key practical differences and why each approach is suited to different lifestyles and environments.", "correctness": 9, "relevance": 10}
+2026-08-17 09:11:57,433 INFO llm_benchmark.scorers.judge judge.score verdict=PASS correctness=9/10 relevance=10/10 score=0.950 >= threshold=0.7 | reasoning: The model's answer provides a clear and comprehensive explanation of the difference between cold-blooded and warm-blooded animals, including key practical differences and why each approach is suited to different lifestyles and environments.
+2026-08-17 09:11:57,454 INFO __main__ batch.wrote model=claude-haiku-4-5-20251001 item=reasoning_001 rep=1 cost_usd=0.0007555 score=0.950 -> cache-batch/claude-haiku-4-5-20251001__reasoning_001__rep1.json
+2026-08-17 09:11:57,552 INFO llm_benchmark.providers.ollama ollama.measure model=llama3.2 url=http://localhost:11434/api/generate
+SYSTEM TEMPLATE (wraps the prompt server-side; the extra tokens_in over the visible words are these):
+<|start_header_id|>system<|end_header_id|>
+
+Cutting Knowledge Date: December 2023
+
+{{ if .System }}{{ .System }}
+{{- end }}
+{{- if .Tools }}When you receive a tool call response, use the output to format an answer to the orginal user question.
+
+You are a helpful assistant with tool calling capabilities.
+{{- end }}<|eot_id|>
+{{- range $i, $_ := .Messages }}
+{{- $last := eq (len (slice $.Messages $i)) 1 }}
+{{- if eq .Role "user" }}<|start_header_id|>user<|end_header_id|>
+{{- if and $.Tools $last }}
+
+Given the following functions, please respond with a JSON for a function call with its proper arguments that best answers the given prompt.
+
+Respond in the format {"name": function name, "parameters": dictionary of argument name and its value}. Do not use variables.
+
+{{ range $.Tools }}
+{{- . }}
+{{ end }}
+{{ .Content }}<|eot_id|>
+{{- else }}
+
+{{ .Content }}<|eot_id|>
+{{- end }}{{ if $last }}<|start_header_id|>assistant<|end_header_id|>
+
+{{ end }}
+{{- else if eq .Role "assistant" }}<|start_header_id|>assistant<|end_header_id|>
+{{- if .ToolCalls }}
+{{ range .ToolCalls }}
+{"name": "{{ .Function.Name }}", "parameters": {{ .Function.Arguments }}}{{ end }}
+{{- else }}
+
+{{ .Content }}
+{{- end }}{{ if not $last }}<|eot_id|>{{ end }}
+{{- else if eq .Role "tool" }}<|start_header_id|>ipython<|end_header_id|>
+
+{{ .Content }}<|eot_id|>{{ if $last }}<|start_header_id|>assistant<|end_header_id|>
+
+{{ end }}
+{{- end }}
+{{- end }}
+PROMPT:
+You are a strict but fair grader for a question-answering system.
+
+You will be given:
+- A QUESTION
+- An EXPECTED answer (a reference — the model's answer does NOT need to
+  match it word-for-word to be correct)
+- The MODEL'S answer to grade
+
+Grade the model's answer on two dimensions, each 0-10:
+- correctness: does the answer correctly answer the question?
+  10 = fully correct (even if phrased differently from the expected answer)
+   5 = partially correct, or correct but with significant inaccuracies
+   0 = wrong, contradicts the expected answer, or hallucinated
+- relevance: is the answer on-topic and responsive to the question?
+  10 = directly addresses the question
+   5 = partially on-topic, drifts
+   0 = off-topic or refuses to answer
+
+Respond with ONLY a JSON object, no other text:
+{"reasoning": "<one or two sentences explaining your scores>",
+ "correctness": <int>,
+ "relevance": <int>}
+
+QUESTION: What is the difference between cold blooded and warm blooded animals?
+EXPECTED: Cold blooded animals rely on external sources for body heat, while warm blooded animals maintain a constant internal body temperature.
+MODEL'S ANSWER: # Key Differences
+
+## Temperature Regulation
+
+**Cold-blooded (Ectothermic):**
+- Body temperature matches their environment
+- Can't generate much internal heat
+- Examples: reptiles, amphibians, fish, insects
+
+**Warm-blooded (Endothermic):**
+- Maintain a consistent body temperature internally
+- Generate heat through metabolism
+- Examples: mammals, birds
+
+## Practical Implications
+
+| Aspect | Cold-blooded | Warm-blooded |
+|--------|--------------|--------------|
+| **Activity** | Slower in cold weather | Active in any climate |
+| **Energy needs** | Low food requirements | High food requirements |
+| **Habitat** | Thrive in warm climates | Can live anywhere |
+| **Response time** | Sluggish when cold | Consistently quick |
+
+## Simple Analogy
+
+Think of cold-blooded animals as **solar-powered** (relying on external heat) and warm-blooded animals as having **built-in heaters** (generating their own warmth).
+
+Both strategies work well—cold-blooded animals are more energy-efficient, while warm-blooded animals are more independent from their environment.
+2026-08-17 09:12:05,048 INFO httpx HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-08-17 09:12:19,171 INFO llm_benchmark.providers.ollama ollama.measure done model=llama3.2 tokens_in=527 tokens_out=52 latency_ms=21615.8 ttft_ms=7501.5
+RESPONSE:
+{"reasoning": "The model provided a detailed comparison of cold blooded and warm blooded animals, including temperature regulation, practical implications, and an analogy to help illustrate the difference.", "correctness": 9, "relevance": 10}
+2026-08-17 09:12:19,176 INFO llm_benchmark.scorers.judge judge.score verdict=PASS correctness=9/10 relevance=10/10 score=0.950 >= threshold=0.7 | reasoning: The model provided a detailed comparison of cold blooded and warm blooded animals, including temperature regulation, practical implications, and an analogy to help illustrate the difference.
+2026-08-17 09:12:19,183 INFO __main__ batch.wrote model=claude-haiku-4-5-20251001 item=reasoning_001 rep=2 cost_usd=0.000688 score=0.950 -> cache-batch/claude-haiku-4-5-20251001__reasoning_001__rep2.json
+2026-08-17 09:12:19,237 INFO llm_benchmark.providers.ollama ollama.measure model=llama3.2 url=http://localhost:11434/api/generate
+SYSTEM TEMPLATE (wraps the prompt server-side; the extra tokens_in over the visible words are these):
+<|start_header_id|>system<|end_header_id|>
+
+Cutting Knowledge Date: December 2023
+
+{{ if .System }}{{ .System }}
+{{- end }}
+{{- if .Tools }}When you receive a tool call response, use the output to format an answer to the orginal user question.
+
+You are a helpful assistant with tool calling capabilities.
+{{- end }}<|eot_id|>
+{{- range $i, $_ := .Messages }}
+{{- $last := eq (len (slice $.Messages $i)) 1 }}
+{{- if eq .Role "user" }}<|start_header_id|>user<|end_header_id|>
+{{- if and $.Tools $last }}
+
+Given the following functions, please respond with a JSON for a function call with its proper arguments that best answers the given prompt.
+
+Respond in the format {"name": function name, "parameters": dictionary of argument name and its value}. Do not use variables.
+
+{{ range $.Tools }}
+{{- . }}
+{{ end }}
+{{ .Content }}<|eot_id|>
+{{- else }}
+
+{{ .Content }}<|eot_id|>
+{{- end }}{{ if $last }}<|start_header_id|>assistant<|end_header_id|>
+
+{{ end }}
+{{- else if eq .Role "assistant" }}<|start_header_id|>assistant<|end_header_id|>
+{{- if .ToolCalls }}
+{{ range .ToolCalls }}
+{"name": "{{ .Function.Name }}", "parameters": {{ .Function.Arguments }}}{{ end }}
+{{- else }}
+
+{{ .Content }}
+{{- end }}{{ if not $last }}<|eot_id|>{{ end }}
+{{- else if eq .Role "tool" }}<|start_header_id|>ipython<|end_header_id|>
+
+{{ .Content }}<|eot_id|>{{ if $last }}<|start_header_id|>assistant<|end_header_id|>
+
+{{ end }}
+{{- end }}
+{{- end }}
+PROMPT:
+You are a strict but fair grader for a question-answering system.
+
+You will be given:
+- A QUESTION
+- An EXPECTED answer (a reference — the model's answer does NOT need to
+  match it word-for-word to be correct)
+- The MODEL'S answer to grade
+
+Grade the model's answer on two dimensions, each 0-10:
+- correctness: does the answer correctly answer the question?
+  10 = fully correct (even if phrased differently from the expected answer)
+   5 = partially correct, or correct but with significant inaccuracies
+   0 = wrong, contradicts the expected answer, or hallucinated
+- relevance: is the answer on-topic and responsive to the question?
+  10 = directly addresses the question
+   5 = partially on-topic, drifts
+   0 = off-topic or refuses to answer
+
+Respond with ONLY a JSON object, no other text:
+{"reasoning": "<one or two sentences explaining your scores>",
+ "correctness": <int>,
+ "relevance": <int>}
+
+QUESTION: In one sentence, why does ice float on water?
+EXPECTED: Ice floats on water because it is less dense than liquid water.
+MODEL'S ANSWER: Ice floats because it's less dense than liquid water, a result of hydrogen bonding creating a crystalline structure with more space between molecules.
+2026-08-17 09:12:21,286 INFO httpx HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-08-17 09:12:29,946 INFO llm_benchmark.providers.ollama ollama.measure done model=llama3.2 tokens_in=306 tokens_out=42 latency_ms=10707.0 ttft_ms=2130.9
+RESPONSE:
+{"reasoning": "The model's answer correctly explains the reason for ice floating on water and provides additional context about the molecular structure.", "correctness": 9, "relevance": 10}
+2026-08-17 09:12:29,953 INFO llm_benchmark.scorers.judge judge.score verdict=PASS correctness=9/10 relevance=10/10 score=0.950 >= threshold=0.7 | reasoning: The model's answer correctly explains the reason for ice floating on water and provides additional context about the molecular structure.
+2026-08-17 09:12:29,965 INFO __main__ batch.wrote model=claude-haiku-4-5-20251001 item=reasoning_002 rep=1 cost_usd=8.9e-05 score=0.950 -> cache-batch/claude-haiku-4-5-20251001__reasoning_002__rep1.json
+2026-08-17 09:12:30,103 INFO llm_benchmark.providers.ollama ollama.measure model=llama3.2 url=http://localhost:11434/api/generate
+SYSTEM TEMPLATE (wraps the prompt server-side; the extra tokens_in over the visible words are these):
+<|start_header_id|>system<|end_header_id|>
+
+Cutting Knowledge Date: December 2023
+
+{{ if .System }}{{ .System }}
+{{- end }}
+{{- if .Tools }}When you receive a tool call response, use the output to format an answer to the orginal user question.
+
+You are a helpful assistant with tool calling capabilities.
+{{- end }}<|eot_id|>
+{{- range $i, $_ := .Messages }}
+{{- $last := eq (len (slice $.Messages $i)) 1 }}
+{{- if eq .Role "user" }}<|start_header_id|>user<|end_header_id|>
+{{- if and $.Tools $last }}
+
+Given the following functions, please respond with a JSON for a function call with its proper arguments that best answers the given prompt.
+
+Respond in the format {"name": function name, "parameters": dictionary of argument name and its value}. Do not use variables.
+
+{{ range $.Tools }}
+{{- . }}
+{{ end }}
+{{ .Content }}<|eot_id|>
+{{- else }}
+
+{{ .Content }}<|eot_id|>
+{{- end }}{{ if $last }}<|start_header_id|>assistant<|end_header_id|>
+
+{{ end }}
+{{- else if eq .Role "assistant" }}<|start_header_id|>assistant<|end_header_id|>
+{{- if .ToolCalls }}
+{{ range .ToolCalls }}
+{"name": "{{ .Function.Name }}", "parameters": {{ .Function.Arguments }}}{{ end }}
+{{- else }}
+
+{{ .Content }}
+{{- end }}{{ if not $last }}<|eot_id|>{{ end }}
+{{- else if eq .Role "tool" }}<|start_header_id|>ipython<|end_header_id|>
+
+{{ .Content }}<|eot_id|>{{ if $last }}<|start_header_id|>assistant<|end_header_id|>
+
+{{ end }}
+{{- end }}
+{{- end }}
+PROMPT:
+You are a strict but fair grader for a question-answering system.
+
+You will be given:
+- A QUESTION
+- An EXPECTED answer (a reference — the model's answer does NOT need to
+  match it word-for-word to be correct)
+- The MODEL'S answer to grade
+
+Grade the model's answer on two dimensions, each 0-10:
+- correctness: does the answer correctly answer the question?
+  10 = fully correct (even if phrased differently from the expected answer)
+   5 = partially correct, or correct but with significant inaccuracies
+   0 = wrong, contradicts the expected answer, or hallucinated
+- relevance: is the answer on-topic and responsive to the question?
+  10 = directly addresses the question
+   5 = partially on-topic, drifts
+   0 = off-topic or refuses to answer
+
+Respond with ONLY a JSON object, no other text:
+{"reasoning": "<one or two sentences explaining your scores>",
+ "correctness": <int>,
+ "relevance": <int>}
+
+QUESTION: In one sentence, why does ice float on water?
+EXPECTED: Ice floats on water because it is less dense than liquid water.
+MODEL'S ANSWER: Ice floats because it's less dense than liquid water, a result of hydrogen bonding that creates a crystalline structure with more space between molecules.
+2026-08-17 09:12:36,047 INFO httpx HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-08-17 09:12:52,387 INFO llm_benchmark.providers.ollama ollama.measure done model=llama3.2 tokens_in=307 tokens_out=42 latency_ms=22277.2 ttft_ms=5984.4
+RESPONSE:
+{"reasoning": "The model's answer correctly explains the reason for ice floating on water and provides additional context about the molecular structure.", "correctness": 9, "relevance": 10}
+2026-08-17 09:12:52,401 INFO llm_benchmark.scorers.judge judge.score verdict=PASS correctness=9/10 relevance=10/10 score=0.950 >= threshold=0.7 | reasoning: The model's answer correctly explains the reason for ice floating on water and provides additional context about the molecular structure.
+2026-08-17 09:12:52,418 INFO __main__ batch.wrote model=claude-haiku-4-5-20251001 item=reasoning_002 rep=2 cost_usd=9.15e-05 score=0.950 -> cache-batch/claude-haiku-4-5-20251001__reasoning_002__rep2.json
+2026-08-17 09:12:52,567 INFO llm_benchmark.providers.ollama ollama.measure model=llama3.2 url=http://localhost:11434/api/generate
+SYSTEM TEMPLATE (wraps the prompt server-side; the extra tokens_in over the visible words are these):
+<|start_header_id|>system<|end_header_id|>
+
+Cutting Knowledge Date: December 2023
+
+{{ if .System }}{{ .System }}
+{{- end }}
+{{- if .Tools }}When you receive a tool call response, use the output to format an answer to the orginal user question.
+
+You are a helpful assistant with tool calling capabilities.
+{{- end }}<|eot_id|>
+{{- range $i, $_ := .Messages }}
+{{- $last := eq (len (slice $.Messages $i)) 1 }}
+{{- if eq .Role "user" }}<|start_header_id|>user<|end_header_id|>
+{{- if and $.Tools $last }}
+
+Given the following functions, please respond with a JSON for a function call with its proper arguments that best answers the given prompt.
+
+Respond in the format {"name": function name, "parameters": dictionary of argument name and its value}. Do not use variables.
+
+{{ range $.Tools }}
+{{- . }}
+{{ end }}
+{{ .Content }}<|eot_id|>
+{{- else }}
+
+{{ .Content }}<|eot_id|>
+{{- end }}{{ if $last }}<|start_header_id|>assistant<|end_header_id|>
+
+{{ end }}
+{{- else if eq .Role "assistant" }}<|start_header_id|>assistant<|end_header_id|>
+{{- if .ToolCalls }}
+{{ range .ToolCalls }}
+{"name": "{{ .Function.Name }}", "parameters": {{ .Function.Arguments }}}{{ end }}
+{{- else }}
+
+{{ .Content }}
+{{- end }}{{ if not $last }}<|eot_id|>{{ end }}
+{{- else if eq .Role "tool" }}<|start_header_id|>ipython<|end_header_id|>
+
+{{ .Content }}<|eot_id|>{{ if $last }}<|start_header_id|>assistant<|end_header_id|>
+
+{{ end }}
+{{- end }}
+{{- end }}
+PROMPT:
+You are a strict but fair grader for a question-answering system.
+
+You will be given:
+- A QUESTION
+- An EXPECTED answer (a reference — the model's answer does NOT need to
+  match it word-for-word to be correct)
+- The MODEL'S answer to grade
+
+Grade the model's answer on two dimensions, each 0-10:
+- correctness: does the answer correctly answer the question?
+  10 = fully correct (even if phrased differently from the expected answer)
+   5 = partially correct, or correct but with significant inaccuracies
+   0 = wrong, contradicts the expected answer, or hallucinated
+- relevance: is the answer on-topic and responsive to the question?
+  10 = directly addresses the question
+   5 = partially on-topic, drifts
+   0 = off-topic or refuses to answer
+
+Respond with ONLY a JSON object, no other text:
+{"reasoning": "<one or two sentences explaining your scores>",
+ "correctness": <int>,
+ "relevance": <int>}
+
+QUESTION: How does photosynthesis work in plants?
+EXPECTED: Photosynthesis in plants converts light energy into chemical energy, using sunlight to transform carbon dioxide and water into glucose and oxygen.
+MODEL'S ANSWER: # How Photosynthesis Works
+
+Photosynthesis is the process plants use to convert light energy into chemical energy. Here's the basic breakdown:
+
+## The Simple Equation
+**Light + Water + Carbon Dioxide → Glucose + Oxygen**
+
+## Two Main Stages
+
+### Light-Dependent Reactions (in thylakoids)
+- Occur in the presence of light
+- Chlorophyll absorbs photons, exciting electrons
+- Water molecules are split, releasing oxygen
+- Energy is captured in molecules called ATP and NADPH
+
+### Light-Independent Reactions/Calvin Cycle (in stroma)
+- Don't directly require light (but depend on light-stage products)
+- Use ATP and NADPH to convert CO₂ into glucose
+- This glucose fuels plant growth and serves as stored energy
+
+## Key Locations
+- **Chloroplasts** contain all the machinery
+- **Thylakoids** (stacked structures) handle light reactions
+- **Stroma** (fluid space) handles the Calvin cycle
+
+## Why It Matters
+- Produces oxygen we breathe
+- Creates glucose that feeds the plant and food chains
+- Represents how plants capture and store solar energy
+
+Plants essentially use the sun's energy to build the molecules they need to grow—pretty remarkable!
+2026-08-17 09:13:01,524 INFO httpx HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-08-17 09:13:20,102 INFO llm_benchmark.providers.ollama ollama.measure done model=llama3.2 tokens_in=548 tokens_out=56 latency_ms=27530.6 ttft_ms=8990.4
+RESPONSE:
+{"reasoning": "The model provided a detailed explanation of photosynthesis, including its stages, key locations, and importance. However, it did not directly address the expected answer's phrasing or structure.", "correctness": 8, "relevance": 9}
+2026-08-17 09:13:20,109 INFO llm_benchmark.scorers.judge judge.score verdict=PASS correctness=8/10 relevance=9/10 score=0.850 >= threshold=0.7 | reasoning: The model provided a detailed explanation of photosynthesis, including its stages, key locations, and importance. However, it did not directly address the expected answer's phrasing or structure.
+2026-08-17 09:13:20,127 INFO __main__ batch.wrote model=claude-haiku-4-5-20251001 item=reasoning_003 rep=1 cost_usd=0.000731 score=0.850 -> cache-batch/claude-haiku-4-5-20251001__reasoning_003__rep1.json
+2026-08-17 09:13:20,596 INFO llm_benchmark.providers.ollama ollama.measure model=llama3.2 url=http://localhost:11434/api/generate
+SYSTEM TEMPLATE (wraps the prompt server-side; the extra tokens_in over the visible words are these):
+<|start_header_id|>system<|end_header_id|>
+
+Cutting Knowledge Date: December 2023
+
+{{ if .System }}{{ .System }}
+{{- end }}
+{{- if .Tools }}When you receive a tool call response, use the output to format an answer to the orginal user question.
+
+You are a helpful assistant with tool calling capabilities.
+{{- end }}<|eot_id|>
+{{- range $i, $_ := .Messages }}
+{{- $last := eq (len (slice $.Messages $i)) 1 }}
+{{- if eq .Role "user" }}<|start_header_id|>user<|end_header_id|>
+{{- if and $.Tools $last }}
+
+Given the following functions, please respond with a JSON for a function call with its proper arguments that best answers the given prompt.
+
+Respond in the format {"name": function name, "parameters": dictionary of argument name and its value}. Do not use variables.
+
+{{ range $.Tools }}
+{{- . }}
+{{ end }}
+{{ .Content }}<|eot_id|>
+{{- else }}
+
+{{ .Content }}<|eot_id|>
+{{- end }}{{ if $last }}<|start_header_id|>assistant<|end_header_id|>
+
+{{ end }}
+{{- else if eq .Role "assistant" }}<|start_header_id|>assistant<|end_header_id|>
+{{- if .ToolCalls }}
+{{ range .ToolCalls }}
+{"name": "{{ .Function.Name }}", "parameters": {{ .Function.Arguments }}}{{ end }}
+{{- else }}
+
+{{ .Content }}
+{{- end }}{{ if not $last }}<|eot_id|>{{ end }}
+{{- else if eq .Role "tool" }}<|start_header_id|>ipython<|end_header_id|>
+
+{{ .Content }}<|eot_id|>{{ if $last }}<|start_header_id|>assistant<|end_header_id|>
+
+{{ end }}
+{{- end }}
+{{- end }}
+PROMPT:
+You are a strict but fair grader for a question-answering system.
+
+You will be given:
+- A QUESTION
+- An EXPECTED answer (a reference — the model's answer does NOT need to
+  match it word-for-word to be correct)
+- The MODEL'S answer to grade
+
+Grade the model's answer on two dimensions, each 0-10:
+- correctness: does the answer correctly answer the question?
+  10 = fully correct (even if phrased differently from the expected answer)
+   5 = partially correct, or correct but with significant inaccuracies
+   0 = wrong, contradicts the expected answer, or hallucinated
+- relevance: is the answer on-topic and responsive to the question?
+  10 = directly addresses the question
+   5 = partially on-topic, drifts
+   0 = off-topic or refuses to answer
+
+Respond with ONLY a JSON object, no other text:
+{"reasoning": "<one or two sentences explaining your scores>",
+ "correctness": <int>,
+ "relevance": <int>}
+
+QUESTION: How does photosynthesis work in plants?
+EXPECTED: Photosynthesis in plants converts light energy into chemical energy, using sunlight to transform carbon dioxide and water into glucose and oxygen.
+MODEL'S ANSWER: # Photosynthesis Basics
+
+Photosynthesis is how plants convert light energy into chemical energy (sugar). Here's the simplified process:
+
+## The Main Equation
+**Light + Water + Carbon Dioxide → Glucose + Oxygen**
+
+## Two Key Stages
+
+**Light-dependent reactions** (in thylakoid membranes)
+- Chlorophyll absorbs sunlight
+- Water molecules split, releasing oxygen
+- Energy is captured as ATP and NADPH
+
+**Light-independent reactions** (Calvin cycle, in stroma)
+- Uses the ATP and NADPH from above
+- Converts CO₂ into glucose through a series of chemical reactions
+- No direct sunlight needed for this stage
+
+## Where It Happens
+- **Chloroplasts** are the organelles containing chlorophyll
+- Concentrated in **leaves**, especially the green palisade layer
+
+## Why It Matters
+- Produces glucose (food/energy) for the plant
+- Releases oxygen as a byproduct (essential for life on Earth)
+- Forms the base of most food chains
+
+The process is remarkably efficient at capturing and storing solar energy—something scientists are still trying to replicate artificially.
+
+Would you like me to explain any stage in more detail?
+2026-08-17 09:13:33,696 INFO httpx HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-08-17 09:14:01,378 INFO llm_benchmark.providers.ollama ollama.measure done model=llama3.2 tokens_in=537 tokens_out=58 latency_ms=40773.8 ttft_ms=13194.2
+RESPONSE:
+{"reasoning": "The model's answer provides a detailed explanation of photosynthesis, including the two key stages and where it happens. However, some minor details were omitted or rephrased for simplification.", "correctness": 9, "relevance": 10}
+2026-08-17 09:14:01,385 INFO llm_benchmark.scorers.judge judge.score verdict=PASS correctness=9/10 relevance=10/10 score=0.950 >= threshold=0.7 | reasoning: The model's answer provides a detailed explanation of photosynthesis, including the two key stages and where it happens. However, some minor details were omitted or rephrased for simplification.
+2026-08-17 09:14:01,400 INFO __main__ batch.wrote model=claude-haiku-4-5-20251001 item=reasoning_003 rep=2 cost_usd=0.000711 score=0.950 -> cache-batch/claude-haiku-4-5-20251001__reasoning_003__rep2.json
+2026-08-17 09:14:01,442 INFO __main__ batch evidence -> evidence/batch-lane-captures.json  (batch_id=msgbatch_01UdcJXAjPaJckQYoGqHnpkv, n_batch=20)

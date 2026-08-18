@@ -1,0 +1,12 @@
+{
+  "model_a": "gpt-5.6-luna",
+  "model_b": "llama3.2",
+  "order1_winner": "gpt-5.6-luna",
+  "order2_winner": "gpt-5.6-luna",
+  "order1_reasoning": "Answer A is better because it uses the full name of the capital city in its response.",
+  "order2_reasoning": "Answer B is better because it uses bold formatting to emphasize the correct answer, making it stand out more clearly.",
+  "outcome": "win",
+  "winner": "gpt-5.6-luna",
+  "suite": "easy",
+  "item_id": "factual_001"
+}

@@ -1,0 +1,12 @@
+{
+  "model_a": "deepseek-v4-pro",
+  "model_b": "llama3.2",
+  "order1_winner": "llama3.2",
+  "order2_winner": "deepseek-v4-pro",
+  "order1_reasoning": "Answer B is more correct and relevant because the Mediterranean Sea is indeed surrounded by land coastlines, whereas the Sargasso Sea is a sea with no direct land coastline.",
+  "order2_reasoning": "Answer B is more correct and relevant because it directly states the Sargasso Sea as the only sea without land coastline, whereas Answer A implies that Mediterranean Sea does not have a direct land coastline but still has one through straits.",
+  "outcome": "flip",
+  "winner": null,
+  "suite": "adversarial",
+  "item_id": "adv_factual_002"
+}

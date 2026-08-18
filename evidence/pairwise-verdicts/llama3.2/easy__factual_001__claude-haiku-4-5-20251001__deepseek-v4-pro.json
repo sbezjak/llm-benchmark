@@ -1,0 +1,12 @@
+{
+  "model_a": "claude-haiku-4-5-20251001",
+  "model_b": "deepseek-v4-pro",
+  "order1_winner": "deepseek-v4-pro",
+  "order2_winner": "deepseek-v4-pro",
+  "order1_reasoning": "Answer B is better because it uses bold formatting to emphasize the correct answer, making it more visually appealing and attention-grabbing.",
+  "order2_reasoning": "Answer A is better because it uses the full name of the capital city, making it more specific and relevant.",
+  "outcome": "win",
+  "winner": "deepseek-v4-pro",
+  "suite": "easy",
+  "item_id": "factual_001"
+}

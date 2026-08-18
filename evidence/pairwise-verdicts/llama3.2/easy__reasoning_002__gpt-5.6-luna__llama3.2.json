@@ -1,0 +1,12 @@
+{
+  "model_a": "gpt-5.6-luna",
+  "model_b": "llama3.2",
+  "order1_winner": "gpt-5.6-luna",
+  "order2_winner": "llama3.2",
+  "order1_reasoning": "Answer A is more detailed and specific about the structural reason behind ice's lower density, making it a more comprehensive explanation.",
+  "order2_reasoning": "Answer A provides additional context about the crystalline structure of ice, making it more informative and detailed.",
+  "outcome": "flip",
+  "winner": null,
+  "suite": "easy",
+  "item_id": "reasoning_002"
+}

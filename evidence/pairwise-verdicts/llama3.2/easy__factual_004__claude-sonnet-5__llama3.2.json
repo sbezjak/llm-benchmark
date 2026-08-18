@@ -1,0 +1,12 @@
+{
+  "model_a": "claude-sonnet-5",
+  "model_b": "llama3.2",
+  "order1_winner": "claude-sonnet-5",
+  "order2_winner": "llama3.2",
+  "order1_reasoning": "Answer A is more correct and relevant because it provides additional context about Pluto's reclassification as a dwarf planet.",
+  "order2_reasoning": "Answer A is more correct and relevant because it provides the most accurate number of planets in our solar system without referencing Pluto as a planet.",
+  "outcome": "flip",
+  "winner": null,
+  "suite": "easy",
+  "item_id": "factual_004"
+}

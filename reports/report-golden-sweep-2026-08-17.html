@@ -1,0 +1,885 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Model benchmark - golden set (cost / latency / quality)</title><style>
+:root { color-scheme: light dark; }
+body { font: 15px/1.5 -apple-system, system-ui, sans-serif; margin: 2rem auto;
+       max-width: 1100px; padding: 0 1rem; }
+h1 { font-size: 1.5rem; } h2 { font-size: 1.15rem; margin-top: 2rem; }
+.meta { color: #666; margin-bottom: 1.5rem; }
+table { border-collapse: collapse; width: 100%; margin: 0.5rem 0 1rem;
+        font-variant-numeric: tabular-nums; }
+th, td { padding: 0.35rem 0.6rem; border-bottom: 1px solid #ccc; text-align: right; }
+th:first-child, td:first-child { text-align: left; }
+thead th { border-bottom: 2px solid #888; }
+.tie { color: #888; } .gap { font-weight: 600; }
+details { border: 1px solid #ccc; border-radius: 6px; margin: 0.4rem 0; padding: 0.3rem 0.6rem; }
+summary { cursor: pointer; font-variant-numeric: tabular-nums; }
+pre { white-space: pre-wrap; word-break: break-word; background: rgba(127,127,127,0.08);
+      padding: 0.5rem; border-radius: 4px; margin: 0.4rem 0; }
+.label { color: #666; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.04em; }
+.ans { color: #888; font-style: italic; font-size: 0.85rem; margin: 0.25rem 0 0;
+       white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+</style></head><body>
+<h1>Model benchmark - golden set (cost / latency / quality)</h1>
+<p class="meta">100 captures &middot; total spend $0.06365
+ &middot; graded by llama3.2 &middot; generated 2026-08-18 14:35:02Z
+ &middot; computed off cached captures (no re-call)</p>
+
+<h2>Cost / latency / quality</h2>
+<p class="meta">Quality is the score from the grader named above (llama3.2);
+every trace below also shows which model graded it and that judge's own tokens/cost.</p>
+<table><thead><tr><th>model</th><th>n</th><th>mean $/q</th><th>total $</th><th>mean lat ms</th><th>mean ttft ms</th><th>out tok</th><th>score</th><th>pass</th></tr></thead><tbody><tr><td>deepseek-v4-pro</td><td>20</td><td>0.000138</td><td>0.00277</td><td>2713</td><td>1869</td><td>112.7</td><td>0.970</td><td>100%</td></tr><tr><td>claude-haiku-4-5-20251001</td><td>20</td><td>0.000537</td><td>0.01073</td><td>1597</td><td>822</td><td>103.9</td><td>0.967</td><td>100%</td></tr><tr><td>gpt-5.6-luna</td><td>20</td><td>0.000082</td><td>0.00163</td><td>1323</td><td>916</td><td>65.3</td><td>0.962</td><td>95%</td></tr><tr><td>claude-sonnet-5</td><td>20</td><td>0.002426</td><td>0.04852</td><td>4093</td><td>1552</td><td>238.6</td><td>0.937</td><td>95%</td></tr><tr><td>llama3.2</td><td>20</td><td>0.000000</td><td>0.00000</td><td>7859</td><td>507</td><td>129.7</td><td>0.922</td><td>95%</td></tr></tbody></table>
+
+<h2>Benchmark validity - score with 95% interval, tail latency, cost per passed answer</h2>
+<table><thead><tr><th>model</th><th>score</th><th>95% CI</th><th>lat p50 ms</th><th>lat p95 ms</th><th>passes</th><th>$/passed</th></tr></thead><tbody><tr><td>deepseek-v4-pro</td><td>0.970</td><td>[0.948, 0.988]</td><td>1949</td><td>5987</td><td>20/20</td><td>0.000138</td></tr><tr><td>claude-haiku-4-5-20251001</td><td>0.967</td><td>[0.950, 0.982]</td><td>979</td><td>3379</td><td>20/20</td><td>0.000537</td></tr><tr><td>gpt-5.6-luna</td><td>0.962</td><td>[0.920, 0.992]</td><td>840</td><td>3484</td><td>19/20</td><td>0.000086</td></tr><tr><td>claude-sonnet-5</td><td>0.937</td><td>[0.897, 0.967]</td><td>3471</td><td>7302</td><td>19/20</td><td>0.002554</td></tr><tr><td>llama3.2</td><td>0.922</td><td>[0.872, 0.965]</td><td>3211</td><td>26081</td><td>19/20</td><td>0.000000</td></tr></tbody></table>
+
+<h2>Paired significance - is a score difference real, or noise?</h2>
+<p class="meta">Baseline is the top-ranked model; each row bootstraps the per-item
+score difference. A CI that contains 0 means the two are a statistical tie on this
+suite. The judge emits discrete scores, so weigh the mean diff, not just the sign.</p>
+<table><thead><tr><th>deepseek-v4-pro minus</th><th>pairs</th><th>mean diff</th><th>95% CI</th><th>read</th></tr></thead><tbody><tr><td>claude-haiku-4-5-20251001</td><td>20</td><td>+0.003</td><td>[-0.017, +0.023]</td><td class='tie'>tie (CI contains 0)</td></tr><tr><td>gpt-5.6-luna</td><td>20</td><td>+0.007</td><td>[-0.018, +0.037]</td><td class='tie'>tie (CI contains 0)</td></tr><tr><td>claude-sonnet-5</td><td>20</td><td>+0.033</td><td>[-0.010, +0.080]</td><td class='tie'>tie (CI contains 0)</td></tr><tr><td>llama3.2</td><td>20</td><td>+0.048</td><td>[+0.008, +0.092]</td><td class='gap'>gap (CI excludes 0)</td></tr></tbody></table>
+
+<h2>Full trace - every prompt and response verbatim</h2>
+<p class="meta">One block per (model, item, rep). The raw output is the ground truth;
+the tables above are all computed from these.</p>
+<details><summary>claude-haiku-4-5-20251001 &middot; definition_001 &middot; rep1 &middot; score 1.00 PASS &middot; judge llama3.2 &middot; 875ms &middot; ttft 661ms &middot; 41 tok &middot; $0.000221<div class="ans">&ldquo;AI stands for **Artificial Intelligence**. It refers to computer systems designed to perform tasks that typically require human intelligence…&rdquo;</div></summary><div class='label'>prompt</div><pre>What does the acronym AI stand for?</pre><div class='label'>expected</div><pre>Artificial Intelligence</pre><div class='label'>response</div><pre>AI stands for **Artificial Intelligence**.
+
+It refers to computer systems designed to perform tasks that typically require human intelligence, such as learning, reasoning, problem-solving, and understanding language.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=10/10 relevance=10/10 score=1.000 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer is fully correct in terms of the acronym&#x27;s meaning, but it provides additional context that is not necessary for answering the question.</pre></details><details><summary>claude-haiku-4-5-20251001 &middot; definition_001 &middot; rep2 &middot; score 1.00 PASS &middot; judge llama3.2 &middot; 844ms &middot; ttft 625ms &middot; 41 tok &middot; $0.000221<div class="ans">&ldquo;AI stands for **Artificial Intelligence**. It refers to computer systems designed to perform tasks that typically require human intelligence…&rdquo;</div></summary><div class='label'>prompt</div><pre>What does the acronym AI stand for?</pre><div class='label'>expected</div><pre>Artificial Intelligence</pre><div class='label'>response</div><pre>AI stands for **Artificial Intelligence**.
+
+It refers to computer systems designed to perform tasks that typically require human intelligence, such as learning, reasoning, problem-solving, and understanding language.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=10/10 relevance=10/10 score=1.000 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer is fully correct in terms of the acronym&#x27;s meaning, but it provides additional context that is not necessary for answering the question.</pre></details><details><summary>claude-haiku-4-5-20251001 &middot; definition_002 &middot; rep1 &middot; score 0.95 PASS &middot; judge llama3.2 &middot; 762ms &middot; ttft 662ms &middot; 32 tok &middot; $0.000177<div class="ans">&ldquo;A black hole is a region of spacetime where gravity is so strong that nothing, not even light, can escape from within its event horizon.&rdquo;</div></summary><div class='label'>prompt</div><pre>In one sentence, what is a black hole?</pre><div class='label'>expected</div><pre>A region of space where the gravitational pull is so strong that nothing, not even light, can escape from it.</pre><div class='label'>response</div><pre>A black hole is a region of spacetime where gravity is so strong that nothing, not even light, can escape from within its event horizon.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=9/10 relevance=10/10 score=0.950 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer demonstrates a clear understanding of the concept of a black hole and accurately describes its characteristics.</pre></details><details><summary>claude-haiku-4-5-20251001 &middot; definition_002 &middot; rep2 &middot; score 1.00 PASS &middot; judge llama3.2 &middot; 776ms &middot; ttft 616ms &middot; 31 tok &middot; $0.000172<div class="ans">&ldquo;A black hole is a region of space where gravity is so strong that nothing, not even light, can escape from within its event horizon.&rdquo;</div></summary><div class='label'>prompt</div><pre>In one sentence, what is a black hole?</pre><div class='label'>expected</div><pre>A region of space where the gravitational pull is so strong that nothing, not even light, can escape from it.</pre><div class='label'>response</div><pre>A black hole is a region of space where gravity is so strong that nothing, not even light, can escape from within its event horizon.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=10/10 relevance=10/10 score=1.000 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer is fully correct in terms of content, but the phrasing could be improved for clarity and concision.</pre></details><details><summary>claude-haiku-4-5-20251001 &middot; factual_001 &middot; rep1 &middot; score 1.00 PASS &middot; judge llama3.2 &middot; 746ms &middot; ttft 728ms &middot; 10 tok &middot; $0.000064<div class="ans">&ldquo;The capital of Slovenia is Ljubljana.&rdquo;</div></summary><div class='label'>prompt</div><pre>What is the capital of Slovenia?</pre><div class='label'>expected</div><pre>Ljubljana</pre><div class='label'>response</div><pre>The capital of Slovenia is Ljubljana.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=10/10 relevance=10/10 score=1.000 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer correctly identifies the capital of Slovenia, but does not provide any additional context or information.</pre></details><details><summary>claude-haiku-4-5-20251001 &middot; factual_001 &middot; rep2 &middot; score 1.00 PASS &middot; judge llama3.2 &middot; 802ms &middot; ttft 794ms &middot; 10 tok &middot; $0.000064<div class="ans">&ldquo;The capital of Slovenia is Ljubljana.&rdquo;</div></summary><div class='label'>prompt</div><pre>What is the capital of Slovenia?</pre><div class='label'>expected</div><pre>Ljubljana</pre><div class='label'>response</div><pre>The capital of Slovenia is Ljubljana.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=10/10 relevance=10/10 score=1.000 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer correctly identifies the capital of Slovenia, but does not provide any additional context or information.</pre></details><details><summary>claude-haiku-4-5-20251001 &middot; factual_002 &middot; rep1 &middot; score 1.00 PASS &middot; judge llama3.2 &middot; 879ms &middot; ttft 844ms &middot; 13 tok &middot; $0.000080<div class="ans">&ldquo;The chemical symbol for silver is **Ag**.&rdquo;</div></summary><div class='label'>prompt</div><pre>What is the chemical symbol for silver?</pre><div class='label'>expected</div><pre>Ag</pre><div class='label'>response</div><pre>The chemical symbol for silver is **Ag**.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=10/10 relevance=10/10 score=1.000 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer correctly identifies the chemical symbol for silver, but it does not provide any additional context or explanation.</pre></details><details><summary>claude-haiku-4-5-20251001 &middot; factual_002 &middot; rep2 &middot; score 1.00 PASS &middot; judge llama3.2 &middot; 773ms &middot; ttft 741ms &middot; 13 tok &middot; $0.000080<div class="ans">&ldquo;The chemical symbol for silver is **Ag**.&rdquo;</div></summary><div class='label'>prompt</div><pre>What is the chemical symbol for silver?</pre><div class='label'>expected</div><pre>Ag</pre><div class='label'>response</div><pre>The chemical symbol for silver is **Ag**.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=10/10 relevance=10/10 score=1.000 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer correctly identifies the chemical symbol for silver, but it does not provide any additional context or explanation.</pre></details><details><summary>claude-haiku-4-5-20251001 &middot; factual_003 &middot; rep1 &middot; score 1.00 PASS &middot; judge llama3.2 &middot; 772ms &middot; ttft 707ms &middot; 18 tok &middot; $0.000104<div class="ans">&ldquo;Lima is located in South America. It is the capital city of Peru.&rdquo;</div></summary><div class='label'>prompt</div><pre>In what continent is Lima located?</pre><div class='label'>expected</div><pre>South America</pre><div class='label'>response</div><pre>Lima is located in South America. It is the capital city of Peru.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=10/10 relevance=10/10 score=1.000 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer correctly identifies the continent and provides additional relevant information about Lima&#x27;s location.</pre></details><details><summary>claude-haiku-4-5-20251001 &middot; factual_003 &middot; rep2 &middot; score 1.00 PASS &middot; judge llama3.2 &middot; 991ms &middot; ttft 990ms &middot; 18 tok &middot; $0.000104<div class="ans">&ldquo;Lima is located in South America. It is the capital city of Peru.&rdquo;</div></summary><div class='label'>prompt</div><pre>In what continent is Lima located?</pre><div class='label'>expected</div><pre>South America</pre><div class='label'>response</div><pre>Lima is located in South America. It is the capital city of Peru.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=10/10 relevance=10/10 score=1.000 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer correctly identifies the continent and provides additional relevant information about Lima&#x27;s location.</pre></details><details><summary>claude-haiku-4-5-20251001 &middot; factual_004 &middot; rep1 &middot; score 0.95 PASS &middot; judge llama3.2 &middot; 1218ms &middot; ttft 814ms &middot; 85 tok &middot; $0.000441<div class="ans">&ldquo;There are 8 planets in our solar system. In order from the Sun, they are: 1. Mercury 2. Venus 3. Earth 4. Mars 5. Jupiter 6. Saturn 7. Uranu…&rdquo;</div></summary><div class='label'>prompt</div><pre>How many planets are in our solar system?</pre><div class='label'>expected</div><pre>8</pre><div class='label'>response</div><pre>There are 8 planets in our solar system. In order from the Sun, they are:
+
+1. Mercury
+2. Venus
+3. Earth
+4. Mars
+5. Jupiter
+6. Saturn
+7. Uranus
+8. Neptune
+
+Pluto was reclassified as a &quot;dwarf planet&quot; in 2006 by the International Astronomical Union.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=10/10 relevance=9/10 score=0.950 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer is correct but includes extraneous information about Pluto, which is not relevant to the question.</pre></details><details><summary>claude-haiku-4-5-20251001 &middot; factual_004 &middot; rep2 &middot; score 0.95 PASS &middot; judge llama3.2 &middot; 1010ms &middot; ttft 690ms &middot; 76 tok &middot; $0.000396<div class="ans">&ldquo;There are 8 planets in our solar system: 1. Mercury 2. Venus 3. Earth 4. Mars 5. Jupiter 6. Saturn 7. Uranus 8. Neptune Pluto was reclassifi…&rdquo;</div></summary><div class='label'>prompt</div><pre>How many planets are in our solar system?</pre><div class='label'>expected</div><pre>8</pre><div class='label'>response</div><pre>There are 8 planets in our solar system:
+
+1. Mercury
+2. Venus
+3. Earth
+4. Mars
+5. Jupiter
+6. Saturn
+7. Uranus
+8. Neptune
+
+Pluto was reclassified as a &quot;dwarf planet&quot; in 2006 by the International Astronomical Union.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=10/10 relevance=9/10 score=0.950 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer is correct, but includes extraneous information about Pluto.</pre></details><details><summary>claude-haiku-4-5-20251001 &middot; procedural_001 &middot; rep1 &middot; score 0.95 PASS &middot; judge llama3.2 &middot; 2870ms &middot; ttft 828ms &middot; 233 tok &middot; $0.001189<div class="ans">&ldquo;# Running Tests with Multiple Markers in pytest To run tests marked with either &#x27;slow&#x27; **or** &#x27;network&#x27;, use: ```bash pytest -m &quot;slow or net…&rdquo;</div></summary><div class='label'>prompt</div><pre>Which pytest command runs tests marked either &#x27;slow&#x27; or &#x27;network&#x27;?</pre><div class='label'>expected</div><pre>pytest -m &#x27;slow or network&#x27;</pre><div class='label'>response</div><pre># Running Tests with Multiple Markers in pytest
+
+To run tests marked with either &#x27;slow&#x27; **or** &#x27;network&#x27;, use:
+
+```bash
+pytest -m &quot;slow or network&quot;
+```
+
+## Examples
+
+**Run tests marked &#x27;slow&#x27; OR &#x27;network&#x27;:**
+```bash
+pytest -m &quot;slow or network&quot;
+```
+
+**Run tests marked &#x27;slow&#x27; AND &#x27;network&#x27;:**
+```bash
+pytest -m &quot;slow and network&quot;
+```
+
+**Run tests marked &#x27;slow&#x27; BUT NOT &#x27;network&#x27;:**
+```bash
+pytest -m &quot;slow and not network&quot;
+```
+
+## Test Example
+
+```python
+import pytest
+
+@pytest.mark.slow
+def test_slow_operation():
+    pass
+
+@pytest.mark.network
+def test_network_call():
+    pass
+
+@pytest.mark.slow
+@pytest.mark.network
+def test_slow_network_operation():
+    pass
+```
+
+Running `pytest -m &quot;slow or network&quot;` would execute all three test functions above.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=9/10 relevance=10/10 score=0.950 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer correctly provides the pytest command to run tests marked with either &#x27;slow&#x27; or &#x27;network&#x27;, but could have been more concise and provided additional examples.</pre></details><details><summary>claude-haiku-4-5-20251001 &middot; procedural_001 &middot; rep2 &middot; score 0.95 PASS &middot; judge llama3.2 &middot; 3259ms &middot; ttft 1302ms &middot; 228 tok &middot; $0.001164<div class="ans">&ldquo;# Running Tests with Multiple Markers in pytest To run tests marked with either `slow` OR `network`, use: ```bash pytest -m &quot;slow or network…&rdquo;</div></summary><div class='label'>prompt</div><pre>Which pytest command runs tests marked either &#x27;slow&#x27; or &#x27;network&#x27;?</pre><div class='label'>expected</div><pre>pytest -m &#x27;slow or network&#x27;</pre><div class='label'>response</div><pre># Running Tests with Multiple Markers in pytest
+
+To run tests marked with either `slow` OR `network`, use:
+
+```bash
+pytest -m &quot;slow or network&quot;
+```
+
+## Examples
+
+```bash
+# Run tests marked &#x27;slow&#x27; or &#x27;network&#x27;
+pytest -m &quot;slow or network&quot;
+
+# Run tests marked &#x27;slow&#x27; and &#x27;network&#x27;
+pytest -m &quot;slow and network&quot;
+
+# Run tests marked &#x27;slow&#x27; but not &#x27;network&#x27;
+pytest -m &quot;slow and not network&quot;
+
+# Run tests marked either &#x27;slow&#x27; or &#x27;network&#x27; (alternative syntax)
+pytest -m &quot;slow or network&quot; tests/
+```
+
+## Setup Example
+
+First, mark your tests:
+
+```python
+import pytest
+
+@pytest.mark.slow
+def test_slow_operation():
+    pass
+
+@pytest.mark.network
+def test_network_call():
+    pass
+```
+
+Then run with the command above. The `-m` flag filters tests by their markers using boolean logic.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=9/10 relevance=10/10 score=0.950 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer correctly provides the pytest command to run tests marked &#x27;slow&#x27; or &#x27;network&#x27;, but could have been more concise and provided additional examples.</pre></details><details><summary>claude-haiku-4-5-20251001 &middot; reasoning_001 &middot; rep1 &middot; score 0.95 PASS &middot; judge llama3.2 &middot; 3652ms &middot; ttft 1117ms &middot; 276 tok &middot; $0.001401<div class="ans">&ldquo;# Cold-Blooded vs. Warm-Blooded Animals ## **Warm-Blooded (Endothermic)** - Generate heat internally through metabolism - Maintain a constan…&rdquo;</div></summary><div class='label'>prompt</div><pre>What is the difference between cold blooded and warm blooded animals?</pre><div class='label'>expected</div><pre>Cold blooded animals rely on external sources for body heat, while warm blooded animals maintain a constant internal body temperature.</pre><div class='label'>response</div><pre># Cold-Blooded vs. Warm-Blooded Animals
+
+## **Warm-Blooded (Endothermic)**
+- Generate heat internally through metabolism
+- Maintain a constant body temperature regardless of environment
+- Examples: mammals (humans, dogs, whales) and birds
+- **Advantages**: Active in cold conditions, consistent metabolism
+- **Disadvantages**: Require more food/energy to fuel heat production
+
+## **Cold-Blooded (Ectothermic)**
+- Rely on external environment to regulate body temperature
+- Body temperature fluctuates with surroundings
+- Examples: reptiles (snakes, lizards), amphibians, and fish
+- **Advantages**: Need less food, can survive long without eating
+- **Disadvantages**: Less active in cold, must move to warmer areas to warm up
+
+## **Key Difference**
+The fundamental distinction is **where the heat comes from**—internally (warm-blooded) or externally (cold-blooded).
+
+**Note**: &quot;Cold-blooded&quot; is somewhat misleading; their blood isn&#x27;t actually cold—it&#x27;s just the same temperature as their environment. Scientists prefer terms like &quot;ectothermic&quot; and &quot;endothermic.&quot;</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=9/10 relevance=10/10 score=0.950 &gt;= threshold=0.7 | reasoning: The model provided a clear explanation of the difference between warm-blooded and cold-blooded animals, but its phrasing could be more concise and accurate in some places.</pre></details><details><summary>claude-haiku-4-5-20251001 &middot; reasoning_001 &middot; rep2 &middot; score 0.95 PASS &middot; judge llama3.2 &middot; 2911ms &middot; ttft 680ms &middot; 266 tok &middot; $0.001351<div class="ans">&ldquo;# Cold-Blooded vs. Warm-Blooded Animals ## **Warm-Blooded (Endothermic)** - Generate heat internally through metabolism - Maintain constant …&rdquo;</div></summary><div class='label'>prompt</div><pre>What is the difference between cold blooded and warm blooded animals?</pre><div class='label'>expected</div><pre>Cold blooded animals rely on external sources for body heat, while warm blooded animals maintain a constant internal body temperature.</pre><div class='label'>response</div><pre># Cold-Blooded vs. Warm-Blooded Animals
+
+## **Warm-Blooded (Endothermic)**
+- Generate heat internally through metabolism
+- Maintain constant body temperature regardless of environment
+- Examples: mammals, birds
+- **Advantages**: Active in cold conditions, consistent performance
+- **Disadvantages**: Need more food/energy to fuel metabolism
+
+## **Cold-Blooded (Ectothermic)**
+- Body temperature matches their surroundings
+- Rely on external heat sources (sun, warm ground)
+- Examples: reptiles, amphibians, fish
+- **Advantages**: Need less food, can survive extended periods without eating
+- **Disadvantages**: Less active in cold, movement slows in cool temperatures
+
+## **Key Difference**
+The main distinction is **where the heat comes from**: internally (warm-blooded) or externally (cold-blooded). This affects their activity levels, habitat preferences, and energy needs.
+
+---
+
+*Note: Scientists increasingly use &quot;endothermic&quot; and &quot;ectothermic&quot; as more precise terms since not all &quot;cold-blooded&quot; animals are actually cold to the touch in warm environments.*</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=9/10 relevance=10/10 score=0.950 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer correctly explains the difference between cold blooded and warm blooded animals, but could benefit from a clearer distinction between &#x27;warm-blooded&#x27; and &#x27;endothermic&#x27;, as well as more precise definitions of terms like &#x27;ectothermic&#x27;.</pre></details><details><summary>claude-haiku-4-5-20251001 &middot; reasoning_002 &middot; rep1 &middot; score 0.95 PASS &middot; judge llama3.2 &middot; 968ms &middot; ttft 847ms &middot; 23 tok &middot; $0.000133<div class="ans">&ldquo;Ice floats because water expands when it freezes, making ice less dense than liquid water.&rdquo;</div></summary><div class='label'>prompt</div><pre>In one sentence, why does ice float on water?</pre><div class='label'>expected</div><pre>Ice floats on water because it is less dense than liquid water.</pre><div class='label'>response</div><pre>Ice floats because water expands when it freezes, making ice less dense than liquid water.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=9/10 relevance=10/10 score=0.950 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer correctly explains the reason for ice floating on water, but its phrasing is slightly different from the expected answer.</pre></details><details><summary>claude-haiku-4-5-20251001 &middot; reasoning_002 &middot; rep2 &middot; score 0.95 PASS &middot; judge llama3.2 &middot; 1287ms &middot; ttft 1068ms &middot; 31 tok &middot; $0.000173<div class="ans">&ldquo;Ice floats because it&#x27;s less dense than liquid water, as water molecules spread farther apart when they freeze into a crystalline structure.&rdquo;</div></summary><div class='label'>prompt</div><pre>In one sentence, why does ice float on water?</pre><div class='label'>expected</div><pre>Ice floats on water because it is less dense than liquid water.</pre><div class='label'>response</div><pre>Ice floats because it&#x27;s less dense than liquid water, as water molecules spread farther apart when they freeze into a crystalline structure.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=9/10 relevance=10/10 score=0.950 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer correctly explains the reason for ice floating on water and provides additional context about the structural change in water molecules during freezing.</pre></details><details><summary>claude-haiku-4-5-20251001 &middot; reasoning_003 &middot; rep1 &middot; score 0.95 PASS &middot; judge llama3.2 &middot; 3364ms &middot; ttft 1053ms &middot; 310 tok &middot; $0.001567<div class="ans">&ldquo;# How Photosynthesis Works Photosynthesis is the process plants use to convert light energy into chemical energy. Here&#x27;s the basic breakdown…&rdquo;</div></summary><div class='label'>prompt</div><pre>How does photosynthesis work in plants?</pre><div class='label'>expected</div><pre>Photosynthesis in plants converts light energy into chemical energy, using sunlight to transform carbon dioxide and water into glucose and oxygen.</pre><div class='label'>response</div><pre># How Photosynthesis Works
+
+Photosynthesis is the process plants use to convert light energy into chemical energy. Here&#x27;s the basic breakdown:
+
+## The Simple Version
+
+**Input:** Light + Water + Carbon Dioxide  
+**Output:** Glucose (sugar) + Oxygen
+
+Plants use sunlight to turn CO₂ from the air and water from soil into sugar for energy and growth, while releasing oxygen as a byproduct.
+
+## The Two Main Stages
+
+**Light-Dependent Reactions (in the thylakoid membrane)**
+- Occur in sunlight
+- Chlorophyll absorbs light energy
+- Water molecules are split, releasing oxygen
+- Energy is stored in molecules (ATP and NADPH)
+
+**Light-Independent Reactions/Calvin Cycle (in the stroma)**
+- Don&#x27;t directly require light (but depend on products from above)
+- Uses the energy from light reactions
+- Converts CO₂ into glucose
+
+## Where It Happens
+
+The process takes place in **chloroplasts**, the plant cell structures containing chlorophyll—the green pigment that captures light energy.
+
+## Why It Matters
+
+- Provides energy for plant growth
+- Produces oxygen we breathe
+- Forms the base of most food chains on Earth
+- Removes CO₂ from the atmosphere
+
+Is there a specific part of photosynthesis you&#x27;d like to explore further?</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=9/10 relevance=10/10 score=0.950 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer is mostly correct, but it includes some unnecessary details and formatting. The explanation of the two main stages of photosynthesis is clear and accurate.</pre></details><details><summary>claude-haiku-4-5-20251001 &middot; reasoning_003 &middot; rep2 &middot; score 0.85 PASS &middot; judge llama3.2 &middot; 3190ms &middot; ttft 681ms &middot; 323 tok &middot; $0.001632<div class="ans">&ldquo;# How Photosynthesis Works Photosynthesis is the process where plants convert light energy into chemical energy. Here&#x27;s the basic breakdown:…&rdquo;</div></summary><div class='label'>prompt</div><pre>How does photosynthesis work in plants?</pre><div class='label'>expected</div><pre>Photosynthesis in plants converts light energy into chemical energy, using sunlight to transform carbon dioxide and water into glucose and oxygen.</pre><div class='label'>response</div><pre># How Photosynthesis Works
+
+Photosynthesis is the process where plants convert light energy into chemical energy. Here&#x27;s the basic breakdown:
+
+## The Simple Version
+**Light + Water + Carbon Dioxide → Glucose + Oxygen**
+
+## The Two Main Stages
+
+### 1. Light-Dependent Reactions (in the thylakoids)
+- Occur in chloroplasts when light is present
+- Chlorophyll absorbs light energy
+- Water molecules are split, releasing oxygen as a byproduct
+- Energy is captured in molecules (ATP and NADPH) that power the next stage
+
+### 2. Light-Independent Reactions/Calvin Cycle (in the stroma)
+- Occur in the chloroplast&#x27;s stroma
+- Use energy from step 1 to convert CO₂ into glucose
+- Happens regardless of light (but depends on products from light reactions)
+
+## Where It Happens
+- **Location**: Chloroplasts (organelles in plant cells)
+- **Key pigment**: Chlorophyll (gives plants their green color)
+
+## Why It Matters
+- Plants produce their own food (glucose for energy)
+- Releases oxygen we breathe
+- Forms the base of most food chains on Earth
+- Removes CO₂ from the atmosphere
+
+The beauty of photosynthesis is that it harnesses the sun&#x27;s energy to create the chemical bonds in sugars that power nearly all life on Earth.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=8/10 relevance=9/10 score=0.850 &gt;= threshold=0.7 | reasoning: The model provided a detailed explanation of photosynthesis, including its stages and key components. However, the answer could be more concise and directly address the question.</pre></details><details><summary>claude-sonnet-5 &middot; definition_001 &middot; rep1 &middot; score 0.95 PASS &middot; judge llama3.2 &middot; 2861ms &middot; ttft 798ms &middot; 223 tok &middot; $0.002266<div class="ans">&ldquo;# AI **AI** stands for **Artificial Intelligence**. This refers to the field of computer science focused on creating systems that can perfor…&rdquo;</div></summary><div class='label'>prompt</div><pre>What does the acronym AI stand for?</pre><div class='label'>expected</div><pre>Artificial Intelligence</pre><div class='label'>response</div><pre># AI
+
+**AI** stands for **Artificial Intelligence**.
+
+This refers to the field of computer science focused on creating systems that can perform tasks typically requiring human intelligence, such as:
+
+- Understanding and generating language
+- Recognizing patterns and images
+- Learning from data
+- Making decisions or predictions
+- Solving problems
+
+There are also related terms worth noting:
+- **AGI** – Artificial General Intelligence (hypothetical AI with human-level reasoning across all domains)
+- **ANI** – Artificial Narrow Intelligence (AI designed for specific tasks, which is what exists today)
+
+Let me know if you&#x27;d like more detail on any of these concepts!</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=9/10 relevance=10/10 score=0.950 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer correctly identifies the acronym AI and provides a brief explanation, but its response feels redundant and unnecessary given the context of the question. The model could have simply provided the expected answer.</pre></details><details><summary>claude-sonnet-5 &middot; definition_001 &middot; rep2 &middot; score 0.75 PASS &middot; judge llama3.2 &middot; 3505ms &middot; ttft 780ms &middot; 248 tok &middot; $0.002516<div class="ans">&ldquo;# AI **AI** stands for **Artificial Intelligence**. This refers to the field of computer science focused on creating systems that can perfor…&rdquo;</div></summary><div class='label'>prompt</div><pre>What does the acronym AI stand for?</pre><div class='label'>expected</div><pre>Artificial Intelligence</pre><div class='label'>response</div><pre># AI
+
+**AI** stands for **Artificial Intelligence**.
+
+This refers to the field of computer science focused on creating systems that can perform tasks typically requiring human intelligence, such as:
+
+- Learning from data
+- Recognizing patterns
+- Understanding language
+- Solving problems
+- Making decisions
+- Perceiving and interpreting the environment (e.g., through vision or sound)
+
+AI encompasses various subfields, including **machine learning** (systems that improve through experience), **natural language processing** (understanding and generating human language), **computer vision** (interpreting visual information), and **robotics** (physical interaction with the world).
+
+The term was first coined in 1956 at the Dartmouth Conference, often considered the founding event of AI as an academic discipline.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=10/10 relevance=5/10 score=0.750 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer is correct but lacks detail and context, failing to provide a clear explanation of what AI stands for.</pre></details><details><summary>claude-sonnet-5 &middot; definition_002 &middot; rep1 &middot; score 0.95 PASS &middot; judge llama3.2 &middot; 3085ms &middot; ttft 1770ms &middot; 68 tok &middot; $0.000718<div class="ans">&ldquo;A black hole is a region of space where gravity is so intense—typically due to a massive amount of matter compressed into a very small volum…&rdquo;</div></summary><div class='label'>prompt</div><pre>In one sentence, what is a black hole?</pre><div class='label'>expected</div><pre>A region of space where the gravitational pull is so strong that nothing, not even light, can escape from it.</pre><div class='label'>response</div><pre>A black hole is a region of space where gravity is so intense—typically due to a massive amount of matter compressed into a very small volume—that nothing, not even light, can escape from within its boundary known as the event horizon.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=9/10 relevance=10/10 score=0.950 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer demonstrates an understanding of the concept of black holes and their characteristics, but could be slightly rephrased for clarity.</pre></details><details><summary>claude-sonnet-5 &middot; definition_002 &middot; rep2 &middot; score 0.95 PASS &middot; judge llama3.2 &middot; 3646ms &middot; ttft 2031ms &middot; 56 tok &middot; $0.000598<div class="ans">&ldquo;A black hole is a region of space where gravity is so intense—typically due to a massive amount of matter compressed into a small volume—tha…&rdquo;</div></summary><div class='label'>prompt</div><pre>In one sentence, what is a black hole?</pre><div class='label'>expected</div><pre>A region of space where the gravitational pull is so strong that nothing, not even light, can escape from it.</pre><div class='label'>response</div><pre>A black hole is a region of space where gravity is so intense—typically due to a massive amount of matter compressed into a small volume—that nothing, not even light, can escape from it.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=9/10 relevance=10/10 score=0.950 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer demonstrates a clear understanding of the concept of a black hole and its effects on spacetime. However, the slight repetition in wording does not detract from its overall correctness.</pre></details><details><summary>claude-sonnet-5 &middot; factual_001 &middot; rep1 &middot; score 0.95 PASS &middot; judge llama3.2 &middot; 2589ms &middot; ttft 797ms &middot; 146 tok &middot; $0.001496<div class="ans">&ldquo;The capital of Slovenia is **Ljubljana**. Ljubljana is not only the capital but also the largest city in Slovenia. It&#x27;s known for its charmi…&rdquo;</div></summary><div class='label'>prompt</div><pre>What is the capital of Slovenia?</pre><div class='label'>expected</div><pre>Ljubljana</pre><div class='label'>response</div><pre>The capital of Slovenia is **Ljubljana**.
+
+Ljubljana is not only the capital but also the largest city in Slovenia. It&#x27;s known for its charming old town, a picturesque river (the Ljubljanica) running through the city center, a hilltop castle overlooking the town, and a vibrant cultural scene. The city was notably designed in part by architect Jože Plečnik, whose work gives Ljubljana much of its distinctive character.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=10/10 relevance=9/10 score=0.950 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer is fully correct as it directly states the capital of Slovenia, but it also provides additional information that, while relevant to the topic, is not strictly necessary to answer the question.</pre></details><details><summary>claude-sonnet-5 &middot; factual_001 &middot; rep2 &middot; score 0.95 PASS &middot; judge llama3.2 &middot; 1944ms &middot; ttft 766ms &middot; 93 tok &middot; $0.000966<div class="ans">&ldquo;The capital of Slovenia is **Ljubljana**. It&#x27;s also the largest city in the country and serves as its cultural, economic, and political cent…&rdquo;</div></summary><div class='label'>prompt</div><pre>What is the capital of Slovenia?</pre><div class='label'>expected</div><pre>Ljubljana</pre><div class='label'>response</div><pre>The capital of Slovenia is **Ljubljana**.
+
+It&#x27;s also the largest city in the country and serves as its cultural, economic, and political center. Ljubljana is known for its charming old town, the Ljubljanica River running through it, and Ljubljana Castle overlooking the city.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=10/10 relevance=9/10 score=0.950 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer is fully correct in terms of identifying the capital of Slovenia, but provides additional information that, while relevant to the question, slightly exceeds the expected response.</pre></details><details><summary>claude-sonnet-5 &middot; factual_002 &middot; rep1 &middot; score 0.95 PASS &middot; judge llama3.2 &middot; 3437ms &middot; ttft 2590ms &middot; 33 tok &middot; $0.000368<div class="ans">&ldquo;The chemical symbol for silver is **Ag**, derived from the Latin word *argentum*.&rdquo;</div></summary><div class='label'>prompt</div><pre>What is the chemical symbol for silver?</pre><div class='label'>expected</div><pre>Ag</pre><div class='label'>response</div><pre>The chemical symbol for silver is **Ag**, derived from the Latin word *argentum*.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=9/10 relevance=10/10 score=0.950 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer correctly identifies the chemical symbol for silver and provides a brief etymology, but could be improved by being more concise.</pre></details><details><summary>claude-sonnet-5 &middot; factual_002 &middot; rep2 &middot; score 0.95 PASS &middot; judge llama3.2 &middot; 3303ms &middot; ttft 2080ms &middot; 37 tok &middot; $0.000408<div class="ans">&ldquo;The chemical symbol for silver is **Ag**, derived from the Latin word for silver, *argentum*.&rdquo;</div></summary><div class='label'>prompt</div><pre>What is the chemical symbol for silver?</pre><div class='label'>expected</div><pre>Ag</pre><div class='label'>response</div><pre>The chemical symbol for silver is **Ag**, derived from the Latin word for silver, *argentum*.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=9/10 relevance=10/10 score=0.950 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer correctly identifies the chemical symbol for silver and provides a brief etymology, but could be more concise.</pre></details><details><summary>claude-sonnet-5 &middot; factual_003 &middot; rep1 &middot; score 1.00 PASS &middot; judge llama3.2 &middot; 2805ms &middot; ttft 1972ms &middot; 48 tok &middot; $0.000512<div class="ans">&ldquo;Lima is located in **South America**. It is the capital and largest city of Peru, situated on the central coast of the country along the Pac…&rdquo;</div></summary><div class='label'>prompt</div><pre>In what continent is Lima located?</pre><div class='label'>expected</div><pre>South America</pre><div class='label'>response</div><pre>Lima is located in **South America**. It is the capital and largest city of Peru, situated on the central coast of the country along the Pacific Ocean.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=10/10 relevance=10/10 score=1.000 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer correctly identifies the continent where Lima is located and provides additional context about its location.</pre></details><details><summary>claude-sonnet-5 &middot; factual_003 &middot; rep2 &middot; score 1.00 PASS &middot; judge llama3.2 &middot; 2770ms &middot; ttft 1906ms &middot; 40 tok &middot; $0.000432<div class="ans">&ldquo;Lima is located in **South America**. It is the capital and largest city of Peru, situated on the country&#x27;s Pacific coast.&rdquo;</div></summary><div class='label'>prompt</div><pre>In what continent is Lima located?</pre><div class='label'>expected</div><pre>South America</pre><div class='label'>response</div><pre>Lima is located in **South America**. It is the capital and largest city of Peru, situated on the country&#x27;s Pacific coast.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=10/10 relevance=10/10 score=1.000 &gt;= threshold=0.7 | reasoning: The model provided a correct answer with additional context about Lima&#x27;s location within Peru.</pre></details><details><summary>claude-sonnet-5 &middot; factual_004 &middot; rep1 &middot; score 0.95 PASS &middot; judge llama3.2 &middot; 3710ms &middot; ttft 1792ms &middot; 189 tok &middot; $0.001924<div class="ans">&ldquo;There are **8 planets** in our solar system: 1. **Mercury** 2. **Venus** 3. **Earth** 4. **Mars** 5. **Jupiter** 6. **Saturn** 7. **Uranus**…&rdquo;</div></summary><div class='label'>prompt</div><pre>How many planets are in our solar system?</pre><div class='label'>expected</div><pre>8</pre><div class='label'>response</div><pre>There are **8 planets** in our solar system:
+
+1. **Mercury**
+2. **Venus**
+3. **Earth**
+4. **Mars**
+5. **Jupiter**
+6. **Saturn**
+7. **Uranus**
+8. **Neptune**
+
+Note: Pluto was considered the ninth planet until 2006, when the International Astronomical Union (IAU) reclassified it as a **&quot;dwarf planet&quot;** due to updated criteria for what defines a planet. Other dwarf planets in our solar system include Eris, Haumea, Makemake, and Ceres.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=10/10 relevance=9/10 score=0.950 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer is fully correct but includes extraneous information about Pluto&#x27;s reclassification.</pre></details><details><summary>claude-sonnet-5 &middot; factual_004 &middot; rep2 &middot; score 1.00 PASS &middot; judge llama3.2 &middot; 4015ms &middot; ttft 1954ms &middot; 202 tok &middot; $0.002054<div class="ans">&ldquo;# Planets in Our Solar System There are **8 planets** in our solar system: 1. **Mercury** 2. **Venus** 3. **Earth** 4. **Mars** 5. **Jupiter…&rdquo;</div></summary><div class='label'>prompt</div><pre>How many planets are in our solar system?</pre><div class='label'>expected</div><pre>8</pre><div class='label'>response</div><pre># Planets in Our Solar System
+
+There are **8 planets** in our solar system:
+
+1. **Mercury**
+2. **Venus**
+3. **Earth**
+4. **Mars**
+5. **Jupiter**
+6. **Saturn**
+7. **Uranus**
+8. **Neptune**
+
+**Note:** Pluto was considered the 9th planet until 2006, when the International Astronomical Union (IAU) reclassified it as a **&quot;dwarf planet&quot;** due to new criteria for what defines a planet. Other dwarf planets in our solar system include Eris, Haumea, Makemake, and Ceres.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=10/10 relevance=10/10 score=1.000 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer is fully correct but includes extraneous information about Pluto and other dwarf planets.</pre></details><details><summary>claude-sonnet-5 &middot; procedural_001 &middot; rep1 &middot; score 0.95 PASS &middot; judge llama3.2 &middot; 6029ms &middot; ttft 1870ms &middot; 448 tok &middot; $0.004540<div class="ans">&ldquo;# Running Tests Marked &#x27;slow&#x27; or &#x27;network&#x27; in pytest To run tests marked with either `slow` or `network`, use the `-m` flag with the `or` op…&rdquo;</div></summary><div class='label'>prompt</div><pre>Which pytest command runs tests marked either &#x27;slow&#x27; or &#x27;network&#x27;?</pre><div class='label'>expected</div><pre>pytest -m &#x27;slow or network&#x27;</pre><div class='label'>response</div><pre># Running Tests Marked &#x27;slow&#x27; or &#x27;network&#x27; in pytest
+
+To run tests marked with either `slow` or `network`, use the `-m` flag with the `or` operator:
+
+```bash
+pytest -m &quot;slow or network&quot;
+```
+
+## Explanation
+
+- The `-m` flag filters tests based on markers
+- The expression `&quot;slow or network&quot;` tells pytest to select any test marked with **either** `slow` **or** `network`
+- Quotes are needed around the expression to prevent shell interpretation issues
+
+## Prerequisites
+
+Make sure your tests are properly marked, e.g.:
+
+```python
+import pytest
+
+@pytest.mark.slow
+def test_something_slow():
+    ...
+
+@pytest.mark.network
+def test_something_network():
+    ...
+```
+
+And register the markers in your `pytest.ini`, `pyproject.toml`, or `setup.cfg` to avoid warnings:
+
+```ini
+[pytest]
+markers =
+    slow: marks tests as slow
+    network: marks tests that require network access
+```
+
+## Other Useful Marker Expressions
+
+| Command | Description |
+|---------|-------------|
+| `pytest -m &quot;slow and network&quot;` | Tests marked with **both** slow **and** network |
+| `pytest -m &quot;not slow&quot;` | Tests **not** marked slow |
+| `pytest -m &quot;slow and not network&quot;` | Slow tests excluding network ones |</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=9/10 relevance=10/10 score=0.950 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer correctly explains the pytest command to run tests marked &#x27;slow&#x27; or &#x27;network&#x27;, but its formatting is slightly off. The expected format is pytest -m &#x27;slow or network&#x27;.</pre></details><details><summary>claude-sonnet-5 &middot; procedural_001 &middot; rep2 &middot; score 0.65 FAIL &middot; judge llama3.2 &middot; 5661ms &middot; ttft 1525ms &middot; 454 tok &middot; $0.004600<div class="ans">&ldquo;# Running Tests Marked &#x27;slow&#x27; or &#x27;network&#x27; To run pytest tests marked with either `slow` or `network` markers, use the `-m` flag with an OR …&rdquo;</div></summary><div class='label'>prompt</div><pre>Which pytest command runs tests marked either &#x27;slow&#x27; or &#x27;network&#x27;?</pre><div class='label'>expected</div><pre>pytest -m &#x27;slow or network&#x27;</pre><div class='label'>response</div><pre># Running Tests Marked &#x27;slow&#x27; or &#x27;network&#x27;
+
+To run pytest tests marked with either `slow` or `network` markers, use the `-m` flag with an OR expression:
+
+```bash
+pytest -m &quot;slow or network&quot;
+```
+
+## Additional Useful Variations
+
+**Run tests with verbose output:**
+```bash
+pytest -m &quot;slow or network&quot; -v
+```
+
+**Run tests that are NOT slow or network** (opposite/exclude):
+```bash
+pytest -m &quot;not slow and not network&quot;
+```
+
+**Combine with other markers:**
+```bash
+pytest -m &quot;(slow or network) and not skip_ci&quot;
+```
+
+## Prerequisite: Register Custom Markers
+
+If you haven&#x27;t already, register these markers in your `pytest.ini`, `pyproject.toml`, or `setup.cfg` to avoid warnings:
+
+**pytest.ini:**
+```ini
+[pytest]
+markers =
+    slow: marks tests as slow
+    network: marks tests that require network access
+```
+
+**pyproject.toml:**
+```toml
+[tool.pytest.ini_options]
+markers = [
+    &quot;slow: marks tests as slow&quot;,
+    &quot;network: marks tests that require network access&quot;,
+]
+```
+
+Then mark your tests like this:
+```python
+import pytest
+
+@pytest.mark.slow
+def test_something_slow():
+    ...
+
+@pytest.mark.network
+def test_api_call():
+    ...
+```</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=5/10 relevance=8/10 score=0.650 &lt; threshold=0.7 | reasoning: The model&#x27;s answer partially addresses the question, providing a general guideline for running tests marked with specific markers, but lacks specificity and fails to mention the &#x27;-m&#x27; flag.</pre></details><details><summary>claude-sonnet-5 &middot; reasoning_001 &middot; rep1 &middot; score 0.95 PASS &middot; judge llama3.2 &middot; 7302ms &middot; ttft 1719ms &middot; 551 tok &middot; $0.005562<div class="ans">&ldquo;# Cold-Blooded vs. Warm-Blooded Animals ## Cold-Blooded (Ectothermic) - **Body temperature** fluctuates with the environment - Rely on exter…&rdquo;</div></summary><div class='label'>prompt</div><pre>What is the difference between cold blooded and warm blooded animals?</pre><div class='label'>expected</div><pre>Cold blooded animals rely on external sources for body heat, while warm blooded animals maintain a constant internal body temperature.</pre><div class='label'>response</div><pre># Cold-Blooded vs. Warm-Blooded Animals
+
+## Cold-Blooded (Ectothermic)
+- **Body temperature** fluctuates with the environment
+- Rely on external sources (sun, warm surfaces) to heat up, and shade/water to cool down
+- **Examples:** reptiles, amphibians, fish, insects
+- **Advantages:** Need less food/energy to survive; can go longer without eating
+- **Disadvantages:** Become sluggish in cold temperatures; less active in unfavorable weather
+
+## Warm-Blooded (Endothermic)
+- **Body temperature** stays relatively constant regardless of surroundings
+- Generate heat internally through metabolism
+- **Examples:** mammals, birds
+- **Advantages:** Can stay active in a wide range of temperatures/climates; more consistent energy levels
+- **Disadvantages:** Require significantly more food to fuel their metabolism; must expend energy on temperature regulation (shivering, sweating, panting)
+
+## Key Differences at a Glance
+
+| Feature | Cold-Blooded | Warm-Blooded |
+|---------|-------------|--------------|
+| Temperature source | External | Internal |
+| Food/energy needs | Lower | Higher |
+| Activity in cold | Slows down/dormant | Remains active |
+| Climate range | More limited | More adaptable |
+| Common term | Ectotherm | Endotherm |
+
+**Note:** Scientists now often prefer the terms *ectothermic* and *endothermic* since they more accurately describe the mechanism (external vs. internal heat regulation) rather than implying anything about blood temperature itself.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=9/10 relevance=10/10 score=0.950 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer correctly explains the difference between cold-blooded and warm-blooded animals, but could benefit from a clearer introduction to set the context for the comparison.</pre></details><details><summary>claude-sonnet-5 &middot; reasoning_001 &middot; rep2 &middot; score 0.95 PASS &middot; judge llama3.2 &middot; 7308ms &middot; ttft 1785ms &middot; 541 tok &middot; $0.005462<div class="ans">&ldquo;# Cold-Blooded vs. Warm-Blooded Animals ## Cold-Blooded (Ectothermic) - **Body temperature** fluctuates with the environment - Rely on exter…&rdquo;</div></summary><div class='label'>prompt</div><pre>What is the difference between cold blooded and warm blooded animals?</pre><div class='label'>expected</div><pre>Cold blooded animals rely on external sources for body heat, while warm blooded animals maintain a constant internal body temperature.</pre><div class='label'>response</div><pre># Cold-Blooded vs. Warm-Blooded Animals
+
+## Cold-Blooded (Ectothermic)
+- **Body temperature** fluctuates with the environment
+- Rely on external sources (sun, warm surfaces) to regulate body heat
+- Examples: reptiles, amphibians, fish, insects
+- **Advantages**: Need less food/energy to survive, can go longer without eating
+- **Disadvantages**: Become sluggish in cold temperatures, less active in unfavorable weather
+
+## Warm-Blooded (Endothermic)
+- **Body temperature** stays relatively constant regardless of surroundings
+- Generate heat internally through metabolism
+- Examples: mammals, birds
+- **Advantages**: Can stay active in various climates and temperatures, consistent energy levels
+- **Disadvantages**: Require more food to fuel their metabolism, must expend energy to regulate temperature (shivering, sweating, panting)
+
+## Key Scientific Terms
+- **Ectotherm** = &quot;outside heat&quot; (cold-blooded)
+- **Endotherm** = &quot;inside heat&quot; (warm-blooded)
+
+## Quick Comparison
+
+| Feature | Cold-Blooded | Warm-Blooded |
+|---------|--------------|--------------|
+| Heat source | External | Internal (metabolism) |
+| Body temp | Variable | Constant |
+| Food needs | Lower | Higher |
+| Activity in cold | Reduced/dormant | Maintained |
+| Energy efficiency | High | Lower |
+
+Would you like more detail on how specific animals adapt to their thermoregulation strategy?</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=9/10 relevance=10/10 score=0.950 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer provides a clear and comprehensive explanation of the difference between cold-blooded and warm-blooded animals, including key features and examples. However, it could be improved by providing more concise and direct language.</pre></details><details><summary>claude-sonnet-5 &middot; reasoning_002 &middot; rep1 &middot; score 0.95 PASS &middot; judge llama3.2 &middot; 2900ms &middot; ttft 1752ms &middot; 46 tok &middot; $0.000500<div class="ans">&ldquo;Ice floats on water because its molecules form a hexagonal crystalline structure with more open space between them, making ice less dense th…&rdquo;</div></summary><div class='label'>prompt</div><pre>In one sentence, why does ice float on water?</pre><div class='label'>expected</div><pre>Ice floats on water because it is less dense than liquid water.</pre><div class='label'>response</div><pre>Ice floats on water because its molecules form a hexagonal crystalline structure with more open space between them, making ice less dense than liquid water.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=9/10 relevance=10/10 score=0.950 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer correctly explains the reason for ice floating on water, but could be improved by providing a simpler explanation.</pre></details><details><summary>claude-sonnet-5 &middot; reasoning_002 &middot; rep2 &middot; score 1.00 PASS &middot; judge llama3.2 &middot; 2655ms &middot; ttft 1402ms &middot; 61 tok &middot; $0.000650<div class="ans">&ldquo;Ice floats on water because it is less dense than liquid water, since the hydrogen bonds in ice form a crystalline structure that holds mole…&rdquo;</div></summary><div class='label'>prompt</div><pre>In one sentence, why does ice float on water?</pre><div class='label'>expected</div><pre>Ice floats on water because it is less dense than liquid water.</pre><div class='label'>response</div><pre>Ice floats on water because it is less dense than liquid water, since the hydrogen bonds in ice form a crystalline structure that holds molecules farther apart than they are in liquid form.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=10/10 relevance=10/10 score=1.000 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer correctly explains why ice floats on water and provides additional context about the crystalline structure of ice.</pre></details><details><summary>claude-sonnet-5 &middot; reasoning_003 &middot; rep1 &middot; score 1.00 PASS &middot; judge llama3.2 &middot; 5516ms &middot; ttft 912ms &middot; 586 tok &middot; $0.005898<div class="ans">&ldquo;# Photosynthesis in Plants Photosynthesis is the process by which plants convert light energy into chemical energy, producing glucose and ox…&rdquo;</div></summary><div class='label'>prompt</div><pre>How does photosynthesis work in plants?</pre><div class='label'>expected</div><pre>Photosynthesis in plants converts light energy into chemical energy, using sunlight to transform carbon dioxide and water into glucose and oxygen.</pre><div class='label'>response</div><pre># Photosynthesis in Plants
+
+Photosynthesis is the process by which plants convert light energy into chemical energy, producing glucose and oxygen from carbon dioxide and water.
+
+## The Basic Equation
+6CO₂ + 6H₂O + light energy → C₆H₁₂O₆ + 6O₂
+
+## Where It Happens
+Photosynthesis occurs in **chloroplasts**, organelles found in plant cells (especially in leaves) that contain the green pigment **chlorophyll**.
+
+## Two Main Stages
+
+### 1. Light-Dependent Reactions
+- Occur in the **thylakoid membranes**
+- Chlorophyll absorbs sunlight
+- Water molecules are split (releasing O₂ as a byproduct)
+- Energy is captured and stored in molecules called **ATP** and **NADPH**
+
+### 2. Light-Independent Reactions (Calvin Cycle)
+- Occur in the **stroma** (fluid surrounding the thylakoids)
+- Don&#x27;t directly require light
+- Uses ATP and NADPH from the first stage
+- CO₂ is &quot;fixed&quot; and converted into glucose through a series of enzyme-driven reactions
+
+## Key Components Needed
+- **Sunlight** – provides energy
+- **Water** – absorbed through roots
+- **Carbon dioxide** – absorbed through tiny leaf pores called **stomata**
+- **Chlorophyll** – captures light energy
+
+## Why It Matters
+- Produces oxygen that most living organisms need to breathe
+- Creates glucose, which plants use for energy and growth
+- Forms the foundation of most food chains on Earth
+- Helps regulate atmospheric CO₂ levels
+
+Would you like me to go deeper into any particular part of this process?</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=10/10 relevance=10/10 score=1.000 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer is fully correct in terms of explaining the process of photosynthesis, but could benefit from more concise and clear formatting. The relevance score is 10 because the answer directly addresses the question and provides a comprehensive overview of the topic.</pre></details><details><summary>claude-sonnet-5 &middot; reasoning_003 &middot; rep2 &middot; score 0.95 PASS &middot; judge llama3.2 &middot; 6819ms &middot; ttft 834ms &middot; 701 tok &middot; $0.007048<div class="ans">&ldquo;# Photosynthesis in Plants Photosynthesis is the process plants use to convert light energy into chemical energy (glucose), using carbon dio…&rdquo;</div></summary><div class='label'>prompt</div><pre>How does photosynthesis work in plants?</pre><div class='label'>expected</div><pre>Photosynthesis in plants converts light energy into chemical energy, using sunlight to transform carbon dioxide and water into glucose and oxygen.</pre><div class='label'>response</div><pre># Photosynthesis in Plants
+
+Photosynthesis is the process plants use to convert light energy into chemical energy (glucose), using carbon dioxide and water, while releasing oxygen as a byproduct.
+
+## The Basic Equation
+
+```
+6CO₂ + 6H₂O + light energy → C₆H₁₂O₆ + 6O₂
+```
+
+## Where It Happens
+
+Photosynthesis occurs in **chloroplasts**, organelles found mainly in leaf cells. Chloroplasts contain **chlorophyll**, the green pigment that captures light energy.
+
+## The Two Main Stages
+
+### 1. Light-Dependent Reactions
+- **Location:** Thylakoid membranes (inside chloroplasts)
+- **Process:** 
+  - Chlorophyll absorbs sunlight
+  - Water molecules are split (releasing O₂ as waste)
+  - Energy is captured and stored in molecules called **ATP** and **NADPH**
+
+### 2. Light-Independent Reactions (Calvin Cycle)
+- **Location:** Stroma (fluid inside chloroplasts)
+- **Process:**
+  - CO₂ from the air is &quot;fixed&quot; (captured)
+  - ATP and NADPH from stage 1 power the conversion of CO₂ into glucose
+  - This doesn&#x27;t require direct light but depends on products from the light reactions
+
+## Key Ingredients Plants Need
+
+| Input | Source |
+|-------|--------|
+| Sunlight | Sun |
+| Water (H₂O) | Absorbed by roots |
+| Carbon dioxide (CO₂) | Absorbed through leaf pores (stomata) |
+
+## What Plants Produce
+
+- **Glucose** – used for energy and building plant structures (like cellulose)
+- **Oxygen** – released into the atmosphere as a byproduct
+
+## Why It Matters
+
+Photosynthesis is essential for life on Earth because it:
+- Produces the oxygen we breathe
+- Forms the base of most food chains
+- Removes CO₂ from the atmosphere
+
+Would you like me to go deeper into any particular part of this process?</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=9/10 relevance=10/10 score=0.950 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer provided a detailed explanation of photosynthesis in plants, including the basic equation, locations where it occurs, and key ingredients needed. However, the response was overly verbose and included unnecessary sections such as &#x27;Key Ingredients Plants Need&#x27; and &#x27;What Plants Produce&#x27;, which detracted from the clarity and focus of the main explanation.</pre></details><details><summary>deepseek-v4-pro &middot; definition_001 &middot; rep1 &middot; score 1.00 PASS &middot; judge llama3.2 &middot; 1593ms &middot; ttft 1543ms &middot; 25 tok &middot; $0.000061<div class="ans">&ldquo;AI stands for **Artificial Intelligence**.&rdquo;</div></summary><div class='label'>prompt</div><pre>What does the acronym AI stand for?</pre><div class='label'>expected</div><pre>Artificial Intelligence</pre><div class='label'>response</div><pre>AI stands for **Artificial Intelligence**.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=10/10 relevance=10/10 score=1.000 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer is fully correct, as it accurately states the definition of the acronym AI.</pre></details><details><summary>deepseek-v4-pro &middot; definition_001 &middot; rep2 &middot; score 1.00 PASS &middot; judge llama3.2 &middot; 1261ms &middot; ttft 1187ms &middot; 24 tok &middot; $0.000060<div class="ans">&ldquo;AI stands for **Artificial Intelligence**.&rdquo;</div></summary><div class='label'>prompt</div><pre>What does the acronym AI stand for?</pre><div class='label'>expected</div><pre>Artificial Intelligence</pre><div class='label'>response</div><pre>AI stands for **Artificial Intelligence**.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=10/10 relevance=10/10 score=1.000 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer is fully correct, as it accurately states the definition of the acronym AI.</pre></details><details><summary>deepseek-v4-pro &middot; definition_002 &middot; rep1 &middot; score 0.95 PASS &middot; judge llama3.2 &middot; 1962ms &middot; ttft 1788ms &middot; 71 tok &middot; $0.000102<div class="ans">&ldquo;A black hole is a region of spacetime where gravity is so intense that nothing, not even light, can escape from it.&rdquo;</div></summary><div class='label'>prompt</div><pre>In one sentence, what is a black hole?</pre><div class='label'>expected</div><pre>A region of space where the gravitational pull is so strong that nothing, not even light, can escape from it.</pre><div class='label'>response</div><pre>A black hole is a region of spacetime where gravity is so intense that nothing, not even light, can escape from it.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=9/10 relevance=10/10 score=0.950 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer matches the expected answer in terms of content, but the phrase &#x27;region of spacetime&#x27; is slightly different from the expected &#x27;region of space&#x27;.</pre></details><details><summary>deepseek-v4-pro &middot; definition_002 &middot; rep2 &middot; score 0.95 PASS &middot; judge llama3.2 &middot; 1937ms &middot; ttft 1726ms &middot; 71 tok &middot; $0.000102<div class="ans">&ldquo;A black hole is a region of spacetime where gravity is so strong that nothing, not even light, can escape it.&rdquo;</div></summary><div class='label'>prompt</div><pre>In one sentence, what is a black hole?</pre><div class='label'>expected</div><pre>A region of space where the gravitational pull is so strong that nothing, not even light, can escape from it.</pre><div class='label'>response</div><pre>A black hole is a region of spacetime where gravity is so strong that nothing, not even light, can escape it.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=9/10 relevance=10/10 score=0.950 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer is very similar to the expected answer, with only minor punctuation differences.</pre></details><details><summary>deepseek-v4-pro &middot; factual_001 &middot; rep1 &middot; score 1.00 PASS &middot; judge llama3.2 &middot; 1028ms &middot; ttft 944ms &middot; 27 tok &middot; $0.000063<div class="ans">&ldquo;The capital of Slovenia is **Ljubljana**.&rdquo;</div></summary><div class='label'>prompt</div><pre>What is the capital of Slovenia?</pre><div class='label'>expected</div><pre>Ljubljana</pre><div class='label'>response</div><pre>The capital of Slovenia is **Ljubljana**.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=10/10 relevance=10/10 score=1.000 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer correctly identifies the capital of Slovenia, but does not provide any additional context or information.</pre></details><details><summary>deepseek-v4-pro &middot; factual_001 &middot; rep2 &middot; score 1.00 PASS &middot; judge llama3.2 &middot; 1527ms &middot; ttft 1447ms &middot; 33 tok &middot; $0.000068<div class="ans">&ldquo;The capital of Slovenia is **Ljubljana**.&rdquo;</div></summary><div class='label'>prompt</div><pre>What is the capital of Slovenia?</pre><div class='label'>expected</div><pre>Ljubljana</pre><div class='label'>response</div><pre>The capital of Slovenia is **Ljubljana**.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=10/10 relevance=10/10 score=1.000 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer correctly identifies the capital of Slovenia, but does not provide any additional context or information.</pre></details><details><summary>deepseek-v4-pro &middot; factual_002 &middot; rep1 &middot; score 1.00 PASS &middot; judge llama3.2 &middot; 1681ms &middot; ttft 1564ms &middot; 25 tok &middot; $0.000061<div class="ans">&ldquo;The chemical symbol for silver is **Ag**.&rdquo;</div></summary><div class='label'>prompt</div><pre>What is the chemical symbol for silver?</pre><div class='label'>expected</div><pre>Ag</pre><div class='label'>response</div><pre>The chemical symbol for silver is **Ag**.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=10/10 relevance=10/10 score=1.000 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer correctly identifies the chemical symbol for silver, but it does not provide any additional context or explanation.</pre></details><details><summary>deepseek-v4-pro &middot; factual_002 &middot; rep2 &middot; score 1.00 PASS &middot; judge llama3.2 &middot; 1357ms &middot; ttft 1356ms &middot; 17 tok &middot; $0.000054<div class="ans">&ldquo;Ag&rdquo;</div></summary><div class='label'>prompt</div><pre>What is the chemical symbol for silver?</pre><div class='label'>expected</div><pre>Ag</pre><div class='label'>response</div><pre>Ag</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=10/10 relevance=10/10 score=1.000 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer matches the expected answer exactly, demonstrating both correctness and relevance.</pre></details><details><summary>deepseek-v4-pro &middot; factual_003 &middot; rep1 &middot; score 1.00 PASS &middot; judge llama3.2 &middot; 1468ms &middot; ttft 1375ms &middot; 28 tok &middot; $0.000064<div class="ans">&ldquo;Lima is located in **South America**.&rdquo;</div></summary><div class='label'>prompt</div><pre>In what continent is Lima located?</pre><div class='label'>expected</div><pre>South America</pre><div class='label'>response</div><pre>Lima is located in **South America**.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=10/10 relevance=10/10 score=1.000 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer correctly identifies the continent where Lima is located, but does not provide any additional context or information.</pre></details><details><summary>deepseek-v4-pro &middot; factual_003 &middot; rep2 &middot; score 1.00 PASS &middot; judge llama3.2 &middot; 1310ms &middot; ttft 1230ms &middot; 36 tok &middot; $0.000070<div class="ans">&ldquo;Lima is located in **South America**.&rdquo;</div></summary><div class='label'>prompt</div><pre>In what continent is Lima located?</pre><div class='label'>expected</div><pre>South America</pre><div class='label'>response</div><pre>Lima is located in **South America**.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=10/10 relevance=10/10 score=1.000 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer correctly identifies the continent where Lima is located, but does not provide any additional context or information.</pre></details><details><summary>deepseek-v4-pro &middot; factual_004 &middot; rep1 &middot; score 1.00 PASS &middot; judge llama3.2 &middot; 2103ms &middot; ttft 1887ms &middot; 75 tok &middot; $0.000105<div class="ans">&ldquo;There are **8 planets** in our solar system: Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, and Neptune.&rdquo;</div></summary><div class='label'>prompt</div><pre>How many planets are in our solar system?</pre><div class='label'>expected</div><pre>8</pre><div class='label'>response</div><pre>There are **8 planets** in our solar system: Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, and Neptune.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=10/10 relevance=10/10 score=1.000 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer is fully correct as it accurately states the number of planets in our solar system. However, the response could be more concise.</pre></details><details><summary>deepseek-v4-pro &middot; factual_004 &middot; rep2 &middot; score 1.00 PASS &middot; judge llama3.2 &middot; 2032ms &middot; ttft 1770ms &middot; 66 tok &middot; $0.000097<div class="ans">&ldquo;There are **8 planets** in our solar system: Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, and Neptune.&rdquo;</div></summary><div class='label'>prompt</div><pre>How many planets are in our solar system?</pre><div class='label'>expected</div><pre>8</pre><div class='label'>response</div><pre>There are **8 planets** in our solar system:
+
+Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, and Neptune.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=10/10 relevance=10/10 score=1.000 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer is fully correct as it accurately states the number of planets in our solar system. However, the response could be more concise.</pre></details><details><summary>deepseek-v4-pro &middot; procedural_001 &middot; rep1 &middot; score 1.00 PASS &middot; judge llama3.2 &middot; 1559ms &middot; ttft 1420ms &middot; 61 tok &middot; $0.000096<div class="ans">&ldquo;```bash pytest -m &quot;slow or network&quot; ```&rdquo;</div></summary><div class='label'>prompt</div><pre>Which pytest command runs tests marked either &#x27;slow&#x27; or &#x27;network&#x27;?</pre><div class='label'>expected</div><pre>pytest -m &#x27;slow or network&#x27;</pre><div class='label'>response</div><pre>```bash
+pytest -m &quot;slow or network&quot;
+```</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=10/10 relevance=10/10 score=1.000 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer is correct and relevant, as it accurately provides the pytest command to run tests marked with either &#x27;slow&#x27; or &#x27;network&#x27;. The formatting of the expected answer is slightly different, but the overall content is identical.</pre></details><details><summary>deepseek-v4-pro &middot; procedural_001 &middot; rep2 &middot; score 1.00 PASS &middot; judge llama3.2 &middot; 3018ms &middot; ttft 2643ms &middot; 143 tok &middot; $0.000167<div class="ans">&ldquo;```bash pytest -m &quot;slow or network&quot; ``` This selects tests marked with either `slow` or `network` using pytest’s marker expression syntax.&rdquo;</div></summary><div class='label'>prompt</div><pre>Which pytest command runs tests marked either &#x27;slow&#x27; or &#x27;network&#x27;?</pre><div class='label'>expected</div><pre>pytest -m &#x27;slow or network&#x27;</pre><div class='label'>response</div><pre>```bash
+pytest -m &quot;slow or network&quot;
+```
+
+This selects tests marked with either `slow` or `network` using pytest’s marker expression syntax.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=10/10 relevance=10/10 score=1.000 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer demonstrates a clear understanding of pytest&#x27;s marker expression syntax and its ability to select tests based on specific markers.</pre></details><details><summary>deepseek-v4-pro &middot; reasoning_001 &middot; rep1 &middot; score 0.95 PASS &middot; judge llama3.2 &middot; 5081ms &middot; ttft 2348ms &middot; 260 tok &middot; $0.000268<div class="ans">&ldquo;The main difference is how animals regulate their body temperature. **Warm-blooded animals (endotherms)** - Keep their body temperature fair…&rdquo;</div></summary><div class='label'>prompt</div><pre>What is the difference between cold blooded and warm blooded animals?</pre><div class='label'>expected</div><pre>Cold blooded animals rely on external sources for body heat, while warm blooded animals maintain a constant internal body temperature.</pre><div class='label'>response</div><pre>The main difference is how animals regulate their body temperature.
+
+**Warm-blooded animals (endotherms)**  
+- Keep their body temperature fairly constant by generating heat from their own metabolism.  
+- Stay active in a wide range of outside temperatures.  
+- Need a lot of food/energy to maintain their body heat.  
+- Examples: mammals and birds.
+
+**Cold-blooded animals (ectotherms)**  
+- Their body temperature changes with the environment.  
+- They rely on outside heat sources, like the sun, to warm up.  
+- Need much less food/energy because they don’t burn calories to stay warm.  
+- They may become slow or inactive when it’s cold.  
+- Examples: reptiles, amphibians, fish, and most invertebrates.
+
+In short: warm-blooded animals make their own heat internally, while cold-blooded animals get most of their heat from their surroundings.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=9/10 relevance=10/10 score=0.950 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer correctly explains the difference between warm-blooded and cold-blooded animals, but could be more concise and directly address the question.</pre></details><details><summary>deepseek-v4-pro &middot; reasoning_001 &middot; rep2 &middot; score 0.85 PASS &middot; judge llama3.2 &middot; 5175ms &middot; ttft 2448ms &middot; 268 tok &middot; $0.000275<div class="ans">&ldquo;The main difference is how animals regulate their body temperature. **Warm-blooded animals (endotherms)** - Keep their body temperature fair…&rdquo;</div></summary><div class='label'>prompt</div><pre>What is the difference between cold blooded and warm blooded animals?</pre><div class='label'>expected</div><pre>Cold blooded animals rely on external sources for body heat, while warm blooded animals maintain a constant internal body temperature.</pre><div class='label'>response</div><pre>The main difference is how animals regulate their body temperature.
+
+**Warm-blooded animals (endotherms)**  
+- Keep their body temperature fairly constant by generating heat internally through metabolism.  
+- Examples: mammals and birds.  
+- They can stay active in cold or hot environments, but need a lot of food for energy.  
+- Their body temperature usually stays about the same regardless of the outside temperature.
+
+**Cold-blooded animals (ectotherms)**  
+- Their body temperature changes with the surrounding environment.  
+- Examples: reptiles, amphibians, fish, and most invertebrates.  
+- They rely on outside sources of heat, like sunlight or warm water, to warm up.  
+- They need less food than warm-blooded animals, but they may become slow or inactive when it is cold.
+
+In short: warm-blooded animals make their own body heat, while cold-blooded animals get most of their heat from their environment.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=8/10 relevance=9/10 score=0.850 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer correctly identifies the main difference between warm and cold blooded animals but could be more concise and directly address the question. The provided examples and explanations are accurate.</pre></details><details><summary>deepseek-v4-pro &middot; reasoning_002 &middot; rep1 &middot; score 0.95 PASS &middot; judge llama3.2 &middot; 2195ms &middot; ttft 1948ms &middot; 63 tok &middot; $0.000096<div class="ans">&ldquo;Ice floats on water because its hydrogen-bonded crystalline structure makes it less dense than liquid water.&rdquo;</div></summary><div class='label'>prompt</div><pre>In one sentence, why does ice float on water?</pre><div class='label'>expected</div><pre>Ice floats on water because it is less dense than liquid water.</pre><div class='label'>response</div><pre>Ice floats on water because its hydrogen-bonded crystalline structure makes it less dense than liquid water.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=9/10 relevance=10/10 score=0.950 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer correctly explains the reason for ice floating on water, but could be more concise.</pre></details><details><summary>deepseek-v4-pro &middot; reasoning_002 &middot; rep2 &middot; score 0.95 PASS &middot; judge llama3.2 &middot; 2344ms &middot; ttft 2035ms &middot; 64 tok &middot; $0.000097<div class="ans">&ldquo;Ice floats on water because its hydrogen-bonded crystal structure is less dense than liquid water, making ice buoyant.&rdquo;</div></summary><div class='label'>prompt</div><pre>In one sentence, why does ice float on water?</pre><div class='label'>expected</div><pre>Ice floats on water because it is less dense than liquid water.</pre><div class='label'>response</div><pre>Ice floats on water because its hydrogen-bonded crystal structure is less dense than liquid water, making ice buoyant.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=9/10 relevance=10/10 score=0.950 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer correctly explains the scientific principle behind why ice floats on water, but could be more concise.</pre></details><details><summary>deepseek-v4-pro &middot; reasoning_003 &middot; rep1 &middot; score 0.85 PASS &middot; judge llama3.2 &middot; 9855ms &middot; ttft 4730ms &middot; 563 tok &middot; $0.000529<div class="ans">&ldquo;Photosynthesis is how plants, algae, and some bacteria convert light energy into chemical energy stored in sugars. In plants, it takes place…&rdquo;</div></summary><div class='label'>prompt</div><pre>How does photosynthesis work in plants?</pre><div class='label'>expected</div><pre>Photosynthesis in plants converts light energy into chemical energy, using sunlight to transform carbon dioxide and water into glucose and oxygen.</pre><div class='label'>response</div><pre>Photosynthesis is how plants, algae, and some bacteria convert light energy into chemical energy stored in sugars. In plants, it takes place mainly in the leaves, inside cell organelles called **chloroplasts**.
+
+The overall simplified equation is:
+
+**6 CO₂ + 6 H₂O + light energy → C₆H₁₂O₆ + 6 O₂**
+
+Carbon dioxide + water + light → glucose + oxygen
+
+Photosynthesis happens in two main stages:
+
+---
+
+### 1. Light-dependent reactions
+Location: **Thylakoid membranes** inside the chloroplast.
+
+- Chlorophyll and other pigments absorb sunlight.
+- Light energy is used to split water molecules into oxygen, protons, and electrons.
+- Oxygen is released as a byproduct.
+- The energy is stored temporarily in two energy-carrier molecules: **ATP** and **NADPH**.
+
+---
+
+### 2. Light-independent reactions / Calvin cycle
+Location: **Stroma** of the chloroplast.
+
+- Does not directly need light, but uses the ATP and NADPH from the first stage.
+- Carbon dioxide from the air is fixed into an organic molecule.
+- Through a series of enzyme-driven steps, CO₂ is ultimately converted into **glucose** and other carbohydrates.
+
+---
+
+### Key points
+- **Chlorophyll** absorbs mainly blue and red light; it reflects green, which is why plants look green.
+- **Water** is absorbed by roots and transported to leaves.
+- **Carbon dioxide** enters leaves through small pores called **stomata**.
+- **Oxygen** is released as a waste product, which most living things need for respiration.
+
+So photosynthesis is essentially the process that captures solar energy and stores it in the chemical bonds of sugar, forming the foundation of most food chains on Earth.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=8/10 relevance=9/10 score=0.850 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer correctly explains the two stages of photosynthesis and provides relevant details about chloroplasts, ATP, NADPH, and other key components. However, some minor inaccuracies in formatting and phrasing prevent it from being fully correct.</pre></details><details><summary>deepseek-v4-pro &middot; reasoning_003 &middot; rep2 &middot; score 0.95 PASS &middot; judge llama3.2 &middot; 5783ms &middot; ttft 1998ms &middot; 334 tok &middot; $0.000330<div class="ans">&ldquo;Photosynthesis is the process plants use to convert light energy into chemical energy stored in glucose. It takes place mainly in the leaves…&rdquo;</div></summary><div class='label'>prompt</div><pre>How does photosynthesis work in plants?</pre><div class='label'>expected</div><pre>Photosynthesis in plants converts light energy into chemical energy, using sunlight to transform carbon dioxide and water into glucose and oxygen.</pre><div class='label'>response</div><pre>Photosynthesis is the process plants use to convert light energy into chemical energy stored in glucose. It takes place mainly in the leaves, inside cell organelles called **chloroplasts**.
+
+The overall equation is often written as:
+
+**6 CO₂ + 6 H₂O + light energy → C₆H₁₂O₆ + 6 O₂**
+
+This means carbon dioxide and water, using light energy, produce glucose and oxygen.
+
+Photosynthesis happens in two main stages:
+
+## 1. Light-dependent reactions
+These occur in the **thylakoid membranes** of the chloroplasts.
+
+- Chlorophyll and other pigments absorb sunlight.
+- The light energy is used to split water molecules into oxygen, protons, and electrons.
+- Oxygen is released as a byproduct.
+- The energy is stored temporarily in two carrier molecules: **ATP** and **NADPH**.
+
+## 2. Light-independent reactions — Calvin cycle
+These occur in the **stroma** of the chloroplasts.
+
+- Carbon dioxide from the air is captured.
+- Using ATP and NADPH from the light reactions, CO₂ is converted into glucose.
+- This stage does not need light directly, but it depends on the products of the light reactions.
+
+In summary, plants capture sunlight with chlorophyll, use it to split water and release oxygen, and then use that energy to turn carbon dioxide into sugar.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=9/10 relevance=10/10 score=0.950 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer correctly explains the two stages of photosynthesis and provides a clear overview of the process, but could benefit from more precise language and additional details.</pre></details><details><summary>gpt-5.6-luna &middot; definition_001 &middot; rep1 &middot; score 1.00 PASS &middot; judge llama3.2 &middot; 1009ms &middot; ttft 960ms &middot; 12 tok &middot; $0.000017<div class="ans">&ldquo;AI stands for **artificial intelligence**.&rdquo;</div></summary><div class='label'>prompt</div><pre>What does the acronym AI stand for?</pre><div class='label'>expected</div><pre>Artificial Intelligence</pre><div class='label'>response</div><pre>AI stands for **artificial intelligence**.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=10/10 relevance=10/10 score=1.000 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer is fully correct, but it repeats the expected answer verbatim.</pre></details><details><summary>gpt-5.6-luna &middot; definition_001 &middot; rep2 &middot; score 1.00 PASS &middot; judge llama3.2 &middot; 784ms &middot; ttft 716ms &middot; 12 tok &middot; $0.000017<div class="ans">&ldquo;AI stands for **artificial intelligence**.&rdquo;</div></summary><div class='label'>prompt</div><pre>What does the acronym AI stand for?</pre><div class='label'>expected</div><pre>Artificial Intelligence</pre><div class='label'>response</div><pre>AI stands for **artificial intelligence**.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=10/10 relevance=10/10 score=1.000 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer is fully correct, but it repeats the expected answer verbatim.</pre></details><details><summary>gpt-5.6-luna &middot; definition_002 &middot; rep1 &middot; score 1.00 PASS &middot; judge llama3.2 &middot; 998ms &middot; ttft 828ms &middot; 33 tok &middot; $0.000043<div class="ans">&ldquo;A black hole is a region of spacetime where gravity is so strong that nothing, not even light, can escape once it crosses the event horizon.&rdquo;</div></summary><div class='label'>prompt</div><pre>In one sentence, what is a black hole?</pre><div class='label'>expected</div><pre>A region of space where the gravitational pull is so strong that nothing, not even light, can escape from it.</pre><div class='label'>response</div><pre>A black hole is a region of spacetime where gravity is so strong that nothing, not even light, can escape once it crosses the event horizon.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=10/10 relevance=10/10 score=1.000 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer is fully correct in terms of content, but the phrasing could be slightly improved for clarity and concision.</pre></details><details><summary>gpt-5.6-luna &middot; definition_002 &middot; rep2 &middot; score 1.00 PASS &middot; judge llama3.2 &middot; 832ms &middot; ttft 631ms &middot; 30 tok &middot; $0.000039<div class="ans">&ldquo;A black hole is a region of spacetime where gravity is so strong that nothing, not even light, can escape its event horizon.&rdquo;</div></summary><div class='label'>prompt</div><pre>In one sentence, what is a black hole?</pre><div class='label'>expected</div><pre>A region of space where the gravitational pull is so strong that nothing, not even light, can escape from it.</pre><div class='label'>response</div><pre>A black hole is a region of spacetime where gravity is so strong that nothing, not even light, can escape its event horizon.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=10/10 relevance=10/10 score=1.000 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer is fully correct in terms of content, but the phrasing could be slightly improved for clarity.</pre></details><details><summary>gpt-5.6-luna &middot; factual_001 &middot; rep1 &middot; score 1.00 PASS &middot; judge llama3.2 &middot; 1199ms &middot; ttft 1146ms &middot; 14 tok &middot; $0.000019<div class="ans">&ldquo;The capital of Slovenia is **Ljubljana**.&rdquo;</div></summary><div class='label'>prompt</div><pre>What is the capital of Slovenia?</pre><div class='label'>expected</div><pre>Ljubljana</pre><div class='label'>response</div><pre>The capital of Slovenia is **Ljubljana**.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=10/10 relevance=10/10 score=1.000 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer correctly identifies the capital of Slovenia, but does not provide any additional context or information.</pre></details><details><summary>gpt-5.6-luna &middot; factual_001 &middot; rep2 &middot; score 1.00 PASS &middot; judge llama3.2 &middot; 1511ms &middot; ttft 1376ms &middot; 14 tok &middot; $0.000019<div class="ans">&ldquo;The capital of Slovenia is **Ljubljana**.&rdquo;</div></summary><div class='label'>prompt</div><pre>What is the capital of Slovenia?</pre><div class='label'>expected</div><pre>Ljubljana</pre><div class='label'>response</div><pre>The capital of Slovenia is **Ljubljana**.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=10/10 relevance=10/10 score=1.000 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer correctly identifies the capital of Slovenia, but does not provide any additional context or information.</pre></details><details><summary>gpt-5.6-luna &middot; factual_002 &middot; rep1 &middot; score 1.00 PASS &middot; judge llama3.2 &middot; 633ms &middot; ttft 631ms &middot; 4 tok &middot; $0.000008<div class="ans">&ldquo;Ag&rdquo;</div></summary><div class='label'>prompt</div><pre>What is the chemical symbol for silver?</pre><div class='label'>expected</div><pre>Ag</pre><div class='label'>response</div><pre>Ag</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=10/10 relevance=10/10 score=1.000 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer matches the expected answer exactly, demonstrating both correctness and relevance.</pre></details><details><summary>gpt-5.6-luna &middot; factual_002 &middot; rep2 &middot; score 1.00 PASS &middot; judge llama3.2 &middot; 1041ms &middot; ttft 1038ms &middot; 4 tok &middot; $0.000008<div class="ans">&ldquo;Ag&rdquo;</div></summary><div class='label'>prompt</div><pre>What is the chemical symbol for silver?</pre><div class='label'>expected</div><pre>Ag</pre><div class='label'>response</div><pre>Ag</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=10/10 relevance=10/10 score=1.000 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer matches the expected answer exactly, demonstrating both correctness and relevance.</pre></details><details><summary>gpt-5.6-luna &middot; factual_003 &middot; rep1 &middot; score 1.00 PASS &middot; judge llama3.2 &middot; 838ms &middot; ttft 736ms &middot; 11 tok &middot; $0.000016<div class="ans">&ldquo;Lima is located in South America.&rdquo;</div></summary><div class='label'>prompt</div><pre>In what continent is Lima located?</pre><div class='label'>expected</div><pre>South America</pre><div class='label'>response</div><pre>Lima is located in South America.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=10/10 relevance=10/10 score=1.000 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer correctly identifies the continent where Lima is located, but does not provide any additional context or information that would make it more informative.</pre></details><details><summary>gpt-5.6-luna &middot; factual_003 &middot; rep2 &middot; score 1.00 PASS &middot; judge llama3.2 &middot; 805ms &middot; ttft 724ms &middot; 11 tok &middot; $0.000016<div class="ans">&ldquo;Lima is located in South America.&rdquo;</div></summary><div class='label'>prompt</div><pre>In what continent is Lima located?</pre><div class='label'>expected</div><pre>South America</pre><div class='label'>response</div><pre>Lima is located in South America.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=10/10 relevance=10/10 score=1.000 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer correctly identifies the continent where Lima is located, but does not provide any additional context or information that would make it more informative.</pre></details><details><summary>gpt-5.6-luna &middot; factual_004 &middot; rep1 &middot; score 1.00 PASS &middot; judge llama3.2 &middot; 843ms &middot; ttft 694ms &middot; 33 tok &middot; $0.000043<div class="ans">&ldquo;There are **8 planets** in our solar system: Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, and Neptune.&rdquo;</div></summary><div class='label'>prompt</div><pre>How many planets are in our solar system?</pre><div class='label'>expected</div><pre>8</pre><div class='label'>response</div><pre>There are **8 planets** in our solar system:
+
+Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, and Neptune.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=10/10 relevance=10/10 score=1.000 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer is fully correct as it accurately states the number of planets in our solar system. However, the response could be more concise.</pre></details><details><summary>gpt-5.6-luna &middot; factual_004 &middot; rep2 &middot; score 1.00 PASS &middot; judge llama3.2 &middot; 712ms &middot; ttft 538ms &middot; 32 tok &middot; $0.000041<div class="ans">&ldquo;There are **8 planets** in our solar system: Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, and Neptune.&rdquo;</div></summary><div class='label'>prompt</div><pre>How many planets are in our solar system?</pre><div class='label'>expected</div><pre>8</pre><div class='label'>response</div><pre>There are **8 planets** in our solar system: Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, and Neptune.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=10/10 relevance=10/10 score=1.000 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer is fully correct as it accurately states the number of planets in our solar system. However, the response could be more concise.</pre></details><details><summary>gpt-5.6-luna &middot; procedural_001 &middot; rep1 &middot; score 1.00 PASS &middot; judge llama3.2 &middot; 780ms &middot; ttft 657ms &middot; 15 tok &middot; $0.000022<div class="ans">&ldquo;```bash pytest -m &quot;slow or network&quot; ```&rdquo;</div></summary><div class='label'>prompt</div><pre>Which pytest command runs tests marked either &#x27;slow&#x27; or &#x27;network&#x27;?</pre><div class='label'>expected</div><pre>pytest -m &#x27;slow or network&#x27;</pre><div class='label'>response</div><pre>```bash
+pytest -m &quot;slow or network&quot;
+```</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=10/10 relevance=10/10 score=1.000 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer is correct and relevant, as it accurately provides the pytest command to run tests marked with either &#x27;slow&#x27; or &#x27;network&#x27;. The formatting of the expected answer is slightly different, but the overall content is identical.</pre></details><details><summary>gpt-5.6-luna &middot; procedural_001 &middot; rep2 &middot; score 1.00 PASS &middot; judge llama3.2 &middot; 691ms &middot; ttft 590ms &middot; 15 tok &middot; $0.000022<div class="ans">&ldquo;```bash pytest -m &quot;slow or network&quot; ```&rdquo;</div></summary><div class='label'>prompt</div><pre>Which pytest command runs tests marked either &#x27;slow&#x27; or &#x27;network&#x27;?</pre><div class='label'>expected</div><pre>pytest -m &#x27;slow or network&#x27;</pre><div class='label'>response</div><pre>```bash
+pytest -m &quot;slow or network&quot;
+```</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=10/10 relevance=10/10 score=1.000 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer is correct and relevant, as it accurately provides the pytest command to run tests marked with either &#x27;slow&#x27; or &#x27;network&#x27;. The formatting of the expected answer is slightly different, but the overall content is identical.</pre></details><details><summary>gpt-5.6-luna &middot; reasoning_001 &middot; rep1 &middot; score 0.95 PASS &middot; judge llama3.2 &middot; 2677ms &middot; ttft 1607ms &middot; 184 tok &middot; $0.000225<div class="ans">&ldquo;**Cold-blooded animals** (*ectotherms*) rely mainly on their surroundings to regulate body temperature. Their body temperature changes with …&rdquo;</div></summary><div class='label'>prompt</div><pre>What is the difference between cold blooded and warm blooded animals?</pre><div class='label'>expected</div><pre>Cold blooded animals rely on external sources for body heat, while warm blooded animals maintain a constant internal body temperature.</pre><div class='label'>response</div><pre>**Cold-blooded animals** (*ectotherms*) rely mainly on their surroundings to regulate body temperature. Their body temperature changes with the environment, so they may bask in the sun to warm up or seek shade to cool down.  
+**Examples:** reptiles, amphibians, fish, and most invertebrates.
+
+**Warm-blooded animals** (*endotherms*) produce much of their own body heat and maintain a relatively stable internal temperature, even when the environment changes.  
+**Examples:** mammals and birds.
+
+Warm-blooded animals generally use more energy and need more food, while cold-blooded animals use less energy but are more affected by external temperatures.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=9/10 relevance=10/10 score=0.950 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer correctly explains the difference between cold blooded and warm blooded animals, providing clear definitions and examples. However, it could have been more concise.</pre></details><details><summary>gpt-5.6-luna &middot; reasoning_001 &middot; rep2 &middot; score 0.95 PASS &middot; judge llama3.2 &middot; 2521ms &middot; ttft 1190ms &middot; 213 tok &middot; $0.000260<div class="ans">&ldquo;**Cold-blooded animals**—more accurately called **ectotherms**—rely mainly on their surroundings to regulate body temperature. Their tempera…&rdquo;</div></summary><div class='label'>prompt</div><pre>What is the difference between cold blooded and warm blooded animals?</pre><div class='label'>expected</div><pre>Cold blooded animals rely on external sources for body heat, while warm blooded animals maintain a constant internal body temperature.</pre><div class='label'>response</div><pre>**Cold-blooded animals**—more accurately called **ectotherms**—rely mainly on their surroundings to regulate body temperature. Their temperature and activity change with the environment.  
+- Examples: reptiles, amphibians, fish, and most insects  
+- They may bask in the sun to warm up or seek shade to cool down  
+- Usually need less food and energy
+
+**Warm-blooded animals**—more accurately called **endotherms**—produce enough internal heat to keep their body temperature relatively stable, even when the environment changes.  
+- Examples: mammals and birds  
+- They use more energy and therefore need more food  
+- They can remain active in a wider range of temperatures
+
+The terms are informal: “cold-blooded” animals do not necessarily have cold blood, and “warm-blooded” animals can still become cold.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=9/10 relevance=10/10 score=0.950 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer correctly explains the difference between cold-blooded and warm-blooded animals, but could be more concise and directly address the question.</pre></details><details><summary>gpt-5.6-luna &middot; reasoning_002 &middot; rep1 &middot; score 0.95 PASS &middot; judge llama3.2 &middot; 781ms &middot; ttft 685ms &middot; 21 tok &middot; $0.000029<div class="ans">&ldquo;Ice floats because its hydrogen-bonded crystal structure makes it less dense than liquid water.&rdquo;</div></summary><div class='label'>prompt</div><pre>In one sentence, why does ice float on water?</pre><div class='label'>expected</div><pre>Ice floats on water because it is less dense than liquid water.</pre><div class='label'>response</div><pre>Ice floats because its hydrogen-bonded crystal structure makes it less dense than liquid water.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=9/10 relevance=10/10 score=0.950 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer correctly explains the reason for ice floating on water, but could be more concise.</pre></details><details><summary>gpt-5.6-luna &middot; reasoning_002 &middot; rep2 &middot; score 0.95 PASS &middot; judge llama3.2 &middot; 812ms &middot; ttft 660ms &middot; 21 tok &middot; $0.000029<div class="ans">&ldquo;Ice floats because its hydrogen-bonded crystal structure makes it less dense than liquid water.&rdquo;</div></summary><div class='label'>prompt</div><pre>In one sentence, why does ice float on water?</pre><div class='label'>expected</div><pre>Ice floats on water because it is less dense than liquid water.</pre><div class='label'>response</div><pre>Ice floats because its hydrogen-bonded crystal structure makes it less dense than liquid water.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=9/10 relevance=10/10 score=0.950 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer correctly explains the reason for ice floating on water, but could be more concise.</pre></details><details><summary>gpt-5.6-luna &middot; reasoning_003 &middot; rep1 &middot; score 0.65 FAIL &middot; judge llama3.2 &middot; 3512ms &middot; ttft 1433ms &middot; 335 tok &middot; $0.000405<div class="ans">&ldquo;Photosynthesis is how plants convert light energy into chemical energy (sugars). ### Overall equation \[ 6CO_2 + 6H_2O + \text{light energy}…&rdquo;</div></summary><div class='label'>prompt</div><pre>How does photosynthesis work in plants?</pre><div class='label'>expected</div><pre>Photosynthesis in plants converts light energy into chemical energy, using sunlight to transform carbon dioxide and water into glucose and oxygen.</pre><div class='label'>response</div><pre>Photosynthesis is how plants convert light energy into chemical energy (sugars).
+
+### Overall equation
+
+\[
+6CO_2 + 6H_2O + \text{light energy} \rightarrow C_6H_{12}O_6 + 6O_2
+\]
+
+Plants take in:
+
+- **Carbon dioxide (CO₂)** through tiny leaf openings called **stomata**
+- **Water (H₂O)** through their roots
+- **Light** captured by the green pigment **chlorophyll**
+
+Photosynthesis occurs mainly in **chloroplasts**, structures inside plant cells.
+
+### Two main stages
+
+1. **Light-dependent reactions**
+   - Chlorophyll absorbs sunlight.
+   - Water molecules are split, releasing **oxygen** as a byproduct.
+   - Light energy is stored in energy-carrying molecules called **ATP** and **NADPH**.
+
+2. **Calvin cycle**
+   - The plant uses CO₂, ATP, and NADPH to build small sugar molecules.
+   - These are used to make **glucose** and other carbohydrates for energy, growth, and storage.
+
+The oxygen produced is released into the atmosphere, while the sugars fuel the plant and help form materials such as cellulose, starch, and fruits. Photosynthesis also removes carbon dioxide from the air and is the foundation of most food chains.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=5/10 relevance=8/10 score=0.650 &lt; threshold=0.7 | reasoning: The model&#x27;s answer partially addresses the question by mentioning the conversion of light energy into chemical energy, but lacks details on the process, stages, and key components involved in photosynthesis.</pre></details><details><summary>gpt-5.6-luna &middot; reasoning_003 &middot; rep2 &middot; score 0.80 PASS &middot; judge llama3.2 &middot; 3483ms &middot; ttft 1471ms &middot; 293 tok &middot; $0.000354<div class="ans">&ldquo;Photosynthesis is how plants convert light energy into chemical energy (sugars). It mainly occurs in **chloroplasts**, using the pigment **c…&rdquo;</div></summary><div class='label'>prompt</div><pre>How does photosynthesis work in plants?</pre><div class='label'>expected</div><pre>Photosynthesis in plants converts light energy into chemical energy, using sunlight to transform carbon dioxide and water into glucose and oxygen.</pre><div class='label'>response</div><pre>Photosynthesis is how plants convert light energy into chemical energy (sugars).
+
+It mainly occurs in **chloroplasts**, using the pigment **chlorophyll**:
+
+1. **Light absorption:** Chlorophyll captures energy from sunlight.
+2. **Water splitting:** Light energy helps split water molecules (**H₂O**), releasing **oxygen (O₂)** as a byproduct.
+3. **Energy storage:** The light reactions produce energy-carrying molecules, mainly **ATP** and **NADPH**.
+4. **Sugar production:** In the **Calvin cycle**, the plant uses ATP and NADPH to combine **carbon dioxide (CO₂)** from the air into carbon-based molecules that can be made into glucose and other sugars.
+
+The overall simplified equation is:
+
+\[
+6CO_2 + 6H_2O + light\ energy \rightarrow C_6H_{12}O_6 + 6O_2
+\]
+
+Plants take in carbon dioxide through tiny leaf openings called **stomata**, absorb water through their roots, and release oxygen through the stomata. The sugars provide energy and materials for growth, while some are stored as starch.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=7/10 relevance=9/10 score=0.800 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer is partially correct but lacks detail on the Calvin cycle and overall equation, and it does not fully address the question of how photosynthesis works in plants.</pre></details><details><summary>llama3.2 &middot; definition_001 &middot; rep1 &middot; score 1.00 PASS &middot; judge llama3.2 &middot; 1505ms &middot; ttft 464ms &middot; 11 tok &middot; $0.000000<div class="ans">&ldquo;The acronym &quot;AI&quot; stands for Artificial Intelligence.&rdquo;</div></summary><div class='label'>prompt</div><pre>What does the acronym AI stand for?</pre><div class='label'>expected</div><pre>Artificial Intelligence</pre><div class='label'>response</div><pre>The acronym &quot;AI&quot; stands for Artificial Intelligence.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=10/10 relevance=10/10 score=1.000 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer is fully correct, as it accurately states the definition of the acronym &#x27;AI&#x27;. However, the phrasing could be improved for clarity and concision.</pre></details><details><summary>llama3.2 &middot; definition_001 &middot; rep2 &middot; score 1.00 PASS &middot; judge llama3.2 &middot; 1697ms &middot; ttft 438ms &middot; 11 tok &middot; $0.000000<div class="ans">&ldquo;The acronym &quot;AI&quot; stands for Artificial Intelligence.&rdquo;</div></summary><div class='label'>prompt</div><pre>What does the acronym AI stand for?</pre><div class='label'>expected</div><pre>Artificial Intelligence</pre><div class='label'>response</div><pre>The acronym &quot;AI&quot; stands for Artificial Intelligence.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=10/10 relevance=10/10 score=1.000 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer is fully correct, as it accurately states the definition of the acronym &#x27;AI&#x27;. However, the phrasing could be improved for clarity and concision.</pre></details><details><summary>llama3.2 &middot; definition_002 &middot; rep1 &middot; score 0.95 PASS &middot; judge llama3.2 &middot; 2934ms &middot; ttft 394ms &middot; 44 tok &middot; $0.000000<div class="ans">&ldquo;A black hole is a region in space where the gravitational pull is so strong that nothing, including light, can escape once it falls inside, …&rdquo;</div></summary><div class='label'>prompt</div><pre>In one sentence, what is a black hole?</pre><div class='label'>expected</div><pre>A region of space where the gravitational pull is so strong that nothing, not even light, can escape from it.</pre><div class='label'>response</div><pre>A black hole is a region in space where the gravitational pull is so strong that nothing, including light, can escape once it falls inside, due to an incredibly dense and massive object with such a strong gravitational field.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=9/10 relevance=10/10 score=0.950 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer correctly states the basic concept of a black hole, but could be more concise and clear in its phrasing.</pre></details><details><summary>llama3.2 &middot; definition_002 &middot; rep2 &middot; score 0.95 PASS &middot; judge llama3.2 &middot; 2387ms &middot; ttft 381ms &middot; 39 tok &middot; $0.000000<div class="ans">&ldquo;A black hole is a region in space where the gravitational pull is so strong that nothing, including light, can escape from it, making it inv…&rdquo;</div></summary><div class='label'>prompt</div><pre>In one sentence, what is a black hole?</pre><div class='label'>expected</div><pre>A region of space where the gravitational pull is so strong that nothing, not even light, can escape from it.</pre><div class='label'>response</div><pre>A black hole is a region in space where the gravitational pull is so strong that nothing, including light, can escape from it, making it invisible and creating a boundary called the event horizon.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=9/10 relevance=10/10 score=0.950 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer correctly states the definition of a black hole but includes unnecessary details about its invisibility and event horizon.</pre></details><details><summary>llama3.2 &middot; factual_001 &middot; rep1 &middot; score 1.00 PASS &middot; judge llama3.2 &middot; 1555ms &middot; ttft 681ms &middot; 12 tok &middot; $0.000000<div class="ans">&ldquo;The capital of Slovenia is Ljubljana.&rdquo;</div></summary><div class='label'>prompt</div><pre>What is the capital of Slovenia?</pre><div class='label'>expected</div><pre>Ljubljana</pre><div class='label'>response</div><pre>The capital of Slovenia is Ljubljana.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=10/10 relevance=10/10 score=1.000 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer correctly identifies the capital of Slovenia, but does not provide any additional context or information.</pre></details><details><summary>llama3.2 &middot; factual_001 &middot; rep2 &middot; score 1.00 PASS &middot; judge llama3.2 &middot; 1576ms &middot; ttft 525ms &middot; 12 tok &middot; $0.000000<div class="ans">&ldquo;The capital of Slovenia is Ljubljana.&rdquo;</div></summary><div class='label'>prompt</div><pre>What is the capital of Slovenia?</pre><div class='label'>expected</div><pre>Ljubljana</pre><div class='label'>response</div><pre>The capital of Slovenia is Ljubljana.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=10/10 relevance=10/10 score=1.000 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer correctly identifies the capital of Slovenia, but does not provide any additional context or information.</pre></details><details><summary>llama3.2 &middot; factual_002 &middot; rep1 &middot; score 0.95 PASS &middot; judge llama3.2 &middot; 2934ms &middot; ttft 599ms &middot; 19 tok &middot; $0.000000<div class="ans">&ldquo;The chemical symbol for silver is Ag. It comes from the Latin word &quot;argentum&quot;.&rdquo;</div></summary><div class='label'>prompt</div><pre>What is the chemical symbol for silver?</pre><div class='label'>expected</div><pre>Ag</pre><div class='label'>response</div><pre>The chemical symbol for silver is Ag. It comes from the Latin word &quot;argentum&quot;.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=9/10 relevance=10/10 score=0.950 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer correctly identifies the chemical symbol as Ag and provides a brief etymology, but could be improved by being more concise.</pre></details><details><summary>llama3.2 &middot; factual_002 &middot; rep2 &middot; score 1.00 PASS &middot; judge llama3.2 &middot; 3192ms &middot; ttft 588ms &middot; 19 tok &middot; $0.000000<div class="ans">&ldquo;The chemical symbol for silver is Ag. It comes from the Latin word &quot;argentum.&quot;&rdquo;</div></summary><div class='label'>prompt</div><pre>What is the chemical symbol for silver?</pre><div class='label'>expected</div><pre>Ag</pre><div class='label'>response</div><pre>The chemical symbol for silver is Ag. It comes from the Latin word &quot;argentum.&quot;</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=10/10 relevance=10/10 score=1.000 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer correctly identifies the chemical symbol for silver as Ag, and provides additional context about its origin.</pre></details><details><summary>llama3.2 &middot; factual_003 &middot; rep1 &middot; score 1.00 PASS &middot; judge llama3.2 &middot; 3777ms &middot; ttft 708ms &middot; 29 tok &middot; $0.000000<div class="ans">&ldquo;Lima is the capital city of Peru, which is located in South America. Therefore, Lima is situated on the continent of South America.&rdquo;</div></summary><div class='label'>prompt</div><pre>In what continent is Lima located?</pre><div class='label'>expected</div><pre>South America</pre><div class='label'>response</div><pre>Lima is the capital city of Peru, which is located in South America. Therefore, Lima is situated on the continent of South America.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=10/10 relevance=10/10 score=1.000 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer correctly identifies the continent where Lima is located and provides a clear explanation for its correctness.</pre></details><details><summary>llama3.2 &middot; factual_003 &middot; rep2 &middot; score 0.95 PASS &middot; judge llama3.2 &middot; 3230ms &middot; ttft 413ms &middot; 21 tok &middot; $0.000000<div class="ans">&ldquo;Lima is the capital city of Peru, and it is located on the continent of South America.&rdquo;</div></summary><div class='label'>prompt</div><pre>In what continent is Lima located?</pre><div class='label'>expected</div><pre>South America</pre><div class='label'>response</div><pre>Lima is the capital city of Peru, and it is located on the continent of South America.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=9/10 relevance=10/10 score=0.950 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer correctly identifies Lima as being in South America, but could provide more specificity about the continent.</pre></details><details><summary>llama3.2 &middot; factual_004 &middot; rep1 &middot; score 0.95 PASS &middot; judge llama3.2 &middot; 7517ms &middot; ttft 468ms &middot; 76 tok &middot; $0.000000<div class="ans">&ldquo;There are eight planets in our solar system: 1. Mercury 2. Venus 3. Earth 4. Mars 5. Jupiter 6. Saturn 7. Uranus 8. Neptune Note: Pluto was …&rdquo;</div></summary><div class='label'>prompt</div><pre>How many planets are in our solar system?</pre><div class='label'>expected</div><pre>8</pre><div class='label'>response</div><pre>There are eight planets in our solar system:
+
+1. Mercury
+2. Venus
+3. Earth
+4. Mars
+5. Jupiter
+6. Saturn
+7. Uranus
+8. Neptune
+
+Note: Pluto was previously considered a planet, but in 2006 it was reclassified as a dwarf planet by the International Astronomical Union (IAU).</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=10/10 relevance=9/10 score=0.950 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer is correct and fully addresses the question about the number of planets in our solar system. However, it includes Pluto, which is no longer considered a planet.</pre></details><details><summary>llama3.2 &middot; factual_004 &middot; rep2 &middot; score 0.95 PASS &middot; judge llama3.2 &middot; 9652ms &middot; ttft 711ms &middot; 76 tok &middot; $0.000000<div class="ans">&ldquo;There are eight planets in our solar system: 1. Mercury 2. Venus 3. Earth 4. Mars 5. Jupiter 6. Saturn 7. Uranus 8. Neptune Note: Pluto was …&rdquo;</div></summary><div class='label'>prompt</div><pre>How many planets are in our solar system?</pre><div class='label'>expected</div><pre>8</pre><div class='label'>response</div><pre>There are eight planets in our solar system:
+
+1. Mercury
+2. Venus
+3. Earth
+4. Mars
+5. Jupiter
+6. Saturn
+7. Uranus
+8. Neptune
+
+Note: Pluto was previously considered a planet, but in 2006 it was reclassified as a dwarf planet by the International Astronomical Union (IAU).</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=10/10 relevance=9/10 score=0.950 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer is correct and fully addresses the question about the number of planets in our solar system. However, it includes Pluto, which is no longer considered a planet.</pre></details><details><summary>llama3.2 &middot; procedural_001 &middot; rep1 &middot; score 0.85 PASS &middot; judge llama3.2 &middot; 6207ms &middot; ttft 351ms &middot; 125 tok &middot; $0.000000<div class="ans">&ldquo;You can use the `-k` option with pytest to run tests that match a specific marker. In this case, you would use: ```bash pytest -k &quot;slow&quot; --n…&rdquo;</div></summary><div class='label'>prompt</div><pre>Which pytest command runs tests marked either &#x27;slow&#x27; or &#x27;network&#x27;?</pre><div class='label'>expected</div><pre>pytest -m &#x27;slow or network&#x27;</pre><div class='label'>response</div><pre>You can use the `-k` option with pytest to run tests that match a specific marker. In this case, you would use:
+
+```bash
+pytest -k &quot;slow&quot; --network
+```
+
+However, since `--network` is not a valid option for pytest, it&#x27;s likely that you meant to use the `-m` option instead.
+
+If you want to run tests marked with either &#x27;slow&#x27; or &#x27;network&#x27;, you can use:
+
+```bash
+pytest -m &quot;slow&quot; -m &quot;network&quot;
+```
+
+This will run all tests that are marked with either &#x27;slow&#x27; or &#x27;network&#x27;.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=8/10 relevance=9/10 score=0.850 &gt;= threshold=0.7 | reasoning: The model provided a correct but slightly incorrect answer, suggesting the use of both `-k` and `-m` options. However, it correctly identified the need to use the `-m` option.</pre></details><details><summary>llama3.2 &middot; procedural_001 &middot; rep2 &middot; score 0.75 PASS &middot; judge llama3.2 &middot; 3667ms &middot; ttft 378ms &middot; 70 tok &middot; $0.000000<div class="ans">&ldquo;You can use the following pytest command to run tests marked with either &#x27;slow&#x27; or &#x27;network&#x27;: ```bash pytest --durations=1s --filter=&#x27;slow|n…&rdquo;</div></summary><div class='label'>prompt</div><pre>Which pytest command runs tests marked either &#x27;slow&#x27; or &#x27;network&#x27;?</pre><div class='label'>expected</div><pre>pytest -m &#x27;slow or network&#x27;</pre><div class='label'>response</div><pre>You can use the following pytest command to run tests marked with either &#x27;slow&#x27; or &#x27;network&#x27;:
+
+```bash
+pytest --durations=1s --filter=&#x27;slow|network&#x27;
+```
+
+This will run all tests that are marked with &#x27;slow&#x27; or &#x27;network&#x27;, and it will only consider tests that take less than 1 second.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=5/10 relevance=10/10 score=0.750 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer is partially correct, as it provides a valid pytest command to run slow and network tests, but the filter syntax is incorrect.</pre></details><details><summary>llama3.2 &middot; reasoning_001 &middot; rep1 &middot; score 0.65 FAIL &middot; judge llama3.2 &middot; 22012ms &middot; ttft 421ms &middot; 439 tok &middot; $0.000000<div class="ans">&ldquo;The terms &quot;cold-blooded&quot; and &quot;warm-blooded&quot; are outdated and somewhat misleading, as they don&#x27;t accurately describe an animal&#x27;s metabolic pr…&rdquo;</div></summary><div class='label'>prompt</div><pre>What is the difference between cold blooded and warm blooded animals?</pre><div class='label'>expected</div><pre>Cold blooded animals rely on external sources for body heat, while warm blooded animals maintain a constant internal body temperature.</pre><div class='label'>response</div><pre>The terms &quot;cold-blooded&quot; and &quot;warm-blooded&quot; are outdated and somewhat misleading, as they don&#x27;t accurately describe an animal&#x27;s metabolic processes. Instead, the correct terminology is &quot;ectothermic&quot; (cold-blooded) and &quot;endothermic&quot; (warm-blooded).
+
+Here&#x27;s a brief explanation of each:
+
+**Ectothermic (Cold-Blooded):**
+
+* Animals that regulate their body temperature using external sources, such as the sun or a warm rock.
+* Their metabolic rate is influenced by the environment, and they often bask in sunlight to increase their body temperature.
+* Examples: reptiles (e.g., snakes, lizards), amphibians (e.g., frogs, toads), fish.
+
+**Endothermic (Warm-Blooded):**
+
+* Animals that generate heat internally through metabolic processes, such as muscle contractions and cellular respiration.
+* They maintain a relatively constant body temperature, regardless of the environment.
+* Examples: mammals (e.g., humans, dogs, cats) and birds.
+
+The key differences between ectothermic and endothermic animals are:
+
+1. **Temperature regulation**: Ectotherms rely on external sources to regulate their body temperature, while endotherms generate heat internally.
+2. **Metabolic rate**: Ectotherms have a slower metabolic rate than endotherms, as they don&#x27;t need to burn energy to maintain a constant body temperature.
+3. **Activity patterns**: Ectotherms often have more restricted activity patterns, as they may be active only when the environment is warm enough for them to regulate their body temperature.
+
+It&#x27;s worth noting that some animals can exhibit both ectothermic and endothermic characteristics, depending on the situation. For example, some reptiles can bask in sunlight to increase their body temperature, while others may seek shade to cool down.
+
+In summary, the terms &quot;cold-blooded&quot; and &quot;warm-blooded&quot; are outdated and don&#x27;t accurately describe an animal&#x27;s metabolic processes. Instead, we use the more accurate terms &quot;ectothermic&quot; (cold-blooded) and &quot;endothermic&quot; (warm-blooded) to describe these differences.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=5/10 relevance=8/10 score=0.650 &lt; threshold=0.7 | reasoning: The model provided a detailed explanation of the correct terminology and key differences between ectothermic and endothermic animals, but failed to directly address the question about the difference between cold blooded and warm blooded animals.</pre></details><details><summary>llama3.2 &middot; reasoning_001 &middot; rep2 &middot; score 0.70 PASS &middot; judge llama3.2 &middot; 23953ms &middot; ttft 570ms &middot; 443 tok &middot; $0.000000<div class="ans">&ldquo;The terms &quot;cold-blooded&quot; and &quot;warm-blooded&quot; are outdated and can be misleading. The correct terminology is &quot;ectothermic&quot; (cold-blooded) and …&rdquo;</div></summary><div class='label'>prompt</div><pre>What is the difference between cold blooded and warm blooded animals?</pre><div class='label'>expected</div><pre>Cold blooded animals rely on external sources for body heat, while warm blooded animals maintain a constant internal body temperature.</pre><div class='label'>response</div><pre>The terms &quot;cold-blooded&quot; and &quot;warm-blooded&quot; are outdated and can be misleading. The correct terminology is &quot;ectothermic&quot; (cold-blooded) and &quot;endothermic&quot; (warm-blooded).
+
+**Ectothermic (Cold-Blooded) Animals:**
+
+Ectothermic animals, also known as cold-blooded animals, rely on external sources of heat to regulate their body temperature. Their metabolic rate is influenced by the environment around them, and they often bask in sunlight or seek shade to maintain a stable body temperature.
+
+Examples of ectothermic animals include:
+
+* Reptiles (snakes, lizards, turtles)
+* Amphibians (frogs, toads)
+* Fish
+* Insects (many species)
+
+**Endothermic (Warm-Blooded) Animals:**
+
+Endothermic animals, also known as warm-blooded animals, generate heat internally and maintain a relatively constant body temperature regardless of the environment. This is made possible by their ability to produce energy through cellular respiration.
+
+Examples of endothermic animals include:
+
+* Mammals (humans, dogs, cats)
+* Birds
+* Some species of fish (such as goldfish)
+
+Key differences between ectothermic and endothermic animals:
+
+1. **Body temperature regulation:** Ectothermic animals rely on external sources of heat, while endothermic animals generate heat internally.
+2. **Metabolic rate:** Endothermic animals have a higher metabolic rate than ectothermic animals, which allows them to maintain their body temperature.
+3. **Energy production:** Endothermic animals produce energy through cellular respiration, while ectothermic animals rely on external sources of energy (e.g., food).
+4. **Activity patterns:** Ectothermic animals often have more restricted activity patterns, as they need to regulate their body temperature. Endothermic animals can be active at a wider range of temperatures.
+
+It&#x27;s worth noting that the terms &quot;cold-blooded&quot; and &quot;warm-blooded&quot; were historically used to describe these two groups, but they are now considered outdated and can be misleading. The correct terminology is ectothermic and endothermic.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=8/10 relevance=6/10 score=0.700 &gt;= threshold=0.7 | reasoning: The model provided a clear and concise explanation of the difference between cold blooded and warm blooded animals, using the correct terminology (ectothermic and endothermic). However, it did not directly address the question in its initial response, instead providing an introduction to the topic.</pre></details><details><summary>llama3.2 &middot; reasoning_002 &middot; rep1 &middot; score 1.00 PASS &middot; judge llama3.2 &middot; 2214ms &middot; ttft 432ms &middot; 39 tok &middot; $0.000000<div class="ans">&ldquo;Ice floats on water because it is less dense than liquid water, meaning that the molecules in ice are arranged in a crystalline structure th…&rdquo;</div></summary><div class='label'>prompt</div><pre>In one sentence, why does ice float on water?</pre><div class='label'>expected</div><pre>Ice floats on water because it is less dense than liquid water.</pre><div class='label'>response</div><pre>Ice floats on water because it is less dense than liquid water, meaning that the molecules in ice are arranged in a crystalline structure that takes up more space than the molecules in liquid water.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=10/10 relevance=10/10 score=1.000 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer correctly explains why ice floats on water and provides additional context about the molecular arrangement of ice.</pre></details><details><summary>llama3.2 &middot; reasoning_002 &middot; rep2 &middot; score 1.00 PASS &middot; judge llama3.2 &middot; 2323ms &middot; ttft 459ms &middot; 39 tok &middot; $0.000000<div class="ans">&ldquo;Ice floats on water because it is less dense than liquid water, meaning that the molecules in ice are arranged in a crystalline structure th…&rdquo;</div></summary><div class='label'>prompt</div><pre>In one sentence, why does ice float on water?</pre><div class='label'>expected</div><pre>Ice floats on water because it is less dense than liquid water.</pre><div class='label'>response</div><pre>Ice floats on water because it is less dense than liquid water, meaning that the molecules in ice are arranged in a crystalline structure that takes up more space than the molecules in liquid water.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=10/10 relevance=10/10 score=1.000 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer correctly explains why ice floats on water and provides additional context about the molecular arrangement of ice.</pre></details><details><summary>llama3.2 &middot; reasoning_003 &middot; rep1 &middot; score 0.95 PASS &middot; judge llama3.2 &middot; 25932ms &middot; ttft 532ms &middot; 514 tok &middot; $0.000000<div class="ans">&ldquo;Photosynthesis is the process by which plants, algae, and some bacteria convert light energy from the sun into chemical energy in the form o…&rdquo;</div></summary><div class='label'>prompt</div><pre>How does photosynthesis work in plants?</pre><div class='label'>expected</div><pre>Photosynthesis in plants converts light energy into chemical energy, using sunlight to transform carbon dioxide and water into glucose and oxygen.</pre><div class='label'>response</div><pre>Photosynthesis is the process by which plants, algae, and some bacteria convert light energy from the sun into chemical energy in the form of organic compounds, such as glucose. This process is essential for life on Earth, as it provides energy and organic compounds for plants to grow and thrive.
+
+Here&#x27;s a step-by-step explanation of how photosynthesis works:
+
+**The Light-Dependent Reactions**
+
+1. **Light absorption**: Light is absorbed by pigments such as chlorophyll and other accessory pigments in the thylakoid membranes of chloroplasts.
+2. **Excitation of electrons**: The absorbed light energy excites electrons, which are then transferred to a special molecule called an electron acceptor.
+3. **Transfer of electrons**: The electrons are passed along a series of electron carriers in the thylakoid membrane, ultimately resulting in the formation of a high-energy molecule called ATP (adenosine triphosphate).
+4. **Production of NADPH**: Another energy-rich molecule called NADPH is also produced during this stage.
+
+**The Light-Independent Reactions**
+
+1. **Carbon fixation**: Carbon dioxide from the atmosphere is fixed into a three-carbon molecule called 3-phosphoglycerate (3-PGA) via the enzyme RuBisCO.
+2. **Reduction of CO2**: The 3-PGA molecules are reduced to form glyceraldehyde-3-phosphate (G3P) using the energy from ATP and NADPH produced in the light-dependent reactions.
+3. **Regeneration of RuBP**: The enzyme RuBP is regenerated, allowing the cycle to continue.
+
+**Overall Equation**
+
+6 CO2 + 6 H2O + light energy → C6H12O6 (glucose) + 6 O2
+
+In summary, photosynthesis involves the conversion of light energy into chemical energy through a series of light-dependent and light-independent reactions. The overall equation shows that six carbon dioxide molecules and six water molecules are converted into one glucose molecule and six oxygen molecules.
+
+**Importance of Photosynthesis**
+
+Photosynthesis is essential for life on Earth because it:
+
+1. Provides energy and organic compounds for plants to grow and thrive.
+2. Supports the food chain by producing the base of the food web (plants).
+3. Produces oxygen, which is necessary for the survival of most living organisms.
+
+In summary, photosynthesis is a complex process that involves the conversion of light energy into chemical energy, providing the energy and organic compounds needed for plant growth and supporting life on Earth.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=9/10 relevance=10/10 score=0.950 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer correctly explains the overall process of photosynthesis in plants, including the light-dependent and light-independent reactions, and its importance for life on Earth. However, it could be more concise and directly address the question.</pre></details><details><summary>llama3.2 &middot; reasoning_003 &middot; rep2 &middot; score 0.85 PASS &middot; judge llama3.2 &middot; 28918ms &middot; ttft 636ms &middot; 555 tok &middot; $0.000000<div class="ans">&ldquo;Photosynthesis is the process by which plants, algae, and some bacteria convert light energy from the sun into chemical energy in the form o…&rdquo;</div></summary><div class='label'>prompt</div><pre>How does photosynthesis work in plants?</pre><div class='label'>expected</div><pre>Photosynthesis in plants converts light energy into chemical energy, using sunlight to transform carbon dioxide and water into glucose and oxygen.</pre><div class='label'>response</div><pre>Photosynthesis is the process by which plants, algae, and some bacteria convert light energy from the sun into chemical energy in the form of organic compounds, such as glucose. This process is essential for life on Earth, as it provides energy and organic compounds for food chains.
+
+Here&#x27;s a step-by-step explanation of how photosynthesis works:
+
+1. **Light absorption**: Light-dependent reactions occur when light is absorbed by pigments such as chlorophyll, which is present in the thylakoid membranes of chloroplasts (organelles found in plant cells).
+2. **Excitation of electrons**: When light energy is absorbed, it excites electrons in the pigment molecules, which are then transferred to a special molecule called an electron acceptor.
+3. **Transfer of electrons**: The electrons are passed along a series of electron carriers in the thylakoid membrane, ultimately resulting in the formation of a high-energy molecule called ATP (adenosine triphosphate).
+4. **Water splitting**: Water molecules (H2O) are split into oxygen (O2), protons (H+), and electrons using energy from light.
+5. **Calvin cycle**: The ATP and NADPH produced in the light-dependent reactions are used to power the Calvin cycle, also known as the light-independent reaction or carbon fixation.
+6. **Carbon fixation**: CO2 is fixed into a three-carbon molecule called 3-phosphoglycerate (3-PGA) using energy from ATP and NADPH.
+7. **Reduction of 3-PGA**: The 3-PGA molecules are reduced to form glyceraldehyde-3-phosphate (G3P), which is then used to synthesize glucose.
+
+The overall equation for photosynthesis is:
+
+6 CO2 + 6 H2O + light energy → C6H12O6 (glucose) + 6 O2
+
+In summary, photosynthesis involves the conversion of light energy into chemical energy through a series of light-dependent and light-independent reactions. This process is essential for plant growth and development, as well as supporting life on Earth.
+
+**Key players in photosynthesis:**
+
+* Chlorophyll (pigment)
+* Thylakoid membranes
+* Chloroplasts (organelles)
+* ATP (energy molecule)
+* NADPH (reduction agent)
+
+**Interesting facts about photosynthesis:**
+
+* Photosynthesis occurs in specialized organelles called chloroplasts, which contain pigments such as chlorophyll.
+* The process of photosynthesis is responsible for producing approximately 70% of the oxygen we breathe.
+* Plants can undergo a process called crassulacean acid metabolism (CAM) to conserve water and optimize photosynthesis in arid environments.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=8/10 relevance=9/10 score=0.850 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer correctly explains the overall process of photosynthesis, including light-dependent and light-independent reactions, but lacks specific details about the role of chlorophyll and chloroplasts.</pre></details>
+</body></html>

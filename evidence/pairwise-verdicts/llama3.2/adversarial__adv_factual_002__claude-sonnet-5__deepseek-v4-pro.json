@@ -1,0 +1,12 @@
+{
+  "model_a": "claude-sonnet-5",
+  "model_b": "deepseek-v4-pro",
+  "order1_winner": "claude-sonnet-5",
+  "order2_winner": "claude-sonnet-5",
+  "order1_reasoning": "Answer A provides more detailed and specific information about the Sargasso Sea's characteristics, boundaries, and ecosystem, making it a more comprehensive and informative answer.",
+  "order2_reasoning": "Answer B provides more detailed information about the Sargasso Sea's boundaries and characteristics, making it a more comprehensive answer.",
+  "outcome": "win",
+  "winner": "claude-sonnet-5",
+  "suite": "adversarial",
+  "item_id": "adv_factual_002"
+}

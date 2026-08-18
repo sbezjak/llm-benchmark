@@ -1,0 +1,12 @@
+{
+  "model_a": "claude-haiku-4-5-20251001",
+  "model_b": "llama3.2",
+  "order1_winner": "claude-haiku-4-5-20251001",
+  "order2_winner": "claude-haiku-4-5-20251001",
+  "order1_reasoning": "Answer A is better because it provides more context and clarity by including the city name in its response.",
+  "order2_reasoning": "Answer B is better because it provides more context and clarity by repeating the correct answer",
+  "outcome": "win",
+  "winner": "claude-haiku-4-5-20251001",
+  "suite": "easy",
+  "item_id": "factual_001"
+}

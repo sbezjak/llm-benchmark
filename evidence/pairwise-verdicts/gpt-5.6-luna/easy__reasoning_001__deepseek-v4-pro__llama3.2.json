@@ -1,0 +1,12 @@
+{
+  "model_a": "deepseek-v4-pro",
+  "model_b": "llama3.2",
+  "order1_winner": "deepseek-v4-pro",
+  "order2_winner": "deepseek-v4-pro",
+  "order1_reasoning": "Answer A is more accurate and directly answers the question, while B includes misleading claims that endotherms maintain temperature regardless of environment and that ectotherms are generally slower-metabolizing.",
+  "order2_reasoning": "B is more concise and directly explains the core difference accurately, while A adds unnecessary terminology and somewhat broad claims about metabolic rates and activity.",
+  "outcome": "win",
+  "winner": "deepseek-v4-pro",
+  "suite": "easy",
+  "item_id": "reasoning_001"
+}

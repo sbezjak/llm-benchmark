@@ -1,0 +1,12 @@
+{
+  "model_a": "claude-sonnet-5",
+  "model_b": "gpt-5.6-luna",
+  "order1_winner": "TIE",
+  "order2_winner": "TIE",
+  "order1_reasoning": "Both answers are correct and directly relevant, though A adds a brief accurate explanation.",
+  "order2_reasoning": "Both answers correctly and directly identify the chemical symbol for silver, so neither is better overall.",
+  "outcome": "genuine_tie",
+  "winner": null,
+  "suite": "easy",
+  "item_id": "factual_002"
+}

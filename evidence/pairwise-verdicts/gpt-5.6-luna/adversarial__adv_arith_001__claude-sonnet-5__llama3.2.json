@@ -1,0 +1,12 @@
+{
+  "model_a": "claude-sonnet-5",
+  "model_b": "llama3.2",
+  "order1_winner": "TIE",
+  "order2_winner": "claude-sonnet-5",
+  "order1_reasoning": "Both answers are mathematically correct, clearly explain the equation, and conclude that the ball costs $0.05; A adds a relevant verification and context, but B is more concise and directly focused.",
+  "order2_reasoning": "Both answers correctly set up and solve the equation, but B is slightly better because it also addresses the common $0.10 misconception and verifies the result.",
+  "outcome": "flip",
+  "winner": null,
+  "suite": "adversarial",
+  "item_id": "adv_arith_001"
+}

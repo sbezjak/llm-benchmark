@@ -1,0 +1,12 @@
+{
+  "model_a": "deepseek-v4-pro",
+  "model_b": "gpt-5.6-luna",
+  "order1_winner": "TIE",
+  "order2_winner": "TIE",
+  "order1_reasoning": "Both answers use the correct pytest marker expression to run tests marked either slow or network, so they are equally good.",
+  "order2_reasoning": "Both answers give the correct pytest marker expression for running tests marked either slow or network.",
+  "outcome": "genuine_tie",
+  "winner": null,
+  "suite": "easy",
+  "item_id": "procedural_001"
+}

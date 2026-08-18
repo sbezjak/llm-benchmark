@@ -1,0 +1,12 @@
+{
+  "model_a": "claude-haiku-4-5-20251001",
+  "model_b": "claude-sonnet-5",
+  "order1_winner": "claude-sonnet-5",
+  "order2_winner": "claude-sonnet-5",
+  "order1_reasoning": "Answer B provides more context and details about Lima's location and significance, making it a more comprehensive answer.",
+  "order2_reasoning": "Answer A provides additional context about Lima's location and its significance as the capital of Peru, making it more informative and relevant.",
+  "outcome": "win",
+  "winner": "claude-sonnet-5",
+  "suite": "easy",
+  "item_id": "factual_003"
+}

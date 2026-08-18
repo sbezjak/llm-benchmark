@@ -1,0 +1,12 @@
+{
+  "model_a": "claude-sonnet-5",
+  "model_b": "gpt-5.6-luna",
+  "order1_winner": "TIE",
+  "order2_winner": "TIE",
+  "order1_reasoning": "Both answers are accurate, relevant, and similarly complete, with A providing slightly more detail about where each stage occurs while B gives a comparably clear explanation of sugar use, so neither is meaningfully better overall.",
+  "order2_reasoning": "Both answers accurately explain the inputs, chloroplast location, overall equation, and two major stages of photosynthesis, with only minor simplifications that do not materially affect correctness.",
+  "outcome": "genuine_tie",
+  "winner": null,
+  "suite": "easy",
+  "item_id": "reasoning_003"
+}

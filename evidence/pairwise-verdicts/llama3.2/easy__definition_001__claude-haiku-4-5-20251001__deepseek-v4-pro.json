@@ -1,0 +1,12 @@
+{
+  "model_a": "claude-haiku-4-5-20251001",
+  "model_b": "deepseek-v4-pro",
+  "order1_winner": "claude-haiku-4-5-20251001",
+  "order2_winner": "TIE",
+  "order1_reasoning": "Answer A provides more context and explanation of what AI refers to, making it more informative than Answer B.",
+  "order2_reasoning": "Both answers provide the same information and are equally correct, but Answer A is slightly more concise.",
+  "outcome": "flip",
+  "winner": null,
+  "suite": "easy",
+  "item_id": "definition_001"
+}

@@ -1,0 +1,12 @@
+{
+  "model_a": "claude-haiku-4-5-20251001",
+  "model_b": "claude-sonnet-5",
+  "order1_winner": "claude-haiku-4-5-20251001",
+  "order2_winner": "claude-sonnet-5",
+  "order1_reasoning": "Answer A is more correct and relevant because it does not include Pluto as a planet, which is the current definition according to the International Astronomical Union.",
+  "order2_reasoning": "Answer A is better because it includes more information about Pluto's reclassification and provides a list of planets in order from the Sun, making it more comprehensive.",
+  "outcome": "flip",
+  "winner": null,
+  "suite": "easy",
+  "item_id": "factual_004"
+}

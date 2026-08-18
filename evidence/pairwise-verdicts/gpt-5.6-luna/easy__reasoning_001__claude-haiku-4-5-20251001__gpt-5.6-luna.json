@@ -1,0 +1,12 @@
+{
+  "model_a": "claude-haiku-4-5-20251001",
+  "model_b": "gpt-5.6-luna",
+  "order1_winner": "gpt-5.6-luna",
+  "order2_winner": "gpt-5.6-luna",
+  "order1_reasoning": "Both answers correctly explain the distinction, but B is slightly more accurate by saying warm-blooded animals maintain a relatively stable rather than perfectly constant temperature and by noting behavioral regulation in ectotherms.",
+  "order2_reasoning": "Answer A is slightly better because it accurately uses \u201crelatively stable\u201d for endotherms and avoids B\u2019s overstatement that warm-blooded animals maintain a constant temperature regardless of environment and that ectotherms are simply the same temperature as their surroundings.",
+  "outcome": "win",
+  "winner": "gpt-5.6-luna",
+  "suite": "easy",
+  "item_id": "reasoning_001"
+}

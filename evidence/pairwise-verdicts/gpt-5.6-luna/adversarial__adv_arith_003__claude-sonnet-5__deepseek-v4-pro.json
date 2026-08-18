@@ -1,0 +1,12 @@
+{
+  "model_a": "claude-sonnet-5",
+  "model_b": "deepseek-v4-pro",
+  "order1_winner": "TIE",
+  "order2_winner": "claude-sonnet-5",
+  "order1_reasoning": "Both answers correctly calculate the sequential discounts and arrive at $54, with equally clear and relevant explanations.",
+  "order2_reasoning": "Both answers correctly calculate the sequential discounts and arrive at $54, but B provides slightly clearer step-by-step formatting and a correct helpful note about the combined discount.",
+  "outcome": "flip",
+  "winner": null,
+  "suite": "adversarial",
+  "item_id": "adv_arith_003"
+}

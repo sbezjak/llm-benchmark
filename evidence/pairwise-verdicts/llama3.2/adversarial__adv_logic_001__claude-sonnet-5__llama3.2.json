@@ -1,0 +1,12 @@
+{
+  "model_a": "claude-sonnet-5",
+  "model_b": "llama3.2",
+  "order1_winner": "llama3.2",
+  "order2_winner": "llama3.2",
+  "order1_reasoning": "Answer B provides a clearer and more logical explanation of the relationships between the fruits, making it more comprehensible to readers.",
+  "order2_reasoning": "Answer A provides a clear and logical step-by-step analysis of the relationships between the fruits, while Answer B uses a more intuitive but less formal approach.",
+  "outcome": "win",
+  "winner": "llama3.2",
+  "suite": "adversarial",
+  "item_id": "adv_logic_001"
+}

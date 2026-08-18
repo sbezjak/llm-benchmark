@@ -1,0 +1,12 @@
+{
+  "model_a": "claude-haiku-4-5-20251001",
+  "model_b": "gpt-5.6-luna",
+  "order1_winner": "claude-haiku-4-5-20251001",
+  "order2_winner": "gpt-5.6-luna",
+  "order1_reasoning": "Answer A is more informative while remaining correct and directly relevant, specifying the bounding currents and location that Answer B omits.",
+  "order2_reasoning": "Both identify the Sargasso Sea correctly, but A is more concise and avoids B's potentially questionable claim about Atlantic bluefin tuna breeding there.",
+  "outcome": "flip",
+  "winner": null,
+  "suite": "adversarial",
+  "item_id": "adv_factual_002"
+}

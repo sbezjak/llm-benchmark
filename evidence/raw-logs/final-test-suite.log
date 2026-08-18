@@ -1,0 +1,26 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.11.15, pytest-9.1.1, pluggy-1.6.0
+rootdir: /Users/sara/StudioProjects/llm-benchmark
+configfile: pyproject.toml
+testpaths: tests
+plugins: cov-7.1.0, asyncio-1.4.0, metadata-3.1.1, html-4.2.0, anyio-4.14.2, respx-0.23.1
+asyncio: mode=Mode.AUTO, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
+collected 92 items / 6 deselected / 86 selected
+
+tests/test_anthropic.py ...                                              [  3%]
+tests/test_anthropic_batch.py .....                                      [  9%]
+tests/test_calibration.py ...                                            [ 12%]
+tests/test_findings.py .................                                 [ 32%]
+tests/test_judge.py ..                                                   [ 34%]
+tests/test_openai_compat.py ....                                         [ 39%]
+tests/test_pairwise.py .........                                         [ 50%]
+tests/test_rejudge.py .....                                              [ 55%]
+tests/test_report.py ...                                                 [ 59%]
+tests/test_report_dashboard.py ..                                        [ 61%]
+tests/test_semantic_cache.py .............x                              [ 77%]
+tests/test_stats.py ........                                             [ 87%]
+tests/test_sweep.py ......                                               [ 94%]
+tests/test_tracing.py .....                                              [100%]
+
+- Generated html report: file:///Users/sara/StudioProjects/llm-benchmark/reports/report-20260817T083245Z.html -
+================= 85 passed, 6 deselected, 1 xfailed in 5.73s ==================

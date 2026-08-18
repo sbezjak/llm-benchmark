@@ -1,0 +1,12 @@
+{
+  "model_a": "deepseek-v4-pro",
+  "model_b": "gpt-5.6-luna",
+  "order1_winner": "gpt-5.6-luna",
+  "order2_winner": "gpt-5.6-luna",
+  "order1_reasoning": "Both answers are correct, but B is better because it briefly explains the modulo-7 calculation.",
+  "order2_reasoning": "Both answers are correct and directly answer the question, but Answer A provides a concise supporting calculation.",
+  "outcome": "win",
+  "winner": "gpt-5.6-luna",
+  "suite": "adversarial",
+  "item_id": "adv_reason_001"
+}

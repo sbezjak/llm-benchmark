@@ -1,0 +1,12 @@
+{
+  "model_a": "deepseek-v4-pro",
+  "model_b": "gpt-5.6-luna",
+  "order1_winner": "deepseek-v4-pro",
+  "order2_winner": "deepseek-v4-pro",
+  "order1_reasoning": "Answer A is considered better because it uses the word 'is' to connect the subject (Lima) to its location, making the sentence more grammatically correct and clear.",
+  "order2_reasoning": "Answer B is better because it uses bold formatting to emphasize the continent, making it more visually appealing and relevant.",
+  "outcome": "win",
+  "winner": "deepseek-v4-pro",
+  "suite": "easy",
+  "item_id": "factual_003"
+}

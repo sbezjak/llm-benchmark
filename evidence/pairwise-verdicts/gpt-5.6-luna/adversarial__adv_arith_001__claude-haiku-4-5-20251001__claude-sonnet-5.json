@@ -1,0 +1,12 @@
+{
+  "model_a": "claude-haiku-4-5-20251001",
+  "model_b": "claude-sonnet-5",
+  "order1_winner": "TIE",
+  "order2_winner": "TIE",
+  "order1_reasoning": "Both answers are mathematically correct, clearly explain the calculation, and verify the result; B adds a relevant but unnecessary contextual note, so neither is meaningfully better overall.",
+  "order2_reasoning": "Both answers correctly set up and solve the equations, verify that the total is $1.10, and directly answer that the ball costs $0.05, so they are equally good.",
+  "outcome": "genuine_tie",
+  "winner": null,
+  "suite": "adversarial",
+  "item_id": "adv_arith_001"
+}

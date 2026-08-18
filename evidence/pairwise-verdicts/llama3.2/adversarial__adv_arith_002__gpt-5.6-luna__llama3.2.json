@@ -1,0 +1,12 @@
+{
+  "model_a": "gpt-5.6-luna",
+  "model_b": "llama3.2",
+  "order1_winner": "gpt-5.6-luna",
+  "order2_winner": "llama3.2",
+  "order1_reasoning": "Answer A is more concise and directly calculates the total cost without explicitly stating the cost of one pencil.",
+  "order2_reasoning": "Answer A is better because it provides more context and explanation for the calculation, making it easier to understand for readers.",
+  "outcome": "flip",
+  "winner": null,
+  "suite": "adversarial",
+  "item_id": "adv_arith_002"
+}

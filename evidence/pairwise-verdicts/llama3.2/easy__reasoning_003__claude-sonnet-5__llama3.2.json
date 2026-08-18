@@ -1,0 +1,12 @@
+{
+  "model_a": "claude-sonnet-5",
+  "model_b": "llama3.2",
+  "order1_winner": "claude-sonnet-5",
+  "order2_winner": "llama3.2",
+  "order1_reasoning": "Answer A provides more detailed and specific information about the process of photosynthesis, including the two main stages (light-dependent reactions and light-independent reactions), key components needed, and why it matters. Answer B is more general and lacks specific details.",
+  "order2_reasoning": "Answer A provides a clearer and more detailed explanation of the photosynthesis process, including specific steps and components involved in each stage.",
+  "outcome": "flip",
+  "winner": null,
+  "suite": "easy",
+  "item_id": "reasoning_003"
+}

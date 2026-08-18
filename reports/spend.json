@@ -1,0 +1,12 @@
+{
+  "answer_generation_usd": 0.13085,
+  "solo_judge_gpt_usd": 0.02641,
+  "pairwise_judge_gpt_usd": 0.05746,
+  "total_usd": 0.21472,
+  "note": "The scoreboard spend is answers PLUS the paid judging that produced its scores. findings.json spend.total_answer_cost_usd covers only answer generation; the judge/pairwise costs live in the run logs below (the cached captures do not persist judge token usage).",
+  "sources": {
+    "answer_generation_usd": "reports/findings.json -> spend.total_answer_cost_usd (sweep-golden $0.06365 + sweep-adversarial $0.06720)",
+    "solo_judge_gpt_usd": "evidence/raw-logs/rejudge-gpt-full.log -> sum of 200 'judge_cost=$...' lines",
+    "pairwise_judge_gpt_usd": "evidence/raw-logs/pairwise-gpt-full.log -> 'pairwise done: judge=gpt-5.6-luna, 400 calls, new judge spend $0.05746'"
+  }
+}

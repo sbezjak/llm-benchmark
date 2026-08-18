@@ -1,0 +1,12 @@
+{
+  "model_a": "claude-haiku-4-5-20251001",
+  "model_b": "llama3.2",
+  "order1_winner": "claude-haiku-4-5-20251001",
+  "order2_winner": "claude-haiku-4-5-20251001",
+  "order1_reasoning": "Answer A is more detailed and explicitly states the calculations for each step, making it clearer and easier to follow.",
+  "order2_reasoning": "Answer B is more concise and uses Markdown formatting to make the steps clear and easy to follow.",
+  "outcome": "win",
+  "winner": "claude-haiku-4-5-20251001",
+  "suite": "adversarial",
+  "item_id": "adv_arith_003"
+}

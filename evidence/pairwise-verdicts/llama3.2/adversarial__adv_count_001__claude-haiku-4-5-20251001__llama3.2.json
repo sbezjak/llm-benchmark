@@ -1,0 +1,12 @@
+{
+  "model_a": "claude-haiku-4-5-20251001",
+  "model_b": "llama3.2",
+  "order1_winner": "claude-haiku-4-5-20251001",
+  "order2_winner": "claude-haiku-4-5-20251001",
+  "order1_reasoning": "Answer A provides a clear and detailed breakdown of the letter 'r' positions in the word 'strawberry', making it more accurate and relevant than Answer B.",
+  "order2_reasoning": "Answer B provides a clear and step-by-step explanation of how the letter 'r' appears in the word 'strawberry', making it more relevant and informative.",
+  "outcome": "win",
+  "winner": "claude-haiku-4-5-20251001",
+  "suite": "adversarial",
+  "item_id": "adv_count_001"
+}

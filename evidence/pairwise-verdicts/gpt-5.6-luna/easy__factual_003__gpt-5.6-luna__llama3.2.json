@@ -1,0 +1,12 @@
+{
+  "model_a": "gpt-5.6-luna",
+  "model_b": "llama3.2",
+  "order1_winner": "TIE",
+  "order2_winner": "TIE",
+  "order1_reasoning": "Both answers correctly and directly identify Lima as being in South America, with B adding accurate but unnecessary context.",
+  "order2_reasoning": "Both answers are correct and directly answer the question, with Answer B being more concise and equally sufficient.",
+  "outcome": "genuine_tie",
+  "winner": null,
+  "suite": "easy",
+  "item_id": "factual_003"
+}

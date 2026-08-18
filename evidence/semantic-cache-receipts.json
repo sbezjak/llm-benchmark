@@ -1,0 +1,211 @@
+{
+  "embed_model": "nomic-embed-text",
+  "seeds": [
+    {
+      "question": "What is the capital of Slovenia?",
+      "answer": "Ljubljana"
+    },
+    {
+      "question": "What is the highest mountain above sea level?",
+      "answer": "Mount Everest"
+    },
+    {
+      "question": "What is the chemical symbol for gold?",
+      "answer": "Au"
+    },
+    {
+      "question": "Who wrote the play Romeo and Juliet?",
+      "answer": "William Shakespeare"
+    }
+  ],
+  "probes": [
+    {
+      "query": "Which city is the capital of Slovenia?",
+      "kind": "paraphrase",
+      "expected": "Ljubljana",
+      "nearest_seed": "What is the capital of Slovenia?",
+      "nearest_similarity": 0.974183,
+      "similarity_to_every_seed": {
+        "What is the capital of Slovenia?": 0.974183,
+        "What is the highest mountain above sea level?": 0.561569,
+        "What is the chemical symbol for gold?": 0.515251,
+        "Who wrote the play Romeo and Juliet?": 0.604214
+      }
+    },
+    {
+      "query": "Slovenia's capital city is what?",
+      "kind": "paraphrase",
+      "expected": "Ljubljana",
+      "nearest_seed": "What is the capital of Slovenia?",
+      "nearest_similarity": 0.947063,
+      "similarity_to_every_seed": {
+        "What is the capital of Slovenia?": 0.947063,
+        "What is the highest mountain above sea level?": 0.551924,
+        "What is the chemical symbol for gold?": 0.497219,
+        "Who wrote the play Romeo and Juliet?": 0.588342
+      }
+    },
+    {
+      "query": "What's the tallest mountain on Earth measured from sea level?",
+      "kind": "paraphrase",
+      "expected": "Mount Everest",
+      "nearest_seed": "What is the highest mountain above sea level?",
+      "nearest_similarity": 0.908279,
+      "similarity_to_every_seed": {
+        "What is the capital of Slovenia?": 0.616706,
+        "What is the highest mountain above sea level?": 0.908279,
+        "What is the chemical symbol for gold?": 0.512323,
+        "Who wrote the play Romeo and Juliet?": 0.46865
+      }
+    },
+    {
+      "query": "Which mountain has the highest elevation above sea level?",
+      "kind": "paraphrase",
+      "expected": "Mount Everest",
+      "nearest_seed": "What is the highest mountain above sea level?",
+      "nearest_similarity": 0.967654,
+      "similarity_to_every_seed": {
+        "What is the capital of Slovenia?": 0.586553,
+        "What is the highest mountain above sea level?": 0.967654,
+        "What is the chemical symbol for gold?": 0.492774,
+        "Who wrote the play Romeo and Juliet?": 0.473906
+      }
+    },
+    {
+      "query": "What is gold's chemical symbol?",
+      "kind": "paraphrase",
+      "expected": "Au",
+      "nearest_seed": "What is the chemical symbol for gold?",
+      "nearest_similarity": 0.988069,
+      "similarity_to_every_seed": {
+        "What is the capital of Slovenia?": 0.479652,
+        "What is the highest mountain above sea level?": 0.458233,
+        "What is the chemical symbol for gold?": 0.988069,
+        "Who wrote the play Romeo and Juliet?": 0.47672
+      }
+    },
+    {
+      "query": "On the periodic table, what symbol represents gold?",
+      "kind": "paraphrase",
+      "expected": "Au",
+      "nearest_seed": "What is the chemical symbol for gold?",
+      "nearest_similarity": 0.887329,
+      "similarity_to_every_seed": {
+        "What is the capital of Slovenia?": 0.440087,
+        "What is the highest mountain above sea level?": 0.444125,
+        "What is the chemical symbol for gold?": 0.887329,
+        "Who wrote the play Romeo and Juliet?": 0.433515
+      }
+    },
+    {
+      "query": "Who is the author of Romeo and Juliet?",
+      "kind": "paraphrase",
+      "expected": "William Shakespeare",
+      "nearest_seed": "Who wrote the play Romeo and Juliet?",
+      "nearest_similarity": 0.835875,
+      "similarity_to_every_seed": {
+        "What is the capital of Slovenia?": 0.669599,
+        "What is the highest mountain above sea level?": 0.536196,
+        "What is the chemical symbol for gold?": 0.508904,
+        "Who wrote the play Romeo and Juliet?": 0.835875
+      }
+    },
+    {
+      "query": "Romeo and Juliet was written by whom?",
+      "kind": "paraphrase",
+      "expected": "William Shakespeare",
+      "nearest_seed": "Who wrote the play Romeo and Juliet?",
+      "nearest_similarity": 0.871574,
+      "similarity_to_every_seed": {
+        "What is the capital of Slovenia?": 0.6386,
+        "What is the highest mountain above sea level?": 0.498395,
+        "What is the chemical symbol for gold?": 0.498347,
+        "Who wrote the play Romeo and Juliet?": 0.871574
+      }
+    },
+    {
+      "query": "What is the capital of Slovakia?",
+      "kind": "trap",
+      "expected": "Bratislava",
+      "nearest_seed": "What is the capital of Slovenia?",
+      "nearest_similarity": 1.0,
+      "similarity_to_every_seed": {
+        "What is the capital of Slovenia?": 1.0,
+        "What is the highest mountain above sea level?": 0.575276,
+        "What is the chemical symbol for gold?": 0.516298,
+        "Who wrote the play Romeo and Juliet?": 0.624037
+      }
+    },
+    {
+      "query": "What is the tallest mountain measured from base to summit?",
+      "kind": "trap",
+      "expected": "Mauna Kea",
+      "nearest_seed": "What is the highest mountain above sea level?",
+      "nearest_similarity": 0.783626,
+      "similarity_to_every_seed": {
+        "What is the capital of Slovenia?": 0.564515,
+        "What is the highest mountain above sea level?": 0.783626,
+        "What is the chemical symbol for gold?": 0.492762,
+        "Who wrote the play Romeo and Juliet?": 0.438639
+      }
+    },
+    {
+      "query": "What is the chemical symbol for silver?",
+      "kind": "trap",
+      "expected": "Ag",
+      "nearest_seed": "What is the chemical symbol for gold?",
+      "nearest_similarity": 0.864741,
+      "similarity_to_every_seed": {
+        "What is the capital of Slovenia?": 0.520579,
+        "What is the highest mountain above sea level?": 0.476705,
+        "What is the chemical symbol for gold?": 0.864741,
+        "Who wrote the play Romeo and Juliet?": 0.497853
+      }
+    },
+    {
+      "query": "Who wrote the play Romeo and Ethel the Pirate's Daughter?",
+      "kind": "trap",
+      "expected": "a fictional play (from the film Shakespeare in Love)",
+      "nearest_seed": "Who wrote the play Romeo and Juliet?",
+      "nearest_similarity": 0.96375,
+      "similarity_to_every_seed": {
+        "What is the capital of Slovenia?": 0.590417,
+        "What is the highest mountain above sea level?": 0.425442,
+        "What is the chemical symbol for gold?": 0.482085,
+        "Who wrote the play Romeo and Juliet?": 0.96375
+      }
+    }
+  ],
+  "threshold_sweep": [
+    {
+      "threshold": 0.75,
+      "true_hits": 8,
+      "false_hits": 4,
+      "misses": 0
+    },
+    {
+      "threshold": 0.8,
+      "true_hits": 8,
+      "false_hits": 3,
+      "misses": 1
+    },
+    {
+      "threshold": 0.85,
+      "true_hits": 7,
+      "false_hits": 3,
+      "misses": 2
+    },
+    {
+      "threshold": 0.9,
+      "true_hits": 5,
+      "false_hits": 2,
+      "misses": 5
+    },
+    {
+      "threshold": 0.95,
+      "true_hits": 3,
+      "false_hits": 2,
+      "misses": 7
+    }
+  ]
+}

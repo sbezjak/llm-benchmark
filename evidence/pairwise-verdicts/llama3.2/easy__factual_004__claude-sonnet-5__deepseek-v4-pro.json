@@ -1,0 +1,12 @@
+{
+  "model_a": "claude-sonnet-5",
+  "model_b": "deepseek-v4-pro",
+  "order1_winner": "claude-sonnet-5",
+  "order2_winner": "deepseek-v4-pro",
+  "order1_reasoning": "Answer A is better because it includes additional context about Pluto's reclassification as a dwarf planet, providing more informative and relevant information.",
+  "order2_reasoning": "Answer A is better because it presents the information in a more concise and visually appealing format.",
+  "outcome": "flip",
+  "winner": null,
+  "suite": "easy",
+  "item_id": "factual_004"
+}

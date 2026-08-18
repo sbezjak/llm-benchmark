@@ -1,0 +1,12 @@
+{
+  "model_a": "deepseek-v4-pro",
+  "model_b": "llama3.2",
+  "order1_winner": "llama3.2",
+  "order2_winner": "llama3.2",
+  "order1_reasoning": "Answer B provides the step-by-step calculation process to arrive at the correct answer, making it more relevant and educational.",
+  "order2_reasoning": "Answer A provides a clear step-by-step explanation of the calculation process, making it more transparent and easier to understand.",
+  "outcome": "win",
+  "winner": "llama3.2",
+  "suite": "adversarial",
+  "item_id": "adv_arith_004"
+}

@@ -1,0 +1,12 @@
+{
+  "model_a": "claude-sonnet-5",
+  "model_b": "deepseek-v4-pro",
+  "order1_winner": "claude-sonnet-5",
+  "order2_winner": "claude-sonnet-5",
+  "order1_reasoning": "Answer A is more correct and relevant as it provides additional context about the purpose of a greenhouse and explains why its name doesn't follow logical patterns, making it a better overall answer.",
+  "order2_reasoning": "Answer B provides more context and clarity about the purpose of a greenhouse, making it a more informative and relevant answer.",
+  "outcome": "win",
+  "winner": "claude-sonnet-5",
+  "suite": "adversarial",
+  "item_id": "adv_riddle_001"
+}

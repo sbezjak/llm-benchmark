@@ -1,0 +1,12 @@
+{
+  "model_a": "claude-haiku-4-5-20251001",
+  "model_b": "claude-sonnet-5",
+  "order1_winner": "claude-sonnet-5",
+  "order2_winner": "claude-sonnet-5",
+  "order1_reasoning": "Answer B provides a clearer explanation of how the `-m` flag and `or` operator work together to filter tests, making it more understandable for users.",
+  "order2_reasoning": "Answer A provides more detailed explanations and examples for each marker expression, making it a better resource for users.",
+  "outcome": "win",
+  "winner": "claude-sonnet-5",
+  "suite": "easy",
+  "item_id": "procedural_001"
+}

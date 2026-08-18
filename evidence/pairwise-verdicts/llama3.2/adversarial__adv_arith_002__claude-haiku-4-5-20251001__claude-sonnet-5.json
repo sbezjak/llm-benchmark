@@ -1,0 +1,12 @@
+{
+  "model_a": "claude-haiku-4-5-20251001",
+  "model_b": "claude-sonnet-5",
+  "order1_winner": "claude-haiku-4-5-20251001",
+  "order2_winner": "claude-haiku-4-5-20251001",
+  "order1_reasoning": "Answer A provides step-by-step reasoning and calculations, making it more transparent and easier to understand than Answer B.",
+  "order2_reasoning": "Answer B is more readable and follows standard Markdown formatting for code blocks.",
+  "outcome": "win",
+  "winner": "claude-haiku-4-5-20251001",
+  "suite": "adversarial",
+  "item_id": "adv_arith_002"
+}

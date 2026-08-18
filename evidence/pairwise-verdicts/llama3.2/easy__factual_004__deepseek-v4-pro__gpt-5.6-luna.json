@@ -1,0 +1,12 @@
+{
+  "model_a": "deepseek-v4-pro",
+  "model_b": "gpt-5.6-luna",
+  "order1_winner": "deepseek-v4-pro",
+  "order2_winner": "gpt-5.6-luna",
+  "order1_reasoning": "Answer A is better because it includes the full list of planets in order, making it more relevant and easier to understand.",
+  "order2_reasoning": "Answer A is better because it provides more context and clarity by listing the planets in order from the Sun.",
+  "outcome": "flip",
+  "winner": null,
+  "suite": "easy",
+  "item_id": "factual_004"
+}

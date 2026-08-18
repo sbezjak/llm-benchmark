@@ -1,0 +1,12 @@
+{
+  "model_a": "gpt-5.6-luna",
+  "model_b": "llama3.2",
+  "order1_winner": "TIE",
+  "order2_winner": "TIE",
+  "order1_reasoning": "Both answers are equally correct and directly answer the question.",
+  "order2_reasoning": "Both answers are equally correct and directly answer the question; the bold formatting in B does not add substantive value.",
+  "outcome": "genuine_tie",
+  "winner": null,
+  "suite": "easy",
+  "item_id": "factual_001"
+}

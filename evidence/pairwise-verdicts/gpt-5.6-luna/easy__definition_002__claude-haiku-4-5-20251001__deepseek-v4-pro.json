@@ -1,0 +1,12 @@
+{
+  "model_a": "claude-haiku-4-5-20251001",
+  "model_b": "deepseek-v4-pro",
+  "order1_winner": "TIE",
+  "order2_winner": "claude-haiku-4-5-20251001",
+  "order1_reasoning": "Both answers are accurate, concise, and convey the defining property of a black hole, with no meaningful difference in correctness or relevance.",
+  "order2_reasoning": "Answer B is slightly better because it adds the precise condition that escape is impossible from within the event horizon while remaining concise and correct.",
+  "outcome": "flip",
+  "winner": null,
+  "suite": "easy",
+  "item_id": "definition_002"
+}

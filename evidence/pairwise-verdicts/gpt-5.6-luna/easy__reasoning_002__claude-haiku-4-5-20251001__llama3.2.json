@@ -1,0 +1,12 @@
+{
+  "model_a": "claude-haiku-4-5-20251001",
+  "model_b": "llama3.2",
+  "order1_winner": "claude-haiku-4-5-20251001",
+  "order2_winner": "llama3.2",
+  "order1_reasoning": "Answer A is more concise and directly explains that freezing expands water, making ice less dense, while Answer B adds a slightly imprecise description of molecules taking up space.",
+  "order2_reasoning": "Both answers are correct and relevant, but A more directly states the density difference and briefly explains its molecular cause.",
+  "outcome": "flip",
+  "winner": null,
+  "suite": "easy",
+  "item_id": "reasoning_002"
+}

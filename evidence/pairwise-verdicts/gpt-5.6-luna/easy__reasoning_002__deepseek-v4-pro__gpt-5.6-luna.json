@@ -1,0 +1,12 @@
+{
+  "model_a": "deepseek-v4-pro",
+  "model_b": "gpt-5.6-luna",
+  "order1_winner": "TIE",
+  "order2_winner": "TIE",
+  "order1_reasoning": "Both answers are correct, concise, and equally relevant, with only an immaterial wording difference between \u201ccrystalline\u201d and \u201ccrystal.\u201d",
+  "order2_reasoning": "Both answers are equally correct, relevant, and concise, with only an inconsequential wording difference between \u201ccrystal\u201d and \u201ccrystalline.\u201d",
+  "outcome": "genuine_tie",
+  "winner": null,
+  "suite": "easy",
+  "item_id": "reasoning_002"
+}

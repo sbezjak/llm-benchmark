@@ -1,0 +1,12 @@
+{
+  "model_a": "claude-sonnet-5",
+  "model_b": "deepseek-v4-pro",
+  "order1_winner": "deepseek-v4-pro",
+  "order2_winner": "TIE",
+  "order1_reasoning": "Both answers correctly identify glass as the expected answer, but B is more concise and directly relevant to the riddle.",
+  "order2_reasoning": "Both answers correctly identify glass (and reasonable alternatives) and directly address the riddle, with B adding accurate but unnecessary explanation.",
+  "outcome": "flip",
+  "winner": null,
+  "suite": "adversarial",
+  "item_id": "adv_riddle_001"
+}

@@ -1,0 +1,12 @@
+{
+  "model_a": "deepseek-v4-pro",
+  "model_b": "llama3.2",
+  "order1_winner": "llama3.2",
+  "order2_winner": "llama3.2",
+  "order1_reasoning": "Answer B provides additional context and specificity about Lima being the capital of Peru, making it more relevant and informative.",
+  "order2_reasoning": "Answer A is more correct and relevant because it provides additional context about Lima's location within Peru, making the answer more informative.",
+  "outcome": "win",
+  "winner": "llama3.2",
+  "suite": "easy",
+  "item_id": "factual_003"
+}

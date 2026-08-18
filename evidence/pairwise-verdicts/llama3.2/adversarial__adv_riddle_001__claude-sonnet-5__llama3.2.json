@@ -1,0 +1,12 @@
+{
+  "model_a": "claude-sonnet-5",
+  "model_b": "llama3.2",
+  "order1_winner": "claude-sonnet-5",
+  "order2_winner": "llama3.2",
+  "order1_reasoning": "Answer A is more correct and relevant because it provides accurate information about the materials used to build a greenhouse and explains the origin of its name in a clear and concise manner.",
+  "order2_reasoning": "Answer A is more correct and relevant because it provides a clear explanation of the materials used to build a greenhouse and addresses the linguistic trick in the question's name.",
+  "outcome": "flip",
+  "winner": null,
+  "suite": "adversarial",
+  "item_id": "adv_riddle_001"
+}

@@ -1,0 +1,12 @@
+{
+  "model_a": "claude-haiku-4-5-20251001",
+  "model_b": "claude-sonnet-5",
+  "order1_winner": "claude-haiku-4-5-20251001",
+  "order2_winner": "claude-sonnet-5",
+  "order1_reasoning": "Answer A provides a clearer and more concise explanation of the key differences between warm-blooded and cold-blooded animals.",
+  "order2_reasoning": "Answer A provides more comprehensive and detailed information about both cold-blooded and warm-blooded animals, including examples, advantages, disadvantages, and key differences. It also includes a clear explanation of the terms ectothermic and endothermic.",
+  "outcome": "flip",
+  "winner": null,
+  "suite": "easy",
+  "item_id": "reasoning_001"
+}

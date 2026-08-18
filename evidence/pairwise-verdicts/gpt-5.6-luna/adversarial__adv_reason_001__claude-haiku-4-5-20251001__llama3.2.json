@@ -1,0 +1,12 @@
+{
+  "model_a": "claude-haiku-4-5-20251001",
+  "model_b": "llama3.2",
+  "order1_winner": "TIE",
+  "order2_winner": "TIE",
+  "order1_reasoning": "Both answers correctly compute 100 days as 14 weeks and 2 days and conclude Friday with clear, relevant explanations.",
+  "order2_reasoning": "Both answers correctly calculate the two-day remainder and conclude that 100 days after Wednesday is Friday, with equally clear and relevant explanations.",
+  "outcome": "genuine_tie",
+  "winner": null,
+  "suite": "adversarial",
+  "item_id": "adv_reason_001"
+}

@@ -1,0 +1,532 @@
+{
+  "generated_at": "2026-08-17T07:14:01.433868+00:00",
+  "note": "Ground-truth captures behind the batch-lane claim. cache-batch/ is a gitignored local spend-control cache (like cache/), so these captures are committed here as the durable proof. Each record carries the provider's own token counts; cost is those tokens at half the rate card (Batch API). The comparison is over the SAME (item, rep) cells in both lanes, so quality is compared on identical items. The batch_id below is the Anthropic console cross-reference for this job.",
+  "model": "claude-haiku-4-5-20251001",
+  "batch_id": "msgbatch_01UdcJXAjPaJckQYoGqHnpkv",
+  "request_counts": {
+    "processing": 0,
+    "succeeded": 20,
+    "errored": 0,
+    "canceled": 0,
+    "expired": 0
+  },
+  "batch_turnaround_s": 48.99600562499836,
+  "comparison_per_capture": {
+    "interactive_streamed": {
+      "n": 20,
+      "total_cost_usd": 0.010409,
+      "cost_per_capture_usd": 0.00052045,
+      "mean_latency_ms": 1673.5768042504787,
+      "mean_judge_score": 0.9649999999999999
+    },
+    "batch_half_price": {
+      "n": 20,
+      "total_cost_usd": 0.0054495,
+      "cost_per_capture_usd": 0.000272475,
+      "mean_latency_ms": 48996.00562499836,
+      "mean_judge_score": 0.9625
+    }
+  },
+  "batch_captures": [
+    {
+      "captured_at": "2026-08-17T07:08:18.187629+00:00",
+      "model": "claude-haiku-4-5-20251001",
+      "item_id": "factual_001",
+      "rep": 1,
+      "prompt": "What is the capital of Slovenia?",
+      "expected": "Ljubljana",
+      "measurement": {
+        "text": "The capital of Slovenia is Ljubljana.",
+        "tokens_in": 14,
+        "tokens_out": 10,
+        "latency_ms": 48996.00562499836,
+        "ttft_ms": null,
+        "model": "claude-haiku-4-5-20251001"
+      },
+      "cost_usd": 3.2e-05,
+      "judge": {
+        "score": 1.0,
+        "passed": true,
+        "reason": "correctness=10/10 relevance=10/10 score=1.000 >= threshold=0.7 | reasoning: The model's answer correctly identifies the capital of Slovenia, but does not provide any additional context or information."
+      },
+      "mode": "batch",
+      "batch_turnaround_s": 48.99600562499836,
+      "batch_id": "msgbatch_01UdcJXAjPaJckQYoGqHnpkv"
+    },
+    {
+      "captured_at": "2026-08-17T07:08:31.384055+00:00",
+      "model": "claude-haiku-4-5-20251001",
+      "item_id": "factual_001",
+      "rep": 2,
+      "prompt": "What is the capital of Slovenia?",
+      "expected": "Ljubljana",
+      "measurement": {
+        "text": "The capital of Slovenia is Ljubljana.",
+        "tokens_in": 14,
+        "tokens_out": 10,
+        "latency_ms": 48996.00562499836,
+        "ttft_ms": null,
+        "model": "claude-haiku-4-5-20251001"
+      },
+      "cost_usd": 3.2e-05,
+      "judge": {
+        "score": 1.0,
+        "passed": true,
+        "reason": "correctness=10/10 relevance=10/10 score=1.000 >= threshold=0.7 | reasoning: The model's answer correctly identifies the capital of Slovenia, but does not provide any additional context or information."
+      },
+      "mode": "batch",
+      "batch_turnaround_s": 48.99600562499836,
+      "batch_id": "msgbatch_01UdcJXAjPaJckQYoGqHnpkv"
+    },
+    {
+      "captured_at": "2026-08-17T07:08:45.714693+00:00",
+      "model": "claude-haiku-4-5-20251001",
+      "item_id": "factual_002",
+      "rep": 1,
+      "prompt": "What is the chemical symbol for silver?",
+      "expected": "Ag",
+      "measurement": {
+        "text": "The chemical symbol for silver is **Ag**.",
+        "tokens_in": 15,
+        "tokens_out": 13,
+        "latency_ms": 48996.00562499836,
+        "ttft_ms": null,
+        "model": "claude-haiku-4-5-20251001"
+      },
+      "cost_usd": 3.9999999999999996e-05,
+      "judge": {
+        "score": 1.0,
+        "passed": true,
+        "reason": "correctness=10/10 relevance=10/10 score=1.000 >= threshold=0.7 | reasoning: The model's answer correctly identifies the chemical symbol for silver, but it does not provide any additional context or explanation."
+      },
+      "mode": "batch",
+      "batch_turnaround_s": 48.99600562499836,
+      "batch_id": "msgbatch_01UdcJXAjPaJckQYoGqHnpkv"
+    },
+    {
+      "captured_at": "2026-08-17T07:09:25.025338+00:00",
+      "model": "claude-haiku-4-5-20251001",
+      "item_id": "factual_002",
+      "rep": 2,
+      "prompt": "What is the chemical symbol for silver?",
+      "expected": "Ag",
+      "measurement": {
+        "text": "The chemical symbol for silver is **Ag**.",
+        "tokens_in": 15,
+        "tokens_out": 13,
+        "latency_ms": 48996.00562499836,
+        "ttft_ms": null,
+        "model": "claude-haiku-4-5-20251001"
+      },
+      "cost_usd": 3.9999999999999996e-05,
+      "judge": {
+        "score": 1.0,
+        "passed": true,
+        "reason": "correctness=10/10 relevance=10/10 score=1.000 >= threshold=0.7 | reasoning: The model's answer correctly identifies the chemical symbol for silver, but it does not provide any additional context or explanation."
+      },
+      "mode": "batch",
+      "batch_turnaround_s": 48.99600562499836,
+      "batch_id": "msgbatch_01UdcJXAjPaJckQYoGqHnpkv"
+    },
+    {
+      "captured_at": "2026-08-17T07:09:43.206715+00:00",
+      "model": "claude-haiku-4-5-20251001",
+      "item_id": "factual_003",
+      "rep": 1,
+      "prompt": "In what continent is Lima located?",
+      "expected": "South America",
+      "measurement": {
+        "text": "Lima is located in South America. It is the capital city of Peru.",
+        "tokens_in": 14,
+        "tokens_out": 18,
+        "latency_ms": 48996.00562499836,
+        "ttft_ms": null,
+        "model": "claude-haiku-4-5-20251001"
+      },
+      "cost_usd": 5.2000000000000004e-05,
+      "judge": {
+        "score": 1.0,
+        "passed": true,
+        "reason": "correctness=10/10 relevance=10/10 score=1.000 >= threshold=0.7 | reasoning: The model's answer correctly identifies the continent and provides additional relevant information about Lima's location."
+      },
+      "mode": "batch",
+      "batch_turnaround_s": 48.99600562499836,
+      "batch_id": "msgbatch_01UdcJXAjPaJckQYoGqHnpkv"
+    },
+    {
+      "captured_at": "2026-08-17T07:09:53.707961+00:00",
+      "model": "claude-haiku-4-5-20251001",
+      "item_id": "factual_003",
+      "rep": 2,
+      "prompt": "In what continent is Lima located?",
+      "expected": "South America",
+      "measurement": {
+        "text": "Lima is located in South America. It is the capital and largest city of Peru.",
+        "tokens_in": 14,
+        "tokens_out": 20,
+        "latency_ms": 48996.00562499836,
+        "ttft_ms": null,
+        "model": "claude-haiku-4-5-20251001"
+      },
+      "cost_usd": 5.7e-05,
+      "judge": {
+        "score": 0.95,
+        "passed": true,
+        "reason": "correctness=10/10 relevance=9/10 score=0.950 >= threshold=0.7 | reasoning: The model's answer correctly identifies Lima as being in South America, but also provides additional information that is not directly relevant to the question."
+      },
+      "mode": "batch",
+      "batch_turnaround_s": 48.99600562499836,
+      "batch_id": "msgbatch_01UdcJXAjPaJckQYoGqHnpkv"
+    },
+    {
+      "captured_at": "2026-08-17T07:10:09.560436+00:00",
+      "model": "claude-haiku-4-5-20251001",
+      "item_id": "factual_004",
+      "rep": 1,
+      "prompt": "How many planets are in our solar system?",
+      "expected": "8",
+      "measurement": {
+        "text": "There are 8 planets in our solar system:\n\n1. Mercury\n2. Venus\n3. Earth\n4. Mars\n5. Jupiter\n6. Saturn\n7. Uranus\n8. Neptune\n\nPluto was reclassified as a \"dwarf planet\" in 2006 by the International Astronomical Union.",
+        "tokens_in": 16,
+        "tokens_out": 76,
+        "latency_ms": 48996.00562499836,
+        "ttft_ms": null,
+        "model": "claude-haiku-4-5-20251001"
+      },
+      "cost_usd": 0.00019800000000000002,
+      "judge": {
+        "score": 0.95,
+        "passed": true,
+        "reason": "correctness=10/10 relevance=9/10 score=0.950 >= threshold=0.7 | reasoning: The model's answer is correct, but includes extraneous information about Pluto."
+      },
+      "mode": "batch",
+      "batch_turnaround_s": 48.99600562499836,
+      "batch_id": "msgbatch_01UdcJXAjPaJckQYoGqHnpkv"
+    },
+    {
+      "captured_at": "2026-08-17T07:10:26.898177+00:00",
+      "model": "claude-haiku-4-5-20251001",
+      "item_id": "factual_004",
+      "rep": 2,
+      "prompt": "How many planets are in our solar system?",
+      "expected": "8",
+      "measurement": {
+        "text": "There are 8 planets in our solar system:\n\n1. Mercury\n2. Venus\n3. Earth\n4. Mars\n5. Jupiter\n6. Saturn\n7. Uranus\n8. Neptune\n\nPluto was reclassified as a \"dwarf planet\" in 2006 by the International Astronomical Union.",
+        "tokens_in": 16,
+        "tokens_out": 76,
+        "latency_ms": 48996.00562499836,
+        "ttft_ms": null,
+        "model": "claude-haiku-4-5-20251001"
+      },
+      "cost_usd": 0.00019800000000000002,
+      "judge": {
+        "score": 0.95,
+        "passed": true,
+        "reason": "correctness=10/10 relevance=9/10 score=0.950 >= threshold=0.7 | reasoning: The model's answer is correct, but includes extraneous information about Pluto."
+      },
+      "mode": "batch",
+      "batch_turnaround_s": 48.99600562499836,
+      "batch_id": "msgbatch_01UdcJXAjPaJckQYoGqHnpkv"
+    },
+    {
+      "captured_at": "2026-08-17T07:10:38.243118+00:00",
+      "model": "claude-haiku-4-5-20251001",
+      "item_id": "definition_001",
+      "rep": 1,
+      "prompt": "What does the acronym AI stand for?",
+      "expected": "Artificial Intelligence",
+      "measurement": {
+        "text": "AI stands for **Artificial Intelligence**.\n\nIt refers to computer systems designed to perform tasks that typically require human intelligence, such as learning from experience, recognizing patterns, understanding language, and making decisions.",
+        "tokens_in": 16,
+        "tokens_out": 44,
+        "latency_ms": 48996.00562499836,
+        "ttft_ms": null,
+        "model": "claude-haiku-4-5-20251001"
+      },
+      "cost_usd": 0.00011800000000000001,
+      "judge": {
+        "score": 1.0,
+        "passed": true,
+        "reason": "correctness=10/10 relevance=10/10 score=1.000 >= threshold=0.7 | reasoning: The model's answer is fully correct in terms of the definition of AI, but it provides additional context that is not necessary for answering the question."
+      },
+      "mode": "batch",
+      "batch_turnaround_s": 48.99600562499836,
+      "batch_id": "msgbatch_01UdcJXAjPaJckQYoGqHnpkv"
+    },
+    {
+      "captured_at": "2026-08-17T07:10:48.424315+00:00",
+      "model": "claude-haiku-4-5-20251001",
+      "item_id": "definition_001",
+      "rep": 2,
+      "prompt": "What does the acronym AI stand for?",
+      "expected": "Artificial Intelligence",
+      "measurement": {
+        "text": "AI stands for **Artificial Intelligence**.\n\nIt refers to computer systems designed to perform tasks that typically require human intelligence, such as learning, reasoning, problem-solving, and understanding language.",
+        "tokens_in": 16,
+        "tokens_out": 41,
+        "latency_ms": 48996.00562499836,
+        "ttft_ms": null,
+        "model": "claude-haiku-4-5-20251001"
+      },
+      "cost_usd": 0.0001105,
+      "judge": {
+        "score": 1.0,
+        "passed": true,
+        "reason": "correctness=10/10 relevance=10/10 score=1.000 >= threshold=0.7 | reasoning: The model's answer is fully correct in terms of the acronym's meaning, but it provides additional context that is not necessary for answering the question."
+      },
+      "mode": "batch",
+      "batch_turnaround_s": 48.99600562499836,
+      "batch_id": "msgbatch_01UdcJXAjPaJckQYoGqHnpkv"
+    },
+    {
+      "captured_at": "2026-08-17T07:10:59.375559+00:00",
+      "model": "claude-haiku-4-5-20251001",
+      "item_id": "definition_002",
+      "rep": 1,
+      "prompt": "In one sentence, what is a black hole?",
+      "expected": "A region of space where the gravitational pull is so strong that nothing, not even light, can escape from it.",
+      "measurement": {
+        "text": "A black hole is a region of spacetime where gravity is so intense that nothing, not even light, can escape from within its event horizon.",
+        "tokens_in": 17,
+        "tokens_out": 32,
+        "latency_ms": 48996.00562499836,
+        "ttft_ms": null,
+        "model": "claude-haiku-4-5-20251001"
+      },
+      "cost_usd": 8.850000000000001e-05,
+      "judge": {
+        "score": 0.95,
+        "passed": true,
+        "reason": "correctness=9/10 relevance=10/10 score=0.950 >= threshold=0.7 | reasoning: The model's answer demonstrates a clear understanding of the concept of a black hole and accurately describes its characteristics."
+      },
+      "mode": "batch",
+      "batch_turnaround_s": 48.99600562499836,
+      "batch_id": "msgbatch_01UdcJXAjPaJckQYoGqHnpkv"
+    },
+    {
+      "captured_at": "2026-08-17T07:11:07.948344+00:00",
+      "model": "claude-haiku-4-5-20251001",
+      "item_id": "definition_002",
+      "rep": 2,
+      "prompt": "In one sentence, what is a black hole?",
+      "expected": "A region of space where the gravitational pull is so strong that nothing, not even light, can escape from it.",
+      "measurement": {
+        "text": "A black hole is a region of space where gravity is so strong that nothing, not even light, can escape from within its event horizon.",
+        "tokens_in": 17,
+        "tokens_out": 31,
+        "latency_ms": 48996.00562499836,
+        "ttft_ms": null,
+        "model": "claude-haiku-4-5-20251001"
+      },
+      "cost_usd": 8.6e-05,
+      "judge": {
+        "score": 1.0,
+        "passed": true,
+        "reason": "correctness=10/10 relevance=10/10 score=1.000 >= threshold=0.7 | reasoning: The model's answer is fully correct in terms of content, but the phrasing could be improved for clarity and concision."
+      },
+      "mode": "batch",
+      "batch_turnaround_s": 48.99600562499836,
+      "batch_id": "msgbatch_01UdcJXAjPaJckQYoGqHnpkv"
+    },
+    {
+      "captured_at": "2026-08-17T07:11:28.617180+00:00",
+      "model": "claude-haiku-4-5-20251001",
+      "item_id": "procedural_001",
+      "rep": 1,
+      "prompt": "Which pytest command runs tests marked either 'slow' or 'network'?",
+      "expected": "pytest -m 'slow or network'",
+      "measurement": {
+        "text": "# Running Tests with Multiple Markers in pytest\n\nTo run tests marked with either 'slow' **or** 'network', use:\n\n```bash\npytest -m \"slow or network\"\n```\n\n## Alternative Syntax\n\nYou can also use:\n\n```bash\npytest -m \"slow or network\" tests/\n```\n\n## Other Marker Combinations\n\n| Command | Behavior |\n|---------|----------|\n| `pytest -m \"slow or network\"` | Tests with 'slow' OR 'network' |\n| `pytest -m \"slow and network\"` | Tests with BOTH 'slow' AND 'network' |\n| `pytest -m \"slow and not network\"` | Tests with 'slow' but NOT 'network' |\n| `pytest -m \"not slow\"` | Tests without 'slow' marker |\n\n## Example Test File\n\n```python\nimport pytest\n\n@pytest.mark.slow\ndef test_slow_operation():\n    pass\n\n@pytest.mark.network\ndef test_api_call():\n    pass\n\n@pytest.mark.slow\n@pytest.mark.network\ndef test_slow_network_operation():\n    pass\n```\n\nRunning `pytest -m \"slow or network\"` would execute all three tests above.",
+        "tokens_in": 24,
+        "tokens_out": 287,
+        "latency_ms": 48996.00562499836,
+        "ttft_ms": null,
+        "model": "claude-haiku-4-5-20251001"
+      },
+      "cost_usd": 0.0007295,
+      "judge": {
+        "score": 0.9,
+        "passed": true,
+        "reason": "correctness=10/10 relevance=8/10 score=0.900 >= threshold=0.7 | reasoning: The model's answer correctly states the pytest command to run tests marked with 'slow' or 'network', but provides additional information that is not directly relevant to answering the question."
+      },
+      "mode": "batch",
+      "batch_turnaround_s": 48.99600562499836,
+      "batch_id": "msgbatch_01UdcJXAjPaJckQYoGqHnpkv"
+    },
+    {
+      "captured_at": "2026-08-17T07:11:37.538457+00:00",
+      "model": "claude-haiku-4-5-20251001",
+      "item_id": "procedural_001",
+      "rep": 2,
+      "prompt": "Which pytest command runs tests marked either 'slow' or 'network'?",
+      "expected": "pytest -m 'slow or network'",
+      "measurement": {
+        "text": "# Running Tests with Multiple Markers in pytest\n\nTo run tests marked with either 'slow' **or** 'network', use:\n\n```bash\npytest -m \"slow or network\"\n```\n\n## Examples\n\n```bash\n# Run tests marked 'slow' OR 'network'\npytest -m \"slow or network\"\n\n# Run tests marked 'slow' AND 'network'\npytest -m \"slow and network\"\n\n# Run tests NOT marked 'slow'\npytest -m \"not slow\"\n\n# More complex: (slow or network) and not integration\npytest -m \"(slow or network) and not integration\"\n```\n\n## Test Example\n\n```python\nimport pytest\n\n@pytest.mark.slow\ndef test_slow_operation():\n    pass\n\n@pytest.mark.network\ndef test_api_call():\n    pass\n\n@pytest.mark.slow\n@pytest.mark.network\ndef test_slow_network():\n    pass\n```\n\nRunning `pytest -m \"slow or network\"` would execute all three tests above.",
+        "tokens_in": 24,
+        "tokens_out": 236,
+        "latency_ms": 48996.00562499836,
+        "ttft_ms": null,
+        "model": "claude-haiku-4-5-20251001"
+      },
+      "cost_usd": 0.000602,
+      "judge": {
+        "score": 0.95,
+        "passed": true,
+        "reason": "correctness=9/10 relevance=10/10 score=0.950 >= threshold=0.7 | reasoning: The model's answer correctly provides the pytest command to run tests marked with either 'slow' or 'network', but could have been more concise and provided additional examples."
+      },
+      "mode": "batch",
+      "batch_turnaround_s": 48.99600562499836,
+      "batch_id": "msgbatch_01UdcJXAjPaJckQYoGqHnpkv"
+    },
+    {
+      "captured_at": "2026-08-17T07:11:57.444566+00:00",
+      "model": "claude-haiku-4-5-20251001",
+      "item_id": "reasoning_001",
+      "rep": 1,
+      "prompt": "What is the difference between cold blooded and warm blooded animals?",
+      "expected": "Cold blooded animals rely on external sources for body heat, while warm blooded animals maintain a constant internal body temperature.",
+      "measurement": {
+        "text": "# Cold-Blooded vs Warm-Blooded Animals\n\n## Body Temperature Control\n\n**Warm-blooded (Endothermic):**\n- Generate heat internally through metabolism\n- Maintain a constant body temperature regardless of environment\n- Examples: mammals and birds\n\n**Cold-blooded (Ectothermic):**\n- Rely on external environment to regulate body temperature\n- Body temperature fluctuates with surroundings\n- Examples: reptiles, amphibians, and fish\n\n## Key Practical Differences\n\n| Aspect | Warm-blooded | Cold-blooded |\n|--------|-------------|--------------|\n| **Energy needs** | High (need frequent meals) | Low (eat less often) |\n| **Activity in cold** | Stay active | Become sluggish |\n| **Geographic range** | Can live in cold climates | Limited to warmer regions |\n| **Recovery from injury** | Generally faster | Slower |\n\n## Why It Matters\n\nCold-blooded animals are efficient in warm environments but must bask in sunlight to warm up or find shade to cool down. Warm-blooded animals can be active anytime and anywhere, but require much more food to fuel their internal heat production.\n\nNeither approach is inherently \"better\"\u2014each is well-suited to different lifestyles and environments.",
+        "tokens_in": 21,
+        "tokens_out": 298,
+        "latency_ms": 48996.00562499836,
+        "ttft_ms": null,
+        "model": "claude-haiku-4-5-20251001"
+      },
+      "cost_usd": 0.0007555,
+      "judge": {
+        "score": 0.95,
+        "passed": true,
+        "reason": "correctness=9/10 relevance=10/10 score=0.950 >= threshold=0.7 | reasoning: The model's answer provides a clear and comprehensive explanation of the difference between cold-blooded and warm-blooded animals, including key practical differences and why each approach is suited to different lifestyles and environments."
+      },
+      "mode": "batch",
+      "batch_turnaround_s": 48.99600562499836,
+      "batch_id": "msgbatch_01UdcJXAjPaJckQYoGqHnpkv"
+    },
+    {
+      "captured_at": "2026-08-17T07:12:19.177835+00:00",
+      "model": "claude-haiku-4-5-20251001",
+      "item_id": "reasoning_001",
+      "rep": 2,
+      "prompt": "What is the difference between cold blooded and warm blooded animals?",
+      "expected": "Cold blooded animals rely on external sources for body heat, while warm blooded animals maintain a constant internal body temperature.",
+      "measurement": {
+        "text": "# Key Differences\n\n## Temperature Regulation\n\n**Cold-blooded (Ectothermic):**\n- Body temperature matches their environment\n- Can't generate much internal heat\n- Examples: reptiles, amphibians, fish, insects\n\n**Warm-blooded (Endothermic):**\n- Maintain a consistent body temperature internally\n- Generate heat through metabolism\n- Examples: mammals, birds\n\n## Practical Implications\n\n| Aspect | Cold-blooded | Warm-blooded |\n|--------|--------------|--------------|\n| **Activity** | Slower in cold weather | Active in any climate |\n| **Energy needs** | Low food requirements | High food requirements |\n| **Habitat** | Thrive in warm climates | Can live anywhere |\n| **Response time** | Sluggish when cold | Consistently quick |\n\n## Simple Analogy\n\nThink of cold-blooded animals as **solar-powered** (relying on external heat) and warm-blooded animals as having **built-in heaters** (generating their own warmth).\n\nBoth strategies work well\u2014cold-blooded animals are more energy-efficient, while warm-blooded animals are more independent from their environment.",
+        "tokens_in": 21,
+        "tokens_out": 271,
+        "latency_ms": 48996.00562499836,
+        "ttft_ms": null,
+        "model": "claude-haiku-4-5-20251001"
+      },
+      "cost_usd": 0.000688,
+      "judge": {
+        "score": 0.95,
+        "passed": true,
+        "reason": "correctness=9/10 relevance=10/10 score=0.950 >= threshold=0.7 | reasoning: The model provided a detailed comparison of cold blooded and warm blooded animals, including temperature regulation, practical implications, and an analogy to help illustrate the difference."
+      },
+      "mode": "batch",
+      "batch_turnaround_s": 48.99600562499836,
+      "batch_id": "msgbatch_01UdcJXAjPaJckQYoGqHnpkv"
+    },
+    {
+      "captured_at": "2026-08-17T07:12:29.955081+00:00",
+      "model": "claude-haiku-4-5-20251001",
+      "item_id": "reasoning_002",
+      "rep": 1,
+      "prompt": "In one sentence, why does ice float on water?",
+      "expected": "Ice floats on water because it is less dense than liquid water.",
+      "measurement": {
+        "text": "Ice floats because it's less dense than liquid water, a result of hydrogen bonding creating a crystalline structure with more space between molecules.",
+        "tokens_in": 18,
+        "tokens_out": 32,
+        "latency_ms": 48996.00562499836,
+        "ttft_ms": null,
+        "model": "claude-haiku-4-5-20251001"
+      },
+      "cost_usd": 8.900000000000001e-05,
+      "judge": {
+        "score": 0.95,
+        "passed": true,
+        "reason": "correctness=9/10 relevance=10/10 score=0.950 >= threshold=0.7 | reasoning: The model's answer correctly explains the reason for ice floating on water and provides additional context about the molecular structure."
+      },
+      "mode": "batch",
+      "batch_turnaround_s": 48.99600562499836,
+      "batch_id": "msgbatch_01UdcJXAjPaJckQYoGqHnpkv"
+    },
+    {
+      "captured_at": "2026-08-17T07:12:52.403240+00:00",
+      "model": "claude-haiku-4-5-20251001",
+      "item_id": "reasoning_002",
+      "rep": 2,
+      "prompt": "In one sentence, why does ice float on water?",
+      "expected": "Ice floats on water because it is less dense than liquid water.",
+      "measurement": {
+        "text": "Ice floats because it's less dense than liquid water, a result of hydrogen bonding that creates a crystalline structure with more space between molecules.",
+        "tokens_in": 18,
+        "tokens_out": 33,
+        "latency_ms": 48996.00562499836,
+        "ttft_ms": null,
+        "model": "claude-haiku-4-5-20251001"
+      },
+      "cost_usd": 9.15e-05,
+      "judge": {
+        "score": 0.95,
+        "passed": true,
+        "reason": "correctness=9/10 relevance=10/10 score=0.950 >= threshold=0.7 | reasoning: The model's answer correctly explains the reason for ice floating on water and provides additional context about the molecular structure."
+      },
+      "mode": "batch",
+      "batch_turnaround_s": 48.99600562499836,
+      "batch_id": "msgbatch_01UdcJXAjPaJckQYoGqHnpkv"
+    },
+    {
+      "captured_at": "2026-08-17T07:13:20.110907+00:00",
+      "model": "claude-haiku-4-5-20251001",
+      "item_id": "reasoning_003",
+      "rep": 1,
+      "prompt": "How does photosynthesis work in plants?",
+      "expected": "Photosynthesis in plants converts light energy into chemical energy, using sunlight to transform carbon dioxide and water into glucose and oxygen.",
+      "measurement": {
+        "text": "# How Photosynthesis Works\n\nPhotosynthesis is the process plants use to convert light energy into chemical energy. Here's the basic breakdown:\n\n## The Simple Equation\n**Light + Water + Carbon Dioxide \u2192 Glucose + Oxygen**\n\n## Two Main Stages\n\n### Light-Dependent Reactions (in thylakoids)\n- Occur in the presence of light\n- Chlorophyll absorbs photons, exciting electrons\n- Water molecules are split, releasing oxygen\n- Energy is captured in molecules called ATP and NADPH\n\n### Light-Independent Reactions/Calvin Cycle (in stroma)\n- Don't directly require light (but depend on light-stage products)\n- Use ATP and NADPH to convert CO\u2082 into glucose\n- This glucose fuels plant growth and serves as stored energy\n\n## Key Locations\n- **Chloroplasts** contain all the machinery\n- **Thylakoids** (stacked structures) handle light reactions\n- **Stroma** (fluid space) handles the Calvin cycle\n\n## Why It Matters\n- Produces oxygen we breathe\n- Creates glucose that feeds the plant and food chains\n- Represents how plants capture and store solar energy\n\nPlants essentially use the sun's energy to build the molecules they need to grow\u2014pretty remarkable!",
+        "tokens_in": 17,
+        "tokens_out": 289,
+        "latency_ms": 48996.00562499836,
+        "ttft_ms": null,
+        "model": "claude-haiku-4-5-20251001"
+      },
+      "cost_usd": 0.0007310000000000001,
+      "judge": {
+        "score": 0.85,
+        "passed": true,
+        "reason": "correctness=8/10 relevance=9/10 score=0.850 >= threshold=0.7 | reasoning: The model provided a detailed explanation of photosynthesis, including its stages, key locations, and importance. However, it did not directly address the expected answer's phrasing or structure."
+      },
+      "mode": "batch",
+      "batch_turnaround_s": 48.99600562499836,
+      "batch_id": "msgbatch_01UdcJXAjPaJckQYoGqHnpkv"
+    },
+    {
+      "captured_at": "2026-08-17T07:14:01.387142+00:00",
+      "model": "claude-haiku-4-5-20251001",
+      "item_id": "reasoning_003",
+      "rep": 2,
+      "prompt": "How does photosynthesis work in plants?",
+      "expected": "Photosynthesis in plants converts light energy into chemical energy, using sunlight to transform carbon dioxide and water into glucose and oxygen.",
+      "measurement": {
+        "text": "# Photosynthesis Basics\n\nPhotosynthesis is how plants convert light energy into chemical energy (sugar). Here's the simplified process:\n\n## The Main Equation\n**Light + Water + Carbon Dioxide \u2192 Glucose + Oxygen**\n\n## Two Key Stages\n\n**Light-dependent reactions** (in thylakoid membranes)\n- Chlorophyll absorbs sunlight\n- Water molecules split, releasing oxygen\n- Energy is captured as ATP and NADPH\n\n**Light-independent reactions** (Calvin cycle, in stroma)\n- Uses the ATP and NADPH from above\n- Converts CO\u2082 into glucose through a series of chemical reactions\n- No direct sunlight needed for this stage\n\n## Where It Happens\n- **Chloroplasts** are the organelles containing chlorophyll\n- Concentrated in **leaves**, especially the green palisade layer\n\n## Why It Matters\n- Produces glucose (food/energy) for the plant\n- Releases oxygen as a byproduct (essential for life on Earth)\n- Forms the base of most food chains\n\nThe process is remarkably efficient at capturing and storing solar energy\u2014something scientists are still trying to replicate artificially.\n\nWould you like me to explain any stage in more detail?",
+        "tokens_in": 17,
+        "tokens_out": 281,
+        "latency_ms": 48996.00562499836,
+        "ttft_ms": null,
+        "model": "claude-haiku-4-5-20251001"
+      },
+      "cost_usd": 0.000711,
+      "judge": {
+        "score": 0.95,
+        "passed": true,
+        "reason": "correctness=9/10 relevance=10/10 score=0.950 >= threshold=0.7 | reasoning: The model's answer provides a detailed explanation of photosynthesis, including the two key stages and where it happens. However, some minor details were omitted or rephrased for simplification."
+      },
+      "mode": "batch",
+      "batch_turnaround_s": 48.99600562499836,
+      "batch_id": "msgbatch_01UdcJXAjPaJckQYoGqHnpkv"
+    }
+  ]
+}

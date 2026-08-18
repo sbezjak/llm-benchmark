@@ -1,0 +1,12 @@
+{
+  "model_a": "claude-haiku-4-5-20251001",
+  "model_b": "claude-sonnet-5",
+  "order1_winner": "TIE",
+  "order2_winner": "TIE",
+  "order1_reasoning": "Both answers provide the correct pytest command and accurately explain the marker expression, with only harmless additional context, so they are equally good.",
+  "order2_reasoning": "Both answers give the correct pytest command and accurately explain the marker expression, with only minor differences in supplementary detail.",
+  "outcome": "genuine_tie",
+  "winner": null,
+  "suite": "easy",
+  "item_id": "procedural_001"
+}

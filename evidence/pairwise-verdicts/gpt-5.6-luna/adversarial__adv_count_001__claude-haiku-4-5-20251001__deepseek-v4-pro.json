@@ -1,0 +1,12 @@
+{
+  "model_a": "claude-haiku-4-5-20251001",
+  "model_b": "deepseek-v4-pro",
+  "order1_winner": "claude-haiku-4-5-20251001",
+  "order2_winner": "TIE",
+  "order1_reasoning": "Both answers correctly state that the letter 'r' appears three times, but Answer A provides supporting positions while remaining relevant.",
+  "order2_reasoning": "Both answers correctly identify that the letter 'r' appears three times, with B providing accurate additional detail.",
+  "outcome": "flip",
+  "winner": null,
+  "suite": "adversarial",
+  "item_id": "adv_count_001"
+}

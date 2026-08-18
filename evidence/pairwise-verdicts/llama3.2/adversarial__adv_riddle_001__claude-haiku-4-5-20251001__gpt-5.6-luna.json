@@ -1,0 +1,12 @@
+{
+  "model_a": "claude-haiku-4-5-20251001",
+  "model_b": "gpt-5.6-luna",
+  "order1_winner": "claude-haiku-4-5-20251001",
+  "order2_winner": "claude-haiku-4-5-20251001",
+  "order1_reasoning": "Answer A is more correct and relevant as it provides additional context about the typical materials used in greenhouses",
+  "order2_reasoning": "Answer B provides more context and clarity about the materials used in a greenhouse, making it a more comprehensive answer.",
+  "outcome": "win",
+  "winner": "claude-haiku-4-5-20251001",
+  "suite": "adversarial",
+  "item_id": "adv_riddle_001"
+}

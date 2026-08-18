@@ -1,0 +1,12 @@
+{
+  "model_a": "claude-sonnet-5",
+  "model_b": "llama3.2",
+  "order1_winner": "claude-sonnet-5",
+  "order2_winner": "claude-sonnet-5",
+  "order1_reasoning": "Answer A correctly derives the complete ordering, while Answer B reaches the right conclusion but incorrectly places Mango above Pomelo in its final ordering.",
+  "order2_reasoning": "Answer B is better because it correctly orders the fruits as Kiwi < Mango < Pomelo < Durian, while Answer A gives the contradictory incorrect ordering Durian > Mango > Pomelo > Kiwi.",
+  "outcome": "win",
+  "winner": "claude-sonnet-5",
+  "suite": "adversarial",
+  "item_id": "adv_logic_001"
+}

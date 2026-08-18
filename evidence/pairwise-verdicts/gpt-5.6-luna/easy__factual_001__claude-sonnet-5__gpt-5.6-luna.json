@@ -1,0 +1,12 @@
+{
+  "model_a": "claude-sonnet-5",
+  "model_b": "gpt-5.6-luna",
+  "order1_winner": "gpt-5.6-luna",
+  "order2_winner": "gpt-5.6-luna",
+  "order1_reasoning": "Both answers correctly identify Ljubljana, but B is more concise and directly answers the question without unnecessary extra details.",
+  "order2_reasoning": "Both answers correctly identify Ljubljana as Slovenia's capital, but Answer A is more concise and fully sufficient for the question.",
+  "outcome": "win",
+  "winner": "gpt-5.6-luna",
+  "suite": "easy",
+  "item_id": "factual_001"
+}

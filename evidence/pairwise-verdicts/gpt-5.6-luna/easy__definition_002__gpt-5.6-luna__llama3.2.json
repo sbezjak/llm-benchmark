@@ -1,0 +1,12 @@
+{
+  "model_a": "gpt-5.6-luna",
+  "model_b": "llama3.2",
+  "order1_winner": "gpt-5.6-luna",
+  "order2_winner": "gpt-5.6-luna",
+  "order1_reasoning": "Answer A is more precise and scientifically accurate because it identifies the event horizon and avoids implying that a black hole is necessarily an ordinary dense object.",
+  "order2_reasoning": "Answer B is more precise because it correctly identifies the event horizon and describes a black hole as a region of spacetime, while Answer A adds the potentially misleading claim that it must be an incredibly dense object.",
+  "outcome": "win",
+  "winner": "gpt-5.6-luna",
+  "suite": "easy",
+  "item_id": "definition_002"
+}

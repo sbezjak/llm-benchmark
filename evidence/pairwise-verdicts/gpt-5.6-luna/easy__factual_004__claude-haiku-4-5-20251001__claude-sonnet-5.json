@@ -1,0 +1,12 @@
+{
+  "model_a": "claude-haiku-4-5-20251001",
+  "model_b": "claude-sonnet-5",
+  "order1_winner": "TIE",
+  "order2_winner": "claude-haiku-4-5-20251001",
+  "order1_reasoning": "Both answers correctly identify the eight planets and accurately explain Pluto's reclassification, while Answer B adds correct but unnecessary information about other dwarf planets.",
+  "order2_reasoning": "Both answers correctly state that there are 8 planets and list them accurately, but B is slightly more concise and directly relevant to the question.",
+  "outcome": "flip",
+  "winner": null,
+  "suite": "easy",
+  "item_id": "factual_004"
+}

@@ -1,0 +1,12 @@
+{
+  "model_a": "claude-haiku-4-5-20251001",
+  "model_b": "llama3.2",
+  "order1_winner": "claude-haiku-4-5-20251001",
+  "order2_winner": "llama3.2",
+  "order1_reasoning": "Answer A is more concise and directly addresses the cause of ice floating on water (expansion during freezing), while Answer B provides a more detailed explanation but also introduces additional complexity.",
+  "order2_reasoning": "Answer A provides a more detailed explanation of why ice floats on water, including the specific arrangement of molecules in ice that contributes to its lower density.",
+  "outcome": "flip",
+  "winner": null,
+  "suite": "easy",
+  "item_id": "reasoning_002"
+}

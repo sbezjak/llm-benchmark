@@ -1,0 +1,1 @@
+2026-08-17 10:30:41,436 INFO __main__ wrote reports/findings.json: 200 captures, 200 paid verdicts, 200 free + 200 paid pairwise, suites=['easy', 'adversarial']

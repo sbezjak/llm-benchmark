@@ -1,0 +1,12 @@
+{
+  "model_a": "claude-sonnet-5",
+  "model_b": "llama3.2",
+  "order1_winner": "claude-sonnet-5",
+  "order2_winner": "claude-sonnet-5",
+  "order1_reasoning": "Answer A provides a clear step-by-step calculation process and explicitly states the key insight of using remainders to determine the extra days beyond full weeks.",
+  "order2_reasoning": "Answer B is more readable and uses a clear mathematical formula to calculate the remainder, making it easier to understand for those familiar with modular arithmetic.",
+  "outcome": "win",
+  "winner": "claude-sonnet-5",
+  "suite": "adversarial",
+  "item_id": "adv_reason_001"
+}

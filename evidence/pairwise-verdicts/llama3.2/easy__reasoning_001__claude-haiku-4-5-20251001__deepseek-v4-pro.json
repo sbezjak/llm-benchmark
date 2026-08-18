@@ -1,0 +1,12 @@
+{
+  "model_a": "claude-haiku-4-5-20251001",
+  "model_b": "deepseek-v4-pro",
+  "order1_winner": "claude-haiku-4-5-20251001",
+  "order2_winner": "claude-haiku-4-5-20251001",
+  "order1_reasoning": "Answer A provides a clear and detailed explanation of the differences between warm-blooded and cold-blooded animals, including specific examples and advantages/disadvantages.",
+  "order2_reasoning": "Answer B provides more detailed explanations and examples for both warm-blooded and cold-blooded animals, making it easier to understand the differences between them.",
+  "outcome": "win",
+  "winner": "claude-haiku-4-5-20251001",
+  "suite": "easy",
+  "item_id": "reasoning_001"
+}

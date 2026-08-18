@@ -1,0 +1,12 @@
+{
+  "model_a": "claude-haiku-4-5-20251001",
+  "model_b": "gpt-5.6-luna",
+  "order1_winner": "TIE",
+  "order2_winner": "TIE",
+  "order1_reasoning": "Both answers are equally correct and directly answer the question; the bold formatting in B does not make it substantively better.",
+  "order2_reasoning": "Both answers are equally correct, direct, and relevant.",
+  "outcome": "genuine_tie",
+  "winner": null,
+  "suite": "easy",
+  "item_id": "factual_001"
+}

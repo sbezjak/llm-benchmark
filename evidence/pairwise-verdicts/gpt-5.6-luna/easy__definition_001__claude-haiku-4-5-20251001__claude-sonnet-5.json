@@ -1,0 +1,12 @@
+{
+  "model_a": "claude-haiku-4-5-20251001",
+  "model_b": "claude-sonnet-5",
+  "order1_winner": "claude-haiku-4-5-20251001",
+  "order2_winner": "claude-haiku-4-5-20251001",
+  "order1_reasoning": "Both answers correctly expand AI as Artificial Intelligence, but Answer A is more concise and directly relevant to the straightforward question.",
+  "order2_reasoning": "Both answers correctly expand AI as Artificial Intelligence and provide relevant explanation, but B is more concise and directly suited to the simple question.",
+  "outcome": "win",
+  "winner": "claude-haiku-4-5-20251001",
+  "suite": "easy",
+  "item_id": "definition_001"
+}

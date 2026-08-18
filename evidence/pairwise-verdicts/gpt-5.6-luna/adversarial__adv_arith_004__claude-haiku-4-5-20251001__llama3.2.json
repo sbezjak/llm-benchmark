@@ -1,0 +1,12 @@
+{
+  "model_a": "claude-haiku-4-5-20251001",
+  "model_b": "llama3.2",
+  "order1_winner": "TIE",
+  "order2_winner": "TIE",
+  "order1_reasoning": "Both answers are correct, clear, and directly calculate that one and a half days contain 129,600 seconds.",
+  "order2_reasoning": "Both answers are correct, clear, and directly explain the conversion to 129,600 seconds, so neither is better overall.",
+  "outcome": "genuine_tie",
+  "winner": null,
+  "suite": "adversarial",
+  "item_id": "adv_arith_004"
+}

@@ -1,0 +1,12 @@
+{
+  "model_a": "gpt-5.6-luna",
+  "model_b": "llama3.2",
+  "order1_winner": "llama3.2",
+  "order2_winner": "gpt-5.6-luna",
+  "order1_reasoning": "Answer B is more concise and directly states the correct expansion of AI",
+  "order2_reasoning": "Answer B is better because it uses the full phrase 'artificial intelligence' in its answer, making it more relevant and clear than Answer A's concise but slightly ambiguous response.",
+  "outcome": "flip",
+  "winner": null,
+  "suite": "easy",
+  "item_id": "definition_001"
+}

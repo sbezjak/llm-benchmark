@@ -1,0 +1,12 @@
+{
+  "model_a": "deepseek-v4-pro",
+  "model_b": "gpt-5.6-luna",
+  "order1_winner": "gpt-5.6-luna",
+  "order2_winner": "gpt-5.6-luna",
+  "order1_reasoning": "Answer B is more precise because it correctly identifies the event horizon as the boundary beyond which nothing, including light, can escape.",
+  "order2_reasoning": "Both answers are accurate, relevant, and appropriately concise; A adds the precise condition that escape becomes impossible after crossing the event horizon, while B gives the standard general definition.",
+  "outcome": "win",
+  "winner": "gpt-5.6-luna",
+  "suite": "easy",
+  "item_id": "definition_002"
+}

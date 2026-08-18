@@ -1,0 +1,12 @@
+{
+  "model_a": "claude-haiku-4-5-20251001",
+  "model_b": "claude-sonnet-5",
+  "order1_winner": "claude-haiku-4-5-20251001",
+  "order2_winner": "claude-sonnet-5",
+  "order1_reasoning": "Answer A is more concise and uses the term 'event horizon' correctly, making it more relevant to the reference.",
+  "order2_reasoning": "Answer A provides more context about the event horizon and its boundary, making it a clearer and more comprehensive explanation of what a black hole is.",
+  "outcome": "flip",
+  "winner": null,
+  "suite": "easy",
+  "item_id": "definition_002"
+}

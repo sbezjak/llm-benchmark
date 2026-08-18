@@ -1,0 +1,12 @@
+{
+  "model_a": "claude-sonnet-5",
+  "model_b": "llama3.2",
+  "order1_winner": "TIE",
+  "order2_winner": "claude-sonnet-5",
+  "order1_reasoning": "Both answers correctly apply the discounts sequentially and arrive at the final price of $54, with clear and relevant calculations.",
+  "order2_reasoning": "Both answers correctly calculate the sequential discounts and final price of $54, but Answer B presents the percentage reductions slightly more clearly and adds an accurate combined-discount note.",
+  "outcome": "flip",
+  "winner": null,
+  "suite": "adversarial",
+  "item_id": "adv_arith_003"
+}

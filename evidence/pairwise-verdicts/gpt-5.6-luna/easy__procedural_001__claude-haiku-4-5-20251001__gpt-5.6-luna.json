@@ -1,0 +1,12 @@
+{
+  "model_a": "claude-haiku-4-5-20251001",
+  "model_b": "gpt-5.6-luna",
+  "order1_winner": "gpt-5.6-luna",
+  "order2_winner": "gpt-5.6-luna",
+  "order1_reasoning": "Both answers give the correct pytest command, but B is more concise and directly answers the question without unnecessary extra examples.",
+  "order2_reasoning": "Both answers give the correct pytest command, but Answer A is more concise and directly relevant to the question.",
+  "outcome": "win",
+  "winner": "gpt-5.6-luna",
+  "suite": "easy",
+  "item_id": "procedural_001"
+}

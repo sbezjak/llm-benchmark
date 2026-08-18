@@ -1,0 +1,12 @@
+{
+  "model_a": "deepseek-v4-pro",
+  "model_b": "llama3.2",
+  "order1_winner": "deepseek-v4-pro",
+  "order2_winner": "deepseek-v4-pro",
+  "order1_reasoning": "Answer A is more correct and relevant because it explicitly states the letter 'r' appears 3 times in the word 'strawberry', whereas Answer B only mentions 'twice'",
+  "order2_reasoning": "Answer B is better because it uses the correct quotation marks around the word 'strawberry' and explicitly states the number of times the letter appears, making it more relevant and accurate.",
+  "outcome": "win",
+  "winner": "deepseek-v4-pro",
+  "suite": "adversarial",
+  "item_id": "adv_count_001"
+}

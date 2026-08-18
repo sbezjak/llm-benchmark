@@ -1,0 +1,12 @@
+{
+  "model_a": "claude-sonnet-5",
+  "model_b": "gpt-5.6-luna",
+  "order1_winner": "claude-sonnet-5",
+  "order2_winner": "claude-sonnet-5",
+  "order1_reasoning": "Answer A is more detailed and provides the calculation steps for its answer, making it more transparent and easier to understand.",
+  "order2_reasoning": "Answer B is more correct and relevant as it provides the step-by-step calculation process for arriving at the answer.",
+  "outcome": "win",
+  "winner": "claude-sonnet-5",
+  "suite": "adversarial",
+  "item_id": "adv_arith_004"
+}

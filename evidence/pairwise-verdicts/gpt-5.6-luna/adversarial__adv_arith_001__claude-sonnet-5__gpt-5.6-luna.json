@@ -1,0 +1,12 @@
+{
+  "model_a": "claude-sonnet-5",
+  "model_b": "gpt-5.6-luna",
+  "order1_winner": "claude-sonnet-5",
+  "order2_winner": "TIE",
+  "order1_reasoning": "Both answers are correct and relevant, but A provides a clear derivation and verification while B gives only a concise explanation.",
+  "order2_reasoning": "Both answers are correct, clearly explain the calculation, and verify that the prices satisfy the conditions; B is more detailed but still relevant.",
+  "outcome": "flip",
+  "winner": null,
+  "suite": "adversarial",
+  "item_id": "adv_arith_001"
+}

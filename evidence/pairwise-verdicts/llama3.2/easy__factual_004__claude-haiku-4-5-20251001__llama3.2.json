@@ -1,0 +1,12 @@
+{
+  "model_a": "claude-haiku-4-5-20251001",
+  "model_b": "llama3.2",
+  "order1_winner": "claude-haiku-4-5-20251001",
+  "order2_winner": "llama3.2",
+  "order1_reasoning": "Answer A is considered better because it includes the reclassification of Pluto as a dwarf planet in its explanation, providing more context and accuracy.",
+  "order2_reasoning": "Answer A is more correct and relevant because it includes the full list of planets in our solar system, whereas Answer B only lists the 8 planets but omits Pluto's classification as a dwarf planet.",
+  "outcome": "flip",
+  "winner": null,
+  "suite": "easy",
+  "item_id": "factual_004"
+}

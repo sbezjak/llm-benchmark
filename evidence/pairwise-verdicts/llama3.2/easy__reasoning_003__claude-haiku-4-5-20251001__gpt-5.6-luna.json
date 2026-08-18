@@ -1,0 +1,12 @@
+{
+  "model_a": "claude-haiku-4-5-20251001",
+  "model_b": "gpt-5.6-luna",
+  "order1_winner": "claude-haiku-4-5-20251001",
+  "order2_winner": "gpt-5.6-luna",
+  "order1_reasoning": "Answer A provides more detailed explanations of the light-dependent and light-independent reactions, making it easier to understand the process. Answer B's overall equation is correct but lacks specific details about the stages and chloroplasts.",
+  "order2_reasoning": "Answer A provides more detailed information about the process of photosynthesis, including the specific stages and locations where it occurs, making it a more comprehensive explanation.",
+  "outcome": "flip",
+  "winner": null,
+  "suite": "easy",
+  "item_id": "reasoning_003"
+}

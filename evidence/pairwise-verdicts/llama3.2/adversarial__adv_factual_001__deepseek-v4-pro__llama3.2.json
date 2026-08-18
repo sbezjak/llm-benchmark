@@ -1,0 +1,12 @@
+{
+  "model_a": "deepseek-v4-pro",
+  "model_b": "llama3.2",
+  "order1_winner": "llama3.2",
+  "order2_winner": "llama3.2",
+  "order1_reasoning": "Answer B is more correct and relevant because it provides both measurements (from base to summit and from base on land) for comparison, making the information more comprehensive.",
+  "order2_reasoning": "Answer A is more correct and relevant as it provides the exact height of Mauna Kea when measured from its base to its summit, whereas Answer B makes an assumption about Mount Everest's height above sea level.",
+  "outcome": "win",
+  "winner": "llama3.2",
+  "suite": "adversarial",
+  "item_id": "adv_factual_001"
+}

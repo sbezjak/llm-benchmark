@@ -1,0 +1,12 @@
+{
+  "model_a": "claude-sonnet-5",
+  "model_b": "gpt-5.6-luna",
+  "order1_winner": "claude-sonnet-5",
+  "order2_winner": "gpt-5.6-luna",
+  "order1_reasoning": "Answer A provides more detailed information about the process of photosynthesis, including the two main stages and key components needed, making it a more comprehensive explanation.",
+  "order2_reasoning": "Answer A provides a clearer explanation of the two main stages of photosynthesis and includes more specific details about where each stage occurs in the plant cell.",
+  "outcome": "flip",
+  "winner": null,
+  "suite": "easy",
+  "item_id": "reasoning_003"
+}

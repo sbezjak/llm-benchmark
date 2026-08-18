@@ -1,0 +1,12 @@
+{
+  "model_a": "deepseek-v4-pro",
+  "model_b": "gpt-5.6-luna",
+  "order1_winner": "TIE",
+  "order2_winner": "TIE",
+  "order1_reasoning": "Both answers correctly expand AI as Artificial Intelligence; capitalization does not affect correctness or relevance.",
+  "order2_reasoning": "Both answers correctly and directly expand AI as Artificial Intelligence, differing only in capitalization.",
+  "outcome": "genuine_tie",
+  "winner": null,
+  "suite": "easy",
+  "item_id": "definition_001"
+}

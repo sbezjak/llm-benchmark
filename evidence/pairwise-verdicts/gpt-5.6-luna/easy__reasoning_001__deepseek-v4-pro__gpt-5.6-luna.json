@@ -1,0 +1,12 @@
+{
+  "model_a": "deepseek-v4-pro",
+  "model_b": "gpt-5.6-luna",
+  "order1_winner": "TIE",
+  "order2_winner": "gpt-5.6-luna",
+  "order1_reasoning": "Both answers accurately explain that ectotherms rely on environmental heat while endotherms generate internal heat and maintain relatively stable temperatures, with relevant examples and energy differences.",
+  "order2_reasoning": "Answer A is slightly better because it accurately uses qualified descriptions of temperature regulation and energy needs, while B somewhat overstates that ectotherms do not burn calories to stay warm.",
+  "outcome": "flip",
+  "winner": null,
+  "suite": "easy",
+  "item_id": "reasoning_001"
+}

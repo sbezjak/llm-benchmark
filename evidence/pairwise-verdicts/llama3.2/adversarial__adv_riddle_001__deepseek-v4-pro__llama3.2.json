@@ -1,0 +1,12 @@
+{
+  "model_a": "deepseek-v4-pro",
+  "model_b": "llama3.2",
+  "order1_winner": "llama3.2",
+  "order2_winner": "llama3.2",
+  "order1_reasoning": "Answer B provides more context and accurate information about the materials used to build a greenhouse, making it a more comprehensive and relevant answer.",
+  "order2_reasoning": "Answer A provides a clear and accurate explanation of the materials used in building a greenhouse, while Answer B is too simplistic and doesn't address the trick question aspect.",
+  "outcome": "win",
+  "winner": "llama3.2",
+  "suite": "adversarial",
+  "item_id": "adv_riddle_001"
+}

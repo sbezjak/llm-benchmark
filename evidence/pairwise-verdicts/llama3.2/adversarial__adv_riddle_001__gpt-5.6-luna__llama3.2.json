@@ -1,0 +1,12 @@
+{
+  "model_a": "gpt-5.6-luna",
+  "model_b": "llama3.2",
+  "order1_winner": "llama3.2",
+  "order2_winner": "llama3.2",
+  "order1_reasoning": "Answer B provides a more detailed and accurate explanation of the materials used to build a greenhouse, making it more relevant and informative.",
+  "order2_reasoning": "Answer A provides more detailed and accurate information about the materials used in building a greenhouse, making it a more comprehensive and relevant answer.",
+  "outcome": "win",
+  "winner": "llama3.2",
+  "suite": "adversarial",
+  "item_id": "adv_riddle_001"
+}

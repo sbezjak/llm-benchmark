@@ -1,0 +1,12 @@
+{
+  "model_a": "gpt-5.6-luna",
+  "model_b": "llama3.2",
+  "order1_winner": "llama3.2",
+  "order2_winner": "llama3.2",
+  "order1_reasoning": "Answer B provides a clear and logical step-by-step analysis of the relationships between the fruits, making it more convincing than Answer A.",
+  "order2_reasoning": "Answer A provides a clear and logical explanation of the relationships between the fruits, making it more comprehensive and accurate than Answer B.",
+  "outcome": "win",
+  "winner": "llama3.2",
+  "suite": "adversarial",
+  "item_id": "adv_logic_001"
+}

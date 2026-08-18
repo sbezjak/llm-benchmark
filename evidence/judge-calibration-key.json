@@ -1,0 +1,218 @@
+{
+  "G01": {
+    "answer_model": "llama3.2",
+    "item_id": "adv_arith_001",
+    "rep": 1,
+    "judge_score": 1.0,
+    "judge_band": "Good",
+    "judge_passed": true,
+    "judge_reason": "correctness=10/10 relevance=10/10 score=1.000 >= threshold=0.7 | reasoning: The model correctly sets up and solves the equation, obtaining the expected price of $0.05 for the ball. It directly and fully answers the question."
+  },
+  "G02": {
+    "answer_model": "llama3.2",
+    "item_id": "reasoning_003",
+    "rep": 2,
+    "judge_score": 0.95,
+    "judge_band": "Good",
+    "judge_passed": true,
+    "judge_reason": "correctness=9/10 relevance=10/10 score=0.950 >= threshold=0.7 | reasoning: The answer accurately explains that plants use light energy to convert carbon dioxide and water into glucose and oxygen, with a detailed and scientifically sound overview of the light-dependent reactions and Calvin cycle. The extra facts are generally relevant, though the claim that photosynthesis produces approximately 70% of atmospheric oxygen is potentially overstated."
+  },
+  "G03": {
+    "answer_model": "llama3.2",
+    "item_id": "adv_logic_001",
+    "rep": 2,
+    "judge_score": 0.95,
+    "judge_band": "Good",
+    "judge_passed": true,
+    "judge_reason": "correctness=9/10 relevance=10/10 score=0.950 >= threshold=0.7 | reasoning: The answer correctly identifies Durian as the heaviest and is directly responsive. Although it briefly attributes the Durian-versus-Mango conclusion imprecisely to statements 1 and 2, the overall reasoning and conclusion are correct."
+  },
+  "G04": {
+    "answer_model": "gpt-5.6-luna",
+    "item_id": "adv_arith_001",
+    "rep": 2,
+    "judge_score": 1.0,
+    "judge_band": "Good",
+    "judge_passed": true,
+    "judge_reason": "correctness=10/10 relevance=10/10 score=1.000 >= threshold=0.7 | reasoning: The answer correctly sets up and solves the equation, concluding that the ball costs $0.05. It directly and fully addresses the question."
+  },
+  "G05": {
+    "answer_model": "deepseek-v4-pro",
+    "item_id": "adv_arith_001",
+    "rep": 1,
+    "judge_score": 1.0,
+    "judge_band": "Good",
+    "judge_passed": true,
+    "judge_reason": "correctness=10/10 relevance=10/10 score=1.000 >= threshold=0.7 | reasoning: The answer is correct and includes a valid verification of the prices totaling $1.10, directly addressing the question."
+  },
+  "G06": {
+    "answer_model": "llama3.2",
+    "item_id": "adv_riddle_001",
+    "rep": 2,
+    "judge_score": 0.95,
+    "judge_band": "Good",
+    "judge_passed": true,
+    "judge_reason": "correctness=9/10 relevance=10/10 score=0.950 >= threshold=0.7 | reasoning: The answer correctly identifies glass as the expected answer and explains the color-based distraction. Mentioning plastic as another possible greenhouse material is accurate in general but adds minor ambiguity relative to the expected single answer."
+  },
+  "G07": {
+    "answer_model": "llama3.2",
+    "item_id": "procedural_001",
+    "rep": 1,
+    "judge_score": 0.6,
+    "judge_band": "Wrong",
+    "judge_passed": false,
+    "judge_reason": "correctness=3/10 relevance=9/10 score=0.600 < threshold=0.7 | reasoning: The answer correctly identifies that `-m` should be used, but the proposed `pytest -m \"slow\" -m \"network\"` does not express an OR condition and may only apply the last marker expression. The required command is `pytest -m \"slow or network\"`."
+  },
+  "G08": {
+    "answer_model": "llama3.2",
+    "item_id": "reasoning_003",
+    "rep": 1,
+    "judge_score": 0.95,
+    "judge_band": "Good",
+    "judge_passed": true,
+    "judge_reason": "correctness=9/10 relevance=10/10 score=0.950 >= threshold=0.7 | reasoning: The answer accurately explains that plants use light to convert carbon dioxide and water into chemical energy (glucose), releasing oxygen, and appropriately describes the light-dependent reactions and Calvin cycle. It contains only minor wording inaccuracies, such as calling RuBP an enzyme and labeling the reduction step as reduction of CO2."
+  },
+  "G09": {
+    "answer_model": "llama3.2",
+    "item_id": "reasoning_001",
+    "rep": 2,
+    "judge_score": 0.85,
+    "judge_band": "Good",
+    "judge_passed": true,
+    "judge_reason": "correctness=7/10 relevance=10/10 score=0.850 >= threshold=0.7 | reasoning: The answer correctly explains the main distinction between ectotherms relying on environmental heat and endotherms generating heat internally. However, it includes inaccuracies, notably classifying goldfish as endothermic and suggesting ectotherms rely on external energy rather than food for energy production."
+  },
+  "G10": {
+    "answer_model": "llama3.2",
+    "item_id": "adv_count_001",
+    "rep": 1,
+    "judge_score": 0.5,
+    "judge_band": "Wrong",
+    "judge_passed": false,
+    "judge_reason": "correctness=0/10 relevance=10/10 score=0.500 < threshold=0.7 | reasoning: The answer is directly responsive, but it incorrectly counts the three occurrences of 'r' in 'strawberry' as two."
+  },
+  "G11": {
+    "answer_model": "llama3.2",
+    "item_id": "adv_arith_001",
+    "rep": 2,
+    "judge_score": 1.0,
+    "judge_band": "Good",
+    "judge_passed": true,
+    "judge_reason": "correctness=10/10 relevance=10/10 score=1.000 >= threshold=0.7 | reasoning: The response correctly sets up and solves the equation, concluding that the ball costs $0.05, exactly matching the expected answer. It is fully relevant and clearly explains the calculation."
+  },
+  "G12": {
+    "answer_model": "llama3.2",
+    "item_id": "adv_logic_001",
+    "rep": 1,
+    "judge_score": 0.85,
+    "judge_band": "Good",
+    "judge_passed": true,
+    "judge_reason": "correctness=7/10 relevance=10/10 score=0.850 >= threshold=0.7 | reasoning: The model correctly identifies Durian as the heaviest, but its final ordering incorrectly states Mango > Pomelo, contradicting the premise that Mango is lighter than Pomelo. The answer is directly relevant despite this reasoning error."
+  },
+  "G13": {
+    "answer_model": "claude-haiku-4-5-20251001",
+    "item_id": "adv_arith_001",
+    "rep": 2,
+    "judge_score": 1.0,
+    "judge_band": "Good",
+    "judge_passed": true,
+    "judge_reason": "correctness=10/10 relevance=10/10 score=1.000 >= threshold=0.7 | reasoning: The model correctly sets up and solves the equations, finding the ball costs $0.05 and correctly identifying the bat's cost as $1.05. It directly and fully answers the question."
+  },
+  "G14": {
+    "answer_model": "llama3.2",
+    "item_id": "procedural_001",
+    "rep": 2,
+    "judge_score": 0.4,
+    "judge_band": "Wrong",
+    "judge_passed": false,
+    "judge_reason": "correctness=0/10 relevance=8/10 score=0.400 < threshold=0.7 | reasoning: The answer gives an invalid pytest filtering option and adds an unrelated duration constraint; the correct command uses pytest's marker expression, `-m 'slow or network'`. It is on-topic but does not provide a valid solution."
+  },
+  "G15": {
+    "answer_model": "claude-sonnet-5",
+    "item_id": "adv_arith_001",
+    "rep": 2,
+    "judge_score": 1.0,
+    "judge_band": "Good",
+    "judge_passed": true,
+    "judge_reason": "correctness=10/10 relevance=10/10 score=1.000 >= threshold=0.7 | reasoning: The model correctly solves the equation and verifies that the ball costs $0.05, directly answering the question. The additional explanation is accurate and remains relevant."
+  },
+  "G16": {
+    "answer_model": "llama3.2",
+    "item_id": "adv_factual_002",
+    "rep": 2,
+    "judge_score": 0.4,
+    "judge_band": "Wrong",
+    "judge_passed": false,
+    "judge_reason": "correctness=0/10 relevance=8/10 score=0.400 < threshold=0.7 | reasoning: The answer incorrectly identifies the Mediterranean Sea, which has extensive land coastlines; the correct answer is the Sargasso Sea. It remains on-topic and attempts to explain the distinction, despite the erroneous conclusion and some unnecessary discussion."
+  },
+  "G17": {
+    "answer_model": "claude-sonnet-5",
+    "item_id": "adv_riddle_001",
+    "rep": 1,
+    "judge_score": 0.95,
+    "judge_band": "Good",
+    "judge_passed": true,
+    "judge_reason": "correctness=10/10 relevance=9/10 score=0.950 >= threshold=0.7 | reasoning: The answer correctly identifies glass as the expected answer and adds accurate, relevant clarification about alternative transparent materials and the term\u2019s meaning. It is somewhat more elaborate than necessary but remains directly on-topic."
+  },
+  "G18": {
+    "answer_model": "claude-haiku-4-5-20251001",
+    "item_id": "adv_arith_001",
+    "rep": 1,
+    "judge_score": 1.0,
+    "judge_band": "Good",
+    "judge_passed": true,
+    "judge_reason": "correctness=10/10 relevance=10/10 score=1.000 >= threshold=0.7 | reasoning: The model correctly sets up and solves the equations, finding that the ball costs $0.05, and verifies the result. It is fully relevant and directly answers the question."
+  },
+  "G19": {
+    "answer_model": "llama3.2",
+    "item_id": "adv_factual_002",
+    "rep": 1,
+    "judge_score": 0.4,
+    "judge_band": "Wrong",
+    "judge_passed": false,
+    "judge_reason": "correctness=0/10 relevance=8/10 score=0.400 < threshold=0.7 | reasoning: The answer is incorrect: the Sargasso Sea is the only sea bounded by ocean currents with no land coastline. Although it addresses the question directly, it gives the wrong sea and includes false claims about the Mediterranean."
+  },
+  "G20": {
+    "answer_model": "claude-sonnet-5",
+    "item_id": "adv_arith_001",
+    "rep": 1,
+    "judge_score": 1.0,
+    "judge_band": "Good",
+    "judge_passed": true,
+    "judge_reason": "correctness=10/10 relevance=10/10 score=1.000 >= threshold=0.7 | reasoning: The model gives the correct ball cost of $0.05 and accurately derives it algebraically, including a valid check. The additional explanation is relevant and does not introduce a material error."
+  },
+  "G21": {
+    "answer_model": "gpt-5.6-luna",
+    "item_id": "adv_arith_001",
+    "rep": 1,
+    "judge_score": 1.0,
+    "judge_band": "Good",
+    "judge_passed": true,
+    "judge_reason": "correctness=10/10 relevance=10/10 score=1.000 >= threshold=0.7 | reasoning: The answer correctly identifies the ball's cost as $0.05 and verifies that the bat costs $1.05, totaling $1.10 and differing by $1.00."
+  },
+  "G22": {
+    "answer_model": "llama3.2",
+    "item_id": "reasoning_001",
+    "rep": 1,
+    "judge_score": 0.95,
+    "judge_band": "Good",
+    "judge_passed": true,
+    "judge_reason": "correctness=9/10 relevance=10/10 score=0.950 >= threshold=0.7 | reasoning: The answer correctly explains that ectotherms rely primarily on external heat sources while endotherms generate heat internally and maintain a relatively stable body temperature. It adds some useful detail, though the claim that some reptiles exhibit both characteristics is somewhat imprecise, since basking and seeking shade are typical ectothermic behaviors."
+  },
+  "G23": {
+    "answer_model": "claude-sonnet-5",
+    "item_id": "procedural_001",
+    "rep": 2,
+    "judge_score": 0.95,
+    "judge_band": "Good",
+    "judge_passed": true,
+    "judge_reason": "correctness=10/10 relevance=9/10 score=0.950 >= threshold=0.7 | reasoning: The answer gives the correct pytest command using an OR marker expression; the extra variations and registration details are on-topic but unnecessary."
+  },
+  "G24": {
+    "answer_model": "deepseek-v4-pro",
+    "item_id": "adv_arith_001",
+    "rep": 2,
+    "judge_score": 1.0,
+    "judge_band": "Good",
+    "judge_passed": true,
+    "judge_reason": "correctness=10/10 relevance=10/10 score=1.000 >= threshold=0.7 | reasoning: The answer correctly solves the equation and gives the ball's cost as $0.05, matching the expected answer. It is directly relevant and includes a clear, accurate explanation."
+  }
+}

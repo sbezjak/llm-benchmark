@@ -1,0 +1,12 @@
+{
+  "model_a": "claude-haiku-4-5-20251001",
+  "model_b": "claude-sonnet-5",
+  "order1_winner": "claude-sonnet-5",
+  "order2_winner": "claude-sonnet-5",
+  "order1_reasoning": "Both answers correctly identify the Sargasso Sea and accurately describe its current-defined boundaries, but B provides slightly richer and still relevant context about its location, ecology, and shifting boundaries.",
+  "order2_reasoning": "A is more correct and comprehensive; B incorrectly describes the Sargasso Sea as a breeding ground for Atlantic bluefin tuna, which primarily spawn in the Gulf of Mexico and Mediterranean.",
+  "outcome": "win",
+  "winner": "claude-sonnet-5",
+  "suite": "adversarial",
+  "item_id": "adv_factual_002"
+}

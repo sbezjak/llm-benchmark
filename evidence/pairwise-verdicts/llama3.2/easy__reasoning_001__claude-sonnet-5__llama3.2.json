@@ -1,0 +1,12 @@
+{
+  "model_a": "claude-sonnet-5",
+  "model_b": "llama3.2",
+  "order1_winner": "llama3.2",
+  "order2_winner": "llama3.2",
+  "order1_reasoning": "Answer B provides a clearer and more concise explanation of the terms 'ectothermic' and 'endothermic', as well as their definitions and key differences. Additionally, it acknowledges the outdated nature of the terms 'cold-blooded' and 'warm-blooded'.",
+  "order2_reasoning": "Answer A provides a clearer and more detailed explanation of the terms 'ectothermic' and 'endothermic', as well as their definitions, examples, and key differences. Answer B is more concise but lacks depth in its explanations.",
+  "outcome": "win",
+  "winner": "llama3.2",
+  "suite": "easy",
+  "item_id": "reasoning_001"
+}

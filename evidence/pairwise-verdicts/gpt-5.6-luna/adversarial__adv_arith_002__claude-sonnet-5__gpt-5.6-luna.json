@@ -1,0 +1,12 @@
+{
+  "model_a": "claude-sonnet-5",
+  "model_b": "gpt-5.6-luna",
+  "order1_winner": "TIE",
+  "order2_winner": "TIE",
+  "order1_reasoning": "Both answers correctly calculate the unit price and the total cost, with equally clear and relevant explanations.",
+  "order2_reasoning": "Both answers correctly calculate the unit price and total cost, with equally clear and relevant explanations.",
+  "outcome": "genuine_tie",
+  "winner": null,
+  "suite": "adversarial",
+  "item_id": "adv_arith_002"
+}

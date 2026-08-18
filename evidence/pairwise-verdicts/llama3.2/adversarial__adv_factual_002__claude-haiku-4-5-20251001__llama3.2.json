@@ -1,0 +1,12 @@
+{
+  "model_a": "claude-haiku-4-5-20251001",
+  "model_b": "llama3.2",
+  "order1_winner": "claude-haiku-4-5-20251001",
+  "order2_winner": "claude-haiku-4-5-20251001",
+  "order1_reasoning": "Answer A is more accurate because it specifies the exact ocean currents that bound the Sargasso Sea, while Answer B incorrectly identifies the Mediterranean Sea as the correct answer.",
+  "order2_reasoning": "Answer B is more correct and relevant as it specifically mentions the Sargasso Sea by name and provides additional context about its unique characteristics.",
+  "outcome": "win",
+  "winner": "claude-haiku-4-5-20251001",
+  "suite": "adversarial",
+  "item_id": "adv_factual_002"
+}

@@ -1,0 +1,12 @@
+{
+  "model_a": "claude-sonnet-5",
+  "model_b": "deepseek-v4-pro",
+  "order1_winner": "claude-sonnet-5",
+  "order2_winner": "deepseek-v4-pro",
+  "order1_reasoning": "Both answers correctly identify South America, but Answer A adds accurate, relevant context about Lima while remaining concise.",
+  "order2_reasoning": "Both answers correctly identify South America, but Answer A is more concise and directly relevant to the question.",
+  "outcome": "flip",
+  "winner": null,
+  "suite": "easy",
+  "item_id": "factual_003"
+}

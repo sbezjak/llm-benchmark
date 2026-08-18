@@ -1,0 +1,12 @@
+{
+  "model_a": "deepseek-v4-pro",
+  "model_b": "llama3.2",
+  "order1_winner": "deepseek-v4-pro",
+  "order2_winner": "llama3.2",
+  "order1_reasoning": "Answer A is more concise and directly presents the symbol without additional context.",
+  "order2_reasoning": "Answer A provides additional context and etymology for the symbol, making it more informative and relevant.",
+  "outcome": "flip",
+  "winner": null,
+  "suite": "easy",
+  "item_id": "factual_002"
+}

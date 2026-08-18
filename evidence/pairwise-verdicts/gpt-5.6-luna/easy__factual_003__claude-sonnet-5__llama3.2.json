@@ -1,0 +1,12 @@
+{
+  "model_a": "claude-sonnet-5",
+  "model_b": "llama3.2",
+  "order1_winner": "TIE",
+  "order2_winner": "claude-sonnet-5",
+  "order1_reasoning": "Both answers correctly identify Lima as being in South America and are equally relevant, though Answer A adds accurate context.",
+  "order2_reasoning": "Both answers correctly identify Lima as being in South America, but Answer B provides the same direct answer with slightly more relevant geographic context.",
+  "outcome": "flip",
+  "winner": null,
+  "suite": "easy",
+  "item_id": "factual_003"
+}

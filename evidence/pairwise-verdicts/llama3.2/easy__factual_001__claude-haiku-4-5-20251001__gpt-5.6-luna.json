@@ -1,0 +1,12 @@
+{
+  "model_a": "claude-haiku-4-5-20251001",
+  "model_b": "gpt-5.6-luna",
+  "order1_winner": "gpt-5.6-luna",
+  "order2_winner": "gpt-5.6-luna",
+  "order1_reasoning": "Answer B is better because it uses bold formatting to emphasize the correct answer, making it more visually appealing and attention-grabbing.",
+  "order2_reasoning": "Answer A is better because it uses title case for the proper noun 'Ljubljana', making it more readable and following standard English conventions.",
+  "outcome": "win",
+  "winner": "gpt-5.6-luna",
+  "suite": "easy",
+  "item_id": "factual_001"
+}

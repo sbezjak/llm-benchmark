@@ -1,0 +1,1301 @@
+{
+  "generated": "2026-08-18 14:36:32Z",
+  "suites": [
+    "easy",
+    "adversarial"
+  ],
+  "judges": [
+    "free-local",
+    "paid-gpt"
+  ],
+  "headline_judge": "paid-gpt",
+  "paid_judge_model": "gpt-5.6-luna",
+  "models": [
+    "claude-haiku-4-5-20251001",
+    "claude-sonnet-5",
+    "deepseek-v4-pro",
+    "gpt-5.6-luna",
+    "llama3.2"
+  ],
+  "n_captures": 200,
+  "views": {
+    "easy": {
+      "free-local": {
+        "models": [
+          {
+            "model": "deepseek-v4-pro",
+            "n": 20,
+            "mean_score": 0.97,
+            "score_ci_lo": 0.9475,
+            "score_ci_hi": 0.9875,
+            "passes": 20,
+            "pass_rate": 1.0,
+            "cost_per_pass_usd": 0.00013832999999999999,
+            "mean_cost_usd": 0.00013832999999999999,
+            "total_cost_usd": 0.0027665999999999997,
+            "mean_latency_ms": 2713.3339999985765,
+            "lat_p50_ms": 1949.1115209966665,
+            "lat_p95_ms": 5986.887112837579,
+            "mean_ttft_ms": 1869.473662553355,
+            "mean_tokens_in": 92.6,
+            "mean_tokens_out": 112.7
+          },
+          {
+            "model": "claude-haiku-4-5-20251001",
+            "n": 20,
+            "mean_score": 0.9674999999999997,
+            "score_ci_lo": 0.9499999999999998,
+            "score_ci_hi": 0.9824999999999999,
+            "passes": 20,
+            "pass_rate": 1.0,
+            "cost_per_pass_usd": 0.0005367,
+            "mean_cost_usd": 0.0005367,
+            "total_cost_usd": 0.010734,
+            "mean_latency_ms": 1597.473627148429,
+            "lat_p50_ms": 979.3178749969229,
+            "lat_p95_ms": 3378.881035700033,
+            "mean_ttft_ms": 822.335618751822,
+            "mean_tokens_in": 17.2,
+            "mean_tokens_out": 103.9
+          },
+          {
+            "model": "gpt-5.6-luna",
+            "n": 20,
+            "mean_score": 0.9624999999999998,
+            "score_ci_lo": 0.9199999999999999,
+            "score_ci_hi": 0.9924999999999999,
+            "passes": 19,
+            "pass_rate": 0.95,
+            "cost_per_pass_usd": 8.583157894736842e-05,
+            "mean_cost_usd": 8.154e-05,
+            "total_cost_usd": 0.0016308,
+            "mean_latency_ms": 1323.1264166461187,
+            "lat_p50_ms": 840.4676459904294,
+            "lat_p95_ms": 3484.49533093808,
+            "mean_ttft_ms": 915.5694290486281,
+            "mean_tokens_in": 15.6,
+            "mean_tokens_out": 65.35
+          },
+          {
+            "model": "claude-sonnet-5",
+            "n": 20,
+            "mean_score": 0.9374999999999998,
+            "score_ci_lo": 0.8974999999999997,
+            "score_ci_hi": 0.9674999999999999,
+            "passes": 19,
+            "pass_rate": 0.95,
+            "cost_per_pass_usd": 0.002553578947368421,
+            "mean_cost_usd": 0.0024259,
+            "total_cost_usd": 0.048518,
+            "mean_latency_ms": 4092.969541650382,
+            "lat_p50_ms": 3470.9669794974616,
+            "lat_p95_ms": 7302.20175688155,
+            "mean_ttft_ms": 1551.7275542588322,
+            "mean_tokens_in": 20.2,
+            "mean_tokens_out": 238.55
+          },
+          {
+            "model": "llama3.2",
+            "n": 20,
+            "mean_score": 0.9225,
+            "score_ci_lo": 0.8724999999999999,
+            "score_ci_hi": 0.9649999999999999,
+            "passes": 19,
+            "pass_rate": 0.95,
+            "cost_per_pass_usd": 0.0,
+            "mean_cost_usd": 0.0,
+            "total_cost_usd": 0.0,
+            "mean_latency_ms": 7858.95365204924,
+            "lat_p50_ms": 3210.81449999474,
+            "lat_p95_ms": 26080.97437050456,
+            "mean_ttft_ms": 507.46598759724293,
+            "mean_tokens_in": 34.6,
+            "mean_tokens_out": 129.65
+          }
+        ],
+        "paired": {
+          "baseline": "deepseek-v4-pro",
+          "diffs": [
+            {
+              "model": "claude-haiku-4-5-20251001",
+              "n_pairs": 20,
+              "mean_diff": 0.002500000000000008,
+              "ci_lo": -0.017499999999999995,
+              "ci_hi": 0.022500000000000003
+            },
+            {
+              "model": "gpt-5.6-luna",
+              "n_pairs": 20,
+              "mean_diff": 0.00749999999999999,
+              "ci_lo": -0.017500000000000005,
+              "ci_hi": 0.03749999999999998
+            },
+            {
+              "model": "claude-sonnet-5",
+              "n_pairs": 20,
+              "mean_diff": 0.032500000000000015,
+              "ci_lo": -0.009999999999999986,
+              "ci_hi": 0.08000000000000002
+            },
+            {
+              "model": "llama3.2",
+              "n_pairs": 20,
+              "mean_diff": 0.04750000000000001,
+              "ci_lo": 0.0075000000000000015,
+              "ci_hi": 0.0925
+            }
+          ]
+        },
+        "separation": {
+          "n_items": 10,
+          "paid_pairs": [
+            {
+              "pair": [
+                "claude-haiku-4-5-20251001",
+                "claude-sonnet-5"
+              ],
+              "n_obs": 20,
+              "mean_diff": 0.030000000000000006,
+              "sd": 0.09375219295680783,
+              "obs_needed": 76.65280213253328,
+              "reps_needed": 7.665280213253328
+            },
+            {
+              "pair": [
+                "claude-haiku-4-5-20251001",
+                "deepseek-v4-pro"
+              ],
+              "n_obs": 20,
+              "mean_diff": -0.002500000000000008,
+              "sd": 0.047225662069416634,
+              "obs_needed": 2800.810770136018,
+              "reps_needed": 280.0810770136018
+            },
+            {
+              "pair": [
+                "claude-haiku-4-5-20251001",
+                "gpt-5.6-luna"
+              ],
+              "n_obs": 20,
+              "mean_diff": 0.004999999999999982,
+              "sd": 0.07416198487095661,
+              "obs_needed": 1726.7535426502527,
+              "reps_needed": 172.67535426502528
+            },
+            {
+              "pair": [
+                "claude-sonnet-5",
+                "deepseek-v4-pro"
+              ],
+              "n_obs": 20,
+              "mean_diff": -0.032500000000000015,
+              "sd": 0.10671531237239032,
+              "obs_needed": 84.62417208820712,
+              "reps_needed": 8.462417208820712
+            },
+            {
+              "pair": [
+                "claude-sonnet-5",
+                "gpt-5.6-luna"
+              ],
+              "n_obs": 20,
+              "mean_diff": -0.025000000000000015,
+              "sd": 0.13426211598762208,
+              "obs_needed": 226.37821563931362,
+              "reps_needed": 22.63782156393136
+            },
+            {
+              "pair": [
+                "deepseek-v4-pro",
+                "gpt-5.6-luna"
+              ],
+              "n_obs": 20,
+              "mean_diff": 0.00749999999999999,
+              "sd": 0.06340139463848773,
+              "obs_needed": 560.8965521314724,
+              "reps_needed": 56.08965521314724
+            }
+          ],
+          "identical_pairs": 0,
+          "max_paid_reps_needed": 280.0810770136018,
+          "min_paid_reps_needed": 7.665280213253328,
+          "contrast_weakest": {
+            "pair": [
+              "deepseek-v4-pro",
+              "llama3.2"
+            ],
+            "n_obs": 20,
+            "mean_diff": 0.04750000000000001,
+            "sd": 0.09930680795022645,
+            "obs_needed": 34.30666490520365,
+            "reps_needed": 3.4306664905203648
+          }
+        }
+      },
+      "paid-gpt": {
+        "models": [
+          {
+            "model": "claude-haiku-4-5-20251001",
+            "n": 20,
+            "mean_score": 1.0,
+            "score_ci_lo": 1.0,
+            "score_ci_hi": 1.0,
+            "passes": 20,
+            "pass_rate": 1.0,
+            "cost_per_pass_usd": 0.0005367,
+            "mean_cost_usd": 0.0005367,
+            "total_cost_usd": 0.010734,
+            "mean_latency_ms": 1597.473627148429,
+            "lat_p50_ms": 979.3178749969229,
+            "lat_p95_ms": 3378.881035700033,
+            "mean_ttft_ms": 822.335618751822,
+            "mean_tokens_in": 17.2,
+            "mean_tokens_out": 103.9
+          },
+          {
+            "model": "deepseek-v4-pro",
+            "n": 20,
+            "mean_score": 1.0,
+            "score_ci_lo": 1.0,
+            "score_ci_hi": 1.0,
+            "passes": 20,
+            "pass_rate": 1.0,
+            "cost_per_pass_usd": 0.00013832999999999999,
+            "mean_cost_usd": 0.00013832999999999999,
+            "total_cost_usd": 0.0027665999999999997,
+            "mean_latency_ms": 2713.3339999985765,
+            "lat_p50_ms": 1949.1115209966665,
+            "lat_p95_ms": 5986.887112837579,
+            "mean_ttft_ms": 1869.473662553355,
+            "mean_tokens_in": 92.6,
+            "mean_tokens_out": 112.7
+          },
+          {
+            "model": "gpt-5.6-luna",
+            "n": 20,
+            "mean_score": 1.0,
+            "score_ci_lo": 1.0,
+            "score_ci_hi": 1.0,
+            "passes": 20,
+            "pass_rate": 1.0,
+            "cost_per_pass_usd": 8.154e-05,
+            "mean_cost_usd": 8.154e-05,
+            "total_cost_usd": 0.0016308,
+            "mean_latency_ms": 1323.1264166461187,
+            "lat_p50_ms": 840.4676459904294,
+            "lat_p95_ms": 3484.49533093808,
+            "mean_ttft_ms": 915.5694290486281,
+            "mean_tokens_in": 15.6,
+            "mean_tokens_out": 65.35
+          },
+          {
+            "model": "claude-sonnet-5",
+            "n": 20,
+            "mean_score": 0.9974999999999999,
+            "score_ci_lo": 0.9924999999999999,
+            "score_ci_hi": 1.0,
+            "passes": 20,
+            "pass_rate": 1.0,
+            "cost_per_pass_usd": 0.0024259,
+            "mean_cost_usd": 0.0024259,
+            "total_cost_usd": 0.048518,
+            "mean_latency_ms": 4092.969541650382,
+            "lat_p50_ms": 3470.9669794974616,
+            "lat_p95_ms": 7302.20175688155,
+            "mean_ttft_ms": 1551.7275542588322,
+            "mean_tokens_in": 20.2,
+            "mean_tokens_out": 238.55
+          },
+          {
+            "model": "llama3.2",
+            "n": 20,
+            "mean_score": 0.9349999999999998,
+            "score_ci_lo": 0.8625,
+            "score_ci_hi": 0.99,
+            "passes": 18,
+            "pass_rate": 0.9,
+            "cost_per_pass_usd": 0.0,
+            "mean_cost_usd": 0.0,
+            "total_cost_usd": 0.0,
+            "mean_latency_ms": 7858.95365204924,
+            "lat_p50_ms": 3210.81449999474,
+            "lat_p95_ms": 26080.97437050456,
+            "mean_ttft_ms": 507.46598759724293,
+            "mean_tokens_in": 34.6,
+            "mean_tokens_out": 129.65
+          }
+        ],
+        "paired": {
+          "baseline": "claude-haiku-4-5-20251001",
+          "diffs": [
+            {
+              "model": "deepseek-v4-pro",
+              "n_pairs": 20,
+              "mean_diff": 0.0,
+              "ci_lo": 0.0,
+              "ci_hi": 0.0
+            },
+            {
+              "model": "gpt-5.6-luna",
+              "n_pairs": 20,
+              "mean_diff": 0.0,
+              "ci_lo": 0.0,
+              "ci_hi": 0.0
+            },
+            {
+              "model": "claude-sonnet-5",
+              "n_pairs": 20,
+              "mean_diff": 0.0025000000000000022,
+              "ci_lo": 0.0,
+              "ci_hi": 0.007500000000000007
+            },
+            {
+              "model": "llama3.2",
+              "n_pairs": 20,
+              "mean_diff": 0.06500000000000002,
+              "ci_lo": 0.010000000000000004,
+              "ci_hi": 0.1375
+            }
+          ]
+        },
+        "separation": {
+          "n_items": 10,
+          "paid_pairs": [
+            {
+              "pair": [
+                "claude-haiku-4-5-20251001",
+                "claude-sonnet-5"
+              ],
+              "n_obs": 20,
+              "mean_diff": 0.0025000000000000022,
+              "sd": 0.01118033988749896,
+              "obs_needed": 156.9775947863856,
+              "reps_needed": 15.69775947863856
+            },
+            {
+              "pair": [
+                "claude-haiku-4-5-20251001",
+                "deepseek-v4-pro"
+              ],
+              "n_obs": 20,
+              "mean_diff": 0.0,
+              "sd": 0.0,
+              "obs_needed": null,
+              "reps_needed": null
+            },
+            {
+              "pair": [
+                "claude-haiku-4-5-20251001",
+                "gpt-5.6-luna"
+              ],
+              "n_obs": 20,
+              "mean_diff": 0.0,
+              "sd": 0.0,
+              "obs_needed": null,
+              "reps_needed": null
+            },
+            {
+              "pair": [
+                "claude-sonnet-5",
+                "deepseek-v4-pro"
+              ],
+              "n_obs": 20,
+              "mean_diff": -0.0025000000000000022,
+              "sd": 0.01118033988749896,
+              "obs_needed": 156.9775947863856,
+              "reps_needed": 15.69775947863856
+            },
+            {
+              "pair": [
+                "claude-sonnet-5",
+                "gpt-5.6-luna"
+              ],
+              "n_obs": 20,
+              "mean_diff": -0.0025000000000000022,
+              "sd": 0.01118033988749896,
+              "obs_needed": 156.9775947863856,
+              "reps_needed": 15.69775947863856
+            },
+            {
+              "pair": [
+                "deepseek-v4-pro",
+                "gpt-5.6-luna"
+              ],
+              "n_obs": 20,
+              "mean_diff": 0.0,
+              "sd": 0.0,
+              "obs_needed": null,
+              "reps_needed": null
+            }
+          ],
+          "identical_pairs": 3,
+          "max_paid_reps_needed": 15.69775947863856,
+          "min_paid_reps_needed": 15.69775947863856,
+          "contrast_weakest": {
+            "pair": [
+              "claude-haiku-4-5-20251001",
+              "llama3.2"
+            ],
+            "n_obs": 20,
+            "mean_diff": 0.06500000000000002,
+            "sd": 0.15652475842498526,
+            "obs_needed": 45.514213872975645,
+            "reps_needed": 4.551421387297564
+          }
+        }
+      }
+    },
+    "adversarial": {
+      "free-local": {
+        "models": [
+          {
+            "model": "claude-haiku-4-5-20251001",
+            "n": 20,
+            "mean_score": 0.9699999999999998,
+            "score_ci_lo": 0.95,
+            "score_ci_hi": 0.985,
+            "passes": 20,
+            "pass_rate": 1.0,
+            "cost_per_pass_usd": 0.000596,
+            "mean_cost_usd": 0.000596,
+            "total_cost_usd": 0.01192,
+            "mean_latency_ms": 1501.5782520524226,
+            "lat_p50_ms": 1525.156229516142,
+            "lat_p95_ms": 1903.2322729050065,
+            "mean_ttft_ms": 783.1347749030101,
+            "mean_tokens_in": 33.0,
+            "mean_tokens_out": 112.6
+          },
+          {
+            "model": "gpt-5.6-luna",
+            "n": 20,
+            "mean_score": 0.9699999999999998,
+            "score_ci_lo": 0.9549999999999998,
+            "score_ci_hi": 0.9849999999999998,
+            "passes": 20,
+            "pass_rate": 1.0,
+            "cost_per_pass_usd": 8.308e-05,
+            "mean_cost_usd": 8.308e-05,
+            "total_cost_usd": 0.0016615999999999998,
+            "mean_latency_ms": 1393.7519520506612,
+            "lat_p50_ms": 1244.0469585126266,
+            "lat_p95_ms": 2110.0301330094226,
+            "mean_ttft_ms": 1202.3974166528205,
+            "mean_tokens_in": 29.3,
+            "mean_tokens_out": 64.35
+          },
+          {
+            "model": "llama3.2",
+            "n": 20,
+            "mean_score": 0.9499999999999998,
+            "score_ci_lo": 0.9174999999999999,
+            "score_ci_hi": 0.9774999999999998,
+            "passes": 20,
+            "pass_rate": 1.0,
+            "cost_per_pass_usd": 0.0,
+            "mean_cost_usd": 0.0,
+            "total_cost_usd": 0.0,
+            "mean_latency_ms": 5655.664818754303,
+            "lat_p50_ms": 5728.085895490949,
+            "lat_p95_ms": 8139.746320781705,
+            "mean_ttft_ms": 442.5167061985121,
+            "mean_tokens_in": 48.4,
+            "mean_tokens_out": 111.6
+          },
+          {
+            "model": "deepseek-v4-pro",
+            "n": 20,
+            "mean_score": 0.9449999999999997,
+            "score_ci_lo": 0.9099999999999998,
+            "score_ci_hi": 0.9749999999999999,
+            "passes": 20,
+            "pass_rate": 1.0,
+            "cost_per_pass_usd": 0.00014194050000000002,
+            "mean_cost_usd": 0.00014194050000000002,
+            "total_cost_usd": 0.00283881,
+            "mean_latency_ms": 2797.3462188994745,
+            "lat_p50_ms": 2372.511104491423,
+            "lat_p95_ms": 4312.508702391645,
+            "mean_ttft_ms": 2510.008545848541,
+            "mean_tokens_in": 106.6,
+            "mean_tokens_out": 109.85
+          },
+          {
+            "model": "claude-sonnet-5",
+            "n": 20,
+            "mean_score": 0.9374999999999997,
+            "score_ci_lo": 0.8974999999999997,
+            "score_ci_hi": 0.9724999999999999,
+            "passes": 20,
+            "pass_rate": 1.0,
+            "cost_per_pass_usd": 0.002539,
+            "mean_cost_usd": 0.002539,
+            "total_cost_usd": 0.05078,
+            "mean_latency_ms": 4164.15249989368,
+            "lat_p50_ms": 3611.3146874849917,
+            "lat_p95_ms": 6651.48837914021,
+            "mean_ttft_ms": 1984.9617457482964,
+            "mean_tokens_in": 39.0,
+            "mean_tokens_out": 246.1
+          }
+        ],
+        "paired": {
+          "baseline": "claude-haiku-4-5-20251001",
+          "diffs": [
+            {
+              "model": "gpt-5.6-luna",
+              "n_pairs": 20,
+              "mean_diff": 0.0,
+              "ci_lo": -0.027499999999999997,
+              "ci_hi": 0.025000000000000005
+            },
+            {
+              "model": "llama3.2",
+              "n_pairs": 20,
+              "mean_diff": 0.02,
+              "ci_lo": -0.0075000000000000015,
+              "ci_hi": 0.05250000000000001
+            },
+            {
+              "model": "deepseek-v4-pro",
+              "n_pairs": 20,
+              "mean_diff": 0.025,
+              "ci_lo": -0.007500000000000007,
+              "ci_hi": 0.06
+            },
+            {
+              "model": "claude-sonnet-5",
+              "n_pairs": 20,
+              "mean_diff": 0.0325,
+              "ci_lo": -0.0050000000000000044,
+              "ci_hi": 0.07749999999999999
+            }
+          ]
+        },
+        "separation": {
+          "n_items": 10,
+          "paid_pairs": [
+            {
+              "pair": [
+                "claude-haiku-4-5-20251001",
+                "claude-sonnet-5"
+              ],
+              "n_obs": 20,
+              "mean_diff": 0.0325,
+              "sd": 0.09634778013448002,
+              "obs_needed": 68.98018880211457,
+              "reps_needed": 6.898018880211457
+            },
+            {
+              "pair": [
+                "claude-haiku-4-5-20251001",
+                "deepseek-v4-pro"
+              ],
+              "n_obs": 20,
+              "mean_diff": 0.025,
+              "sd": 0.08029550685469661,
+              "obs_needed": 80.96739099508302,
+              "reps_needed": 8.096739099508302
+            },
+            {
+              "pair": [
+                "claude-haiku-4-5-20251001",
+                "gpt-5.6-luna"
+              ],
+              "n_obs": 20,
+              "mean_diff": 0.0,
+              "sd": 0.06069769786668841,
+              "obs_needed": null,
+              "reps_needed": null
+            },
+            {
+              "pair": [
+                "claude-sonnet-5",
+                "deepseek-v4-pro"
+              ],
+              "n_obs": 20,
+              "mean_diff": -0.0075000000000000015,
+              "sd": 0.11840496966810668,
+              "obs_needed": 1956.2529502326752,
+              "reps_needed": 195.6252950232675
+            },
+            {
+              "pair": [
+                "claude-sonnet-5",
+                "gpt-5.6-luna"
+              ],
+              "n_obs": 20,
+              "mean_diff": -0.0325,
+              "sd": 0.09497229512918633,
+              "obs_needed": 67.02469089135306,
+              "reps_needed": 6.702469089135306
+            },
+            {
+              "pair": [
+                "deepseek-v4-pro",
+                "gpt-5.6-luna"
+              ],
+              "n_obs": 20,
+              "mean_diff": -0.025,
+              "sd": 0.0835085876453812,
+              "obs_needed": 87.57697393345715,
+              "reps_needed": 8.757697393345715
+            }
+          ],
+          "identical_pairs": 1,
+          "max_paid_reps_needed": 195.6252950232675,
+          "min_paid_reps_needed": 6.702469089135306,
+          "contrast_weakest": {
+            "pair": [
+              "claude-haiku-4-5-20251001",
+              "llama3.2"
+            ],
+            "n_obs": 20,
+            "mean_diff": 0.02,
+            "sd": 0.0714511242591377,
+            "obs_needed": 100.17649140973283,
+            "reps_needed": 10.017649140973283
+          }
+        }
+      },
+      "paid-gpt": {
+        "models": [
+          {
+            "model": "claude-haiku-4-5-20251001",
+            "n": 20,
+            "mean_score": 1.0,
+            "score_ci_lo": 1.0,
+            "score_ci_hi": 1.0,
+            "passes": 20,
+            "pass_rate": 1.0,
+            "cost_per_pass_usd": 0.000596,
+            "mean_cost_usd": 0.000596,
+            "total_cost_usd": 0.01192,
+            "mean_latency_ms": 1501.5782520524226,
+            "lat_p50_ms": 1525.156229516142,
+            "lat_p95_ms": 1903.2322729050065,
+            "mean_ttft_ms": 783.1347749030101,
+            "mean_tokens_in": 33.0,
+            "mean_tokens_out": 112.6
+          },
+          {
+            "model": "deepseek-v4-pro",
+            "n": 20,
+            "mean_score": 1.0,
+            "score_ci_lo": 1.0,
+            "score_ci_hi": 1.0,
+            "passes": 20,
+            "pass_rate": 1.0,
+            "cost_per_pass_usd": 0.00014194050000000002,
+            "mean_cost_usd": 0.00014194050000000002,
+            "total_cost_usd": 0.00283881,
+            "mean_latency_ms": 2797.3462188994745,
+            "lat_p50_ms": 2372.511104491423,
+            "lat_p95_ms": 4312.508702391645,
+            "mean_ttft_ms": 2510.008545848541,
+            "mean_tokens_in": 106.6,
+            "mean_tokens_out": 109.85
+          },
+          {
+            "model": "gpt-5.6-luna",
+            "n": 20,
+            "mean_score": 1.0,
+            "score_ci_lo": 1.0,
+            "score_ci_hi": 1.0,
+            "passes": 20,
+            "pass_rate": 1.0,
+            "cost_per_pass_usd": 8.308e-05,
+            "mean_cost_usd": 8.308e-05,
+            "total_cost_usd": 0.0016615999999999998,
+            "mean_latency_ms": 1393.7519520506612,
+            "lat_p50_ms": 1244.0469585126266,
+            "lat_p95_ms": 2110.0301330094226,
+            "mean_ttft_ms": 1202.3974166528205,
+            "mean_tokens_in": 29.3,
+            "mean_tokens_out": 64.35
+          },
+          {
+            "model": "claude-sonnet-5",
+            "n": 20,
+            "mean_score": 0.9974999999999999,
+            "score_ci_lo": 0.9924999999999999,
+            "score_ci_hi": 1.0,
+            "passes": 20,
+            "pass_rate": 1.0,
+            "cost_per_pass_usd": 0.002539,
+            "mean_cost_usd": 0.002539,
+            "total_cost_usd": 0.05078,
+            "mean_latency_ms": 4164.15249989368,
+            "lat_p50_ms": 3611.3146874849917,
+            "lat_p95_ms": 6651.48837914021,
+            "mean_ttft_ms": 1984.9617457482964,
+            "mean_tokens_in": 39.0,
+            "mean_tokens_out": 246.1
+          },
+          {
+            "model": "llama3.2",
+            "n": 20,
+            "mean_score": 0.9025000000000001,
+            "score_ci_lo": 0.8074999999999999,
+            "score_ci_hi": 0.9849999999999998,
+            "passes": 17,
+            "pass_rate": 0.85,
+            "cost_per_pass_usd": 0.0,
+            "mean_cost_usd": 0.0,
+            "total_cost_usd": 0.0,
+            "mean_latency_ms": 5655.664818754303,
+            "lat_p50_ms": 5728.085895490949,
+            "lat_p95_ms": 8139.746320781705,
+            "mean_ttft_ms": 442.5167061985121,
+            "mean_tokens_in": 48.4,
+            "mean_tokens_out": 111.6
+          }
+        ],
+        "paired": {
+          "baseline": "claude-haiku-4-5-20251001",
+          "diffs": [
+            {
+              "model": "deepseek-v4-pro",
+              "n_pairs": 20,
+              "mean_diff": 0.0,
+              "ci_lo": 0.0,
+              "ci_hi": 0.0
+            },
+            {
+              "model": "gpt-5.6-luna",
+              "n_pairs": 20,
+              "mean_diff": 0.0,
+              "ci_lo": 0.0,
+              "ci_hi": 0.0
+            },
+            {
+              "model": "claude-sonnet-5",
+              "n_pairs": 20,
+              "mean_diff": 0.0025000000000000022,
+              "ci_lo": 0.0,
+              "ci_hi": 0.007500000000000007
+            },
+            {
+              "model": "llama3.2",
+              "n_pairs": 20,
+              "mean_diff": 0.0975,
+              "ci_lo": 0.017500000000000005,
+              "ci_hi": 0.19250000000000003
+            }
+          ]
+        },
+        "separation": {
+          "n_items": 10,
+          "paid_pairs": [
+            {
+              "pair": [
+                "claude-haiku-4-5-20251001",
+                "claude-sonnet-5"
+              ],
+              "n_obs": 20,
+              "mean_diff": 0.0025000000000000022,
+              "sd": 0.011180339887498959,
+              "obs_needed": 156.9775947863855,
+              "reps_needed": 15.69775947863855
+            },
+            {
+              "pair": [
+                "claude-haiku-4-5-20251001",
+                "deepseek-v4-pro"
+              ],
+              "n_obs": 20,
+              "mean_diff": 0.0,
+              "sd": 0.0,
+              "obs_needed": null,
+              "reps_needed": null
+            },
+            {
+              "pair": [
+                "claude-haiku-4-5-20251001",
+                "gpt-5.6-luna"
+              ],
+              "n_obs": 20,
+              "mean_diff": 0.0,
+              "sd": 0.0,
+              "obs_needed": null,
+              "reps_needed": null
+            },
+            {
+              "pair": [
+                "claude-sonnet-5",
+                "deepseek-v4-pro"
+              ],
+              "n_obs": 20,
+              "mean_diff": -0.0025000000000000022,
+              "sd": 0.011180339887498959,
+              "obs_needed": 156.9775947863855,
+              "reps_needed": 15.69775947863855
+            },
+            {
+              "pair": [
+                "claude-sonnet-5",
+                "gpt-5.6-luna"
+              ],
+              "n_obs": 20,
+              "mean_diff": -0.0025000000000000022,
+              "sd": 0.011180339887498959,
+              "obs_needed": 156.9775947863855,
+              "reps_needed": 15.69775947863855
+            },
+            {
+              "pair": [
+                "deepseek-v4-pro",
+                "gpt-5.6-luna"
+              ],
+              "n_obs": 20,
+              "mean_diff": 0.0,
+              "sd": 0.0,
+              "obs_needed": null,
+              "reps_needed": null
+            }
+          ],
+          "identical_pairs": 3,
+          "max_paid_reps_needed": 15.69775947863855,
+          "min_paid_reps_needed": 15.69775947863855,
+          "contrast_weakest": {
+            "pair": [
+              "claude-haiku-4-5-20251001",
+              "llama3.2"
+            ],
+            "n_obs": 20,
+            "mean_diff": 0.0975,
+            "sd": 0.20613932437221089,
+            "obs_needed": 35.08489168224727,
+            "reps_needed": 3.5084891682247266
+          }
+        }
+      }
+    }
+  },
+  "pairwise": {
+    "judge_models": {
+      "free-local": "llama3.2",
+      "paid-gpt": "gpt-5.6-luna"
+    },
+    "anchor": "paid-gpt",
+    "views": {
+      "easy": {
+        "free-local": {
+          "standings": [
+            {
+              "model": "claude-sonnet-5",
+              "games": 40,
+              "wins": 24,
+              "losses": 1,
+              "genuine_ties": 0,
+              "flips": 15,
+              "win_rate": 0.7875,
+              "elo": 1227.5566512301232
+            },
+            {
+              "model": "claude-haiku-4-5-20251001",
+              "games": 40,
+              "wins": 13,
+              "losses": 8,
+              "genuine_ties": 1,
+              "flips": 18,
+              "win_rate": 0.5625,
+              "elo": 1043.6577877700272
+            },
+            {
+              "model": "llama3.2",
+              "games": 40,
+              "wins": 7,
+              "losses": 13,
+              "genuine_ties": 0,
+              "flips": 20,
+              "win_rate": 0.425,
+              "elo": 947.4884341442724
+            },
+            {
+              "model": "deepseek-v4-pro",
+              "games": 40,
+              "wins": 6,
+              "losses": 14,
+              "genuine_ties": 1,
+              "flips": 19,
+              "win_rate": 0.4,
+              "elo": 929.5634963777276
+            },
+            {
+              "model": "gpt-5.6-luna",
+              "games": 40,
+              "wins": 4,
+              "losses": 18,
+              "genuine_ties": 0,
+              "flips": 18,
+              "win_rate": 0.325,
+              "elo": 873.0318352591398
+            }
+          ],
+          "flip_rate": 0.45,
+          "n_flips": 45,
+          "first_answer_wins": 42,
+          "first_answer_bias": 0.9333333333333333,
+          "absolute_order": [
+            "claude-haiku-4-5-20251001",
+            "deepseek-v4-pro",
+            "gpt-5.6-luna",
+            "claude-sonnet-5",
+            "llama3.2"
+          ],
+          "pairwise_order": [
+            "claude-sonnet-5",
+            "claude-haiku-4-5-20251001",
+            "llama3.2",
+            "deepseek-v4-pro",
+            "gpt-5.6-luna"
+          ],
+          "kendall_tau": 0.0
+        },
+        "paid-gpt": {
+          "standings": [
+            {
+              "model": "deepseek-v4-pro",
+              "games": 40,
+              "wins": 11,
+              "losses": 5,
+              "genuine_ties": 16,
+              "flips": 8,
+              "win_rate": 0.575,
+              "elo": 1052.5115658557277
+            },
+            {
+              "model": "gpt-5.6-luna",
+              "games": 40,
+              "wins": 12,
+              "losses": 7,
+              "genuine_ties": 15,
+              "flips": 6,
+              "win_rate": 0.5625,
+              "elo": 1043.6577877700272
+            },
+            {
+              "model": "claude-sonnet-5",
+              "games": 40,
+              "wins": 14,
+              "losses": 11,
+              "genuine_ties": 8,
+              "flips": 7,
+              "win_rate": 0.5375,
+              "elo": 1026.1066926050366
+            },
+            {
+              "model": "claude-haiku-4-5-20251001",
+              "games": 40,
+              "wins": 11,
+              "losses": 10,
+              "genuine_ties": 10,
+              "flips": 9,
+              "win_rate": 0.5125,
+              "elo": 1008.6876998772944
+            },
+            {
+              "model": "llama3.2",
+              "games": 40,
+              "wins": 3,
+              "losses": 18,
+              "genuine_ties": 11,
+              "flips": 8,
+              "win_rate": 0.3125,
+              "elo": 863.0309276711175
+            }
+          ],
+          "flip_rate": 0.19,
+          "n_flips": 19,
+          "first_answer_wins": 2,
+          "first_answer_bias": 0.10526315789473684,
+          "absolute_order": [
+            "claude-haiku-4-5-20251001",
+            "deepseek-v4-pro",
+            "gpt-5.6-luna",
+            "claude-sonnet-5",
+            "llama3.2"
+          ],
+          "pairwise_order": [
+            "deepseek-v4-pro",
+            "gpt-5.6-luna",
+            "claude-sonnet-5",
+            "claude-haiku-4-5-20251001",
+            "llama3.2"
+          ],
+          "kendall_tau": 0.4
+        }
+      },
+      "adversarial": {
+        "free-local": {
+          "standings": [
+            {
+              "model": "claude-sonnet-5",
+              "games": 40,
+              "wins": 24,
+              "losses": 2,
+              "genuine_ties": 0,
+              "flips": 14,
+              "win_rate": 0.775,
+              "elo": 1214.8476737579792
+            },
+            {
+              "model": "claude-haiku-4-5-20251001",
+              "games": 40,
+              "wins": 21,
+              "losses": 5,
+              "genuine_ties": 0,
+              "flips": 14,
+              "win_rate": 0.7,
+              "elo": 1147.1907141178376
+            },
+            {
+              "model": "llama3.2",
+              "games": 40,
+              "wins": 14,
+              "losses": 13,
+              "genuine_ties": 0,
+              "flips": 13,
+              "win_rate": 0.5125,
+              "elo": 1008.6876998772944
+            },
+            {
+              "model": "gpt-5.6-luna",
+              "games": 40,
+              "wins": 5,
+              "losses": 22,
+              "genuine_ties": 0,
+              "flips": 13,
+              "win_rate": 0.2875,
+              "elo": 842.3411921380406
+            },
+            {
+              "model": "deepseek-v4-pro",
+              "games": 40,
+              "wins": 3,
+              "losses": 25,
+              "genuine_ties": 0,
+              "flips": 12,
+              "win_rate": 0.225,
+              "elo": 785.1523262420209
+            }
+          ],
+          "flip_rate": 0.33,
+          "n_flips": 33,
+          "first_answer_wins": 28,
+          "first_answer_bias": 0.8484848484848485,
+          "absolute_order": [
+            "claude-haiku-4-5-20251001",
+            "deepseek-v4-pro",
+            "gpt-5.6-luna",
+            "claude-sonnet-5",
+            "llama3.2"
+          ],
+          "pairwise_order": [
+            "claude-sonnet-5",
+            "claude-haiku-4-5-20251001",
+            "llama3.2",
+            "gpt-5.6-luna",
+            "deepseek-v4-pro"
+          ],
+          "kendall_tau": -0.2
+        },
+        "paid-gpt": {
+          "standings": [
+            {
+              "model": "claude-haiku-4-5-20251001",
+              "games": 40,
+              "wins": 11,
+              "losses": 2,
+              "genuine_ties": 19,
+              "flips": 8,
+              "win_rate": 0.6125,
+              "elo": 1079.5337544776964
+            },
+            {
+              "model": "claude-sonnet-5",
+              "games": 40,
+              "wins": 10,
+              "losses": 3,
+              "genuine_ties": 15,
+              "flips": 12,
+              "win_rate": 0.5875,
+              "elo": 1061.433567223132
+            },
+            {
+              "model": "gpt-5.6-luna",
+              "games": 40,
+              "wins": 9,
+              "losses": 6,
+              "genuine_ties": 14,
+              "flips": 11,
+              "win_rate": 0.5375,
+              "elo": 1026.1066926050366
+            },
+            {
+              "model": "deepseek-v4-pro",
+              "games": 40,
+              "wins": 7,
+              "losses": 11,
+              "genuine_ties": 14,
+              "flips": 8,
+              "win_rate": 0.45,
+              "elo": 965.1399297124399
+            },
+            {
+              "model": "llama3.2",
+              "games": 40,
+              "wins": 3,
+              "losses": 18,
+              "genuine_ties": 12,
+              "flips": 7,
+              "win_rate": 0.3125,
+              "elo": 863.0309276711175
+            }
+          ],
+          "flip_rate": 0.23,
+          "n_flips": 23,
+          "first_answer_wins": 4,
+          "first_answer_bias": 0.17391304347826086,
+          "absolute_order": [
+            "claude-haiku-4-5-20251001",
+            "deepseek-v4-pro",
+            "gpt-5.6-luna",
+            "claude-sonnet-5",
+            "llama3.2"
+          ],
+          "pairwise_order": [
+            "claude-haiku-4-5-20251001",
+            "claude-sonnet-5",
+            "gpt-5.6-luna",
+            "deepseek-v4-pro",
+            "llama3.2"
+          ],
+          "kendall_tau": 0.4
+        }
+      }
+    }
+  },
+  "candidates": {
+    "token_efficiency": [
+      {
+        "model": "gpt-5.6-luna",
+        "mean_tokens_in": 22.45,
+        "mean_tokens_out": 64.85
+      },
+      {
+        "model": "claude-haiku-4-5-20251001",
+        "mean_tokens_in": 25.1,
+        "mean_tokens_out": 108.25
+      },
+      {
+        "model": "claude-sonnet-5",
+        "mean_tokens_in": 29.6,
+        "mean_tokens_out": 242.325
+      },
+      {
+        "model": "llama3.2",
+        "mean_tokens_in": 41.5,
+        "mean_tokens_out": 120.625
+      },
+      {
+        "model": "deepseek-v4-pro",
+        "mean_tokens_in": 99.6,
+        "mean_tokens_out": 111.275
+      }
+    ],
+    "ttft": [
+      {
+        "model": "llama3.2",
+        "n_ttft": 40,
+        "mean_ttft_ms": 474.9913468978775,
+        "p50_ttft_ms": 440.71235400042497
+      },
+      {
+        "model": "claude-haiku-4-5-20251001",
+        "n_ttft": 40,
+        "mean_ttft_ms": 802.7351968274161,
+        "p50_ttft_ms": 750.1074375031749
+      },
+      {
+        "model": "gpt-5.6-luna",
+        "n_ttft": 40,
+        "mean_ttft_ms": 1058.9834228507243,
+        "p50_ttft_ms": 977.6839380065212
+      },
+      {
+        "model": "claude-sonnet-5",
+        "n_ttft": 40,
+        "mean_ttft_ms": 1768.3446500035643,
+        "p50_ttft_ms": 1850.356583498069
+      },
+      {
+        "model": "deepseek-v4-pro",
+        "n_ttft": 40,
+        "mean_ttft_ms": 2189.741104200948,
+        "p50_ttft_ms": 1920.0733335019322
+      }
+    ],
+    "prefix_caching": {
+      "distinct_prompts": 20,
+      "common_prefix_chars": 0,
+      "applies": false
+    },
+    "batch_lane": {
+      "model": "claude-haiku-4-5-20251001",
+      "batch_id": "msgbatch_01UdcJXAjPaJckQYoGqHnpkv",
+      "n_cells": 20,
+      "interactive_cost_per_capture_usd": 0.00052045,
+      "batch_cost_per_capture_usd": 0.000272475,
+      "cost_ratio_batch_over_interactive": 0.523537323470074,
+      "interactive_mean_latency_ms": 1673.5768042504787,
+      "batch_turnaround_ms": 48996.00562499836,
+      "interactive_mean_judge_score": 0.9649999999999999,
+      "batch_mean_judge_score": 0.9625,
+      "quality_delta_batch_minus_interactive": -0.0024999999999998357
+    },
+    "semantic_cache": {
+      "embed_model": "nomic-embed-text",
+      "n_seeds": 4,
+      "n_probes": 12,
+      "threshold_sweep": [
+        {
+          "threshold": 0.75,
+          "true_hits": 8,
+          "false_hits": 4,
+          "misses": 0
+        },
+        {
+          "threshold": 0.8,
+          "true_hits": 8,
+          "false_hits": 3,
+          "misses": 1
+        },
+        {
+          "threshold": 0.85,
+          "true_hits": 7,
+          "false_hits": 3,
+          "misses": 2
+        },
+        {
+          "threshold": 0.9,
+          "true_hits": 5,
+          "false_hits": 2,
+          "misses": 5
+        },
+        {
+          "threshold": 0.95,
+          "true_hits": 3,
+          "false_hits": 2,
+          "misses": 7
+        }
+      ],
+      "max_false_hits": 4,
+      "has_false_hits_at_every_threshold": true
+    }
+  },
+  "spend": {
+    "total_answer_cost_usd": 0.13084980999999996
+  }
+}

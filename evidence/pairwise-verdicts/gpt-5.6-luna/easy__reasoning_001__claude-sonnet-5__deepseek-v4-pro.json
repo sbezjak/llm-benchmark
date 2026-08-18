@@ -1,0 +1,12 @@
+{
+  "model_a": "claude-sonnet-5",
+  "model_b": "deepseek-v4-pro",
+  "order1_winner": "TIE",
+  "order2_winner": "TIE",
+  "order1_reasoning": "Both answers accurately explain the core distinction, provide appropriate examples and consequences, and are similarly relevant, with only minor simplifications that do not materially affect correctness.",
+  "order2_reasoning": "Both answers correctly explain the main distinction and provide accurate examples and consequences, with only minor simplifications that do not make either meaningfully better.",
+  "outcome": "genuine_tie",
+  "winner": null,
+  "suite": "easy",
+  "item_id": "reasoning_001"
+}

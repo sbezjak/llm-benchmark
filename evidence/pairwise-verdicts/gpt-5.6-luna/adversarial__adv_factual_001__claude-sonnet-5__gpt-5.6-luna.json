@@ -1,0 +1,12 @@
+{
+  "model_a": "claude-sonnet-5",
+  "model_b": "gpt-5.6-luna",
+  "order1_winner": "gpt-5.6-luna",
+  "order2_winner": "gpt-5.6-luna",
+  "order1_reasoning": "Both answers correctly identify Mauna Kea and give essentially accurate base-to-summit measurements, but B is more concise and directly relevant without A's unnecessary and somewhat misleading comparison of Everest's base-to-summit height.",
+  "order2_reasoning": "Both correctly identify Mauna Kea and give accurate approximate measurements, but A is more concise and directly relevant without unnecessary comparison or subjective commentary.",
+  "outcome": "win",
+  "winner": "gpt-5.6-luna",
+  "suite": "adversarial",
+  "item_id": "adv_factual_001"
+}

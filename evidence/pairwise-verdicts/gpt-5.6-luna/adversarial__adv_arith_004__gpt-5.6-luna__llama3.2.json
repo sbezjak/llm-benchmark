@@ -1,0 +1,12 @@
+{
+  "model_a": "gpt-5.6-luna",
+  "model_b": "llama3.2",
+  "order1_winner": "llama3.2",
+  "order2_winner": "llama3.2",
+  "order1_reasoning": "Both answers are correct and directly answer the question, but Answer B provides a clear calculation while remaining relevant.",
+  "order2_reasoning": "Both answers are correct and directly answer the question, but Answer A provides a clear calculation while Answer B only states the result.",
+  "outcome": "win",
+  "winner": "llama3.2",
+  "suite": "adversarial",
+  "item_id": "adv_arith_004"
+}

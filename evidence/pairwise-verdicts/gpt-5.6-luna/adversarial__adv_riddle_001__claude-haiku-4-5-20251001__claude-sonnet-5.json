@@ -1,0 +1,12 @@
+{
+  "model_a": "claude-haiku-4-5-20251001",
+  "model_b": "claude-sonnet-5",
+  "order1_winner": "claude-haiku-4-5-20251001",
+  "order2_winner": "claude-haiku-4-5-20251001",
+  "order1_reasoning": "Both correctly identify glass as the main material, but A is more concise and directly relevant while B adds unnecessary elaboration and an irrelevant analogy.",
+  "order2_reasoning": "Both answers correctly identify glass and explain the wordplay, but B is more concise and directly relevant to the simple riddle.",
+  "outcome": "win",
+  "winner": "claude-haiku-4-5-20251001",
+  "suite": "adversarial",
+  "item_id": "adv_riddle_001"
+}

@@ -1,0 +1,12 @@
+{
+  "model_a": "deepseek-v4-pro",
+  "model_b": "gpt-5.6-luna",
+  "order1_winner": "gpt-5.6-luna",
+  "order2_winner": "gpt-5.6-luna",
+  "order1_reasoning": "Both answers correctly identify Mauna Kea and explain the base-to-summit measurement, but B provides more precise figures and useful context about the portion above sea level.",
+  "order2_reasoning": "Both answers correctly identify Mauna Kea and explain that its base-to-summit height exceeds 10,000 meters, with Answer A providing more precise supporting measurements.",
+  "outcome": "win",
+  "winner": "gpt-5.6-luna",
+  "suite": "adversarial",
+  "item_id": "adv_factual_001"
+}

@@ -1,0 +1,12 @@
+{
+  "model_a": "claude-sonnet-5",
+  "model_b": "llama3.2",
+  "order1_winner": "claude-sonnet-5",
+  "order2_winner": "llama3.2",
+  "order1_reasoning": "Answer A provides a clearer definition of the event horizon and its role in preventing escape, making it more precise and relevant.",
+  "order2_reasoning": "Answer A provides more detail about the nature of the dense and massive object causing the strong gravitational field, making it a more comprehensive explanation.",
+  "outcome": "flip",
+  "winner": null,
+  "suite": "easy",
+  "item_id": "definition_002"
+}

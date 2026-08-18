@@ -1,0 +1,70 @@
+# Semantic-cache probe experiment.
+#
+# NOT the golden set. This tiny set exists to make the semantic cache produce a
+# REAL result instead of a vacuous one: the golden set's 20 standalone questions
+# never collide, so a naive cache demo has a ~0 hit rate and proves nothing.
+#
+# Shape:
+#   seeds     - canonical (question -> answer) pairs; these get embedded and cached.
+#   probes    - queries put to the seeded cache, each labelled:
+#     paraphrase - the SAME question reworded. Should hit its seed and the cached
+#                  answer is correct -> a TRUE hit (the cost/latency win).
+#     trap       - a near-NEIGHBOUR question whose correct answer DIFFERS. If its
+#                  vector crosses the threshold it gets served the seed's stale
+#                  answer -> a FALSE hit. The false hit is the finding.
+#
+# Trap ground truth (that a trap truly deserves a different answer than its
+# neighbour seed) is deliberately uncontroversial here - capitals, element
+# symbols, two distinct "tallest mountain" definitions - so the finding turns on
+# the cache's similarity threshold, not on a debatable answer key.
+
+seeds:
+  - question: "What is the capital of Slovenia?"
+    answer: "Ljubljana"
+  - question: "What is the highest mountain above sea level?"
+    answer: "Mount Everest"
+  - question: "What is the chemical symbol for gold?"
+    answer: "Au"
+  - question: "Who wrote the play Romeo and Juliet?"
+    answer: "William Shakespeare"
+
+probes:
+  # --- paraphrases: should hit, answer is correct (true hits) ---
+  - query: "Which city is the capital of Slovenia?"
+    expected: "Ljubljana"
+    kind: paraphrase
+  - query: "Slovenia's capital city is what?"
+    expected: "Ljubljana"
+    kind: paraphrase
+  - query: "What's the tallest mountain on Earth measured from sea level?"
+    expected: "Mount Everest"
+    kind: paraphrase
+  - query: "Which mountain has the highest elevation above sea level?"
+    expected: "Mount Everest"
+    kind: paraphrase
+  - query: "What is gold's chemical symbol?"
+    expected: "Au"
+    kind: paraphrase
+  - query: "On the periodic table, what symbol represents gold?"
+    expected: "Au"
+    kind: paraphrase
+  - query: "Who is the author of Romeo and Juliet?"
+    expected: "William Shakespeare"
+    kind: paraphrase
+  - query: "Romeo and Juliet was written by whom?"
+    expected: "William Shakespeare"
+    kind: paraphrase
+
+  # --- traps: near-neighbours with a DIFFERENT correct answer (false-hit risk) ---
+  - query: "What is the capital of Slovakia?"
+    expected: "Bratislava"
+    kind: trap
+  - query: "What is the tallest mountain measured from base to summit?"
+    expected: "Mauna Kea"
+    kind: trap
+  - query: "What is the chemical symbol for silver?"
+    expected: "Ag"
+    kind: trap
+  - query: "Who wrote the play Romeo and Ethel the Pirate's Daughter?"
+    expected: "a fictional play (from the film Shakespeare in Love)"
+    kind: trap

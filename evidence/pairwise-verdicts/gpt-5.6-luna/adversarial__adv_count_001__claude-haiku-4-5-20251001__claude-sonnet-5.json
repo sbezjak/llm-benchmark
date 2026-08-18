@@ -1,0 +1,12 @@
+{
+  "model_a": "claude-haiku-4-5-20251001",
+  "model_b": "claude-sonnet-5",
+  "order1_winner": "TIE",
+  "order2_winner": "TIE",
+  "order1_reasoning": "Both answers correctly count three occurrences of the letter 'r' and clearly identify their positions, so they are equally good.",
+  "order2_reasoning": "Both answers correctly count the three occurrences of 'r' and provide accurate, relevant explanations, so neither is better.",
+  "outcome": "genuine_tie",
+  "winner": null,
+  "suite": "adversarial",
+  "item_id": "adv_count_001"
+}

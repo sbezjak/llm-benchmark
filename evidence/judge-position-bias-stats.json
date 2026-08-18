@@ -1,0 +1,66 @@
+{
+  "arms": {
+    "free-local": {
+      "model": "llama3.2",
+      "suites": {
+        "adversarial": {
+          "n_pairs": 100,
+          "n_flips": 33,
+          "flip_rate": 0.33,
+          "first_answer_bias_n": 28,
+          "first_answer_bias_rate": 0.8485,
+          "answer_a_opener_n": 56,
+          "answer_a_opener_total": 66,
+          "answer_a_opener_rate": 0.8485
+        },
+        "easy": {
+          "n_pairs": 100,
+          "n_flips": 45,
+          "flip_rate": 0.45,
+          "first_answer_bias_n": 42,
+          "first_answer_bias_rate": 0.9333,
+          "answer_a_opener_n": 84,
+          "answer_a_opener_total": 90,
+          "answer_a_opener_rate": 0.9333
+        }
+      }
+    },
+    "paid-gpt": {
+      "model": "gpt-5.6-luna",
+      "suites": {
+        "adversarial": {
+          "n_pairs": 100,
+          "n_flips": 23,
+          "flip_rate": 0.23,
+          "first_answer_bias_n": 4,
+          "first_answer_bias_rate": 0.1739,
+          "answer_a_opener_n": 2,
+          "answer_a_opener_total": 46,
+          "answer_a_opener_rate": 0.0435
+        },
+        "easy": {
+          "n_pairs": 100,
+          "n_flips": 19,
+          "flip_rate": 0.19,
+          "first_answer_bias_n": 2,
+          "first_answer_bias_rate": 0.1053,
+          "answer_a_opener_n": 2,
+          "answer_a_opener_total": 38,
+          "answer_a_opener_rate": 0.0526
+        }
+      }
+    }
+  },
+  "self_preference_free_judge": {
+    "adversarial": {
+      "rank": 3,
+      "of": 5,
+      "win_rate": 0.5125
+    },
+    "easy": {
+      "rank": 3,
+      "of": 5,
+      "win_rate": 0.425
+    }
+  }
+}

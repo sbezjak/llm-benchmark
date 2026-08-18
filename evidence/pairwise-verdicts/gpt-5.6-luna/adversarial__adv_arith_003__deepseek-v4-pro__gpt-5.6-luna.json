@@ -1,0 +1,12 @@
+{
+  "model_a": "deepseek-v4-pro",
+  "model_b": "gpt-5.6-luna",
+  "order1_winner": "TIE",
+  "order2_winner": "TIE",
+  "order1_reasoning": "Both answers correctly and clearly calculate the sequential discounts to reach $54, with no meaningful difference in quality.",
+  "order2_reasoning": "Both answers correctly and clearly calculate the successive discounts to reach the final price of $54, with no meaningful difference in quality.",
+  "outcome": "genuine_tie",
+  "winner": null,
+  "suite": "adversarial",
+  "item_id": "adv_arith_003"
+}

@@ -1,0 +1,12 @@
+{
+  "model_a": "claude-haiku-4-5-20251001",
+  "model_b": "deepseek-v4-pro",
+  "order1_winner": "claude-haiku-4-5-20251001",
+  "order2_winner": "claude-haiku-4-5-20251001",
+  "order1_reasoning": "Answer A is better because it provides the full calculation steps and explanation for arriving at the correct answer, whereas Answer B only repeats the final result without context.",
+  "order2_reasoning": "Answer B is more detailed and shows the calculation process, making it more relevant and transparent.",
+  "outcome": "win",
+  "winner": "claude-haiku-4-5-20251001",
+  "suite": "adversarial",
+  "item_id": "adv_arith_004"
+}

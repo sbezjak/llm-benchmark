@@ -1,0 +1,19 @@
+2026-08-18 16:35:02,319 INFO llm_benchmark.sweep report-only: loaded 100 cached captures (no provider call)
+2026-08-18 16:35:02,440 INFO llm_benchmark.sweep cost / latency / quality (100 captures, total spend $0.06365):
+model                          n    mean$/q    total$    lat_ms   ttft_ms  out_tok  score   pass
+------------------------------------------------------------------------------------------------
+deepseek-v4-pro               20   0.000138   0.00277      2713      1869    112.7  0.970   100%
+claude-haiku-4-5-20251001     20   0.000537   0.01073      1597       822    103.9  0.967   100%
+gpt-5.6-luna                  20   0.000082   0.00163      1323       916     65.3  0.962    95%
+claude-sonnet-5               20   0.002426   0.04852      4093      1552    238.6  0.937    95%
+llama3.2                      20   0.000000   0.00000      7859       507    129.7  0.922    95%
+2026-08-18 16:35:02,440 INFO llm_benchmark.sweep benchmark validity (score CI / tail latency / cost-per-pass):
+model                          n  score           95% CI   p50_ms   p95_ms   pass     $/pass
+--------------------------------------------------------------------------------------------
+deepseek-v4-pro               20  0.970    [0.948,0.988]     1949     5987     20   0.000138
+claude-haiku-4-5-20251001     20  0.967    [0.950,0.982]      979     3379     20   0.000537
+gpt-5.6-luna                  20  0.962    [0.920,0.992]      840     3484     19   0.000086
+claude-sonnet-5               20  0.937    [0.897,0.967]     3471     7302     19   0.002554
+llama3.2                      20  0.922    [0.872,0.965]     3211    26081     19   0.000000
+2026-08-18 16:35:02,628 INFO llm_benchmark.sweep wrote report -> reports/report-golden-sweep-2026-08-17.html
+2026-08-18 16:35:05,172 INFO llm_benchmark.tracing langfuse: exported 100 traces

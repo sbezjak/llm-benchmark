@@ -1,0 +1,12 @@
+{
+  "model_a": "claude-haiku-4-5-20251001",
+  "model_b": "llama3.2",
+  "order1_winner": "TIE",
+  "order2_winner": "TIE",
+  "order1_reasoning": "Both answers correctly calculate the unit price and total cost, with equally clear and relevant explanations.",
+  "order2_reasoning": "Both answers correctly calculate the unit price and total cost with clear, relevant steps, so neither is better overall.",
+  "outcome": "genuine_tie",
+  "winner": null,
+  "suite": "adversarial",
+  "item_id": "adv_arith_002"
+}

@@ -1,0 +1,12 @@
+{
+  "model_a": "deepseek-v4-pro",
+  "model_b": "gpt-5.6-luna",
+  "order1_winner": "TIE",
+  "order2_winner": "TIE",
+  "order1_reasoning": "Both answers correctly state that there are 8 planets and list the same planets, so they are equally good.",
+  "order2_reasoning": "Both answers are equally correct and relevant, stating that there are eight planets and listing them accurately.",
+  "outcome": "genuine_tie",
+  "winner": null,
+  "suite": "easy",
+  "item_id": "factual_004"
+}

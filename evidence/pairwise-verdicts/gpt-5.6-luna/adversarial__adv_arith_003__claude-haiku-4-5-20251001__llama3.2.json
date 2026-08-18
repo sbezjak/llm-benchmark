@@ -1,0 +1,12 @@
+{
+  "model_a": "claude-haiku-4-5-20251001",
+  "model_b": "llama3.2",
+  "order1_winner": "TIE",
+  "order2_winner": "TIE",
+  "order1_reasoning": "Both answers correctly apply the successive discounts and clearly arrive at the final price of $54, with neither offering a meaningful advantage over the other.",
+  "order2_reasoning": "Both answers correctly apply the sequential discounts and arrive at $54 with clear, relevant calculations.",
+  "outcome": "genuine_tie",
+  "winner": null,
+  "suite": "adversarial",
+  "item_id": "adv_arith_003"
+}

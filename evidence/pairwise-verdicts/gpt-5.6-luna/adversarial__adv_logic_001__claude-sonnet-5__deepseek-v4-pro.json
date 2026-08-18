@@ -1,0 +1,12 @@
+{
+  "model_a": "claude-sonnet-5",
+  "model_b": "deepseek-v4-pro",
+  "order1_winner": "claude-sonnet-5",
+  "order2_winner": "claude-sonnet-5",
+  "order1_reasoning": "Both answers correctly identify Durian as the heaviest, but Answer A provides clear supporting reasoning and the complete ordering.",
+  "order2_reasoning": "Both answers correctly identify Durian as the heaviest, but Answer B provides accurate supporting reasoning while remaining relevant.",
+  "outcome": "win",
+  "winner": "claude-sonnet-5",
+  "suite": "adversarial",
+  "item_id": "adv_logic_001"
+}

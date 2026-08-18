@@ -1,0 +1,12 @@
+{
+  "model_a": "claude-haiku-4-5-20251001",
+  "model_b": "gpt-5.6-luna",
+  "order1_winner": "gpt-5.6-luna",
+  "order2_winner": "claude-haiku-4-5-20251001",
+  "order1_reasoning": "Both answers correctly identify Mauna Kea and give accurate base-to-summit measurements, but B is more concise and directly focused on the question.",
+  "order2_reasoning": "Both answers correctly identify Mauna Kea and give essentially the same measurements, but B is slightly more informative by explaining why it exceeds Everest under this measurement.",
+  "outcome": "flip",
+  "winner": null,
+  "suite": "adversarial",
+  "item_id": "adv_factual_001"
+}

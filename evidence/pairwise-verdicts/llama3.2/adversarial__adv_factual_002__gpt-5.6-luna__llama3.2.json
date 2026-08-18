@@ -1,0 +1,12 @@
+{
+  "model_a": "gpt-5.6-luna",
+  "model_b": "llama3.2",
+  "order1_winner": "llama3.2",
+  "order2_winner": "gpt-5.6-luna",
+  "order1_reasoning": "Answer B is more correct and relevant as it accurately describes the Mediterranean Sea's unique characteristic of not having a direct land coastline.",
+  "order2_reasoning": "Answer B is more correct and relevant as it directly states the Sargasso Sea as the only sea without land coastline",
+  "outcome": "flip",
+  "winner": null,
+  "suite": "adversarial",
+  "item_id": "adv_factual_002"
+}

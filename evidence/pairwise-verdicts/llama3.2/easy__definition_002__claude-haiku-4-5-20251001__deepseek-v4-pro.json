@@ -1,0 +1,12 @@
+{
+  "model_a": "claude-haiku-4-5-20251001",
+  "model_b": "deepseek-v4-pro",
+  "order1_winner": "claude-haiku-4-5-20251001",
+  "order2_winner": "claude-haiku-4-5-20251001",
+  "order1_reasoning": "Answer A is more correct and relevant as it includes the term 'event horizon', which is a key concept in understanding black holes.",
+  "order2_reasoning": "Answer B is more accurate because it specifies the event horizon, which is a key concept in understanding black holes.",
+  "outcome": "win",
+  "winner": "claude-haiku-4-5-20251001",
+  "suite": "easy",
+  "item_id": "definition_002"
+}

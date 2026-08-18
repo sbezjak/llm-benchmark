@@ -1,0 +1,12 @@
+{
+  "model_a": "claude-haiku-4-5-20251001",
+  "model_b": "claude-sonnet-5",
+  "order1_winner": "claude-haiku-4-5-20251001",
+  "order2_winner": "claude-sonnet-5",
+  "order1_reasoning": "Answer A correctly orders the fruits from lightest to heaviest: Kiwi < Mango < Pomelo < Durian, making it more logical and clear than Answer B.",
+  "order2_reasoning": "Answer A is better because it correctly identifies Durian as the heaviest by combining the comparisons in a logical order (Kiwi < Mango < Pomelo < Durian), whereas Answer B incorrectly places Mango between Kiwi and Pomelo.",
+  "outcome": "flip",
+  "winner": null,
+  "suite": "adversarial",
+  "item_id": "adv_logic_001"
+}

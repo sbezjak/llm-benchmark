@@ -1,0 +1,12 @@
+{
+  "model_a": "claude-haiku-4-5-20251001",
+  "model_b": "claude-sonnet-5",
+  "order1_winner": "TIE",
+  "order2_winner": "TIE",
+  "order1_reasoning": "Both answers are correct and directly answer the question, though B adds a relevant explanation of the symbol\u2019s Latin origin.",
+  "order2_reasoning": "Both answers correctly and directly identify silver's chemical symbol as Ag, so neither is better overall.",
+  "outcome": "genuine_tie",
+  "winner": null,
+  "suite": "easy",
+  "item_id": "factual_002"
+}

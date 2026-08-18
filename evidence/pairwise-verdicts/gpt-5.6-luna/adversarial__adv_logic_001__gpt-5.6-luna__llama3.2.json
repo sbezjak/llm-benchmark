@@ -1,0 +1,12 @@
+{
+  "model_a": "gpt-5.6-luna",
+  "model_b": "llama3.2",
+  "order1_winner": "gpt-5.6-luna",
+  "order2_winner": "gpt-5.6-luna",
+  "order1_reasoning": "Answer A is fully correct and concise, while Answer B reaches the right conclusion but incorrectly orders Mango as heavier than Pomelo.",
+  "order2_reasoning": "Answer B is better because it gives the correct conclusion directly, while Answer A contains an incorrect ordering that places Mango above Pomelo.",
+  "outcome": "win",
+  "winner": "gpt-5.6-luna",
+  "suite": "adversarial",
+  "item_id": "adv_logic_001"
+}

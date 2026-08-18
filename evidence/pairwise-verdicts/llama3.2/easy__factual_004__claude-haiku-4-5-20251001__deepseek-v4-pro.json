@@ -1,0 +1,12 @@
+{
+  "model_a": "claude-haiku-4-5-20251001",
+  "model_b": "deepseek-v4-pro",
+  "order1_winner": "deepseek-v4-pro",
+  "order2_winner": "claude-haiku-4-5-20251001",
+  "order1_reasoning": "Answer B is more concise and directly states the correct number of planets without providing unnecessary details about Pluto's reclassification.",
+  "order2_reasoning": "Answer B is better because it provides the planets in order from the Sun, which is more relevant and useful information than just listing all 8 planets without context.",
+  "outcome": "flip",
+  "winner": null,
+  "suite": "easy",
+  "item_id": "factual_004"
+}

@@ -1,0 +1,12 @@
+{
+  "model_a": "deepseek-v4-pro",
+  "model_b": "gpt-5.6-luna",
+  "order1_winner": "deepseek-v4-pro",
+  "order2_winner": "gpt-5.6-luna",
+  "order1_reasoning": "Answer A provides additional context about the hydrogen-bonded crystalline structure, making it more informative and relevant.",
+  "order2_reasoning": "Answer A is more concise and directly addresses the hydrogen-bonded aspect of ice's structure.",
+  "outcome": "flip",
+  "winner": null,
+  "suite": "easy",
+  "item_id": "reasoning_002"
+}

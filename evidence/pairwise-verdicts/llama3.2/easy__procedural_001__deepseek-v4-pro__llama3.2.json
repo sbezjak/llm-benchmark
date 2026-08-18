@@ -1,0 +1,12 @@
+{
+  "model_a": "deepseek-v4-pro",
+  "model_b": "llama3.2",
+  "order1_winner": "deepseek-v4-pro",
+  "order2_winner": "llama3.2",
+  "order1_reasoning": "Answer A is more concise and directly uses the correct syntax for pytest's -m option",
+  "order2_reasoning": "Answer A is more correct and relevant because it explains the reasoning behind using the `-m` option correctly, while Answer B uses an invalid syntax.",
+  "outcome": "flip",
+  "winner": null,
+  "suite": "easy",
+  "item_id": "procedural_001"
+}

@@ -1,0 +1,12 @@
+{
+  "model_a": "deepseek-v4-pro",
+  "model_b": "llama3.2",
+  "order1_winner": "deepseek-v4-pro",
+  "order2_winner": "deepseek-v4-pro",
+  "order1_reasoning": "Answer A is fully correct and concise, while Answer B reaches the right conclusion but incorrectly orders Mango above Pomelo.",
+  "order2_reasoning": "Answer B is better because it gives the correct conclusion directly, while Answer A contains an incorrect ordering that places Mango above Pomelo despite the premise saying Mango is lighter than Pomelo.",
+  "outcome": "win",
+  "winner": "deepseek-v4-pro",
+  "suite": "adversarial",
+  "item_id": "adv_logic_001"
+}

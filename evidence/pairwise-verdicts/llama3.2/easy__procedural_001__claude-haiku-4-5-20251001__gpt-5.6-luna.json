@@ -1,0 +1,12 @@
+{
+  "model_a": "claude-haiku-4-5-20251001",
+  "model_b": "gpt-5.6-luna",
+  "order1_winner": "claude-haiku-4-5-20251001",
+  "order2_winner": "claude-haiku-4-5-20251001",
+  "order1_reasoning": "Answer A provides more detailed explanations and examples of using the 'or' marker in pytest, making it more informative and helpful.",
+  "order2_reasoning": "Answer B provides additional context and examples to clarify the usage of the 'or' keyword in pytest mark syntax.",
+  "outcome": "win",
+  "winner": "claude-haiku-4-5-20251001",
+  "suite": "easy",
+  "item_id": "procedural_001"
+}

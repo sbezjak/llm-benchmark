@@ -1,0 +1,12 @@
+{
+  "model_a": "claude-haiku-4-5-20251001",
+  "model_b": "gpt-5.6-luna",
+  "order1_winner": "gpt-5.6-luna",
+  "order2_winner": "TIE",
+  "order1_reasoning": "Both answers are correct, but B is slightly more precise because it states that escape becomes impossible after crossing the event horizon.",
+  "order2_reasoning": "Both answers accurately and concisely describe a black hole and correctly identify the event horizon as the boundary beyond which nothing, including light, can escape.",
+  "outcome": "flip",
+  "winner": null,
+  "suite": "easy",
+  "item_id": "definition_002"
+}

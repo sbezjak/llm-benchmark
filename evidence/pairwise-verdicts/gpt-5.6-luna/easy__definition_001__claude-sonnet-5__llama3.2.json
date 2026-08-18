@@ -1,0 +1,12 @@
+{
+  "model_a": "claude-sonnet-5",
+  "model_b": "llama3.2",
+  "order1_winner": "llama3.2",
+  "order2_winner": "llama3.2",
+  "order1_reasoning": "Both answers correctly identify AI as Artificial Intelligence, but Answer B is more concise and directly relevant to the simple question.",
+  "order2_reasoning": "Both answers correctly state that AI stands for Artificial Intelligence, but Answer A is more concise and directly relevant to the simple question.",
+  "outcome": "win",
+  "winner": "llama3.2",
+  "suite": "easy",
+  "item_id": "definition_001"
+}

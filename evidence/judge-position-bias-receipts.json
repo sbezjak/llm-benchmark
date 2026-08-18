@@ -1,0 +1,1328 @@
+[
+  {
+    "suite": "adversarial",
+    "item": "adv_arith_001",
+    "model_a": "claude-haiku-4-5-20251001",
+    "model_b": "claude-sonnet-5",
+    "order1": {
+      "shown_first": "claude-haiku-4-5-20251001",
+      "picked": "claude-haiku-4-5-20251001",
+      "reason": "Answer A is more detailed and clearly explains the steps taken to solve the problem, making it easier to follow and understand."
+    },
+    "order2": {
+      "shown_first": "claude-sonnet-5",
+      "picked": "claude-sonnet-5",
+      "reason": "Answer A provides more context and explanation for its solution, making it easier to understand the reasoning behind the correct answer."
+    },
+    "file": "evidence/pairwise-verdicts/llama3.2/adversarial__adv_arith_001__claude-haiku-4-5-20251001__claude-sonnet-5.json"
+  },
+  {
+    "suite": "adversarial",
+    "item": "adv_arith_001",
+    "model_a": "claude-haiku-4-5-20251001",
+    "model_b": "llama3.2",
+    "order1": {
+      "shown_first": "claude-haiku-4-5-20251001",
+      "picked": "claude-haiku-4-5-20251001",
+      "reason": "Answer A is more detailed and explicitly shows the steps of substitution, making it clearer and more transparent."
+    },
+    "order2": {
+      "shown_first": "llama3.2",
+      "picked": "llama3.2",
+      "reason": "Answer A is better because it uses algebraic notation and variable names (x) that are more descriptive and easier to understand than Answer B's numerical values."
+    },
+    "file": "evidence/pairwise-verdicts/llama3.2/adversarial__adv_arith_001__claude-haiku-4-5-20251001__llama3.2.json"
+  },
+  {
+    "suite": "adversarial",
+    "item": "adv_arith_001",
+    "model_a": "claude-sonnet-5",
+    "model_b": "llama3.2",
+    "order1": {
+      "shown_first": "claude-sonnet-5",
+      "picked": "claude-sonnet-5",
+      "reason": "Answer A is more detailed and provides the step-by-step mathematical process in a clear and concise manner."
+    },
+    "order2": {
+      "shown_first": "llama3.2",
+      "picked": "llama3.2",
+      "reason": "Answer A is more concise and directly addresses the problem without unnecessary explanations."
+    },
+    "file": "evidence/pairwise-verdicts/llama3.2/adversarial__adv_arith_001__claude-sonnet-5__llama3.2.json"
+  },
+  {
+    "suite": "adversarial",
+    "item": "adv_arith_001",
+    "model_a": "deepseek-v4-pro",
+    "model_b": "gpt-5.6-luna",
+    "order1": {
+      "shown_first": "deepseek-v4-pro",
+      "picked": "deepseek-v4-pro",
+      "reason": "Answer A is more concise and directly addresses the question without unnecessary elaboration."
+    },
+    "order2": {
+      "shown_first": "gpt-5.6-luna",
+      "picked": "gpt-5.6-luna",
+      "reason": "Answer A is more concise and directly states the cost of the ball without assuming it's correct"
+    },
+    "file": "evidence/pairwise-verdicts/llama3.2/adversarial__adv_arith_001__deepseek-v4-pro__gpt-5.6-luna.json"
+  },
+  {
+    "suite": "adversarial",
+    "item": "adv_arith_002",
+    "model_a": "claude-haiku-4-5-20251001",
+    "model_b": "deepseek-v4-pro",
+    "order1": {
+      "shown_first": "claude-haiku-4-5-20251001",
+      "picked": "claude-haiku-4-5-20251001",
+      "reason": "Answer A is better because it includes step-by-step instructions and explanations for the calculation process, making it more transparent and easier to understand."
+    },
+    "order2": {
+      "shown_first": "deepseek-v4-pro",
+      "picked": "deepseek-v4-pro",
+      "reason": "Answer A is more concise and directly addresses the question without unnecessary formatting"
+    },
+    "file": "evidence/pairwise-verdicts/llama3.2/adversarial__adv_arith_002__claude-haiku-4-5-20251001__deepseek-v4-pro.json"
+  },
+  {
+    "suite": "adversarial",
+    "item": "adv_arith_002",
+    "model_a": "claude-haiku-4-5-20251001",
+    "model_b": "llama3.2",
+    "order1": {
+      "shown_first": "claude-haiku-4-5-20251001",
+      "picked": "claude-haiku-4-5-20251001",
+      "reason": "Answer A is better because it presents the solution in a more concise and step-by-step manner, making it easier to follow and understand."
+    },
+    "order2": {
+      "shown_first": "llama3.2",
+      "picked": "llama3.2",
+      "reason": "Answer A is more concise and directly addresses the question without unnecessary formatting"
+    },
+    "file": "evidence/pairwise-verdicts/llama3.2/adversarial__adv_arith_002__claude-haiku-4-5-20251001__llama3.2.json"
+  },
+  {
+    "suite": "adversarial",
+    "item": "adv_arith_002",
+    "model_a": "claude-sonnet-5",
+    "model_b": "deepseek-v4-pro",
+    "order1": {
+      "shown_first": "claude-sonnet-5",
+      "picked": "claude-sonnet-5",
+      "reason": "Answer A is better because it includes the step-by-step calculation process in its explanation."
+    },
+    "order2": {
+      "shown_first": "deepseek-v4-pro",
+      "picked": "deepseek-v4-pro",
+      "reason": "Answer A provides step-by-step reasoning and calculations to arrive at the correct answer, making it more transparent and understandable."
+    },
+    "file": "evidence/pairwise-verdicts/llama3.2/adversarial__adv_arith_002__claude-sonnet-5__deepseek-v4-pro.json"
+  },
+  {
+    "suite": "adversarial",
+    "item": "adv_arith_002",
+    "model_a": "claude-sonnet-5",
+    "model_b": "gpt-5.6-luna",
+    "order1": {
+      "shown_first": "claude-sonnet-5",
+      "picked": "claude-sonnet-5",
+      "reason": "Answer A is better because it provides step-by-step reasoning to support its calculation, making the answer more transparent and understandable."
+    },
+    "order2": {
+      "shown_first": "gpt-5.6-luna",
+      "picked": "gpt-5.6-luna",
+      "reason": "Answer A provides step-by-step reasoning and calculations to arrive at the correct answer, making it more transparent and understandable."
+    },
+    "file": "evidence/pairwise-verdicts/llama3.2/adversarial__adv_arith_002__claude-sonnet-5__gpt-5.6-luna.json"
+  },
+  {
+    "suite": "adversarial",
+    "item": "adv_arith_002",
+    "model_a": "claude-sonnet-5",
+    "model_b": "llama3.2",
+    "order1": {
+      "shown_first": "claude-sonnet-5",
+      "picked": "claude-sonnet-5",
+      "reason": "Answer A is more concise and directly states the solution without unnecessary words."
+    },
+    "order2": {
+      "shown_first": "llama3.2",
+      "picked": "llama3.2",
+      "reason": "Answer A provides step-by-step reasoning and clearly explains the calculation process, making it more transparent and understandable."
+    },
+    "file": "evidence/pairwise-verdicts/llama3.2/adversarial__adv_arith_002__claude-sonnet-5__llama3.2.json"
+  },
+  {
+    "suite": "adversarial",
+    "item": "adv_arith_002",
+    "model_a": "deepseek-v4-pro",
+    "model_b": "gpt-5.6-luna",
+    "order1": {
+      "shown_first": "deepseek-v4-pro",
+      "picked": "deepseek-v4-pro",
+      "reason": "Answer A is better because it uses a more conventional formatting for mathematical expressions."
+    },
+    "order2": {
+      "shown_first": "gpt-5.6-luna",
+      "picked": "gpt-5.6-luna",
+      "reason": "Answer A is better because it includes the calculation in the same line as the answer, making it more concise and easier to read."
+    },
+    "file": "evidence/pairwise-verdicts/llama3.2/adversarial__adv_arith_002__deepseek-v4-pro__gpt-5.6-luna.json"
+  },
+  {
+    "suite": "adversarial",
+    "item": "adv_arith_002",
+    "model_a": "deepseek-v4-pro",
+    "model_b": "llama3.2",
+    "order1": {
+      "shown_first": "deepseek-v4-pro",
+      "picked": "deepseek-v4-pro",
+      "reason": "Answer A is more concise and directly calculates the total cost without explicitly stating the cost of one pencil."
+    },
+    "order2": {
+      "shown_first": "llama3.2",
+      "picked": "llama3.2",
+      "reason": "Answer A provides a clear and step-by-step explanation of the calculation process, making it more comprehensible to readers."
+    },
+    "file": "evidence/pairwise-verdicts/llama3.2/adversarial__adv_arith_002__deepseek-v4-pro__llama3.2.json"
+  },
+  {
+    "suite": "adversarial",
+    "item": "adv_arith_002",
+    "model_a": "gpt-5.6-luna",
+    "model_b": "llama3.2",
+    "order1": {
+      "shown_first": "gpt-5.6-luna",
+      "picked": "gpt-5.6-luna",
+      "reason": "Answer A is more concise and directly calculates the total cost without explicitly stating the cost of one pencil."
+    },
+    "order2": {
+      "shown_first": "llama3.2",
+      "picked": "llama3.2",
+      "reason": "Answer A is better because it provides more context and explanation for the calculation, making it easier to understand for readers."
+    },
+    "file": "evidence/pairwise-verdicts/llama3.2/adversarial__adv_arith_002__gpt-5.6-luna__llama3.2.json"
+  },
+  {
+    "suite": "adversarial",
+    "item": "adv_arith_003",
+    "model_a": "claude-haiku-4-5-20251001",
+    "model_b": "claude-sonnet-5",
+    "order1": {
+      "shown_first": "claude-haiku-4-5-20251001",
+      "picked": "claude-haiku-4-5-20251001",
+      "reason": "Answer A is more readable and follows the typical step-by-step format used in many programming tutorials, making it easier to understand for a wider audience."
+    },
+    "order2": {
+      "shown_first": "claude-sonnet-5",
+      "picked": "claude-sonnet-5",
+      "reason": "Answer A is better overall because it provides more detailed step-by-step calculations and explains the combined discount percentage in a clear manner."
+    },
+    "file": "evidence/pairwise-verdicts/llama3.2/adversarial__adv_arith_003__claude-haiku-4-5-20251001__claude-sonnet-5.json"
+  },
+  {
+    "suite": "adversarial",
+    "item": "adv_arith_003",
+    "model_a": "deepseek-v4-pro",
+    "model_b": "gpt-5.6-luna",
+    "order1": {
+      "shown_first": "deepseek-v4-pro",
+      "picked": "deepseek-v4-pro",
+      "reason": "Answer A is better overall as it uses the correct order of operations (first discount, then second discount) and clearly explains each step in its calculation."
+    },
+    "order2": {
+      "shown_first": "gpt-5.6-luna",
+      "picked": "gpt-5.6-luna",
+      "reason": "Answer A is more correct and relevant as it provides the step-by-step calculation process for both discounts."
+    },
+    "file": "evidence/pairwise-verdicts/llama3.2/adversarial__adv_arith_003__deepseek-v4-pro__gpt-5.6-luna.json"
+  },
+  {
+    "suite": "adversarial",
+    "item": "adv_arith_003",
+    "model_a": "deepseek-v4-pro",
+    "model_b": "llama3.2",
+    "order1": {
+      "shown_first": "deepseek-v4-pro",
+      "picked": "deepseek-v4-pro",
+      "reason": "Answer A is more concise and directly states the final price without unnecessary explanations."
+    },
+    "order2": {
+      "shown_first": "llama3.2",
+      "picked": "llama3.2",
+      "reason": "Answer A provides step-by-step calculations and clearly explains the process of applying discounts to the original price, making it more transparent and understandable."
+    },
+    "file": "evidence/pairwise-verdicts/llama3.2/adversarial__adv_arith_003__deepseek-v4-pro__llama3.2.json"
+  },
+  {
+    "suite": "adversarial",
+    "item": "adv_arith_004",
+    "model_a": "claude-haiku-4-5-20251001",
+    "model_b": "llama3.2",
+    "order1": {
+      "shown_first": "claude-haiku-4-5-20251001",
+      "picked": "llama3.2",
+      "reason": "Answer B is more detailed and explains the conversion from hours to minutes to seconds in a clear manner, making it more relevant and understandable."
+    },
+    "order2": {
+      "shown_first": "llama3.2",
+      "picked": "claude-haiku-4-5-20251001",
+      "reason": "Answer B is more concise and directly calculates the result without unnecessary intermediate steps."
+    },
+    "file": "evidence/pairwise-verdicts/llama3.2/adversarial__adv_arith_004__claude-haiku-4-5-20251001__llama3.2.json"
+  },
+  {
+    "suite": "adversarial",
+    "item": "adv_arith_004",
+    "model_a": "claude-sonnet-5",
+    "model_b": "llama3.2",
+    "order1": {
+      "shown_first": "claude-sonnet-5",
+      "picked": "llama3.2",
+      "reason": "Answer B is more detailed and uses the correct order of operations (minutes to seconds), while Answer A is concise but slightly ambiguous in its step-by-step process."
+    },
+    "order2": {
+      "shown_first": "llama3.2",
+      "picked": "claude-sonnet-5",
+      "reason": "Answer B is more concise and directly calculates the result without unnecessary steps"
+    },
+    "file": "evidence/pairwise-verdicts/llama3.2/adversarial__adv_arith_004__claude-sonnet-5__llama3.2.json"
+  },
+  {
+    "suite": "adversarial",
+    "item": "adv_arith_004",
+    "model_a": "deepseek-v4-pro",
+    "model_b": "gpt-5.6-luna",
+    "order1": {
+      "shown_first": "deepseek-v4-pro",
+      "picked": "deepseek-v4-pro",
+      "reason": "Answer A is better because it uses numerals instead of commas for the number"
+    },
+    "order2": {
+      "shown_first": "gpt-5.6-luna",
+      "picked": "gpt-5.6-luna",
+      "reason": "Answer A is better because it uses numerals instead of words for the number 129,600, making it more readable and easier to understand."
+    },
+    "file": "evidence/pairwise-verdicts/llama3.2/adversarial__adv_arith_004__deepseek-v4-pro__gpt-5.6-luna.json"
+  },
+  {
+    "suite": "adversarial",
+    "item": "adv_count_001",
+    "model_a": "claude-haiku-4-5-20251001",
+    "model_b": "claude-sonnet-5",
+    "order1": {
+      "shown_first": "claude-haiku-4-5-20251001",
+      "picked": "claude-haiku-4-5-20251001",
+      "reason": "Answer A is more detailed and provides specific positions for each occurrence of the letter 'r', making it more informative and accurate."
+    },
+    "order2": {
+      "shown_first": "claude-sonnet-5",
+      "picked": "claude-sonnet-5",
+      "reason": "Answer A is more concise and directly shows the letter 'r' in its correct positions."
+    },
+    "file": "evidence/pairwise-verdicts/llama3.2/adversarial__adv_count_001__claude-haiku-4-5-20251001__claude-sonnet-5.json"
+  },
+  {
+    "suite": "adversarial",
+    "item": "adv_count_001",
+    "model_a": "claude-haiku-4-5-20251001",
+    "model_b": "gpt-5.6-luna",
+    "order1": {
+      "shown_first": "claude-haiku-4-5-20251001",
+      "picked": "claude-haiku-4-5-20251001",
+      "reason": "Answer A is more correct and relevant because it provides specific letter positions where the 'r' appears, whereas Answer B uses quotation marks around the word but does not specify the exact position of the 'r', making it less clear and detailed."
+    },
+    "order2": {
+      "shown_first": "gpt-5.6-luna",
+      "picked": "gpt-5.6-luna",
+      "reason": "Answer A is more concise and directly states the answer without unnecessary explanations."
+    },
+    "file": "evidence/pairwise-verdicts/llama3.2/adversarial__adv_count_001__claude-haiku-4-5-20251001__gpt-5.6-luna.json"
+  },
+  {
+    "suite": "adversarial",
+    "item": "adv_count_001",
+    "model_a": "claude-sonnet-5",
+    "model_b": "gpt-5.6-luna",
+    "order1": {
+      "shown_first": "claude-sonnet-5",
+      "picked": "claude-sonnet-5",
+      "reason": "Answer A is more correct and relevant because it visually displays the repeated 'r's in the word, making it easier to understand, whereas Answer B uses quotation marks around the word which may be misinterpreted as part of the word itself."
+    },
+    "order2": {
+      "shown_first": "gpt-5.6-luna",
+      "picked": "gpt-5.6-luna",
+      "reason": "Answer A is more concise and directly addresses the question without unnecessary emphasis on the letter 'r', making it more relevant."
+    },
+    "file": "evidence/pairwise-verdicts/llama3.2/adversarial__adv_count_001__claude-sonnet-5__gpt-5.6-luna.json"
+  },
+  {
+    "suite": "adversarial",
+    "item": "adv_count_001",
+    "model_a": "deepseek-v4-pro",
+    "model_b": "gpt-5.6-luna",
+    "order1": {
+      "shown_first": "deepseek-v4-pro",
+      "picked": "deepseek-v4-pro",
+      "reason": "Answer A is better because it uses the standard quotation mark convention for titles and emphasizes the letter 'r', making it more readable."
+    },
+    "order2": {
+      "shown_first": "gpt-5.6-luna",
+      "picked": "gpt-5.6-luna",
+      "reason": "Answer A is better because it uses double quotes around the letter 'r' to set off the word from the surrounding text, making it clearer and more readable."
+    },
+    "file": "evidence/pairwise-verdicts/llama3.2/adversarial__adv_count_001__deepseek-v4-pro__gpt-5.6-luna.json"
+  },
+  {
+    "suite": "adversarial",
+    "item": "adv_factual_001",
+    "model_a": "claude-haiku-4-5-20251001",
+    "model_b": "deepseek-v4-pro",
+    "order1": {
+      "shown_first": "claude-haiku-4-5-20251001",
+      "picked": "claude-haiku-4-5-20251001",
+      "reason": "Answer A is more correct and relevant because it provides the exact height of Mauna Kea from its base to its summit, while Answer B simplifies the measurement by only stating that it exceeds Mount Everest's height above sea level."
+    },
+    "order2": {
+      "shown_first": "deepseek-v4-pro",
+      "picked": "deepseek-v4-pro",
+      "reason": "Answer A is more correct because it provides the exact height of Mauna Kea from its base to its summit, whereas Answer B provides a range and incorrectly states Mount Everest's height above sea level."
+    },
+    "file": "evidence/pairwise-verdicts/llama3.2/adversarial__adv_factual_001__claude-haiku-4-5-20251001__deepseek-v4-pro.json"
+  },
+  {
+    "suite": "adversarial",
+    "item": "adv_factual_001",
+    "model_a": "claude-haiku-4-5-20251001",
+    "model_b": "gpt-5.6-luna",
+    "order1": {
+      "shown_first": "claude-haiku-4-5-20251001",
+      "picked": "claude-haiku-4-5-20251001",
+      "reason": "Answer A is more correct and relevant because it provides the full height of Mauna Kea from its base to its summit, whereas Answer B only mentions the portion above sea level."
+    },
+    "order2": {
+      "shown_first": "gpt-5.6-luna",
+      "picked": "gpt-5.6-luna",
+      "reason": "Answer A is more correct and relevant because it directly states the height from base to summit without comparing it to sea level height of another mountain."
+    },
+    "file": "evidence/pairwise-verdicts/llama3.2/adversarial__adv_factual_001__claude-haiku-4-5-20251001__gpt-5.6-luna.json"
+  },
+  {
+    "suite": "adversarial",
+    "item": "adv_factual_001",
+    "model_a": "claude-haiku-4-5-20251001",
+    "model_b": "llama3.2",
+    "order1": {
+      "shown_first": "claude-haiku-4-5-20251001",
+      "picked": "claude-haiku-4-5-20251001",
+      "reason": "Answer A is more correct and relevant because it provides the exact measurements from base to summit, making it a more precise answer."
+    },
+    "order2": {
+      "shown_first": "llama3.2",
+      "picked": "llama3.2",
+      "reason": "Answer A provides more context and explanation about the measurement method, making it more informative and accurate."
+    },
+    "file": "evidence/pairwise-verdicts/llama3.2/adversarial__adv_factual_001__claude-haiku-4-5-20251001__llama3.2.json"
+  },
+  {
+    "suite": "adversarial",
+    "item": "adv_factual_001",
+    "model_a": "claude-sonnet-5",
+    "model_b": "gpt-5.6-luna",
+    "order1": {
+      "shown_first": "claude-sonnet-5",
+      "picked": "claude-sonnet-5",
+      "reason": "Answer A provides more detailed and accurate information about Mauna Kea's total height from base to summit compared to Answer B."
+    },
+    "order2": {
+      "shown_first": "gpt-5.6-luna",
+      "picked": "gpt-5.6-luna",
+      "reason": "Answer A provides more specific and relevant details about the height of Mauna Kea from its base to summit, making it a more accurate and informative answer."
+    },
+    "file": "evidence/pairwise-verdicts/llama3.2/adversarial__adv_factual_001__claude-sonnet-5__gpt-5.6-luna.json"
+  },
+  {
+    "suite": "adversarial",
+    "item": "adv_factual_002",
+    "model_a": "claude-haiku-4-5-20251001",
+    "model_b": "claude-sonnet-5",
+    "order1": {
+      "shown_first": "claude-haiku-4-5-20251001",
+      "picked": "claude-haiku-4-5-20251001",
+      "reason": "Answer A provides more specific and detailed information about the Sargasso Sea's boundaries and characteristics, making it a more comprehensive and accurate answer."
+    },
+    "order2": {
+      "shown_first": "claude-sonnet-5",
+      "picked": "claude-sonnet-5",
+      "reason": "Answer A provides more detailed and specific information about the Sargasso Sea's unique characteristics, such as its ecosystem and how it traps water within a circular current pattern."
+    },
+    "file": "evidence/pairwise-verdicts/llama3.2/adversarial__adv_factual_002__claude-haiku-4-5-20251001__claude-sonnet-5.json"
+  },
+  {
+    "suite": "adversarial",
+    "item": "adv_factual_002",
+    "model_a": "deepseek-v4-pro",
+    "model_b": "llama3.2",
+    "order1": {
+      "shown_first": "deepseek-v4-pro",
+      "picked": "llama3.2",
+      "reason": "Answer B is more correct and relevant because the Mediterranean Sea is indeed surrounded by land coastlines, whereas the Sargasso Sea is a sea with no direct land coastline."
+    },
+    "order2": {
+      "shown_first": "llama3.2",
+      "picked": "deepseek-v4-pro",
+      "reason": "Answer B is more correct and relevant because it directly states the Sargasso Sea as the only sea without land coastline, whereas Answer A implies that Mediterranean Sea does not have a direct land coastline but still has one through straits."
+    },
+    "file": "evidence/pairwise-verdicts/llama3.2/adversarial__adv_factual_002__deepseek-v4-pro__llama3.2.json"
+  },
+  {
+    "suite": "adversarial",
+    "item": "adv_factual_002",
+    "model_a": "gpt-5.6-luna",
+    "model_b": "llama3.2",
+    "order1": {
+      "shown_first": "gpt-5.6-luna",
+      "picked": "llama3.2",
+      "reason": "Answer B is more correct and relevant as it accurately describes the Mediterranean Sea's unique characteristic of not having a direct land coastline."
+    },
+    "order2": {
+      "shown_first": "llama3.2",
+      "picked": "gpt-5.6-luna",
+      "reason": "Answer B is more correct and relevant as it directly states the Sargasso Sea as the only sea without land coastline"
+    },
+    "file": "evidence/pairwise-verdicts/llama3.2/adversarial__adv_factual_002__gpt-5.6-luna__llama3.2.json"
+  },
+  {
+    "suite": "adversarial",
+    "item": "adv_logic_001",
+    "model_a": "claude-haiku-4-5-20251001",
+    "model_b": "claude-sonnet-5",
+    "order1": {
+      "shown_first": "claude-haiku-4-5-20251001",
+      "picked": "claude-haiku-4-5-20251001",
+      "reason": "Answer A correctly orders the fruits from lightest to heaviest: Kiwi < Mango < Pomelo < Durian, making it more logical and clear than Answer B."
+    },
+    "order2": {
+      "shown_first": "claude-sonnet-5",
+      "picked": "claude-sonnet-5",
+      "reason": "Answer A is better because it correctly identifies Durian as the heaviest by combining the comparisons in a logical order (Kiwi < Mango < Pomelo < Durian), whereas Answer B incorrectly places Mango between Kiwi and Pomelo."
+    },
+    "file": "evidence/pairwise-verdicts/llama3.2/adversarial__adv_logic_001__claude-haiku-4-5-20251001__claude-sonnet-5.json"
+  },
+  {
+    "suite": "adversarial",
+    "item": "adv_logic_001",
+    "model_a": "deepseek-v4-pro",
+    "model_b": "gpt-5.6-luna",
+    "order1": {
+      "shown_first": "deepseek-v4-pro",
+      "picked": "gpt-5.6-luna",
+      "reason": "Both answers provide the same information, but Answer A is more concise and directly states its answer without repetition."
+    },
+    "order2": {
+      "shown_first": "gpt-5.6-luna",
+      "picked": "deepseek-v4-pro",
+      "reason": "Both answers provide the same correct information about Durian being the heaviest, but Answer A is more concise and directly states its conclusion."
+    },
+    "file": "evidence/pairwise-verdicts/llama3.2/adversarial__adv_logic_001__deepseek-v4-pro__gpt-5.6-luna.json"
+  },
+  {
+    "suite": "adversarial",
+    "item": "adv_reason_001",
+    "model_a": "claude-haiku-4-5-20251001",
+    "model_b": "claude-sonnet-5",
+    "order1": {
+      "shown_first": "claude-haiku-4-5-20251001",
+      "picked": "claude-haiku-4-5-20251001",
+      "reason": "Answer A is more concise and directly addresses the calculation, while Answer B provides unnecessary comments and formatting"
+    },
+    "order2": {
+      "shown_first": "claude-sonnet-5",
+      "picked": "claude-sonnet-5",
+      "reason": "Answer A is more detailed and clearly explains the calculation process, making it easier to understand for readers."
+    },
+    "file": "evidence/pairwise-verdicts/llama3.2/adversarial__adv_reason_001__claude-haiku-4-5-20251001__claude-sonnet-5.json"
+  },
+  {
+    "suite": "adversarial",
+    "item": "adv_riddle_001",
+    "model_a": "claude-sonnet-5",
+    "model_b": "llama3.2",
+    "order1": {
+      "shown_first": "claude-sonnet-5",
+      "picked": "claude-sonnet-5",
+      "reason": "Answer A is more correct and relevant because it provides accurate information about the materials used to build a greenhouse and explains the origin of its name in a clear and concise manner."
+    },
+    "order2": {
+      "shown_first": "llama3.2",
+      "picked": "llama3.2",
+      "reason": "Answer A is more correct and relevant because it provides a clear explanation of the materials used to build a greenhouse and addresses the linguistic trick in the question's name."
+    },
+    "file": "evidence/pairwise-verdicts/llama3.2/adversarial__adv_riddle_001__claude-sonnet-5__llama3.2.json"
+  },
+  {
+    "suite": "easy",
+    "item": "definition_001",
+    "model_a": "claude-haiku-4-5-20251001",
+    "model_b": "deepseek-v4-pro",
+    "order1": {
+      "shown_first": "claude-haiku-4-5-20251001",
+      "picked": "claude-haiku-4-5-20251001",
+      "reason": "Answer A provides more context and explanation of what AI refers to, making it more informative than Answer B."
+    },
+    "order2": {
+      "shown_first": "deepseek-v4-pro",
+      "picked": "TIE",
+      "reason": "Both answers provide the same information and are equally correct, but Answer A is slightly more concise."
+    },
+    "file": "evidence/pairwise-verdicts/llama3.2/easy__definition_001__claude-haiku-4-5-20251001__deepseek-v4-pro.json"
+  },
+  {
+    "suite": "easy",
+    "item": "definition_001",
+    "model_a": "deepseek-v4-pro",
+    "model_b": "gpt-5.6-luna",
+    "order1": {
+      "shown_first": "deepseek-v4-pro",
+      "picked": "deepseek-v4-pro",
+      "reason": "Answer A is better because it uses title case for the full phrase 'Artificial Intelligence', making it more readable and conventional."
+    },
+    "order2": {
+      "shown_first": "gpt-5.6-luna",
+      "picked": "gpt-5.6-luna",
+      "reason": "Answer A is better because it uses lowercase letters for the acronym, which is more common and conventional in modern usage."
+    },
+    "file": "evidence/pairwise-verdicts/llama3.2/easy__definition_001__deepseek-v4-pro__gpt-5.6-luna.json"
+  },
+  {
+    "suite": "easy",
+    "item": "definition_001",
+    "model_a": "gpt-5.6-luna",
+    "model_b": "llama3.2",
+    "order1": {
+      "shown_first": "gpt-5.6-luna",
+      "picked": "llama3.2",
+      "reason": "Answer B is more concise and directly states the correct expansion of AI"
+    },
+    "order2": {
+      "shown_first": "llama3.2",
+      "picked": "gpt-5.6-luna",
+      "reason": "Answer B is better because it uses the full phrase 'artificial intelligence' in its answer, making it more relevant and clear than Answer A's concise but slightly ambiguous response."
+    },
+    "file": "evidence/pairwise-verdicts/llama3.2/easy__definition_001__gpt-5.6-luna__llama3.2.json"
+  },
+  {
+    "suite": "easy",
+    "item": "definition_002",
+    "model_a": "claude-haiku-4-5-20251001",
+    "model_b": "claude-sonnet-5",
+    "order1": {
+      "shown_first": "claude-haiku-4-5-20251001",
+      "picked": "claude-haiku-4-5-20251001",
+      "reason": "Answer A is more concise and uses the term 'event horizon' correctly, making it more relevant to the reference."
+    },
+    "order2": {
+      "shown_first": "claude-sonnet-5",
+      "picked": "claude-sonnet-5",
+      "reason": "Answer A provides more context about the event horizon and its boundary, making it a clearer and more comprehensive explanation of what a black hole is."
+    },
+    "file": "evidence/pairwise-verdicts/llama3.2/easy__definition_002__claude-haiku-4-5-20251001__claude-sonnet-5.json"
+  },
+  {
+    "suite": "easy",
+    "item": "definition_002",
+    "model_a": "claude-haiku-4-5-20251001",
+    "model_b": "gpt-5.6-luna",
+    "order1": {
+      "shown_first": "claude-haiku-4-5-20251001",
+      "picked": "claude-haiku-4-5-20251001",
+      "reason": "Answer A is more comprehensive and clearly explains the concept of an event horizon, which is a crucial aspect of black holes. Answer B lacks specificity about what happens once something crosses the event horizon."
+    },
+    "order2": {
+      "shown_first": "gpt-5.6-luna",
+      "picked": "gpt-5.6-luna",
+      "reason": "Answer A is more complete and accurately describes the event horizon as a boundary beyond which nothing can escape, whereas Answer B implies that light can escape from within the event horizon."
+    },
+    "file": "evidence/pairwise-verdicts/llama3.2/easy__definition_002__claude-haiku-4-5-20251001__gpt-5.6-luna.json"
+  },
+  {
+    "suite": "easy",
+    "item": "definition_002",
+    "model_a": "claude-haiku-4-5-20251001",
+    "model_b": "llama3.2",
+    "order1": {
+      "shown_first": "claude-haiku-4-5-20251001",
+      "picked": "claude-haiku-4-5-20251001",
+      "reason": "Answer A is more concise and directly states the concept of an event horizon, making it more relevant to the question."
+    },
+    "order2": {
+      "shown_first": "llama3.2",
+      "picked": "llama3.2",
+      "reason": "Answer A is more detailed and accurate in its description of the event horizon, making it the better overall answer."
+    },
+    "file": "evidence/pairwise-verdicts/llama3.2/easy__definition_002__claude-haiku-4-5-20251001__llama3.2.json"
+  },
+  {
+    "suite": "easy",
+    "item": "definition_002",
+    "model_a": "claude-sonnet-5",
+    "model_b": "gpt-5.6-luna",
+    "order1": {
+      "shown_first": "claude-sonnet-5",
+      "picked": "claude-sonnet-5",
+      "reason": "Answer A provides more detail about the event horizon, which is an important concept in understanding black holes. Answer B lacks specificity regarding what happens after crossing the event horizon."
+    },
+    "order2": {
+      "shown_first": "gpt-5.6-luna",
+      "picked": "gpt-5.6-luna",
+      "reason": "Answer A is more concise and directly states the event horizon as the boundary beyond which nothing can escape, making it more relevant to the general understanding of black holes."
+    },
+    "file": "evidence/pairwise-verdicts/llama3.2/easy__definition_002__claude-sonnet-5__gpt-5.6-luna.json"
+  },
+  {
+    "suite": "easy",
+    "item": "definition_002",
+    "model_a": "claude-sonnet-5",
+    "model_b": "llama3.2",
+    "order1": {
+      "shown_first": "claude-sonnet-5",
+      "picked": "claude-sonnet-5",
+      "reason": "Answer A provides a clearer definition of the event horizon and its role in preventing escape, making it more precise and relevant."
+    },
+    "order2": {
+      "shown_first": "llama3.2",
+      "picked": "llama3.2",
+      "reason": "Answer A provides more detail about the nature of the dense and massive object causing the strong gravitational field, making it a more comprehensive explanation."
+    },
+    "file": "evidence/pairwise-verdicts/llama3.2/easy__definition_002__claude-sonnet-5__llama3.2.json"
+  },
+  {
+    "suite": "easy",
+    "item": "definition_002",
+    "model_a": "deepseek-v4-pro",
+    "model_b": "gpt-5.6-luna",
+    "order1": {
+      "shown_first": "deepseek-v4-pro",
+      "picked": "deepseek-v4-pro",
+      "reason": "Answer B provides additional context about the event horizon, which is a crucial aspect of black holes. However, Answer A still conveys the same essential information without unnecessary details."
+    },
+    "order2": {
+      "shown_first": "gpt-5.6-luna",
+      "picked": "gpt-5.6-luna",
+      "reason": "Answer A is more precise and accurate because it specifies the event horizon, which is a key characteristic of black holes."
+    },
+    "file": "evidence/pairwise-verdicts/llama3.2/easy__definition_002__deepseek-v4-pro__gpt-5.6-luna.json"
+  },
+  {
+    "suite": "easy",
+    "item": "definition_002",
+    "model_a": "deepseek-v4-pro",
+    "model_b": "llama3.2",
+    "order1": {
+      "shown_first": "deepseek-v4-pro",
+      "picked": "deepseek-v4-pro",
+      "reason": "Answer A is more concise and directly states the fundamental characteristic of a black hole (i.e., nothing can escape), while Answer B provides additional but unnecessary details about the object's density and mass."
+    },
+    "order2": {
+      "shown_first": "llama3.2",
+      "picked": "llama3.2",
+      "reason": "Answer A provides more detail about the cause of the gravitational pull (an incredibly dense and massive object) which adds clarity to the explanation."
+    },
+    "file": "evidence/pairwise-verdicts/llama3.2/easy__definition_002__deepseek-v4-pro__llama3.2.json"
+  },
+  {
+    "suite": "easy",
+    "item": "definition_002",
+    "model_a": "gpt-5.6-luna",
+    "model_b": "llama3.2",
+    "order1": {
+      "shown_first": "gpt-5.6-luna",
+      "picked": "gpt-5.6-luna",
+      "reason": "Answer A is more concise and directly states the concept of an event horizon, making it more relevant to the question."
+    },
+    "order2": {
+      "shown_first": "llama3.2",
+      "picked": "llama3.2",
+      "reason": "Answer A is more detailed and accurate in its explanation of the event horizon, making it a better overall answer."
+    },
+    "file": "evidence/pairwise-verdicts/llama3.2/easy__definition_002__gpt-5.6-luna__llama3.2.json"
+  },
+  {
+    "suite": "easy",
+    "item": "factual_002",
+    "model_a": "claude-haiku-4-5-20251001",
+    "model_b": "llama3.2",
+    "order1": {
+      "shown_first": "claude-haiku-4-5-20251001",
+      "picked": "claude-haiku-4-5-20251001",
+      "reason": "Answer A is more concise and directly provides the symbol, while Answer B adds unnecessary context that doesn't affect the correctness of the symbol."
+    },
+    "order2": {
+      "shown_first": "llama3.2",
+      "picked": "llama3.2",
+      "reason": "Answer A provides additional context about the origin of the symbol, making it more informative and relevant."
+    },
+    "file": "evidence/pairwise-verdicts/llama3.2/easy__factual_002__claude-haiku-4-5-20251001__llama3.2.json"
+  },
+  {
+    "suite": "easy",
+    "item": "factual_002",
+    "model_a": "deepseek-v4-pro",
+    "model_b": "llama3.2",
+    "order1": {
+      "shown_first": "deepseek-v4-pro",
+      "picked": "deepseek-v4-pro",
+      "reason": "Answer A is more concise and directly presents the symbol without additional context."
+    },
+    "order2": {
+      "shown_first": "llama3.2",
+      "picked": "llama3.2",
+      "reason": "Answer A provides additional context and etymology for the symbol, making it more informative and relevant."
+    },
+    "file": "evidence/pairwise-verdicts/llama3.2/easy__factual_002__deepseek-v4-pro__llama3.2.json"
+  },
+  {
+    "suite": "easy",
+    "item": "factual_003",
+    "model_a": "claude-haiku-4-5-20251001",
+    "model_b": "llama3.2",
+    "order1": {
+      "shown_first": "claude-haiku-4-5-20251001",
+      "picked": "claude-haiku-4-5-20251001",
+      "reason": "Answer A is more concise and directly states the location of Lima without unnecessary repetition."
+    },
+    "order2": {
+      "shown_first": "llama3.2",
+      "picked": "llama3.2",
+      "reason": "Answer A is more correct and relevant because it provides additional context about Lima being the capital city of Peru, which adds clarity to its location."
+    },
+    "file": "evidence/pairwise-verdicts/llama3.2/easy__factual_003__claude-haiku-4-5-20251001__llama3.2.json"
+  },
+  {
+    "suite": "easy",
+    "item": "factual_004",
+    "model_a": "claude-haiku-4-5-20251001",
+    "model_b": "claude-sonnet-5",
+    "order1": {
+      "shown_first": "claude-haiku-4-5-20251001",
+      "picked": "claude-haiku-4-5-20251001",
+      "reason": "Answer A is more correct and relevant because it does not include Pluto as a planet, which is the current definition according to the International Astronomical Union."
+    },
+    "order2": {
+      "shown_first": "claude-sonnet-5",
+      "picked": "claude-sonnet-5",
+      "reason": "Answer A is better because it includes more information about Pluto's reclassification and provides a list of planets in order from the Sun, making it more comprehensive."
+    },
+    "file": "evidence/pairwise-verdicts/llama3.2/easy__factual_004__claude-haiku-4-5-20251001__claude-sonnet-5.json"
+  },
+  {
+    "suite": "easy",
+    "item": "factual_004",
+    "model_a": "claude-haiku-4-5-20251001",
+    "model_b": "deepseek-v4-pro",
+    "order1": {
+      "shown_first": "claude-haiku-4-5-20251001",
+      "picked": "deepseek-v4-pro",
+      "reason": "Answer B is more concise and directly states the correct number of planets without providing unnecessary details about Pluto's reclassification."
+    },
+    "order2": {
+      "shown_first": "deepseek-v4-pro",
+      "picked": "claude-haiku-4-5-20251001",
+      "reason": "Answer B is better because it provides the planets in order from the Sun, which is more relevant and useful information than just listing all 8 planets without context."
+    },
+    "file": "evidence/pairwise-verdicts/llama3.2/easy__factual_004__claude-haiku-4-5-20251001__deepseek-v4-pro.json"
+  },
+  {
+    "suite": "easy",
+    "item": "factual_004",
+    "model_a": "claude-haiku-4-5-20251001",
+    "model_b": "llama3.2",
+    "order1": {
+      "shown_first": "claude-haiku-4-5-20251001",
+      "picked": "claude-haiku-4-5-20251001",
+      "reason": "Answer A is considered better because it includes the reclassification of Pluto as a dwarf planet in its explanation, providing more context and accuracy."
+    },
+    "order2": {
+      "shown_first": "llama3.2",
+      "picked": "llama3.2",
+      "reason": "Answer A is more correct and relevant because it includes the full list of planets in our solar system, whereas Answer B only lists the 8 planets but omits Pluto's classification as a dwarf planet."
+    },
+    "file": "evidence/pairwise-verdicts/llama3.2/easy__factual_004__claude-haiku-4-5-20251001__llama3.2.json"
+  },
+  {
+    "suite": "easy",
+    "item": "factual_004",
+    "model_a": "claude-sonnet-5",
+    "model_b": "deepseek-v4-pro",
+    "order1": {
+      "shown_first": "claude-sonnet-5",
+      "picked": "claude-sonnet-5",
+      "reason": "Answer A is better because it includes additional context about Pluto's reclassification as a dwarf planet, providing more informative and relevant information."
+    },
+    "order2": {
+      "shown_first": "deepseek-v4-pro",
+      "picked": "deepseek-v4-pro",
+      "reason": "Answer A is better because it presents the information in a more concise and visually appealing format."
+    },
+    "file": "evidence/pairwise-verdicts/llama3.2/easy__factual_004__claude-sonnet-5__deepseek-v4-pro.json"
+  },
+  {
+    "suite": "easy",
+    "item": "factual_004",
+    "model_a": "claude-sonnet-5",
+    "model_b": "gpt-5.6-luna",
+    "order1": {
+      "shown_first": "claude-sonnet-5",
+      "picked": "claude-sonnet-5",
+      "reason": "Answer A is better because it includes additional context about Pluto's reclassification as a dwarf planet, making the answer more informative and relevant."
+    },
+    "order2": {
+      "shown_first": "gpt-5.6-luna",
+      "picked": "gpt-5.6-luna",
+      "reason": "Answer A is more concise and directly presents the list of planets without extraneous information about Pluto's reclassification."
+    },
+    "file": "evidence/pairwise-verdicts/llama3.2/easy__factual_004__claude-sonnet-5__gpt-5.6-luna.json"
+  },
+  {
+    "suite": "easy",
+    "item": "factual_004",
+    "model_a": "claude-sonnet-5",
+    "model_b": "llama3.2",
+    "order1": {
+      "shown_first": "claude-sonnet-5",
+      "picked": "claude-sonnet-5",
+      "reason": "Answer A is more correct and relevant because it provides additional context about Pluto's reclassification as a dwarf planet."
+    },
+    "order2": {
+      "shown_first": "llama3.2",
+      "picked": "llama3.2",
+      "reason": "Answer A is more correct and relevant because it provides the most accurate number of planets in our solar system without referencing Pluto as a planet."
+    },
+    "file": "evidence/pairwise-verdicts/llama3.2/easy__factual_004__claude-sonnet-5__llama3.2.json"
+  },
+  {
+    "suite": "easy",
+    "item": "factual_004",
+    "model_a": "deepseek-v4-pro",
+    "model_b": "gpt-5.6-luna",
+    "order1": {
+      "shown_first": "deepseek-v4-pro",
+      "picked": "deepseek-v4-pro",
+      "reason": "Answer A is better because it includes the full list of planets in order, making it more relevant and easier to understand."
+    },
+    "order2": {
+      "shown_first": "gpt-5.6-luna",
+      "picked": "gpt-5.6-luna",
+      "reason": "Answer A is better because it provides more context and clarity by listing the planets in order from the Sun."
+    },
+    "file": "evidence/pairwise-verdicts/llama3.2/easy__factual_004__deepseek-v4-pro__gpt-5.6-luna.json"
+  },
+  {
+    "suite": "easy",
+    "item": "factual_004",
+    "model_a": "gpt-5.6-luna",
+    "model_b": "llama3.2",
+    "order1": {
+      "shown_first": "gpt-5.6-luna",
+      "picked": "gpt-5.6-luna",
+      "reason": "Answer A is better because it presents the information in a more concise and visually appealing format, making it easier to read and understand."
+    },
+    "order2": {
+      "shown_first": "llama3.2",
+      "picked": "llama3.2",
+      "reason": "Answer A is more complete as it includes the name of the organization that reclassified Pluto, making it a more accurate and informative response."
+    },
+    "file": "evidence/pairwise-verdicts/llama3.2/easy__factual_004__gpt-5.6-luna__llama3.2.json"
+  },
+  {
+    "suite": "easy",
+    "item": "procedural_001",
+    "model_a": "deepseek-v4-pro",
+    "model_b": "gpt-5.6-luna",
+    "order1": {
+      "shown_first": "deepseek-v4-pro",
+      "picked": "deepseek-v4-pro",
+      "reason": "Answer A is better because it uses double quotes around the command to ensure correct shell syntax and prevent word splitting."
+    },
+    "order2": {
+      "shown_first": "gpt-5.6-luna",
+      "picked": "gpt-5.6-luna",
+      "reason": "Answer A is better because it uses double quotes around the command to ensure correct syntax and prevent shell word splitting."
+    },
+    "file": "evidence/pairwise-verdicts/llama3.2/easy__procedural_001__deepseek-v4-pro__gpt-5.6-luna.json"
+  },
+  {
+    "suite": "easy",
+    "item": "procedural_001",
+    "model_a": "deepseek-v4-pro",
+    "model_b": "llama3.2",
+    "order1": {
+      "shown_first": "deepseek-v4-pro",
+      "picked": "deepseek-v4-pro",
+      "reason": "Answer A is more concise and directly uses the correct syntax for pytest's -m option"
+    },
+    "order2": {
+      "shown_first": "llama3.2",
+      "picked": "llama3.2",
+      "reason": "Answer A is more correct and relevant because it explains the reasoning behind using the `-m` option correctly, while Answer B uses an invalid syntax."
+    },
+    "file": "evidence/pairwise-verdicts/llama3.2/easy__procedural_001__deepseek-v4-pro__llama3.2.json"
+  },
+  {
+    "suite": "easy",
+    "item": "reasoning_001",
+    "model_a": "claude-haiku-4-5-20251001",
+    "model_b": "claude-sonnet-5",
+    "order1": {
+      "shown_first": "claude-haiku-4-5-20251001",
+      "picked": "claude-haiku-4-5-20251001",
+      "reason": "Answer A provides a clearer and more concise explanation of the key differences between warm-blooded and cold-blooded animals."
+    },
+    "order2": {
+      "shown_first": "claude-sonnet-5",
+      "picked": "claude-sonnet-5",
+      "reason": "Answer A provides more comprehensive and detailed information about both cold-blooded and warm-blooded animals, including examples, advantages, disadvantages, and key differences. It also includes a clear explanation of the terms ectothermic and endothermic."
+    },
+    "file": "evidence/pairwise-verdicts/llama3.2/easy__reasoning_001__claude-haiku-4-5-20251001__claude-sonnet-5.json"
+  },
+  {
+    "suite": "easy",
+    "item": "reasoning_001",
+    "model_a": "claude-haiku-4-5-20251001",
+    "model_b": "llama3.2",
+    "order1": {
+      "shown_first": "claude-haiku-4-5-20251001",
+      "picked": "claude-haiku-4-5-20251001",
+      "reason": "Answer A provides a clear and concise explanation of the terms 'cold-blooded' and 'warm-blooded', as well as their advantages and disadvantages, making it more informative than Answer B."
+    },
+    "order2": {
+      "shown_first": "llama3.2",
+      "picked": "llama3.2",
+      "reason": "Answer A provides a more detailed and accurate explanation of the terms ectothermic and endothermic, as well as their differences in temperature regulation, metabolic rate, and activity patterns."
+    },
+    "file": "evidence/pairwise-verdicts/llama3.2/easy__reasoning_001__claude-haiku-4-5-20251001__llama3.2.json"
+  },
+  {
+    "suite": "easy",
+    "item": "reasoning_001",
+    "model_a": "claude-sonnet-5",
+    "model_b": "deepseek-v4-pro",
+    "order1": {
+      "shown_first": "claude-sonnet-5",
+      "picked": "claude-sonnet-5",
+      "reason": "Answer A provides more detailed and accurate information about the characteristics of cold-blooded and warm-blooded animals, including specific examples, advantages, and disadvantages."
+    },
+    "order2": {
+      "shown_first": "deepseek-v4-pro",
+      "picked": "deepseek-v4-pro",
+      "reason": "Answer A provides more detailed explanations and examples for both warm-blooded and cold-blooded animals, making it more comprehensive and clear."
+    },
+    "file": "evidence/pairwise-verdicts/llama3.2/easy__reasoning_001__claude-sonnet-5__deepseek-v4-pro.json"
+  },
+  {
+    "suite": "easy",
+    "item": "reasoning_002",
+    "model_a": "claude-haiku-4-5-20251001",
+    "model_b": "deepseek-v4-pro",
+    "order1": {
+      "shown_first": "claude-haiku-4-5-20251001",
+      "picked": "claude-haiku-4-5-20251001",
+      "reason": "Answer A is more correct and relevant as it directly addresses the cause of ice floating on water (expansion of water upon freezing), whereas Answer B mentions a structural aspect that, while related, is not the primary reason."
+    },
+    "order2": {
+      "shown_first": "deepseek-v4-pro",
+      "picked": "deepseek-v4-pro",
+      "reason": "Answer A is more detailed and specific about the molecular structure of ice, while Answer B oversimplifies the reason by focusing on expansion alone."
+    },
+    "file": "evidence/pairwise-verdicts/llama3.2/easy__reasoning_002__claude-haiku-4-5-20251001__deepseek-v4-pro.json"
+  },
+  {
+    "suite": "easy",
+    "item": "reasoning_002",
+    "model_a": "claude-haiku-4-5-20251001",
+    "model_b": "gpt-5.6-luna",
+    "order1": {
+      "shown_first": "claude-haiku-4-5-20251001",
+      "picked": "claude-haiku-4-5-20251001",
+      "reason": "Answer A is more correct and relevant as it directly addresses the physical property (expansion) that causes ice to float on water."
+    },
+    "order2": {
+      "shown_first": "gpt-5.6-luna",
+      "picked": "gpt-5.6-luna",
+      "reason": "Answer A is more correct and relevant as it explains the underlying reason for ice's density difference from liquid water."
+    },
+    "file": "evidence/pairwise-verdicts/llama3.2/easy__reasoning_002__claude-haiku-4-5-20251001__gpt-5.6-luna.json"
+  },
+  {
+    "suite": "easy",
+    "item": "reasoning_002",
+    "model_a": "claude-haiku-4-5-20251001",
+    "model_b": "llama3.2",
+    "order1": {
+      "shown_first": "claude-haiku-4-5-20251001",
+      "picked": "claude-haiku-4-5-20251001",
+      "reason": "Answer A is more concise and directly addresses the cause of ice floating on water (expansion during freezing), while Answer B provides a more detailed explanation but also introduces additional complexity."
+    },
+    "order2": {
+      "shown_first": "llama3.2",
+      "picked": "llama3.2",
+      "reason": "Answer A provides a more detailed explanation of why ice floats on water, including the specific arrangement of molecules in ice that contributes to its lower density."
+    },
+    "file": "evidence/pairwise-verdicts/llama3.2/easy__reasoning_002__claude-haiku-4-5-20251001__llama3.2.json"
+  },
+  {
+    "suite": "easy",
+    "item": "reasoning_002",
+    "model_a": "claude-sonnet-5",
+    "model_b": "deepseek-v4-pro",
+    "order1": {
+      "shown_first": "claude-sonnet-5",
+      "picked": "claude-sonnet-5",
+      "reason": "Answer A provides a clearer explanation of the structural reason behind ice's lower density, making it more relevant and accurate."
+    },
+    "order2": {
+      "shown_first": "deepseek-v4-pro",
+      "picked": "deepseek-v4-pro",
+      "reason": "Answer A is more detailed and specific about the hydrogen bonding in ice, making it a more accurate explanation."
+    },
+    "file": "evidence/pairwise-verdicts/llama3.2/easy__reasoning_002__claude-sonnet-5__deepseek-v4-pro.json"
+  },
+  {
+    "suite": "easy",
+    "item": "reasoning_002",
+    "model_a": "claude-sonnet-5",
+    "model_b": "gpt-5.6-luna",
+    "order1": {
+      "shown_first": "claude-sonnet-5",
+      "picked": "claude-sonnet-5",
+      "reason": "Answer A provides a clearer explanation of the structural reason behind ice's density, making it more relevant and accurate."
+    },
+    "order2": {
+      "shown_first": "gpt-5.6-luna",
+      "picked": "gpt-5.6-luna",
+      "reason": "Answer A is more relevant as it explains the underlying reason for ice's density difference from liquid water (hydrogen bonding), whereas Answer B only mentions structural arrangement without explaining its impact on density."
+    },
+    "file": "evidence/pairwise-verdicts/llama3.2/easy__reasoning_002__claude-sonnet-5__gpt-5.6-luna.json"
+  },
+  {
+    "suite": "easy",
+    "item": "reasoning_002",
+    "model_a": "deepseek-v4-pro",
+    "model_b": "gpt-5.6-luna",
+    "order1": {
+      "shown_first": "deepseek-v4-pro",
+      "picked": "deepseek-v4-pro",
+      "reason": "Answer A provides additional context about the hydrogen-bonded crystalline structure, making it more informative and relevant."
+    },
+    "order2": {
+      "shown_first": "gpt-5.6-luna",
+      "picked": "gpt-5.6-luna",
+      "reason": "Answer A is more concise and directly addresses the hydrogen-bonded aspect of ice's structure."
+    },
+    "file": "evidence/pairwise-verdicts/llama3.2/easy__reasoning_002__deepseek-v4-pro__gpt-5.6-luna.json"
+  },
+  {
+    "suite": "easy",
+    "item": "reasoning_002",
+    "model_a": "deepseek-v4-pro",
+    "model_b": "llama3.2",
+    "order1": {
+      "shown_first": "deepseek-v4-pro",
+      "picked": "deepseek-v4-pro",
+      "reason": "Answer A provides a clearer explanation of the structural reason behind ice's density, making it more relevant and detailed."
+    },
+    "order2": {
+      "shown_first": "llama3.2",
+      "picked": "llama3.2",
+      "reason": "Answer A provides additional context about the crystalline structure of ice and its relation to density, making it more informative and relevant."
+    },
+    "file": "evidence/pairwise-verdicts/llama3.2/easy__reasoning_002__deepseek-v4-pro__llama3.2.json"
+  },
+  {
+    "suite": "easy",
+    "item": "reasoning_002",
+    "model_a": "gpt-5.6-luna",
+    "model_b": "llama3.2",
+    "order1": {
+      "shown_first": "gpt-5.6-luna",
+      "picked": "gpt-5.6-luna",
+      "reason": "Answer A is more detailed and specific about the structural reason behind ice's lower density, making it a more comprehensive explanation."
+    },
+    "order2": {
+      "shown_first": "llama3.2",
+      "picked": "llama3.2",
+      "reason": "Answer A provides additional context about the crystalline structure of ice, making it more informative and detailed."
+    },
+    "file": "evidence/pairwise-verdicts/llama3.2/easy__reasoning_002__gpt-5.6-luna__llama3.2.json"
+  },
+  {
+    "suite": "easy",
+    "item": "reasoning_003",
+    "model_a": "claude-haiku-4-5-20251001",
+    "model_b": "claude-sonnet-5",
+    "order1": {
+      "shown_first": "claude-haiku-4-5-20251001",
+      "picked": "claude-haiku-4-5-20251001",
+      "reason": "Answer A provides more detailed explanations and stages of photosynthesis, making it easier to understand the process, while Answer B has a clearer structure but lacks specific examples and supporting details."
+    },
+    "order2": {
+      "shown_first": "claude-sonnet-5",
+      "picked": "claude-sonnet-5",
+      "reason": "Answer A provides more detailed information about the specific stages of photosynthesis and the organelles involved, making it more comprehensive."
+    },
+    "file": "evidence/pairwise-verdicts/llama3.2/easy__reasoning_003__claude-haiku-4-5-20251001__claude-sonnet-5.json"
+  },
+  {
+    "suite": "easy",
+    "item": "reasoning_003",
+    "model_a": "claude-haiku-4-5-20251001",
+    "model_b": "deepseek-v4-pro",
+    "order1": {
+      "shown_first": "claude-haiku-4-5-20251001",
+      "picked": "claude-haiku-4-5-20251001",
+      "reason": "Answer A provides a clear and concise overview of the process, including the two main stages and key locations within chloroplasts, while Answer B includes more detailed information but is slightly less organized."
+    },
+    "order2": {
+      "shown_first": "deepseek-v4-pro",
+      "picked": "deepseek-v4-pro",
+      "reason": "Answer A provides a clearer and more detailed explanation of the two stages of photosynthesis, including specific locations within chloroplasts where each stage occurs."
+    },
+    "file": "evidence/pairwise-verdicts/llama3.2/easy__reasoning_003__claude-haiku-4-5-20251001__deepseek-v4-pro.json"
+  },
+  {
+    "suite": "easy",
+    "item": "reasoning_003",
+    "model_a": "claude-haiku-4-5-20251001",
+    "model_b": "gpt-5.6-luna",
+    "order1": {
+      "shown_first": "claude-haiku-4-5-20251001",
+      "picked": "claude-haiku-4-5-20251001",
+      "reason": "Answer A provides more detailed explanations of the light-dependent and light-independent reactions, making it easier to understand the process. Answer B's overall equation is correct but lacks specific details about the stages and chloroplasts."
+    },
+    "order2": {
+      "shown_first": "gpt-5.6-luna",
+      "picked": "gpt-5.6-luna",
+      "reason": "Answer A provides more detailed information about the process of photosynthesis, including the specific stages and locations where it occurs, making it a more comprehensive explanation."
+    },
+    "file": "evidence/pairwise-verdicts/llama3.2/easy__reasoning_003__claude-haiku-4-5-20251001__gpt-5.6-luna.json"
+  },
+  {
+    "suite": "easy",
+    "item": "reasoning_003",
+    "model_a": "claude-haiku-4-5-20251001",
+    "model_b": "llama3.2",
+    "order1": {
+      "shown_first": "claude-haiku-4-5-20251001",
+      "picked": "claude-haiku-4-5-20251001",
+      "reason": "Answer A provides a clear and concise overview of photosynthesis, breaking it down into simple stages and focusing on the essential processes, whereas Answer B delves deeper into the details but loses some clarity in its explanation."
+    },
+    "order2": {
+      "shown_first": "llama3.2",
+      "picked": "llama3.2",
+      "reason": "Answer A provides a more detailed and accurate explanation of the photosynthesis process, including specific stages and molecules involved, making it a better answer overall."
+    },
+    "file": "evidence/pairwise-verdicts/llama3.2/easy__reasoning_003__claude-haiku-4-5-20251001__llama3.2.json"
+  },
+  {
+    "suite": "easy",
+    "item": "reasoning_003",
+    "model_a": "claude-sonnet-5",
+    "model_b": "deepseek-v4-pro",
+    "order1": {
+      "shown_first": "claude-sonnet-5",
+      "picked": "claude-sonnet-5",
+      "reason": "Answer A provides more detailed information about the two main stages of photosynthesis and their locations within the chloroplast, making it a more comprehensive explanation."
+    },
+    "order2": {
+      "shown_first": "deepseek-v4-pro",
+      "picked": "deepseek-v4-pro",
+      "reason": "Answer A provides more detailed information about the two main stages of photosynthesis and their locations within the chloroplast, making it a more comprehensive explanation."
+    },
+    "file": "evidence/pairwise-verdicts/llama3.2/easy__reasoning_003__claude-sonnet-5__deepseek-v4-pro.json"
+  },
+  {
+    "suite": "easy",
+    "item": "reasoning_003",
+    "model_a": "claude-sonnet-5",
+    "model_b": "gpt-5.6-luna",
+    "order1": {
+      "shown_first": "claude-sonnet-5",
+      "picked": "claude-sonnet-5",
+      "reason": "Answer A provides more detailed information about the process of photosynthesis, including the two main stages and key components needed, making it a more comprehensive explanation."
+    },
+    "order2": {
+      "shown_first": "gpt-5.6-luna",
+      "picked": "gpt-5.6-luna",
+      "reason": "Answer A provides a clearer explanation of the two main stages of photosynthesis and includes more specific details about where each stage occurs in the plant cell."
+    },
+    "file": "evidence/pairwise-verdicts/llama3.2/easy__reasoning_003__claude-sonnet-5__gpt-5.6-luna.json"
+  },
+  {
+    "suite": "easy",
+    "item": "reasoning_003",
+    "model_a": "claude-sonnet-5",
+    "model_b": "llama3.2",
+    "order1": {
+      "shown_first": "claude-sonnet-5",
+      "picked": "claude-sonnet-5",
+      "reason": "Answer A provides more detailed and specific information about the process of photosynthesis, including the two main stages (light-dependent reactions and light-independent reactions), key components needed, and why it matters. Answer B is more general and lacks specific details."
+    },
+    "order2": {
+      "shown_first": "llama3.2",
+      "picked": "llama3.2",
+      "reason": "Answer A provides a clearer and more detailed explanation of the photosynthesis process, including specific steps and components involved in each stage."
+    },
+    "file": "evidence/pairwise-verdicts/llama3.2/easy__reasoning_003__claude-sonnet-5__llama3.2.json"
+  },
+  {
+    "suite": "easy",
+    "item": "reasoning_003",
+    "model_a": "deepseek-v4-pro",
+    "model_b": "gpt-5.6-luna",
+    "order1": {
+      "shown_first": "deepseek-v4-pro",
+      "picked": "deepseek-v4-pro",
+      "reason": "Answer A provides more detailed and accurate information about the stages of photosynthesis, including the specific locations within chloroplasts where each stage occurs."
+    },
+    "order2": {
+      "shown_first": "gpt-5.6-luna",
+      "picked": "gpt-5.6-luna",
+      "reason": "Answer A provides more detailed information about the stages of photosynthesis and the specific locations within chloroplasts where they occur, making it a more comprehensive explanation."
+    },
+    "file": "evidence/pairwise-verdicts/llama3.2/easy__reasoning_003__deepseek-v4-pro__gpt-5.6-luna.json"
+  },
+  {
+    "suite": "easy",
+    "item": "reasoning_003",
+    "model_a": "deepseek-v4-pro",
+    "model_b": "llama3.2",
+    "order1": {
+      "shown_first": "deepseek-v4-pro",
+      "picked": "deepseek-v4-pro",
+      "reason": "Answer A provides a clearer and more concise explanation of the two stages of photosynthesis, while Answer B includes unnecessary details and overly complex terminology."
+    },
+    "order2": {
+      "shown_first": "llama3.2",
+      "picked": "llama3.2",
+      "reason": "Answer A provides a more detailed and accurate explanation of the photosynthesis process, including the light-dependent and light-independent reactions, while Answer B simplifies some key points and lacks specific details."
+    },
+    "file": "evidence/pairwise-verdicts/llama3.2/easy__reasoning_003__deepseek-v4-pro__llama3.2.json"
+  },
+  {
+    "suite": "easy",
+    "item": "reasoning_003",
+    "model_a": "gpt-5.6-luna",
+    "model_b": "llama3.2",
+    "order1": {
+      "shown_first": "gpt-5.6-luna",
+      "picked": "gpt-5.6-luna",
+      "reason": "Answer A provides a clear and concise explanation of the light-dependent reactions, while Answer B includes unnecessary details about electron carriers and RuBP regeneration. Additionally, Answer A's equation is more simplified and accurate."
+    },
+    "order2": {
+      "shown_first": "llama3.2",
+      "picked": "llama3.2",
+      "reason": "Answer A provides a more detailed and accurate explanation of the photosynthesis process, including the light-dependent reactions and the Calvin cycle, making it the better answer."
+    },
+    "file": "evidence/pairwise-verdicts/llama3.2/easy__reasoning_003__gpt-5.6-luna__llama3.2.json"
+  }
+]

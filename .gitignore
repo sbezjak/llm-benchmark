@@ -1,0 +1,63 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+*.egg-info/
+.python-version
+
+# uv
+.uv/
+
+# build artifacts
+dist/
+build/
+
+# pytest / coverage / ruff
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# IDE / editor / tooling
+.idea/
+.vscode/
+*.swp
+.claude/
+
+# Raw (model, item) call captures - the spend-control cache ("capture once,
+# math off the artifact"). Local artifact; curated keepers go to evidence/.
+# cache-batch/ is the same, for the Batch-lane captures (batch_sweep runner).
+cache/
+cache-batch/
+
+# macOS
+.DS_Store
+
+# Reports: every run writes a UNIQUE UTC-timestamped file (reports/report-<UTC>.html,
+# enforced by tests/conftest.py pytest_configure) so no run can ever overwrite
+# another. Those auto files are local-only / ignored; a report given a DESCRIPTIVE
+# name (report-findings.html, the full-suite live-run report report-full-live-<date>.html,
+# the per-finding evidence reports referenced by findings.json, the guardrail/firewall
+# keepers) is committed deliberately. The glob
+# matches ONLY the timestamp shape (report-<8 digits>T<6 digits>Z.html), never the
+# descriptive names.
+reports/report.html
+reports/report-????????T??????Z.html
+
+# --- Secrets / local env (NEVER commit - API + Langfuse keys) ----------------
+.env
+.env.*
+!.env.example
+
+# --- Private working notes (not for the public-facing repo) -------------------
+PLAN.md
+plan-benchmarks.md
+memory-snapshot.md
+session-prompts.md
+notes.md
+human-tasks.md
+direction.md
+working_with_ai.md
+portfolio.md
+article*.md
+linkedin*.md

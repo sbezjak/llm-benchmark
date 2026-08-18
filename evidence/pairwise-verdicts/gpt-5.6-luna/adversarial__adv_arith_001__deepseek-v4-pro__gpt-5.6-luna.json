@@ -1,0 +1,12 @@
+{
+  "model_a": "deepseek-v4-pro",
+  "model_b": "gpt-5.6-luna",
+  "order1_winner": "TIE",
+  "order2_winner": "TIE",
+  "order1_reasoning": "Both answers give the correct 5-cent result and accurately verify the bat\u2019s price and total, with no meaningful difference in relevance or clarity.",
+  "order2_reasoning": "Both answers correctly identify the ball as costing 5 cents and provide a valid verification, so they are equally good.",
+  "outcome": "genuine_tie",
+  "winner": null,
+  "suite": "adversarial",
+  "item_id": "adv_arith_001"
+}

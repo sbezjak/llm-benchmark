@@ -1,0 +1,12 @@
+{
+  "model_a": "claude-haiku-4-5-20251001",
+  "model_b": "deepseek-v4-pro",
+  "order1_winner": "claude-haiku-4-5-20251001",
+  "order2_winner": "deepseek-v4-pro",
+  "order1_reasoning": "Both answers correctly identify glass and appropriately explain the wordplay, but Answer A provides slightly more useful context about the typical frame and the riddle\u2019s premise.",
+  "order2_reasoning": "Both answers correctly identify glass, but A is more concise and directly answers the riddle without unnecessary explanation.",
+  "outcome": "flip",
+  "winner": null,
+  "suite": "adversarial",
+  "item_id": "adv_riddle_001"
+}

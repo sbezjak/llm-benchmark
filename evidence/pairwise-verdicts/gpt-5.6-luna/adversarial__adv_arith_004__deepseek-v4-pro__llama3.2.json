@@ -1,0 +1,12 @@
+{
+  "model_a": "deepseek-v4-pro",
+  "model_b": "llama3.2",
+  "order1_winner": "llama3.2",
+  "order2_winner": "llama3.2",
+  "order1_reasoning": "Both answers are correct and directly relevant, but Answer B provides a clear calculation supporting the result.",
+  "order2_reasoning": "Both answers are correct and relevant, but Answer A provides a clear calculation while Answer B only states the result.",
+  "outcome": "win",
+  "winner": "llama3.2",
+  "suite": "adversarial",
+  "item_id": "adv_arith_004"
+}

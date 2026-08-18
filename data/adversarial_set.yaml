@@ -1,0 +1,72 @@
+# Adversarial set - 10 hand-written items chosen to SEPARATE models.
+#
+# The original golden_set is easy: all five models passed ~100%, so the quality
+# axis could not distinguish them (see evidence/benchmark-validity-analysis.md).
+# This suite is the "harder items, not more items" reply - each item has a single
+# knowable correct answer (so the judge can grade it) but a real failure trap a
+# weak model, and sometimes a strong one, falls into: multi-step arithmetic, a
+# letter-count, a common-misconception fact, a riddle, modular date reasoning.
+# A suite swap is itself a comparison - dataset.py is swappable by design.
+#
+# Same schema as golden_set.yaml. Expected = shortest fully-correct reference;
+# the judge treats it as a reference, not a string to match.
+
+- id: adv_arith_001
+  question: "A bat and a ball cost $1.10 in total. The bat costs $1.00 more than the ball. How much does the ball cost?"
+  expected: "$0.05 (5 cents)"
+  difficulty: hard
+  category: arithmetic
+
+- id: adv_arith_002
+  question: "A store sells pencils at 3 for $0.45. At that same price per pencil, how much do 17 pencils cost?"
+  expected: "$2.55"
+  difficulty: hard
+  category: arithmetic
+
+- id: adv_arith_003
+  question: "A shirt priced at $80 is discounted 25%, then a further 10% is taken off the reduced price. What is the final price?"
+  expected: "$54"
+  difficulty: hard
+  category: arithmetic
+
+- id: adv_arith_004
+  question: "How many seconds are there in one and a half days?"
+  expected: "129600 seconds"
+  difficulty: medium
+  category: arithmetic
+
+- id: adv_count_001
+  question: "How many times does the letter 'r' appear in the word 'strawberry'?"
+  expected: "3"
+  difficulty: hard
+  category: counting
+
+- id: adv_reason_001
+  question: "If today is Wednesday, what day of the week will it be 100 days from now?"
+  expected: "Friday"
+  difficulty: hard
+  category: reasoning
+
+- id: adv_logic_001
+  question: "Mango is heavier than Kiwi but lighter than Pomelo. Pomelo is lighter than Durian. Of the four, which is the heaviest?"
+  expected: "Durian"
+  difficulty: medium
+  category: logic
+
+- id: adv_factual_001
+  question: "Measured from its base to its summit rather than from sea level, what is the tallest mountain on Earth?"
+  expected: "Mauna Kea"
+  difficulty: hard
+  category: factual
+
+- id: adv_factual_002
+  question: "Which is the only sea on Earth with no land coastline, bounded instead by ocean currents?"
+  expected: "The Sargasso Sea"
+  difficulty: hard
+  category: factual
+
+- id: adv_riddle_001
+  question: "A red house is made of red bricks and a blue house is made of blue bricks. What is a greenhouse made of?"
+  expected: "Glass"
+  difficulty: hard
+  category: riddle

@@ -1,0 +1,12 @@
+{
+  "model_a": "claude-sonnet-5",
+  "model_b": "deepseek-v4-pro",
+  "order1_winner": "claude-sonnet-5",
+  "order2_winner": "TIE",
+  "order1_reasoning": "Both answers correctly identify Mauna Kea and explain the base-to-summit measurement, but A provides more accurate context and relevant supporting details.",
+  "order2_reasoning": "Both answers correctly identify Mauna Kea and accurately explain that its roughly 10,200-meter base-to-summit height exceeds Everest\u2019s, with Answer B adding relevant supporting details.",
+  "outcome": "flip",
+  "winner": null,
+  "suite": "adversarial",
+  "item_id": "adv_factual_001"
+}

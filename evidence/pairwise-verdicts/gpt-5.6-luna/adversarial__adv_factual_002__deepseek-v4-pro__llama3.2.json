@@ -1,0 +1,12 @@
+{
+  "model_a": "deepseek-v4-pro",
+  "model_b": "llama3.2",
+  "order1_winner": "deepseek-v4-pro",
+  "order2_winner": "deepseek-v4-pro",
+  "order1_reasoning": "Answer A correctly identifies the Sargasso Sea and accurately explains that it is bounded by ocean currents, while Answer B incorrectly identifies the Mediterranean Sea and contradicts itself by describing surrounding land coasts.",
+  "order2_reasoning": "Answer B correctly identifies the Sargasso Sea and accurately describes its current-defined boundaries, while Answer A incorrectly identifies the Mediterranean Sea and makes a false claim about its coastline.",
+  "outcome": "win",
+  "winner": "deepseek-v4-pro",
+  "suite": "adversarial",
+  "item_id": "adv_factual_002"
+}

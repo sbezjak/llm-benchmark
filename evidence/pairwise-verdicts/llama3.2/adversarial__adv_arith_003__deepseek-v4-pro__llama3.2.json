@@ -1,0 +1,12 @@
+{
+  "model_a": "deepseek-v4-pro",
+  "model_b": "llama3.2",
+  "order1_winner": "deepseek-v4-pro",
+  "order2_winner": "llama3.2",
+  "order1_reasoning": "Answer A is more concise and directly states the final price without unnecessary explanations.",
+  "order2_reasoning": "Answer A provides step-by-step calculations and clearly explains the process of applying discounts to the original price, making it more transparent and understandable.",
+  "outcome": "flip",
+  "winner": null,
+  "suite": "adversarial",
+  "item_id": "adv_arith_003"
+}

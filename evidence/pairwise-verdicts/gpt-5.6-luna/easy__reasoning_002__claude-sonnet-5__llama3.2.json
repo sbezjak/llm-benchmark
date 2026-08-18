@@ -1,0 +1,12 @@
+{
+  "model_a": "claude-sonnet-5",
+  "model_b": "llama3.2",
+  "order1_winner": "claude-sonnet-5",
+  "order2_winner": "claude-sonnet-5",
+  "order1_reasoning": "Both answers correctly explain that ice floats because its open crystalline structure makes it less dense than liquid water, but A is slightly more precise and clearly worded.",
+  "order2_reasoning": "Both answers correctly explain that ice is less dense because its crystal structure contains more open space, but B is more precise by identifying the hexagonal structure.",
+  "outcome": "win",
+  "winner": "claude-sonnet-5",
+  "suite": "easy",
+  "item_id": "reasoning_002"
+}

@@ -1,0 +1,674 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Model benchmark - adversarial set (cost / latency / quality)</title><style>
+:root { color-scheme: light dark; }
+body { font: 15px/1.5 -apple-system, system-ui, sans-serif; margin: 2rem auto;
+       max-width: 1100px; padding: 0 1rem; }
+h1 { font-size: 1.5rem; } h2 { font-size: 1.15rem; margin-top: 2rem; }
+.meta { color: #666; margin-bottom: 1.5rem; }
+table { border-collapse: collapse; width: 100%; margin: 0.5rem 0 1rem;
+        font-variant-numeric: tabular-nums; }
+th, td { padding: 0.35rem 0.6rem; border-bottom: 1px solid #ccc; text-align: right; }
+th:first-child, td:first-child { text-align: left; }
+thead th { border-bottom: 2px solid #888; }
+.tie { color: #888; } .gap { font-weight: 600; }
+details { border: 1px solid #ccc; border-radius: 6px; margin: 0.4rem 0; padding: 0.3rem 0.6rem; }
+summary { cursor: pointer; font-variant-numeric: tabular-nums; }
+pre { white-space: pre-wrap; word-break: break-word; background: rgba(127,127,127,0.08);
+      padding: 0.5rem; border-radius: 4px; margin: 0.4rem 0; }
+.label { color: #666; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.04em; }
+.ans { color: #888; font-style: italic; font-size: 0.85rem; margin: 0.25rem 0 0;
+       white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+</style></head><body>
+<h1>Model benchmark - adversarial set (cost / latency / quality)</h1>
+<p class="meta">100 captures &middot; total spend $0.06720
+ &middot; graded by llama3.2 &middot; generated 2026-08-18 14:35:15Z
+ &middot; computed off cached captures (no re-call)</p>
+
+<h2>Cost / latency / quality</h2>
+<p class="meta">Quality is the score from the grader named above (llama3.2);
+every trace below also shows which model graded it and that judge's own tokens/cost.</p>
+<table><thead><tr><th>model</th><th>n</th><th>mean $/q</th><th>total $</th><th>mean lat ms</th><th>mean ttft ms</th><th>out tok</th><th>score</th><th>pass</th></tr></thead><tbody><tr><td>claude-haiku-4-5-20251001</td><td>20</td><td>0.000596</td><td>0.01192</td><td>1502</td><td>783</td><td>112.6</td><td>0.970</td><td>100%</td></tr><tr><td>gpt-5.6-luna</td><td>20</td><td>0.000083</td><td>0.00166</td><td>1394</td><td>1202</td><td>64.3</td><td>0.970</td><td>100%</td></tr><tr><td>llama3.2</td><td>20</td><td>0.000000</td><td>0.00000</td><td>5656</td><td>443</td><td>111.6</td><td>0.950</td><td>100%</td></tr><tr><td>deepseek-v4-pro</td><td>20</td><td>0.000142</td><td>0.00284</td><td>2797</td><td>2510</td><td>109.8</td><td>0.945</td><td>100%</td></tr><tr><td>claude-sonnet-5</td><td>20</td><td>0.002539</td><td>0.05078</td><td>4164</td><td>1985</td><td>246.1</td><td>0.937</td><td>100%</td></tr></tbody></table>
+
+<h2>Benchmark validity - score with 95% interval, tail latency, cost per passed answer</h2>
+<table><thead><tr><th>model</th><th>score</th><th>95% CI</th><th>lat p50 ms</th><th>lat p95 ms</th><th>passes</th><th>$/passed</th></tr></thead><tbody><tr><td>claude-haiku-4-5-20251001</td><td>0.970</td><td>[0.950, 0.985]</td><td>1525</td><td>1903</td><td>20/20</td><td>0.000596</td></tr><tr><td>gpt-5.6-luna</td><td>0.970</td><td>[0.955, 0.985]</td><td>1244</td><td>2110</td><td>20/20</td><td>0.000083</td></tr><tr><td>llama3.2</td><td>0.950</td><td>[0.917, 0.977]</td><td>5728</td><td>8140</td><td>20/20</td><td>0.000000</td></tr><tr><td>deepseek-v4-pro</td><td>0.945</td><td>[0.910, 0.975]</td><td>2373</td><td>4313</td><td>20/20</td><td>0.000142</td></tr><tr><td>claude-sonnet-5</td><td>0.937</td><td>[0.897, 0.972]</td><td>3611</td><td>6651</td><td>20/20</td><td>0.002539</td></tr></tbody></table>
+
+<h2>Paired significance - is a score difference real, or noise?</h2>
+<p class="meta">Baseline is the top-ranked model; each row bootstraps the per-item
+score difference. A CI that contains 0 means the two are a statistical tie on this
+suite. The judge emits discrete scores, so weigh the mean diff, not just the sign.</p>
+<table><thead><tr><th>claude-haiku-4-5-20251001 minus</th><th>pairs</th><th>mean diff</th><th>95% CI</th><th>read</th></tr></thead><tbody><tr><td>gpt-5.6-luna</td><td>20</td><td>+0.000</td><td>[-0.027, +0.025]</td><td class='tie'>tie (CI contains 0)</td></tr><tr><td>llama3.2</td><td>20</td><td>+0.020</td><td>[-0.008, +0.053]</td><td class='tie'>tie (CI contains 0)</td></tr><tr><td>deepseek-v4-pro</td><td>20</td><td>+0.025</td><td>[-0.008, +0.060]</td><td class='tie'>tie (CI contains 0)</td></tr><tr><td>claude-sonnet-5</td><td>20</td><td>+0.033</td><td>[-0.005, +0.077]</td><td class='tie'>tie (CI contains 0)</td></tr></tbody></table>
+
+<h2>Full trace - every prompt and response verbatim</h2>
+<p class="meta">One block per (model, item, rep). The raw output is the ground truth;
+the tables above are all computed from these.</p>
+<details><summary>claude-haiku-4-5-20251001 &middot; adv_arith_001 &middot; rep1 &middot; score 1.00 PASS &middot; judge llama3.2 &middot; 1820ms &middot; ttft 868ms &middot; 175 tok &middot; $0.000916<div class="ans">&ldquo;# Finding the Ball&#x27;s Cost Let me set up equations where: - b = cost of the ball - B = cost of the bat **From the problem:** 1) b + B = 1.10 …&rdquo;</div></summary><div class='label'>prompt</div><pre>A bat and a ball cost $1.10 in total. The bat costs $1.00 more than the ball. How much does the ball cost?</pre><div class='label'>expected</div><pre>$0.05 (5 cents)</pre><div class='label'>response</div><pre># Finding the Ball&#x27;s Cost
+
+Let me set up equations where:
+- b = cost of the ball
+- B = cost of the bat
+
+**From the problem:**
+1) b + B = 1.10
+2) B = b + 1.00
+
+**Substituting equation 2 into equation 1:**
+- b + (b + 1.00) = 1.10
+- 2b + 1.00 = 1.10
+- 2b = 0.10
+- b = 0.05
+
+**The ball costs $0.05** (5 cents)
+
+To verify: The bat costs $1.05, and together $1.05 + $0.05 = $1.10 ✓</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=10/10 relevance=10/10 score=1.000 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer demonstrates a clear understanding of the problem and correctly solves for the ball&#x27;s cost using algebraic substitution.</pre></details><details><summary>claude-haiku-4-5-20251001 &middot; adv_arith_001 &middot; rep2 &middot; score 1.00 PASS &middot; judge llama3.2 &middot; 1613ms &middot; ttft 651ms &middot; 141 tok &middot; $0.000746<div class="ans">&ldquo;# Solution Let me set up equations where: - b = cost of the ball - B = cost of the bat **Given information:** - b + B = $1.10 - B = b + $1.0…&rdquo;</div></summary><div class='label'>prompt</div><pre>A bat and a ball cost $1.10 in total. The bat costs $1.00 more than the ball. How much does the ball cost?</pre><div class='label'>expected</div><pre>$0.05 (5 cents)</pre><div class='label'>response</div><pre># Solution
+
+Let me set up equations where:
+- b = cost of the ball
+- B = cost of the bat
+
+**Given information:**
+- b + B = $1.10
+- B = b + $1.00
+
+**Solving:**
+
+Substitute the second equation into the first:
+
+b + (b + $1.00) = $1.10
+
+2b + $1.00 = $1.10
+
+2b = $0.10
+
+**b = $0.05**
+
+The ball costs **$0.05** (5 cents).
+
+(The bat costs $1.05)</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=10/10 relevance=10/10 score=1.000 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer is correct in terms of mathematical operations and substitution, but the explanation could be more concise and clear.</pre></details><details><summary>claude-haiku-4-5-20251001 &middot; adv_arith_002 &middot; rep1 &middot; score 1.00 PASS &middot; judge llama3.2 &middot; 1279ms &middot; ttft 639ms &middot; 112 tok &middot; $0.000600<div class="ans">&ldquo;# Finding the Cost of 17 Pencils **Step 1: Find the price per pencil** - 3 pencils cost $0.45 - Price per pencil = $0.45 ÷ 3 = $0.15 **Step …&rdquo;</div></summary><div class='label'>prompt</div><pre>A store sells pencils at 3 for $0.45. At that same price per pencil, how much do 17 pencils cost?</pre><div class='label'>expected</div><pre>$2.55</pre><div class='label'>response</div><pre># Finding the Cost of 17 Pencils
+
+**Step 1: Find the price per pencil**
+- 3 pencils cost $0.45
+- Price per pencil = $0.45 ÷ 3 = $0.15
+
+**Step 2: Calculate the cost of 17 pencils**
+- Cost = 17 × $0.15 = $2.55
+
+**Answer: 17 pencils cost $2.55**</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=10/10 relevance=10/10 score=1.000 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer demonstrates a clear understanding of the problem and applies the correct mathematical operations to find the solution.</pre></details><details><summary>claude-haiku-4-5-20251001 &middot; adv_arith_002 &middot; rep2 &middot; score 1.00 PASS &middot; judge llama3.2 &middot; 1239ms &middot; ttft 719ms &middot; 113 tok &middot; $0.000605<div class="ans">&ldquo;# Finding the Cost of 17 Pencils **Step 1: Find the price per pencil** - 3 pencils cost $0.45 - Price per pencil = $0.45 ÷ 3 = $0.15 per pen…&rdquo;</div></summary><div class='label'>prompt</div><pre>A store sells pencils at 3 for $0.45. At that same price per pencil, how much do 17 pencils cost?</pre><div class='label'>expected</div><pre>$2.55</pre><div class='label'>response</div><pre># Finding the Cost of 17 Pencils
+
+**Step 1: Find the price per pencil**
+- 3 pencils cost $0.45
+- Price per pencil = $0.45 ÷ 3 = $0.15 per pencil
+
+**Step 2: Find the cost of 17 pencils**
+- Cost = 17 × $0.15 = $2.55
+
+**17 pencils cost $2.55**</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=10/10 relevance=10/10 score=1.000 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer demonstrates a clear understanding of the problem and applies basic arithmetic operations to find the correct solution.</pre></details><details><summary>claude-haiku-4-5-20251001 &middot; adv_arith_003 &middot; rep1 &middot; score 1.00 PASS &middot; judge llama3.2 &middot; 1562ms &middot; ttft 923ms &middot; 128 tok &middot; $0.000680<div class="ans">&ldquo;# Calculating the Final Price **Step 1: Apply the 25% discount** - 25% of $80 = 0.25 × $80 = $20 - Price after first discount = $80 - $20 = …&rdquo;</div></summary><div class='label'>prompt</div><pre>A shirt priced at $80 is discounted 25%, then a further 10% is taken off the reduced price. What is the final price?</pre><div class='label'>expected</div><pre>$54</pre><div class='label'>response</div><pre># Calculating the Final Price
+
+**Step 1: Apply the 25% discount**
+- 25% of $80 = 0.25 × $80 = $20
+- Price after first discount = $80 - $20 = **$60**
+
+**Step 2: Apply the 10% discount to the reduced price**
+- 10% of $60 = 0.10 × $60 = $6
+- Final price = $60 - $6 = **$54**
+
+The final price is **$54**.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=10/10 relevance=10/10 score=1.000 &gt;= threshold=0.7 | reasoning: The model correctly applied both discounts sequentially and arrived at the expected answer, demonstrating a clear understanding of percentage-based calculations.</pre></details><details><summary>claude-haiku-4-5-20251001 &middot; adv_arith_003 &middot; rep2 &middot; score 1.00 PASS &middot; judge llama3.2 &middot; 1314ms &middot; ttft 713ms &middot; 118 tok &middot; $0.000630<div class="ans">&ldquo;# Calculating the Final Price **Step 1: Apply the 25% discount** - Discount amount: $80 × 0.25 = $20 - Price after first discount: $80 − $20…&rdquo;</div></summary><div class='label'>prompt</div><pre>A shirt priced at $80 is discounted 25%, then a further 10% is taken off the reduced price. What is the final price?</pre><div class='label'>expected</div><pre>$54</pre><div class='label'>response</div><pre># Calculating the Final Price
+
+**Step 1: Apply the 25% discount**
+- Discount amount: $80 × 0.25 = $20
+- Price after first discount: $80 − $20 = $60
+
+**Step 2: Apply the 10% discount to the reduced price**
+- Discount amount: $60 × 0.10 = $6
+- Final price: $60 − $6 = **$54**
+
+The final price is **$54**.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=10/10 relevance=10/10 score=1.000 &gt;= threshold=0.7 | reasoning: The model correctly applied both discounts sequentially and arrived at the expected answer, but its formatting could be improved for clarity.</pre></details><details><summary>claude-haiku-4-5-20251001 &middot; adv_arith_004 &middot; rep1 &middot; score 1.00 PASS &middot; judge llama3.2 &middot; 1559ms &middot; ttft 1059ms &middot; 95 tok &middot; $0.000494<div class="ans">&ldquo;To find the number of seconds in one and a half days: 1 day = 24 hours 1.5 days = 1.5 × 24 = 36 hours 1 hour = 3,600 seconds 36 hours = 36 ×…&rdquo;</div></summary><div class='label'>prompt</div><pre>How many seconds are there in one and a half days?</pre><div class='label'>expected</div><pre>129600 seconds</pre><div class='label'>response</div><pre>To find the number of seconds in one and a half days:
+
+1 day = 24 hours
+1.5 days = 1.5 × 24 = 36 hours
+
+1 hour = 3,600 seconds
+36 hours = 36 × 3,600 = 129,600 seconds
+
+**There are 129,600 seconds in one and a half days.**</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=10/10 relevance=10/10 score=1.000 &gt;= threshold=0.7 | reasoning: The model provided a step-by-step calculation to arrive at the correct answer, demonstrating an understanding of time conversion.</pre></details><details><summary>claude-haiku-4-5-20251001 &middot; adv_arith_004 &middot; rep2 &middot; score 1.00 PASS &middot; judge llama3.2 &middot; 1043ms &middot; ttft 647ms &middot; 82 tok &middot; $0.000429<div class="ans">&ldquo;To find the number of seconds in one and a half days: 1.5 days × 24 hours/day × 60 minutes/hour × 60 seconds/minute = 1.5 × 24 × 60 × 60 = 1…&rdquo;</div></summary><div class='label'>prompt</div><pre>How many seconds are there in one and a half days?</pre><div class='label'>expected</div><pre>129600 seconds</pre><div class='label'>response</div><pre>To find the number of seconds in one and a half days:
+
+1.5 days × 24 hours/day × 60 minutes/hour × 60 seconds/minute
+
+= 1.5 × 24 × 60 × 60
+= 1.5 × 86,400
+= **129,600 seconds**</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=10/10 relevance=10/10 score=1.000 &gt;= threshold=0.7 | reasoning: The model&#x27;s calculation is correct and accurately reflects the expected answer.</pre></details><details><summary>claude-haiku-4-5-20251001 &middot; adv_count_001 &middot; rep1 &middot; score 1.00 PASS &middot; judge llama3.2 &middot; 1154ms &middot; ttft 665ms &middot; 109 tok &middot; $0.000572<div class="ans">&ldquo;To count the letter &#x27;r&#x27; in the word &#x27;strawberry&#x27;, I&#x27;ll go through each letter: s-t-r-a-w-b-e-r-r-y The letter &#x27;r&#x27; appears **3 times**: - Onc…&rdquo;</div></summary><div class='label'>prompt</div><pre>How many times does the letter &#x27;r&#x27; appear in the word &#x27;strawberry&#x27;?</pre><div class='label'>expected</div><pre>3</pre><div class='label'>response</div><pre>To count the letter &#x27;r&#x27; in the word &#x27;strawberry&#x27;, I&#x27;ll go through each letter:
+
+s-t-r-a-w-b-e-r-r-y
+
+The letter &#x27;r&#x27; appears **3 times**:
+- Once in position 3 (st**r**awberry)
+- Once in position 8 (strawbe**r**ry)
+- Once in position 9 (strawber**r**y)</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=10/10 relevance=10/10 score=1.000 &gt;= threshold=0.7 | reasoning: The model correctly counted the occurrences of &#x27;r&#x27; in the word &#x27;strawberry&#x27;, but its explanation could be more concise and focused on the answer.</pre></details><details><summary>claude-haiku-4-5-20251001 &middot; adv_count_001 &middot; rep2 &middot; score 1.00 PASS &middot; judge llama3.2 &middot; 1360ms &middot; ttft 782ms &middot; 108 tok &middot; $0.000567<div class="ans">&ldquo;To count the letter &#x27;r&#x27; in the word &#x27;strawberry&#x27;, I&#x27;ll examine each letter: s-t-r-a-w-b-e-r-r-y The letter &#x27;r&#x27; appears **3 times**: - Once i…&rdquo;</div></summary><div class='label'>prompt</div><pre>How many times does the letter &#x27;r&#x27; appear in the word &#x27;strawberry&#x27;?</pre><div class='label'>expected</div><pre>3</pre><div class='label'>response</div><pre>To count the letter &#x27;r&#x27; in the word &#x27;strawberry&#x27;, I&#x27;ll examine each letter:
+
+s-t-r-a-w-b-e-r-r-y
+
+The letter &#x27;r&#x27; appears **3 times**:
+- Once in position 3 (st**r**awberry)
+- Once in position 8 (strawbe**r**ry)
+- Once in position 9 (strawber**r**y)</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=10/10 relevance=10/10 score=1.000 &gt;= threshold=0.7 | reasoning: The model correctly counted the occurrences of &#x27;r&#x27; in the word &#x27;strawberry&#x27;, but its explanation was overly verbose and included unnecessary details.</pre></details><details><summary>claude-haiku-4-5-20251001 &middot; adv_factual_001 &middot; rep1 &middot; score 0.95 PASS &middot; judge llama3.2 &middot; 1833ms &middot; ttft 896ms &middot; 121 tok &middot; $0.000635<div class="ans">&ldquo;# Mauna Kea Mauna Kea in Hawaii is the tallest mountain on Earth when measured from its base to its summit. It rises approximately **33,500 …&rdquo;</div></summary><div class='label'>prompt</div><pre>Measured from its base to its summit rather than from sea level, what is the tallest mountain on Earth?</pre><div class='label'>expected</div><pre>Mauna Kea</pre><div class='label'>response</div><pre># Mauna Kea
+
+Mauna Kea in Hawaii is the tallest mountain on Earth when measured from its base to its summit. 
+
+It rises approximately **33,500 feet (10,200 meters)** from the ocean floor to its peak, which stands about 13,802 feet (4,207 meters) above sea level. This makes it taller than Mount Everest, which measures about 29,029 feet (8,849 meters) from sea level but is situated on already-elevated terrain.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=9/10 relevance=10/10 score=0.950 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer correctly identifies Mauna Kea as the tallest mountain when measured from base to summit, but provides additional information that slightly detracts from its overall score.</pre></details><details><summary>claude-haiku-4-5-20251001 &middot; adv_factual_001 &middot; rep2 &middot; score 0.95 PASS &middot; judge llama3.2 &middot; 1902ms &middot; ttft 786ms &middot; 125 tok &middot; $0.000655<div class="ans">&ldquo;# Mauna Kea Mauna Kea in Hawaii is the tallest mountain on Earth when measured from its base to its summit. It rises approximately **33,500 …&rdquo;</div></summary><div class='label'>prompt</div><pre>Measured from its base to its summit rather than from sea level, what is the tallest mountain on Earth?</pre><div class='label'>expected</div><pre>Mauna Kea</pre><div class='label'>response</div><pre># Mauna Kea
+
+Mauna Kea in Hawaii is the tallest mountain on Earth when measured from its base to its summit. It rises approximately **33,500 feet (10,210 meters)** from the ocean floor to its peak.
+
+In comparison, Mount Everest is only about 29,029 feet (8,848 meters) above sea level, but much of its base is already at high elevation on the Tibetan Plateau. When measured from true base to summit, Mauna Kea is significantly taller.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=10/10 relevance=9/10 score=0.950 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer correctly identifies Mauna Kea as the tallest mountain when measured from its base to its summit and provides additional context about its height.</pre></details><details><summary>claude-haiku-4-5-20251001 &middot; adv_factual_002 &middot; rep1 &middot; score 0.95 PASS &middot; judge llama3.2 &middot; 1769ms &middot; ttft 844ms &middot; 112 tok &middot; $0.000587<div class="ans">&ldquo;# The Sargasso Sea The Sargasso Sea is the only sea on Earth with no land coastline. It&#x27;s located in the North Atlantic Ocean and is bounded…&rdquo;</div></summary><div class='label'>prompt</div><pre>Which is the only sea on Earth with no land coastline, bounded instead by ocean currents?</pre><div class='label'>expected</div><pre>The Sargasso Sea</pre><div class='label'>response</div><pre># The Sargasso Sea
+
+The Sargasso Sea is the only sea on Earth with no land coastline. It&#x27;s located in the North Atlantic Ocean and is bounded entirely by ocean currents—specifically the Gulf Stream, the North Atlantic Current, the Canary Current, and the North Atlantic Equatorial Current.
+
+This unique sea is also known for its abundance of Sargassum seaweed and serves as a critical breeding ground for species like the European eel and Atlantic bluefin tuna.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=9/10 relevance=10/10 score=0.950 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer correctly identifies the Sargasso Sea as the only sea with no land coastline, but provides additional information that is not necessary to answer the question.</pre></details><details><summary>claude-haiku-4-5-20251001 &middot; adv_factual_002 &middot; rep2 &middot; score 0.95 PASS &middot; judge llama3.2 &middot; 1325ms &middot; ttft 635ms &middot; 89 tok &middot; $0.000472<div class="ans">&ldquo;The Sargasso Sea is the only sea on Earth with no land coastline. It is located in the North Atlantic Ocean and is bounded by ocean currents…&rdquo;</div></summary><div class='label'>prompt</div><pre>Which is the only sea on Earth with no land coastline, bounded instead by ocean currents?</pre><div class='label'>expected</div><pre>The Sargasso Sea</pre><div class='label'>response</div><pre>The Sargasso Sea is the only sea on Earth with no land coastline. It is located in the North Atlantic Ocean and is bounded by ocean currents instead of land—specifically by the Gulf Stream, the North Atlantic Current, the Canary Current, and the North Atlantic Equatorial Current. It&#x27;s known for its unique ecosystem and the floating sargassum seaweed that gives it its name.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=10/10 relevance=9/10 score=0.950 &gt;= threshold=0.7 | reasoning: The model provided a detailed description of the Sargasso Sea, including its location and boundaries, which is correct. However, the additional information about the ecosystem and floating seaweed was not requested.</pre></details><details><summary>claude-haiku-4-5-20251001 &middot; adv_logic_001 &middot; rep1 &middot; score 0.95 PASS &middot; judge llama3.2 &middot; 1501ms &middot; ttft 719ms &middot; 130 tok &middot; $0.000695<div class="ans">&ldquo;# Finding the Heaviest Fruit Let me work through the given comparisons: 1. **Mango &gt; Kiwi** (Mango is heavier than Kiwi) 2. **Mango &lt; Pomelo…&rdquo;</div></summary><div class='label'>prompt</div><pre>Mango is heavier than Kiwi but lighter than Pomelo. Pomelo is lighter than Durian. Of the four, which is the heaviest?</pre><div class='label'>expected</div><pre>Durian</pre><div class='label'>response</div><pre># Finding the Heaviest Fruit
+
+Let me work through the given comparisons:
+
+1. **Mango &gt; Kiwi** (Mango is heavier than Kiwi)
+2. **Mango &lt; Pomelo** (Mango is lighter than Pomelo)
+3. **Pomelo &lt; Durian** (Pomelo is lighter than Durian)
+
+Combining these: **Kiwi &lt; Mango &lt; Pomelo &lt; Durian**
+
+**Durian is the heaviest** of the four.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=10/10 relevance=9/10 score=0.950 &gt;= threshold=0.7 | reasoning: The model correctly combined the comparisons to determine the order and identified Durian as the heaviest, but its response format was not ideal.</pre></details><details><summary>claude-haiku-4-5-20251001 &middot; adv_logic_001 &middot; rep2 &middot; score 1.00 PASS &middot; judge llama3.2 &middot; 1926ms &middot; ttft 1152ms &middot; 121 tok &middot; $0.000650<div class="ans">&ldquo;# Finding the Heaviest Fruit Let me work through the weight relationships: 1. Mango &gt; Kiwi (Mango is heavier than Kiwi) 2. Mango &lt; Pomelo (M…&rdquo;</div></summary><div class='label'>prompt</div><pre>Mango is heavier than Kiwi but lighter than Pomelo. Pomelo is lighter than Durian. Of the four, which is the heaviest?</pre><div class='label'>expected</div><pre>Durian</pre><div class='label'>response</div><pre># Finding the Heaviest Fruit
+
+Let me work through the weight relationships:
+
+1. Mango &gt; Kiwi (Mango is heavier than Kiwi)
+2. Mango &lt; Pomelo (Mango is lighter than Pomelo)
+3. Pomelo &lt; Durian (Pomelo is lighter than Durian)
+
+Combining these relationships:
+**Kiwi &lt; Mango &lt; Pomelo &lt; Durian**
+
+**Durian is the heaviest.**</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=10/10 relevance=10/10 score=1.000 &gt;= threshold=0.7 | reasoning: The model correctly combined the weight relationships to determine that Durian is indeed heavier than the other three fruits.</pre></details><details><summary>claude-haiku-4-5-20251001 &middot; adv_reason_001 &middot; rep1 &middot; score 0.95 PASS &middot; judge llama3.2 &middot; 1354ms &middot; ttft 712ms &middot; 116 tok &middot; $0.000607<div class="ans">&ldquo;I need to find what day it will be 100 days from Wednesday. Since days of the week repeat every 7 days, I&#x27;ll divide 100 by 7: 100 ÷ 7 = 14 r…&rdquo;</div></summary><div class='label'>prompt</div><pre>If today is Wednesday, what day of the week will it be 100 days from now?</pre><div class='label'>expected</div><pre>Friday</pre><div class='label'>response</div><pre>I need to find what day it will be 100 days from Wednesday.
+
+Since days of the week repeat every 7 days, I&#x27;ll divide 100 by 7:
+
+100 ÷ 7 = 14 remainder 2
+
+This means 100 days = 14 complete weeks + 2 extra days
+
+Starting from Wednesday and adding 2 days:
+- Wednesday + 1 day = Thursday
+- Wednesday + 2 days = Friday
+
+**It will be Friday.**</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=10/10 relevance=9/10 score=0.950 &gt;= threshold=0.7 | reasoning: The model correctly calculates the number of days to add to Wednesday, but its answer is phrased differently than expected.</pre></details><details><summary>claude-haiku-4-5-20251001 &middot; adv_reason_001 &middot; rep2 &middot; score 0.95 PASS &middot; judge llama3.2 &middot; 1550ms &middot; ttft 826ms &middot; 116 tok &middot; $0.000607<div class="ans">&ldquo;I need to find what day it will be 100 days from Wednesday. Since days of the week repeat every 7 days, I&#x27;ll divide 100 by 7: 100 ÷ 7 = 14 r…&rdquo;</div></summary><div class='label'>prompt</div><pre>If today is Wednesday, what day of the week will it be 100 days from now?</pre><div class='label'>expected</div><pre>Friday</pre><div class='label'>response</div><pre>I need to find what day it will be 100 days from Wednesday.
+
+Since days of the week repeat every 7 days, I&#x27;ll divide 100 by 7:
+
+100 ÷ 7 = 14 remainder 2
+
+This means 100 days = 14 complete weeks + 2 extra days
+
+Starting from Wednesday and adding 2 days:
+- Wednesday + 1 day = Thursday
+- Wednesday + 2 days = Friday
+
+**It will be Friday.**</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=10/10 relevance=9/10 score=0.950 &gt;= threshold=0.7 | reasoning: The model correctly calculates the number of days to add to Wednesday, but its answer is phrased differently than expected.</pre></details><details><summary>claude-haiku-4-5-20251001 &middot; adv_riddle_001 &middot; rep1 &middot; score 0.85 PASS &middot; judge llama3.2 &middot; 1602ms &middot; ttft 759ms &middot; 71 tok &middot; $0.000389<div class="ans">&ldquo;A greenhouse is made of glass (and typically a metal or wooden frame). The riddle plays on the word &quot;green&quot; by suggesting it follows the sam…&rdquo;</div></summary><div class='label'>prompt</div><pre>A red house is made of red bricks and a blue house is made of blue bricks. What is a greenhouse made of?</pre><div class='label'>expected</div><pre>Glass</pre><div class='label'>response</div><pre>A greenhouse is made of glass (and typically a metal or wooden frame).
+
+The riddle plays on the word &quot;green&quot; by suggesting it follows the same pattern as the red and blue houses, but &quot;greenhouse&quot; actually refers to the glass structure used for growing plants, not a house that is colored green or made of green materials.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=8/10 relevance=9/10 score=0.850 &gt;= threshold=0.7 | reasoning: (reasoning unparseable, scores extracted by regex fallback)</pre></details><details><summary>claude-haiku-4-5-20251001 &middot; adv_riddle_001 &middot; rep2 &middot; score 0.90 PASS &middot; judge llama3.2 &middot; 1328ms &middot; ttft 666ms &middot; 70 tok &middot; $0.000384<div class="ans">&ldquo;A greenhouse is typically made of **glass** (and metal or wood framing). The name &quot;greenhouse&quot; refers to its function—it&#x27;s a structure desig…&rdquo;</div></summary><div class='label'>prompt</div><pre>A red house is made of red bricks and a blue house is made of blue bricks. What is a greenhouse made of?</pre><div class='label'>expected</div><pre>Glass</pre><div class='label'>response</div><pre>A greenhouse is typically made of **glass** (and metal or wood framing).
+
+The name &quot;greenhouse&quot; refers to its function—it&#x27;s a structure designed to trap heat and create a warm environment for plants—rather than its color. The &quot;green&quot; comes from the plants grown inside it, not the building material itself.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=10/10 relevance=8/10 score=0.900 &gt;= threshold=0.7 | reasoning: The model provided a correct answer with additional context about the origin of the term &#x27;greenhouse&#x27;, but failed to score high on relevance due to providing extraneous information.</pre></details><details><summary>claude-sonnet-5 &middot; adv_arith_001 &middot; rep1 &middot; score 0.75 PASS &middot; judge llama3.2 &middot; 4775ms &middot; ttft 1563ms &middot; 323 tok &middot; $0.003326<div class="ans">&ldquo;# Bat and Ball Problem **Answer: $0.05 (5 cents)** **Why it&#x27;s not $0.10:** The intuitive (but wrong) answer is that the ball costs $0.10, bu…&rdquo;</div></summary><div class='label'>prompt</div><pre>A bat and a ball cost $1.10 in total. The bat costs $1.00 more than the ball. How much does the ball cost?</pre><div class='label'>expected</div><pre>$0.05 (5 cents)</pre><div class='label'>response</div><pre># Bat and Ball Problem
+
+**Answer: $0.05 (5 cents)**
+
+**Why it&#x27;s not $0.10:**
+The intuitive (but wrong) answer is that the ball costs $0.10, but that would make the bat $1.10, for a total of $1.20 — too much.
+
+**The correct math:**
+
+Let the ball = *x*
+Then the bat = *x* + $1.00
+
+Together: 
+$$x + (x + 1.00) = 1.10$$
+$$2x + 1.00 = 1.10$$
+$$2x = 0.10$$
+$$x = 0.05$$
+
+**Check:**
+- Ball: $0.05
+- Bat: $0.05 + $1.00 = $1.05
+- Total: $0.05 + $1.05 = **$1.10** ✓
+
+This is a famous example from psychologist Daniel Kahneman&#x27;s research, used to illustrate how our brains often jump to a fast, intuitive answer rather than pausing to reason through the problem carefully.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=10/10 relevance=5/10 score=0.750 &gt;= threshold=0.7 | reasoning: The model provided a step-by-step solution to the classic bat and ball problem, correctly applying algebraic reasoning to arrive at the expected answer of $0.05. However, it also included extraneous information about Daniel Kahneman&#x27;s research, which is not relevant to the question.</pre></details><details><summary>claude-sonnet-5 &middot; adv_arith_001 &middot; rep2 &middot; score 0.95 PASS &middot; judge llama3.2 &middot; 5785ms &middot; ttft 1971ms &middot; 401 tok &middot; $0.004106<div class="ans">&ldquo;# Bat and Ball Problem **Answer: $0.05 (5 cents)** ## The Math Let the ball cost = *x* Then the bat costs = *x* + $1.00 Together: $$x + (x +…&rdquo;</div></summary><div class='label'>prompt</div><pre>A bat and a ball cost $1.10 in total. The bat costs $1.00 more than the ball. How much does the ball cost?</pre><div class='label'>expected</div><pre>$0.05 (5 cents)</pre><div class='label'>response</div><pre># Bat and Ball Problem
+
+**Answer: $0.05 (5 cents)**
+
+## The Math
+
+Let the ball cost = *x*
+
+Then the bat costs = *x* + $1.00
+
+Together: 
+$$x + (x + 1.00) = 1.10$$
+$$2x + 1.00 = 1.10$$
+$$2x = 0.10$$
+$$x = 0.05$$
+
+## Verification
+- Ball: $0.05
+- Bat: $0.05 + $1.00 = $1.05
+- Total: $0.05 + $1.05 = **$1.10** ✓
+- Bat costs $1.00 more than ball: $1.05 − $0.05 = **$1.00** ✓
+
+## Why This Trips People Up
+
+Most people&#x27;s intuition jumps to **$0.10** because $1.00 + $0.10 = $1.10 total. But that&#x27;s incorrect—if the ball were $0.10, the bat would need to be $1.00 *more* than that, making it $1.10, for a total of $1.20 (not $1.10). This is a classic example from behavioral economics (popularized by Daniel Kahneman) showing how our fast, intuitive thinking can lead us astray on problems that seem simple at first glance.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=10/10 relevance=9/10 score=0.950 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer correctly solves the bat and ball problem with step-by-step math and verifies its solution. However, it includes unnecessary details about behavioral economics and a personal anecdote.</pre></details><details><summary>claude-sonnet-5 &middot; adv_arith_002 &middot; rep1 &middot; score 0.75 PASS &middot; judge llama3.2 &middot; 3165ms &middot; ttft 2052ms &middot; 144 tok &middot; $0.001528<div class="ans">&ldquo;**17 pencils cost $2.55** Here&#x27;s how to solve it: **Step 1: Find the price per pencil** $0.45 ÷ 3 pencils = $0.15 per pencil **Step 2: Multi…&rdquo;</div></summary><div class='label'>prompt</div><pre>A store sells pencils at 3 for $0.45. At that same price per pencil, how much do 17 pencils cost?</pre><div class='label'>expected</div><pre>$2.55</pre><div class='label'>response</div><pre>**17 pencils cost $2.55**
+
+Here&#x27;s how to solve it:
+
+**Step 1: Find the price per pencil**
+$0.45 ÷ 3 pencils = $0.15 per pencil
+
+**Step 2: Multiply by 17 pencils**
+$0.15 × 17 = $2.55</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=10/10 relevance=5/10 score=0.750 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer is correct but lacks clarity, as it simply states the result without explaining how it was calculated.</pre></details><details><summary>claude-sonnet-5 &middot; adv_arith_002 &middot; rep2 &middot; score 1.00 PASS &middot; judge llama3.2 &middot; 3272ms &middot; ttft 1985ms &middot; 185 tok &middot; $0.001938<div class="ans">&ldquo;# Setting Up the Rate **Step 1: Find the price per pencil** If 3 pencils cost $0.45, then: $$\text{Price per pencil} = \frac{\$0.45}{3} = \$…&rdquo;</div></summary><div class='label'>prompt</div><pre>A store sells pencils at 3 for $0.45. At that same price per pencil, how much do 17 pencils cost?</pre><div class='label'>expected</div><pre>$2.55</pre><div class='label'>response</div><pre># Setting Up the Rate
+
+**Step 1: Find the price per pencil**
+
+If 3 pencils cost $0.45, then:
+$$\text{Price per pencil} = \frac{\$0.45}{3} = \$0.15$$
+
+**Step 2: Calculate the cost of 17 pencils**
+
+$$17 \times \$0.15 = \$2.55$$
+
+## Answer
+17 pencils cost **$2.55**</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=10/10 relevance=10/10 score=1.000 &gt;= threshold=0.7 | reasoning: The model correctly calculates the price per pencil and then uses it to find the total cost of 17 pencils, demonstrating a clear understanding of the problem.</pre></details><details><summary>claude-sonnet-5 &middot; adv_arith_003 &middot; rep1 &middot; score 1.00 PASS &middot; judge llama3.2 &middot; 3844ms &middot; ttft 2106ms &middot; 224 tok &middot; $0.002332<div class="ans">&ldquo;# Calculating the Final Price **Step 1: Apply the first discount (25% off)** $80 × (1 - 0.25) = $80 × 0.75 = **$60** **Step 2: Apply the sec…&rdquo;</div></summary><div class='label'>prompt</div><pre>A shirt priced at $80 is discounted 25%, then a further 10% is taken off the reduced price. What is the final price?</pre><div class='label'>expected</div><pre>$54</pre><div class='label'>response</div><pre># Calculating the Final Price
+
+**Step 1: Apply the first discount (25% off)**
+
+$80 × (1 - 0.25) = $80 × 0.75 = **$60**
+
+**Step 2: Apply the second discount (10% off the new price)**
+
+$60 × (1 - 0.10) = $60 × 0.90 = **$54**
+
+## Final Price: **$54**
+
+*Note: This is equivalent to a combined discount of 32.5% off the original price (since 0.75 × 0.90 = 0.675, meaning you pay 67.5% of the original price).*</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=10/10 relevance=10/10 score=1.000 &gt;= threshold=0.7 | reasoning: The model correctly calculates the final price after applying both discounts and provides a clear explanation of the calculation process.</pre></details><details><summary>claude-sonnet-5 &middot; adv_arith_003 &middot; rep2 &middot; score 1.00 PASS &middot; judge llama3.2 &middot; 3475ms &middot; ttft 2192ms &middot; 197 tok &middot; $0.002062<div class="ans">&ldquo;**Step 1: Apply the first discount (25% off)** $80 × (1 - 0.25) = $80 × 0.75 = **$60** **Step 2: Apply the second discount (10% off the redu…&rdquo;</div></summary><div class='label'>prompt</div><pre>A shirt priced at $80 is discounted 25%, then a further 10% is taken off the reduced price. What is the final price?</pre><div class='label'>expected</div><pre>$54</pre><div class='label'>response</div><pre>**Step 1: Apply the first discount (25% off)**
+
+$80 × (1 - 0.25) = $80 × 0.75 = **$60**
+
+**Step 2: Apply the second discount (10% off the reduced price)**
+
+$60 × (1 - 0.10) = $60 × 0.90 = **$54**
+
+**Final Price: $54**
+
+*(This represents a combined discount of 32.5% off the original price, not 35%, since the second discount applies to the already-reduced price.)*</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=10/10 relevance=10/10 score=1.000 &gt;= threshold=0.7 | reasoning: The model correctly applied both discounts sequentially and arrived at the expected final price.</pre></details><details><summary>claude-sonnet-5 &middot; adv_arith_004 &middot; rep1 &middot; score 1.00 PASS &middot; judge llama3.2 &middot; 2494ms &middot; ttft 1677ms &middot; 224 tok &middot; $0.002280<div class="ans">&ldquo;# Seconds in One and a Half Days **Step 1: Find seconds in one day** $$24 \text{ hours} \times 60 \text{ minutes} \times 60 \text{ seconds} …&rdquo;</div></summary><div class='label'>prompt</div><pre>How many seconds are there in one and a half days?</pre><div class='label'>expected</div><pre>129600 seconds</pre><div class='label'>response</div><pre># Seconds in One and a Half Days
+
+**Step 1: Find seconds in one day**
+$$24 \text{ hours} \times 60 \text{ minutes} \times 60 \text{ seconds} = 86{,}400 \text{ seconds}$$
+
+**Step 2: Multiply by 1.5**
+$$86{,}400 \times 1.5 = 129{,}600 \text{ seconds}$$
+
+## Answer
+There are **129,600 seconds** in one and a half days.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=10/10 relevance=10/10 score=1.000 &gt;= threshold=0.7 | reasoning: The model correctly calculates the number of seconds in one day and then multiplies it by 1.5 to arrive at the expected answer.</pre></details><details><summary>claude-sonnet-5 &middot; adv_arith_004 &middot; rep2 &middot; score 1.00 PASS &middot; judge llama3.2 &middot; 2555ms &middot; ttft 1831ms &middot; 168 tok &middot; $0.001720<div class="ans">&ldquo;# Calculating Seconds in 1.5 Days **Step 1:** Find seconds in one day - 24 hours × 60 minutes × 60 seconds = 86,400 seconds **Step 2:** Mult…&rdquo;</div></summary><div class='label'>prompt</div><pre>How many seconds are there in one and a half days?</pre><div class='label'>expected</div><pre>129600 seconds</pre><div class='label'>response</div><pre># Calculating Seconds in 1.5 Days
+
+**Step 1:** Find seconds in one day
+- 24 hours × 60 minutes × 60 seconds = 86,400 seconds
+
+**Step 2:** Multiply by 1.5
+- 86,400 × 1.5 = **129,600 seconds**
+
+There are **129,600 seconds** in one and a half days.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=10/10 relevance=10/10 score=1.000 &gt;= threshold=0.7 | reasoning: The model correctly calculated the total number of seconds in one and a half days, but its response format was not ideal.</pre></details><details><summary>claude-sonnet-5 &middot; adv_count_001 &middot; rep1 &middot; score 1.00 PASS &middot; judge llama3.2 &middot; 3198ms &middot; ttft 2400ms &middot; 145 tok &middot; $0.001510<div class="ans">&ldquo;The letter &#x27;r&#x27; appears **3 times** in the word &quot;strawberry&quot; (s-t-**r**-a-w-b-e-**r**-**r**-y).&rdquo;</div></summary><div class='label'>prompt</div><pre>How many times does the letter &#x27;r&#x27; appear in the word &#x27;strawberry&#x27;?</pre><div class='label'>expected</div><pre>3</pre><div class='label'>response</div><pre>The letter &#x27;r&#x27; appears **3 times** in the word &quot;strawberry&quot; (s-t-**r**-a-w-b-e-**r**-**r**-y).</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=10/10 relevance=10/10 score=1.000 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer is correct and accurately counts the occurrences of the letter &#x27;r&#x27;, but it includes unnecessary details.</pre></details><details><summary>claude-sonnet-5 &middot; adv_count_001 &middot; rep2 &middot; score 1.00 PASS &middot; judge llama3.2 &middot; 3155ms &middot; ttft 2247ms &middot; 127 tok &middot; $0.001330<div class="ans">&ldquo;The letter &#x27;r&#x27; appears **3 times** in the word &quot;strawberry&quot; (s-t-**r**-a-w-b-e-**r**-**r**-y).&rdquo;</div></summary><div class='label'>prompt</div><pre>How many times does the letter &#x27;r&#x27; appear in the word &#x27;strawberry&#x27;?</pre><div class='label'>expected</div><pre>3</pre><div class='label'>response</div><pre>The letter &#x27;r&#x27; appears **3 times** in the word &quot;strawberry&quot; (s-t-**r**-a-w-b-e-**r**-**r**-y).</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=10/10 relevance=10/10 score=1.000 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer is correct and accurately counts the occurrences of the letter &#x27;r&#x27;, but it includes unnecessary details.</pre></details><details><summary>claude-sonnet-5 &middot; adv_factual_001 &middot; rep1 &middot; score 0.95 PASS &middot; judge llama3.2 &middot; 6432ms &middot; ttft 2267ms &middot; 349 tok &middot; $0.003566<div class="ans">&ldquo;**Mauna Kea** is the tallest mountain on Earth when measured from base to summit. Key details: - **Total height**: Approximately 10,210 mete…&rdquo;</div></summary><div class='label'>prompt</div><pre>Measured from its base to its summit rather than from sea level, what is the tallest mountain on Earth?</pre><div class='label'>expected</div><pre>Mauna Kea</pre><div class='label'>response</div><pre>**Mauna Kea** is the tallest mountain on Earth when measured from base to summit.
+
+Key details:
+- **Total height**: Approximately 10,210 meters (33,500 feet) from its base on the ocean floor to its peak
+- **Above sea level**: Only about 4,207 meters (13,802 feet) is visible above water
+- **Location**: Hawaii, USA (Big Island)
+- **Base location**: The mountain&#x27;s base sits on the floor of the Pacific Ocean
+
+This makes Mauna Kea significantly taller than **Mount Everest** in total height, even though Everest has the highest elevation above sea level (8,849 meters/29,032 feet). Everest&#x27;s base-to-summit height is less impressive because it sits atop the Tibetan Plateau, which is already at high elevation, so much of its &quot;height&quot; is really just the plateau elevation rather than the mountain&#x27;s own prominence.
+
+So while Everest remains the highest point on Earth relative to sea level, Mauna Kea wins the title of tallest mountain when you account for its full structure from base to peak.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=10/10 relevance=9/10 score=0.950 &gt;= threshold=0.7 | reasoning: The model correctly identified Mauna Kea as the tallest mountain on Earth when measured from base to summit and provided relevant details about its height and location.</pre></details><details><summary>claude-sonnet-5 &middot; adv_factual_001 &middot; rep2 &middot; score 0.85 PASS &middot; judge llama3.2 &middot; 6624ms &middot; ttft 2590ms &middot; 364 tok &middot; $0.003716<div class="ans">&ldquo;# Mauna Kea **Mauna Kea**, a dormant volcano in Hawaii, is the tallest mountain on Earth when measured from base to summit. ## Key Details: …&rdquo;</div></summary><div class='label'>prompt</div><pre>Measured from its base to its summit rather than from sea level, what is the tallest mountain on Earth?</pre><div class='label'>expected</div><pre>Mauna Kea</pre><div class='label'>response</div><pre># Mauna Kea
+
+**Mauna Kea**, a dormant volcano in Hawaii, is the tallest mountain on Earth when measured from base to summit.
+
+## Key Details:
+
+- **Total height**: Approximately 33,500 feet (10,210 meters) from base to summit
+- **Base location**: Much of Mauna Kea&#x27;s base lies on the floor of the Pacific Ocean
+- **Above sea level**: Only about 13,796 feet (4,207 meters) of the mountain is visible above the ocean&#x27;s surface
+
+## Comparison to Mount Everest
+
+While **Mount Everest** is the tallest mountain above sea level (29,032 feet/8,849 meters), Mauna Kea surpasses it in total height because so much of its structure is submerged underwater. If you measured Mauna Kea from where it begins on the ocean floor to its peak, it would actually be taller than Everest by several thousand feet.
+
+This distinction highlights the difference between:
+- **Elevation** (height above sea level) — Everest wins
+- **Base-to-peak height** (total structural height) — Mauna Kea wins</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=9/10 relevance=8/10 score=0.850 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer correctly identifies Mauna Kea as the tallest mountain on Earth when measured from base to summit, but its relevance is somewhat limited by the inclusion of extraneous information about Mount Everest and the distinction between elevation and base-to-peak height. The model could have provided a more concise response.</pre></details><details><summary>claude-sonnet-5 &middot; adv_factual_002 &middot; rep1 &middot; score 0.95 PASS &middot; judge llama3.2 &middot; 7171ms &middot; ttft 1681ms &middot; 447 tok &middot; $0.004542<div class="ans">&ldquo;# The Sargasso Sea The **Sargasso Sea**, located in the North Atlantic Ocean, is the only sea on Earth with no land boundaries. Instead, it …&rdquo;</div></summary><div class='label'>prompt</div><pre>Which is the only sea on Earth with no land coastline, bounded instead by ocean currents?</pre><div class='label'>expected</div><pre>The Sargasso Sea</pre><div class='label'>response</div><pre># The Sargasso Sea
+
+The **Sargasso Sea**, located in the North Atlantic Ocean, is the only sea on Earth with no land boundaries. Instead, it is defined by ocean currents that form the **North Atlantic Gyre**:
+
+- **Gulf Stream** (west)
+- **North Atlantic Current** (north)
+- **Canary Current** (east)
+- **North Atlantic Equatorial Current** (south)
+
+## Key Characteristics
+
+- **Named for its seaweed**: The sea is named after *Sargassum*, a genus of free-floating brown algae that accumulates there in large mats, drifting with the currents rather than attaching to a seafloor.
+- **Calm waters**: It&#x27;s known for unusually still, calm conditions due to the circular current pattern that traps water within it—historically a challenge for sailing ships, which could become becalmed.
+- **Unique ecosystem**: The floating sargassum creates a critical habitat for many marine species, including eels (both European and American eels migrate here to spawn), sea turtles, and numerous fish species.
+- **Location**: It sits roughly between the Caribbean and the Azores, though its exact boundaries shift somewhat over time as the currents fluctuate.
+
+This makes it a rare geographical feature—a sea defined purely by oceanographic and current patterns rather than by any coastline.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=10/10 relevance=9/10 score=0.950 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer is fully correct in terms of identifying the Sargasso Sea as the only sea with no land coastline, but its explanation is incomplete and lacks detail compared to the expected answer.</pre></details><details><summary>claude-sonnet-5 &middot; adv_factual_002 &middot; rep2 &middot; score 0.95 PASS &middot; judge llama3.2 &middot; 3931ms &middot; ttft 1674ms &middot; 209 tok &middot; $0.002162<div class="ans">&ldquo;The **Sargasso Sea**, located in the North Atlantic Ocean, is the only sea on Earth with no land boundaries. Instead of coastlines, it is de…&rdquo;</div></summary><div class='label'>prompt</div><pre>Which is the only sea on Earth with no land coastline, bounded instead by ocean currents?</pre><div class='label'>expected</div><pre>The Sargasso Sea</pre><div class='label'>response</div><pre>The **Sargasso Sea**, located in the North Atlantic Ocean, is the only sea on Earth with no land boundaries. Instead of coastlines, it is defined by four ocean currents that form the North Atlantic Gyre:
+
+- **Gulf Stream** (west)
+- **North Atlantic Current** (north)
+- **Canary Current** (east)
+- **North Atlantic Equatorial Current** (south)
+
+This unique sea is known for its floating mats of Sargassum seaweed, which give it its name, and it plays an important ecological role as a spawning and migratory habitat for various marine species, including eels and sea turtles.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=9/10 relevance=10/10 score=0.950 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer correctly identifies the Sargasso Sea as the only sea with no land coastline and provides additional relevant details about its boundaries and unique features.</pre></details><details><summary>claude-sonnet-5 &middot; adv_logic_001 &middot; rep1 &middot; score 0.75 PASS &middot; judge llama3.2 &middot; 3631ms &middot; ttft 2125ms &middot; 179 tok &middot; $0.001904<div class="ans">&ldquo;**Durian** is the heaviest. Here&#x27;s the reasoning: - Mango &gt; Kiwi (Mango is heavier than Kiwi) - Mango &lt; Pomelo (Mango is lighter than Pomelo…&rdquo;</div></summary><div class='label'>prompt</div><pre>Mango is heavier than Kiwi but lighter than Pomelo. Pomelo is lighter than Durian. Of the four, which is the heaviest?</pre><div class='label'>expected</div><pre>Durian</pre><div class='label'>response</div><pre>**Durian** is the heaviest.
+
+Here&#x27;s the reasoning:
+- Mango &gt; Kiwi (Mango is heavier than Kiwi)
+- Mango &lt; Pomelo (Mango is lighter than Pomelo)
+- Pomelo &lt; Durian (Pomelo is lighter than Durian)
+
+Combining these: Kiwi &lt; Mango &lt; Pomelo &lt; Durian
+
+So the order from lightest to heaviest is: **Kiwi &lt; Mango &lt; Pomelo &lt; Durian**, making **Durian** the heaviest of the four.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=10/10 relevance=5/10 score=0.750 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer correctly identifies Durian as the heaviest, but incorrectly states it as the second-heaviest in its ordering.</pre></details><details><summary>claude-sonnet-5 &middot; adv_logic_001 &middot; rep2 &middot; score 0.95 PASS &middot; judge llama3.2 &middot; 3218ms &middot; ttft 1880ms &middot; 182 tok &middot; $0.001934<div class="ans">&ldquo;**Durian** is the heaviest. Here&#x27;s the reasoning: - Mango &gt; Kiwi (Mango is heavier than Kiwi) - Mango &lt; Pomelo (Mango is lighter than Pomelo…&rdquo;</div></summary><div class='label'>prompt</div><pre>Mango is heavier than Kiwi but lighter than Pomelo. Pomelo is lighter than Durian. Of the four, which is the heaviest?</pre><div class='label'>expected</div><pre>Durian</pre><div class='label'>response</div><pre>**Durian** is the heaviest.
+
+Here&#x27;s the reasoning:
+- Mango &gt; Kiwi (Mango is heavier than Kiwi)
+- Mango &lt; Pomelo (Mango is lighter than Pomelo)
+- Pomelo &lt; Durian (Pomelo is lighter than Durian)
+
+This gives the order: Kiwi &lt; Mango &lt; Pomelo &lt; Durian
+
+So Durian is the heaviest of the four fruits.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=10/10 relevance=9/10 score=0.950 &gt;= threshold=0.7 | reasoning: The model correctly identified Durian as the heaviest fruit based on the given comparisons, but its explanation was incomplete and did not provide a clear logical chain.</pre></details><details><summary>claude-sonnet-5 &middot; adv_reason_001 &middot; rep1 &middot; score 1.00 PASS &middot; judge llama3.2 &middot; 3237ms &middot; ttft 1956ms &middot; 294 tok &middot; $0.003000<div class="ans">&ldquo;# Finding the Day of the Week **Starting point:** Wednesday **Key insight:** Since the days of the week repeat every 7 days, I need to find …&rdquo;</div></summary><div class='label'>prompt</div><pre>If today is Wednesday, what day of the week will it be 100 days from now?</pre><div class='label'>expected</div><pre>Friday</pre><div class='label'>response</div><pre># Finding the Day of the Week
+
+**Starting point:** Wednesday
+
+**Key insight:** Since the days of the week repeat every 7 days, I need to find the remainder when 100 is divided by 7.
+
+## Calculation
+
+$$100 \div 7 = 14 \text{ remainder } 2$$
+
+This means 100 days = 14 full weeks + 2 extra days
+
+Since 14 full weeks bring us back to the same day (Wednesday), I just need to count **2 more days** forward:
+
+- Wednesday + 1 day = Thursday
+- Thursday + 1 day = **Friday**
+
+## Answer
+
+**100 days from Wednesday will be Friday.**</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=10/10 relevance=10/10 score=1.000 &gt;= threshold=0.7 | reasoning: The model correctly applied modular arithmetic and counted the correct number of days, but its explanation could be more concise and clear.</pre></details><details><summary>claude-sonnet-5 &middot; adv_reason_001 &middot; rep2 &middot; score 1.00 PASS &middot; judge llama3.2 &middot; 3592ms &middot; ttft 1743ms &middot; 315 tok &middot; $0.003210<div class="ans">&ldquo;# Solving Day of the Week Problem **Given:** Today is Wednesday **Find:** Day of the week 100 days from now ## Step 1: Find the remainder wh…&rdquo;</div></summary><div class='label'>prompt</div><pre>If today is Wednesday, what day of the week will it be 100 days from now?</pre><div class='label'>expected</div><pre>Friday</pre><div class='label'>response</div><pre># Solving Day of the Week Problem
+
+**Given:** Today is Wednesday
+**Find:** Day of the week 100 days from now
+
+## Step 1: Find the remainder when dividing by 7
+Since the days of the week repeat every 7 days, I need to find 100 mod 7:
+
+$$100 ÷ 7 = 14 \text{ remainder } 2$$
+
+This means 100 days = 14 full weeks + 2 extra days
+
+## Step 2: Count forward from Wednesday
+The 14 full weeks bring us back to Wednesday, then I add 2 more days:
+
+- Wednesday + 1 day = Thursday
+- Thursday + 1 day = **Friday**
+
+## Answer
+**100 days from Wednesday will be a Friday**</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=10/10 relevance=10/10 score=1.000 &gt;= threshold=0.7 | reasoning: The model correctly solved the day of the week problem by finding the remainder when dividing 100 by 7 and then counting forward from Wednesday. However, it could have provided more detail about why 14 full weeks bring us back to the same day.</pre></details><details><summary>claude-sonnet-5 &middot; adv_riddle_001 &middot; rep1 &middot; score 0.95 PASS &middot; judge llama3.2 &middot; 5377ms &middot; ttft 2128ms &middot; 256 tok &middot; $0.002642<div class="ans">&ldquo;A greenhouse is typically made mostly of **glass (or clear plastic/polycarbonate) panels supported by a frame** of wood, aluminum, or steel …&rdquo;</div></summary><div class='label'>prompt</div><pre>A red house is made of red bricks and a blue house is made of blue bricks. What is a greenhouse made of?</pre><div class='label'>expected</div><pre>Glass</pre><div class='label'>response</div><pre>A greenhouse is typically made mostly of **glass (or clear plastic/polycarbonate) panels supported by a frame** of wood, aluminum, or steel — not green bricks!
+
+The name is a bit of a linguistic trick, similar to your examples. Unlike a &quot;red house&quot; or &quot;blue house,&quot; where the color describes the building material, a &quot;greenhouse&quot; gets its name from its *purpose*: it&#x27;s a structure designed to grow green plants by trapping sunlight and heat inside, creating a warm, controlled environment.
+
+So the &quot;green&quot; in greenhouse refers to the plants grown inside, not the color of the structure itself. It&#x27;s a classic example of how English compound words don&#x27;t always follow logical patterns — the same trick often used in riddles like &quot;Why do they call it a hamburger when it&#x27;s made of beef?&quot;</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=9/10 relevance=10/10 score=0.950 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer correctly identifies the primary material of a greenhouse and provides additional context about its purpose, but could benefit from clarifying that the &#x27;green&#x27; in &#x27;greenhouse&#x27; refers to the plants grown inside. The model also scores high on relevance by directly addressing the question.</pre></details><details><summary>claude-sonnet-5 &middot; adv_riddle_001 &middot; rep2 &middot; score 0.95 PASS &middot; judge llama3.2 &middot; 4354ms &middot; ttft 1632ms &middot; 189 tok &middot; $0.001972<div class="ans">&ldquo;A greenhouse is actually made of **glass** (or clear plastic/polycarbonate panels), not green bricks! It&#x27;s a fun bit of English wordplay — t…&rdquo;</div></summary><div class='label'>prompt</div><pre>A red house is made of red bricks and a blue house is made of blue bricks. What is a greenhouse made of?</pre><div class='label'>expected</div><pre>Glass</pre><div class='label'>response</div><pre>A greenhouse is actually made of **glass** (or clear plastic/polycarbonate panels), not green bricks! It&#x27;s a fun bit of English wordplay — the riddle sets you up to expect a color-based material like the red and blue houses, but &quot;greenhouse&quot; is a compound word that means something entirely different: a structure used for growing plants, designed to let sunlight in and trap heat to keep the plants warm.
+
+So while a red house and blue house follow a logical pattern, &quot;greenhouse&quot; breaks it — a classic example of how English idioms and compound words don&#x27;t always follow predictable rules.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=10/10 relevance=9/10 score=0.950 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer correctly identifies the material of a greenhouse but also provides additional context about the wordplay behind &#x27;greenhouse&#x27;, which is relevant to understanding the question.</pre></details><details><summary>deepseek-v4-pro &middot; adv_arith_001 &middot; rep1 &middot; score 0.90 PASS &middot; judge llama3.2 &middot; 2489ms &middot; ttft 1921ms &middot; 126 tok &middot; $0.000160<div class="ans">&ldquo;The ball costs **5 cents**. Explanation: If the ball costs $0.05, the bat costs $0.05 + $1.00 = $1.05. Together, $1.05 + $0.05 = $1.10.&rdquo;</div></summary><div class='label'>prompt</div><pre>A bat and a ball cost $1.10 in total. The bat costs $1.00 more than the ball. How much does the ball cost?</pre><div class='label'>expected</div><pre>$0.05 (5 cents)</pre><div class='label'>response</div><pre>The ball costs **5 cents**.
+
+Explanation: If the ball costs $0.05, the bat costs $0.05 + $1.00 = $1.05. Together, $1.05 + $0.05 = $1.10.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=10/10 relevance=8/10 score=0.900 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer is correct in terms of mathematical calculation but does not provide a clear explanation for why the ball costs 5 cents.</pre></details><details><summary>deepseek-v4-pro &middot; adv_arith_001 &middot; rep2 &middot; score 1.00 PASS &middot; judge llama3.2 &middot; 3476ms &middot; ttft 2668ms &middot; 166 tok &middot; $0.000194<div class="ans">&ldquo;The ball costs **$0.05** (5 cents). Explanation: If the ball costs \(x\), the bat costs \(x + \$1.00\). Together: \[ x + (x + 1.00) = 1.10 \…&rdquo;</div></summary><div class='label'>prompt</div><pre>A bat and a ball cost $1.10 in total. The bat costs $1.00 more than the ball. How much does the ball cost?</pre><div class='label'>expected</div><pre>$0.05 (5 cents)</pre><div class='label'>response</div><pre>The ball costs **$0.05** (5 cents).
+
+Explanation: If the ball costs \(x\), the bat costs \(x + \$1.00\). Together:
+
+\[
+x + (x + 1.00) = 1.10
+\]
+
+\[
+2x = 0.10 \Rightarrow x = 0.05
+\]
+
+So the ball is **5 cents** and the bat is **$1.05**.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=10/10 relevance=10/10 score=1.000 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer demonstrates a clear understanding of the algebraic equation to solve for the cost of the ball, but could be improved by providing more context or explanation.</pre></details><details><summary>deepseek-v4-pro &middot; adv_arith_002 &middot; rep1 &middot; score 0.95 PASS &middot; judge llama3.2 &middot; 3195ms &middot; ttft 2686ms &middot; 148 tok &middot; $0.000177<div class="ans">&ldquo;Each pencil costs $0.45 ÷ 3 = $0.15. So 17 pencils cost: 17 × $0.15 = **$2.55**&rdquo;</div></summary><div class='label'>prompt</div><pre>A store sells pencils at 3 for $0.45. At that same price per pencil, how much do 17 pencils cost?</pre><div class='label'>expected</div><pre>$2.55</pre><div class='label'>response</div><pre>Each pencil costs $0.45 ÷ 3 = $0.15.
+
+So 17 pencils cost:
+
+17 × $0.15 = **$2.55**</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=10/10 relevance=9/10 score=0.950 &gt;= threshold=0.7 | reasoning: The model correctly calculated the price per pencil and applied it to find the total cost of 17 pencils, but its response format was not ideal.</pre></details><details><summary>deepseek-v4-pro &middot; adv_arith_002 &middot; rep2 &middot; score 1.00 PASS &middot; judge llama3.2 &middot; 1885ms &middot; ttft 1755ms &middot; 81 tok &middot; $0.000119<div class="ans">&ldquo;17 pencils cost **$2.55**.&rdquo;</div></summary><div class='label'>prompt</div><pre>A store sells pencils at 3 for $0.45. At that same price per pencil, how much do 17 pencils cost?</pre><div class='label'>expected</div><pre>$2.55</pre><div class='label'>response</div><pre>17 pencils cost **$2.55**.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=10/10 relevance=10/10 score=1.000 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer is correct because it accurately calculates the total cost of 17 pencils at the given price per pencil. However, the format of the answer could be improved for clarity.</pre></details><details><summary>deepseek-v4-pro &middot; adv_arith_003 &middot; rep1 &middot; score 0.95 PASS &middot; judge llama3.2 &middot; 2233ms &middot; ttft 1801ms &middot; 104 tok &middot; $0.000140<div class="ans">&ldquo;The final price is **$54**. Calculation: - 25% off $80 = $80 × 0.75 = $60 - 10% off $60 = $60 × 0.90 = $54&rdquo;</div></summary><div class='label'>prompt</div><pre>A shirt priced at $80 is discounted 25%, then a further 10% is taken off the reduced price. What is the final price?</pre><div class='label'>expected</div><pre>$54</pre><div class='label'>response</div><pre>The final price is **$54**.
+
+Calculation:
+- 25% off $80 = $80 × 0.75 = $60  
+- 10% off $60 = $60 × 0.90 = $54</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=10/10 relevance=9/10 score=0.950 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer matches the expected calculation, but it&#x27;s phrased as a statement rather than an explanation.</pre></details><details><summary>deepseek-v4-pro &middot; adv_arith_003 &middot; rep2 &middot; score 1.00 PASS &middot; judge llama3.2 &middot; 2091ms &middot; ttft 1646ms &middot; 101 tok &middot; $0.000137<div class="ans">&ldquo;The final price is **$54**. - 25% off $80 = $80 × 0.75 = $60 - 10% off $60 = $60 × 0.90 = $54&rdquo;</div></summary><div class='label'>prompt</div><pre>A shirt priced at $80 is discounted 25%, then a further 10% is taken off the reduced price. What is the final price?</pre><div class='label'>expected</div><pre>$54</pre><div class='label'>response</div><pre>The final price is **$54**.
+
+- 25% off $80 = $80 × 0.75 = $60  
+- 10% off $60 = $60 × 0.90 = $54</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=10/10 relevance=10/10 score=1.000 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer correctly calculates the final price after both discounts, but it simply restates the expected answer without providing any additional explanation or calculation steps.</pre></details><details><summary>deepseek-v4-pro &middot; adv_arith_004 &middot; rep1 &middot; score 0.95 PASS &middot; judge llama3.2 &middot; 2512ms &middot; ttft 2391ms &middot; 101 tok &middot; $0.000129<div class="ans">&ldquo;There are **129,600 seconds** in one and a half days.&rdquo;</div></summary><div class='label'>prompt</div><pre>How many seconds are there in one and a half days?</pre><div class='label'>expected</div><pre>129600 seconds</pre><div class='label'>response</div><pre>There are **129,600 seconds** in one and a half days.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=10/10 relevance=9/10 score=0.950 &gt;= threshold=0.7 | reasoning: (reasoning unparseable, scores extracted by regex fallback)</pre></details><details><summary>deepseek-v4-pro &middot; adv_arith_004 &middot; rep2 &middot; score 0.95 PASS &middot; judge llama3.2 &middot; 2194ms &middot; ttft 2081ms &middot; 63 tok &middot; $0.000096<div class="ans">&ldquo;There are **129,600 seconds** in one and a half days.&rdquo;</div></summary><div class='label'>prompt</div><pre>How many seconds are there in one and a half days?</pre><div class='label'>expected</div><pre>129600 seconds</pre><div class='label'>response</div><pre>There are **129,600 seconds** in one and a half days.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=10/10 relevance=9/10 score=0.950 &gt;= threshold=0.7 | reasoning: (reasoning unparseable, scores extracted by regex fallback)</pre></details><details><summary>deepseek-v4-pro &middot; adv_count_001 &middot; rep1 &middot; score 1.00 PASS &middot; judge llama3.2 &middot; 4095ms &middot; ttft 3877ms &middot; 233 tok &middot; $0.000247<div class="ans">&ldquo;The letter **‘r’** appears **3 times** in **“strawberry”**.&rdquo;</div></summary><div class='label'>prompt</div><pre>How many times does the letter &#x27;r&#x27; appear in the word &#x27;strawberry&#x27;?</pre><div class='label'>expected</div><pre>3</pre><div class='label'>response</div><pre>The letter **‘r’** appears **3 times** in **“strawberry”**.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=10/10 relevance=10/10 score=1.000 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer is correct and accurately reports the frequency of the letter &#x27;r&#x27; in the word &#x27;strawberry&#x27;. However, it includes unnecessary punctuation marks.</pre></details><details><summary>deepseek-v4-pro &middot; adv_count_001 &middot; rep2 &middot; score 1.00 PASS &middot; judge llama3.2 &middot; 2798ms &middot; ttft 2642ms &middot; 132 tok &middot; $0.000159<div class="ans">&ldquo;The letter **‘r’** appears **3** times in **“strawberry”**.&rdquo;</div></summary><div class='label'>prompt</div><pre>How many times does the letter &#x27;r&#x27; appear in the word &#x27;strawberry&#x27;?</pre><div class='label'>expected</div><pre>3</pre><div class='label'>response</div><pre>The letter **‘r’** appears **3** times in **“strawberry”**.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=10/10 relevance=10/10 score=1.000 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer is correct and accurately reports the frequency of the letter &#x27;r&#x27; in the word &#x27;strawberry&#x27;. However, it includes unnecessary punctuation marks.</pre></details><details><summary>deepseek-v4-pro &middot; adv_factual_001 &middot; rep1 &middot; score 0.95 PASS &middot; judge llama3.2 &middot; 2910ms &middot; ttft 2308ms &middot; 139 tok &middot; $0.000167<div class="ans">&ldquo;Mauna Kea in Hawaii is the tallest mountain on Earth when measured from its base on the ocean floor to its summit. It stands over 10,000 met…&rdquo;</div></summary><div class='label'>prompt</div><pre>Measured from its base to its summit rather than from sea level, what is the tallest mountain on Earth?</pre><div class='label'>expected</div><pre>Mauna Kea</pre><div class='label'>response</div><pre>Mauna Kea in Hawaii is the tallest mountain on Earth when measured from its base on the ocean floor to its summit. It stands over 10,000 meters (about 33,500 feet) tall, exceeding Mount Everest’s height above sea level.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=9/10 relevance=10/10 score=0.950 &gt;= threshold=0.7 | reasoning: The model correctly identified Mauna Kea as the tallest mountain and provided a relevant measurement method, but included extraneous information about Mount Everest&#x27;s height above sea level.</pre></details><details><summary>deepseek-v4-pro &middot; adv_factual_001 &middot; rep2 &middot; score 0.85 PASS &middot; judge llama3.2 &middot; 2165ms &middot; ttft 1784ms &middot; 100 tok &middot; $0.000133<div class="ans">&ldquo;Mauna Kea in Hawaii. Measured from its base on the ocean floor to its summit, it is over 10,000 meters tall, making it taller than Mount Eve…&rdquo;</div></summary><div class='label'>prompt</div><pre>Measured from its base to its summit rather than from sea level, what is the tallest mountain on Earth?</pre><div class='label'>expected</div><pre>Mauna Kea</pre><div class='label'>response</div><pre>Mauna Kea in Hawaii. Measured from its base on the ocean floor to its summit, it is over 10,000 meters tall, making it taller than Mount Everest.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=9/10 relevance=8/10 score=0.850 &gt;= threshold=0.7 | reasoning: The model correctly identified Mauna Kea as the tallest mountain and provided a relevant measurement, but the phrasing could be improved for clarity.</pre></details><details><summary>deepseek-v4-pro &middot; adv_factual_002 &middot; rep1 &middot; score 1.00 PASS &middot; judge llama3.2 &middot; 2256ms &middot; ttft 1745ms &middot; 117 tok &middot; $0.000146<div class="ans">&ldquo;The **Sargasso Sea** is the only sea on Earth with no land coastline. It is bounded entirely by ocean currents in the North Atlantic, includ…&rdquo;</div></summary><div class='label'>prompt</div><pre>Which is the only sea on Earth with no land coastline, bounded instead by ocean currents?</pre><div class='label'>expected</div><pre>The Sargasso Sea</pre><div class='label'>response</div><pre>The **Sargasso Sea** is the only sea on Earth with no land coastline. It is bounded entirely by ocean currents in the North Atlantic, including the Gulf Stream, and is known for its floating Sargassum seaweed.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=10/10 relevance=10/10 score=1.000 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer correctly identifies the Sargasso Sea as the only sea without a land coastline and provides additional context about its boundaries and characteristics.</pre></details><details><summary>deepseek-v4-pro &middot; adv_factual_002 &middot; rep2 &middot; score 0.95 PASS &middot; judge llama3.2 &middot; 2173ms &middot; ttft 1919ms &middot; 99 tok &middot; $0.000130<div class="ans">&ldquo;The **Sargasso Sea** is the only sea on Earth with no land coastline, bounded instead by ocean currents in the North Atlantic Ocean.&rdquo;</div></summary><div class='label'>prompt</div><pre>Which is the only sea on Earth with no land coastline, bounded instead by ocean currents?</pre><div class='label'>expected</div><pre>The Sargasso Sea</pre><div class='label'>response</div><pre>The **Sargasso Sea** is the only sea on Earth with no land coastline, bounded instead by ocean currents in the North Atlantic Ocean.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=10/10 relevance=9/10 score=0.950 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer correctly identifies the Sargasso Sea as the only sea without a land coastline and accurately describes its boundaries.</pre></details><details><summary>deepseek-v4-pro &middot; adv_logic_001 &middot; rep1 &middot; score 1.00 PASS &middot; judge llama3.2 &middot; 2652ms &middot; ttft 2555ms &middot; 137 tok &middot; $0.000169<div class="ans">&ldquo;Durian is the heaviest.&rdquo;</div></summary><div class='label'>prompt</div><pre>Mango is heavier than Kiwi but lighter than Pomelo. Pomelo is lighter than Durian. Of the four, which is the heaviest?</pre><div class='label'>expected</div><pre>Durian</pre><div class='label'>response</div><pre>Durian is the heaviest.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=10/10 relevance=10/10 score=1.000 &gt;= threshold=0.7 | reasoning: The model correctly identifies Durian as the heaviest based on its relative weights compared to Mango and Kiwi, but fails to provide a clear explanation or justification for this answer.</pre></details><details><summary>deepseek-v4-pro &middot; adv_logic_001 &middot; rep2 &middot; score 1.00 PASS &middot; judge llama3.2 &middot; 2005ms &middot; ttft 1958ms &middot; 98 tok &middot; $0.000135<div class="ans">&ldquo;Durian is the heaviest.&rdquo;</div></summary><div class='label'>prompt</div><pre>Mango is heavier than Kiwi but lighter than Pomelo. Pomelo is lighter than Durian. Of the four, which is the heaviest?</pre><div class='label'>expected</div><pre>Durian</pre><div class='label'>response</div><pre>Durian is the heaviest.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=10/10 relevance=10/10 score=1.000 &gt;= threshold=0.7 | reasoning: The model correctly identifies Durian as the heaviest based on its relative weights compared to Mango and Kiwi, but fails to provide a clear explanation or justification for this answer.</pre></details><details><summary>deepseek-v4-pro &middot; adv_reason_001 &middot; rep1 &middot; score 0.75 PASS &middot; judge llama3.2 &middot; 8436ms &middot; ttft 8431ms &middot; 40 tok &middot; $0.000079<div class="ans">&ldquo;Friday&rdquo;</div></summary><div class='label'>prompt</div><pre>If today is Wednesday, what day of the week will it be 100 days from now?</pre><div class='label'>expected</div><pre>Friday</pre><div class='label'>response</div><pre>Friday</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=10/10 relevance=5/10 score=0.750 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer is correct because it accurately predicts the future day of the week based on the given date. However, the relevance score could be higher if the model provided more context or details about how it arrived at its conclusion.</pre></details><details><summary>deepseek-v4-pro &middot; adv_reason_001 &middot; rep2 &middot; score 0.75 PASS &middot; judge llama3.2 &middot; 1778ms &middot; ttft 1734ms &middot; 43 tok &middot; $0.000082<div class="ans">&ldquo;Friday.&rdquo;</div></summary><div class='label'>prompt</div><pre>If today is Wednesday, what day of the week will it be 100 days from now?</pre><div class='label'>expected</div><pre>Friday</pre><div class='label'>response</div><pre>Friday.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=10/10 relevance=5/10 score=0.750 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer is correct but lacks context about how to calculate the future date.</pre></details><details><summary>deepseek-v4-pro &middot; adv_riddle_001 &middot; rep1 &middot; score 0.95 PASS &middot; judge llama3.2 &middot; 2550ms &middot; ttft 2334ms &middot; 91 tok &middot; $0.000126<div class="ans">&ldquo;A greenhouse is made of **glass** (or clear plastic), not green bricks.&rdquo;</div></summary><div class='label'>prompt</div><pre>A red house is made of red bricks and a blue house is made of blue bricks. What is a greenhouse made of?</pre><div class='label'>expected</div><pre>Glass</pre><div class='label'>response</div><pre>A greenhouse is made of **glass** (or clear plastic), not green bricks.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=10/10 relevance=9/10 score=0.950 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer correctly identifies the primary material used in a greenhouse, but incorrectly states that it is not made of green bricks.</pre></details><details><summary>deepseek-v4-pro &middot; adv_riddle_001 &middot; rep2 &middot; score 1.00 PASS &middot; judge llama3.2 &middot; 2053ms &middot; ttft 1967ms &middot; 78 tok &middot; $0.000115<div class="ans">&ldquo;A greenhouse is made of **glass**.&rdquo;</div></summary><div class='label'>prompt</div><pre>A red house is made of red bricks and a blue house is made of blue bricks. What is a greenhouse made of?</pre><div class='label'>expected</div><pre>Glass</pre><div class='label'>response</div><pre>A greenhouse is made of **glass**.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=10/10 relevance=10/10 score=1.000 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer correctly identifies the primary material used in greenhouses, which is glass.</pre></details><details><summary>gpt-5.6-luna &middot; adv_arith_001 &middot; rep1 &middot; score 1.00 PASS &middot; judge llama3.2 &middot; 1864ms &middot; ttft 1586ms &middot; 68 tok &middot; $0.000089<div class="ans">&ldquo;The ball costs **$0.05** (5 cents). The bat costs $1.05, totaling $1.10, and it is exactly $1.00 more than the ball.&rdquo;</div></summary><div class='label'>prompt</div><pre>A bat and a ball cost $1.10 in total. The bat costs $1.00 more than the ball. How much does the ball cost?</pre><div class='label'>expected</div><pre>$0.05 (5 cents)</pre><div class='label'>response</div><pre>The ball costs **$0.05** (5 cents).
+
+The bat costs $1.05, totaling $1.10, and it is exactly $1.00 more than the ball.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=10/10 relevance=10/10 score=1.000 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer correctly states the cost of the ball but also provides additional information that is not necessary to answer the question.</pre></details><details><summary>gpt-5.6-luna &middot; adv_arith_001 &middot; rep2 &middot; score 1.00 PASS &middot; judge llama3.2 &middot; 1768ms &middot; ttft 1162ms &middot; 128 tok &middot; $0.000161<div class="ans">&ldquo;The ball costs **$0.05** (5 cents). Let the ball cost \(x\). Then the bat costs \(x + \$1.00\): \[ x + (x + 1.00) = 1.10 \] \[ 2x = 0.10 \qu…&rdquo;</div></summary><div class='label'>prompt</div><pre>A bat and a ball cost $1.10 in total. The bat costs $1.00 more than the ball. How much does the ball cost?</pre><div class='label'>expected</div><pre>$0.05 (5 cents)</pre><div class='label'>response</div><pre>The ball costs **$0.05** (5 cents).
+
+Let the ball cost \(x\). Then the bat costs \(x + \$1.00\):
+
+\[
+x + (x + 1.00) = 1.10
+\]
+
+\[
+2x = 0.10 \quad\Rightarrow\quad x = 0.05
+\]</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=10/10 relevance=10/10 score=1.000 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer is correct and directly addresses the question, demonstrating a clear understanding of algebraic equations.</pre></details><details><summary>gpt-5.6-luna &middot; adv_arith_002 &middot; rep1 &middot; score 0.90 PASS &middot; judge llama3.2 &middot; 2097ms &middot; ttft 1844ms &middot; 69 tok &middot; $0.000090<div class="ans">&ldquo;Each pencil costs $0.45 ÷ 3 = $0.15. 17 pencils cost \(17 \times \$0.15 = \boxed{\$2.55}\).&rdquo;</div></summary><div class='label'>prompt</div><pre>A store sells pencils at 3 for $0.45. At that same price per pencil, how much do 17 pencils cost?</pre><div class='label'>expected</div><pre>$2.55</pre><div class='label'>response</div><pre>Each pencil costs $0.45 ÷ 3 = $0.15.
+
+17 pencils cost \(17 \times \$0.15 = \boxed{\$2.55}\).</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=8/10 relevance=10/10 score=0.900 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer is correct in terms of the individual pencil price, but incorrectly states that 17 pencils would cost $2.55 at this price, when in fact it should be calculated as 17 x $0.15.</pre></details><details><summary>gpt-5.6-luna &middot; adv_arith_002 &middot; rep2 &middot; score 0.90 PASS &middot; judge llama3.2 &middot; 1390ms &middot; ttft 1244ms &middot; 73 tok &middot; $0.000094<div class="ans">&ldquo;Each pencil costs $0.45 ÷ 3 = $0.15. 17 pencils cost \(17 \times \$0.15 = \boxed{\$2.55}\).&rdquo;</div></summary><div class='label'>prompt</div><pre>A store sells pencils at 3 for $0.45. At that same price per pencil, how much do 17 pencils cost?</pre><div class='label'>expected</div><pre>$2.55</pre><div class='label'>response</div><pre>Each pencil costs $0.45 ÷ 3 = $0.15.
+
+17 pencils cost \(17 \times \$0.15 = \boxed{\$2.55}\).</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=8/10 relevance=10/10 score=0.900 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer is correct in terms of the individual pencil price, but incorrectly states that 17 pencils would cost $2.55 at this price, when in fact it should be calculated as 17 x $0.15.</pre></details><details><summary>gpt-5.6-luna &middot; adv_arith_003 &middot; rep1 &middot; score 0.95 PASS &middot; judge llama3.2 &middot; 1274ms &middot; ttft 987ms &middot; 72 tok &middot; $0.000094<div class="ans">&ldquo;After the 25% discount: $80 × 0.75 = $60 After the additional 10% discount: $60 × 0.90 = **$54** Final price: **$54**&rdquo;</div></summary><div class='label'>prompt</div><pre>A shirt priced at $80 is discounted 25%, then a further 10% is taken off the reduced price. What is the final price?</pre><div class='label'>expected</div><pre>$54</pre><div class='label'>response</div><pre>After the 25% discount:  
+$80 × 0.75 = $60
+
+After the additional 10% discount:  
+$60 × 0.90 = **$54**
+
+Final price: **$54**</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=9/10 relevance=10/10 score=0.950 &gt;= threshold=0.7 | reasoning: The model correctly applied both discounts sequentially to arrive at the final price, but did not explicitly state the calculation steps.</pre></details><details><summary>gpt-5.6-luna &middot; adv_arith_003 &middot; rep2 &middot; score 1.00 PASS &middot; judge llama3.2 &middot; 1512ms &middot; ttft 1248ms &middot; 83 tok &middot; $0.000107<div class="ans">&ldquo;After a 25% discount: \[ 80 \times 0.75 = 60 \] Then 10% off the reduced price: \[ 60 \times 0.90 = 54 \] **Final price: \$54**&rdquo;</div></summary><div class='label'>prompt</div><pre>A shirt priced at $80 is discounted 25%, then a further 10% is taken off the reduced price. What is the final price?</pre><div class='label'>expected</div><pre>$54</pre><div class='label'>response</div><pre>After a 25% discount:  
+\[
+80 \times 0.75 = 60
+\]
+
+Then 10% off the reduced price:  
+\[
+60 \times 0.90 = 54
+\]
+
+**Final price: \$54**</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=10/10 relevance=10/10 score=1.000 &gt;= threshold=0.7 | reasoning: The model correctly applied both discounts sequentially, resulting in a final price of $54.</pre></details><details><summary>gpt-5.6-luna &middot; adv_arith_004 &middot; rep1 &middot; score 0.95 PASS &middot; judge llama3.2 &middot; 1065ms &middot; ttft 950ms &middot; 45 tok &middot; $0.000058<div class="ans">&ldquo;There are **129,600 seconds** in one and a half days.&rdquo;</div></summary><div class='label'>prompt</div><pre>How many seconds are there in one and a half days?</pre><div class='label'>expected</div><pre>129600 seconds</pre><div class='label'>response</div><pre>There are **129,600 seconds** in one and a half days.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=10/10 relevance=9/10 score=0.950 &gt;= threshold=0.7 | reasoning: (reasoning unparseable, scores extracted by regex fallback)</pre></details><details><summary>gpt-5.6-luna &middot; adv_arith_004 &middot; rep2 &middot; score 0.95 PASS &middot; judge llama3.2 &middot; 1046ms &middot; ttft 926ms &middot; 44 tok &middot; $0.000056<div class="ans">&ldquo;There are **129,600 seconds** in one and a half days.&rdquo;</div></summary><div class='label'>prompt</div><pre>How many seconds are there in one and a half days?</pre><div class='label'>expected</div><pre>129600 seconds</pre><div class='label'>response</div><pre>There are **129,600 seconds** in one and a half days.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=10/10 relevance=9/10 score=0.950 &gt;= threshold=0.7 | reasoning: (reasoning unparseable, scores extracted by regex fallback)</pre></details><details><summary>gpt-5.6-luna &middot; adv_count_001 &middot; rep1 &middot; score 0.95 PASS &middot; judge llama3.2 &middot; 862ms &middot; ttft 727ms &middot; 23 tok &middot; $0.000032<div class="ans">&ldquo;The letter **“r”** appears **3 times** in **“strawberry.”**&rdquo;</div></summary><div class='label'>prompt</div><pre>How many times does the letter &#x27;r&#x27; appear in the word &#x27;strawberry&#x27;?</pre><div class='label'>expected</div><pre>3</pre><div class='label'>response</div><pre>The letter **“r”** appears **3 times** in **“strawberry.”**</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=10/10 relevance=9/10 score=0.950 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer is correct and accurately reports the frequency of the letter &#x27;r&#x27;, but it uses excessive punctuation which is not necessary for a numerical answer.</pre></details><details><summary>gpt-5.6-luna &middot; adv_count_001 &middot; rep2 &middot; score 1.00 PASS &middot; judge llama3.2 &middot; 911ms &middot; ttft 768ms &middot; 21 tok &middot; $0.000030<div class="ans">&ldquo;The letter **“r”** appears **3 times** in “strawberry.”&rdquo;</div></summary><div class='label'>prompt</div><pre>How many times does the letter &#x27;r&#x27; appear in the word &#x27;strawberry&#x27;?</pre><div class='label'>expected</div><pre>3</pre><div class='label'>response</div><pre>The letter **“r”** appears **3 times** in “strawberry.”</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=10/10 relevance=10/10 score=1.000 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer is correct and accurately counts the occurrences of the letter &#x27;r&#x27;, but it uses unnecessary quotation marks.</pre></details><details><summary>gpt-5.6-luna &middot; adv_factual_001 &middot; rep1 &middot; score 0.95 PASS &middot; judge llama3.2 &middot; 1968ms &middot; ttft 1592ms &middot; 137 tok &middot; $0.000170<div class="ans">&ldquo;**Mauna Kea** in Hawaii is the tallest mountain on Earth when measured from its base on the seafloor to its summit—about **10,200 meters (33…&rdquo;</div></summary><div class='label'>prompt</div><pre>Measured from its base to its summit rather than from sea level, what is the tallest mountain on Earth?</pre><div class='label'>expected</div><pre>Mauna Kea</pre><div class='label'>response</div><pre>**Mauna Kea** in Hawaii is the tallest mountain on Earth when measured from its base on the seafloor to its summit—about **10,200 meters (33,500 feet)**. Only about 4,207 meters lies above sea level.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=9/10 relevance=10/10 score=0.950 &gt;= threshold=0.7 | reasoning: The model correctly identified Mauna Kea as the tallest mountain and provided a relevant measurement, but the answer could be more concise.</pre></details><details><summary>gpt-5.6-luna &middot; adv_factual_001 &middot; rep2 &middot; score 0.95 PASS &middot; judge llama3.2 &middot; 1887ms &middot; ttft 1473ms &middot; 149 tok &middot; $0.000184<div class="ans">&ldquo;**Mauna Kea** in Hawaii is the tallest mountain on Earth when measured from its base on the ocean floor to its summit—about **10,200 meters …&rdquo;</div></summary><div class='label'>prompt</div><pre>Measured from its base to its summit rather than from sea level, what is the tallest mountain on Earth?</pre><div class='label'>expected</div><pre>Mauna Kea</pre><div class='label'>response</div><pre>**Mauna Kea** in Hawaii is the tallest mountain on Earth when measured from its base on the ocean floor to its summit—about **10,200 meters (33,500 feet)**. Mount Everest is tallest above sea level.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=9/10 relevance=10/10 score=0.950 &gt;= threshold=0.7 | reasoning: The model correctly identified Mauna Kea as the tallest mountain and provided a relevant measurement, but also included unnecessary information about Mount Everest.</pre></details><details><summary>gpt-5.6-luna &middot; adv_factual_002 &middot; rep1 &middot; score 0.95 PASS &middot; judge llama3.2 &middot; 1376ms &middot; ttft 1198ms &middot; 55 tok &middot; $0.000071<div class="ans">&ldquo;The **Sargasso Sea**—a region of the North Atlantic bounded by ocean currents rather than land.&rdquo;</div></summary><div class='label'>prompt</div><pre>Which is the only sea on Earth with no land coastline, bounded instead by ocean currents?</pre><div class='label'>expected</div><pre>The Sargasso Sea</pre><div class='label'>response</div><pre>The **Sargasso Sea**—a region of the North Atlantic bounded by ocean currents rather than land.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=10/10 relevance=9/10 score=0.950 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer is fully correct as it accurately identifies the Sargasso Sea and its unique characteristic.</pre></details><details><summary>gpt-5.6-luna &middot; adv_factual_002 &middot; rep2 &middot; score 1.00 PASS &middot; judge llama3.2 &middot; 1170ms &middot; ttft 968ms &middot; 62 tok &middot; $0.000079<div class="ans">&ldquo;The **Sargasso Sea**—located in the North Atlantic—is the only sea with no land coastline, bounded instead by ocean currents.&rdquo;</div></summary><div class='label'>prompt</div><pre>Which is the only sea on Earth with no land coastline, bounded instead by ocean currents?</pre><div class='label'>expected</div><pre>The Sargasso Sea</pre><div class='label'>response</div><pre>The **Sargasso Sea**—located in the North Atlantic—is the only sea with no land coastline, bounded instead by ocean currents.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=10/10 relevance=10/10 score=1.000 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer is fully correct and addresses the question directly.</pre></details><details><summary>gpt-5.6-luna &middot; adv_logic_001 &middot; rep1 &middot; score 1.00 PASS &middot; judge llama3.2 &middot; 1207ms &middot; ttft 1163ms &middot; 61 tok &middot; $0.000080<div class="ans">&ldquo;Durian is the heaviest.&rdquo;</div></summary><div class='label'>prompt</div><pre>Mango is heavier than Kiwi but lighter than Pomelo. Pomelo is lighter than Durian. Of the four, which is the heaviest?</pre><div class='label'>expected</div><pre>Durian</pre><div class='label'>response</div><pre>Durian is the heaviest.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=10/10 relevance=10/10 score=1.000 &gt;= threshold=0.7 | reasoning: The model correctly identifies Durian as the heaviest based on its relative weights compared to Mango and Kiwi, but fails to provide a clear explanation or justification for this answer.</pre></details><details><summary>gpt-5.6-luna &middot; adv_logic_001 &middot; rep2 &middot; score 1.00 PASS &middot; judge llama3.2 &middot; 1184ms &middot; ttft 1171ms &middot; 62 tok &middot; $0.000082<div class="ans">&ldquo;Durian is the heaviest.&rdquo;</div></summary><div class='label'>prompt</div><pre>Mango is heavier than Kiwi but lighter than Pomelo. Pomelo is lighter than Durian. Of the four, which is the heaviest?</pre><div class='label'>expected</div><pre>Durian</pre><div class='label'>response</div><pre>Durian is the heaviest.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=10/10 relevance=10/10 score=1.000 &gt;= threshold=0.7 | reasoning: The model correctly identifies Durian as the heaviest based on its relative weights compared to Mango and Kiwi, but fails to provide a clear explanation or justification for this answer.</pre></details><details><summary>gpt-5.6-luna &middot; adv_reason_001 &middot; rep1 &middot; score 1.00 PASS &middot; judge llama3.2 &middot; 2360ms &middot; ttft 2293ms &middot; 66 tok &middot; $0.000084<div class="ans">&ldquo;Friday. 100 days is 2 days past a multiple of 7, so Wednesday + 2 days = Friday.&rdquo;</div></summary><div class='label'>prompt</div><pre>If today is Wednesday, what day of the week will it be 100 days from now?</pre><div class='label'>expected</div><pre>Friday</pre><div class='label'>response</div><pre>Friday. 100 days is 2 days past a multiple of 7, so Wednesday + 2 days = Friday.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=10/10 relevance=10/10 score=1.000 &gt;= threshold=0.7 | reasoning: The model correctly calculates the day of the week 100 days from now and provides a clear explanation for its answer.</pre></details><details><summary>gpt-5.6-luna &middot; adv_reason_001 &middot; rep2 &middot; score 0.95 PASS &middot; judge llama3.2 &middot; 1214ms &middot; ttft 1109ms &middot; 42 tok &middot; $0.000055<div class="ans">&ldquo;100 days from Wednesday will be **Friday**.&rdquo;</div></summary><div class='label'>prompt</div><pre>If today is Wednesday, what day of the week will it be 100 days from now?</pre><div class='label'>expected</div><pre>Friday</pre><div class='label'>response</div><pre>100 days from Wednesday will be **Friday**.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=10/10 relevance=9/10 score=0.950 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer correctly identifies the day of the week 100 days from Wednesday, but its phrasing is not entirely clear.</pre></details><details><summary>gpt-5.6-luna &middot; adv_riddle_001 &middot; rep1 &middot; score 1.00 PASS &middot; judge llama3.2 &middot; 840ms &middot; ttft 809ms &middot; 5 tok &middot; $0.000012<div class="ans">&ldquo;Glass.&rdquo;</div></summary><div class='label'>prompt</div><pre>A red house is made of red bricks and a blue house is made of blue bricks. What is a greenhouse made of?</pre><div class='label'>expected</div><pre>Glass</pre><div class='label'>response</div><pre>Glass.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=10/10 relevance=10/10 score=1.000 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer correctly identifies the primary material used in greenhouses, but does not consider other possible materials or nuances.</pre></details><details><summary>gpt-5.6-luna &middot; adv_riddle_001 &middot; rep2 &middot; score 1.00 PASS &middot; judge llama3.2 &middot; 878ms &middot; ttft 832ms &middot; 22 tok &middot; $0.000033<div class="ans">&ldquo;Glass.&rdquo;</div></summary><div class='label'>prompt</div><pre>A red house is made of red bricks and a blue house is made of blue bricks. What is a greenhouse made of?</pre><div class='label'>expected</div><pre>Glass</pre><div class='label'>response</div><pre>Glass.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=10/10 relevance=10/10 score=1.000 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer correctly identifies the primary material used in greenhouses, but does not consider other possible materials or nuances.</pre></details><details><summary>llama3.2 &middot; adv_arith_001 &middot; rep1 &middot; score 1.00 PASS &middot; judge llama3.2 &middot; 6368ms &middot; ttft 487ms &middot; 130 tok &middot; $0.000000<div class="ans">&ldquo;Let&#x27;s say the ball costs x dollars. Since the bat costs $1.00 more than the ball, the bat costs x + $1.00. The total cost of the bat and the…&rdquo;</div></summary><div class='label'>prompt</div><pre>A bat and a ball cost $1.10 in total. The bat costs $1.00 more than the ball. How much does the ball cost?</pre><div class='label'>expected</div><pre>$0.05 (5 cents)</pre><div class='label'>response</div><pre>Let&#x27;s say the ball costs x dollars.
+
+Since the bat costs $1.00 more than the ball, the bat costs x + $1.00.
+
+The total cost of the bat and the ball is $1.10, so we can set up an equation:
+
+x + (x + $1.00) = $1.10
+
+Combine like terms:
+
+2x + $1.00 = $1.10
+
+Subtract $1.00 from both sides:
+
+2x = $0.10
+
+Divide by 2:
+
+x = $0.05
+
+So, the ball costs $0.05.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=10/10 relevance=10/10 score=1.000 &gt;= threshold=0.7 | reasoning: The model provided a step-by-step solution to the problem, correctly setting up an equation and solving for x. However, it could have been more concise.</pre></details><details><summary>llama3.2 &middot; adv_arith_001 &middot; rep2 &middot; score 1.00 PASS &middot; judge llama3.2 &middot; 7368ms &middot; ttft 413ms &middot; 150 tok &middot; $0.000000<div class="ans">&ldquo;Let&#x27;s call the cost of the ball &quot;x&quot;. Since the bat costs $1.00 more than the ball, the cost of the bat is x + $1.00. The total cost of both …&rdquo;</div></summary><div class='label'>prompt</div><pre>A bat and a ball cost $1.10 in total. The bat costs $1.00 more than the ball. How much does the ball cost?</pre><div class='label'>expected</div><pre>$0.05 (5 cents)</pre><div class='label'>response</div><pre>Let&#x27;s call the cost of the ball &quot;x&quot;.
+
+Since the bat costs $1.00 more than the ball, the cost of the bat is x + $1.00.
+
+The total cost of both the bat and the ball together is $1.10. We can set up an equation to represent this:
+
+x (ball) + (x + $1.00) (bat) = $1.10
+
+Combine like terms:
+
+2x + $1.00 = $1.10
+
+Subtract $1.00 from both sides:
+
+2x = $0.10
+
+Divide by 2:
+
+x = $0.05
+
+So, the ball costs $0.05 (or 5 cents).</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=10/10 relevance=10/10 score=1.000 &gt;= threshold=0.7 | reasoning: The model provided a clear and step-by-step solution to the problem, demonstrating its understanding of algebraic equations.</pre></details><details><summary>llama3.2 &middot; adv_arith_002 &middot; rep1 &middot; score 1.00 PASS &middot; judge llama3.2 &middot; 6044ms &middot; ttft 502ms &middot; 122 tok &middot; $0.000000<div class="ans">&ldquo;To find the cost of 17 pencils, we need to first find the cost of one pencil. Since 3 pencils cost $0.45, we can divide $0.45 by 3 to get th…&rdquo;</div></summary><div class='label'>prompt</div><pre>A store sells pencils at 3 for $0.45. At that same price per pencil, how much do 17 pencils cost?</pre><div class='label'>expected</div><pre>$2.55</pre><div class='label'>response</div><pre>To find the cost of 17 pencils, we need to first find the cost of one pencil.
+
+Since 3 pencils cost $0.45, we can divide $0.45 by 3 to get the cost of one pencil:
+
+$0.45 ÷ 3 = $0.15 per pencil
+
+Now that we know the cost of one pencil is $0.15, we can multiply this by 17 to find the total cost of 17 pencils:
+
+$0.15 x 17 = $2.55
+
+So, 17 pencils would cost $2.55.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=10/10 relevance=10/10 score=1.000 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer demonstrates a clear understanding of the problem and applies the correct mathematical operations to solve it.</pre></details><details><summary>llama3.2 &middot; adv_arith_002 &middot; rep2 &middot; score 1.00 PASS &middot; judge llama3.2 &middot; 6205ms &middot; ttft 579ms &middot; 122 tok &middot; $0.000000<div class="ans">&ldquo;To find the cost of 17 pencils, we need to first determine the cost of one pencil. Since 3 pencils cost $0.45, we can divide $0.45 by 3 to g…&rdquo;</div></summary><div class='label'>prompt</div><pre>A store sells pencils at 3 for $0.45. At that same price per pencil, how much do 17 pencils cost?</pre><div class='label'>expected</div><pre>$2.55</pre><div class='label'>response</div><pre>To find the cost of 17 pencils, we need to first determine the cost of one pencil.
+
+Since 3 pencils cost $0.45, we can divide $0.45 by 3 to get the cost of one pencil:
+
+$0.45 ÷ 3 = $0.15 per pencil
+
+Now that we know the cost of one pencil is $0.15, we can multiply this by 17 to find the total cost of 17 pencils:
+
+$0.15 x 17 = $2.55
+
+So, 17 pencils would cost $2.55.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=10/10 relevance=10/10 score=1.000 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer demonstrates a clear understanding of the problem and applies the correct mathematical operations to solve it.</pre></details><details><summary>llama3.2 &middot; adv_arith_003 &middot; rep1 &middot; score 0.95 PASS &middot; judge llama3.2 &middot; 4726ms &middot; ttft 443ms &middot; 100 tok &middot; $0.000000<div class="ans">&ldquo;To find the final price, we need to calculate the discount and apply it to the original price. First, let&#x27;s calculate the first discount of …&rdquo;</div></summary><div class='label'>prompt</div><pre>A shirt priced at $80 is discounted 25%, then a further 10% is taken off the reduced price. What is the final price?</pre><div class='label'>expected</div><pre>$54</pre><div class='label'>response</div><pre>To find the final price, we need to calculate the discount and apply it to the original price.
+
+First, let&#x27;s calculate the first discount of 25%:
+
+$80 x 0.25 = $20
+$80 - $20 = $60
+
+Now, let&#x27;s calculate the second discount of 10% on the reduced price:
+
+$60 x 0.10 = $6
+$60 - $6 = $54
+
+So, the final price is $54.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=9/10 relevance=10/10 score=0.950 &gt;= threshold=0.7 | reasoning: The model correctly calculates both discounts and arrives at the expected answer, but its explanation could be more concise.</pre></details><details><summary>llama3.2 &middot; adv_arith_003 &middot; rep2 &middot; score 1.00 PASS &middot; judge llama3.2 &middot; 7593ms &middot; ttft 1056ms &middot; 135 tok &middot; $0.000000<div class="ans">&ldquo;To find the final price, we need to calculate the discount and apply it to the original price. First, let&#x27;s calculate the first discount of …&rdquo;</div></summary><div class='label'>prompt</div><pre>A shirt priced at $80 is discounted 25%, then a further 10% is taken off the reduced price. What is the final price?</pre><div class='label'>expected</div><pre>$54</pre><div class='label'>response</div><pre>To find the final price, we need to calculate the discount and apply it to the original price.
+
+First, let&#x27;s calculate the first discount of 25%:
+
+Original price: $80
+Discount amount: 25% of $80 = 0.25 x $80 = $20
+Price after first discount: $80 - $20 = $60
+
+Next, we&#x27;ll apply a further 10% discount to the reduced price:
+
+Price after second discount: 10% of $60 = 0.10 x $60 = $6
+Final price: $60 - $6 = $54
+
+So, the final price is $54.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=10/10 relevance=10/10 score=1.000 &gt;= threshold=0.7 | reasoning: The model correctly applied two successive discounts to find the final price, but its explanation could be more concise and directly addressed the question.</pre></details><details><summary>llama3.2 &middot; adv_arith_004 &middot; rep1 &middot; score 1.00 PASS &middot; judge llama3.2 &middot; 6996ms &middot; ttft 379ms &middot; 142 tok &middot; $0.000000<div class="ans">&ldquo;To find the number of seconds in one and a half days, we need to calculate the total number of seconds in that time period. There are 24 hou…&rdquo;</div></summary><div class='label'>prompt</div><pre>How many seconds are there in one and a half days?</pre><div class='label'>expected</div><pre>129600 seconds</pre><div class='label'>response</div><pre>To find the number of seconds in one and a half days, we need to calculate the total number of seconds in that time period.
+
+There are 24 hours in a day. One and a half days would be:
+
+1.5 days * 24 hours/day = 36 hours
+
+Since there are 60 minutes in an hour, we can convert the hours to minutes:
+
+36 hours * 60 minutes/hour = 2160 minutes
+
+Finally, since there are 60 seconds in a minute, we can convert the minutes to seconds:
+
+2160 minutes * 60 seconds/minute = 129600 seconds
+
+Therefore, there are 129,600 seconds in one and a half days.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=10/10 relevance=10/10 score=1.000 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer demonstrates a clear understanding of the calculation required to find the number of seconds in one and a half days. However, it could benefit from more concise language.</pre></details><details><summary>llama3.2 &middot; adv_arith_004 &middot; rep2 &middot; score 1.00 PASS &middot; judge llama3.2 &middot; 7984ms &middot; ttft 473ms &middot; 159 tok &middot; $0.000000<div class="ans">&ldquo;To find the number of seconds in one and a half days, we need to calculate the total number of seconds in that time period. There are 24 hou…&rdquo;</div></summary><div class='label'>prompt</div><pre>How many seconds are there in one and a half days?</pre><div class='label'>expected</div><pre>129600 seconds</pre><div class='label'>response</div><pre>To find the number of seconds in one and a half days, we need to calculate the total number of seconds in that time period.
+
+There are 24 hours in a day. One and a half days would be:
+
+1 day = 24 hours
+0.5 days = 0.5 x 24 hours = 12 hours
+
+Total hours in one and a half days = 24 + 12 = 36 hours
+
+There are 60 minutes in an hour, so there are:
+36 hours x 60 minutes/hour = 2160 minutes
+
+There are 60 seconds in a minute, so there are:
+2160 minutes x 60 seconds/minute = 129600 seconds
+
+Therefore, there are 129600 seconds in one and a half days.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=10/10 relevance=10/10 score=1.000 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer demonstrates a clear understanding of the calculation required to find the number of seconds in one and a half days. However, it could benefit from more concise language.</pre></details><details><summary>llama3.2 &middot; adv_count_001 &middot; rep1 &middot; score 0.75 PASS &middot; judge llama3.2 &middot; 1050ms &middot; ttft 383ms &middot; 16 tok &middot; $0.000000<div class="ans">&ldquo;The letter &quot;r&quot; appears twice in the word &quot;strawberry&quot;.&rdquo;</div></summary><div class='label'>prompt</div><pre>How many times does the letter &#x27;r&#x27; appear in the word &#x27;strawberry&#x27;?</pre><div class='label'>expected</div><pre>3</pre><div class='label'>response</div><pre>The letter &quot;r&quot; appears twice in the word &quot;strawberry&quot;.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=5/10 relevance=10/10 score=0.750 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer is partially correct, as it identifies two instances of the letter &#x27;r&#x27;, but fails to account for a third occurrence.</pre></details><details><summary>llama3.2 &middot; adv_count_001 &middot; rep2 &middot; score 1.00 PASS &middot; judge llama3.2 &middot; 1180ms &middot; ttft 478ms &middot; 17 tok &middot; $0.000000<div class="ans">&ldquo;The letter &quot;r&quot; appears three times in the word &quot;strawberry&quot;.&rdquo;</div></summary><div class='label'>prompt</div><pre>How many times does the letter &#x27;r&#x27; appear in the word &#x27;strawberry&#x27;?</pre><div class='label'>expected</div><pre>3</pre><div class='label'>response</div><pre>The letter &quot;r&quot; appears three times in the word &quot;strawberry&quot;.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=10/10 relevance=10/10 score=1.000 &gt;= threshold=0.7 | reasoning: The model&#x27;s answer is correct but lacks specificity, as it doesn&#x27;t mention that the count only includes the letter &#x27;r&#x27; and not other letters like &#x27;w&#x27;.</pre></details><details><summary>llama3.2 &middot; adv_factual_001 &middot; rep1 &middot; score 0.95 PASS &middot; judge llama3.2 &middot; 5615ms &middot; ttft 294ms &middot; 123 tok &middot; $0.000000<div class="ans">&ldquo;The tallest mountain on Earth when measured from its base to its summit is Mauna Kea, located in Hawaii, USA. Measured from its base on the …&rdquo;</div></summary><div class='label'>prompt</div><pre>Measured from its base to its summit rather than from sea level, what is the tallest mountain on Earth?</pre><div class='label'>expected</div><pre>Mauna Kea</pre><div class='label'>response</div><pre>The tallest mountain on Earth when measured from its base to its summit is Mauna Kea, located in Hawaii, USA. Measured from its base on the ocean floor, Mauna Kea stands at a total height of over 10,200 meters (33,465 feet). However, if measured from its base on land, it&#x27;s around 4,205 meters (13,796 feet) tall.
+
+It&#x27;s worth noting that while Mount Everest is often considered the tallest mountain in the world when measured from sea level, Mauna Kea is actually taller when measured from its base to its summit.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=9/10 relevance=10/10 score=0.950 &gt;= threshold=0.7 | reasoning: The model correctly identified Mauna Kea as the tallest mountain on Earth when measured from its base to its summit and provided relevant details about its height. However, it also included irrelevant information about Mount Everest&#x27;s height when measured from sea level.</pre></details><details><summary>llama3.2 &middot; adv_factual_001 &middot; rep2 &middot; score 0.95 PASS &middot; judge llama3.2 &middot; 5570ms &middot; ttft 387ms &middot; 114 tok &middot; $0.000000<div class="ans">&ldquo;The tallest mountain on Earth when measured from its base to its summit is Mauna Kea, located in Hawaii. Measured from its base on the ocean…&rdquo;</div></summary><div class='label'>prompt</div><pre>Measured from its base to its summit rather than from sea level, what is the tallest mountain on Earth?</pre><div class='label'>expected</div><pre>Mauna Kea</pre><div class='label'>response</div><pre>The tallest mountain on Earth when measured from its base to its summit is Mauna Kea, located in Hawaii. Measured from its base on the ocean floor, Mauna Kea stands at approximately 10,203 meters (33,476 feet) tall.
+
+To put this into perspective, if you were to measure the height of Mount Everest from sea level, it would be around 8,848 meters (29,029 feet). However, when measured from its base on the ocean floor, Mauna Kea is significantly taller due to its underwater foundation.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=9/10 relevance=10/10 score=0.950 &gt;= threshold=0.7 | reasoning: The model correctly identified Mauna Kea as the tallest mountain and provided a relevant comparison with Mount Everest. However, it also included extraneous information about measuring heights from sea level.</pre></details><details><summary>llama3.2 &middot; adv_factual_002 &middot; rep1 &middot; score 0.85 PASS &middot; judge llama3.2 &middot; 3287ms &middot; ttft 335ms &middot; 67 tok &middot; $0.000000<div class="ans">&ldquo;The answer is the Mediterranean Sea. It is a semi-enclosed sea that is connected to the Atlantic Ocean and the Black Sea via various straits…&rdquo;</div></summary><div class='label'>prompt</div><pre>Which is the only sea on Earth with no land coastline, bounded instead by ocean currents?</pre><div class='label'>expected</div><pre>The Sargasso Sea</pre><div class='label'>response</div><pre>The answer is the Mediterranean Sea. It is a semi-enclosed sea that is connected to the Atlantic Ocean and the Black Sea via various straits. The Mediterranean Sea does not have any direct land coastline; instead, it is surrounded by the coasts of Europe, Africa, and Asia, which are bounded by ocean currents.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=8/10 relevance=9/10 score=0.850 &gt;= threshold=0.7 | reasoning: The model correctly identified a sea without a direct land coastline but incorrectly stated its name and provided unnecessary details about its connection to other bodies of water.</pre></details><details><summary>llama3.2 &middot; adv_factual_002 &middot; rep2 &middot; score 0.85 PASS &middot; judge llama3.2 &middot; 8117ms &middot; ttft 323ms &middot; 144 tok &middot; $0.000000<div class="ans">&ldquo;The answer is the Mediterranean Sea. It is a semi-enclosed sea that is connected to the Atlantic Ocean and the Black Sea via various straits…&rdquo;</div></summary><div class='label'>prompt</div><pre>Which is the only sea on Earth with no land coastline, bounded instead by ocean currents?</pre><div class='label'>expected</div><pre>The Sargasso Sea</pre><div class='label'>response</div><pre>The answer is the Mediterranean Sea. It is a semi-enclosed sea that is connected to the Atlantic Ocean and the Black Sea via various straits. The Mediterranean Sea does not have any direct land coastline, but it is surrounded by coastlines of countries such as Greece, Turkey, Italy, Spain, France, and others.
+
+However, I should note that some sources may argue that the Caspian Sea could also be considered a sea with no land coastline, as it is technically a lake (the largest inland body of water) rather than an ocean. But among the world&#x27;s oceans, the Mediterranean Sea is indeed the one with no direct land coastline.
+
+Please let me know if you have any further questions!</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=9/10 relevance=8/10 score=0.850 &gt;= threshold=0.7 | reasoning: The model provided a correct answer but also introduced extraneous information and an alternative explanation that is not relevant to the question. The Sargasso Sea was correctly identified as the sea without a land coastline.</pre></details><details><summary>llama3.2 &middot; adv_logic_001 &middot; rep1 &middot; score 0.95 PASS &middot; judge llama3.2 &middot; 8564ms &middot; ttft 482ms &middot; 183 tok &middot; $0.000000<div class="ans">&ldquo;To determine the heaviest fruit among the four, let&#x27;s analyze the given information: 1. Mango is heavier than Kiwi. 2. Mango is lighter than…&rdquo;</div></summary><div class='label'>prompt</div><pre>Mango is heavier than Kiwi but lighter than Pomelo. Pomelo is lighter than Durian. Of the four, which is the heaviest?</pre><div class='label'>expected</div><pre>Durian</pre><div class='label'>response</div><pre>To determine the heaviest fruit among the four, let&#x27;s analyze the given information:
+
+1. Mango is heavier than Kiwi.
+2. Mango is lighter than Pomelo.
+3. Pomelo is lighter than Durian.
+
+From statement 1 and 2, we can conclude that Durian is heavier than Mango (since Mango is both heavier than Kiwi and lighter than Pomelo).
+
+Now, let&#x27;s look at the relationships between Pomelo and Durian:
+
+- Pomelo is lighter than Durian.
+- We already know that Durian is heavier than Mango.
+
+Since Durian is heavier than Mango, and Pomelo is lighter than Durian, it means that Durian must be heavier than Pomelo as well.
+
+So, based on the given information, we can conclude that:
+
+Durian &gt; Mango &gt; Pomelo &gt; Kiwi
+
+Therefore, Durian is the heaviest fruit among the four.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=10/10 relevance=9/10 score=0.950 &gt;= threshold=0.7 | reasoning: The model correctly applied logical reasoning to determine the order of the fruits&#x27; weights and identified Durian as the heaviest based on the given statements.</pre></details><details><summary>llama3.2 &middot; adv_logic_001 &middot; rep2 &middot; score 0.95 PASS &middot; judge llama3.2 &middot; 5587ms &middot; ttft 421ms &middot; 108 tok &middot; $0.000000<div class="ans">&ldquo;To determine which fruit is the heaviest, let&#x27;s analyze the given information: 1. Mango is heavier than Kiwi. 2. Mango is lighter than Pomel…&rdquo;</div></summary><div class='label'>prompt</div><pre>Mango is heavier than Kiwi but lighter than Pomelo. Pomelo is lighter than Durian. Of the four, which is the heaviest?</pre><div class='label'>expected</div><pre>Durian</pre><div class='label'>response</div><pre>To determine which fruit is the heaviest, let&#x27;s analyze the given information:
+
+1. Mango is heavier than Kiwi.
+2. Mango is lighter than Pomelo.
+3. Pomelo is lighter than Durian.
+
+From statement 1 and 2, we can conclude that Durian is heavier than Mango (since Mango is lighter than Pomelo).
+
+Now, from statements 1-3, we have:
+
+Durian &gt; Mango
+Mango &gt; Kiwi
+
+So, Durian is the heaviest fruit among the four.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=10/10 relevance=9/10 score=0.950 &gt;= threshold=0.7 | reasoning: The model correctly applied logical reasoning to determine the order of weights and identified Durian as the heaviest based on the given statements.</pre></details><details><summary>llama3.2 &middot; adv_reason_001 &middot; rep1 &middot; score 1.00 PASS &middot; judge llama3.2 &middot; 5230ms &middot; ttft 379ms &middot; 107 tok &middot; $0.000000<div class="ans">&ldquo;To find out the day of the week 100 days from now, we need to calculate the number of weeks and remaining days. There are 7 days in a week. …&rdquo;</div></summary><div class='label'>prompt</div><pre>If today is Wednesday, what day of the week will it be 100 days from now?</pre><div class='label'>expected</div><pre>Friday</pre><div class='label'>response</div><pre>To find out the day of the week 100 days from now, we need to calculate the number of weeks and remaining days.
+
+There are 7 days in a week. 
+
+100 days ÷ 7 days per week = 14 weeks with 2 remaining days.
+
+Since today is Wednesday, adding 14 weeks will bring us back to Wednesday (as 14 weeks is a multiple of 7).
+
+Adding the remaining 2 days will make it Friday.
+
+So, 100 days from now, it will be Friday.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=10/10 relevance=10/10 score=1.000 &gt;= threshold=0.7 | reasoning: The model correctly calculates the day of the week 100 days from now and provides a clear explanation.</pre></details><details><summary>llama3.2 &middot; adv_reason_001 &middot; rep2 &middot; score 1.00 PASS &middot; judge llama3.2 &middot; 5841ms &middot; ttft 381ms &middot; 113 tok &middot; $0.000000<div class="ans">&ldquo;To find out the day of the week 100 days from now, we need to calculate the number of weeks and remaining days. There are 7 days in a week. …&rdquo;</div></summary><div class='label'>prompt</div><pre>If today is Wednesday, what day of the week will it be 100 days from now?</pre><div class='label'>expected</div><pre>Friday</pre><div class='label'>response</div><pre>To find out the day of the week 100 days from now, we need to calculate the number of weeks and remaining days.
+
+There are 7 days in a week. Let&#x27;s divide 100 by 7:
+
+100 ÷ 7 = 14 with a remainder of 2
+
+This means that 100 days is equal to 14 weeks and 2 days.
+
+Since today is Wednesday, we need to add 2 days to it:
+
+Wednesday + 2 days = Friday
+
+So, 100 days from now, it will be Friday.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=10/10 relevance=10/10 score=1.000 &gt;= threshold=0.7 | reasoning: The model correctly calculates the day of the week 100 days from now and provides a clear explanation.</pre></details><details><summary>llama3.2 &middot; adv_riddle_001 &middot; rep1 &middot; score 0.95 PASS &middot; judge llama3.2 &middot; 5217ms &middot; ttft 277ms &middot; 103 tok &middot; $0.000000<div class="ans">&ldquo;That&#x27;s a clever trick question! The answer isn&#x27;t necessarily &quot;red&quot; or &quot;blue&quot;, as the color of the bricks doesn&#x27;t determine the material used…&rdquo;</div></summary><div class='label'>prompt</div><pre>A red house is made of red bricks and a blue house is made of blue bricks. What is a greenhouse made of?</pre><div class='label'>expected</div><pre>Glass</pre><div class='label'>response</div><pre>That&#x27;s a clever trick question!
+
+The answer isn&#x27;t necessarily &quot;red&quot; or &quot;blue&quot;, as the color of the bricks doesn&#x27;t determine the material used to build a greenhouse.
+
+A greenhouse is typically made of glass, metal (such as aluminum or steel), and sometimes plastic or polycarbonate for the roof and walls. The frame may be made of wood, metal, or PVC. So, while the question tries to trick you with colors, the actual materials used in building a greenhouse are quite different!</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=9/10 relevance=10/10 score=0.950 &gt;= threshold=0.7 | reasoning: The model correctly identifies that the color of bricks does not determine the material used for a greenhouse and provides a comprehensive list of common materials used in its construction.</pre></details><details><summary>llama3.2 &middot; adv_riddle_001 &middot; rep2 &middot; score 0.85 PASS &middot; judge llama3.2 &middot; 4568ms &middot; ttft 376ms &middot; 77 tok &middot; $0.000000<div class="ans">&ldquo;That&#x27;s a clever trick question! The answer isn&#x27;t necessarily related to the color of the houses, but rather to the fact that greenhouses are…&rdquo;</div></summary><div class='label'>prompt</div><pre>A red house is made of red bricks and a blue house is made of blue bricks. What is a greenhouse made of?</pre><div class='label'>expected</div><pre>Glass</pre><div class='label'>response</div><pre>That&#x27;s a clever trick question!
+
+The answer isn&#x27;t necessarily related to the color of the houses, but rather to the fact that greenhouses are typically made of glass or plastic materials, not bricks.
+
+So, while the question tries to distract us with the colors of the houses, the correct answer is simply &quot;glass&quot; or &quot;plastic&quot;, depending on the type of greenhouse.</pre><div class='label'>judge &middot; model llama3.2</div><pre>correctness=8/10 relevance=9/10 score=0.850 &gt;= threshold=0.7 | reasoning: The model correctly identified that the question&#x27;s trickery about house colors doesn&#x27;t apply to greenhouses and provided a general explanation for the typical materials used in greenhouses.</pre></details>
+</body></html>

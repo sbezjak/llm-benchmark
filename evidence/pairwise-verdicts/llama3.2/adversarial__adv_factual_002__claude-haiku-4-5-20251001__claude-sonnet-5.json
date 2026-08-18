@@ -1,0 +1,12 @@
+{
+  "model_a": "claude-haiku-4-5-20251001",
+  "model_b": "claude-sonnet-5",
+  "order1_winner": "claude-haiku-4-5-20251001",
+  "order2_winner": "claude-sonnet-5",
+  "order1_reasoning": "Answer A provides more specific and detailed information about the Sargasso Sea's boundaries and characteristics, making it a more comprehensive and accurate answer.",
+  "order2_reasoning": "Answer A provides more detailed and specific information about the Sargasso Sea's unique characteristics, such as its ecosystem and how it traps water within a circular current pattern.",
+  "outcome": "flip",
+  "winner": null,
+  "suite": "adversarial",
+  "item_id": "adv_factual_002"
+}

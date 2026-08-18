@@ -1,0 +1,12 @@
+{
+  "model_a": "claude-sonnet-5",
+  "model_b": "gpt-5.6-luna",
+  "order1_winner": "TIE",
+  "order2_winner": "claude-sonnet-5",
+  "order1_reasoning": "Both answers correctly and directly identify South America as Lima's continent, so neither is meaningfully better.",
+  "order2_reasoning": "Both answers correctly identify South America, but Answer B adds accurate and relevant context.",
+  "outcome": "flip",
+  "winner": null,
+  "suite": "easy",
+  "item_id": "factual_003"
+}

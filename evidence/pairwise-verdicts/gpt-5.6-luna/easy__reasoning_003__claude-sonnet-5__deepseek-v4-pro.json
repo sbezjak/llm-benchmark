@@ -1,0 +1,12 @@
+{
+  "model_a": "claude-sonnet-5",
+  "model_b": "deepseek-v4-pro",
+  "order1_winner": "TIE",
+  "order2_winner": "TIE",
+  "order1_reasoning": "Both answers are accurate, relevant, and similarly thorough, with B adding harmless detail about pigments and intermediates while A clearly explains the process and its importance.",
+  "order2_reasoning": "Both answers are accurate, relevant, and similarly complete explanations of the stages, inputs, outputs, and locations of photosynthesis, with only minor simplifications in describing glucose production.",
+  "outcome": "genuine_tie",
+  "winner": null,
+  "suite": "easy",
+  "item_id": "reasoning_003"
+}

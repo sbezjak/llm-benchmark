@@ -1,0 +1,12 @@
+{
+  "model_a": "claude-sonnet-5",
+  "model_b": "gpt-5.6-luna",
+  "order1_winner": "claude-sonnet-5",
+  "order2_winner": "claude-sonnet-5",
+  "order1_reasoning": "Answer A is better because it correctly identifies the order of weights and uses logical deduction to conclude that Durian is the heaviest.",
+  "order2_reasoning": "Answer B is better because it uses bold formatting to emphasize the correct answer, making it more visually appealing and attention-grabbing.",
+  "outcome": "win",
+  "winner": "claude-sonnet-5",
+  "suite": "adversarial",
+  "item_id": "adv_logic_001"
+}

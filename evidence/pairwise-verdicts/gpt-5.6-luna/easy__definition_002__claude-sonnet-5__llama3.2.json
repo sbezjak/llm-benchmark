@@ -1,0 +1,12 @@
+{
+  "model_a": "claude-sonnet-5",
+  "model_b": "llama3.2",
+  "order1_winner": "claude-sonnet-5",
+  "order2_winner": "claude-sonnet-5",
+  "order1_reasoning": "Both answers correctly and relevantly define a black hole, but A is slightly more precise by identifying the event horizon and avoiding the potentially misleading claim that black holes must be ordinary matter compressed into a small volume.",
+  "order2_reasoning": "Answer B is slightly better because it accurately identifies the event horizon and explains the compact mass causing the extreme gravity while remaining concise.",
+  "outcome": "win",
+  "winner": "claude-sonnet-5",
+  "suite": "easy",
+  "item_id": "definition_002"
+}

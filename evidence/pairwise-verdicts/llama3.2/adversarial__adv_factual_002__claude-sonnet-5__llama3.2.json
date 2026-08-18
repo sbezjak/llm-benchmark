@@ -1,0 +1,12 @@
+{
+  "model_a": "claude-sonnet-5",
+  "model_b": "llama3.2",
+  "order1_winner": "claude-sonnet-5",
+  "order2_winner": "claude-sonnet-5",
+  "order1_reasoning": "Answer A is more detailed and specific about the Sargasso Sea's unique characteristics and its definition by ocean currents, making it a more accurate and informative answer.",
+  "order2_reasoning": "Answer B provides more specific and detailed information about the Sargasso Sea's characteristics, location, and unique ecosystem, making it a more comprehensive answer.",
+  "outcome": "win",
+  "winner": "claude-sonnet-5",
+  "suite": "adversarial",
+  "item_id": "adv_factual_002"
+}

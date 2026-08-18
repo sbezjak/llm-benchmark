@@ -1,0 +1,12 @@
+{
+  "model_a": "claude-haiku-4-5-20251001",
+  "model_b": "gpt-5.6-luna",
+  "order1_winner": "claude-haiku-4-5-20251001",
+  "order2_winner": "gpt-5.6-luna",
+  "order1_reasoning": "Answer A is more correct and relevant as it directly addresses the physical property (expansion) that causes ice to float on water.",
+  "order2_reasoning": "Answer A is more correct and relevant as it explains the underlying reason for ice's density difference from liquid water.",
+  "outcome": "flip",
+  "winner": null,
+  "suite": "easy",
+  "item_id": "reasoning_002"
+}

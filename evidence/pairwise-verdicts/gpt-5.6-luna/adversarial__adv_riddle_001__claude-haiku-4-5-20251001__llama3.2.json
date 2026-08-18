@@ -1,0 +1,12 @@
+{
+  "model_a": "claude-haiku-4-5-20251001",
+  "model_b": "llama3.2",
+  "order1_winner": "claude-haiku-4-5-20251001",
+  "order2_winner": "claude-haiku-4-5-20251001",
+  "order1_reasoning": "Both answers correctly identify glass and explain the wordplay, but Answer A is more concise and directly aligned with the riddle.",
+  "order2_reasoning": "Both answers correctly identify glass as the main material, but B is more direct and clearly explains the wordplay without unnecessary elaboration.",
+  "outcome": "win",
+  "winner": "claude-haiku-4-5-20251001",
+  "suite": "adversarial",
+  "item_id": "adv_riddle_001"
+}

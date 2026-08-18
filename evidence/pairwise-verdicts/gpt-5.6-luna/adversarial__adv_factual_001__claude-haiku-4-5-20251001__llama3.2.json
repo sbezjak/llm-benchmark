@@ -1,0 +1,12 @@
+{
+  "model_a": "claude-haiku-4-5-20251001",
+  "model_b": "llama3.2",
+  "order1_winner": "claude-haiku-4-5-20251001",
+  "order2_winner": "claude-haiku-4-5-20251001",
+  "order1_reasoning": "Both answers correctly identify Mauna Kea and give accurate ocean-floor-to-summit measurements, but A is clearer and avoids B's potentially confusing distinction about its land base.",
+  "order2_reasoning": "Both correctly identify Mauna Kea and give accurate measurements, but B is more concise and directly relevant without the potentially confusing distinction about its land-based height.",
+  "outcome": "win",
+  "winner": "claude-haiku-4-5-20251001",
+  "suite": "adversarial",
+  "item_id": "adv_factual_001"
+}

@@ -1,0 +1,12 @@
+{
+  "model_a": "deepseek-v4-pro",
+  "model_b": "gpt-5.6-luna",
+  "order1_winner": "gpt-5.6-luna",
+  "order2_winner": "deepseek-v4-pro",
+  "order1_reasoning": "Both answers provide the same information, but Answer A is more concise and directly states its answer without repetition.",
+  "order2_reasoning": "Both answers provide the same correct information about Durian being the heaviest, but Answer A is more concise and directly states its conclusion.",
+  "outcome": "flip",
+  "winner": null,
+  "suite": "adversarial",
+  "item_id": "adv_logic_001"
+}

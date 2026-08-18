@@ -1,0 +1,12 @@
+{
+  "model_a": "deepseek-v4-pro",
+  "model_b": "gpt-5.6-luna",
+  "order1_winner": "deepseek-v4-pro",
+  "order2_winner": "gpt-5.6-luna",
+  "order1_reasoning": "Answer B provides additional context about the event horizon, which is a crucial aspect of black holes. However, Answer A still conveys the same essential information without unnecessary details.",
+  "order2_reasoning": "Answer A is more precise and accurate because it specifies the event horizon, which is a key characteristic of black holes.",
+  "outcome": "flip",
+  "winner": null,
+  "suite": "easy",
+  "item_id": "definition_002"
+}

@@ -1,0 +1,12 @@
+{
+  "model_a": "claude-haiku-4-5-20251001",
+  "model_b": "gpt-5.6-luna",
+  "order1_winner": "TIE",
+  "order2_winner": "gpt-5.6-luna",
+  "order1_reasoning": "Both answers correctly explain that freezing produces ice with lower density than liquid water, with A emphasizing expansion and B identifying the hydrogen-bonded crystal structure causing it.",
+  "order2_reasoning": "Both answers correctly explain that ice floats because its structure makes it less dense than liquid water, but A gives the more precise underlying cause.",
+  "outcome": "flip",
+  "winner": null,
+  "suite": "easy",
+  "item_id": "reasoning_002"
+}

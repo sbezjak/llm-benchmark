@@ -1,0 +1,12 @@
+{
+  "model_a": "claude-haiku-4-5-20251001",
+  "model_b": "claude-sonnet-5",
+  "order1_winner": "claude-haiku-4-5-20251001",
+  "order2_winner": "claude-sonnet-5",
+  "order1_reasoning": "Answer A is more concise and directly addresses the calculation, while Answer B provides unnecessary comments and formatting",
+  "order2_reasoning": "Answer A is more detailed and clearly explains the calculation process, making it easier to understand for readers.",
+  "outcome": "flip",
+  "winner": null,
+  "suite": "adversarial",
+  "item_id": "adv_reason_001"
+}

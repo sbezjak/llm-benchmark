@@ -1,0 +1,12 @@
+{
+  "model_a": "deepseek-v4-pro",
+  "model_b": "gpt-5.6-luna",
+  "order1_winner": "gpt-5.6-luna",
+  "order2_winner": "gpt-5.6-luna",
+  "order1_reasoning": "Both answers provide the same correct information, but Answer A is slightly more concise and clear.",
+  "order2_reasoning": "Answer A is better because it provides more context and clarity by including the city name in quotation marks, making it clearer that 'Ljubljana' is being used as a proper noun.",
+  "outcome": "win",
+  "winner": "gpt-5.6-luna",
+  "suite": "easy",
+  "item_id": "factual_001"
+}

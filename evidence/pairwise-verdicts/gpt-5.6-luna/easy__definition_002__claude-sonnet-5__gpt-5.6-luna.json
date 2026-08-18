@@ -1,0 +1,12 @@
+{
+  "model_a": "claude-sonnet-5",
+  "model_b": "gpt-5.6-luna",
+  "order1_winner": "gpt-5.6-luna",
+  "order2_winner": "gpt-5.6-luna",
+  "order1_reasoning": "Answer B is more concise and scientifically precise, defining a black hole as a region of spacetime and correctly identifying the event horizon as the point beyond which escape is impossible.",
+  "order2_reasoning": "Both answers are correct and relevant, but A is slightly more precise and concise because it identifies spacetime and clearly states that escape becomes impossible after crossing the event horizon.",
+  "outcome": "win",
+  "winner": "gpt-5.6-luna",
+  "suite": "easy",
+  "item_id": "definition_002"
+}

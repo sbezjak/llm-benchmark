@@ -1,0 +1,110 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>A low-n model benchmark</title><style>
+:root {
+  --bg: #eef1f5; --surface: #ffffff; --surface-2: #f6f8fb;
+  --ink: #12161c; --ink-2: #4b5563; --ink-3: #79828f;
+  --border: #dde3ea; --border-2: #c8d0da;
+  --accent: #2a78d6; --accent-soft: #e9f1fb;
+  --warn: #c2410c;
+  --row-hi: #f6f8fb;
+  color-scheme: light dark;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0f1216; --surface: #171b21; --surface-2: #1c2129;
+    --ink: #eef1f5; --ink-2: #aab3c0; --ink-3: #78828f;
+    --border: #262c35; --border-2: #333b46;
+    --accent: #4c93e8; --accent-soft: #16273c;
+    --warn: #f0824f;
+    --row-hi: #1c2129;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0f1216; --surface: #171b21; --surface-2: #1c2129;
+  --ink: #eef1f5; --ink-2: #aab3c0; --ink-3: #78828f;
+  --border: #262c35; --border-2: #333b46;
+  --accent: #4c93e8; --accent-soft: #16273c;
+  --warn: #f0824f;
+  --row-hi: #1c2129;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0; background: var(--bg); color: var(--ink);
+  font: 16px/1.6 system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+.wrap { max-width: 780px; margin: 0 auto; padding: 2.6rem 1.25rem 3.5rem; }
+.mono { font-family: ui-monospace, "SF Mono", "Cascadia Code", Menlo, monospace; }
+
+header { margin-bottom: 1.4rem; }
+.eyebrow {
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--accent); margin: 0 0 0.6rem;
+}
+h1 { font-size: 1.75rem; line-height: 1.15; margin: 0 0 0.5rem; letter-spacing: -0.02em;
+     text-wrap: balance; font-weight: 680; }
+.lede { color: var(--ink-2); margin: 0.5rem 0 0; font-size: 1.02rem; max-width: 62ch; }
+.dateline { font-family: ui-monospace, Menlo, monospace; font-size: 0.72rem; color: var(--ink-3);
+            margin: 0.45rem 0 0; letter-spacing: 0.02em; }
+.legend { color: var(--ink-3); font-size: 0.78rem; margin: 0.55rem 0 0; line-height: 1.65;
+          max-width: 66ch; }
+.legend b { color: var(--ink-2); font-weight: 600; font-family: ui-monospace, Menlo, monospace; }
+a.src { color: var(--accent); text-decoration: none; font-family: ui-monospace, Menlo, monospace;
+        border-bottom: 1px dotted var(--accent); }
+a.src:hover { border-bottom-style: solid; }
+
+/* KPI strip - the run at a glance, modern stat tiles */
+.kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(104px, 1fr)); gap: 0.6rem;
+        margin: 1.4rem 0 0.5rem; }
+.kpi { background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+       padding: 0.7rem 0.85rem; }
+.kpi .n { font-size: 1.5rem; font-weight: 680; letter-spacing: -0.02em; color: var(--ink);
+          font-variant-numeric: tabular-nums; line-height: 1.1; }
+.kpi .l { margin-top: 0.15rem; font-family: ui-monospace, Menlo, monospace; font-size: 0.64rem;
+          letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-3); }
+.kpi.accent { border-color: var(--accent); background: var(--accent-soft); }
+.caveat { color: var(--ink-3); font-size: 0.86rem; margin: 0.5rem 0 0; max-width: 62ch; }
+.caveat b { color: var(--ink-2); font-weight: 600; }
+
+h2 { font-size: 1.05rem; letter-spacing: -0.01em; margin: 2.4rem 0 0.2rem; font-weight: 640; }
+.bridge { color: var(--ink-2); font-size: 0.95rem; margin: 2.4rem 0 -0.6rem; }
+.bridge b { color: var(--ink); font-weight: 620; }
+.suite-lab { font-family: ui-monospace, Menlo, monospace; font-size: 0.68rem; letter-spacing: 0.08em;
+             text-transform: uppercase; color: var(--ink-3); margin: 0.9rem 0 0.15rem; }
+
+/* tables - the whole point: real model ids in rows, plain and scannable */
+.tbl-wrap { overflow-x: auto; margin: 0.35rem 0 0; }
+table { border-collapse: collapse; width: 100%; font-variant-numeric: tabular-nums;
+        font-size: 0.86rem; }
+th, td { padding: 0.4rem 0.55rem; border-bottom: 1px solid var(--border); text-align: right;
+         white-space: nowrap; }
+th:first-child, td:first-child { text-align: left; }
+thead th { border-bottom: 2px solid var(--border-2); color: var(--ink-3); font-weight: 600;
+           font-size: 0.66rem; text-transform: uppercase; letter-spacing: 0.04em; }
+tbody tr:last-child td { border-bottom: none; }
+td.model { font-family: ui-monospace, Menlo, monospace; color: var(--ink); font-size: 0.8rem; }
+td.q { color: var(--ink); font-weight: 620; }
+tr.hi td { background: var(--row-hi); }
+.tag { font-family: ui-monospace, Menlo, monospace; font-size: 0.6rem; letter-spacing: 0.03em;
+       text-transform: uppercase; color: var(--ink-3); border: 1px solid var(--border);
+       border-radius: 4px; padding: 0.02rem 0.3rem; margin-left: 0.35rem; }
+.warn-txt { color: var(--warn); font-weight: 620; }
+
+.read { color: var(--ink-2); font-size: 0.9rem; margin: 0.55rem 0 0; }
+.read b { color: var(--ink); font-weight: 620; }
+.proof { font-family: ui-monospace, Menlo, monospace; font-size: 0.72rem; color: var(--ink-3);
+         margin: 0.45rem 0 0; line-height: 1.5; }
+.proof b { color: var(--ink-2); font-weight: 600; }
+
+/* limits + production: terse bullet lists */
+.notebox { border: 1px solid var(--border); border-radius: 10px; background: var(--surface);
+           padding: 0.6rem 1.15rem; margin: 0.5rem 0 0; }
+.notebox.warn { border-left: 3px solid var(--warn); }
+.notebox.acc { border-left: 3px solid var(--accent); }
+.notebox ul { margin: 0.4rem 0; padding-left: 1.1rem; color: var(--ink-2); font-size: 0.9rem; }
+.notebox li { margin: 0.25rem 0; }
+.notebox li b { color: var(--ink); font-weight: 620; }
+
+footer { margin-top: 2.6rem; padding-top: 1rem; border-top: 1px solid var(--border);
+         color: var(--ink-3); font-size: 0.76rem; }
+</style></head><body><div class="wrap"><header><p class="eyebrow">Cost · latency · quality</p><h1>A low-n model benchmark</h1><p class="dateline">Generated 2026-08-18 · rebuilt from the cached answers, $0</p><p class="lede">Five models, one 20-item suite, 2 reps. The paid models tie on quality - so the measurable result is grader instability, not a ranking.</p><div class="kpis"><div class="kpi"><div class="n">20</div><div class="l">items</div></div><div class="kpi"><div class="n">2</div><div class="l">reps</div></div><div class="kpi"><div class="n">5</div><div class="l">models</div></div><div class="kpi"><div class="n">200</div><div class="l">graded answers</div></div><div class="kpi accent"><div class="n">$0.21</div><div class="l">total spend</div></div></div><p class="caveat">Spend = answers <b>$0.13</b> + paid judging <b>$0.08</b>. The grader is one of the five tested models - read every quality number as a demo, not a verdict.</p></header><h2>Cost, latency, quality</h2><div class="suite-lab">everyday suite - 10 items × 2 reps · one undisputed fact each · <a class="src" href="../data/golden_set.yaml">data/golden_set.yaml</a></div><div class="tbl-wrap"><table><thead><tr><th>model</th><th>$ / query</th><th>lat p50</th><th>lat p95</th><th>out tok</th><th>quality</th><th>95% CI</th><th>pass</th></tr></thead><tbody><tr class=""><td class="model">claude-haiku-4-5-20251001</td><td>$0.000537</td><td>979</td><td>3379</td><td>104</td><td class="q">1.000</td><td>[1.000, 1.000]</td><td>20/20</td></tr><tr class=""><td class="model">deepseek-v4-pro</td><td>$0.000138</td><td>1949</td><td>5987</td><td>113</td><td class="q">1.000</td><td>[1.000, 1.000]</td><td>20/20</td></tr><tr class=""><td class="model">gpt-5.6-luna</td><td>$0.000082</td><td>840</td><td>3484</td><td>65</td><td class="q">1.000</td><td>[1.000, 1.000]</td><td>20/20</td></tr><tr class=""><td class="model">claude-sonnet-5</td><td>$0.002426</td><td>3471</td><td>7302</td><td>239</td><td class="q">0.997</td><td>[0.992, 1.000]</td><td>20/20</td></tr><tr class="hi"><td class="model">llama3.2<span class="tag">local</span></td><td>free</td><td>3211</td><td>26081</td><td>130</td><td class="q"><span class="warn-txt">0.935</span></td><td>[0.863, 0.990]</td><td>18/20</td></tr></tbody></table></div><div class="suite-lab">adversarial suite - 10 items × 2 reps · one knowable answer each, with a failure trap · <a class="src" href="../data/adversarial_set.yaml">data/adversarial_set.yaml</a></div><div class="tbl-wrap"><table><thead><tr><th>model</th><th>$ / query</th><th>lat p50</th><th>lat p95</th><th>out tok</th><th>quality</th><th>95% CI</th><th>pass</th></tr></thead><tbody><tr class=""><td class="model">claude-haiku-4-5-20251001</td><td>$0.000596</td><td>1525</td><td>1903</td><td>113</td><td class="q">1.000</td><td>[1.000, 1.000]</td><td>20/20</td></tr><tr class=""><td class="model">deepseek-v4-pro</td><td>$0.000142</td><td>2373</td><td>4313</td><td>110</td><td class="q">1.000</td><td>[1.000, 1.000]</td><td>20/20</td></tr><tr class=""><td class="model">gpt-5.6-luna</td><td>$0.000083</td><td>1244</td><td>2110</td><td>64</td><td class="q">1.000</td><td>[1.000, 1.000]</td><td>20/20</td></tr><tr class=""><td class="model">claude-sonnet-5</td><td>$0.002539</td><td>3611</td><td>6651</td><td>246</td><td class="q">0.997</td><td>[0.992, 1.000]</td><td>20/20</td></tr><tr class="hi"><td class="model">llama3.2<span class="tag">local</span></td><td>free</td><td>5728</td><td>8140</td><td>112</td><td class="q"><span class="warn-txt">0.903</span></td><td>[0.807, 0.985]</td><td>17/20</td></tr></tbody></table></div><p class="legend"><b>$/query</b> mean USD per answer · <b>lat p50 / p95</b> median / 95th-percentile latency, ms (p95 = the slow tail a user feels) · <b>out tok</b> mean output tokens · <b>quality</b> mean judge score, 0-1 · <b>95% CI</b> bootstrap interval on quality - overlapping CIs mean the models are indistinguishable · <b>pass</b> items scoring &ge; 0.7 / total.</p><p class="read">Quality is the paid grader's solo score; cost and latency come from the saved calls. The four paid models overlap on quality - no winner - so the tie-break is cost and speed: <b>gpt-5.6-luna</b> is cheapest and fastest. Local is free, slowest, and the only quality dip.</p><p class="proof"><b>Check it:</b> every cell rebuilds from <a class="src" href="../reports/findings.json">reports/findings.json</a> (aggregated off the on-disk answer cache); the suites are <a class="src" href="../data/golden_set.yaml">data/golden_set.yaml</a> and <a class="src" href="../data/adversarial_set.yaml">data/adversarial_set.yaml</a>.</p><h2>Judge reliability - position bias</h2><p class="read"><b>What we did:</b> take one question answered by two different models, show a grader both answers and ask which is better - then ask again with the order swapped. If the winner changes, order (not quality) decided it. <b>llama3.2</b>, itself one of the contestants, flips up to <b>45%</b> of pairs, and <b>90%</b> of those flips just pick whichever answer was shown first (the paid grader: <b>14%</b>). That is position bias - the instrument moves with presentation order.</p><div class="tbl-wrap"><table><thead><tr><th>grader</th><th>suite</th><th>flip rate</th><th>flips</th><th>kept first-shown</th></tr></thead><tbody><tr class="hi"><td class="model">llama3.2<span class="tag">contestant</span></td><td>everyday</td><td><span class="warn-txt">45%</span></td><td>45</td><td><span class="warn-txt">42 (93%)</span></td></tr><tr class="hi"><td class="model">llama3.2<span class="tag">contestant</span></td><td>adversarial</td><td>33%</td><td>33</td><td><span class="warn-txt">28 (85%)</span></td></tr><tr class=""><td class="model">gpt-5.6-luna</td><td>everyday</td><td>19%</td><td>19</td><td>2 (11%)</td></tr><tr class=""><td class="model">gpt-5.6-luna</td><td>adversarial</td><td>23%</td><td>23</td><td>4 (17%)</td></tr></tbody></table></div><p class="proof"><b>Check it:</b> the both-orders verdicts (200 files) are under <a class="src" href="../evidence/pairwise-verdicts/llama3.2/">evidence/pairwise-verdicts/llama3.2/</a> (e.g. <a class="src" href="../evidence/pairwise-verdicts/llama3.2/easy__factual_004__claude-haiku-4-5-20251001__claude-sonnet-5.json">easy__factual_004__…claude-sonnet-5.json</a>); the aggregate is <a class="src" href="../evidence/judge-position-bias-stats.json">evidence/judge-position-bias-stats.json</a>, written up in <a class="src" href="../evidence/judge-position-bias.md">evidence/judge-position-bias.md</a>.</p><h2>Self-preference</h2><p class="read"><b>What we did:</b> let <b>llama3.2</b> grade the everyday pool it competes in. The left column is its own head-to-head win rate as grader; the right is each model's solo score from the <b>independent</b> paid grader. It ranks itself <b>third of 5</b> while holding the <b>lowest</b> independent score - it prefers its own answers. A grader should sit outside the pool it scores.</p><div class="tbl-wrap"><table><thead><tr><th>model</th><th>head-to-head win</th><th>solo score</th></tr></thead><tbody><tr class=""><td class="model">claude-sonnet-5</td><td>0.787</td><td>0.997</td></tr><tr class=""><td class="model">claude-haiku-4-5-20251001</td><td>0.562</td><td>1.000</td></tr><tr class="hi"><td class="model">llama3.2<span class="tag">grader</span></td><td>0.425</td><td>0.935</td></tr><tr class=""><td class="model">deepseek-v4-pro</td><td>0.400</td><td>1.000</td></tr><tr class=""><td class="model">gpt-5.6-luna</td><td>0.325</td><td>1.000</td></tr></tbody></table></div><p class="proof"><b>Check it:</b> the head-to-head standings are the llama3.2 arm of the pairwise view in <a class="src" href="../reports/findings.json">reports/findings.json</a>, built from the verdicts in <a class="src" href="../evidence/pairwise-verdicts/llama3.2/">evidence/pairwise-verdicts/llama3.2/</a>.</p><h2>Limits</h2><div class="notebox warn"><ul><li><b>No best model.</b> Too close, and the grader is biased.</li><li><b>Small n.</b> 2 reps can't resolve a 0.003 gap.</li><li><b>One suite.</b> 20 items - other questions could shift it.</li></ul></div><h2>What production would add</h2><div class="notebox acc"><ul><li><b>Grader outside the pool</b>, or a panel of judges by majority.</li><li><b>More items, standard sets</b> - hundreds to thousands, shared and public.</li><li><b>Extra reps only where scores are close.</b></li><li><b>Human spot-checks</b> and drift monitoring in production.</li></ul></div><footer>Regenerate ($0, no model calls): <span class="mono">python -m llm_benchmark.report_dashboard</span>. Sources: quality, cost and latency from <a class="src" href="../reports/findings.json">reports/findings.json</a>; spend from <a class="src" href="../reports/spend.json">reports/spend.json</a>; raw pairwise verdicts under <a class="src" href="../evidence/pairwise-verdicts/">evidence/pairwise-verdicts/</a>.</footer></div></body></html>

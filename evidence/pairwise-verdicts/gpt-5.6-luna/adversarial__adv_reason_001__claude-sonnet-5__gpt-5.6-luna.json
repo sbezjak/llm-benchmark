@@ -1,0 +1,12 @@
+{
+  "model_a": "claude-sonnet-5",
+  "model_b": "gpt-5.6-luna",
+  "order1_winner": "TIE",
+  "order2_winner": "TIE",
+  "order1_reasoning": "Both answers are correct and clearly explain that 100 days leaves a remainder of 2 when divided by 7, so neither is meaningfully better.",
+  "order2_reasoning": "Both answers correctly compute that 100 days is 2 days beyond a multiple of 7 and conclude Friday, so they are equally correct and relevant.",
+  "outcome": "genuine_tie",
+  "winner": null,
+  "suite": "adversarial",
+  "item_id": "adv_reason_001"
+}

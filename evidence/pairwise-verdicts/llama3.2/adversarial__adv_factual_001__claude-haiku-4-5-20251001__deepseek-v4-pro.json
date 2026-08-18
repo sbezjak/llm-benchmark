@@ -1,0 +1,12 @@
+{
+  "model_a": "claude-haiku-4-5-20251001",
+  "model_b": "deepseek-v4-pro",
+  "order1_winner": "claude-haiku-4-5-20251001",
+  "order2_winner": "deepseek-v4-pro",
+  "order1_reasoning": "Answer A is more correct and relevant because it provides the exact height of Mauna Kea from its base to its summit, while Answer B simplifies the measurement by only stating that it exceeds Mount Everest's height above sea level.",
+  "order2_reasoning": "Answer A is more correct because it provides the exact height of Mauna Kea from its base to its summit, whereas Answer B provides a range and incorrectly states Mount Everest's height above sea level.",
+  "outcome": "flip",
+  "winner": null,
+  "suite": "adversarial",
+  "item_id": "adv_factual_001"
+}

@@ -1,0 +1,12 @@
+{
+  "model_a": "deepseek-v4-pro",
+  "model_b": "llama3.2",
+  "order1_winner": "llama3.2",
+  "order2_winner": "llama3.2",
+  "order1_reasoning": "Answer B is more correct and relevant because it provides the step-by-step mathematical process to solve for x, whereas Answer A only states the final answer without explanation.",
+  "order2_reasoning": "Answer A provides a clear and step-by-step mathematical solution to the problem, making it more transparent and easier to understand.",
+  "outcome": "win",
+  "winner": "llama3.2",
+  "suite": "adversarial",
+  "item_id": "adv_arith_001"
+}

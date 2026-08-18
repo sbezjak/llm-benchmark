@@ -1,0 +1,12 @@
+{
+  "model_a": "claude-sonnet-5",
+  "model_b": "gpt-5.6-luna",
+  "order1_winner": "gpt-5.6-luna",
+  "order2_winner": "gpt-5.6-luna",
+  "order1_reasoning": "Both answers correctly identify AI as Artificial Intelligence, but B is more concise and directly relevant to the simple question.",
+  "order2_reasoning": "Both answers correctly expand AI as Artificial Intelligence, but Answer A is more concise and directly relevant to the simple question.",
+  "outcome": "win",
+  "winner": "gpt-5.6-luna",
+  "suite": "easy",
+  "item_id": "definition_001"
+}

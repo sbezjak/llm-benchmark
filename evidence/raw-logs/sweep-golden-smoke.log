@@ -1,0 +1,987 @@
+2026-08-17 09:29:41,946 INFO llm_benchmark.tracing langfuse: live tracing ON (LangfuseTracer)
+2026-08-17 09:29:42,016 INFO llm_benchmark.sweep sweep: 1 items x 5 models x 2 reps (FORCE re-call)
+2026-08-17 09:29:42,017 INFO llm_benchmark.runners.sweep sweep.capture model=llama3.2 item=factual_001 rep=1 (miss - calling provider)
+2026-08-17 09:29:42,298 INFO llm_benchmark.providers.ollama ollama.measure model=llama3.2 url=http://localhost:11434/api/generate
+SYSTEM TEMPLATE (wraps the prompt server-side; the extra tokens_in over the visible words are these):
+<|start_header_id|>system<|end_header_id|>
+
+Cutting Knowledge Date: December 2023
+
+{{ if .System }}{{ .System }}
+{{- end }}
+{{- if .Tools }}When you receive a tool call response, use the output to format an answer to the orginal user question.
+
+You are a helpful assistant with tool calling capabilities.
+{{- end }}<|eot_id|>
+{{- range $i, $_ := .Messages }}
+{{- $last := eq (len (slice $.Messages $i)) 1 }}
+{{- if eq .Role "user" }}<|start_header_id|>user<|end_header_id|>
+{{- if and $.Tools $last }}
+
+Given the following functions, please respond with a JSON for a function call with its proper arguments that best answers the given prompt.
+
+Respond in the format {"name": function name, "parameters": dictionary of argument name and its value}. Do not use variables.
+
+{{ range $.Tools }}
+{{- . }}
+{{ end }}
+{{ .Content }}<|eot_id|>
+{{- else }}
+
+{{ .Content }}<|eot_id|>
+{{- end }}{{ if $last }}<|start_header_id|>assistant<|end_header_id|>
+
+{{ end }}
+{{- else if eq .Role "assistant" }}<|start_header_id|>assistant<|end_header_id|>
+{{- if .ToolCalls }}
+{{ range .ToolCalls }}
+{"name": "{{ .Function.Name }}", "parameters": {{ .Function.Arguments }}}{{ end }}
+{{- else }}
+
+{{ .Content }}
+{{- end }}{{ if not $last }}<|eot_id|>{{ end }}
+{{- else if eq .Role "tool" }}<|start_header_id|>ipython<|end_header_id|>
+
+{{ .Content }}<|eot_id|>{{ if $last }}<|start_header_id|>assistant<|end_header_id|>
+
+{{ end }}
+{{- end }}
+{{- end }}
+PROMPT:
+What is the capital of Slovenia?
+2026-08-17 09:29:49,054 INFO llm_benchmark.providers.ollama ollama.measure done model=llama3.2 tokens_in=32 tokens_out=12 latency_ms=6755.1 ttft_ms=5839.5
+RESPONSE:
+The capital of Slovenia is Ljubljana.
+2026-08-17 09:29:49,289 INFO llm_benchmark.providers.ollama ollama.measure model=llama3.2 url=http://localhost:11434/api/generate
+SYSTEM TEMPLATE (wraps the prompt server-side; the extra tokens_in over the visible words are these):
+<|start_header_id|>system<|end_header_id|>
+
+Cutting Knowledge Date: December 2023
+
+{{ if .System }}{{ .System }}
+{{- end }}
+{{- if .Tools }}When you receive a tool call response, use the output to format an answer to the orginal user question.
+
+You are a helpful assistant with tool calling capabilities.
+{{- end }}<|eot_id|>
+{{- range $i, $_ := .Messages }}
+{{- $last := eq (len (slice $.Messages $i)) 1 }}
+{{- if eq .Role "user" }}<|start_header_id|>user<|end_header_id|>
+{{- if and $.Tools $last }}
+
+Given the following functions, please respond with a JSON for a function call with its proper arguments that best answers the given prompt.
+
+Respond in the format {"name": function name, "parameters": dictionary of argument name and its value}. Do not use variables.
+
+{{ range $.Tools }}
+{{- . }}
+{{ end }}
+{{ .Content }}<|eot_id|>
+{{- else }}
+
+{{ .Content }}<|eot_id|>
+{{- end }}{{ if $last }}<|start_header_id|>assistant<|end_header_id|>
+
+{{ end }}
+{{- else if eq .Role "assistant" }}<|start_header_id|>assistant<|end_header_id|>
+{{- if .ToolCalls }}
+{{ range .ToolCalls }}
+{"name": "{{ .Function.Name }}", "parameters": {{ .Function.Arguments }}}{{ end }}
+{{- else }}
+
+{{ .Content }}
+{{- end }}{{ if not $last }}<|eot_id|>{{ end }}
+{{- else if eq .Role "tool" }}<|start_header_id|>ipython<|end_header_id|>
+
+{{ .Content }}<|eot_id|>{{ if $last }}<|start_header_id|>assistant<|end_header_id|>
+
+{{ end }}
+{{- end }}
+{{- end }}
+PROMPT:
+You are a strict but fair grader for a question-answering system.
+
+You will be given:
+- A QUESTION
+- An EXPECTED answer (a reference — the model's answer does NOT need to
+  match it word-for-word to be correct)
+- The MODEL'S answer to grade
+
+Grade the model's answer on two dimensions, each 0-10:
+- correctness: does the answer correctly answer the question?
+  10 = fully correct (even if phrased differently from the expected answer)
+   5 = partially correct, or correct but with significant inaccuracies
+   0 = wrong, contradicts the expected answer, or hallucinated
+- relevance: is the answer on-topic and responsive to the question?
+  10 = directly addresses the question
+   5 = partially on-topic, drifts
+   0 = off-topic or refuses to answer
+
+Respond with ONLY a JSON object, no other text:
+{"reasoning": "<one or two sentences explaining your scores>",
+ "correctness": <int>,
+ "relevance": <int>}
+
+QUESTION: What is the capital of Slovenia?
+EXPECTED: Ljubljana
+MODEL'S ANSWER: The capital of Slovenia is Ljubljana.
+2026-08-17 09:29:54,719 INFO llm_benchmark.providers.ollama ollama.measure done model=llama3.2 tokens_in=279 tokens_out=41 latency_ms=5429.1 ttft_ms=2112.9
+RESPONSE:
+{"reasoning": "The model's answer correctly identifies the capital of Slovenia, but does not provide any additional context or information.", "correctness": 10, "relevance": 10}
+2026-08-17 09:29:54,719 INFO llm_benchmark.scorers.judge judge.score verdict=PASS correctness=10/10 relevance=10/10 score=1.000 >= threshold=0.7 | reasoning: The model's answer correctly identifies the capital of Slovenia, but does not provide any additional context or information.
+2026-08-17 09:29:54,728 INFO llm_benchmark.runners.sweep sweep.wrote model=llama3.2 item=factual_001 rep=1 cost_usd=0 score=1.000 -> cache/llama3.2__factual_001__rep1.json
+2026-08-17 09:29:54,729 INFO llm_benchmark.runners.sweep sweep.capture model=llama3.2 item=factual_001 rep=2 (miss - calling provider)
+2026-08-17 09:29:54,743 INFO llm_benchmark.providers.ollama ollama.measure model=llama3.2 url=http://localhost:11434/api/generate
+SYSTEM TEMPLATE (wraps the prompt server-side; the extra tokens_in over the visible words are these):
+<|start_header_id|>system<|end_header_id|>
+
+Cutting Knowledge Date: December 2023
+
+{{ if .System }}{{ .System }}
+{{- end }}
+{{- if .Tools }}When you receive a tool call response, use the output to format an answer to the orginal user question.
+
+You are a helpful assistant with tool calling capabilities.
+{{- end }}<|eot_id|>
+{{- range $i, $_ := .Messages }}
+{{- $last := eq (len (slice $.Messages $i)) 1 }}
+{{- if eq .Role "user" }}<|start_header_id|>user<|end_header_id|>
+{{- if and $.Tools $last }}
+
+Given the following functions, please respond with a JSON for a function call with its proper arguments that best answers the given prompt.
+
+Respond in the format {"name": function name, "parameters": dictionary of argument name and its value}. Do not use variables.
+
+{{ range $.Tools }}
+{{- . }}
+{{ end }}
+{{ .Content }}<|eot_id|>
+{{- else }}
+
+{{ .Content }}<|eot_id|>
+{{- end }}{{ if $last }}<|start_header_id|>assistant<|end_header_id|>
+
+{{ end }}
+{{- else if eq .Role "assistant" }}<|start_header_id|>assistant<|end_header_id|>
+{{- if .ToolCalls }}
+{{ range .ToolCalls }}
+{"name": "{{ .Function.Name }}", "parameters": {{ .Function.Arguments }}}{{ end }}
+{{- else }}
+
+{{ .Content }}
+{{- end }}{{ if not $last }}<|eot_id|>{{ end }}
+{{- else if eq .Role "tool" }}<|start_header_id|>ipython<|end_header_id|>
+
+{{ .Content }}<|eot_id|>{{ if $last }}<|start_header_id|>assistant<|end_header_id|>
+
+{{ end }}
+{{- end }}
+{{- end }}
+PROMPT:
+What is the capital of Slovenia?
+2026-08-17 09:29:55,934 INFO llm_benchmark.providers.ollama ollama.measure done model=llama3.2 tokens_in=32 tokens_out=12 latency_ms=1191.1 ttft_ms=386.1
+RESPONSE:
+The capital of Slovenia is Ljubljana.
+2026-08-17 09:29:55,942 INFO llm_benchmark.providers.ollama ollama.measure model=llama3.2 url=http://localhost:11434/api/generate
+SYSTEM TEMPLATE (wraps the prompt server-side; the extra tokens_in over the visible words are these):
+<|start_header_id|>system<|end_header_id|>
+
+Cutting Knowledge Date: December 2023
+
+{{ if .System }}{{ .System }}
+{{- end }}
+{{- if .Tools }}When you receive a tool call response, use the output to format an answer to the orginal user question.
+
+You are a helpful assistant with tool calling capabilities.
+{{- end }}<|eot_id|>
+{{- range $i, $_ := .Messages }}
+{{- $last := eq (len (slice $.Messages $i)) 1 }}
+{{- if eq .Role "user" }}<|start_header_id|>user<|end_header_id|>
+{{- if and $.Tools $last }}
+
+Given the following functions, please respond with a JSON for a function call with its proper arguments that best answers the given prompt.
+
+Respond in the format {"name": function name, "parameters": dictionary of argument name and its value}. Do not use variables.
+
+{{ range $.Tools }}
+{{- . }}
+{{ end }}
+{{ .Content }}<|eot_id|>
+{{- else }}
+
+{{ .Content }}<|eot_id|>
+{{- end }}{{ if $last }}<|start_header_id|>assistant<|end_header_id|>
+
+{{ end }}
+{{- else if eq .Role "assistant" }}<|start_header_id|>assistant<|end_header_id|>
+{{- if .ToolCalls }}
+{{ range .ToolCalls }}
+{"name": "{{ .Function.Name }}", "parameters": {{ .Function.Arguments }}}{{ end }}
+{{- else }}
+
+{{ .Content }}
+{{- end }}{{ if not $last }}<|eot_id|>{{ end }}
+{{- else if eq .Role "tool" }}<|start_header_id|>ipython<|end_header_id|>
+
+{{ .Content }}<|eot_id|>{{ if $last }}<|start_header_id|>assistant<|end_header_id|>
+
+{{ end }}
+{{- end }}
+{{- end }}
+PROMPT:
+You are a strict but fair grader for a question-answering system.
+
+You will be given:
+- A QUESTION
+- An EXPECTED answer (a reference — the model's answer does NOT need to
+  match it word-for-word to be correct)
+- The MODEL'S answer to grade
+
+Grade the model's answer on two dimensions, each 0-10:
+- correctness: does the answer correctly answer the question?
+  10 = fully correct (even if phrased differently from the expected answer)
+   5 = partially correct, or correct but with significant inaccuracies
+   0 = wrong, contradicts the expected answer, or hallucinated
+- relevance: is the answer on-topic and responsive to the question?
+  10 = directly addresses the question
+   5 = partially on-topic, drifts
+   0 = off-topic or refuses to answer
+
+Respond with ONLY a JSON object, no other text:
+{"reasoning": "<one or two sentences explaining your scores>",
+ "correctness": <int>,
+ "relevance": <int>}
+
+QUESTION: What is the capital of Slovenia?
+EXPECTED: Ljubljana
+MODEL'S ANSWER: The capital of Slovenia is Ljubljana.
+2026-08-17 09:30:01,633 INFO llm_benchmark.providers.ollama ollama.measure done model=llama3.2 tokens_in=279 tokens_out=41 latency_ms=5690.8 ttft_ms=2531.2
+RESPONSE:
+{"reasoning": "The model's answer correctly identifies the capital of Slovenia, but does not provide any additional context or information.", "correctness": 10, "relevance": 10}
+2026-08-17 09:30:01,633 INFO llm_benchmark.scorers.judge judge.score verdict=PASS correctness=10/10 relevance=10/10 score=1.000 >= threshold=0.7 | reasoning: The model's answer correctly identifies the capital of Slovenia, but does not provide any additional context or information.
+2026-08-17 09:30:01,637 INFO llm_benchmark.runners.sweep sweep.wrote model=llama3.2 item=factual_001 rep=2 cost_usd=0 score=1.000 -> cache/llama3.2__factual_001__rep2.json
+2026-08-17 09:30:01,637 INFO llm_benchmark.runners.sweep sweep.capture model=gpt-5.6-luna item=factual_001 rep=1 (miss - calling provider)
+2026-08-17 09:30:01,638 INFO llm_benchmark.providers.openai_compat openai_compat.measure model=gpt-5.6-luna url=https://api.openai.com/v1/chat/completions
+PROMPT:
+What is the capital of Slovenia?
+2026-08-17 09:30:04,263 INFO llm_benchmark.providers.openai_compat openai_compat.measure done model=gpt-5.6-luna request_id=req_baf1e16c1a494b11a0291a1048eb9084 latency_ms=2617.2 ttft_ms=2535.1
+USAGE (verbatim from the provider - the source of every token count):
+{"prompt_tokens": 13, "completion_tokens": 14, "total_tokens": 27, "prompt_tokens_details": {"cached_tokens": 0, "cache_write_tokens": 0, "audio_tokens": 0}, "completion_tokens_details": {"reasoning_tokens": 0, "audio_tokens": 0, "accepted_prediction_tokens": 0, "rejected_prediction_tokens": 0}}
+RESPONSE:
+The capital of Slovenia is **Ljubljana**.
+2026-08-17 09:30:04,275 INFO llm_benchmark.providers.ollama ollama.measure model=llama3.2 url=http://localhost:11434/api/generate
+SYSTEM TEMPLATE (wraps the prompt server-side; the extra tokens_in over the visible words are these):
+<|start_header_id|>system<|end_header_id|>
+
+Cutting Knowledge Date: December 2023
+
+{{ if .System }}{{ .System }}
+{{- end }}
+{{- if .Tools }}When you receive a tool call response, use the output to format an answer to the orginal user question.
+
+You are a helpful assistant with tool calling capabilities.
+{{- end }}<|eot_id|>
+{{- range $i, $_ := .Messages }}
+{{- $last := eq (len (slice $.Messages $i)) 1 }}
+{{- if eq .Role "user" }}<|start_header_id|>user<|end_header_id|>
+{{- if and $.Tools $last }}
+
+Given the following functions, please respond with a JSON for a function call with its proper arguments that best answers the given prompt.
+
+Respond in the format {"name": function name, "parameters": dictionary of argument name and its value}. Do not use variables.
+
+{{ range $.Tools }}
+{{- . }}
+{{ end }}
+{{ .Content }}<|eot_id|>
+{{- else }}
+
+{{ .Content }}<|eot_id|>
+{{- end }}{{ if $last }}<|start_header_id|>assistant<|end_header_id|>
+
+{{ end }}
+{{- else if eq .Role "assistant" }}<|start_header_id|>assistant<|end_header_id|>
+{{- if .ToolCalls }}
+{{ range .ToolCalls }}
+{"name": "{{ .Function.Name }}", "parameters": {{ .Function.Arguments }}}{{ end }}
+{{- else }}
+
+{{ .Content }}
+{{- end }}{{ if not $last }}<|eot_id|>{{ end }}
+{{- else if eq .Role "tool" }}<|start_header_id|>ipython<|end_header_id|>
+
+{{ .Content }}<|eot_id|>{{ if $last }}<|start_header_id|>assistant<|end_header_id|>
+
+{{ end }}
+{{- end }}
+{{- end }}
+PROMPT:
+You are a strict but fair grader for a question-answering system.
+
+You will be given:
+- A QUESTION
+- An EXPECTED answer (a reference — the model's answer does NOT need to
+  match it word-for-word to be correct)
+- The MODEL'S answer to grade
+
+Grade the model's answer on two dimensions, each 0-10:
+- correctness: does the answer correctly answer the question?
+  10 = fully correct (even if phrased differently from the expected answer)
+   5 = partially correct, or correct but with significant inaccuracies
+   0 = wrong, contradicts the expected answer, or hallucinated
+- relevance: is the answer on-topic and responsive to the question?
+  10 = directly addresses the question
+   5 = partially on-topic, drifts
+   0 = off-topic or refuses to answer
+
+Respond with ONLY a JSON object, no other text:
+{"reasoning": "<one or two sentences explaining your scores>",
+ "correctness": <int>,
+ "relevance": <int>}
+
+QUESTION: What is the capital of Slovenia?
+EXPECTED: Ljubljana
+MODEL'S ANSWER: The capital of Slovenia is **Ljubljana**.
+2026-08-17 09:30:07,746 INFO llm_benchmark.providers.ollama ollama.measure done model=llama3.2 tokens_in=281 tokens_out=41 latency_ms=3470.7 ttft_ms=509.3
+RESPONSE:
+{"reasoning": "The model's answer correctly identifies the capital of Slovenia, but does not provide any additional context or information.", "correctness": 10, "relevance": 10}
+2026-08-17 09:30:07,746 INFO llm_benchmark.scorers.judge judge.score verdict=PASS correctness=10/10 relevance=10/10 score=1.000 >= threshold=0.7 | reasoning: The model's answer correctly identifies the capital of Slovenia, but does not provide any additional context or information.
+2026-08-17 09:30:07,749 INFO llm_benchmark.runners.sweep sweep.wrote model=gpt-5.6-luna item=factual_001 rep=1 cost_usd=1.94e-05 score=1.000 -> cache/gpt-5.6-luna__factual_001__rep1.json
+2026-08-17 09:30:07,750 INFO llm_benchmark.runners.sweep sweep.capture model=gpt-5.6-luna item=factual_001 rep=2 (miss - calling provider)
+2026-08-17 09:30:07,750 INFO llm_benchmark.providers.openai_compat openai_compat.measure model=gpt-5.6-luna url=https://api.openai.com/v1/chat/completions
+PROMPT:
+What is the capital of Slovenia?
+2026-08-17 09:30:08,552 INFO llm_benchmark.providers.openai_compat openai_compat.measure done model=gpt-5.6-luna request_id=req_6ca70c1e5b134a199e3b99e838755c34 latency_ms=789.2 ttft_ms=714.4
+USAGE (verbatim from the provider - the source of every token count):
+{"prompt_tokens": 13, "completion_tokens": 14, "total_tokens": 27, "prompt_tokens_details": {"cached_tokens": 0, "cache_write_tokens": 0, "audio_tokens": 0}, "completion_tokens_details": {"reasoning_tokens": 0, "audio_tokens": 0, "accepted_prediction_tokens": 0, "rejected_prediction_tokens": 0}}
+RESPONSE:
+The capital of Slovenia is **Ljubljana**.
+2026-08-17 09:30:08,569 INFO llm_benchmark.providers.ollama ollama.measure model=llama3.2 url=http://localhost:11434/api/generate
+SYSTEM TEMPLATE (wraps the prompt server-side; the extra tokens_in over the visible words are these):
+<|start_header_id|>system<|end_header_id|>
+
+Cutting Knowledge Date: December 2023
+
+{{ if .System }}{{ .System }}
+{{- end }}
+{{- if .Tools }}When you receive a tool call response, use the output to format an answer to the orginal user question.
+
+You are a helpful assistant with tool calling capabilities.
+{{- end }}<|eot_id|>
+{{- range $i, $_ := .Messages }}
+{{- $last := eq (len (slice $.Messages $i)) 1 }}
+{{- if eq .Role "user" }}<|start_header_id|>user<|end_header_id|>
+{{- if and $.Tools $last }}
+
+Given the following functions, please respond with a JSON for a function call with its proper arguments that best answers the given prompt.
+
+Respond in the format {"name": function name, "parameters": dictionary of argument name and its value}. Do not use variables.
+
+{{ range $.Tools }}
+{{- . }}
+{{ end }}
+{{ .Content }}<|eot_id|>
+{{- else }}
+
+{{ .Content }}<|eot_id|>
+{{- end }}{{ if $last }}<|start_header_id|>assistant<|end_header_id|>
+
+{{ end }}
+{{- else if eq .Role "assistant" }}<|start_header_id|>assistant<|end_header_id|>
+{{- if .ToolCalls }}
+{{ range .ToolCalls }}
+{"name": "{{ .Function.Name }}", "parameters": {{ .Function.Arguments }}}{{ end }}
+{{- else }}
+
+{{ .Content }}
+{{- end }}{{ if not $last }}<|eot_id|>{{ end }}
+{{- else if eq .Role "tool" }}<|start_header_id|>ipython<|end_header_id|>
+
+{{ .Content }}<|eot_id|>{{ if $last }}<|start_header_id|>assistant<|end_header_id|>
+
+{{ end }}
+{{- end }}
+{{- end }}
+PROMPT:
+You are a strict but fair grader for a question-answering system.
+
+You will be given:
+- A QUESTION
+- An EXPECTED answer (a reference — the model's answer does NOT need to
+  match it word-for-word to be correct)
+- The MODEL'S answer to grade
+
+Grade the model's answer on two dimensions, each 0-10:
+- correctness: does the answer correctly answer the question?
+  10 = fully correct (even if phrased differently from the expected answer)
+   5 = partially correct, or correct but with significant inaccuracies
+   0 = wrong, contradicts the expected answer, or hallucinated
+- relevance: is the answer on-topic and responsive to the question?
+  10 = directly addresses the question
+   5 = partially on-topic, drifts
+   0 = off-topic or refuses to answer
+
+Respond with ONLY a JSON object, no other text:
+{"reasoning": "<one or two sentences explaining your scores>",
+ "correctness": <int>,
+ "relevance": <int>}
+
+QUESTION: What is the capital of Slovenia?
+EXPECTED: Ljubljana
+MODEL'S ANSWER: The capital of Slovenia is **Ljubljana**.
+2026-08-17 09:30:11,980 INFO llm_benchmark.providers.ollama ollama.measure done model=llama3.2 tokens_in=281 tokens_out=41 latency_ms=3410.0 ttft_ms=234.3
+RESPONSE:
+{"reasoning": "The model's answer correctly identifies the capital of Slovenia, but does not provide any additional context or information.", "correctness": 10, "relevance": 10}
+2026-08-17 09:30:11,983 INFO llm_benchmark.scorers.judge judge.score verdict=PASS correctness=10/10 relevance=10/10 score=1.000 >= threshold=0.7 | reasoning: The model's answer correctly identifies the capital of Slovenia, but does not provide any additional context or information.
+2026-08-17 09:30:11,993 INFO llm_benchmark.runners.sweep sweep.wrote model=gpt-5.6-luna item=factual_001 rep=2 cost_usd=1.94e-05 score=1.000 -> cache/gpt-5.6-luna__factual_001__rep2.json
+2026-08-17 09:30:11,993 INFO llm_benchmark.runners.sweep sweep.capture model=deepseek-v4-pro item=factual_001 rep=1 (miss - calling provider)
+2026-08-17 09:30:11,994 INFO llm_benchmark.providers.openai_compat openai_compat.measure model=deepseek-v4-pro url=https://api.deepseek.com/v1/chat/completions
+PROMPT:
+What is the capital of Slovenia?
+2026-08-17 09:30:13,529 INFO llm_benchmark.providers.openai_compat openai_compat.measure done model=deepseek-v4-pro request_id=(none) latency_ms=1523.7 ttft_ms=1390.3
+USAGE (verbatim from the provider - the source of every token count):
+{"prompt_tokens": 90, "completion_tokens": 27, "total_tokens": 117, "prompt_tokens_details": {"cached_tokens": 0}, "completion_tokens_details": {"reasoning_tokens": 16}, "prompt_cache_hit_tokens": 0, "prompt_cache_miss_tokens": 90}
+RESPONSE:
+The capital of Slovenia is **Ljubljana**.
+2026-08-17 09:30:13,545 INFO llm_benchmark.providers.ollama ollama.measure model=llama3.2 url=http://localhost:11434/api/generate
+SYSTEM TEMPLATE (wraps the prompt server-side; the extra tokens_in over the visible words are these):
+<|start_header_id|>system<|end_header_id|>
+
+Cutting Knowledge Date: December 2023
+
+{{ if .System }}{{ .System }}
+{{- end }}
+{{- if .Tools }}When you receive a tool call response, use the output to format an answer to the orginal user question.
+
+You are a helpful assistant with tool calling capabilities.
+{{- end }}<|eot_id|>
+{{- range $i, $_ := .Messages }}
+{{- $last := eq (len (slice $.Messages $i)) 1 }}
+{{- if eq .Role "user" }}<|start_header_id|>user<|end_header_id|>
+{{- if and $.Tools $last }}
+
+Given the following functions, please respond with a JSON for a function call with its proper arguments that best answers the given prompt.
+
+Respond in the format {"name": function name, "parameters": dictionary of argument name and its value}. Do not use variables.
+
+{{ range $.Tools }}
+{{- . }}
+{{ end }}
+{{ .Content }}<|eot_id|>
+{{- else }}
+
+{{ .Content }}<|eot_id|>
+{{- end }}{{ if $last }}<|start_header_id|>assistant<|end_header_id|>
+
+{{ end }}
+{{- else if eq .Role "assistant" }}<|start_header_id|>assistant<|end_header_id|>
+{{- if .ToolCalls }}
+{{ range .ToolCalls }}
+{"name": "{{ .Function.Name }}", "parameters": {{ .Function.Arguments }}}{{ end }}
+{{- else }}
+
+{{ .Content }}
+{{- end }}{{ if not $last }}<|eot_id|>{{ end }}
+{{- else if eq .Role "tool" }}<|start_header_id|>ipython<|end_header_id|>
+
+{{ .Content }}<|eot_id|>{{ if $last }}<|start_header_id|>assistant<|end_header_id|>
+
+{{ end }}
+{{- end }}
+{{- end }}
+PROMPT:
+You are a strict but fair grader for a question-answering system.
+
+You will be given:
+- A QUESTION
+- An EXPECTED answer (a reference — the model's answer does NOT need to
+  match it word-for-word to be correct)
+- The MODEL'S answer to grade
+
+Grade the model's answer on two dimensions, each 0-10:
+- correctness: does the answer correctly answer the question?
+  10 = fully correct (even if phrased differently from the expected answer)
+   5 = partially correct, or correct but with significant inaccuracies
+   0 = wrong, contradicts the expected answer, or hallucinated
+- relevance: is the answer on-topic and responsive to the question?
+  10 = directly addresses the question
+   5 = partially on-topic, drifts
+   0 = off-topic or refuses to answer
+
+Respond with ONLY a JSON object, no other text:
+{"reasoning": "<one or two sentences explaining your scores>",
+ "correctness": <int>,
+ "relevance": <int>}
+
+QUESTION: What is the capital of Slovenia?
+EXPECTED: Ljubljana
+MODEL'S ANSWER: The capital of Slovenia is **Ljubljana**.
+2026-08-17 09:30:17,440 INFO llm_benchmark.providers.ollama ollama.measure done model=llama3.2 tokens_in=281 tokens_out=41 latency_ms=3894.4 ttft_ms=215.6
+RESPONSE:
+{"reasoning": "The model's answer correctly identifies the capital of Slovenia, but does not provide any additional context or information.", "correctness": 10, "relevance": 10}
+2026-08-17 09:30:17,441 INFO llm_benchmark.scorers.judge judge.score verdict=PASS correctness=10/10 relevance=10/10 score=1.000 >= threshold=0.7 | reasoning: The model's answer correctly identifies the capital of Slovenia, but does not provide any additional context or information.
+2026-08-17 09:30:17,445 INFO llm_benchmark.runners.sweep sweep.wrote model=deepseek-v4-pro item=factual_001 rep=1 cost_usd=6.264e-05 score=1.000 -> cache/deepseek-v4-pro__factual_001__rep1.json
+2026-08-17 09:30:17,445 INFO llm_benchmark.runners.sweep sweep.capture model=deepseek-v4-pro item=factual_001 rep=2 (miss - calling provider)
+2026-08-17 09:30:17,446 INFO llm_benchmark.providers.openai_compat openai_compat.measure model=deepseek-v4-pro url=https://api.deepseek.com/v1/chat/completions
+PROMPT:
+What is the capital of Slovenia?
+2026-08-17 09:30:18,993 INFO llm_benchmark.providers.openai_compat openai_compat.measure done model=deepseek-v4-pro request_id=(none) latency_ms=1532.2 ttft_ms=1489.6
+USAGE (verbatim from the provider - the source of every token count):
+{"prompt_tokens": 90, "completion_tokens": 21, "total_tokens": 111, "prompt_tokens_details": {"cached_tokens": 0}, "completion_tokens_details": {"reasoning_tokens": 16}, "prompt_cache_hit_tokens": 0, "prompt_cache_miss_tokens": 90}
+RESPONSE:
+Ljubljana.
+2026-08-17 09:30:19,005 INFO llm_benchmark.providers.ollama ollama.measure model=llama3.2 url=http://localhost:11434/api/generate
+SYSTEM TEMPLATE (wraps the prompt server-side; the extra tokens_in over the visible words are these):
+<|start_header_id|>system<|end_header_id|>
+
+Cutting Knowledge Date: December 2023
+
+{{ if .System }}{{ .System }}
+{{- end }}
+{{- if .Tools }}When you receive a tool call response, use the output to format an answer to the orginal user question.
+
+You are a helpful assistant with tool calling capabilities.
+{{- end }}<|eot_id|>
+{{- range $i, $_ := .Messages }}
+{{- $last := eq (len (slice $.Messages $i)) 1 }}
+{{- if eq .Role "user" }}<|start_header_id|>user<|end_header_id|>
+{{- if and $.Tools $last }}
+
+Given the following functions, please respond with a JSON for a function call with its proper arguments that best answers the given prompt.
+
+Respond in the format {"name": function name, "parameters": dictionary of argument name and its value}. Do not use variables.
+
+{{ range $.Tools }}
+{{- . }}
+{{ end }}
+{{ .Content }}<|eot_id|>
+{{- else }}
+
+{{ .Content }}<|eot_id|>
+{{- end }}{{ if $last }}<|start_header_id|>assistant<|end_header_id|>
+
+{{ end }}
+{{- else if eq .Role "assistant" }}<|start_header_id|>assistant<|end_header_id|>
+{{- if .ToolCalls }}
+{{ range .ToolCalls }}
+{"name": "{{ .Function.Name }}", "parameters": {{ .Function.Arguments }}}{{ end }}
+{{- else }}
+
+{{ .Content }}
+{{- end }}{{ if not $last }}<|eot_id|>{{ end }}
+{{- else if eq .Role "tool" }}<|start_header_id|>ipython<|end_header_id|>
+
+{{ .Content }}<|eot_id|>{{ if $last }}<|start_header_id|>assistant<|end_header_id|>
+
+{{ end }}
+{{- end }}
+{{- end }}
+PROMPT:
+You are a strict but fair grader for a question-answering system.
+
+You will be given:
+- A QUESTION
+- An EXPECTED answer (a reference — the model's answer does NOT need to
+  match it word-for-word to be correct)
+- The MODEL'S answer to grade
+
+Grade the model's answer on two dimensions, each 0-10:
+- correctness: does the answer correctly answer the question?
+  10 = fully correct (even if phrased differently from the expected answer)
+   5 = partially correct, or correct but with significant inaccuracies
+   0 = wrong, contradicts the expected answer, or hallucinated
+- relevance: is the answer on-topic and responsive to the question?
+  10 = directly addresses the question
+   5 = partially on-topic, drifts
+   0 = off-topic or refuses to answer
+
+Respond with ONLY a JSON object, no other text:
+{"reasoning": "<one or two sentences explaining your scores>",
+ "correctness": <int>,
+ "relevance": <int>}
+
+QUESTION: What is the capital of Slovenia?
+EXPECTED: Ljubljana
+MODEL'S ANSWER: Ljubljana.
+2026-08-17 09:30:22,623 INFO llm_benchmark.providers.ollama ollama.measure done model=llama3.2 tokens_in=274 tokens_out=41 latency_ms=3615.2 ttft_ms=421.3
+RESPONSE:
+{"reasoning": "The model's answer correctly identified the capital of Slovenia, but did not provide any additional context or information.", "correctness": 10, "relevance": 10}
+2026-08-17 09:30:22,624 INFO llm_benchmark.scorers.judge judge.score verdict=PASS correctness=10/10 relevance=10/10 score=1.000 >= threshold=0.7 | reasoning: The model's answer correctly identified the capital of Slovenia, but did not provide any additional context or information.
+2026-08-17 09:30:22,634 INFO llm_benchmark.runners.sweep sweep.wrote model=deepseek-v4-pro item=factual_001 rep=2 cost_usd=5.742e-05 score=1.000 -> cache/deepseek-v4-pro__factual_001__rep2.json
+2026-08-17 09:30:22,634 INFO llm_benchmark.runners.sweep sweep.capture model=claude-haiku-4-5-20251001 item=factual_001 rep=1 (miss - calling provider)
+2026-08-17 09:30:22,636 INFO llm_benchmark.providers.anthropic anthropic.measure model=claude-haiku-4-5-20251001 url=https://api.anthropic.com/v1/messages
+PROMPT:
+What is the capital of Slovenia?
+2026-08-17 09:30:24,212 INFO llm_benchmark.providers.anthropic anthropic.measure done model=claude-haiku-4-5-20251001 request_id=req_011Ce7vptuZsJw6t8GFcCLv4 latency_ms=1565.0 ttft_ms=1388.6
+USAGE (verbatim from the provider - the source of every token count):
+message_start: {"input_tokens": 14, "cache_creation_input_tokens": 0, "cache_read_input_tokens": 0, "cache_creation": {"ephemeral_5m_input_tokens": 0, "ephemeral_1h_input_tokens": 0}, "output_tokens": 7, "service_tier": "standard", "inference_geo": "not_available"}
+message_delta: {"input_tokens": 14, "cache_creation_input_tokens": 0, "cache_read_input_tokens": 0, "output_tokens": 10}
+RESPONSE:
+The capital of Slovenia is Ljubljana.
+2026-08-17 09:30:24,224 INFO llm_benchmark.providers.ollama ollama.measure model=llama3.2 url=http://localhost:11434/api/generate
+SYSTEM TEMPLATE (wraps the prompt server-side; the extra tokens_in over the visible words are these):
+<|start_header_id|>system<|end_header_id|>
+
+Cutting Knowledge Date: December 2023
+
+{{ if .System }}{{ .System }}
+{{- end }}
+{{- if .Tools }}When you receive a tool call response, use the output to format an answer to the orginal user question.
+
+You are a helpful assistant with tool calling capabilities.
+{{- end }}<|eot_id|>
+{{- range $i, $_ := .Messages }}
+{{- $last := eq (len (slice $.Messages $i)) 1 }}
+{{- if eq .Role "user" }}<|start_header_id|>user<|end_header_id|>
+{{- if and $.Tools $last }}
+
+Given the following functions, please respond with a JSON for a function call with its proper arguments that best answers the given prompt.
+
+Respond in the format {"name": function name, "parameters": dictionary of argument name and its value}. Do not use variables.
+
+{{ range $.Tools }}
+{{- . }}
+{{ end }}
+{{ .Content }}<|eot_id|>
+{{- else }}
+
+{{ .Content }}<|eot_id|>
+{{- end }}{{ if $last }}<|start_header_id|>assistant<|end_header_id|>
+
+{{ end }}
+{{- else if eq .Role "assistant" }}<|start_header_id|>assistant<|end_header_id|>
+{{- if .ToolCalls }}
+{{ range .ToolCalls }}
+{"name": "{{ .Function.Name }}", "parameters": {{ .Function.Arguments }}}{{ end }}
+{{- else }}
+
+{{ .Content }}
+{{- end }}{{ if not $last }}<|eot_id|>{{ end }}
+{{- else if eq .Role "tool" }}<|start_header_id|>ipython<|end_header_id|>
+
+{{ .Content }}<|eot_id|>{{ if $last }}<|start_header_id|>assistant<|end_header_id|>
+
+{{ end }}
+{{- end }}
+{{- end }}
+PROMPT:
+You are a strict but fair grader for a question-answering system.
+
+You will be given:
+- A QUESTION
+- An EXPECTED answer (a reference — the model's answer does NOT need to
+  match it word-for-word to be correct)
+- The MODEL'S answer to grade
+
+Grade the model's answer on two dimensions, each 0-10:
+- correctness: does the answer correctly answer the question?
+  10 = fully correct (even if phrased differently from the expected answer)
+   5 = partially correct, or correct but with significant inaccuracies
+   0 = wrong, contradicts the expected answer, or hallucinated
+- relevance: is the answer on-topic and responsive to the question?
+  10 = directly addresses the question
+   5 = partially on-topic, drifts
+   0 = off-topic or refuses to answer
+
+Respond with ONLY a JSON object, no other text:
+{"reasoning": "<one or two sentences explaining your scores>",
+ "correctness": <int>,
+ "relevance": <int>}
+
+QUESTION: What is the capital of Slovenia?
+EXPECTED: Ljubljana
+MODEL'S ANSWER: The capital of Slovenia is Ljubljana.
+2026-08-17 09:30:28,324 INFO llm_benchmark.providers.ollama ollama.measure done model=llama3.2 tokens_in=279 tokens_out=41 latency_ms=4099.7 ttft_ms=557.1
+RESPONSE:
+{"reasoning": "The model's answer correctly identifies the capital of Slovenia, but does not provide any additional context or information.", "correctness": 10, "relevance": 10}
+2026-08-17 09:30:28,324 INFO llm_benchmark.scorers.judge judge.score verdict=PASS correctness=10/10 relevance=10/10 score=1.000 >= threshold=0.7 | reasoning: The model's answer correctly identifies the capital of Slovenia, but does not provide any additional context or information.
+2026-08-17 09:30:28,327 INFO llm_benchmark.runners.sweep sweep.wrote model=claude-haiku-4-5-20251001 item=factual_001 rep=1 cost_usd=6.4e-05 score=1.000 -> cache/claude-haiku-4-5-20251001__factual_001__rep1.json
+2026-08-17 09:30:28,327 INFO llm_benchmark.runners.sweep sweep.capture model=claude-haiku-4-5-20251001 item=factual_001 rep=2 (miss - calling provider)
+2026-08-17 09:30:28,327 INFO llm_benchmark.providers.anthropic anthropic.measure model=claude-haiku-4-5-20251001 url=https://api.anthropic.com/v1/messages
+PROMPT:
+What is the capital of Slovenia?
+2026-08-17 09:30:29,086 INFO llm_benchmark.providers.anthropic anthropic.measure done model=claude-haiku-4-5-20251001 request_id=req_011Ce7vqK4snAHvzaVtGpEkf latency_ms=751.2 ttft_ms=734.3
+USAGE (verbatim from the provider - the source of every token count):
+message_start: {"input_tokens": 14, "cache_creation_input_tokens": 0, "cache_read_input_tokens": 0, "cache_creation": {"ephemeral_5m_input_tokens": 0, "ephemeral_1h_input_tokens": 0}, "output_tokens": 7, "service_tier": "standard", "inference_geo": "not_available"}
+message_delta: {"input_tokens": 14, "cache_creation_input_tokens": 0, "cache_read_input_tokens": 0, "output_tokens": 10}
+RESPONSE:
+The capital of Slovenia is Ljubljana.
+2026-08-17 09:30:29,094 INFO llm_benchmark.providers.ollama ollama.measure model=llama3.2 url=http://localhost:11434/api/generate
+SYSTEM TEMPLATE (wraps the prompt server-side; the extra tokens_in over the visible words are these):
+<|start_header_id|>system<|end_header_id|>
+
+Cutting Knowledge Date: December 2023
+
+{{ if .System }}{{ .System }}
+{{- end }}
+{{- if .Tools }}When you receive a tool call response, use the output to format an answer to the orginal user question.
+
+You are a helpful assistant with tool calling capabilities.
+{{- end }}<|eot_id|>
+{{- range $i, $_ := .Messages }}
+{{- $last := eq (len (slice $.Messages $i)) 1 }}
+{{- if eq .Role "user" }}<|start_header_id|>user<|end_header_id|>
+{{- if and $.Tools $last }}
+
+Given the following functions, please respond with a JSON for a function call with its proper arguments that best answers the given prompt.
+
+Respond in the format {"name": function name, "parameters": dictionary of argument name and its value}. Do not use variables.
+
+{{ range $.Tools }}
+{{- . }}
+{{ end }}
+{{ .Content }}<|eot_id|>
+{{- else }}
+
+{{ .Content }}<|eot_id|>
+{{- end }}{{ if $last }}<|start_header_id|>assistant<|end_header_id|>
+
+{{ end }}
+{{- else if eq .Role "assistant" }}<|start_header_id|>assistant<|end_header_id|>
+{{- if .ToolCalls }}
+{{ range .ToolCalls }}
+{"name": "{{ .Function.Name }}", "parameters": {{ .Function.Arguments }}}{{ end }}
+{{- else }}
+
+{{ .Content }}
+{{- end }}{{ if not $last }}<|eot_id|>{{ end }}
+{{- else if eq .Role "tool" }}<|start_header_id|>ipython<|end_header_id|>
+
+{{ .Content }}<|eot_id|>{{ if $last }}<|start_header_id|>assistant<|end_header_id|>
+
+{{ end }}
+{{- end }}
+{{- end }}
+PROMPT:
+You are a strict but fair grader for a question-answering system.
+
+You will be given:
+- A QUESTION
+- An EXPECTED answer (a reference — the model's answer does NOT need to
+  match it word-for-word to be correct)
+- The MODEL'S answer to grade
+
+Grade the model's answer on two dimensions, each 0-10:
+- correctness: does the answer correctly answer the question?
+  10 = fully correct (even if phrased differently from the expected answer)
+   5 = partially correct, or correct but with significant inaccuracies
+   0 = wrong, contradicts the expected answer, or hallucinated
+- relevance: is the answer on-topic and responsive to the question?
+  10 = directly addresses the question
+   5 = partially on-topic, drifts
+   0 = off-topic or refuses to answer
+
+Respond with ONLY a JSON object, no other text:
+{"reasoning": "<one or two sentences explaining your scores>",
+ "correctness": <int>,
+ "relevance": <int>}
+
+QUESTION: What is the capital of Slovenia?
+EXPECTED: Ljubljana
+MODEL'S ANSWER: The capital of Slovenia is Ljubljana.
+2026-08-17 09:30:33,151 INFO llm_benchmark.providers.ollama ollama.measure done model=llama3.2 tokens_in=279 tokens_out=41 latency_ms=4056.0 ttft_ms=226.8
+RESPONSE:
+{"reasoning": "The model's answer correctly identifies the capital of Slovenia, but does not provide any additional context or information.", "correctness": 10, "relevance": 10}
+2026-08-17 09:30:33,151 INFO llm_benchmark.scorers.judge judge.score verdict=PASS correctness=10/10 relevance=10/10 score=1.000 >= threshold=0.7 | reasoning: The model's answer correctly identifies the capital of Slovenia, but does not provide any additional context or information.
+2026-08-17 09:30:33,154 INFO llm_benchmark.runners.sweep sweep.wrote model=claude-haiku-4-5-20251001 item=factual_001 rep=2 cost_usd=6.4e-05 score=1.000 -> cache/claude-haiku-4-5-20251001__factual_001__rep2.json
+2026-08-17 09:30:33,155 INFO llm_benchmark.runners.sweep sweep.capture model=claude-sonnet-5 item=factual_001 rep=1 (miss - calling provider)
+2026-08-17 09:30:33,155 INFO llm_benchmark.providers.anthropic anthropic.measure model=claude-sonnet-5 url=https://api.anthropic.com/v1/messages
+PROMPT:
+What is the capital of Slovenia?
+2026-08-17 09:30:35,436 INFO llm_benchmark.providers.anthropic anthropic.measure done model=claude-sonnet-5 request_id=req_011Ce7vqfhrUjYGQG39gAabr latency_ms=2266.9 ttft_ms=958.3
+USAGE (verbatim from the provider - the source of every token count):
+message_start: {"input_tokens": 18, "cache_creation_input_tokens": 0, "cache_read_input_tokens": 0, "cache_creation": {"ephemeral_5m_input_tokens": 0, "ephemeral_1h_input_tokens": 0}, "output_tokens": 1, "service_tier": "standard", "inference_geo": "global"}
+message_delta: {"input_tokens": 18, "cache_creation_input_tokens": 0, "cache_read_input_tokens": 0, "output_tokens": 99, "output_tokens_details": {"thinking_tokens": 0}}
+RESPONSE:
+The capital of Slovenia is **Ljubljana**.
+
+It's also the largest city in the country and serves as the cultural, economic, and political center of Slovenia. Ljubljana is known for its charming old town, the Ljubljanica River running through it, and Ljubljana Castle overlooking the city.
+2026-08-17 09:30:35,455 INFO llm_benchmark.providers.ollama ollama.measure model=llama3.2 url=http://localhost:11434/api/generate
+SYSTEM TEMPLATE (wraps the prompt server-side; the extra tokens_in over the visible words are these):
+<|start_header_id|>system<|end_header_id|>
+
+Cutting Knowledge Date: December 2023
+
+{{ if .System }}{{ .System }}
+{{- end }}
+{{- if .Tools }}When you receive a tool call response, use the output to format an answer to the orginal user question.
+
+You are a helpful assistant with tool calling capabilities.
+{{- end }}<|eot_id|>
+{{- range $i, $_ := .Messages }}
+{{- $last := eq (len (slice $.Messages $i)) 1 }}
+{{- if eq .Role "user" }}<|start_header_id|>user<|end_header_id|>
+{{- if and $.Tools $last }}
+
+Given the following functions, please respond with a JSON for a function call with its proper arguments that best answers the given prompt.
+
+Respond in the format {"name": function name, "parameters": dictionary of argument name and its value}. Do not use variables.
+
+{{ range $.Tools }}
+{{- . }}
+{{ end }}
+{{ .Content }}<|eot_id|>
+{{- else }}
+
+{{ .Content }}<|eot_id|>
+{{- end }}{{ if $last }}<|start_header_id|>assistant<|end_header_id|>
+
+{{ end }}
+{{- else if eq .Role "assistant" }}<|start_header_id|>assistant<|end_header_id|>
+{{- if .ToolCalls }}
+{{ range .ToolCalls }}
+{"name": "{{ .Function.Name }}", "parameters": {{ .Function.Arguments }}}{{ end }}
+{{- else }}
+
+{{ .Content }}
+{{- end }}{{ if not $last }}<|eot_id|>{{ end }}
+{{- else if eq .Role "tool" }}<|start_header_id|>ipython<|end_header_id|>
+
+{{ .Content }}<|eot_id|>{{ if $last }}<|start_header_id|>assistant<|end_header_id|>
+
+{{ end }}
+{{- end }}
+{{- end }}
+PROMPT:
+You are a strict but fair grader for a question-answering system.
+
+You will be given:
+- A QUESTION
+- An EXPECTED answer (a reference — the model's answer does NOT need to
+  match it word-for-word to be correct)
+- The MODEL'S answer to grade
+
+Grade the model's answer on two dimensions, each 0-10:
+- correctness: does the answer correctly answer the question?
+  10 = fully correct (even if phrased differently from the expected answer)
+   5 = partially correct, or correct but with significant inaccuracies
+   0 = wrong, contradicts the expected answer, or hallucinated
+- relevance: is the answer on-topic and responsive to the question?
+  10 = directly addresses the question
+   5 = partially on-topic, drifts
+   0 = off-topic or refuses to answer
+
+Respond with ONLY a JSON object, no other text:
+{"reasoning": "<one or two sentences explaining your scores>",
+ "correctness": <int>,
+ "relevance": <int>}
+
+QUESTION: What is the capital of Slovenia?
+EXPECTED: Ljubljana
+MODEL'S ANSWER: The capital of Slovenia is **Ljubljana**.
+
+It's also the largest city in the country and serves as the cultural, economic, and political center of Slovenia. Ljubljana is known for its charming old town, the Ljubljanica River running through it, and Ljubljana Castle overlooking the city.
+2026-08-17 09:30:40,400 INFO llm_benchmark.providers.ollama ollama.measure done model=llama3.2 tokens_in=339 tokens_out=50 latency_ms=4944.3 ttft_ms=863.4
+RESPONSE:
+{"reasoning": "The model's answer is fully correct in terms of identifying the capital of Slovenia, but also provides additional information that is not necessary to answer the question.", "correctness": 10, "relevance": 10}
+2026-08-17 09:30:40,400 INFO llm_benchmark.scorers.judge judge.score verdict=PASS correctness=10/10 relevance=10/10 score=1.000 >= threshold=0.7 | reasoning: The model's answer is fully correct in terms of identifying the capital of Slovenia, but also provides additional information that is not necessary to answer the question.
+2026-08-17 09:30:40,405 INFO llm_benchmark.runners.sweep sweep.wrote model=claude-sonnet-5 item=factual_001 rep=1 cost_usd=0.001026 score=1.000 -> cache/claude-sonnet-5__factual_001__rep1.json
+2026-08-17 09:30:40,405 INFO llm_benchmark.runners.sweep sweep.capture model=claude-sonnet-5 item=factual_001 rep=2 (miss - calling provider)
+2026-08-17 09:30:40,406 INFO llm_benchmark.providers.anthropic anthropic.measure model=claude-sonnet-5 url=https://api.anthropic.com/v1/messages
+PROMPT:
+What is the capital of Slovenia?
+2026-08-17 09:30:42,777 INFO llm_benchmark.providers.anthropic anthropic.measure done model=claude-sonnet-5 request_id=req_011Ce7vrCtaeezHmktFgmReY latency_ms=2358.7 ttft_ms=1126.6
+USAGE (verbatim from the provider - the source of every token count):
+message_start: {"input_tokens": 18, "cache_creation_input_tokens": 0, "cache_read_input_tokens": 0, "cache_creation": {"ephemeral_5m_input_tokens": 0, "ephemeral_1h_input_tokens": 0}, "output_tokens": 1, "service_tier": "standard", "inference_geo": "global"}
+message_delta: {"input_tokens": 18, "cache_creation_input_tokens": 0, "cache_read_input_tokens": 0, "output_tokens": 93, "output_tokens_details": {"thinking_tokens": 0}}
+RESPONSE:
+The capital of Slovenia is **Ljubljana**.
+
+It's also the largest city in the country and serves as its political, cultural, and economic center. Ljubljana is known for its charming old town, the Ljubljanica River running through it, and Ljubljana Castle overlooking the city.
+2026-08-17 09:30:42,794 INFO llm_benchmark.providers.ollama ollama.measure model=llama3.2 url=http://localhost:11434/api/generate
+SYSTEM TEMPLATE (wraps the prompt server-side; the extra tokens_in over the visible words are these):
+<|start_header_id|>system<|end_header_id|>
+
+Cutting Knowledge Date: December 2023
+
+{{ if .System }}{{ .System }}
+{{- end }}
+{{- if .Tools }}When you receive a tool call response, use the output to format an answer to the orginal user question.
+
+You are a helpful assistant with tool calling capabilities.
+{{- end }}<|eot_id|>
+{{- range $i, $_ := .Messages }}
+{{- $last := eq (len (slice $.Messages $i)) 1 }}
+{{- if eq .Role "user" }}<|start_header_id|>user<|end_header_id|>
+{{- if and $.Tools $last }}
+
+Given the following functions, please respond with a JSON for a function call with its proper arguments that best answers the given prompt.
+
+Respond in the format {"name": function name, "parameters": dictionary of argument name and its value}. Do not use variables.
+
+{{ range $.Tools }}
+{{- . }}
+{{ end }}
+{{ .Content }}<|eot_id|>
+{{- else }}
+
+{{ .Content }}<|eot_id|>
+{{- end }}{{ if $last }}<|start_header_id|>assistant<|end_header_id|>
+
+{{ end }}
+{{- else if eq .Role "assistant" }}<|start_header_id|>assistant<|end_header_id|>
+{{- if .ToolCalls }}
+{{ range .ToolCalls }}
+{"name": "{{ .Function.Name }}", "parameters": {{ .Function.Arguments }}}{{ end }}
+{{- else }}
+
+{{ .Content }}
+{{- end }}{{ if not $last }}<|eot_id|>{{ end }}
+{{- else if eq .Role "tool" }}<|start_header_id|>ipython<|end_header_id|>
+
+{{ .Content }}<|eot_id|>{{ if $last }}<|start_header_id|>assistant<|end_header_id|>
+
+{{ end }}
+{{- end }}
+{{- end }}
+PROMPT:
+You are a strict but fair grader for a question-answering system.
+
+You will be given:
+- A QUESTION
+- An EXPECTED answer (a reference — the model's answer does NOT need to
+  match it word-for-word to be correct)
+- The MODEL'S answer to grade
+
+Grade the model's answer on two dimensions, each 0-10:
+- correctness: does the answer correctly answer the question?
+  10 = fully correct (even if phrased differently from the expected answer)
+   5 = partially correct, or correct but with significant inaccuracies
+   0 = wrong, contradicts the expected answer, or hallucinated
+- relevance: is the answer on-topic and responsive to the question?
+  10 = directly addresses the question
+   5 = partially on-topic, drifts
+   0 = off-topic or refuses to answer
+
+Respond with ONLY a JSON object, no other text:
+{"reasoning": "<one or two sentences explaining your scores>",
+ "correctness": <int>,
+ "relevance": <int>}
+
+QUESTION: What is the capital of Slovenia?
+EXPECTED: Ljubljana
+MODEL'S ANSWER: The capital of Slovenia is **Ljubljana**.
+
+It's also the largest city in the country and serves as its political, cultural, and economic center. Ljubljana is known for its charming old town, the Ljubljanica River running through it, and Ljubljana Castle overlooking the city.
+2026-08-17 09:30:47,476 INFO llm_benchmark.providers.ollama ollama.measure done model=llama3.2 tokens_in=337 tokens_out=54 latency_ms=4682.1 ttft_ms=738.2
+RESPONSE:
+{"reasoning": "The model's answer is fully correct in terms of identifying the capital of Slovenia, but provides additional information that, while relevant to the question, slightly exceeds the expected response.", "correctness": 10, "relevance": 9}
+2026-08-17 09:30:47,477 INFO llm_benchmark.scorers.judge judge.score verdict=PASS correctness=10/10 relevance=9/10 score=0.950 >= threshold=0.7 | reasoning: The model's answer is fully correct in terms of identifying the capital of Slovenia, but provides additional information that, while relevant to the question, slightly exceeds the expected response.
+2026-08-17 09:30:47,486 INFO llm_benchmark.runners.sweep sweep.wrote model=claude-sonnet-5 item=factual_001 rep=2 cost_usd=0.000966 score=0.950 -> cache/claude-sonnet-5__factual_001__rep2.json
+2026-08-17 09:30:47,537 INFO llm_benchmark.sweep cost / latency / quality (10 captures, total spend $0.00228):
+model                          n    mean$/q    total$    lat_ms   ttft_ms  out_tok  score   pass
+------------------------------------------------------------------------------------------------
+llama3.2                       2   0.000000   0.00000      3973      3113     12.0  1.000   100%
+gpt-5.6-luna                   2   0.000019   0.00004      1703      1625     14.0  1.000   100%
+deepseek-v4-pro                2   0.000060   0.00012      1528      1440     24.0  1.000   100%
+claude-haiku-4-5-20251001      2   0.000064   0.00013      1158      1061     10.0  1.000   100%
+claude-sonnet-5                2   0.000996   0.00199      2313      1042     96.0  0.975   100%
+2026-08-17 09:30:47,537 INFO llm_benchmark.sweep benchmark validity (score CI / tail latency / cost-per-pass):
+model                          n  score           95% CI   p50_ms   p95_ms   pass     $/pass
+--------------------------------------------------------------------------------------------
+llama3.2                       2  1.000    [1.000,1.000]     3973     6477      2   0.000000
+gpt-5.6-luna                   2  1.000    [1.000,1.000]     1703     2526      2   0.000019
+deepseek-v4-pro                2  1.000    [1.000,1.000]     1528     1532      2   0.000060
+claude-haiku-4-5-20251001      2  1.000    [1.000,1.000]     1158     1524      2   0.000064
+claude-sonnet-5                2  0.975    [0.950,1.000]     2313     2354      2   0.000996
+2026-08-17 09:30:47,610 INFO llm_benchmark.sweep wrote report -> reports/report-sweep-smoke.html

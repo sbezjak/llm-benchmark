@@ -1,0 +1,12 @@
+{
+  "model_a": "claude-haiku-4-5-20251001",
+  "model_b": "deepseek-v4-pro",
+  "order1_winner": "TIE",
+  "order2_winner": "claude-haiku-4-5-20251001",
+  "order1_reasoning": "Both answers correctly and directly identify Lima as being in South America, though Answer A adds accurate but unnecessary context.",
+  "order2_reasoning": "Both answers correctly identify South America, but Answer B adds accurate and relevant context that Lima is Peru's capital.",
+  "outcome": "flip",
+  "winner": null,
+  "suite": "easy",
+  "item_id": "factual_003"
+}

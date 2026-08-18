@@ -1,0 +1,12 @@
+{
+  "model_a": "gpt-5.6-luna",
+  "model_b": "llama3.2",
+  "order1_winner": "gpt-5.6-luna",
+  "order2_winner": "gpt-5.6-luna",
+  "order1_reasoning": "Answer A is more accurate and directly relevant, while Answer B includes misleading generalizations about metabolic rate and incorrectly suggests that basking and seeking shade make reptiles both ectothermic and endothermic.",
+  "order2_reasoning": "B is more concise and accurate, while A incorrectly implies that basking gives reptiles endothermic characteristics and overgeneralizes metabolic-rate differences.",
+  "outcome": "win",
+  "winner": "gpt-5.6-luna",
+  "suite": "easy",
+  "item_id": "reasoning_001"
+}

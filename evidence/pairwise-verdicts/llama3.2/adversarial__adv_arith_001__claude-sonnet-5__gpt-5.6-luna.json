@@ -1,0 +1,12 @@
+{
+  "model_a": "claude-sonnet-5",
+  "model_b": "gpt-5.6-luna",
+  "order1_winner": "claude-sonnet-5",
+  "order2_winner": "claude-sonnet-5",
+  "order1_reasoning": "Answer A provides a clear explanation of the thought process and mathematical steps used to arrive at the correct answer, making it more informative and educational.",
+  "order2_reasoning": "Answer B provides a clear and step-by-step mathematical solution that accurately solves the problem, while Answer A is too simplistic and doesn't provide any additional context.",
+  "outcome": "win",
+  "winner": "claude-sonnet-5",
+  "suite": "adversarial",
+  "item_id": "adv_arith_001"
+}
