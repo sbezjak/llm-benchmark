@@ -28,6 +28,10 @@ PAID_JUDGE = "paid-gpt"
 
 LOCAL_MODEL = "llama3.2"  # the free local baseline, flagged in the chrome
 
+# The public repo - "check it" links point at the real files on GitHub so they
+# resolve from anywhere the report is opened (Pages, a local file, a blob view).
+REPO_URL = "https://github.com/sbezjak/llm-benchmark"
+
 SUITE_LABEL = {"easy": "everyday", "adversarial": "adversarial"}
 SUITE_SRC = {"easy": "data/golden_set.yaml", "adversarial": "data/adversarial_set.yaml"}
 SUITE_DESC = {
@@ -104,9 +108,12 @@ h1 { font-size: 1.75rem; line-height: 1.15; margin: 0 0 0.5rem; letter-spacing: 
 .lede { color: var(--ink-2); margin: 0.5rem 0 0; font-size: 1.02rem; max-width: 62ch; }
 .dateline { font-family: ui-monospace, Menlo, monospace; font-size: 0.72rem; color: var(--ink-3);
             margin: 0.45rem 0 0; letter-spacing: 0.02em; }
-.legend { color: var(--ink-3); font-size: 0.78rem; margin: 0.55rem 0 0; line-height: 1.65;
-          max-width: 66ch; }
-.legend b { color: var(--ink-2); font-weight: 600; font-family: ui-monospace, Menlo, monospace; }
+dl.legend { display: grid; grid-template-columns: max-content 1fr; gap: 0.28rem 1rem;
+            margin: 0.7rem 0 0; max-width: 70ch; font-size: 0.8rem; color: var(--ink-3);
+            align-items: baseline; }
+dl.legend dt { font-family: ui-monospace, Menlo, monospace; font-size: 0.74rem; font-weight: 600;
+               color: var(--ink-2); white-space: nowrap; }
+dl.legend dd { margin: 0; line-height: 1.5; }
 a.src { color: var(--accent); text-decoration: none; font-family: ui-monospace, Menlo, monospace;
         border-bottom: 1px dotted var(--accent); }
 a.src:hover { border-bottom-style: solid; }
@@ -153,6 +160,22 @@ tr.hi td { background: var(--row-hi); }
 .proof { font-family: ui-monospace, Menlo, monospace; font-size: 0.72rem; color: var(--ink-3);
          margin: 0.45rem 0 0; line-height: 1.5; }
 .proof b { color: var(--ink-2); font-weight: 600; }
+
+/* inline flip receipt - one real verdict shown verbatim, P4-style */
+.receipt { border: 1px solid var(--border); border-left: 3px solid var(--warn); border-radius: 8px;
+           background: var(--surface); padding: 0.7rem 0.95rem; margin: 0.8rem 0 0; }
+.receipt-h { font-family: ui-monospace, Menlo, monospace; font-size: 0.66rem; letter-spacing: 0.04em;
+             text-transform: uppercase; color: var(--ink-3); margin-bottom: 0.5rem; }
+.receipt-h b { color: var(--ink-2); font-weight: 600; }
+.ord { font-size: 0.84rem; color: var(--ink-2); margin: 0.35rem 0; }
+.ord .lab { font-family: ui-monospace, Menlo, monospace; font-size: 0.6rem; text-transform: uppercase;
+            letter-spacing: 0.06em; color: var(--accent); border: 1px solid var(--border);
+            border-radius: 4px; padding: 0.03rem 0.32rem; margin-right: 0.45rem; }
+.ord b { color: var(--ink); font-weight: 620; }
+.why { color: var(--ink-3); font-style: italic; font-size: 0.82rem; margin: 0.18rem 0 0 0.2rem; }
+.receipt-cap { font-size: 0.84rem; color: var(--ink-2); margin-top: 0.55rem;
+               border-top: 1px solid var(--border); padding-top: 0.5rem; }
+.receipt-cap b { color: var(--ink); font-weight: 620; }
 
 /* limits + production: terse bullet lists */
 .notebox { border: 1px solid var(--border); border-radius: 10px; background: var(--surface);
@@ -268,9 +291,13 @@ def _selfpref_table(f: dict, suite: str) -> tuple[str, int, int]:
 # page sections
 # ---------------------------------------------------------------------------
 def _src(path: str, label: str | None = None) -> str:
-    """A relative link to a repo file. The report is served from the repo root
-    (GitHub Pages) and lives in reports/, so repo-root paths are one level up."""
-    return f'<a class="src" href="../{path}">{_esc(label or path)}</a>'
+    """Link a repo file/dir on GitHub so it resolves from anywhere the report is
+    viewed. Directories (trailing /) use /tree, files use /blob, on the default
+    branch. The visible label defaults to the repo-relative path."""
+    p = path.rstrip("/")
+    kind = "tree" if path.endswith("/") else "blob"
+    href = f"{REPO_URL}/{kind}/main/{p}"
+    return f'<a class="src" href="{href}">{_esc(label or path)}</a>'
 
 
 def _proof(text: str) -> str:
@@ -294,11 +321,17 @@ def _suite_caption(suite: str) -> str:
 
 
 _LEGEND = (
-    '<p class="legend"><b>$/query</b> mean USD per answer · <b>lat p50 / p95</b> median / '
-    "95th-percentile latency, ms (p95 = the slow tail a user feels) · <b>out tok</b> mean output "
-    "tokens · <b>quality</b> mean judge score, 0-1 · <b>95% CI</b> bootstrap interval on quality - "
-    "overlapping CIs mean the models are indistinguishable · <b>pass</b> items scoring &ge; 0.7 / "
-    "total.</p>"
+    '<dl class="legend">'
+    "<dt>$ / query</dt><dd>average cost of one answer</dd>"
+    "<dt>lat p50</dt><dd>typical response time (half the calls were faster)</dd>"
+    "<dt>lat p95</dt><dd>slow-case time - only 1 call in 20 was slower; the lag you actually "
+    "feel</dd>"
+    "<dt>out tok</dt><dd>answer length in output tokens (drives cost and speed)</dd>"
+    "<dt>quality</dt><dd>average judge score, 0 to 1 (1 = fully correct)</dd>"
+    "<dt>95% CI</dt><dd>the range the real score could land in on a rerun of this small sample; "
+    "if two ranges overlap, the difference could be luck</dd>"
+    "<dt>pass</dt><dd>answers scoring at least 0.7, out of the total</dd>"
+    "</dl>"
 )
 
 
@@ -316,17 +349,55 @@ def _finding_tie(f: dict) -> str:
         "and speed: <b>gpt-5.6-luna</b> is cheapest and fastest. Local is free, slowest, and the "
         "only quality dip.</p>"
         + _proof(
-            "every cell rebuilds from " + _src("reports/findings.json") + " (aggregated off the "
-            "on-disk answer cache); the suites are "
-            + _src("data/golden_set.yaml")
-            + " and "
-            + _src("data/adversarial_set.yaml")
-            + "."
+            "every cell rebuilds from "
+            + _src("reports/findings.json")
+            + " (aggregated off the on-disk answer cache) - no model is re-called."
         )
     )
 
 
-def _finding_judge(f: dict) -> str:
+def _flip_example(receipts: list | None) -> str:
+    """Inline one real flip, verbatim, so the reader sees the bias, not just a rate.
+    Picks the first receipt where the grader picked the FIRST-shown answer in both
+    orders (pure position bias) - drawn live from the receipts file, so it can't
+    drift from the data. Returns "" when no receipts are available."""
+    if not receipts:
+        return ""
+    rec = next(
+        (
+            r
+            for r in receipts
+            if r["order1"]["picked"] == r["order1"]["shown_first"]
+            and r["order2"]["picked"] == r["order2"]["shown_first"]
+        ),
+        None,
+    )
+    if rec is None:
+        return ""
+    o1, o2 = rec["order1"], rec["order2"]
+
+    def _ord(n: int, o: dict) -> str:
+        return (
+            f'<div class="ord"><span class="lab">order {n}</span> shown first '
+            f"<b>{_esc(o['shown_first'])}</b>, picked <b>slot A</b>"
+            f'<div class="why">“{_esc(o["reason"])}”</div></div>'
+        )
+
+    link = _src(rec["file"], "full verdict")
+    return (
+        '<div class="receipt">'
+        f'<div class="receipt-h">One flip, verbatim - item <b>{_esc(rec["item"])}</b> · grader '
+        f"<b>{LOCAL_MODEL}</b> · {_esc(rec['model_a'])} vs {_esc(rec['model_b'])}</div>"
+        + _ord(1, o1)
+        + _ord(2, o2)
+        + '<div class="receipt-cap">Same two answers, order swapped. The grader picked '
+        "<b>“slot A” both times</b> - it followed the position, not the answer. "
+        + link
+        + "</div></div>"
+    )
+
+
+def _finding_judge(f: dict, receipts: list | None = None) -> str:
     cheap_wins, cheap_flips = _first_answer_bias(f, FREE_JUDGE)
     paid_wins, paid_flips = _first_answer_bias(f, PAID_JUDGE)
     cheap_pct = round(100 * cheap_wins / cheap_flips) if cheap_flips else 0
@@ -334,24 +405,18 @@ def _finding_judge(f: dict) -> str:
     max_flip = max(f["pairwise"]["views"][s][FREE_JUDGE]["flip_rate"] for s in f["suites"])
     return (
         "<h2>Judge reliability - position bias</h2>"
-        + f'<p class="read"><b>What we did:</b> take one question answered by two different '
-        "models, show a grader both answers and ask which is better - then ask again with the "
-        "order swapped. If the winner changes, order (not quality) decided it. "
-        f"<b>llama3.2</b>, itself one of the contestants, flips up to <b>{round(100 * max_flip)}%</b> "
-        f"of pairs, and <b>{cheap_pct}%</b> of those flips just pick whichever answer was shown "
-        f"first (the paid grader: <b>{paid_pct}%</b>). That is position bias - the instrument moves "
-        "with presentation order.</p>"
+        + f'<p class="read"><b>Position bias</b> is a known LLM-judge failure: the verdict follows '
+        "which answer comes first, not which is better. <b>How it is tested:</b> show the grader the "
+        "same two answers in both orders and check the verdict holds. <b>llama3.2</b> (itself a "
+        f"contestant) flips on up to <b>{round(100 * max_flip)}%</b> of pairs, and "
+        f"<b>{cheap_pct}%</b> of those flips just follow whichever came first (paid grader: "
+        f"<b>{paid_pct}%</b>) - order, not quality, decided it.</p>"
         + _judge_table(f)
+        + _flip_example(receipts)
         + _proof(
-            "the both-orders verdicts (200 files) are under "
+            "the flip above is one of 200 both-orders verdicts under "
             + _src("evidence/pairwise-verdicts/llama3.2/")
-            + " (e.g. "
-            + _src(
-                "evidence/pairwise-verdicts/llama3.2/"
-                "easy__factual_004__claude-haiku-4-5-20251001__claude-sonnet-5.json",
-                "easy__factual_004__…claude-sonnet-5.json",
-            )
-            + "); the aggregate is "
+            + "; the aggregate is "
             + _src("evidence/judge-position-bias-stats.json")
             + ", written up in "
             + _src("evidence/judge-position-bias.md")
@@ -360,18 +425,47 @@ def _finding_judge(f: dict) -> str:
     )
 
 
-def _finding_selfpref(f: dict) -> str:
+def _selfpref_example(verdict: dict | None) -> str:
+    """Inline one real self-win, verbatim: llama3.2 as grader picking its OWN answer
+    over a stronger model's, in both orders. Drawn from the winning verdict file so
+    it can't drift. Returns "" when none is supplied."""
+    if not verdict:
+        return ""
+    a, b = verdict["model_a"], verdict["model_b"]
+    opp = a if b == LOCAL_MODEL else b
+    # order 2 swaps the pair, so there "Answer A" is model_b and "Answer B" is model_a
+    own_slot = "A" if b == LOCAL_MODEL else "B"
+    reason = verdict["order2_reasoning"]
+    link = _src(verdict["_file"], "full verdict")
+    return (
+        '<div class="receipt">'
+        f'<div class="receipt-h">One self-win, verbatim - item <b>{_esc(verdict["item_id"])}</b> · '
+        f"grader <b>{LOCAL_MODEL}</b> · {LOCAL_MODEL} vs {_esc(opp)}</div>"
+        '<div class="ord"><span class="lab">both orders</span> picked <b>its own answer</b> '
+        "(a consistent win, not a flip)"
+        f'<div class="why">its reason (its own answer is “Answer {own_slot}” here): '
+        f"“{_esc(reason)}”</div></div>"
+        '<div class="receipt-cap">A small local model, grading its own answer against '
+        f"<b>{_esc(opp)}</b>, rates itself the winner. Across the pool it ranks itself third of "
+        "five, while the independent paid grader ranks it last. " + link + "</div></div>"
+    )
+
+
+def _finding_selfpref(f: dict, selfpref: dict | None = None) -> str:
     suite = f["suites"][0]
     tbl, rank, size = _selfpref_table(f, suite)
     rank_txt = _RANK_WORD.get(rank, str(rank))
     return (
         "<h2>Self-preference</h2>"
-        + f'<p class="read"><b>What we did:</b> let <b>llama3.2</b> grade the everyday pool it '
-        "competes in. The left column is its own head-to-head win rate as grader; the right is each "
-        f"model's solo score from the <b>independent</b> paid grader. It ranks itself <b>{rank_txt} "
-        f"of {size}</b> while holding the <b>lowest</b> independent score - it prefers its own "
-        "answers. A grader should sit outside the pool it scores.</p>"
+        + f'<p class="read"><b>Self-preference bias</b> (self-enhancement): a model-judge rating '
+        "its own answers higher than a neutral judge does. <b>How it is tested:</b> let "
+        "<b>llama3.2</b> grade a pool that includes its own answers. The left column is how often "
+        "each model wins under llama's judging; the right is its score from the independent paid "
+        f"grader. llama ranks itself <b>{rank_txt} of {size}</b> by its own judging, but the neutral "
+        "grader puts it <b>last</b> - it favours itself. A grader should sit outside the pool it "
+        "scores.</p>"
         + tbl
+        + _selfpref_example(selfpref)
         + _proof(
             "the head-to-head standings are the llama3.2 arm of the pairwise view in "
             + _src("reports/findings.json")
@@ -446,11 +540,16 @@ def render_dashboard(
     n_items: int = 20,
     n_reps: int = 2,
     spend: dict | None = None,
+    pairwise_receipts: list | None = None,
+    selfpref_example: dict | None = None,
 ) -> Path:
     """Build the self-contained scoreboard HTML from a `findings.json` dict and
     write it. Pure render - no provider call, $0 - so it regenerates as often as
     the analysis is revised. `n_items`/`n_reps` describe the run in the stat tiles;
-    `spend` (from spend.json) carries the answers-plus-judging total. Returns the
+    `spend` (from spend.json) carries the answers-plus-judging total;
+    `pairwise_receipts` (from judge-position-bias-receipts.json) supplies the one
+    verbatim flip inlined under the judge section; `selfpref_example` (a winning
+    verdict dict) supplies the verbatim self-win under self-preference. Returns the
     path written."""
     generated = dt.datetime.now(dt.UTC).strftime("%Y-%m-%d")
     kpis, caveat = _kpis(findings, n_items, n_reps, spend)
@@ -469,8 +568,8 @@ def render_dashboard(
         caveat,
         "</header>",
         _finding_tie(findings),
-        _finding_judge(findings),
-        _finding_selfpref(findings),
+        _finding_judge(findings, pairwise_receipts),
+        _finding_selfpref(findings, selfpref_example),
         _limits(),
         _production(),
         (
@@ -502,6 +601,39 @@ def render_dashboard(
 
 DEFAULT_FINDINGS_PATH = Path("reports") / "findings.json"
 DEFAULT_SPEND_PATH = Path("reports") / "spend.json"
+DEFAULT_RECEIPTS_PATH = Path("evidence") / "judge-position-bias-receipts.json"
+DEFAULT_VERDICTS_DIR = Path("evidence") / "pairwise-verdicts" / LOCAL_MODEL
+
+# Opponents strong enough that a self-win is a clean self-preference receipt; the
+# rank also makes the pick deterministic (prefer the most impressive opponent).
+_STRONG_RANK = {
+    "claude-sonnet-5": 0,
+    "claude-haiku-4-5-20251001": 1,
+    "gpt-5.6-luna": 2,
+    "deepseek-v4-pro": 3,
+}
+
+
+def _find_selfpref_example(verdict_dir: Path) -> dict | None:
+    """Scan llama3.2's verdict files for one consistent self-win over a strong
+    model (both orders picked llama). Deterministic: the strongest opponent, then
+    suite/item order. Returns the verdict dict (with a `_file` repo path) or None."""
+    if not verdict_dir.is_dir():
+        return None
+    best: tuple[tuple, dict] | None = None
+    for f in sorted(verdict_dir.glob("*.json")):
+        d = json.loads(f.read_text())
+        a, b = d.get("model_a"), d.get("model_b")
+        if LOCAL_MODEL not in (a, b) or d.get("winner") != LOCAL_MODEL:
+            continue
+        opp = a if b == LOCAL_MODEL else b
+        if opp not in _STRONG_RANK:
+            continue
+        d["_file"] = f"evidence/pairwise-verdicts/{LOCAL_MODEL}/{f.name}"
+        key = (_STRONG_RANK[opp], d.get("suite", ""), d.get("item_id", ""))
+        if best is None or key < best[0]:
+            best = (key, d)
+    return best[1] if best else None
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -514,17 +646,30 @@ def main(argv: list[str] | None = None) -> int:
     )
     p.add_argument("--findings", type=Path, default=DEFAULT_FINDINGS_PATH)
     p.add_argument("--spend", type=Path, default=DEFAULT_SPEND_PATH)
+    p.add_argument("--receipts", type=Path, default=DEFAULT_RECEIPTS_PATH)
+    p.add_argument("--verdicts", type=Path, default=DEFAULT_VERDICTS_DIR)
     p.add_argument(
         "--out",
         type=Path,
         default=Path("reports") / f"report-benchmark-scoreboard-{today}.html",
     )
-    p.add_argument("--title", default="A low-n model benchmark")
+    p.add_argument("--title", default="Five models: cost, latency, quality")
     args = p.parse_args(argv)
 
     findings = json.loads(args.findings.read_text())
     spend = json.loads(args.spend.read_text()) if args.spend and args.spend.exists() else None
-    out = render_dashboard(findings, args.out, title=args.title, spend=spend)
+    receipts = (
+        json.loads(args.receipts.read_text()) if args.receipts and args.receipts.exists() else None
+    )
+    selfpref = _find_selfpref_example(args.verdicts)
+    out = render_dashboard(
+        findings,
+        args.out,
+        title=args.title,
+        spend=spend,
+        pairwise_receipts=receipts,
+        selfpref_example=selfpref,
+    )
     print(f"wrote {out}")
     return 0
 

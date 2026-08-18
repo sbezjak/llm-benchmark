@@ -56,8 +56,19 @@ memory-snapshot.md
 session-prompts.md
 notes.md
 human-tasks.md
+code-review-prompt.md
 direction.md
 working_with_ai.md
 portfolio.md
 article*.md
 linkedin*.md
+production-patterns.md
+reading-the-report.md
+
+# --- Recomputable verification artifacts (regenerable from evidence/raw-logs) -
+# The reading-the-report method applied to the committed sweeps + findings, plus
+# the frozen per-row extracts. Process/receipt artifacts, recomputable off the raw
+# logs, so not committed.
+evidence/reading-the-report-applied.md
+evidence/sweep-golden-rows-receipt.json
+evidence/sweep-adversarial-rows-receipt.json

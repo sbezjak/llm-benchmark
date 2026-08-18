@@ -160,13 +160,15 @@ def test_dashboard_leads_with_scope_and_two_honest_reads(tmp_path):
     assert "46%" in doc  # fixture flip rate
     # computed first-answer-bias read (fixture: both flips kept the first-shown answer -> 100%)
     assert "100%" in doc.replace("<b>", "").replace("</b>", "")
-    assert "was shown first" in doc
-    assert "easy__factual_004__claude-haiku-4-5-20251001__claude-sonnet-5.json" in doc
+    assert "came first" in doc
+    # the proof cites the verdict corpus and the writeup (a specific example file is
+    # shown inline only when receipts are supplied - see the flip-receipt test)
+    assert "evidence/pairwise-verdicts/llama3.2" in doc
     assert "evidence/judge-position-bias.md" in doc
 
     # self-preference: the cheap grader ranks its own pool; read references it
     assert "head-to-head win" in doc and "solo score" in doc
-    assert "pool it competes in" in doc
+    assert "pool it scores" in doc
 
     # cost/latency/quality: the real columns and the free local cost cell
     assert "$ / query" in doc and "lat p95" in doc
@@ -185,9 +187,13 @@ def test_dashboard_leads_with_scope_and_two_honest_reads(tmp_path):
     assert "which model, when" not in doc.lower()
     assert "Default paid pick" not in doc
 
-    # self-contained: no external asset a strict CSP would block
-    for needle in ("http://", "https://", "<script", "src=", "@import"):
+    # self-contained: no external ASSET a strict CSP would block (scripts, imported
+    # or remote CSS, remote images). Plain <a href> links to the repo are allowed -
+    # navigation is not a CSP-blocked fetch - and the "check it" links use them.
+    for needle in ("<script", "@import", 'src="http', 'src="//', "url(http", 'rel="stylesheet"'):
         assert needle not in doc
+    # external URLs appear only inside anchor hrefs, never as an asset source
+    assert 'src="' not in doc
 
 
 @pytest.mark.mocked
@@ -211,7 +217,7 @@ def test_dashboard_spend_includes_judging(tmp_path):
     out = render_dashboard(_findings(), tmp_path / "d.html", title="Test", spend=spend)
     doc = out.read_text()
     assert "$0.21" in doc  # the honest total, not the $0.13 answer-only figure
-    assert "plus the paid judging" in doc
+    assert "+ paid judging" in doc
 
 
 @pytest.mark.mocked
@@ -220,3 +226,72 @@ def test_dashboard_spend_falls_back_to_answer_only(tmp_path):
     out = render_dashboard(_findings(), tmp_path / "d.html", title="Test", spend=None)
     doc = out.read_text()
     assert "answer generation only" in doc
+
+
+@pytest.mark.mocked
+def test_dashboard_inlines_a_verbatim_flip_when_receipts_given(tmp_path):
+    # a real position-bias flip is shown verbatim (P4-style) - the grader picked
+    # the FIRST-shown answer in both orders, and its own reasons are quoted.
+    receipts = [
+        {
+            "suite": "adversarial",
+            "item": "adv_arith_001",
+            "model_a": "claude-haiku-4-5-20251001",
+            "model_b": "claude-sonnet-5",
+            "order1": {
+                "shown_first": "claude-haiku-4-5-20251001",
+                "picked": "claude-haiku-4-5-20251001",
+                "reason": "Answer A is more detailed and clearly explains the steps.",
+            },
+            "order2": {
+                "shown_first": "claude-sonnet-5",
+                "picked": "claude-sonnet-5",
+                "reason": "Answer A provides more context and explanation.",
+            },
+            "file": "evidence/pairwise-verdicts/llama3.2/adversarial__adv_arith_001__a__b.json",
+        }
+    ]
+    out = render_dashboard(
+        _findings(), tmp_path / "d.html", title="Test", pairwise_receipts=receipts
+    )
+    doc = out.read_text()
+    # both orders shown, both picking the first slot, with the grader's own words quoted
+    assert "order 1" in doc and "order 2" in doc
+    assert doc.count("slot A") >= 2
+    assert "Answer A is more detailed" in doc and "Answer A provides more context" in doc
+    assert "adv_arith_001" in doc
+    assert "adversarial__adv_arith_001__a__b.json" in doc  # links the full verdict
+
+    # and with NO receipts, the section renders without the inline block (graceful)
+    bare = render_dashboard(_findings(), tmp_path / "b.html", title="Test").read_text()
+    assert 'class="receipt"' not in bare and "One flip, verbatim" not in bare
+
+
+@pytest.mark.mocked
+def test_dashboard_inlines_a_self_preference_win_when_given(tmp_path):
+    # a real self-win is shown verbatim: llama, as grader, picks its OWN answer
+    # over a stronger model's, both orders, with its own reasoning quoted.
+    verdict = {
+        "model_a": "claude-sonnet-5",
+        "model_b": "llama3.2",
+        "winner": "llama3.2",
+        "outcome": "win",
+        "suite": "easy",
+        "item_id": "reasoning_001",
+        "order1_reasoning": "Answer B is clearer.",
+        "order2_reasoning": "Answer A provides a clearer and more detailed explanation.",
+        "_file": "evidence/pairwise-verdicts/llama3.2/easy__reasoning_001__claude-sonnet-5__llama3.2.json",
+    }
+    out = render_dashboard(_findings(), tmp_path / "d.html", title="Test", selfpref_example=verdict)
+    doc = out.read_text()
+    assert "One self-win, verbatim" in doc
+    assert "reasoning_001" in doc
+    assert "claude-sonnet-5" in doc
+    # llama is model_b, so in the swapped order its own answer is "Answer A"
+    assert "Answer A" in doc
+    assert "Answer A provides a clearer and more detailed explanation." in doc
+    assert "easy__reasoning_001__claude-sonnet-5__llama3.2.json" in doc
+
+    # graceful without an example
+    bare = render_dashboard(_findings(), tmp_path / "b.html", title="Test").read_text()
+    assert "One self-win, verbatim" not in bare
