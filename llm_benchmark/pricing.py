@@ -5,10 +5,25 @@ public rate card, verified Aug 2026. Cost math runs off a cached
 `Measurement` — never a re-call. The local Ollama baseline is $0 by
 definition.
 
-Note: `claude-sonnet-5` is the introductory rate, valid through 2026-08-31
-(standard rate is $3/$15) — re-check if a sweep runs past that date.
-DeepSeek announced a price rise (no date yet) — re-check its rate card on
-sweep day.
+Why the rates are a hardcoded, dated table and NOT fetched live. This is a
+deliberate choice, not a shortcut. There is no reliable machine-readable
+pricing endpoint - provider rates live on marketing pages, so "fetch the
+price" means scraping a page that breaks silently on redesign. Worse, a
+live fetch would put a moving number and a network dependency into the one
+calculation the whole project needs pinned: cost is computed off the frozen
+artifact and must reproduce the same dollars on every replay. The
+production pattern for cost tracking is exactly this - a versioned, dated
+rate table reviewed on a cadence - not a per-run fetch. The discipline that
+makes it production-grade is the review cadence, so:
+
+  REVIEW CADENCE - re-verify this table against each provider's rate card
+  before any full paid sweep, and whenever a dated caveat below expires.
+
+Dated caveats (the review triggers):
+- `claude-sonnet-5` is the introductory rate, valid through 2026-08-31
+  (standard rate is $3/$15) - re-check if a sweep runs past that date.
+- DeepSeek announced a price rise (no date yet) - re-check its rate card on
+  sweep day.
 """
 
 from __future__ import annotations

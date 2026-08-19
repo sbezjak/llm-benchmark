@@ -13,19 +13,15 @@ Plain-English version of what this file does, end to end:
 4. Parse the JSON, average the two scores, divide by 10 to get a
    score in [0, 1], compare against a threshold, return PASS or FAIL.
 
-Why bother. The simpler scorers (exact match, BLEU, ROUGE, semantic
-similarity) all compare *text shapes*. They can be fooled by:
-
-- A right answer phrased very differently from the expected (e.g. a
-  bulleted list of all 8 planets when the expected was just "8" —
-  exact match and BLEU/ROUGE see no overlap; embeddings see different
-  shape).
-- A wrong answer that uses the right vocabulary (semantic similarity
-  passes it).
-
-A judge LLM reads both texts and can sometimes recognize "yes, this
-answers the question" or "no, this is plausible-sounding nonsense"
-where pure-text comparison can't.
+Why bother. Text-shape scorers (exact match, BLEU/ROUGE, embedding
+similarity — P1 has the family; P5 keeps only the judge) all compare
+*shapes*, so they get fooled two ways: a right answer phrased very
+differently from the expected (a bulleted list of all 8 planets when
+the expected was just "8" — no string overlap), and a wrong answer
+that reuses the right vocabulary (high similarity, still wrong). A
+judge LLM reads both texts and can sometimes tell "yes, this answers
+the question" from "no, this is plausible-sounding nonsense" where
+pure-text comparison can't.
 
 Important caveat. When the judge and the answering model are the same
 weights (the case in this project — both are llama3.2), the judge has

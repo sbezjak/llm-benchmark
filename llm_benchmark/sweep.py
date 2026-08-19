@@ -87,6 +87,12 @@ def _parse_args(argv: list[str] | None) -> argparse.Namespace:
         "--max-spend",
         type=float,
         default=3.0,
+        # POST-HOC backstop, not a hard cap: it flags a runaway loudly AFTER the
+        # run (non-zero exit), it cannot abort mid-sweep. The real spend control
+        # is the cache (a re-run re-spends nothing); this catches a FIRST-time
+        # runaway (pricing typo, a model streaming far more tokens than expected).
+        # A true pre-flight token estimate would be more machinery than a
+        # 10-item, ~$3-ceiling suite warrants.
         help="Loud backstop: exit non-zero if the run's total cost exceeds this. Default $3.",
     )
     return p.parse_args(argv)

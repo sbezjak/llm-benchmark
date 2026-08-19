@@ -340,6 +340,13 @@ def _finding_tie(f: dict) -> str:
     for suite in f["suites"]:
         rows = f["views"][suite][PAID_JUDGE]["models"]
         tables.append(_suite_caption(suite) + _quality_table(rows))
+    # NOTE: the tables above are data-driven (rebuilt from findings.json), but the
+    # read-line below is HAND-WRITTEN prose pinned to the committed frozen
+    # findings.json - "gpt-5.6-luna is cheapest and fastest" is asserted, not
+    # derived. It matches the frozen run it was written against. If you re-sweep
+    # and regenerate, RE-CHECK this sentence against the new table (a different
+    # model could be cheapest); it will not update itself. Deliberate narrative
+    # license on a frozen artifact, not a bug.
     return (
         "<h2>Cost, latency, quality</h2>"
         + "".join(tables)

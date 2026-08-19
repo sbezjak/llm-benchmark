@@ -215,6 +215,7 @@ def build_batch_evidence(
 
 async def _amain(argv: list[str] | None = None) -> int:
     import argparse
+    import os
 
     from llm_benchmark.config import load_dotenv
     from llm_benchmark.dataset import load_golden_set
@@ -231,7 +232,7 @@ async def _amain(argv: list[str] | None = None) -> int:
 
     logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(name)s %(message)s")
     load_dotenv()
-    api_key = __import__("os").environ.get("ANTHROPIC_API_KEY", "")
+    api_key = os.environ.get("ANTHROPIC_API_KEY", "")
     if not api_key:
         logger.error("ANTHROPIC_API_KEY not set - the batch lane is a PAID call, aborting")
         return 2
