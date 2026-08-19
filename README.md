@@ -191,8 +191,7 @@ Two kinds, both self-contained HTML:
   `reports/report-<UTC timestamp>.html` so no run overwrites another.
 
 The raw trace is the ground truth - not the pass/fail count, which is only a
-summary. `docs/reading-the-report.md` has copy-paste prompts that force a real
-read of it rather than a skim.
+summary. Read the verbatim answers, not just the tallies.
 
 ## Limits (do not overclaim)
 

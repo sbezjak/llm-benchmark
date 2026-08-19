@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
-# Tier-3 mechanism for the "preserve full run logs" rule (see CLAUDE.md, the
-# preserve-full-run-logs memory, and working_with_ai.md's tiers).
+# Tier-3 mechanism for the "preserve full run logs" rule (see CLAUDE.md).
 #
 # The ground-truth loss it prevents: piping a run through `... | tee log | tail`
 # truncates the stream (and BSD tee buffers), so the committed log ends up a few

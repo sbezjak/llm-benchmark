@@ -65,6 +65,3 @@ defaults to a no-op (`NullTracer`). Only the sweep *job* builds a real
 free/local run stay completely offline without any special flags - they simply get
 the no-op tracer and never touch the network. Tracing is something the job opts
 into, not something baked into the code that talks to the models.
-
-See also `docs/production-patterns.md` for how this observability layer relates to
-the hand-rolled `cache/` + report scaffolding it complements.
