@@ -15,8 +15,8 @@ this project turns the same question on the evaluator.
 
 Built as project 5 of 5 exploring AI/LLM testing. It is the first that **spends
 real money** (projects 0-4 were local + mocked); the whole comparison here cost
-about $0.21 - answers plus the paid judging that graded them. A writeup is in
-progress.
+about $0.21 - answers plus the paid judging that graded them. Writeup:
+[A benchmark is only as good as the model you use to grade it](https://dev.to/sara_bezjak/a-benchmark-is-only-as-good-as-the-model-you-use-to-grade-it-4h01).
 
 Live reports (published after a push, self-contained HTML):
 [scoreboard](https://sbezjak.github.io/llm-benchmark/reports/report-benchmark-scoreboard-2026-08-18.html) ·
