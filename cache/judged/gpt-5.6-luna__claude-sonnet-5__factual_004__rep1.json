@@ -1,0 +1,15 @@
+{
+  "judge_model": "gpt-5.6-luna",
+  "answer_model": "claude-sonnet-5",
+  "item_id": "factual_004",
+  "rep": 1,
+  "prompt": "How many planets are in our solar system?",
+  "expected": "8",
+  "answer_text": "There are **8 planets** in our solar system:\n\n1. **Mercury**\n2. **Venus**\n3. **Earth**\n4. **Mars**\n5. **Jupiter**\n6. **Saturn**\n7. **Uranus**\n8. **Neptune**\n\nNote: Pluto was considered the ninth planet until 2006, when the International Astronomical Union (IAU) reclassified it as a **\"dwarf planet\"** due to updated criteria for what defines a planet. Other dwarf planets in our solar system include Eris, Haumea, Makemake, and Ceres.",
+  "judge_cost_usd": 0.0001314,
+  "judge": {
+    "score": 1.0,
+    "passed": true,
+    "reason": "correctness=10/10 relevance=10/10 score=1.000 >= threshold=0.7 | reasoning: The answer gives the correct count of eight planets and accurately lists them. The additional note about Pluto\u2019s reclassification and other dwarf planets is relevant and correct."
+  }
+}

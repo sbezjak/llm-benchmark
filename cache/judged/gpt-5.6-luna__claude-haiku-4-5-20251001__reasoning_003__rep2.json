@@ -1,0 +1,15 @@
+{
+  "judge_model": "gpt-5.6-luna",
+  "answer_model": "claude-haiku-4-5-20251001",
+  "item_id": "reasoning_003",
+  "rep": 2,
+  "prompt": "How does photosynthesis work in plants?",
+  "expected": "Photosynthesis in plants converts light energy into chemical energy, using sunlight to transform carbon dioxide and water into glucose and oxygen.",
+  "answer_text": "# How Photosynthesis Works\n\nPhotosynthesis is the process where plants convert light energy into chemical energy. Here's the basic breakdown:\n\n## The Simple Version\n**Light + Water + Carbon Dioxide \u2192 Glucose + Oxygen**\n\n## The Two Main Stages\n\n### 1. Light-Dependent Reactions (in the thylakoids)\n- Occur in chloroplasts when light is present\n- Chlorophyll absorbs light energy\n- Water molecules are split, releasing oxygen as a byproduct\n- Energy is captured in molecules (ATP and NADPH) that power the next stage\n\n### 2. Light-Independent Reactions/Calvin Cycle (in the stroma)\n- Occur in the chloroplast's stroma\n- Use energy from step 1 to convert CO\u2082 into glucose\n- Happens regardless of light (but depends on products from light reactions)\n\n## Where It Happens\n- **Location**: Chloroplasts (organelles in plant cells)\n- **Key pigment**: Chlorophyll (gives plants their green color)\n\n## Why It Matters\n- Plants produce their own food (glucose for energy)\n- Releases oxygen we breathe\n- Forms the base of most food chains on Earth\n- Removes CO\u2082 from the atmosphere\n\nThe beauty of photosynthesis is that it harnesses the sun's energy to create the chemical bonds in sugars that power nearly all life on Earth.",
+  "judge_cost_usd": 0.0002544,
+  "judge": {
+    "score": 1.0,
+    "passed": true,
+    "reason": "correctness=10/10 relevance=10/10 score=1.000 >= threshold=0.7 | reasoning: The answer accurately explains that plants use light, water, and carbon dioxide in chloroplasts to produce chemical energy in glucose and release oxygen, while appropriately describing the light-dependent reactions and Calvin cycle. It is detailed but remains directly relevant to the question."
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "judge_model": "gpt-5.6-luna",
+  "answer_model": "claude-haiku-4-5-20251001",
+  "item_id": "adv_riddle_001",
+  "rep": 1,
+  "prompt": "A red house is made of red bricks and a blue house is made of blue bricks. What is a greenhouse made of?",
+  "expected": "Glass",
+  "answer_text": "A greenhouse is made of glass (and typically a metal or wooden frame).\n\nThe riddle plays on the word \"green\" by suggesting it follows the same pattern as the red and blue houses, but \"greenhouse\" actually refers to the glass structure used for growing plants, not a house that is colored green or made of green materials.",
+  "judge_cost_usd": 0.00010960000000000001,
+  "judge": {
+    "score": 1.0,
+    "passed": true,
+    "reason": "correctness=10/10 relevance=10/10 score=1.000 >= threshold=0.7 | reasoning: The answer correctly identifies glass and adds a harmless, accurate clarification about the frame and the wordplay."
+  }
+}

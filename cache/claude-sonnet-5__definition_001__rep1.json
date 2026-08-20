@@ -1,0 +1,23 @@
+{
+  "captured_at": "2026-08-17T07:36:49.831537+00:00",
+  "model": "claude-sonnet-5",
+  "item_id": "definition_001",
+  "rep": 1,
+  "prompt": "What does the acronym AI stand for?",
+  "expected": "Artificial Intelligence",
+  "measurement": {
+    "text": "# AI\n\n**AI** stands for **Artificial Intelligence**.\n\nThis refers to the field of computer science focused on creating systems that can perform tasks typically requiring human intelligence, such as:\n\n- Understanding and generating language\n- Recognizing patterns and images\n- Learning from data\n- Making decisions or predictions\n- Solving problems\n\nThere are also related terms worth noting:\n- **AGI** \u2013 Artificial General Intelligence (hypothetical AI with human-level reasoning across all domains)\n- **ANI** \u2013 Artificial Narrow Intelligence (AI designed for specific tasks, which is what exists today)\n\nLet me know if you'd like more detail on any of these concepts!",
+    "tokens_in": 18,
+    "tokens_out": 223,
+    "latency_ms": 2861.425249982858,
+    "ttft_ms": 798.491291992832,
+    "model": "claude-sonnet-5",
+    "request_id": "req_011Ce7wJvsAoNqeNY4eFW39k"
+  },
+  "cost_usd": 0.0022660000000000002,
+  "judge": {
+    "score": 0.95,
+    "passed": true,
+    "reason": "correctness=9/10 relevance=10/10 score=0.950 >= threshold=0.7 | reasoning: The model's answer correctly identifies the acronym AI and provides a brief explanation, but its response feels redundant and unnecessary given the context of the question. The model could have simply provided the expected answer."
+  }
+}

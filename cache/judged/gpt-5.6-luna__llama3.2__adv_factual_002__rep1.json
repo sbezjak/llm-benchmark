@@ -1,0 +1,15 @@
+{
+  "judge_model": "gpt-5.6-luna",
+  "answer_model": "llama3.2",
+  "item_id": "adv_factual_002",
+  "rep": 1,
+  "prompt": "Which is the only sea on Earth with no land coastline, bounded instead by ocean currents?",
+  "expected": "The Sargasso Sea",
+  "answer_text": "The answer is the Mediterranean Sea. It is a semi-enclosed sea that is connected to the Atlantic Ocean and the Black Sea via various straits. The Mediterranean Sea does not have any direct land coastline; instead, it is surrounded by the coasts of Europe, Africa, and Asia, which are bounded by ocean currents.",
+  "judge_cost_usd": 0.00019479999999999996,
+  "judge": {
+    "score": 0.4,
+    "passed": false,
+    "reason": "correctness=0/10 relevance=8/10 score=0.400 < threshold=0.7 | reasoning: The answer is incorrect: the Sargasso Sea is the only sea bounded by ocean currents with no land coastline. Although it addresses the question directly, it gives the wrong sea and includes false claims about the Mediterranean."
+  }
+}

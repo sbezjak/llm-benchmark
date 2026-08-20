@@ -1,0 +1,15 @@
+{
+  "judge_model": "gpt-5.6-luna",
+  "answer_model": "deepseek-v4-pro",
+  "item_id": "adv_arith_002",
+  "rep": 1,
+  "prompt": "A store sells pencils at 3 for $0.45. At that same price per pencil, how much do 17 pencils cost?",
+  "expected": "$2.55",
+  "answer_text": "Each pencil costs $0.45 \u00f7 3 = $0.15.\n\nSo 17 pencils cost:\n\n17 \u00d7 $0.15 = **$2.55**",
+  "judge_cost_usd": 0.0001164,
+  "judge": {
+    "score": 1.0,
+    "passed": true,
+    "reason": "correctness=10/10 relevance=10/10 score=1.000 >= threshold=0.7 | reasoning: The answer correctly computes the unit price as $0.15 and multiplies by 17 to obtain $2.55, exactly answering the question."
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "judge_model": "gpt-5.6-luna",
+  "answer_model": "claude-haiku-4-5-20251001",
+  "item_id": "procedural_001",
+  "rep": 1,
+  "prompt": "Which pytest command runs tests marked either 'slow' or 'network'?",
+  "expected": "pytest -m 'slow or network'",
+  "answer_text": "# Running Tests with Multiple Markers in pytest\n\nTo run tests marked with either 'slow' **or** 'network', use:\n\n```bash\npytest -m \"slow or network\"\n```\n\n## Examples\n\n**Run tests marked 'slow' OR 'network':**\n```bash\npytest -m \"slow or network\"\n```\n\n**Run tests marked 'slow' AND 'network':**\n```bash\npytest -m \"slow and network\"\n```\n\n**Run tests marked 'slow' BUT NOT 'network':**\n```bash\npytest -m \"slow and not network\"\n```\n\n## Test Example\n\n```python\nimport pytest\n\n@pytest.mark.slow\ndef test_slow_operation():\n    pass\n\n@pytest.mark.network\ndef test_network_call():\n    pass\n\n@pytest.mark.slow\n@pytest.mark.network\ndef test_slow_network_operation():\n    pass\n```\n\nRunning `pytest -m \"slow or network\"` would execute all three test functions above.",
+  "judge_cost_usd": 0.00014020000000000002,
+  "judge": {
+    "score": 1.0,
+    "passed": true,
+    "reason": "correctness=10/10 relevance=10/10 score=1.000 >= threshold=0.7 | reasoning: The answer gives the correct pytest command using the marker expression `slow or network`; the additional examples are accurate and remain relevant."
+  }
+}

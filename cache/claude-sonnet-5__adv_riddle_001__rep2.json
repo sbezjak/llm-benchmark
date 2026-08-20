@@ -1,0 +1,23 @@
+{
+  "captured_at": "2026-08-17T07:56:06.618061+00:00",
+  "model": "claude-sonnet-5",
+  "item_id": "adv_riddle_001",
+  "rep": 2,
+  "prompt": "A red house is made of red bricks and a blue house is made of blue bricks. What is a greenhouse made of?",
+  "expected": "Glass",
+  "measurement": {
+    "text": "A greenhouse is actually made of **glass** (or clear plastic/polycarbonate panels), not green bricks! It's a fun bit of English wordplay \u2014 the riddle sets you up to expect a color-based material like the red and blue houses, but \"greenhouse\" is a compound word that means something entirely different: a structure used for growing plants, designed to let sunlight in and trap heat to keep the plants warm.\n\nSo while a red house and blue house follow a logical pattern, \"greenhouse\" breaks it \u2014 a classic example of how English idioms and compound words don't always follow predictable rules.",
+    "tokens_in": 41,
+    "tokens_out": 189,
+    "latency_ms": 4354.105499980506,
+    "ttft_ms": 1631.983333005337,
+    "model": "claude-sonnet-5",
+    "request_id": "req_011Ce7xnBHxQGN6QJXCLVkx2"
+  },
+  "cost_usd": 0.001972,
+  "judge": {
+    "score": 0.95,
+    "passed": true,
+    "reason": "correctness=10/10 relevance=9/10 score=0.950 >= threshold=0.7 | reasoning: The model's answer correctly identifies the material of a greenhouse but also provides additional context about the wordplay behind 'greenhouse', which is relevant to understanding the question."
+  }
+}

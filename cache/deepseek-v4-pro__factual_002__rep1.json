@@ -1,0 +1,23 @@
+{
+  "captured_at": "2026-08-17T07:32:48.576945+00:00",
+  "model": "deepseek-v4-pro",
+  "item_id": "factual_002",
+  "rep": 1,
+  "prompt": "What is the chemical symbol for silver?",
+  "expected": "Ag",
+  "measurement": {
+    "text": "The chemical symbol for silver is **Ag**.",
+    "tokens_in": 91,
+    "tokens_out": 25,
+    "latency_ms": 1680.7381660037208,
+    "ttft_ms": 1564.4246249867138,
+    "model": "deepseek-v4-pro",
+    "request_id": null
+  },
+  "cost_usd": 6.133500000000001e-05,
+  "judge": {
+    "score": 1.0,
+    "passed": true,
+    "reason": "correctness=10/10 relevance=10/10 score=1.000 >= threshold=0.7 | reasoning: The model's answer correctly identifies the chemical symbol for silver, but it does not provide any additional context or explanation."
+  }
+}

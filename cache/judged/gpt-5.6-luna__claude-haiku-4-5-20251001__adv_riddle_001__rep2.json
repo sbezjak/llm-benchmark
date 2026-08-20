@@ -1,0 +1,15 @@
+{
+  "judge_model": "gpt-5.6-luna",
+  "answer_model": "claude-haiku-4-5-20251001",
+  "item_id": "adv_riddle_001",
+  "rep": 2,
+  "prompt": "A red house is made of red bricks and a blue house is made of blue bricks. What is a greenhouse made of?",
+  "expected": "Glass",
+  "answer_text": "A greenhouse is typically made of **glass** (and metal or wood framing).\n\nThe name \"greenhouse\" refers to its function\u2014it's a structure designed to trap heat and create a warm environment for plants\u2014rather than its color. The \"green\" comes from the plants grown inside it, not the building material itself.",
+  "judge_cost_usd": 0.00011140000000000001,
+  "judge": {
+    "score": 1.0,
+    "passed": true,
+    "reason": "correctness=10/10 relevance=10/10 score=1.000 >= threshold=0.7 | reasoning: The answer correctly identifies glass as the primary material of a greenhouse and provides relevant clarification, with no meaningful inaccuracies."
+  }
+}

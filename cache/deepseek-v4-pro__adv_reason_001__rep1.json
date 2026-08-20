@@ -1,0 +1,23 @@
+{
+  "captured_at": "2026-08-17T07:51:18.700051+00:00",
+  "model": "deepseek-v4-pro",
+  "item_id": "adv_reason_001",
+  "rep": 1,
+  "prompt": "If today is Wednesday, what day of the week will it be 100 days from now?",
+  "expected": "Friday",
+  "measurement": {
+    "text": "Friday",
+    "tokens_in": 102,
+    "tokens_out": 40,
+    "latency_ms": 8436.112625000533,
+    "ttft_ms": 8431.022125005256,
+    "model": "deepseek-v4-pro",
+    "request_id": null
+  },
+  "cost_usd": 7.916999999999999e-05,
+  "judge": {
+    "score": 0.75,
+    "passed": true,
+    "reason": "correctness=10/10 relevance=5/10 score=0.750 >= threshold=0.7 | reasoning: The model's answer is correct because it accurately predicts the future day of the week based on the given date. However, the relevance score could be higher if the model provided more context or details about how it arrived at its conclusion."
+  }
+}

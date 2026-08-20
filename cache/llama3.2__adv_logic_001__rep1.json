@@ -1,0 +1,23 @@
+{
+  "captured_at": "2026-08-17T07:51:57.527831+00:00",
+  "model": "llama3.2",
+  "item_id": "adv_logic_001",
+  "rep": 1,
+  "prompt": "Mango is heavier than Kiwi but lighter than Pomelo. Pomelo is lighter than Durian. Of the four, which is the heaviest?",
+  "expected": "Durian",
+  "measurement": {
+    "text": "To determine the heaviest fruit among the four, let's analyze the given information:\n\n1. Mango is heavier than Kiwi.\n2. Mango is lighter than Pomelo.\n3. Pomelo is lighter than Durian.\n\nFrom statement 1 and 2, we can conclude that Durian is heavier than Mango (since Mango is both heavier than Kiwi and lighter than Pomelo).\n\nNow, let's look at the relationships between Pomelo and Durian:\n\n- Pomelo is lighter than Durian.\n- We already know that Durian is heavier than Mango.\n\nSince Durian is heavier than Mango, and Pomelo is lighter than Durian, it means that Durian must be heavier than Pomelo as well.\n\nSo, based on the given information, we can conclude that:\n\nDurian > Mango > Pomelo > Kiwi\n\nTherefore, Durian is the heaviest fruit among the four.",
+    "tokens_in": 56,
+    "tokens_out": 183,
+    "latency_ms": 8564.126915996894,
+    "ttft_ms": 482.3260830016807,
+    "model": "llama3.2",
+    "request_id": null
+  },
+  "cost_usd": 0.0,
+  "judge": {
+    "score": 0.95,
+    "passed": true,
+    "reason": "correctness=10/10 relevance=9/10 score=0.950 >= threshold=0.7 | reasoning: The model correctly applied logical reasoning to determine the order of the fruits' weights and identified Durian as the heaviest based on the given statements."
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "judge_model": "gpt-5.6-luna",
+  "answer_model": "claude-haiku-4-5-20251001",
+  "item_id": "adv_arith_001",
+  "rep": 2,
+  "prompt": "A bat and a ball cost $1.10 in total. The bat costs $1.00 more than the ball. How much does the ball cost?",
+  "expected": "$0.05 (5 cents)",
+  "answer_text": "# Solution\n\nLet me set up equations where:\n- b = cost of the ball\n- B = cost of the bat\n\n**Given information:**\n- b + B = $1.10\n- B = b + $1.00\n\n**Solving:**\n\nSubstitute the second equation into the first:\n\nb + (b + $1.00) = $1.10\n\n2b + $1.00 = $1.10\n\n2b = $0.10\n\n**b = $0.05**\n\nThe ball costs **$0.05** (5 cents).\n\n(The bat costs $1.05)",
+  "judge_cost_usd": 0.0001476,
+  "judge": {
+    "score": 1.0,
+    "passed": true,
+    "reason": "correctness=10/10 relevance=10/10 score=1.000 >= threshold=0.7 | reasoning: The model correctly sets up and solves the equations, finding the ball costs $0.05 and correctly identifying the bat's cost as $1.05. It directly and fully answers the question."
+  }
+}

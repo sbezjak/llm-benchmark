@@ -169,13 +169,24 @@ async def compare_pair(
     return {
         "model_a": model_a,
         "model_b": model_b,
+        # The exact inputs the judge saw, so the verdict is a self-contained receipt
+        # - the raw answers a claim rests on live IN the evidence file, not only in a
+        # 44k-line run log you have to grep. (question/expected are per-item; the two
+        # answers are per-model.)
+        "question": question,
+        "reference": expected,
+        "answer_a": answer_a,
+        "answer_b": answer_b,
         "order1_winner": winner1,
         "order2_winner": winner2,
-        # The judge's own reasoning for each order - kept in the verdict so the
-        # position-bias evidence (why it picked each side) lives in the cache, not
-        # only in a run log. A flip's two reasonings are the self-contradiction.
+        # The judge's own reasoning for each order. A flip's two reasonings are the
+        # self-contradiction.
         "order1_reasoning": parse_reasoning(raw1),
         "order2_reasoning": parse_reasoning(raw2),
+        # The judge's FULL raw reply for each order, verbatim - never parse-and-drop
+        # the ground truth. The reasoning fields above are extracted from these.
+        "order1_raw_reply": raw1,
+        "order2_raw_reply": raw2,
         "outcome": outcome,  # win | genuine_tie | flip
         "winner": winner,  # the model, or None
     }

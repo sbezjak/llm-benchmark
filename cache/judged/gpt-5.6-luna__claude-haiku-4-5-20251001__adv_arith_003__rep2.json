@@ -1,0 +1,15 @@
+{
+  "judge_model": "gpt-5.6-luna",
+  "answer_model": "claude-haiku-4-5-20251001",
+  "item_id": "adv_arith_003",
+  "rep": 2,
+  "prompt": "A shirt priced at $80 is discounted 25%, then a further 10% is taken off the reduced price. What is the final price?",
+  "expected": "$54",
+  "answer_text": "# Calculating the Final Price\n\n**Step 1: Apply the 25% discount**\n- Discount amount: $80 \u00d7 0.25 = $20\n- Price after first discount: $80 \u2212 $20 = $60\n\n**Step 2: Apply the 10% discount to the reduced price**\n- Discount amount: $60 \u00d7 0.10 = $6\n- Final price: $60 \u2212 $6 = **$54**\n\nThe final price is **$54**.",
+  "judge_cost_usd": 0.00013700000000000002,
+  "judge": {
+    "score": 1.0,
+    "passed": true,
+    "reason": "correctness=10/10 relevance=10/10 score=1.000 >= threshold=0.7 | reasoning: The model correctly applies the 25% discount followed by the 10% discount to the reduced price, obtaining $54. The response is directly relevant and clearly explains the calculation."
+  }
+}

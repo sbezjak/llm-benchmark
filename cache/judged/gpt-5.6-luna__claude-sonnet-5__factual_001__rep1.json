@@ -1,0 +1,15 @@
+{
+  "judge_model": "gpt-5.6-luna",
+  "answer_model": "claude-sonnet-5",
+  "item_id": "factual_001",
+  "rep": 1,
+  "prompt": "What is the capital of Slovenia?",
+  "expected": "Ljubljana",
+  "answer_text": "The capital of Slovenia is **Ljubljana**.\n\nLjubljana is not only the capital but also the largest city in Slovenia. It's known for its charming old town, a picturesque river (the Ljubljanica) running through the city center, a hilltop castle overlooking the town, and a vibrant cultural scene. The city was notably designed in part by architect Jo\u017ee Ple\u010dnik, whose work gives Ljubljana much of its distinctive character.",
+  "judge_cost_usd": 0.0001042,
+  "judge": {
+    "score": 1.0,
+    "passed": true,
+    "reason": "correctness=10/10 relevance=10/10 score=1.000 >= threshold=0.7 | reasoning: The answer correctly identifies Ljubljana as the capital and adds relevant, accurate context."
+  }
+}

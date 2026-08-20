@@ -1,0 +1,23 @@
+{
+  "captured_at": "2026-08-17T07:46:22.764593+00:00",
+  "model": "claude-haiku-4-5-20251001",
+  "item_id": "adv_arith_001",
+  "rep": 1,
+  "prompt": "A bat and a ball cost $1.10 in total. The bat costs $1.00 more than the ball. How much does the ball cost?",
+  "expected": "$0.05 (5 cents)",
+  "measurement": {
+    "text": "# Finding the Ball's Cost\n\nLet me set up equations where:\n- b = cost of the ball\n- B = cost of the bat\n\n**From the problem:**\n1) b + B = 1.10\n2) B = b + 1.00\n\n**Substituting equation 2 into equation 1:**\n- b + (b + 1.00) = 1.10\n- 2b + 1.00 = 1.10\n- 2b = 0.10\n- b = 0.05\n\n**The ball costs $0.05** (5 cents)\n\nTo verify: The bat costs $1.05, and together $1.05 + $0.05 = $1.10 \u2713",
+    "tokens_in": 41,
+    "tokens_out": 175,
+    "latency_ms": 1820.2535420132335,
+    "ttft_ms": 868.4491250023711,
+    "model": "claude-haiku-4-5-20251001",
+    "request_id": "req_011Ce7x3KB2gGnwWZAhCD3tB"
+  },
+  "cost_usd": 0.000916,
+  "judge": {
+    "score": 1.0,
+    "passed": true,
+    "reason": "correctness=10/10 relevance=10/10 score=1.000 >= threshold=0.7 | reasoning: The model's answer demonstrates a clear understanding of the problem and correctly solves for the ball's cost using algebraic substitution."
+  }
+}

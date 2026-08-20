@@ -1,0 +1,23 @@
+{
+  "captured_at": "2026-08-17T07:54:30.746911+00:00",
+  "model": "deepseek-v4-pro",
+  "item_id": "adv_factual_002",
+  "rep": 1,
+  "prompt": "Which is the only sea on Earth with no land coastline, bounded instead by ocean currents?",
+  "expected": "The Sargasso Sea",
+  "measurement": {
+    "text": "The **Sargasso Sea** is the only sea on Earth with no land coastline. It is bounded entirely by ocean currents in the North Atlantic, including the Gulf Stream, and is known for its floating Sargassum seaweed.",
+    "tokens_in": 101,
+    "tokens_out": 117,
+    "latency_ms": 2256.038916995749,
+    "ttft_ms": 1744.561542000156,
+    "model": "deepseek-v4-pro",
+    "request_id": null
+  },
+  "cost_usd": 0.000145725,
+  "judge": {
+    "score": 1.0,
+    "passed": true,
+    "reason": "correctness=10/10 relevance=10/10 score=1.000 >= threshold=0.7 | reasoning: The model's answer correctly identifies the Sargasso Sea as the only sea without a land coastline and provides additional context about its boundaries and characteristics."
+  }
+}

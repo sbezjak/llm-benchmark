@@ -1,0 +1,15 @@
+{
+  "judge_model": "gpt-5.6-luna",
+  "answer_model": "llama3.2",
+  "item_id": "adv_logic_001",
+  "rep": 1,
+  "prompt": "Mango is heavier than Kiwi but lighter than Pomelo. Pomelo is lighter than Durian. Of the four, which is the heaviest?",
+  "expected": "Durian",
+  "answer_text": "To determine the heaviest fruit among the four, let's analyze the given information:\n\n1. Mango is heavier than Kiwi.\n2. Mango is lighter than Pomelo.\n3. Pomelo is lighter than Durian.\n\nFrom statement 1 and 2, we can conclude that Durian is heavier than Mango (since Mango is both heavier than Kiwi and lighter than Pomelo).\n\nNow, let's look at the relationships between Pomelo and Durian:\n\n- Pomelo is lighter than Durian.\n- We already know that Durian is heavier than Mango.\n\nSince Durian is heavier than Mango, and Pomelo is lighter than Durian, it means that Durian must be heavier than Pomelo as well.\n\nSo, based on the given information, we can conclude that:\n\nDurian > Mango > Pomelo > Kiwi\n\nTherefore, Durian is the heaviest fruit among the four.",
+  "judge_cost_usd": 0.0002548,
+  "judge": {
+    "score": 0.85,
+    "passed": true,
+    "reason": "correctness=7/10 relevance=10/10 score=0.850 >= threshold=0.7 | reasoning: The model correctly identifies Durian as the heaviest, but its final ordering incorrectly states Mango > Pomelo, contradicting the premise that Mango is lighter than Pomelo. The answer is directly relevant despite this reasoning error."
+  }
+}

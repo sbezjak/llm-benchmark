@@ -1,0 +1,23 @@
+{
+  "captured_at": "2026-08-17T07:53:57.784435+00:00",
+  "model": "claude-sonnet-5",
+  "item_id": "adv_factual_001",
+  "rep": 2,
+  "prompt": "Measured from its base to its summit rather than from sea level, what is the tallest mountain on Earth?",
+  "expected": "Mauna Kea",
+  "measurement": {
+    "text": "# Mauna Kea\n\n**Mauna Kea**, a dormant volcano in Hawaii, is the tallest mountain on Earth when measured from base to summit.\n\n## Key Details:\n\n- **Total height**: Approximately 33,500 feet (10,210 meters) from base to summit\n- **Base location**: Much of Mauna Kea's base lies on the floor of the Pacific Ocean\n- **Above sea level**: Only about 13,796 feet (4,207 meters) of the mountain is visible above the ocean's surface\n\n## Comparison to Mount Everest\n\nWhile **Mount Everest** is the tallest mountain above sea level (29,032 feet/8,849 meters), Mauna Kea surpasses it in total height because so much of its structure is submerged underwater. If you measured Mauna Kea from where it begins on the ocean floor to its peak, it would actually be taller than Everest by several thousand feet.\n\nThis distinction highlights the difference between:\n- **Elevation** (height above sea level) \u2014 Everest wins\n- **Base-to-peak height** (total structural height) \u2014 Mauna Kea wins",
+    "tokens_in": 38,
+    "tokens_out": 364,
+    "latency_ms": 6624.161624989938,
+    "ttft_ms": 2590.257832984207,
+    "model": "claude-sonnet-5",
+    "request_id": "req_011Ce7xcNZqTKZAX4Waa4b4Y"
+  },
+  "cost_usd": 0.003716,
+  "judge": {
+    "score": 0.85,
+    "passed": true,
+    "reason": "correctness=9/10 relevance=8/10 score=0.850 >= threshold=0.7 | reasoning: The model's answer correctly identifies Mauna Kea as the tallest mountain on Earth when measured from base to summit, but its relevance is somewhat limited by the inclusion of extraneous information about Mount Everest and the distinction between elevation and base-to-peak height. The model could have provided a more concise response."
+  }
+}

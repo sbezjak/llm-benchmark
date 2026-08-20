@@ -1,0 +1,23 @@
+{
+  "captured_at": "2026-08-17T07:47:42.003923+00:00",
+  "model": "claude-sonnet-5",
+  "item_id": "adv_arith_002",
+  "rep": 1,
+  "prompt": "A store sells pencils at 3 for $0.45. At that same price per pencil, how much do 17 pencils cost?",
+  "expected": "$2.55",
+  "measurement": {
+    "text": "**17 pencils cost $2.55**\n\nHere's how to solve it:\n\n**Step 1: Find the price per pencil**\n$0.45 \u00f7 3 pencils = $0.15 per pencil\n\n**Step 2: Multiply by 17 pencils**\n$0.15 \u00d7 17 = $2.55",
+    "tokens_in": 44,
+    "tokens_out": 144,
+    "latency_ms": 3164.795457996661,
+    "ttft_ms": 2052.2990829776973,
+    "model": "claude-sonnet-5",
+    "request_id": "req_011Ce7x95QTusWq3a4Stfupg"
+  },
+  "cost_usd": 0.001528,
+  "judge": {
+    "score": 0.75,
+    "passed": true,
+    "reason": "correctness=10/10 relevance=5/10 score=0.750 >= threshold=0.7 | reasoning: The model's answer is correct but lacks clarity, as it simply states the result without explaining how it was calculated."
+  }
+}

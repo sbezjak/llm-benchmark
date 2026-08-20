@@ -1,0 +1,15 @@
+{
+  "judge_model": "gpt-5.6-luna",
+  "answer_model": "gpt-5.6-luna",
+  "item_id": "reasoning_003",
+  "rep": 1,
+  "prompt": "How does photosynthesis work in plants?",
+  "expected": "Photosynthesis in plants converts light energy into chemical energy, using sunlight to transform carbon dioxide and water into glucose and oxygen.",
+  "answer_text": "Photosynthesis is how plants convert light energy into chemical energy (sugars).\n\n### Overall equation\n\n\\[\n6CO_2 + 6H_2O + \\text{light energy} \\rightarrow C_6H_{12}O_6 + 6O_2\n\\]\n\nPlants take in:\n\n- **Carbon dioxide (CO\u2082)** through tiny leaf openings called **stomata**\n- **Water (H\u2082O)** through their roots\n- **Light** captured by the green pigment **chlorophyll**\n\nPhotosynthesis occurs mainly in **chloroplasts**, structures inside plant cells.\n\n### Two main stages\n\n1. **Light-dependent reactions**\n   - Chlorophyll absorbs sunlight.\n   - Water molecules are split, releasing **oxygen** as a byproduct.\n   - Light energy is stored in energy-carrying molecules called **ATP** and **NADPH**.\n\n2. **Calvin cycle**\n   - The plant uses CO\u2082, ATP, and NADPH to build small sugar molecules.\n   - These are used to make **glucose** and other carbohydrates for energy, growth, and storage.\n\nThe oxygen produced is released into the atmosphere, while the sugars fuel the plant and help form materials such as cellulose, starch, and fruits. Photosynthesis also removes carbon dioxide from the air and is the foundation of most food chains.",
+  "judge_cost_usd": 0.0001784,
+  "judge": {
+    "score": 1.0,
+    "passed": true,
+    "reason": "correctness=10/10 relevance=10/10 score=1.000 >= threshold=0.7 | reasoning: The answer accurately explains that plants use light, carbon dioxide, and water in chloroplasts to produce sugars and oxygen, including the overall equation and major stages. It is directly relevant and provides appropriate additional detail."
+  }
+}

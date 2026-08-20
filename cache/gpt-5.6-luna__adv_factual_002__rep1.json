@@ -1,0 +1,23 @@
+{
+  "captured_at": "2026-08-17T07:54:22.841358+00:00",
+  "model": "gpt-5.6-luna",
+  "item_id": "adv_factual_002",
+  "rep": 1,
+  "prompt": "Which is the only sea on Earth with no land coastline, bounded instead by ocean currents?",
+  "expected": "The Sargasso Sea",
+  "measurement": {
+    "text": "The **Sargasso Sea**\u2014a region of the North Atlantic bounded by ocean currents rather than land.",
+    "tokens_in": 24,
+    "tokens_out": 55,
+    "latency_ms": 1376.3198340020608,
+    "ttft_ms": 1197.5789169955533,
+    "model": "gpt-5.6-luna",
+    "request_id": "req_60fb6d43f4664a30bb487de4d9b920d5"
+  },
+  "cost_usd": 7.08e-05,
+  "judge": {
+    "score": 0.95,
+    "passed": true,
+    "reason": "correctness=10/10 relevance=9/10 score=0.950 >= threshold=0.7 | reasoning: The model's answer is fully correct as it accurately identifies the Sargasso Sea and its unique characteristic."
+  }
+}

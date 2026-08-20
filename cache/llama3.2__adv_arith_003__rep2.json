@@ -1,0 +1,23 @@
+{
+  "captured_at": "2026-08-17T07:48:09.464440+00:00",
+  "model": "llama3.2",
+  "item_id": "adv_arith_003",
+  "rep": 2,
+  "prompt": "A shirt priced at $80 is discounted 25%, then a further 10% is taken off the reduced price. What is the final price?",
+  "expected": "$54",
+  "measurement": {
+    "text": "To find the final price, we need to calculate the discount and apply it to the original price.\n\nFirst, let's calculate the first discount of 25%:\n\nOriginal price: $80\nDiscount amount: 25% of $80 = 0.25 x $80 = $20\nPrice after first discount: $80 - $20 = $60\n\nNext, we'll apply a further 10% discount to the reduced price:\n\nPrice after second discount: 10% of $60 = 0.10 x $60 = $6\nFinal price: $60 - $6 = $54\n\nSo, the final price is $54.",
+    "tokens_in": 55,
+    "tokens_out": 135,
+    "latency_ms": 7593.176084017614,
+    "ttft_ms": 1056.239083991386,
+    "model": "llama3.2",
+    "request_id": null
+  },
+  "cost_usd": 0.0,
+  "judge": {
+    "score": 1.0,
+    "passed": true,
+    "reason": "correctness=10/10 relevance=10/10 score=1.000 >= threshold=0.7 | reasoning: The model correctly applied two successive discounts to find the final price, but its explanation could be more concise and directly addressed the question."
+  }
+}

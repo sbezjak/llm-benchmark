@@ -1,0 +1,23 @@
+{
+  "captured_at": "2026-08-17T07:36:35.898930+00:00",
+  "model": "deepseek-v4-pro",
+  "item_id": "definition_001",
+  "rep": 2,
+  "prompt": "What does the acronym AI stand for?",
+  "expected": "Artificial Intelligence",
+  "measurement": {
+    "text": "AI stands for **Artificial Intelligence**.",
+    "tokens_in": 91,
+    "tokens_out": 24,
+    "latency_ms": 1260.9260419849306,
+    "ttft_ms": 1187.3187919845805,
+    "model": "deepseek-v4-pro",
+    "request_id": null
+  },
+  "cost_usd": 6.0465e-05,
+  "judge": {
+    "score": 1.0,
+    "passed": true,
+    "reason": "correctness=10/10 relevance=10/10 score=1.000 >= threshold=0.7 | reasoning: The model's answer is fully correct, as it accurately states the definition of the acronym AI."
+  }
+}

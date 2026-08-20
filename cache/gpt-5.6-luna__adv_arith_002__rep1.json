@@ -1,0 +1,23 @@
+{
+  "captured_at": "2026-08-17T07:47:12.799213+00:00",
+  "model": "gpt-5.6-luna",
+  "item_id": "adv_arith_002",
+  "rep": 1,
+  "prompt": "A store sells pencils at 3 for $0.45. At that same price per pencil, how much do 17 pencils cost?",
+  "expected": "$2.55",
+  "measurement": {
+    "text": "Each pencil costs $0.45 \u00f7 3 = $0.15.\n\n17 pencils cost \\(17 \\times \\$0.15 = \\boxed{\\$2.55}\\).",
+    "tokens_in": 34,
+    "tokens_out": 69,
+    "latency_ms": 2096.8849580094684,
+    "ttft_ms": 1843.6656249978114,
+    "model": "gpt-5.6-luna",
+    "request_id": "req_7d82a9b9f6eb4d31b5bb14d27bc475a0"
+  },
+  "cost_usd": 8.96e-05,
+  "judge": {
+    "score": 0.9,
+    "passed": true,
+    "reason": "correctness=8/10 relevance=10/10 score=0.900 >= threshold=0.7 | reasoning: The model's answer is correct in terms of the individual pencil price, but incorrectly states that 17 pencils would cost $2.55 at this price, when in fact it should be calculated as 17 x $0.15."
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "judge_model": "gpt-5.6-luna",
+  "answer_model": "claude-sonnet-5",
+  "item_id": "procedural_001",
+  "rep": 2,
+  "prompt": "Which pytest command runs tests marked either 'slow' or 'network'?",
+  "expected": "pytest -m 'slow or network'",
+  "answer_text": "# Running Tests Marked 'slow' or 'network'\n\nTo run pytest tests marked with either `slow` or `network` markers, use the `-m` flag with an OR expression:\n\n```bash\npytest -m \"slow or network\"\n```\n\n## Additional Useful Variations\n\n**Run tests with verbose output:**\n```bash\npytest -m \"slow or network\" -v\n```\n\n**Run tests that are NOT slow or network** (opposite/exclude):\n```bash\npytest -m \"not slow and not network\"\n```\n\n**Combine with other markers:**\n```bash\npytest -m \"(slow or network) and not skip_ci\"\n```\n\n## Prerequisite: Register Custom Markers\n\nIf you haven't already, register these markers in your `pytest.ini`, `pyproject.toml`, or `setup.cfg` to avoid warnings:\n\n**pytest.ini:**\n```ini\n[pytest]\nmarkers =\n    slow: marks tests as slow\n    network: marks tests that require network access\n```\n\n**pyproject.toml:**\n```toml\n[tool.pytest.ini_options]\nmarkers = [\n    \"slow: marks tests as slow\",\n    \"network: marks tests that require network access\",\n]\n```\n\nThen mark your tests like this:\n```python\nimport pytest\n\n@pytest.mark.slow\ndef test_something_slow():\n    ...\n\n@pytest.mark.network\ndef test_api_call():\n    ...\n```",
+  "judge_cost_usd": 0.00016,
+  "judge": {
+    "score": 0.95,
+    "passed": true,
+    "reason": "correctness=10/10 relevance=9/10 score=0.950 >= threshold=0.7 | reasoning: The answer gives the correct pytest command using an OR marker expression; the extra variations and registration details are on-topic but unnecessary."
+  }
+}

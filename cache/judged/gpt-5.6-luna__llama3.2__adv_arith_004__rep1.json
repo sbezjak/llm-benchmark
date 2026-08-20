@@ -1,0 +1,15 @@
+{
+  "judge_model": "gpt-5.6-luna",
+  "answer_model": "llama3.2",
+  "item_id": "adv_arith_004",
+  "rep": 1,
+  "prompt": "How many seconds are there in one and a half days?",
+  "expected": "129600 seconds",
+  "answer_text": "To find the number of seconds in one and a half days, we need to calculate the total number of seconds in that time period.\n\nThere are 24 hours in a day. One and a half days would be:\n\n1.5 days * 24 hours/day = 36 hours\n\nSince there are 60 minutes in an hour, we can convert the hours to minutes:\n\n36 hours * 60 minutes/hour = 2160 minutes\n\nFinally, since there are 60 seconds in a minute, we can convert the minutes to seconds:\n\n2160 minutes * 60 seconds/minute = 129600 seconds\n\nTherefore, there are 129,600 seconds in one and a half days.",
+  "judge_cost_usd": 0.0001496,
+  "judge": {
+    "score": 1.0,
+    "passed": true,
+    "reason": "correctness=10/10 relevance=10/10 score=1.000 >= threshold=0.7 | reasoning: The answer correctly converts 1.5 days to 36 hours, then to 2,160 minutes and 129,600 seconds, matching the expected answer. It is fully relevant and directly addresses the question."
+  }
+}

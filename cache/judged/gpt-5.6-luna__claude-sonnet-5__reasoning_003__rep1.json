@@ -1,0 +1,15 @@
+{
+  "judge_model": "gpt-5.6-luna",
+  "answer_model": "claude-sonnet-5",
+  "item_id": "reasoning_003",
+  "rep": 1,
+  "prompt": "How does photosynthesis work in plants?",
+  "expected": "Photosynthesis in plants converts light energy into chemical energy, using sunlight to transform carbon dioxide and water into glucose and oxygen.",
+  "answer_text": "# Photosynthesis in Plants\n\nPhotosynthesis is the process by which plants convert light energy into chemical energy, producing glucose and oxygen from carbon dioxide and water.\n\n## The Basic Equation\n6CO\u2082 + 6H\u2082O + light energy \u2192 C\u2086H\u2081\u2082O\u2086 + 6O\u2082\n\n## Where It Happens\nPhotosynthesis occurs in **chloroplasts**, organelles found in plant cells (especially in leaves) that contain the green pigment **chlorophyll**.\n\n## Two Main Stages\n\n### 1. Light-Dependent Reactions\n- Occur in the **thylakoid membranes**\n- Chlorophyll absorbs sunlight\n- Water molecules are split (releasing O\u2082 as a byproduct)\n- Energy is captured and stored in molecules called **ATP** and **NADPH**\n\n### 2. Light-Independent Reactions (Calvin Cycle)\n- Occur in the **stroma** (fluid surrounding the thylakoids)\n- Don't directly require light\n- Uses ATP and NADPH from the first stage\n- CO\u2082 is \"fixed\" and converted into glucose through a series of enzyme-driven reactions\n\n## Key Components Needed\n- **Sunlight** \u2013 provides energy\n- **Water** \u2013 absorbed through roots\n- **Carbon dioxide** \u2013 absorbed through tiny leaf pores called **stomata**\n- **Chlorophyll** \u2013 captures light energy\n\n## Why It Matters\n- Produces oxygen that most living organisms need to breathe\n- Creates glucose, which plants use for energy and growth\n- Forms the foundation of most food chains on Earth\n- Helps regulate atmospheric CO\u2082 levels\n\nWould you like me to go deeper into any particular part of this process?",
+  "judge_cost_usd": 0.0002028,
+  "judge": {
+    "score": 1.0,
+    "passed": true,
+    "reason": "correctness=10/10 relevance=10/10 score=1.000 >= threshold=0.7 | reasoning: The answer accurately explains that photosynthesis uses light to convert carbon dioxide and water into glucose and oxygen, and provides correct supporting details about its stages, location, and inputs. It is fully relevant and somewhat more detailed than necessary but remains directly on topic."
+  }
+}

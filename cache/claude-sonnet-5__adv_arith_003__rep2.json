@@ -1,0 +1,23 @@
+{
+  "captured_at": "2026-08-17T07:48:47.954292+00:00",
+  "model": "claude-sonnet-5",
+  "item_id": "adv_arith_003",
+  "rep": 2,
+  "prompt": "A shirt priced at $80 is discounted 25%, then a further 10% is taken off the reduced price. What is the final price?",
+  "expected": "$54",
+  "measurement": {
+    "text": "**Step 1: Apply the first discount (25% off)**\n\n$80 \u00d7 (1 - 0.25) = $80 \u00d7 0.75 = **$60**\n\n**Step 2: Apply the second discount (10% off the reduced price)**\n\n$60 \u00d7 (1 - 0.10) = $60 \u00d7 0.90 = **$54**\n\n**Final Price: $54**\n\n*(This represents a combined discount of 32.5% off the original price, not 35%, since the second discount applies to the already-reduced price.)*",
+    "tokens_in": 46,
+    "tokens_out": 197,
+    "latency_ms": 3474.5782499958295,
+    "ttft_ms": 2191.8075830035377,
+    "model": "claude-sonnet-5",
+    "request_id": "req_011Ce7xDwc3xGkrCq4QpxsuU"
+  },
+  "cost_usd": 0.002062,
+  "judge": {
+    "score": 1.0,
+    "passed": true,
+    "reason": "correctness=10/10 relevance=10/10 score=1.000 >= threshold=0.7 | reasoning: The model correctly applied both discounts sequentially and arrived at the expected final price."
+  }
+}

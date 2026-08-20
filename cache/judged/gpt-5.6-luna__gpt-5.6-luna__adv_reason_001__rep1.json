@@ -1,0 +1,15 @@
+{
+  "judge_model": "gpt-5.6-luna",
+  "answer_model": "gpt-5.6-luna",
+  "item_id": "adv_reason_001",
+  "rep": 1,
+  "prompt": "If today is Wednesday, what day of the week will it be 100 days from now?",
+  "expected": "Friday",
+  "answer_text": "Friday. 100 days is 2 days past a multiple of 7, so Wednesday + 2 days = Friday.",
+  "judge_cost_usd": 0.00011540000000000001,
+  "judge": {
+    "score": 1.0,
+    "passed": true,
+    "reason": "correctness=10/10 relevance=10/10 score=1.000 >= threshold=0.7 | reasoning: The answer is correct: 100 days modulo 7 is 2, so two days after Wednesday is Friday. It directly answers the question with a valid explanation."
+  }
+}

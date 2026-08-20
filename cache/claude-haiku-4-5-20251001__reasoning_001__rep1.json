@@ -1,0 +1,23 @@
+{
+  "captured_at": "2026-08-17T07:40:37.096708+00:00",
+  "model": "claude-haiku-4-5-20251001",
+  "item_id": "reasoning_001",
+  "rep": 1,
+  "prompt": "What is the difference between cold blooded and warm blooded animals?",
+  "expected": "Cold blooded animals rely on external sources for body heat, while warm blooded animals maintain a constant internal body temperature.",
+  "measurement": {
+    "text": "# Cold-Blooded vs. Warm-Blooded Animals\n\n## **Warm-Blooded (Endothermic)**\n- Generate heat internally through metabolism\n- Maintain a constant body temperature regardless of environment\n- Examples: mammals (humans, dogs, whales) and birds\n- **Advantages**: Active in cold conditions, consistent metabolism\n- **Disadvantages**: Require more food/energy to fuel heat production\n\n## **Cold-Blooded (Ectothermic)**\n- Rely on external environment to regulate body temperature\n- Body temperature fluctuates with surroundings\n- Examples: reptiles (snakes, lizards), amphibians, and fish\n- **Advantages**: Need less food, can survive long without eating\n- **Disadvantages**: Less active in cold, must move to warmer areas to warm up\n\n## **Key Difference**\nThe fundamental distinction is **where the heat comes from**\u2014internally (warm-blooded) or externally (cold-blooded).\n\n**Note**: \"Cold-blooded\" is somewhat misleading; their blood isn't actually cold\u2014it's just the same temperature as their environment. Scientists prefer terms like \"ectothermic\" and \"endothermic.\"",
+    "tokens_in": 21,
+    "tokens_out": 276,
+    "latency_ms": 3652.393041003961,
+    "ttft_ms": 1116.6497500089463,
+    "model": "claude-haiku-4-5-20251001",
+    "request_id": "req_011Ce7wbdCWhMnm4v9jo78F7"
+  },
+  "cost_usd": 0.001401,
+  "judge": {
+    "score": 0.95,
+    "passed": true,
+    "reason": "correctness=9/10 relevance=10/10 score=0.950 >= threshold=0.7 | reasoning: The model provided a clear explanation of the difference between warm-blooded and cold-blooded animals, but its phrasing could be more concise and accurate in some places."
+  }
+}

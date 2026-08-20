@@ -1,0 +1,15 @@
+{
+  "judge_model": "gpt-5.6-luna",
+  "answer_model": "llama3.2",
+  "item_id": "adv_riddle_001",
+  "rep": 2,
+  "prompt": "A red house is made of red bricks and a blue house is made of blue bricks. What is a greenhouse made of?",
+  "expected": "Glass",
+  "answer_text": "That's a clever trick question!\n\nThe answer isn't necessarily related to the color of the houses, but rather to the fact that greenhouses are typically made of glass or plastic materials, not bricks.\n\nSo, while the question tries to distract us with the colors of the houses, the correct answer is simply \"glass\" or \"plastic\", depending on the type of greenhouse.",
+  "judge_cost_usd": 0.0002186,
+  "judge": {
+    "score": 0.95,
+    "passed": true,
+    "reason": "correctness=9/10 relevance=10/10 score=0.950 >= threshold=0.7 | reasoning: The answer correctly identifies glass as the expected answer and explains the color-based distraction. Mentioning plastic as another possible greenhouse material is accurate in general but adds minor ambiguity relative to the expected single answer."
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "captured_at": "2026-08-17T07:53:31.795064+00:00",
+  "model": "claude-haiku-4-5-20251001",
+  "item_id": "adv_factual_001",
+  "rep": 1,
+  "prompt": "Measured from its base to its summit rather than from sea level, what is the tallest mountain on Earth?",
+  "expected": "Mauna Kea",
+  "measurement": {
+    "text": "# Mauna Kea\n\nMauna Kea in Hawaii is the tallest mountain on Earth when measured from its base to its summit. \n\nIt rises approximately **33,500 feet (10,200 meters)** from the ocean floor to its peak, which stands about 13,802 feet (4,207 meters) above sea level. This makes it taller than Mount Everest, which measures about 29,029 feet (8,849 meters) from sea level but is situated on already-elevated terrain.",
+    "tokens_in": 30,
+    "tokens_out": 121,
+    "latency_ms": 1833.4323749877512,
+    "ttft_ms": 895.8671659929678,
+    "model": "claude-haiku-4-5-20251001",
+    "request_id": "req_011Ce7xaveavJoSm2Pc4B1fY"
+  },
+  "cost_usd": 0.0006349999999999999,
+  "judge": {
+    "score": 0.95,
+    "passed": true,
+    "reason": "correctness=9/10 relevance=10/10 score=0.950 >= threshold=0.7 | reasoning: The model's answer correctly identifies Mauna Kea as the tallest mountain when measured from base to summit, but provides additional information that slightly detracts from its overall score."
+  }
+}

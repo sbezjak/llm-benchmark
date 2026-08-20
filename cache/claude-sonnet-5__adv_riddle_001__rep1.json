@@ -1,0 +1,23 @@
+{
+  "captured_at": "2026-08-17T07:55:59.367905+00:00",
+  "model": "claude-sonnet-5",
+  "item_id": "adv_riddle_001",
+  "rep": 1,
+  "prompt": "A red house is made of red bricks and a blue house is made of blue bricks. What is a greenhouse made of?",
+  "expected": "Glass",
+  "measurement": {
+    "text": "A greenhouse is typically made mostly of **glass (or clear plastic/polycarbonate) panels supported by a frame** of wood, aluminum, or steel \u2014 not green bricks!\n\nThe name is a bit of a linguistic trick, similar to your examples. Unlike a \"red house\" or \"blue house,\" where the color describes the building material, a \"greenhouse\" gets its name from its *purpose*: it's a structure designed to grow green plants by trapping sunlight and heat inside, creating a warm, controlled environment.\n\nSo the \"green\" in greenhouse refers to the plants grown inside, not the color of the structure itself. It's a classic example of how English compound words don't always follow logical patterns \u2014 the same trick often used in riddles like \"Why do they call it a hamburger when it's made of beef?\"",
+    "tokens_in": 41,
+    "tokens_out": 256,
+    "latency_ms": 5376.540625002235,
+    "ttft_ms": 2128.372915991349,
+    "model": "claude-sonnet-5",
+    "request_id": "req_011Ce7xmUR515chu1YftuND7"
+  },
+  "cost_usd": 0.0026420000000000003,
+  "judge": {
+    "score": 0.95,
+    "passed": true,
+    "reason": "correctness=9/10 relevance=10/10 score=0.950 >= threshold=0.7 | reasoning: The model's answer correctly identifies the primary material of a greenhouse and provides additional context about its purpose, but could benefit from clarifying that the 'green' in 'greenhouse' refers to the plants grown inside. The model also scores high on relevance by directly addressing the question."
+  }
+}

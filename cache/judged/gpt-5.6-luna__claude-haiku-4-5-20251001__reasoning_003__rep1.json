@@ -1,0 +1,15 @@
+{
+  "judge_model": "gpt-5.6-luna",
+  "answer_model": "claude-haiku-4-5-20251001",
+  "item_id": "reasoning_003",
+  "rep": 1,
+  "prompt": "How does photosynthesis work in plants?",
+  "expected": "Photosynthesis in plants converts light energy into chemical energy, using sunlight to transform carbon dioxide and water into glucose and oxygen.",
+  "answer_text": "# How Photosynthesis Works\n\nPhotosynthesis is the process plants use to convert light energy into chemical energy. Here's the basic breakdown:\n\n## The Simple Version\n\n**Input:** Light + Water + Carbon Dioxide  \n**Output:** Glucose (sugar) + Oxygen\n\nPlants use sunlight to turn CO\u2082 from the air and water from soil into sugar for energy and growth, while releasing oxygen as a byproduct.\n\n## The Two Main Stages\n\n**Light-Dependent Reactions (in the thylakoid membrane)**\n- Occur in sunlight\n- Chlorophyll absorbs light energy\n- Water molecules are split, releasing oxygen\n- Energy is stored in molecules (ATP and NADPH)\n\n**Light-Independent Reactions/Calvin Cycle (in the stroma)**\n- Don't directly require light (but depend on products from above)\n- Uses the energy from light reactions\n- Converts CO\u2082 into glucose\n\n## Where It Happens\n\nThe process takes place in **chloroplasts**, the plant cell structures containing chlorophyll\u2014the green pigment that captures light energy.\n\n## Why It Matters\n\n- Provides energy for plant growth\n- Produces oxygen we breathe\n- Forms the base of most food chains on Earth\n- Removes CO\u2082 from the atmosphere\n\nIs there a specific part of photosynthesis you'd like to explore further?",
+  "judge_cost_usd": 0.0001804,
+  "judge": {
+    "score": 1.0,
+    "passed": true,
+    "reason": "correctness=10/10 relevance=10/10 score=1.000 >= threshold=0.7 | reasoning: The answer accurately explains that plants use light, water, and carbon dioxide in chloroplasts to produce glucose and oxygen, and correctly outlines the light-dependent reactions and Calvin cycle. It is directly relevant and adds appropriate explanatory detail."
+  }
+}

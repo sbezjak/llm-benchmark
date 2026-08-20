@@ -1,0 +1,15 @@
+{
+  "judge_model": "gpt-5.6-luna",
+  "answer_model": "llama3.2",
+  "item_id": "adv_arith_002",
+  "rep": 1,
+  "prompt": "A store sells pencils at 3 for $0.45. At that same price per pencil, how much do 17 pencils cost?",
+  "expected": "$2.55",
+  "answer_text": "To find the cost of 17 pencils, we need to first find the cost of one pencil.\n\nSince 3 pencils cost $0.45, we can divide $0.45 by 3 to get the cost of one pencil:\n\n$0.45 \u00f7 3 = $0.15 per pencil\n\nNow that we know the cost of one pencil is $0.15, we can multiply this by 17 to find the total cost of 17 pencils:\n\n$0.15 x 17 = $2.55\n\nSo, 17 pencils would cost $2.55.",
+  "judge_cost_usd": 0.0001418,
+  "judge": {
+    "score": 1.0,
+    "passed": true,
+    "reason": "correctness=10/10 relevance=10/10 score=1.000 >= threshold=0.7 | reasoning: The model correctly computes the unit price as $0.15 and multiplies by 17 to obtain the expected total of $2.55. It directly and clearly answers the question."
+  }
+}

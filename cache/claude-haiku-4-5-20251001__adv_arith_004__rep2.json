@@ -1,0 +1,23 @@
+{
+  "captured_at": "2026-08-17T07:49:38.265174+00:00",
+  "model": "claude-haiku-4-5-20251001",
+  "item_id": "adv_arith_004",
+  "rep": 2,
+  "prompt": "How many seconds are there in one and a half days?",
+  "expected": "129600 seconds",
+  "measurement": {
+    "text": "To find the number of seconds in one and a half days:\n\n1.5 days \u00d7 24 hours/day \u00d7 60 minutes/hour \u00d7 60 seconds/minute\n\n= 1.5 \u00d7 24 \u00d7 60 \u00d7 60\n= 1.5 \u00d7 86,400\n= **129,600 seconds**",
+    "tokens_in": 19,
+    "tokens_out": 82,
+    "latency_ms": 1043.1867500010412,
+    "ttft_ms": 646.6597079997882,
+    "model": "claude-haiku-4-5-20251001",
+    "request_id": "req_011Ce7xHrX53VU9A1qNc5xiD"
+  },
+  "cost_usd": 0.000429,
+  "judge": {
+    "score": 1.0,
+    "passed": true,
+    "reason": "correctness=10/10 relevance=10/10 score=1.000 >= threshold=0.7 | reasoning: The model's calculation is correct and accurately reflects the expected answer."
+  }
+}

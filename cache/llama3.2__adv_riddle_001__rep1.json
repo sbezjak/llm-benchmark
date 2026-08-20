@@ -1,0 +1,23 @@
+{
+  "captured_at": "2026-08-17T07:55:14.955017+00:00",
+  "model": "llama3.2",
+  "item_id": "adv_riddle_001",
+  "rep": 1,
+  "prompt": "A red house is made of red bricks and a blue house is made of blue bricks. What is a greenhouse made of?",
+  "expected": "Glass",
+  "measurement": {
+    "text": "That's a clever trick question!\n\nThe answer isn't necessarily \"red\" or \"blue\", as the color of the bricks doesn't determine the material used to build a greenhouse.\n\nA greenhouse is typically made of glass, metal (such as aluminum or steel), and sometimes plastic or polycarbonate for the roof and walls. The frame may be made of wood, metal, or PVC. So, while the question tries to trick you with colors, the actual materials used in building a greenhouse are quite different!",
+    "tokens_in": 50,
+    "tokens_out": 103,
+    "latency_ms": 5217.44879099424,
+    "ttft_ms": 276.65237500332296,
+    "model": "llama3.2",
+    "request_id": null
+  },
+  "cost_usd": 0.0,
+  "judge": {
+    "score": 0.95,
+    "passed": true,
+    "reason": "correctness=9/10 relevance=10/10 score=0.950 >= threshold=0.7 | reasoning: The model correctly identifies that the color of bricks does not determine the material used for a greenhouse and provides a comprehensive list of common materials used in its construction."
+  }
+}

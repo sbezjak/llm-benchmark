@@ -1,0 +1,23 @@
+{
+  "captured_at": "2026-08-17T07:46:47.070983+00:00",
+  "model": "claude-sonnet-5",
+  "item_id": "adv_arith_001",
+  "rep": 2,
+  "prompt": "A bat and a ball cost $1.10 in total. The bat costs $1.00 more than the ball. How much does the ball cost?",
+  "expected": "$0.05 (5 cents)",
+  "measurement": {
+    "text": "# Bat and Ball Problem\n\n**Answer: $0.05 (5 cents)**\n\n## The Math\n\nLet the ball cost = *x*\n\nThen the bat costs = *x* + $1.00\n\nTogether: \n$$x + (x + 1.00) = 1.10$$\n$$2x + 1.00 = 1.10$$\n$$2x = 0.10$$\n$$x = 0.05$$\n\n## Verification\n- Ball: $0.05\n- Bat: $0.05 + $1.00 = $1.05\n- Total: $0.05 + $1.05 = **$1.10** \u2713\n- Bat costs $1.00 more than ball: $1.05 \u2212 $0.05 = **$1.00** \u2713\n\n## Why This Trips People Up\n\nMost people's intuition jumps to **$0.10** because $1.00 + $0.10 = $1.10 total. But that's incorrect\u2014if the ball were $0.10, the bat would need to be $1.00 *more* than that, making it $1.10, for a total of $1.20 (not $1.10). This is a classic example from behavioral economics (popularized by Daniel Kahneman) showing how our fast, intuitive thinking can lead us astray on problems that seem simple at first glance.",
+    "tokens_in": 48,
+    "tokens_out": 401,
+    "latency_ms": 5785.173500014935,
+    "ttft_ms": 1971.2195839965716,
+    "model": "claude-sonnet-5",
+    "request_id": "req_011Ce7x4ihuSK2f6PJiEjdZ7"
+  },
+  "cost_usd": 0.004105999999999999,
+  "judge": {
+    "score": 0.95,
+    "passed": true,
+    "reason": "correctness=10/10 relevance=9/10 score=0.950 >= threshold=0.7 | reasoning: The model's answer correctly solves the bat and ball problem with step-by-step math and verifies its solution. However, it includes unnecessary details about behavioral economics and a personal anecdote."
+  }
+}

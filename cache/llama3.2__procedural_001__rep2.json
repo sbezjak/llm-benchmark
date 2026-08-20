@@ -1,0 +1,23 @@
+{
+  "captured_at": "2026-08-17T07:38:04.144850+00:00",
+  "model": "llama3.2",
+  "item_id": "procedural_001",
+  "rep": 2,
+  "prompt": "Which pytest command runs tests marked either 'slow' or 'network'?",
+  "expected": "pytest -m 'slow or network'",
+  "measurement": {
+    "text": "You can use the following pytest command to run tests marked with either 'slow' or 'network':\n\n```bash\npytest --durations=1s --filter='slow|network'\n```\n\nThis will run all tests that are marked with 'slow' or 'network', and it will only consider tests that take less than 1 second.",
+    "tokens_in": 39,
+    "tokens_out": 70,
+    "latency_ms": 3667.2262500214856,
+    "ttft_ms": 377.8508750256151,
+    "model": "llama3.2",
+    "request_id": null
+  },
+  "cost_usd": 0.0,
+  "judge": {
+    "score": 0.75,
+    "passed": true,
+    "reason": "correctness=5/10 relevance=10/10 score=0.750 >= threshold=0.7 | reasoning: The model's answer is partially correct, as it provides a valid pytest command to run slow and network tests, but the filter syntax is incorrect."
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "judge_model": "gpt-5.6-luna",
+  "answer_model": "llama3.2",
+  "item_id": "adv_arith_001",
+  "rep": 1,
+  "prompt": "A bat and a ball cost $1.10 in total. The bat costs $1.00 more than the ball. How much does the ball cost?",
+  "expected": "$0.05 (5 cents)",
+  "answer_text": "Let's say the ball costs x dollars.\n\nSince the bat costs $1.00 more than the ball, the bat costs x + $1.00.\n\nThe total cost of the bat and the ball is $1.10, so we can set up an equation:\n\nx + (x + $1.00) = $1.10\n\nCombine like terms:\n\n2x + $1.00 = $1.10\n\nSubtract $1.00 from both sides:\n\n2x = $0.10\n\nDivide by 2:\n\nx = $0.05\n\nSo, the ball costs $0.05.",
+  "judge_cost_usd": 0.000137,
+  "judge": {
+    "score": 1.0,
+    "passed": true,
+    "reason": "correctness=10/10 relevance=10/10 score=1.000 >= threshold=0.7 | reasoning: The model correctly sets up and solves the equation, obtaining the expected price of $0.05 for the ball. It directly and fully answers the question."
+  }
+}

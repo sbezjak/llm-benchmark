@@ -1,0 +1,23 @@
+{
+  "captured_at": "2026-08-17T07:52:11.260251+00:00",
+  "model": "gpt-5.6-luna",
+  "item_id": "adv_logic_001",
+  "rep": 1,
+  "prompt": "Mango is heavier than Kiwi but lighter than Pomelo. Pomelo is lighter than Durian. Of the four, which is the heaviest?",
+  "expected": "Durian",
+  "measurement": {
+    "text": "Durian is the heaviest.",
+    "tokens_in": 36,
+    "tokens_out": 61,
+    "latency_ms": 1207.4336659861729,
+    "ttft_ms": 1162.5137499941047,
+    "model": "gpt-5.6-luna",
+    "request_id": "req_3f87d14c1b89481eb35180df48b38fbc"
+  },
+  "cost_usd": 8.04e-05,
+  "judge": {
+    "score": 1.0,
+    "passed": true,
+    "reason": "correctness=10/10 relevance=10/10 score=1.000 >= threshold=0.7 | reasoning: The model correctly identifies Durian as the heaviest based on its relative weights compared to Mango and Kiwi, but fails to provide a clear explanation or justification for this answer."
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "judge_model": "gpt-5.6-luna",
+  "answer_model": "claude-sonnet-5",
+  "item_id": "reasoning_001",
+  "rep": 1,
+  "prompt": "What is the difference between cold blooded and warm blooded animals?",
+  "expected": "Cold blooded animals rely on external sources for body heat, while warm blooded animals maintain a constant internal body temperature.",
+  "answer_text": "# Cold-Blooded vs. Warm-Blooded Animals\n\n## Cold-Blooded (Ectothermic)\n- **Body temperature** fluctuates with the environment\n- Rely on external sources (sun, warm surfaces) to heat up, and shade/water to cool down\n- **Examples:** reptiles, amphibians, fish, insects\n- **Advantages:** Need less food/energy to survive; can go longer without eating\n- **Disadvantages:** Become sluggish in cold temperatures; less active in unfavorable weather\n\n## Warm-Blooded (Endothermic)\n- **Body temperature** stays relatively constant regardless of surroundings\n- Generate heat internally through metabolism\n- **Examples:** mammals, birds\n- **Advantages:** Can stay active in a wide range of temperatures/climates; more consistent energy levels\n- **Disadvantages:** Require significantly more food to fuel their metabolism; must expend energy on temperature regulation (shivering, sweating, panting)\n\n## Key Differences at a Glance\n\n| Feature | Cold-Blooded | Warm-Blooded |\n|---------|-------------|--------------|\n| Temperature source | External | Internal |\n| Food/energy needs | Lower | Higher |\n| Activity in cold | Slows down/dormant | Remains active |\n| Climate range | More limited | More adaptable |\n| Common term | Ectotherm | Endotherm |\n\n**Note:** Scientists now often prefer the terms *ectothermic* and *endothermic* since they more accurately describe the mechanism (external vs. internal heat regulation) rather than implying anything about blood temperature itself.",
+  "judge_cost_usd": 0.000194,
+  "judge": {
+    "score": 1.0,
+    "passed": true,
+    "reason": "correctness=10/10 relevance=10/10 score=1.000 >= threshold=0.7 | reasoning: The answer accurately explains that cold-blooded animals depend on external heat and have fluctuating temperatures, while warm-blooded animals generate heat internally and maintain relatively constant temperatures. It directly addresses the question with relevant examples and details."
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "judge_model": "gpt-5.6-luna",
+  "answer_model": "claude-haiku-4-5-20251001",
+  "item_id": "adv_count_001",
+  "rep": 1,
+  "prompt": "How many times does the letter 'r' appear in the word 'strawberry'?",
+  "expected": "3",
+  "answer_text": "To count the letter 'r' in the word 'strawberry', I'll go through each letter:\n\ns-t-r-a-w-b-e-r-r-y\n\nThe letter 'r' appears **3 times**:\n- Once in position 3 (st**r**awberry)\n- Once in position 8 (strawbe**r**ry)\n- Once in position 9 (strawber**r**y)",
+  "judge_cost_usd": 0.000176,
+  "judge": {
+    "score": 1.0,
+    "passed": true,
+    "reason": "correctness=10/10 relevance=10/10 score=1.000 >= threshold=0.7 | reasoning: The answer correctly identifies that 'r' appears three times in 'strawberry' and accurately lists their positions. It directly addresses the question."
+  }
+}

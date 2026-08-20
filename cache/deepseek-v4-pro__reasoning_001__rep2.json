@@ -1,0 +1,23 @@
+{
+  "captured_at": "2026-08-17T07:40:29.325855+00:00",
+  "model": "deepseek-v4-pro",
+  "item_id": "reasoning_001",
+  "rep": 2,
+  "prompt": "What is the difference between cold blooded and warm blooded animals?",
+  "expected": "Cold blooded animals rely on external sources for body heat, while warm blooded animals maintain a constant internal body temperature.",
+  "measurement": {
+    "text": "The main difference is how animals regulate their body temperature.\n\n**Warm-blooded animals (endotherms)**  \n- Keep their body temperature fairly constant by generating heat internally through metabolism.  \n- Examples: mammals and birds.  \n- They can stay active in cold or hot environments, but need a lot of food for energy.  \n- Their body temperature usually stays about the same regardless of the outside temperature.\n\n**Cold-blooded animals (ectotherms)**  \n- Their body temperature changes with the surrounding environment.  \n- Examples: reptiles, amphibians, fish, and most invertebrates.  \n- They rely on outside sources of heat, like sunlight or warm water, to warm up.  \n- They need less food than warm-blooded animals, but they may become slow or inactive when it is cold.\n\nIn short: warm-blooded animals make their own body heat, while cold-blooded animals get most of their heat from their environment.",
+    "tokens_in": 97,
+    "tokens_out": 268,
+    "latency_ms": 5174.8742920171935,
+    "ttft_ms": 2448.347917001229,
+    "model": "deepseek-v4-pro",
+    "request_id": null
+  },
+  "cost_usd": 0.000275355,
+  "judge": {
+    "score": 0.85,
+    "passed": true,
+    "reason": "correctness=8/10 relevance=9/10 score=0.850 >= threshold=0.7 | reasoning: The model's answer correctly identifies the main difference between warm and cold blooded animals but could be more concise and directly address the question. The provided examples and explanations are accurate."
+  }
+}

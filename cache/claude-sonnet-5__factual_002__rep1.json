@@ -1,0 +1,23 @@
+{
+  "captured_at": "2026-08-17T07:33:14.600793+00:00",
+  "model": "claude-sonnet-5",
+  "item_id": "factual_002",
+  "rep": 1,
+  "prompt": "What is the chemical symbol for silver?",
+  "expected": "Ag",
+  "measurement": {
+    "text": "The chemical symbol for silver is **Ag**, derived from the Latin word *argentum*.",
+    "tokens_in": 19,
+    "tokens_out": 33,
+    "latency_ms": 3436.6645840054844,
+    "ttft_ms": 2589.846375019988,
+    "model": "claude-sonnet-5",
+    "request_id": "req_011Ce7w2uugBXWdRx9vM5Ae9"
+  },
+  "cost_usd": 0.000368,
+  "judge": {
+    "score": 0.95,
+    "passed": true,
+    "reason": "correctness=9/10 relevance=10/10 score=0.950 >= threshold=0.7 | reasoning: The model's answer correctly identifies the chemical symbol for silver and provides a brief etymology, but could be improved by being more concise."
+  }
+}

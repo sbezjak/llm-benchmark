@@ -1,0 +1,15 @@
+{
+  "judge_model": "gpt-5.6-luna",
+  "answer_model": "claude-sonnet-5",
+  "item_id": "procedural_001",
+  "rep": 1,
+  "prompt": "Which pytest command runs tests marked either 'slow' or 'network'?",
+  "expected": "pytest -m 'slow or network'",
+  "answer_text": "# Running Tests Marked 'slow' or 'network' in pytest\n\nTo run tests marked with either `slow` or `network`, use the `-m` flag with the `or` operator:\n\n```bash\npytest -m \"slow or network\"\n```\n\n## Explanation\n\n- The `-m` flag filters tests based on markers\n- The expression `\"slow or network\"` tells pytest to select any test marked with **either** `slow` **or** `network`\n- Quotes are needed around the expression to prevent shell interpretation issues\n\n## Prerequisites\n\nMake sure your tests are properly marked, e.g.:\n\n```python\nimport pytest\n\n@pytest.mark.slow\ndef test_something_slow():\n    ...\n\n@pytest.mark.network\ndef test_something_network():\n    ...\n```\n\nAnd register the markers in your `pytest.ini`, `pyproject.toml`, or `setup.cfg` to avoid warnings:\n\n```ini\n[pytest]\nmarkers =\n    slow: marks tests as slow\n    network: marks tests that require network access\n```\n\n## Other Useful Marker Expressions\n\n| Command | Description |\n|---------|-------------|\n| `pytest -m \"slow and network\"` | Tests marked with **both** slow **and** network |\n| `pytest -m \"not slow\"` | Tests **not** marked slow |\n| `pytest -m \"slow and not network\"` | Slow tests excluding network ones |",
+  "judge_cost_usd": 0.0001686,
+  "judge": {
+    "score": 1.0,
+    "passed": true,
+    "reason": "correctness=10/10 relevance=10/10 score=1.000 >= threshold=0.7 | reasoning: The answer gives the correct pytest command using the -m flag and the `slow or network` marker expression. The additional explanation is relevant and does not introduce errors."
+  }
+}

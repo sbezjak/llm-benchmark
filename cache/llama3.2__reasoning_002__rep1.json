@@ -1,0 +1,23 @@
+{
+  "captured_at": "2026-08-17T07:41:14.440351+00:00",
+  "model": "llama3.2",
+  "item_id": "reasoning_002",
+  "rep": 1,
+  "prompt": "In one sentence, why does ice float on water?",
+  "expected": "Ice floats on water because it is less dense than liquid water.",
+  "measurement": {
+    "text": "Ice floats on water because it is less dense than liquid water, meaning that the molecules in ice are arranged in a crystalline structure that takes up more space than the molecules in liquid water.",
+    "tokens_in": 36,
+    "tokens_out": 39,
+    "latency_ms": 2213.907166995341,
+    "ttft_ms": 432.15070900623687,
+    "model": "llama3.2",
+    "request_id": null
+  },
+  "cost_usd": 0.0,
+  "judge": {
+    "score": 1.0,
+    "passed": true,
+    "reason": "correctness=10/10 relevance=10/10 score=1.000 >= threshold=0.7 | reasoning: The model's answer correctly explains why ice floats on water and provides additional context about the molecular arrangement of ice."
+  }
+}

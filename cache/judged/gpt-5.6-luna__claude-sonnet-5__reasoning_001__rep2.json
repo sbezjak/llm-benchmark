@@ -1,0 +1,15 @@
+{
+  "judge_model": "gpt-5.6-luna",
+  "answer_model": "claude-sonnet-5",
+  "item_id": "reasoning_001",
+  "rep": 2,
+  "prompt": "What is the difference between cold blooded and warm blooded animals?",
+  "expected": "Cold blooded animals rely on external sources for body heat, while warm blooded animals maintain a constant internal body temperature.",
+  "answer_text": "# Cold-Blooded vs. Warm-Blooded Animals\n\n## Cold-Blooded (Ectothermic)\n- **Body temperature** fluctuates with the environment\n- Rely on external sources (sun, warm surfaces) to regulate body heat\n- Examples: reptiles, amphibians, fish, insects\n- **Advantages**: Need less food/energy to survive, can go longer without eating\n- **Disadvantages**: Become sluggish in cold temperatures, less active in unfavorable weather\n\n## Warm-Blooded (Endothermic)\n- **Body temperature** stays relatively constant regardless of surroundings\n- Generate heat internally through metabolism\n- Examples: mammals, birds\n- **Advantages**: Can stay active in various climates and temperatures, consistent energy levels\n- **Disadvantages**: Require more food to fuel their metabolism, must expend energy to regulate temperature (shivering, sweating, panting)\n\n## Key Scientific Terms\n- **Ectotherm** = \"outside heat\" (cold-blooded)\n- **Endotherm** = \"inside heat\" (warm-blooded)\n\n## Quick Comparison\n\n| Feature | Cold-Blooded | Warm-Blooded |\n|---------|--------------|--------------|\n| Heat source | External | Internal (metabolism) |\n| Body temp | Variable | Constant |\n| Food needs | Lower | Higher |\n| Activity in cold | Reduced/dormant | Maintained |\n| Energy efficiency | High | Lower |\n\nWould you like more detail on how specific animals adapt to their thermoregulation strategy?",
+  "judge_cost_usd": 0.000203,
+  "judge": {
+    "score": 1.0,
+    "passed": true,
+    "reason": "correctness=10/10 relevance=10/10 score=1.000 >= threshold=0.7 | reasoning: The answer accurately explains that ectothermic animals depend on external heat and have variable body temperatures, while endothermic animals generate heat internally and maintain relatively constant temperatures. It is directly relevant, with only minor simplifications such as calling warm-blooded temperature 'constant.'"
+  }
+}

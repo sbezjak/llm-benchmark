@@ -1,0 +1,23 @@
+{
+  "captured_at": "2026-08-17T07:55:28.915772+00:00",
+  "model": "gpt-5.6-luna",
+  "item_id": "adv_riddle_001",
+  "rep": 1,
+  "prompt": "A red house is made of red bricks and a blue house is made of blue bricks. What is a greenhouse made of?",
+  "expected": "Glass",
+  "measurement": {
+    "text": "Glass.",
+    "tokens_in": 31,
+    "tokens_out": 5,
+    "latency_ms": 840.4912920086645,
+    "ttft_ms": 808.9742080192082,
+    "model": "gpt-5.6-luna",
+    "request_id": "req_408ed02f8e7245cc8a93b002dc95a64f"
+  },
+  "cost_usd": 1.22e-05,
+  "judge": {
+    "score": 1.0,
+    "passed": true,
+    "reason": "correctness=10/10 relevance=10/10 score=1.000 >= threshold=0.7 | reasoning: The model's answer correctly identifies the primary material used in greenhouses, but does not consider other possible materials or nuances."
+  }
+}

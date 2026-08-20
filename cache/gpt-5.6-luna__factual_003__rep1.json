@@ -1,0 +1,23 @@
+{
+  "captured_at": "2026-08-17T07:33:50.969095+00:00",
+  "model": "gpt-5.6-luna",
+  "item_id": "factual_003",
+  "rep": 1,
+  "prompt": "In what continent is Lima located?",
+  "expected": "South America",
+  "measurement": {
+    "text": "Lima is located in South America.",
+    "tokens_in": 13,
+    "tokens_out": 11,
+    "latency_ms": 837.566208007047,
+    "ttft_ms": 736.2873330130242,
+    "model": "gpt-5.6-luna",
+    "request_id": "req_0c32d6102727433e8e51c542754c8e06"
+  },
+  "cost_usd": 1.5799999999999998e-05,
+  "judge": {
+    "score": 1.0,
+    "passed": true,
+    "reason": "correctness=10/10 relevance=10/10 score=1.000 >= threshold=0.7 | reasoning: The model's answer correctly identifies the continent where Lima is located, but does not provide any additional context or information that would make it more informative."
+  }
+}

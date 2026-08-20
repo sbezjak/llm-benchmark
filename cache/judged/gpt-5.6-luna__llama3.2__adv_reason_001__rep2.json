@@ -1,0 +1,15 @@
+{
+  "judge_model": "gpt-5.6-luna",
+  "answer_model": "llama3.2",
+  "item_id": "adv_reason_001",
+  "rep": 2,
+  "prompt": "If today is Wednesday, what day of the week will it be 100 days from now?",
+  "expected": "Friday",
+  "answer_text": "To find out the day of the week 100 days from now, we need to calculate the number of weeks and remaining days.\n\nThere are 7 days in a week. Let's divide 100 by 7:\n\n100 \u00f7 7 = 14 with a remainder of 2\n\nThis means that 100 days is equal to 14 weeks and 2 days.\n\nSince today is Wednesday, we need to add 2 days to it:\n\nWednesday + 2 days = Friday\n\nSo, 100 days from now, it will be Friday.",
+  "judge_cost_usd": 0.0001386,
+  "judge": {
+    "score": 1.0,
+    "passed": true,
+    "reason": "correctness=10/10 relevance=10/10 score=1.000 >= threshold=0.7 | reasoning: The answer correctly computes that 100 days has a remainder of 2 when divided by 7 and advances Wednesday by two days to Friday. It is directly relevant and fully answers the question."
+  }
+}

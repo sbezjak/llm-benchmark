@@ -1,0 +1,23 @@
+{
+  "captured_at": "2026-08-17T07:50:02.954283+00:00",
+  "model": "gpt-5.6-luna",
+  "item_id": "adv_count_001",
+  "rep": 1,
+  "prompt": "How many times does the letter 'r' appear in the word 'strawberry'?",
+  "expected": "3",
+  "measurement": {
+    "text": "The letter **\u201cr\u201d** appears **3 times** in **\u201cstrawberry.\u201d**",
+    "tokens_in": 24,
+    "tokens_out": 23,
+    "latency_ms": 862.1488749922719,
+    "ttft_ms": 727.1603750123177,
+    "model": "gpt-5.6-luna",
+    "request_id": "req_67d3dc4847df444c86bcccbc1500ff3a"
+  },
+  "cost_usd": 3.2399999999999995e-05,
+  "judge": {
+    "score": 0.95,
+    "passed": true,
+    "reason": "correctness=10/10 relevance=9/10 score=0.950 >= threshold=0.7 | reasoning: The model's answer is correct and accurately reports the frequency of the letter 'r', but it uses excessive punctuation which is not necessary for a numerical answer."
+  }
+}

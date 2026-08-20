@@ -1,0 +1,23 @@
+{
+  "captured_at": "2026-08-17T07:41:08.376416+00:00",
+  "model": "claude-sonnet-5",
+  "item_id": "reasoning_001",
+  "rep": 2,
+  "prompt": "What is the difference between cold blooded and warm blooded animals?",
+  "expected": "Cold blooded animals rely on external sources for body heat, while warm blooded animals maintain a constant internal body temperature.",
+  "measurement": {
+    "text": "# Cold-Blooded vs. Warm-Blooded Animals\n\n## Cold-Blooded (Ectothermic)\n- **Body temperature** fluctuates with the environment\n- Rely on external sources (sun, warm surfaces) to regulate body heat\n- Examples: reptiles, amphibians, fish, insects\n- **Advantages**: Need less food/energy to survive, can go longer without eating\n- **Disadvantages**: Become sluggish in cold temperatures, less active in unfavorable weather\n\n## Warm-Blooded (Endothermic)\n- **Body temperature** stays relatively constant regardless of surroundings\n- Generate heat internally through metabolism\n- Examples: mammals, birds\n- **Advantages**: Can stay active in various climates and temperatures, consistent energy levels\n- **Disadvantages**: Require more food to fuel their metabolism, must expend energy to regulate temperature (shivering, sweating, panting)\n\n## Key Scientific Terms\n- **Ectotherm** = \"outside heat\" (cold-blooded)\n- **Endotherm** = \"inside heat\" (warm-blooded)\n\n## Quick Comparison\n\n| Feature | Cold-Blooded | Warm-Blooded |\n|---------|--------------|--------------|\n| Heat source | External | Internal (metabolism) |\n| Body temp | Variable | Constant |\n| Food needs | Lower | Higher |\n| Activity in cold | Reduced/dormant | Maintained |\n| Energy efficiency | High | Lower |\n\nWould you like more detail on how specific animals adapt to their thermoregulation strategy?",
+    "tokens_in": 26,
+    "tokens_out": 541,
+    "latency_ms": 7308.09266702272,
+    "ttft_ms": 1784.895000018878,
+    "model": "claude-sonnet-5",
+    "request_id": "req_011Ce7wdcuxNwMjsP88hVVzu"
+  },
+  "cost_usd": 0.005462,
+  "judge": {
+    "score": 0.95,
+    "passed": true,
+    "reason": "correctness=9/10 relevance=10/10 score=0.950 >= threshold=0.7 | reasoning: The model's answer provides a clear and comprehensive explanation of the difference between cold-blooded and warm-blooded animals, including key features and examples. However, it could be improved by providing more concise and direct language."
+  }
+}

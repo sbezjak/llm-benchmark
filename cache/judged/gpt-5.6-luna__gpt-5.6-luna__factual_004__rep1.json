@@ -1,0 +1,15 @@
+{
+  "judge_model": "gpt-5.6-luna",
+  "answer_model": "gpt-5.6-luna",
+  "item_id": "factual_004",
+  "rep": 1,
+  "prompt": "How many planets are in our solar system?",
+  "expected": "8",
+  "answer_text": "There are **8 planets** in our solar system:\n\nMercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, and Neptune.",
+  "judge_cost_usd": 0.0001002,
+  "judge": {
+    "score": 1.0,
+    "passed": true,
+    "reason": "correctness=10/10 relevance=10/10 score=1.000 >= threshold=0.7 | reasoning: The answer correctly states that there are 8 planets and accurately lists all eight, directly addressing the question."
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "judge_model": "gpt-5.6-luna",
+  "answer_model": "llama3.2",
+  "item_id": "definition_001",
+  "rep": 1,
+  "prompt": "What does the acronym AI stand for?",
+  "expected": "Artificial Intelligence",
+  "answer_text": "The acronym \"AI\" stands for Artificial Intelligence.",
+  "judge_cost_usd": 8.76e-05,
+  "judge": {
+    "score": 1.0,
+    "passed": true,
+    "reason": "correctness=10/10 relevance=10/10 score=1.000 >= threshold=0.7 | reasoning: The answer correctly expands AI as Artificial Intelligence and directly addresses the question."
+  }
+}

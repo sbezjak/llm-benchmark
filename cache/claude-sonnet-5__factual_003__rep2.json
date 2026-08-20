@@ -1,0 +1,23 @@
+{
+  "captured_at": "2026-08-17T07:34:31.332090+00:00",
+  "model": "claude-sonnet-5",
+  "item_id": "factual_003",
+  "rep": 2,
+  "prompt": "In what continent is Lima located?",
+  "expected": "South America",
+  "measurement": {
+    "text": "Lima is located in **South America**. It is the capital and largest city of Peru, situated on the country's Pacific coast.",
+    "tokens_in": 16,
+    "tokens_out": 40,
+    "latency_ms": 2770.3725829778705,
+    "ttft_ms": 1905.664166988572,
+    "model": "claude-sonnet-5",
+    "request_id": "req_011Ce7w8jFtaUWEfye4uAPvL"
+  },
+  "cost_usd": 0.00043200000000000004,
+  "judge": {
+    "score": 1.0,
+    "passed": true,
+    "reason": "correctness=10/10 relevance=10/10 score=1.000 >= threshold=0.7 | reasoning: The model provided a correct answer with additional context about Lima's location within Peru."
+  }
+}

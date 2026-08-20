@@ -24,10 +24,14 @@ htmlcov/
 *.swp
 .claude/
 
-# Raw (model, item) call captures - the spend-control cache ("capture once,
-# math off the artifact"). Local artifact; curated keepers go to evidence/.
-# cache-batch/ is the same, for the Batch-lane captures (batch_sweep runner).
-cache/
+# Raw (model, item) call captures - the spend-control cache ("capture once, math
+# off the artifact"). COMMITTED as ground truth: these are the raw answers every
+# verdict/finding rests on, so the evidence is self-contained, not reconstructable
+# only by grepping a run log. cache/pairwise/ stays ignored (working copies of the
+# verdicts already committed under evidence/pairwise-verdicts/); cache-batch/ stays
+# ignored (Batch-lane captures - the batch-lane-*.log run logs are the committed
+# ground truth for that lane).
+cache/pairwise/
 cache-batch/
 
 # macOS
@@ -62,6 +66,7 @@ working_with_ai.md
 portfolio.md
 article*.md
 linkedin*.md
+md-consolidation-map.md
 production-patterns.md
 reading-the-report.md
 

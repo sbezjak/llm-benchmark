@@ -1,0 +1,23 @@
+{
+  "captured_at": "2026-08-17T07:36:25.212586+00:00",
+  "model": "gpt-5.6-luna",
+  "item_id": "definition_001",
+  "rep": 1,
+  "prompt": "What does the acronym AI stand for?",
+  "expected": "Artificial Intelligence",
+  "measurement": {
+    "text": "AI stands for **artificial intelligence**.",
+    "tokens_in": 14,
+    "tokens_out": 12,
+    "latency_ms": 1009.3851249839645,
+    "ttft_ms": 960.3908749995753,
+    "model": "gpt-5.6-luna",
+    "request_id": "req_e268e08c1ea346a6ba63f87d023b2bea"
+  },
+  "cost_usd": 1.7199999999999998e-05,
+  "judge": {
+    "score": 1.0,
+    "passed": true,
+    "reason": "correctness=10/10 relevance=10/10 score=1.000 >= threshold=0.7 | reasoning: The model's answer is fully correct, but it repeats the expected answer verbatim."
+  }
+}

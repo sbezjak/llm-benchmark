@@ -1,0 +1,23 @@
+{
+  "captured_at": "2026-08-17T07:46:17.874659+00:00",
+  "model": "deepseek-v4-pro",
+  "item_id": "adv_arith_001",
+  "rep": 2,
+  "prompt": "A bat and a ball cost $1.10 in total. The bat costs $1.00 more than the ball. How much does the ball cost?",
+  "expected": "$0.05 (5 cents)",
+  "measurement": {
+    "text": "The ball costs **$0.05** (5 cents).\n\nExplanation: If the ball costs \\(x\\), the bat costs \\(x + \\$1.00\\). Together:\n\n\\[\nx + (x + 1.00) = 1.10\n\\]\n\n\\[\n2x = 0.10 \\Rightarrow x = 0.05\n\\]\n\nSo the ball is **5 cents** and the bat is **$1.05**.",
+    "tokens_in": 115,
+    "tokens_out": 166,
+    "latency_ms": 3475.634041999001,
+    "ttft_ms": 2667.85158298444,
+    "model": "deepseek-v4-pro",
+    "request_id": null
+  },
+  "cost_usd": 0.00019444499999999996,
+  "judge": {
+    "score": 1.0,
+    "passed": true,
+    "reason": "correctness=10/10 relevance=10/10 score=1.000 >= threshold=0.7 | reasoning: The model's answer demonstrates a clear understanding of the algebraic equation to solve for the cost of the ball, but could be improved by providing more context or explanation."
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "captured_at": "2026-08-17T07:32:02.839492+00:00",
+  "model": "claude-sonnet-5",
+  "item_id": "factual_001",
+  "rep": 2,
+  "prompt": "What is the capital of Slovenia?",
+  "expected": "Ljubljana",
+  "measurement": {
+    "text": "The capital of Slovenia is **Ljubljana**.\n\nIt's also the largest city in the country and serves as its cultural, economic, and political center. Ljubljana is known for its charming old town, the Ljubljanica River running through it, and Ljubljana Castle overlooking the city.",
+    "tokens_in": 18,
+    "tokens_out": 93,
+    "latency_ms": 1944.1893750044983,
+    "ttft_ms": 766.345458017895,
+    "model": "claude-sonnet-5",
+    "request_id": "req_011Ce7vwVap5CQiiDB2aME4u"
+  },
+  "cost_usd": 0.0009660000000000001,
+  "judge": {
+    "score": 0.95,
+    "passed": true,
+    "reason": "correctness=10/10 relevance=9/10 score=0.950 >= threshold=0.7 | reasoning: The model's answer is fully correct in terms of identifying the capital of Slovenia, but provides additional information that, while relevant to the question, slightly exceeds the expected response."
+  }
+}

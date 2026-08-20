@@ -1,0 +1,15 @@
+{
+  "judge_model": "gpt-5.6-luna",
+  "answer_model": "gpt-5.6-luna",
+  "item_id": "reasoning_003",
+  "rep": 2,
+  "prompt": "How does photosynthesis work in plants?",
+  "expected": "Photosynthesis in plants converts light energy into chemical energy, using sunlight to transform carbon dioxide and water into glucose and oxygen.",
+  "answer_text": "Photosynthesis is how plants convert light energy into chemical energy (sugars).\n\nIt mainly occurs in **chloroplasts**, using the pigment **chlorophyll**:\n\n1. **Light absorption:** Chlorophyll captures energy from sunlight.\n2. **Water splitting:** Light energy helps split water molecules (**H\u2082O**), releasing **oxygen (O\u2082)** as a byproduct.\n3. **Energy storage:** The light reactions produce energy-carrying molecules, mainly **ATP** and **NADPH**.\n4. **Sugar production:** In the **Calvin cycle**, the plant uses ATP and NADPH to combine **carbon dioxide (CO\u2082)** from the air into carbon-based molecules that can be made into glucose and other sugars.\n\nThe overall simplified equation is:\n\n\\[\n6CO_2 + 6H_2O + light\\ energy \\rightarrow C_6H_{12}O_6 + 6O_2\n\\]\n\nPlants take in carbon dioxide through tiny leaf openings called **stomata**, absorb water through their roots, and release oxygen through the stomata. The sugars provide energy and materials for growth, while some are stored as starch.",
+  "judge_cost_usd": 0.0001758,
+  "judge": {
+    "score": 1.0,
+    "passed": true,
+    "reason": "correctness=10/10 relevance=10/10 score=1.000 >= threshold=0.7 | reasoning: The answer accurately explains that plants use light energy in chloroplasts to convert carbon dioxide and water into sugars, releasing oxygen, and adds correct details about light reactions and the Calvin cycle. It is directly responsive and fully on-topic."
+  }
+}

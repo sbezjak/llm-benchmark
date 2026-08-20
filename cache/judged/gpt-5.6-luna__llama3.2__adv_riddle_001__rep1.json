@@ -1,0 +1,15 @@
+{
+  "judge_model": "gpt-5.6-luna",
+  "answer_model": "llama3.2",
+  "item_id": "adv_riddle_001",
+  "rep": 1,
+  "prompt": "A red house is made of red bricks and a blue house is made of blue bricks. What is a greenhouse made of?",
+  "expected": "Glass",
+  "answer_text": "That's a clever trick question!\n\nThe answer isn't necessarily \"red\" or \"blue\", as the color of the bricks doesn't determine the material used to build a greenhouse.\n\nA greenhouse is typically made of glass, metal (such as aluminum or steel), and sometimes plastic or polycarbonate for the roof and walls. The frame may be made of wood, metal, or PVC. So, while the question tries to trick you with colors, the actual materials used in building a greenhouse are quite different!",
+  "judge_cost_usd": 0.00021280000000000002,
+  "judge": {
+    "score": 1.0,
+    "passed": true,
+    "reason": "correctness=10/10 relevance=10/10 score=1.000 >= threshold=0.7 | reasoning: The answer correctly identifies glass as a typical greenhouse material and adds accurate context about other possible construction materials. It is directly responsive, though slightly more elaborate than the simple riddle requires."
+  }
+}

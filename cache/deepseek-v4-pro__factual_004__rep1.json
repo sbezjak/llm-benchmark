@@ -1,0 +1,23 @@
+{
+  "captured_at": "2026-08-17T07:35:27.874455+00:00",
+  "model": "deepseek-v4-pro",
+  "item_id": "factual_004",
+  "rep": 1,
+  "prompt": "How many planets are in our solar system?",
+  "expected": "8",
+  "measurement": {
+    "text": "There are **8 planets** in our solar system: Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, and Neptune.",
+    "tokens_in": 92,
+    "tokens_out": 75,
+    "latency_ms": 2103.009541024221,
+    "ttft_ms": 1887.3863330227323,
+    "model": "deepseek-v4-pro",
+    "request_id": null
+  },
+  "cost_usd": 0.00010527,
+  "judge": {
+    "score": 1.0,
+    "passed": true,
+    "reason": "correctness=10/10 relevance=10/10 score=1.000 >= threshold=0.7 | reasoning: The model's answer is fully correct as it accurately states the number of planets in our solar system. However, the response could be more concise."
+  }
+}

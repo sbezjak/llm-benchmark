@@ -1,0 +1,23 @@
+{
+  "captured_at": "2026-08-17T07:46:01.532218+00:00",
+  "model": "gpt-5.6-luna",
+  "item_id": "adv_arith_001",
+  "rep": 1,
+  "prompt": "A bat and a ball cost $1.10 in total. The bat costs $1.00 more than the ball. How much does the ball cost?",
+  "expected": "$0.05 (5 cents)",
+  "measurement": {
+    "text": "The ball costs **$0.05** (5 cents).\n\nThe bat costs $1.05, totaling $1.10, and it is exactly $1.00 more than the ball.",
+    "tokens_in": 38,
+    "tokens_out": 68,
+    "latency_ms": 1864.0160000068136,
+    "ttft_ms": 1586.1978750035632,
+    "model": "gpt-5.6-luna",
+    "request_id": "req_d338f6da0bd143f194d09899ce4dba57"
+  },
+  "cost_usd": 8.919999999999999e-05,
+  "judge": {
+    "score": 1.0,
+    "passed": true,
+    "reason": "correctness=10/10 relevance=10/10 score=1.000 >= threshold=0.7 | reasoning: The model's answer correctly states the cost of the ball but also provides additional information that is not necessary to answer the question."
+  }
+}

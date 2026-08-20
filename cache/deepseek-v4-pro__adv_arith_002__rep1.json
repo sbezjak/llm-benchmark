@@ -1,0 +1,23 @@
+{
+  "captured_at": "2026-08-17T07:47:23.544038+00:00",
+  "model": "deepseek-v4-pro",
+  "item_id": "adv_arith_002",
+  "rep": 1,
+  "prompt": "A store sells pencils at 3 for $0.45. At that same price per pencil, how much do 17 pencils cost?",
+  "expected": "$2.55",
+  "measurement": {
+    "text": "Each pencil costs $0.45 \u00f7 3 = $0.15.\n\nSo 17 pencils cost:\n\n17 \u00d7 $0.15 = **$2.55**",
+    "tokens_in": 111,
+    "tokens_out": 148,
+    "latency_ms": 3195.221917005256,
+    "ttft_ms": 2686.001958005363,
+    "model": "deepseek-v4-pro",
+    "request_id": null
+  },
+  "cost_usd": 0.00017704499999999997,
+  "judge": {
+    "score": 0.95,
+    "passed": true,
+    "reason": "correctness=10/10 relevance=9/10 score=0.950 >= threshold=0.7 | reasoning: The model correctly calculated the price per pencil and applied it to find the total cost of 17 pencils, but its response format was not ideal."
+  }
+}

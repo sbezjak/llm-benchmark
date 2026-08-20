@@ -1,0 +1,15 @@
+{
+  "judge_model": "gpt-5.6-luna",
+  "answer_model": "deepseek-v4-pro",
+  "item_id": "reasoning_003",
+  "rep": 1,
+  "prompt": "How does photosynthesis work in plants?",
+  "expected": "Photosynthesis in plants converts light energy into chemical energy, using sunlight to transform carbon dioxide and water into glucose and oxygen.",
+  "answer_text": "Photosynthesis is how plants, algae, and some bacteria convert light energy into chemical energy stored in sugars. In plants, it takes place mainly in the leaves, inside cell organelles called **chloroplasts**.\n\nThe overall simplified equation is:\n\n**6 CO\u2082 + 6 H\u2082O + light energy \u2192 C\u2086H\u2081\u2082O\u2086 + 6 O\u2082**\n\nCarbon dioxide + water + light \u2192 glucose + oxygen\n\nPhotosynthesis happens in two main stages:\n\n---\n\n### 1. Light-dependent reactions\nLocation: **Thylakoid membranes** inside the chloroplast.\n\n- Chlorophyll and other pigments absorb sunlight.\n- Light energy is used to split water molecules into oxygen, protons, and electrons.\n- Oxygen is released as a byproduct.\n- The energy is stored temporarily in two energy-carrier molecules: **ATP** and **NADPH**.\n\n---\n\n### 2. Light-independent reactions / Calvin cycle\nLocation: **Stroma** of the chloroplast.\n\n- Does not directly need light, but uses the ATP and NADPH from the first stage.\n- Carbon dioxide from the air is fixed into an organic molecule.\n- Through a series of enzyme-driven steps, CO\u2082 is ultimately converted into **glucose** and other carbohydrates.\n\n---\n\n### Key points\n- **Chlorophyll** absorbs mainly blue and red light; it reflects green, which is why plants look green.\n- **Water** is absorbed by roots and transported to leaves.\n- **Carbon dioxide** enters leaves through small pores called **stomata**.\n- **Oxygen** is released as a waste product, which most living things need for respiration.\n\nSo photosynthesis is essentially the process that captures solar energy and stores it in the chemical bonds of sugar, forming the foundation of most food chains on Earth.",
+  "judge_cost_usd": 0.0002114,
+  "judge": {
+    "score": 1.0,
+    "passed": true,
+    "reason": "correctness=10/10 relevance=10/10 score=1.000 >= threshold=0.7 | reasoning: The answer accurately explains photosynthesis, gives the correct overall equation, and appropriately describes the light-dependent reactions and Calvin cycle, with useful details about chloroplasts and inputs and outputs. It is fully on-topic and directly answers the question, though slightly more detailed than necessary."
+  }
+}

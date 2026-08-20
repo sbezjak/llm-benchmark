@@ -1,0 +1,23 @@
+{
+  "captured_at": "2026-08-17T07:54:56.624245+00:00",
+  "model": "claude-sonnet-5",
+  "item_id": "adv_factual_002",
+  "rep": 1,
+  "prompt": "Which is the only sea on Earth with no land coastline, bounded instead by ocean currents?",
+  "expected": "The Sargasso Sea",
+  "measurement": {
+    "text": "# The Sargasso Sea\n\nThe **Sargasso Sea**, located in the North Atlantic Ocean, is the only sea on Earth with no land boundaries. Instead, it is defined by ocean currents that form the **North Atlantic Gyre**:\n\n- **Gulf Stream** (west)\n- **North Atlantic Current** (north)\n- **Canary Current** (east)\n- **North Atlantic Equatorial Current** (south)\n\n## Key Characteristics\n\n- **Named for its seaweed**: The sea is named after *Sargassum*, a genus of free-floating brown algae that accumulates there in large mats, drifting with the currents rather than attaching to a seafloor.\n- **Calm waters**: It's known for unusually still, calm conditions due to the circular current pattern that traps water within it\u2014historically a challenge for sailing ships, which could become becalmed.\n- **Unique ecosystem**: The floating sargassum creates a critical habitat for many marine species, including eels (both European and American eels migrate here to spawn), sea turtles, and numerous fish species.\n- **Location**: It sits roughly between the Caribbean and the Azores, though its exact boundaries shift somewhat over time as the currents fluctuate.\n\nThis makes it a rare geographical feature\u2014a sea defined purely by oceanographic and current patterns rather than by any coastline.",
+    "tokens_in": 36,
+    "tokens_out": 447,
+    "latency_ms": 7170.696707995376,
+    "ttft_ms": 1680.5665830033831,
+    "model": "claude-sonnet-5",
+    "request_id": "req_011Ce7xgjBw67RPMRDwWDZSK"
+  },
+  "cost_usd": 0.004542,
+  "judge": {
+    "score": 0.95,
+    "passed": true,
+    "reason": "correctness=10/10 relevance=9/10 score=0.950 >= threshold=0.7 | reasoning: The model's answer is fully correct in terms of identifying the Sargasso Sea as the only sea with no land coastline, but its explanation is incomplete and lacks detail compared to the expected answer."
+  }
+}

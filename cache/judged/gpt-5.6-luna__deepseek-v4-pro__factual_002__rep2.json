@@ -1,0 +1,15 @@
+{
+  "judge_model": "gpt-5.6-luna",
+  "answer_model": "deepseek-v4-pro",
+  "item_id": "factual_002",
+  "rep": 2,
+  "prompt": "What is the chemical symbol for silver?",
+  "expected": "Ag",
+  "answer_text": "Ag",
+  "judge_cost_usd": 8.92e-05,
+  "judge": {
+    "score": 1.0,
+    "passed": true,
+    "reason": "correctness=10/10 relevance=10/10 score=1.000 >= threshold=0.7 | reasoning: The model\u2019s answer exactly matches the chemical symbol for silver and directly answers the question."
+  }
+}

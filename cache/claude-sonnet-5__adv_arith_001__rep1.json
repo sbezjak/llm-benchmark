@@ -1,0 +1,23 @@
+{
+  "captured_at": "2026-08-17T07:46:36.981815+00:00",
+  "model": "claude-sonnet-5",
+  "item_id": "adv_arith_001",
+  "rep": 1,
+  "prompt": "A bat and a ball cost $1.10 in total. The bat costs $1.00 more than the ball. How much does the ball cost?",
+  "expected": "$0.05 (5 cents)",
+  "measurement": {
+    "text": "# Bat and Ball Problem\n\n**Answer: $0.05 (5 cents)**\n\n**Why it's not $0.10:**\nThe intuitive (but wrong) answer is that the ball costs $0.10, but that would make the bat $1.10, for a total of $1.20 \u2014 too much.\n\n**The correct math:**\n\nLet the ball = *x*\nThen the bat = *x* + $1.00\n\nTogether: \n$$x + (x + 1.00) = 1.10$$\n$$2x + 1.00 = 1.10$$\n$$2x = 0.10$$\n$$x = 0.05$$\n\n**Check:**\n- Ball: $0.05\n- Bat: $0.05 + $1.00 = $1.05\n- Total: $0.05 + $1.05 = **$1.10** \u2713\n\nThis is a famous example from psychologist Daniel Kahneman's research, used to illustrate how our brains often jump to a fast, intuitive answer rather than pausing to reason through the problem carefully.",
+    "tokens_in": 48,
+    "tokens_out": 323,
+    "latency_ms": 4775.169542001095,
+    "ttft_ms": 1563.1862500158604,
+    "model": "claude-sonnet-5",
+    "request_id": "req_011Ce7x41US9g9aMg6chfnX5"
+  },
+  "cost_usd": 0.003326,
+  "judge": {
+    "score": 0.75,
+    "passed": true,
+    "reason": "correctness=10/10 relevance=5/10 score=0.750 >= threshold=0.7 | reasoning: The model provided a step-by-step solution to the classic bat and ball problem, correctly applying algebraic reasoning to arrive at the expected answer of $0.05. However, it also included extraneous information about Daniel Kahneman's research, which is not relevant to the question."
+  }
+}

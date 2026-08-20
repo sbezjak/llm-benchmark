@@ -1,0 +1,23 @@
+{
+  "captured_at": "2026-08-17T07:39:27.482525+00:00",
+  "model": "llama3.2",
+  "item_id": "reasoning_001",
+  "rep": 1,
+  "prompt": "What is the difference between cold blooded and warm blooded animals?",
+  "expected": "Cold blooded animals rely on external sources for body heat, while warm blooded animals maintain a constant internal body temperature.",
+  "measurement": {
+    "text": "The terms \"cold-blooded\" and \"warm-blooded\" are outdated and somewhat misleading, as they don't accurately describe an animal's metabolic processes. Instead, the correct terminology is \"ectothermic\" (cold-blooded) and \"endothermic\" (warm-blooded).\n\nHere's a brief explanation of each:\n\n**Ectothermic (Cold-Blooded):**\n\n* Animals that regulate their body temperature using external sources, such as the sun or a warm rock.\n* Their metabolic rate is influenced by the environment, and they often bask in sunlight to increase their body temperature.\n* Examples: reptiles (e.g., snakes, lizards), amphibians (e.g., frogs, toads), fish.\n\n**Endothermic (Warm-Blooded):**\n\n* Animals that generate heat internally through metabolic processes, such as muscle contractions and cellular respiration.\n* They maintain a relatively constant body temperature, regardless of the environment.\n* Examples: mammals (e.g., humans, dogs, cats) and birds.\n\nThe key differences between ectothermic and endothermic animals are:\n\n1. **Temperature regulation**: Ectotherms rely on external sources to regulate their body temperature, while endotherms generate heat internally.\n2. **Metabolic rate**: Ectotherms have a slower metabolic rate than endotherms, as they don't need to burn energy to maintain a constant body temperature.\n3. **Activity patterns**: Ectotherms often have more restricted activity patterns, as they may be active only when the environment is warm enough for them to regulate their body temperature.\n\nIt's worth noting that some animals can exhibit both ectothermic and endothermic characteristics, depending on the situation. For example, some reptiles can bask in sunlight to increase their body temperature, while others may seek shade to cool down.\n\nIn summary, the terms \"cold-blooded\" and \"warm-blooded\" are outdated and don't accurately describe an animal's metabolic processes. Instead, we use the more accurate terms \"ectothermic\" (cold-blooded) and \"endothermic\" (warm-blooded) to describe these differences.",
+    "tokens_in": 39,
+    "tokens_out": 439,
+    "latency_ms": 22012.381415988784,
+    "ttft_ms": 420.63474998576567,
+    "model": "llama3.2",
+    "request_id": null
+  },
+  "cost_usd": 0.0,
+  "judge": {
+    "score": 0.65,
+    "passed": false,
+    "reason": "correctness=5/10 relevance=8/10 score=0.650 < threshold=0.7 | reasoning: The model provided a detailed explanation of the correct terminology and key differences between ectothermic and endothermic animals, but failed to directly address the question about the difference between cold blooded and warm blooded animals."
+  }
+}

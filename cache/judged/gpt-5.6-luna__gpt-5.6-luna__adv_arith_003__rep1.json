@@ -1,0 +1,15 @@
+{
+  "judge_model": "gpt-5.6-luna",
+  "answer_model": "gpt-5.6-luna",
+  "item_id": "adv_arith_003",
+  "rep": 1,
+  "prompt": "A shirt priced at $80 is discounted 25%, then a further 10% is taken off the reduced price. What is the final price?",
+  "expected": "$54",
+  "answer_text": "After the 25% discount:  \n$80 \u00d7 0.75 = $60\n\nAfter the additional 10% discount:  \n$60 \u00d7 0.90 = **$54**\n\nFinal price: **$54**",
+  "judge_cost_usd": 0.00012340000000000002,
+  "judge": {
+    "score": 1.0,
+    "passed": true,
+    "reason": "correctness=10/10 relevance=10/10 score=1.000 >= threshold=0.7 | reasoning: The answer correctly applies the 25% discount followed by the additional 10% discount, yielding the expected final price of $54. It is direct and fully relevant."
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "captured_at": "2026-08-17T07:31:05.841513+00:00",
+  "model": "llama3.2",
+  "item_id": "factual_001",
+  "rep": 1,
+  "prompt": "What is the capital of Slovenia?",
+  "expected": "Ljubljana",
+  "measurement": {
+    "text": "The capital of Slovenia is Ljubljana.",
+    "tokens_in": 32,
+    "tokens_out": 12,
+    "latency_ms": 1554.5187499956228,
+    "ttft_ms": 681.3700839993544,
+    "model": "llama3.2",
+    "request_id": null
+  },
+  "cost_usd": 0.0,
+  "judge": {
+    "score": 1.0,
+    "passed": true,
+    "reason": "correctness=10/10 relevance=10/10 score=1.000 >= threshold=0.7 | reasoning: The model's answer correctly identifies the capital of Slovenia, but does not provide any additional context or information."
+  }
+}

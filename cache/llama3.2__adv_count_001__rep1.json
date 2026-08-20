@@ -1,0 +1,23 @@
+{
+  "captured_at": "2026-08-17T07:49:54.158764+00:00",
+  "model": "llama3.2",
+  "item_id": "adv_count_001",
+  "rep": 1,
+  "prompt": "How many times does the letter 'r' appear in the word 'strawberry'?",
+  "expected": "3",
+  "measurement": {
+    "text": "The letter \"r\" appears twice in the word \"strawberry\".",
+    "tokens_in": 43,
+    "tokens_out": 16,
+    "latency_ms": 1050.1716250146274,
+    "ttft_ms": 382.9476670071017,
+    "model": "llama3.2",
+    "request_id": null
+  },
+  "cost_usd": 0.0,
+  "judge": {
+    "score": 0.75,
+    "passed": true,
+    "reason": "correctness=5/10 relevance=10/10 score=0.750 >= threshold=0.7 | reasoning: The model's answer is partially correct, as it identifies two instances of the letter 'r', but fails to account for a third occurrence."
+  }
+}

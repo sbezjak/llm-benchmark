@@ -1,0 +1,23 @@
+{
+  "captured_at": "2026-08-17T07:35:55.400121+00:00",
+  "model": "claude-sonnet-5",
+  "item_id": "factual_004",
+  "rep": 1,
+  "prompt": "How many planets are in our solar system?",
+  "expected": "8",
+  "measurement": {
+    "text": "There are **8 planets** in our solar system:\n\n1. **Mercury**\n2. **Venus**\n3. **Earth**\n4. **Mars**\n5. **Jupiter**\n6. **Saturn**\n7. **Uranus**\n8. **Neptune**\n\nNote: Pluto was considered the ninth planet until 2006, when the International Astronomical Union (IAU) reclassified it as a **\"dwarf planet\"** due to updated criteria for what defines a planet. Other dwarf planets in our solar system include Eris, Haumea, Makemake, and Ceres.",
+    "tokens_in": 17,
+    "tokens_out": 189,
+    "latency_ms": 3709.589500009315,
+    "ttft_ms": 1792.176125018159,
+    "model": "claude-sonnet-5",
+    "request_id": "req_011Ce7wEm5CLrHCsEmegX4wt"
+  },
+  "cost_usd": 0.001924,
+  "judge": {
+    "score": 0.95,
+    "passed": true,
+    "reason": "correctness=10/10 relevance=9/10 score=0.950 >= threshold=0.7 | reasoning: The model's answer is fully correct but includes extraneous information about Pluto's reclassification."
+  }
+}

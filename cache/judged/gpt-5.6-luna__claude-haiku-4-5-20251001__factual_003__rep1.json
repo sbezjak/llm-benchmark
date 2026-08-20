@@ -1,0 +1,15 @@
+{
+  "judge_model": "gpt-5.6-luna",
+  "answer_model": "claude-haiku-4-5-20251001",
+  "item_id": "factual_003",
+  "rep": 1,
+  "prompt": "In what continent is Lima located?",
+  "expected": "South America",
+  "answer_text": "Lima is located in South America. It is the capital city of Peru.",
+  "judge_cost_usd": 9.92e-05,
+  "judge": {
+    "score": 1.0,
+    "passed": true,
+    "reason": "correctness=10/10 relevance=10/10 score=1.000 >= threshold=0.7 | reasoning: The answer correctly identifies South America as Lima's continent and adds accurate, relevant context that Lima is Peru's capital."
+  }
+}

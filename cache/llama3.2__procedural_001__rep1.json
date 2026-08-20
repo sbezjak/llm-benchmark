@@ -1,0 +1,23 @@
+{
+  "captured_at": "2026-08-17T07:37:56.427917+00:00",
+  "model": "llama3.2",
+  "item_id": "procedural_001",
+  "rep": 1,
+  "prompt": "Which pytest command runs tests marked either 'slow' or 'network'?",
+  "expected": "pytest -m 'slow or network'",
+  "measurement": {
+    "text": "You can use the `-k` option with pytest to run tests that match a specific marker. In this case, you would use:\n\n```bash\npytest -k \"slow\" --network\n```\n\nHowever, since `--network` is not a valid option for pytest, it's likely that you meant to use the `-m` option instead.\n\nIf you want to run tests marked with either 'slow' or 'network', you can use:\n\n```bash\npytest -m \"slow\" -m \"network\"\n```\n\nThis will run all tests that are marked with either 'slow' or 'network'.",
+    "tokens_in": 39,
+    "tokens_out": 125,
+    "latency_ms": 6206.60379200126,
+    "ttft_ms": 350.9814999997616,
+    "model": "llama3.2",
+    "request_id": null
+  },
+  "cost_usd": 0.0,
+  "judge": {
+    "score": 0.85,
+    "passed": true,
+    "reason": "correctness=8/10 relevance=9/10 score=0.850 >= threshold=0.7 | reasoning: The model provided a correct but slightly incorrect answer, suggesting the use of both `-k` and `-m` options. However, it correctly identified the need to use the `-m` option."
+  }
+}

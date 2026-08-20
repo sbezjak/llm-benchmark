@@ -1,0 +1,15 @@
+{
+  "judge_model": "gpt-5.6-luna",
+  "answer_model": "deepseek-v4-pro",
+  "item_id": "adv_arith_001",
+  "rep": 1,
+  "prompt": "A bat and a ball cost $1.10 in total. The bat costs $1.00 more than the ball. How much does the ball cost?",
+  "expected": "$0.05 (5 cents)",
+  "answer_text": "The ball costs **5 cents**.\n\nExplanation: If the ball costs $0.05, the bat costs $0.05 + $1.00 = $1.05. Together, $1.05 + $0.05 = $1.10.",
+  "judge_cost_usd": 0.000113,
+  "judge": {
+    "score": 1.0,
+    "passed": true,
+    "reason": "correctness=10/10 relevance=10/10 score=1.000 >= threshold=0.7 | reasoning: The answer is correct and includes a valid verification of the prices totaling $1.10, directly addressing the question."
+  }
+}

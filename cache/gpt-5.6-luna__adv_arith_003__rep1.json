@@ -1,0 +1,23 @@
+{
+  "captured_at": "2026-08-17T07:48:13.429154+00:00",
+  "model": "gpt-5.6-luna",
+  "item_id": "adv_arith_003",
+  "rep": 1,
+  "prompt": "A shirt priced at $80 is discounted 25%, then a further 10% is taken off the reduced price. What is the final price?",
+  "expected": "$54",
+  "measurement": {
+    "text": "After the 25% discount:  \n$80 \u00d7 0.75 = $60\n\nAfter the additional 10% discount:  \n$60 \u00d7 0.90 = **$54**\n\nFinal price: **$54**",
+    "tokens_in": 36,
+    "tokens_out": 72,
+    "latency_ms": 1274.0330840169918,
+    "ttft_ms": 987.481584015768,
+    "model": "gpt-5.6-luna",
+    "request_id": "req_5c59b3681bd141e29ba7163670cdcf34"
+  },
+  "cost_usd": 9.359999999999998e-05,
+  "judge": {
+    "score": 0.95,
+    "passed": true,
+    "reason": "correctness=9/10 relevance=10/10 score=0.950 >= threshold=0.7 | reasoning: The model correctly applied both discounts sequentially to arrive at the final price, but did not explicitly state the calculation steps."
+  }
+}

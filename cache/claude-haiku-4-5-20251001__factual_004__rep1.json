@@ -1,0 +1,23 @@
+{
+  "captured_at": "2026-08-17T07:35:41.080405+00:00",
+  "model": "claude-haiku-4-5-20251001",
+  "item_id": "factual_004",
+  "rep": 1,
+  "prompt": "How many planets are in our solar system?",
+  "expected": "8",
+  "measurement": {
+    "text": "There are 8 planets in our solar system. In order from the Sun, they are:\n\n1. Mercury\n2. Venus\n3. Earth\n4. Mars\n5. Jupiter\n6. Saturn\n7. Uranus\n8. Neptune\n\nPluto was reclassified as a \"dwarf planet\" in 2006 by the International Astronomical Union.",
+    "tokens_in": 16,
+    "tokens_out": 85,
+    "latency_ms": 1217.5041669979692,
+    "ttft_ms": 813.9510830224026,
+    "model": "claude-haiku-4-5-20251001",
+    "request_id": "req_011Ce7wDtMiwVyXCfUugibkj"
+  },
+  "cost_usd": 0.000441,
+  "judge": {
+    "score": 0.95,
+    "passed": true,
+    "reason": "correctness=10/10 relevance=9/10 score=0.950 >= threshold=0.7 | reasoning: The model's answer is correct but includes extraneous information about Pluto, which is not relevant to the question."
+  }
+}

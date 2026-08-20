@@ -1,0 +1,23 @@
+{
+  "captured_at": "2026-08-17T07:38:18.418468+00:00",
+  "model": "deepseek-v4-pro",
+  "item_id": "procedural_001",
+  "rep": 1,
+  "prompt": "Which pytest command runs tests marked either 'slow' or 'network'?",
+  "expected": "pytest -m 'slow or network'",
+  "measurement": {
+    "text": "```bash\npytest -m \"slow or network\"\n```",
+    "tokens_in": 98,
+    "tokens_out": 61,
+    "latency_ms": 1558.6221249832306,
+    "ttft_ms": 1420.1043749926612,
+    "model": "deepseek-v4-pro",
+    "request_id": null
+  },
+  "cost_usd": 9.57e-05,
+  "judge": {
+    "score": 1.0,
+    "passed": true,
+    "reason": "correctness=10/10 relevance=10/10 score=1.000 >= threshold=0.7 | reasoning: The model's answer is correct and relevant, as it accurately provides the pytest command to run tests marked with either 'slow' or 'network'. The formatting of the expected answer is slightly different, but the overall content is identical."
+  }
+}

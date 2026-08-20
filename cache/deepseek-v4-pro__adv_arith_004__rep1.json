@@ -1,0 +1,23 @@
+{
+  "captured_at": "2026-08-17T07:49:26.148182+00:00",
+  "model": "deepseek-v4-pro",
+  "item_id": "adv_arith_004",
+  "rep": 1,
+  "prompt": "How many seconds are there in one and a half days?",
+  "expected": "129600 seconds",
+  "measurement": {
+    "text": "There are **129,600 seconds** in one and a half days.",
+    "tokens_in": 95,
+    "tokens_out": 101,
+    "latency_ms": 2512.447000015527,
+    "ttft_ms": 2390.8094170037657,
+    "model": "deepseek-v4-pro",
+    "request_id": null
+  },
+  "cost_usd": 0.00012919500000000003,
+  "judge": {
+    "score": 0.95,
+    "passed": true,
+    "reason": "correctness=10/10 relevance=9/10 score=0.950 >= threshold=0.7 | reasoning: (reasoning unparseable, scores extracted by regex fallback)"
+  }
+}

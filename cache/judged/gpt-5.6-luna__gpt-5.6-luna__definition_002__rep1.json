@@ -1,0 +1,15 @@
+{
+  "judge_model": "gpt-5.6-luna",
+  "answer_model": "gpt-5.6-luna",
+  "item_id": "definition_002",
+  "rep": 1,
+  "prompt": "In one sentence, what is a black hole?",
+  "expected": "A region of space where the gravitational pull is so strong that nothing, not even light, can escape from it.",
+  "answer_text": "A black hole is a region of spacetime where gravity is so strong that nothing, not even light, can escape once it crosses the event horizon.",
+  "judge_cost_usd": 0.0001212,
+  "judge": {
+    "score": 1.0,
+    "passed": true,
+    "reason": "correctness=10/10 relevance=10/10 score=1.000 >= threshold=0.7 | reasoning: The answer accurately defines a black hole and adds the important qualification that escape is impossible after crossing the event horizon. It is concise, directly responsive, and expressed in one sentence."
+  }
+}

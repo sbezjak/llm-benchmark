@@ -1,0 +1,15 @@
+{
+  "judge_model": "gpt-5.6-luna",
+  "answer_model": "llama3.2",
+  "item_id": "procedural_001",
+  "rep": 1,
+  "prompt": "Which pytest command runs tests marked either 'slow' or 'network'?",
+  "expected": "pytest -m 'slow or network'",
+  "answer_text": "You can use the `-k` option with pytest to run tests that match a specific marker. In this case, you would use:\n\n```bash\npytest -k \"slow\" --network\n```\n\nHowever, since `--network` is not a valid option for pytest, it's likely that you meant to use the `-m` option instead.\n\nIf you want to run tests marked with either 'slow' or 'network', you can use:\n\n```bash\npytest -m \"slow\" -m \"network\"\n```\n\nThis will run all tests that are marked with either 'slow' or 'network'.",
+  "judge_cost_usd": 0.0002906,
+  "judge": {
+    "score": 0.6,
+    "passed": false,
+    "reason": "correctness=3/10 relevance=9/10 score=0.600 < threshold=0.7 | reasoning: The answer correctly identifies that `-m` should be used, but the proposed `pytest -m \"slow\" -m \"network\"` does not express an OR condition and may only apply the last marker expression. The required command is `pytest -m \"slow or network\"`."
+  }
+}

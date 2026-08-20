@@ -1,0 +1,23 @@
+{
+  "captured_at": "2026-08-17T07:52:40.764680+00:00",
+  "model": "claude-sonnet-5",
+  "item_id": "adv_logic_001",
+  "rep": 1,
+  "prompt": "Mango is heavier than Kiwi but lighter than Pomelo. Pomelo is lighter than Durian. Of the four, which is the heaviest?",
+  "expected": "Durian",
+  "measurement": {
+    "text": "**Durian** is the heaviest.\n\nHere's the reasoning:\n- Mango > Kiwi (Mango is heavier than Kiwi)\n- Mango < Pomelo (Mango is lighter than Pomelo)\n- Pomelo < Durian (Pomelo is lighter than Durian)\n\nCombining these: Kiwi < Mango < Pomelo < Durian\n\nSo the order from lightest to heaviest is: **Kiwi < Mango < Pomelo < Durian**, making **Durian** the heaviest of the four.",
+    "tokens_in": 57,
+    "tokens_out": 179,
+    "latency_ms": 3630.9883749927394,
+    "ttft_ms": 2124.752667004941,
+    "model": "claude-sonnet-5",
+    "request_id": "req_011Ce7xX4tpdUnKRgBjuZNwX"
+  },
+  "cost_usd": 0.0019039999999999999,
+  "judge": {
+    "score": 0.75,
+    "passed": true,
+    "reason": "correctness=10/10 relevance=5/10 score=0.750 >= threshold=0.7 | reasoning: The model's answer correctly identifies Durian as the heaviest, but incorrectly states it as the second-heaviest in its ordering."
+  }
+}

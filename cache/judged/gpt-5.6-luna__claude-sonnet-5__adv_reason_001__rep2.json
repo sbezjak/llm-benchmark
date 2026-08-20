@@ -1,0 +1,15 @@
+{
+  "judge_model": "gpt-5.6-luna",
+  "answer_model": "claude-sonnet-5",
+  "item_id": "adv_reason_001",
+  "rep": 2,
+  "prompt": "If today is Wednesday, what day of the week will it be 100 days from now?",
+  "expected": "Friday",
+  "answer_text": "# Solving Day of the Week Problem\n\n**Given:** Today is Wednesday\n**Find:** Day of the week 100 days from now\n\n## Step 1: Find the remainder when dividing by 7\nSince the days of the week repeat every 7 days, I need to find 100 mod 7:\n\n$$100 \u00f7 7 = 14 \\text{ remainder } 2$$\n\nThis means 100 days = 14 full weeks + 2 extra days\n\n## Step 2: Count forward from Wednesday\nThe 14 full weeks bring us back to Wednesday, then I add 2 more days:\n\n- Wednesday + 1 day = Thursday\n- Thursday + 1 day = **Friday**\n\n## Answer\n**100 days from Wednesday will be a Friday**",
+  "judge_cost_usd": 0.00014600000000000003,
+  "judge": {
+    "score": 1.0,
+    "passed": true,
+    "reason": "correctness=10/10 relevance=10/10 score=1.000 >= threshold=0.7 | reasoning: The answer correctly computes 100 mod 7 as 2 and advances two days from Wednesday to Friday, matching the expected answer. It is fully relevant and clearly explains the calculation."
+  }
+}

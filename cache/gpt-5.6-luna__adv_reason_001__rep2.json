@@ -1,0 +1,23 @@
+{
+  "captured_at": "2026-08-17T07:51:06.774056+00:00",
+  "model": "gpt-5.6-luna",
+  "item_id": "adv_reason_001",
+  "rep": 2,
+  "prompt": "If today is Wednesday, what day of the week will it be 100 days from now?",
+  "expected": "Friday",
+  "measurement": {
+    "text": "100 days from Wednesday will be **Friday**.",
+    "tokens_in": 25,
+    "tokens_out": 42,
+    "latency_ms": 1214.0608330082614,
+    "ttft_ms": 1108.819749992108,
+    "model": "gpt-5.6-luna",
+    "request_id": "req_1d1831355cf3438281fff6296d9a685e"
+  },
+  "cost_usd": 5.54e-05,
+  "judge": {
+    "score": 0.95,
+    "passed": true,
+    "reason": "correctness=10/10 relevance=9/10 score=0.950 >= threshold=0.7 | reasoning: The model's answer correctly identifies the day of the week 100 days from Wednesday, but its phrasing is not entirely clear."
+  }
+}

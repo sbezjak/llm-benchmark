@@ -1,0 +1,15 @@
+{
+  "judge_model": "gpt-5.6-luna",
+  "answer_model": "deepseek-v4-pro",
+  "item_id": "reasoning_002",
+  "rep": 1,
+  "prompt": "In one sentence, why does ice float on water?",
+  "expected": "Ice floats on water because it is less dense than liquid water.",
+  "answer_text": "Ice floats on water because its hydrogen-bonded crystalline structure makes it less dense than liquid water.",
+  "judge_cost_usd": 0.0001054,
+  "judge": {
+    "score": 1.0,
+    "passed": true,
+    "reason": "correctness=10/10 relevance=10/10 score=1.000 >= threshold=0.7 | reasoning: The answer directly and accurately explains that ice floats because its hydrogen-bonded crystalline structure makes it less dense than liquid water."
+  }
+}

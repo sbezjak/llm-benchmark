@@ -1,0 +1,23 @@
+{
+  "captured_at": "2026-08-17T07:45:45.779366+00:00",
+  "model": "llama3.2",
+  "item_id": "adv_arith_001",
+  "rep": 1,
+  "prompt": "A bat and a ball cost $1.10 in total. The bat costs $1.00 more than the ball. How much does the ball cost?",
+  "expected": "$0.05 (5 cents)",
+  "measurement": {
+    "text": "Let's say the ball costs x dollars.\n\nSince the bat costs $1.00 more than the ball, the bat costs x + $1.00.\n\nThe total cost of the bat and the ball is $1.10, so we can set up an equation:\n\nx + (x + $1.00) = $1.10\n\nCombine like terms:\n\n2x + $1.00 = $1.10\n\nSubtract $1.00 from both sides:\n\n2x = $0.10\n\nDivide by 2:\n\nx = $0.05\n\nSo, the ball costs $0.05.",
+    "tokens_in": 57,
+    "tokens_out": 130,
+    "latency_ms": 6367.733374994714,
+    "ttft_ms": 487.381999992067,
+    "model": "llama3.2",
+    "request_id": null
+  },
+  "cost_usd": 0.0,
+  "judge": {
+    "score": 1.0,
+    "passed": true,
+    "reason": "correctness=10/10 relevance=10/10 score=1.000 >= threshold=0.7 | reasoning: The model provided a step-by-step solution to the problem, correctly setting up an equation and solving for x. However, it could have been more concise."
+  }
+}

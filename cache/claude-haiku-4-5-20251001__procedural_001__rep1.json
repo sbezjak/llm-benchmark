@@ -1,0 +1,23 @@
+{
+  "captured_at": "2026-08-17T07:38:30.688767+00:00",
+  "model": "claude-haiku-4-5-20251001",
+  "item_id": "procedural_001",
+  "rep": 1,
+  "prompt": "Which pytest command runs tests marked either 'slow' or 'network'?",
+  "expected": "pytest -m 'slow or network'",
+  "measurement": {
+    "text": "# Running Tests with Multiple Markers in pytest\n\nTo run tests marked with either 'slow' **or** 'network', use:\n\n```bash\npytest -m \"slow or network\"\n```\n\n## Examples\n\n**Run tests marked 'slow' OR 'network':**\n```bash\npytest -m \"slow or network\"\n```\n\n**Run tests marked 'slow' AND 'network':**\n```bash\npytest -m \"slow and network\"\n```\n\n**Run tests marked 'slow' BUT NOT 'network':**\n```bash\npytest -m \"slow and not network\"\n```\n\n## Test Example\n\n```python\nimport pytest\n\n@pytest.mark.slow\ndef test_slow_operation():\n    pass\n\n@pytest.mark.network\ndef test_network_call():\n    pass\n\n@pytest.mark.slow\n@pytest.mark.network\ndef test_slow_network_operation():\n    pass\n```\n\nRunning `pytest -m \"slow or network\"` would execute all three test functions above.",
+    "tokens_in": 24,
+    "tokens_out": 233,
+    "latency_ms": 2870.3795420005918,
+    "ttft_ms": 827.7062920096796,
+    "model": "claude-haiku-4-5-20251001",
+    "request_id": "req_011Ce7wSNZwWQ8PJBmcYQTUg"
+  },
+  "cost_usd": 0.001189,
+  "judge": {
+    "score": 0.95,
+    "passed": true,
+    "reason": "correctness=9/10 relevance=10/10 score=0.950 >= threshold=0.7 | reasoning: The model's answer correctly provides the pytest command to run tests marked with either 'slow' or 'network', but could have been more concise and provided additional examples."
+  }
+}

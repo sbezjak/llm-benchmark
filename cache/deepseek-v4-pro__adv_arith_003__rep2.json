@@ -1,0 +1,23 @@
+{
+  "captured_at": "2026-08-17T07:48:26.924510+00:00",
+  "model": "deepseek-v4-pro",
+  "item_id": "adv_arith_003",
+  "rep": 2,
+  "prompt": "A shirt priced at $80 is discounted 25%, then a further 10% is taken off the reduced price. What is the final price?",
+  "expected": "$54",
+  "measurement": {
+    "text": "The final price is **$54**.\n\n- 25% off $80 = $80 \u00d7 0.75 = $60  \n- 10% off $60 = $60 \u00d7 0.90 = $54",
+    "tokens_in": 113,
+    "tokens_out": 101,
+    "latency_ms": 2091.245458985213,
+    "ttft_ms": 1645.7673749828245,
+    "model": "deepseek-v4-pro",
+    "request_id": null
+  },
+  "cost_usd": 0.000137025,
+  "judge": {
+    "score": 1.0,
+    "passed": true,
+    "reason": "correctness=10/10 relevance=10/10 score=1.000 >= threshold=0.7 | reasoning: The model's answer correctly calculates the final price after both discounts, but it simply restates the expected answer without providing any additional explanation or calculation steps."
+  }
+}

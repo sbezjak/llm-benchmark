@@ -1,0 +1,23 @@
+{
+  "captured_at": "2026-08-17T07:37:03.345318+00:00",
+  "model": "llama3.2",
+  "item_id": "definition_002",
+  "rep": 1,
+  "prompt": "In one sentence, what is a black hole?",
+  "expected": "A region of space where the gravitational pull is so strong that nothing, not even light, can escape from it.",
+  "measurement": {
+    "text": "A black hole is a region in space where the gravitational pull is so strong that nothing, including light, can escape once it falls inside, due to an incredibly dense and massive object with such a strong gravitational field.",
+    "tokens_in": 35,
+    "tokens_out": 44,
+    "latency_ms": 2933.686292002676,
+    "ttft_ms": 394.3188750126865,
+    "model": "llama3.2",
+    "request_id": null
+  },
+  "cost_usd": 0.0,
+  "judge": {
+    "score": 0.95,
+    "passed": true,
+    "reason": "correctness=9/10 relevance=10/10 score=0.950 >= threshold=0.7 | reasoning: The model's answer correctly states the basic concept of a black hole, but could be more concise and clear in its phrasing."
+  }
+}

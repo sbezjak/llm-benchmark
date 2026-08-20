@@ -1,0 +1,15 @@
+{
+  "judge_model": "gpt-5.6-luna",
+  "answer_model": "gpt-5.6-luna",
+  "item_id": "procedural_001",
+  "rep": 1,
+  "prompt": "Which pytest command runs tests marked either 'slow' or 'network'?",
+  "expected": "pytest -m 'slow or network'",
+  "answer_text": "```bash\npytest -m \"slow or network\"\n```",
+  "judge_cost_usd": 0.000106,
+  "judge": {
+    "score": 1.0,
+    "passed": true,
+    "reason": "correctness=10/10 relevance=10/10 score=1.000 >= threshold=0.7 | reasoning: The command correctly uses pytest's marker expression to run tests marked either 'slow' or 'network'; the differing quote style is equivalent."
+  }
+}

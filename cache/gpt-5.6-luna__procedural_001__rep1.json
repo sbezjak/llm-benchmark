@@ -1,0 +1,23 @@
+{
+  "captured_at": "2026-08-17T07:38:08.942242+00:00",
+  "model": "gpt-5.6-luna",
+  "item_id": "procedural_001",
+  "rep": 1,
+  "prompt": "Which pytest command runs tests marked either 'slow' or 'network'?",
+  "expected": "pytest -m 'slow or network'",
+  "measurement": {
+    "text": "```bash\npytest -m \"slow or network\"\n```",
+    "tokens_in": 20,
+    "tokens_out": 15,
+    "latency_ms": 780.3748330043163,
+    "ttft_ms": 656.6254580102395,
+    "model": "gpt-5.6-luna",
+    "request_id": "req_b1d493096cdc4578ad69342e928695a4"
+  },
+  "cost_usd": 2.2e-05,
+  "judge": {
+    "score": 1.0,
+    "passed": true,
+    "reason": "correctness=10/10 relevance=10/10 score=1.000 >= threshold=0.7 | reasoning: The model's answer is correct and relevant, as it accurately provides the pytest command to run tests marked with either 'slow' or 'network'. The formatting of the expected answer is slightly different, but the overall content is identical."
+  }
+}

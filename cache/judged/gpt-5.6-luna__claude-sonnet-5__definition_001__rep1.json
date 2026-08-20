@@ -1,0 +1,15 @@
+{
+  "judge_model": "gpt-5.6-luna",
+  "answer_model": "claude-sonnet-5",
+  "item_id": "definition_001",
+  "rep": 1,
+  "prompt": "What does the acronym AI stand for?",
+  "expected": "Artificial Intelligence",
+  "answer_text": "# AI\n\n**AI** stands for **Artificial Intelligence**.\n\nThis refers to the field of computer science focused on creating systems that can perform tasks typically requiring human intelligence, such as:\n\n- Understanding and generating language\n- Recognizing patterns and images\n- Learning from data\n- Making decisions or predictions\n- Solving problems\n\nThere are also related terms worth noting:\n- **AGI** \u2013 Artificial General Intelligence (hypothetical AI with human-level reasoning across all domains)\n- **ANI** \u2013 Artificial Narrow Intelligence (AI designed for specific tasks, which is what exists today)\n\nLet me know if you'd like more detail on any of these concepts!",
+  "judge_cost_usd": 0.0001226,
+  "judge": {
+    "score": 1.0,
+    "passed": true,
+    "reason": "correctness=10/10 relevance=10/10 score=1.000 >= threshold=0.7 | reasoning: The answer correctly expands AI as Artificial Intelligence and the additional explanation is accurate and relevant, though more detailed than necessary."
+  }
+}

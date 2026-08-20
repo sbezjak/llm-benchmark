@@ -1,0 +1,23 @@
+{
+  "captured_at": "2026-08-17T07:36:39.618538+00:00",
+  "model": "claude-haiku-4-5-20251001",
+  "item_id": "definition_001",
+  "rep": 1,
+  "prompt": "What does the acronym AI stand for?",
+  "expected": "Artificial Intelligence",
+  "measurement": {
+    "text": "AI stands for **Artificial Intelligence**.\n\nIt refers to computer systems designed to perform tasks that typically require human intelligence, such as learning, reasoning, problem-solving, and understanding language.",
+    "tokens_in": 16,
+    "tokens_out": 41,
+    "latency_ms": 875.2668750239536,
+    "ttft_ms": 660.5692080047447,
+    "model": "claude-haiku-4-5-20251001",
+    "request_id": "req_011Ce7wJQpA9BHfYmNYgSuDd"
+  },
+  "cost_usd": 0.000221,
+  "judge": {
+    "score": 1.0,
+    "passed": true,
+    "reason": "correctness=10/10 relevance=10/10 score=1.000 >= threshold=0.7 | reasoning: The model's answer is fully correct in terms of the acronym's meaning, but it provides additional context that is not necessary for answering the question."
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "judge_model": "gpt-5.6-luna",
+  "answer_model": "deepseek-v4-pro",
+  "item_id": "adv_arith_003",
+  "rep": 2,
+  "prompt": "A shirt priced at $80 is discounted 25%, then a further 10% is taken off the reduced price. What is the final price?",
+  "expected": "$54",
+  "answer_text": "The final price is **$54**.\n\n- 25% off $80 = $80 \u00d7 0.75 = $60  \n- 10% off $60 = $60 \u00d7 0.90 = $54",
+  "judge_cost_usd": 0.00012080000000000001,
+  "judge": {
+    "score": 1.0,
+    "passed": true,
+    "reason": "correctness=10/10 relevance=10/10 score=1.000 >= threshold=0.7 | reasoning: The model correctly applies the successive 25% and 10% discounts and arrives at the expected final price of $54. It is concise and directly responsive."
+  }
+}

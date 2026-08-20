@@ -1,0 +1,23 @@
+{
+  "captured_at": "2026-08-17T07:31:19.244757+00:00",
+  "model": "gpt-5.6-luna",
+  "item_id": "factual_001",
+  "rep": 1,
+  "prompt": "What is the capital of Slovenia?",
+  "expected": "Ljubljana",
+  "measurement": {
+    "text": "The capital of Slovenia is **Ljubljana**.",
+    "tokens_in": 13,
+    "tokens_out": 14,
+    "latency_ms": 1199.4114999833982,
+    "ttft_ms": 1145.9430000104476,
+    "model": "gpt-5.6-luna",
+    "request_id": "req_beb972cfda2c4adcbf0da3d07756db1a"
+  },
+  "cost_usd": 1.94e-05,
+  "judge": {
+    "score": 1.0,
+    "passed": true,
+    "reason": "correctness=10/10 relevance=10/10 score=1.000 >= threshold=0.7 | reasoning: The model's answer correctly identifies the capital of Slovenia, but does not provide any additional context or information."
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "captured_at": "2026-08-17T07:49:17.185200+00:00",
+  "model": "gpt-5.6-luna",
+  "item_id": "adv_arith_004",
+  "rep": 1,
+  "prompt": "How many seconds are there in one and a half days?",
+  "expected": "129600 seconds",
+  "measurement": {
+    "text": "There are **129,600 seconds** in one and a half days.",
+    "tokens_in": 18,
+    "tokens_out": 45,
+    "latency_ms": 1064.7194579942152,
+    "ttft_ms": 949.7672079887707,
+    "model": "gpt-5.6-luna",
+    "request_id": "req_876de7f4a2e54f8a9447abf3d362d2b6"
+  },
+  "cost_usd": 5.76e-05,
+  "judge": {
+    "score": 0.95,
+    "passed": true,
+    "reason": "correctness=10/10 relevance=9/10 score=0.950 >= threshold=0.7 | reasoning: (reasoning unparseable, scores extracted by regex fallback)"
+  }
+}

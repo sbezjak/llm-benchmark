@@ -1,0 +1,23 @@
+{
+  "captured_at": "2026-08-17T07:39:59.680351+00:00",
+  "model": "llama3.2",
+  "item_id": "reasoning_001",
+  "rep": 2,
+  "prompt": "What is the difference between cold blooded and warm blooded animals?",
+  "expected": "Cold blooded animals rely on external sources for body heat, while warm blooded animals maintain a constant internal body temperature.",
+  "measurement": {
+    "text": "The terms \"cold-blooded\" and \"warm-blooded\" are outdated and can be misleading. The correct terminology is \"ectothermic\" (cold-blooded) and \"endothermic\" (warm-blooded).\n\n**Ectothermic (Cold-Blooded) Animals:**\n\nEctothermic animals, also known as cold-blooded animals, rely on external sources of heat to regulate their body temperature. Their metabolic rate is influenced by the environment around them, and they often bask in sunlight or seek shade to maintain a stable body temperature.\n\nExamples of ectothermic animals include:\n\n* Reptiles (snakes, lizards, turtles)\n* Amphibians (frogs, toads)\n* Fish\n* Insects (many species)\n\n**Endothermic (Warm-Blooded) Animals:**\n\nEndothermic animals, also known as warm-blooded animals, generate heat internally and maintain a relatively constant body temperature regardless of the environment. This is made possible by their ability to produce energy through cellular respiration.\n\nExamples of endothermic animals include:\n\n* Mammals (humans, dogs, cats)\n* Birds\n* Some species of fish (such as goldfish)\n\nKey differences between ectothermic and endothermic animals:\n\n1. **Body temperature regulation:** Ectothermic animals rely on external sources of heat, while endothermic animals generate heat internally.\n2. **Metabolic rate:** Endothermic animals have a higher metabolic rate than ectothermic animals, which allows them to maintain their body temperature.\n3. **Energy production:** Endothermic animals produce energy through cellular respiration, while ectothermic animals rely on external sources of energy (e.g., food).\n4. **Activity patterns:** Ectothermic animals often have more restricted activity patterns, as they need to regulate their body temperature. Endothermic animals can be active at a wider range of temperatures.\n\nIt's worth noting that the terms \"cold-blooded\" and \"warm-blooded\" were historically used to describe these two groups, but they are now considered outdated and can be misleading. The correct terminology is ectothermic and endothermic.",
+    "tokens_in": 39,
+    "tokens_out": 443,
+    "latency_ms": 23953.36212500115,
+    "ttft_ms": 569.6670829784125,
+    "model": "llama3.2",
+    "request_id": null
+  },
+  "cost_usd": 0.0,
+  "judge": {
+    "score": 0.7,
+    "passed": true,
+    "reason": "correctness=8/10 relevance=6/10 score=0.700 >= threshold=0.7 | reasoning: The model provided a clear and concise explanation of the difference between cold blooded and warm blooded animals, using the correct terminology (ectothermic and endothermic). However, it did not directly address the question in its initial response, instead providing an introduction to the topic."
+  }
+}
