@@ -19,7 +19,7 @@ about $0.21 - answers plus the paid judging that graded them. A writeup is in
 progress.
 
 Live reports (published after a push, self-contained HTML):
-[scoreboard](https://sbezjak.github.io/llm-benchmark/reports/report-benchmark-scoreboard-2026-08-17.html) ·
+[scoreboard](https://sbezjak.github.io/llm-benchmark/reports/report-benchmark-scoreboard-2026-08-18.html) ·
 [golden sweep](https://sbezjak.github.io/llm-benchmark/reports/report-golden-sweep-2026-08-17.html) ·
 [adversarial sweep](https://sbezjak.github.io/llm-benchmark/reports/report-adversarial-sweep-2026-08-17.html)
 
@@ -63,7 +63,7 @@ receipt (`*.json`, the recompute), or a test.
 | 2 | **The cheap judge hides the real gap** (the capstone). On the hard suite the free local judge scores the weak model right in the pack (a perfect pass rate); re-graded by a reliable paid judge, its score and pass rate drop while the paid pack holds. The cheap judge compresses the gap away; a better instrument separates the weak model out. | `evidence/judge-ablation-analysis.md`, `adversarial-suite-analysis.md` |
 | 3 | **Position bias.** Show the cheap judge two answers, then the same two swapped, and count a win only if it holds: it flips on order 2-3x more than the paid judge, and most of its flips just keep whichever answer was shown first. Order, not quality, drove the vote - and its own stored reasoning contradicts itself pair by pair. | `evidence/judge-position-bias.md` (+ `-receipts.json`, `-stats.json`) |
 | 4 | **Self-preference.** Grading a pool it competes in, the cheap local judge ranks its *own* answers up (third of five head-to-head) while it scores last on its own. A model should not grade a pool it is in. | `evidence/judge-position-bias.md`, `llm_benchmark/freeze_evidence.py` |
-| 5 | **Human calibration.** A blind human grade of a 24-answer sample agreed with the paid judge on pass/fail every time; the judge passed nothing the human called wrong. The only friction was the human's own uncertainty on borderline *presentation* of correct answers. | `evidence/judge-calibration-analysis.md`, `docs/judge-calibration-grading-sheet.md` |
+| 5 | **Human calibration.** A blind human grade of a 24-answer sample agreed with the paid judge on pass/fail every time; the judge passed nothing the human called wrong. The only friction was the human's own uncertainty on borderline *presentation* of correct answers. | `evidence/judge-calibration-analysis.md`, `evidence/judge-calibration-grading-sheet.md` |
 | 6 | **Cost levers, measured not assumed.** A batch lane buys ~half price for minutes of turnaround at tied quality; a semantic answer cache has false hits at *every* similarity threshold (no setting both keeps paraphrases and rejects a trap); prefix caching does not apply to this suite (the items share no preamble) - and reporting that null is the finding. | `evidence/batch-lane-captures.json`, `semantic-cache-false-hits.md`, `findings.json` (`candidates`) |
 | 7 | **Two reps caught a wobble one run would have faked.** Several answers sit right on the judge's 0.7 pass threshold and cross back and forth between reps; the aggregate hides it, the row-by-row trace shows it. A single-run sweep would have labelled quality by chance. | `evidence/full-sweep-comparison-table.md` |
 
@@ -113,7 +113,7 @@ uv run python -m llm_benchmark.sweep --html reports/report-<name>.html --max-spe
 
 # rebuild findings.json off the cache, then render the scoreboard ($0):
 uv run python -m llm_benchmark.runners.findings
-uv run python -m llm_benchmark.report_dashboard --out reports/report-benchmark-scoreboard-2026-08-17.html
+uv run python -m llm_benchmark.report_dashboard --out reports/report-benchmark-scoreboard-2026-08-18.html
 ```
 
 The cache is the spend control: `run_sweep` returns a cached capture without
@@ -180,7 +180,13 @@ adapter is smoke-tested on 1-2 fabricated items before any full sweep.
 
 ## Reports
 
-Two kinds, both self-contained HTML:
+**Published** (GitHub Pages, self-contained HTML - open these):
+
+- [scoreboard](https://sbezjak.github.io/llm-benchmark/reports/report-benchmark-scoreboard-2026-08-18.html) - the aggregate cost / latency / quality table, with links into example judge verdicts. Start here.
+- [golden sweep](https://sbezjak.github.io/llm-benchmark/reports/report-golden-sweep-2026-08-17.html) - the full per-row trace of the easy suite: every prompt, answer, and judge verdict, untruncated.
+- [adversarial sweep](https://sbezjak.github.io/llm-benchmark/reports/report-adversarial-sweep-2026-08-17.html) - the same for the hard suite, where the main finding lives.
+
+Two kinds of report, both self-contained HTML:
 
 - **Sweep + scoreboard** (committed, named by topic): `report.py` renders the full
   verbatim trace - one collapsible block per `(model, item, rep)`, with a preview
